@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--
+    <!ELEMENT configuration 标签需按照下面这个顺序来
+    (properties?, settings?, typeAliases?, typeHandlers?, objectFactory?,
+    objectWrapperFactory?, reflectorFactory?, plugins?, environments?, databaseIdProvider?, mappers?)>
+    -->
+
+    <!--
+		properties: 引入外部properties文件 必须放在最前面,否则会报错
+			resource: 类路径下
+			url: 磁盘路径或网络路径
+ 	-->
+    <properties resource="jdbc.properties"/>
+
+    <!-- 设置日志输出, 方便观察sql语句和参数 -->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+
+        <!--显示的指定每个我们需要更改的配置的值，即使他是默认的。防止版本更新带来的问题  -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+<!--
+    注意这些标签有先后顺序的，下面这个必须放settings后面！！
+-->
+    <typeAliases>
+        <package name="org.example.bean"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="org/example/mapper/xml/StudentMapper.xml"/>
+        <mapper resource="org/example/mapper/xml/EmployeeMapperPlus.xml"/>
+        <mapper resource="org/example/mapper/xml/DepartmentMapper.xml"/>
+        <mapper resource="org/example/mapper/xml/EmployeeMapperDynamicSQL.xml"/>
+<!--        这里不生效？？要把接口注册进来不是xml但还是不行-->
+<!--        <package name="org.example.mapper"/>-->
+    </mappers>
+</configuration>
