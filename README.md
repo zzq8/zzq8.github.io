@@ -12,8 +12,8 @@
 
 > 推荐尚硅谷 康师傅、雷神、周阳
 
-* [分布式基础](gulimall/分布式基础)
-* [分布式高级](gulimall/分布式高级)
+* [分布式基础](gulimall/分布式基础.md)
+* [分布式高级](Gulimall/分布式高级.md)
 * [ElasticSearch](gulimall/ElasticSearch)
 * [javaSE阶段复习](Java%20基础/javaSE阶段复习)
 * [MyBatis](JavaFramework/MyBatis)
