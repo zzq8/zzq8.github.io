@@ -44,29 +44,40 @@
         language: 'chinese'
       },
       //logo: 'https://gitee.com/codezzq/blogImage/raw/master/img/微信背景图.jpg',
-    }
-  </script>
+      //侧边栏折叠
+      loadSidebar: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      subMaxLevel: 3,
+      ...
+    sidebarDisplayLevel: 1, // set sidebar display level
+  }
+</script>
 
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <!--Java代码高亮-->
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-yaml.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-sql.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-python.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-json.min.js"></script>
-  <!--全文搜索,直接用官方提供的无法生效-->
-  <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<!--Java代码高亮-->
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-sql.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-json.min.js"></script>
+<!--全文搜索,直接用官方提供的无法生效-->
+<script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
   <!--谷歌统计
     <script src="//unpkg.com/docsify" data-ga="UA-138586553-1"></script>
     <script src="//unpkg.com/docsify/lib/plugins/ga.js"></script>
   -->
-  <!-- 复制到剪贴板 -->
-  <script src="//unpkg.com/docsify-copy-code"></script>
-  <!-- 图片缩放 -->
-  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
-  <!-- 表情 -->
-  <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
-  <!-- 字数统计 -->
-  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+<!-- 复制到剪贴板 -->
+<script src="//unpkg.com/docsify-copy-code"></script>
+<!-- 图片缩放 -->
+<script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+<!-- 表情 -->
+<script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
+<!-- 字数统计 -->
+<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+
+<!-- plugins -->
+<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 </body>
 </html>
