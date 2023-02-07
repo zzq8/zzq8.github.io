@@ -14,7 +14,7 @@
 
 ### 1.1.基础
 
-* [javaSE](JavaSE/JavaSE.md)
+* [JavaSE](JavaSE/JavaSE.md)
 * [JUC](JUC/JUC.md)
 * JVM【待学习】
 * MySQL 专栏【待整理】
@@ -30,7 +30,7 @@
 * [MyBatis](JavaFramework/MyBatis.md)
 * [Redis](NoSQL/Redis.md)
 * [RabbitMQ](MQ\RabbitMQ.md)
-* [ElasticSearch](Gulimall/ElasticSearch.md)
+* [ElasticSearch](GuliMall/ElasticSearch.md)
 
 
 
@@ -41,7 +41,7 @@
 * [Linux使用指北（Jar包、常用命令）](Linux/Linux使用指北（Jar包、常用命令）.md)
 * [Git](Other/Git.md)
 * [GitHub Actions](Other/GitHub%20Actions.md)
-* [知识点截图](https://gitee.com/codezzq/study-notes/tree/master/%E5%85%B6%E4%BB%96/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%88%AA%E5%9B%BE)
+* [知识点截图](Other/知识点截图)
 
 
 
@@ -49,7 +49,7 @@
 
 * [我的云盘](https://share.zzq8.cn/)
 * [我的书签](https://gitee.com/codezzq/chrome-label)
-* [学习清单【未完成】](Other\Study%20List)
+* [学习清单【未完成】](Other\Study%20List.md)
 
 
 
