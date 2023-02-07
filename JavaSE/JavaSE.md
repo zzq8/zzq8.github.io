@@ -14,7 +14,7 @@ Table Of Contents (目录)
 
 才发现成员变量不能 Ait + Enter 生成（必须从左到右写好），局部变量可以。
 
-![image-20220901002801554](https://images.zzq8.cn/img/202209010028622.png)
+![image-20220901002801554](http://image.zzq8.cn/img/202209010028622.png)
 
 原因：
 
@@ -1542,13 +1542,13 @@ public static void main(String[] args) {
 
 1）两个线程，两个指向：
 
-![image-20221128175817858](https://images.zzq8.cn/img/202211281758986.png)
+![image-20221128175817858](http://image.zzq8.cn/img/202211281758986.png)
 
 
 
 2）线程 1 扩容完，线程 2 醒来
 
-![image-20221128175930037](https://images.zzq8.cn/img/202211281759166.png)
+![image-20221128175930037](http://image.zzq8.cn/img/202211281759166.png)
 
 
 
@@ -1556,4 +1556,4 @@ public static void main(String[] args) {
 
 
 
-![image-20221128175156295](https://images.zzq8.cn/img/202211281751659.png)
+![image-20221128175156295](http://image.zzq8.cn/img/202211281751659.png)

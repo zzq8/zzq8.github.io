@@ -123,11 +123,11 @@ firewall-cmd --reload #重新载入
 
 1. 首先重新登录mysql，然后输入status，可以看到，红色框框处不是utf-8
 
-![img](https://images.zzq8.cn/img/202207241646499.png)
+![img](http://image.zzq8.cn/img/202207241646499.png)
 
 2. 因此我们先退出mysql，然后再到etc目录下的my.cnf文件下修改一下文件内容 `vim /etc/my.cnf`
 
-![img](https://images.zzq8.cn/img/202207241646626.png)
+![img](http://image.zzq8.cn/img/202207241646626.png)
 
 ```bash
 #开头处
@@ -141,7 +141,7 @@ collation-server=utf8mb4_general_ci
 
 3. 保存更改后的my.cnf文件后，重启下mysql `service mysqld restart`，然后进入mysql输入status再次查看，你就会发现变化啦
 
-![img](https://images.zzq8.cn/img/202207241647349.png)
+![img](http://image.zzq8.cn/img/202207241647349.png)
 
 ps: 可以到Windows下用cmd命令启动mysql啦，个人喜欢用Navicat
 

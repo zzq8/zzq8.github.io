@@ -14,7 +14,7 @@
 
 ### 1.1.基础
 
-* [javaSE](Java/JavaSE)
+* [javaSE](JavaSE/JavaSE)
 * [JUC](JUC/JUC)
 * JVM【待学习】
 * MySQL 专栏【待整理】
@@ -25,9 +25,9 @@
 
 * [SpringBoot](JavaFramework/SpringBoot)
 * [SpringCloud](JavaFramework/SpringCloud)
-* [Gulimall Basic](Gulimall/Basic)
-* [Gulimall Advanced](Gulimall/Advanced)
-* [MyBatis](JavaFramework/MyBatis)
+* [GuliMall Basic](GuliMall/Basic)
+* [GuliMall Advanced](GuliMall/Advanced)
+* [MyBatis](JavaFramework/MyBatis.md)
 * [Redis](NoSQL/Redis)
 * [RabbitMQ](MQ\RabbitMQ)
 * [ElasticSearch](Gulimall/ElasticSearch)

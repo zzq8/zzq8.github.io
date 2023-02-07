@@ -145,7 +145,7 @@ docker run -p 3306:3306 --name mysql \
 
 [Linux 文件基本属性](https://www.runoob.com/linux/linux-file-attr-permission.html)：看完就知道文件属性了，重点看里面的两幅图！
 
-![img](https://images.zzq8.cn/img/202209082225377.jpeg)
+![img](http://image.zzq8.cn/img/202209082225377.jpeg)
 
 文件的权限字符为： **-rwxrwxrwx** ， 这九个权限是三个三个一组的！
 

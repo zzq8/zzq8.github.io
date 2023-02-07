@@ -137,7 +137,7 @@
 
 * #### 快速定位报错原因
 
-  * ![image-20221017164745509](https://images.zzq8.cn/img/202210171647567.png)
+  * ![image-20221017164745509](http://image.zzq8.cn/img/202210171647567.png)
 
 
 
@@ -147,7 +147,7 @@
 
  * #### [Pom.xml  -> \<relativePath>](https://blog.csdn.net/gzt19881123/article/details/105255138)
 
-   ![image-20221017102235784](https://images.zzq8.cn/img/202210171022851.png)
+   ![image-20221017102235784](http://image.zzq8.cn/img/202210171022851.png)
 
    ```
    设定一个空值将始终从仓库中获取，不从本地路径获取，如<relativePath/> 看这句就很明了了！这里就是去本地../bokeerp路径去拿这个pom文件
@@ -293,15 +293,15 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 **xxxxxAutoConfiguration ---> 组件  --->** **xxxxProperties里面拿值  ----> application.properties**
 
-![image-20220901180324251](https://images.zzq8.cn/img/202209011803186.png)
+![image-20220901180324251](http://image.zzq8.cn/img/202209011803186.png)
 
 
 
-![image-20220901213237083](https://images.zzq8.cn/img/202209012132180.png)
+![image-20220901213237083](http://image.zzq8.cn/img/202209012132180.png)
 
 
 
-![image-20220901220507136](https://images.zzq8.cn/img/202209012205178.png)
+![image-20220901220507136](http://image.zzq8.cn/img/202209012205178.png)
 
 
 
@@ -318,13 +318,13 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 	==默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件==
     spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有META-INF/spring.factories
 
-![img](https://images.zzq8.cn/img/202209012113729.png)
+![img](http://image.zzq8.cn/img/202209012113729.png)
 
 
 
 加载所有jar包META-INF/spring.factories文件EnableAutoConfiguration属性指定的类，指的是：
 
-![](https://images.zzq8.cn/img/202209012117863.png)
+![](http://image.zzq8.cn/img/202209012117863.png)
 
 
 
