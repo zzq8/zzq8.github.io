@@ -14,8 +14,8 @@
 
 ### 1.1.基础
 
-* [javaSE](JavaSE/JavaSE)
-* [JUC](JUC/JUC)
+* [javaSE](JavaSE/JavaSE.md)
+* [JUC](JUC/JUC.md)
 * JVM【待学习】
 * MySQL 专栏【待整理】
 
@@ -23,24 +23,24 @@
 
 ### 1.2.框架
 
-* [SpringBoot](JavaFramework/SpringBoot)
-* [SpringCloud](JavaFramework/SpringCloud)
-* [GuliMall Basic](GuliMall/Basic)
-* [GuliMall Advanced](GuliMall/Advanced)
+* [SpringBoot](JavaFramework/SpringBoot.md)
+* [SpringCloud](JavaFramework/SpringCloud.md)
+* [GuliMall Basic](GuliMall/Basic.md)
+* [GuliMall Advanced](GuliMall/Advanced.md)
 * [MyBatis](JavaFramework/MyBatis.md)
-* [Redis](NoSQL/Redis)
-* [RabbitMQ](MQ\RabbitMQ)
-* [ElasticSearch](Gulimall/ElasticSearch)
+* [Redis](NoSQL/Redis.md)
+* [RabbitMQ](MQ\RabbitMQ.md)
+* [ElasticSearch](Gulimall/ElasticSearch.md)
 
 
 
 ## 2.一些小点
 
-* [分布式锁全家桶](DistributedLock/DistributedLock)
-* [Linux环境部署(JRE、MySQL、Nginx)](Linux/Linux环境部署(JRE、MySQL、Nginx))
-* [Linux使用指北（Jar包、常用命令）](Linux/Linux使用指北（Jar包、常用命令）)
-* [Git](Other/Git)
-* [GitHub Actions](Other/GitHub%20Actions)
+* [分布式锁全家桶](DistributedLock/DistributedLock.md)
+* [Linux环境部署(JRE、MySQL、Nginx)](Linux/Linux环境部署(JRE、MySQL、Nginx).md)
+* [Linux使用指北（Jar包、常用命令）](Linux/Linux使用指北（Jar包、常用命令）.md)
+* [Git](Other/Git.md)
+* [GitHub Actions](Other/GitHub%20Actions.md)
 * [知识点截图](https://gitee.com/codezzq/study-notes/tree/master/%E5%85%B6%E4%BB%96/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%88%AA%E5%9B%BE)
 
 

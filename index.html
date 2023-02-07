@@ -8,22 +8,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <!-- icon -->
-  <link href="https://gitee.com/codezzq/blogImage/raw/master/img/微信背景图.jpg" rel="icon" type="image/x-ico">
+  <link href="http://image.zzq8.cn/img/me.jpg" rel="icon" type="image/x-ico">
 </head>
 <body>
-    <nav>
-      <a href="https://github.com/1024zzq/1024zzq.github.io" target="_blank">Git Repository</a>
-      <a href="http://zzq8.cn/" target="_blank">个人博客</a>
-    </nav>
+  <nav>
+    <a href="https://github.com/1024zzq/1024zzq.github.io" target="_blank">Git Repository</a>
+    <a href="http://zzq8.cn/" target="_blank">个人博客</a>
+  </nav>
   <div id="app">Please wait ..</div>
   <script>
     // 离线支持
     if (typeof navigator.serviceWorker !== 'undefined') {
-        navigator.serviceWorker.register('sw.js')
-      }
+      navigator.serviceWorker.register('sw.js')
+    }
     window.$docsify = {
       name: '1024zzq',
-      repo: 'https://1024zzq.github.io/',
+      // repo: 'https://1024zzq.github.io/', //会在页面右上角渲染一个 GitHub Corner 挂件。
       maxLevel: 4,//最大支持渲染的标题层级
       //封面,_coverpage.md
       // coverpage: true,
@@ -59,7 +59,7 @@
   <!--谷歌统计
     <script src="//unpkg.com/docsify" data-ga="UA-138586553-1"></script>
     <script src="//unpkg.com/docsify/lib/plugins/ga.js"></script>
-    -->
+  -->
   <!-- 复制到剪贴板 -->
   <script src="//unpkg.com/docsify-copy-code"></script>
   <!-- 图片缩放 -->
