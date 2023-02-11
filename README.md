@@ -3,6 +3,8 @@
 > Java学习之路笔记汇总，docsify地址：https://1024zzq.github.io/
 >
 > 这些笔记来自看网课时写的，一些用的老师的课件一些是自己的归纳，用于自己复习用。
+>
+> 后来，对于笔记而言。我希望是用自己笼统的语言去描述它而不是一堆官方术语，自己写的东西回顾起来更容易找到地方唤醒死去的回忆！
 
 
 
@@ -16,8 +18,8 @@
 
 * [JavaSE](JavaSE/JavaSE.md)
 * [JUC](JUC/JUC.md)
+* [MySQL 专栏【待整理】](SQL/MySQL实战45讲.md)
 * JVM【待学习】
-* MySQL 专栏【待整理】
 
 
 
@@ -37,8 +39,8 @@
 ## 2.一些小点
 
 * [分布式锁全家桶](DistributedLock/DistributedLock.md)
-* [Linux环境部署(JRE、MySQL、Nginx)](Linux/Linux环境部署(JRE、MySQL、Nginx).md)
 * [Linux使用指北（Jar包、常用命令）](Linux/Linux使用指北（Jar包、常用命令）.md)
+* [Linux环境部署(JRE、MySQL、Nginx)](Linux/Linux环境部署(JRE、MySQL、Nginx).md)
 * [Git](Other/Git.md)
 * [GitHub Actions](Other/GitHub%20Actions.md)
 * [知识点截图](Other/知识点截图)
@@ -47,9 +49,9 @@
 
 ## 3.Other
 
+* [学习清单【未完成】](Other\Study%20List.md)
 * [我的云盘](https://share.zzq8.cn/)
 * [我的书签](https://gitee.com/codezzq/chrome-label)
-* [学习清单【未完成】](Other\Study%20List.md)
 
 
 

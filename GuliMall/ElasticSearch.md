@@ -152,6 +152,16 @@ GET /_cat/indices：查看所有索引 show databases;
 ## 3. Query DSL
 
 > Elasticsearch提供了一个可以执行查询的Json风格的DSL。这个被称为Query DSL，该查询语言非常全面。
+>
+> 
+>
+> DSL(Domain Specific Language)的缩写，中文翻译为**领域特定语言**。
+>
+> [Wikipedia](https://link.zhihu.com/?target=http%3A//Domain-specific%20language) 对于 DSL 的定义还是比较简单的：
+>
+> > A specialized computer language designed for a specific task.
+> >
+> > **为了解决某一类任务而专门设计的计算机语言。**
 
 ### 1）匹配所有
 

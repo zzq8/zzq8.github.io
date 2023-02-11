@@ -1,5 +1,7 @@
 # 分布式高级
 
+> [项目视频地址](https://www.bilibili.com/video/BV1np4y1C7Yf/)，碰到忘记点搜本笔记配合视频再度复习！
+>
 > Google 到的笔记，很详细比视频评论下我看初级篇找的要详细：[别人笔记](https://blog.csdn.net/hancoder/article/details/106922139) [还是评论区的更贴近视频](https://gitee.com/AdverseQ/gulimall_Advanced)  [别人代码](https://github.com/NiceSeason/gulimall-learning)  建议搭配食用
 >
 > 我看到后面看的两篇别人的笔记 [一](https://gitee.com/lemon_wan/gulimall/blob/dev/%E9%AB%98%E7%BA%A7%E7%AF%87.md#8%E6%94%AF%E4%BB%98)    [二](https://github.com/NiceSeason/gulimall-learning/blob/master/docs/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E%E2%80%94%E5%88%86%E5%B8%83%E5%BC%8F%E9%AB%98%E7%BA%A7.md#6-%E6%94%AF%E4%BB%98)
@@ -590,7 +592,7 @@ canal 还可以做数据异构：jd 首页每个人的个性化推荐
 
 ### 6.2 初步理解：
 
-CacheManager（Redis） 管理不同名字的 Cache   Cache则是管自己的CRUD
+CacheManager（Redis） 规则制定者管理不同名字的 Cache   Cache则是管自己的CRUD
 CacheManager(RedisCacheManager)->Cache(RedisCache)->Cache负责缓存的读写
 
 
@@ -1346,7 +1348,7 @@ redis有5种不同数据结构，这里选择哪一种比较合适呢？`Map<Str
 
 
 
-文中多个不同线程拿用户信息是通过InheritableThreadLocal
+文中多个不同线程拿用户信息是通过 `InheritableThreadLocal`
 
 Gulimall的时候雷神好像是用的拦截器，每次请求进来从spring session(redis)拿封装给ThreadLocal。现在不确定的点是拦截/**是不是也可把远程Feign的拦下来？(如可以那这也算种做法吧)
 
@@ -2023,4 +2025,4 @@ Redisson的信号量   每一个商品都有它的参与秒杀的库存信号量
 
 1）秒杀往后没跟
 
-2）@import公共模块的实体类导致lombok的注解失效
+微服务因为模块很多需要 **可以由全自动部署机制独立部署**，[具体看 martinfowler 的见解！](https://www.yuque.com/atguigu/springboot/na3pfd#gXHqd)

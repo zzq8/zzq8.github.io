@@ -114,6 +114,7 @@ free -m  #查看还有多少 MB 内存可用
 
 #查看正在运行的某个进程
 ps aux|grep nginx
+ps -ef|grep java
 
 # 看指定端口 pid，方便后面 kill
 netstat -nlp |grep :80

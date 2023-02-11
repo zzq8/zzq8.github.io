@@ -1,4 +1,199 @@
-# 一、常用注解
+# 第一季:SpringBoot2核心技术
+
+> 三刷总算想起做点笔记，这点很重要   [语雀官方笔记](https://www.yuque.com/atguigu/springboot)
+>
+> [每导入一个 starter 改写哪些配置直接看官网！！！有些什么配置一目了然！](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
+>
+> 还有自动化配置文档，这个倒双shift也行
+
+<img src="http://image.zzq8.cn/img/202302111035624.png" alt="image" style="zoom: 80%;" />
+
+上面图片的所有基础原生开发，都有另一套方案用响应式替代。
+Spring5 除现在用的原生Servlet外多了一套解决方案：响应式开发！！于是SpringBoot出2跟着整   第一季就是掌握整个Sevlet技术栈
+
+**第二季响应式还没出，坐等**，底层依赖reactor、Netty-reactor 异步非阻塞的方式占用少量资源处理大量并发
+
+
+
+# ------基础入门------
+
+# 一、Spring与SpringBoot
+
+## 1.Spring能做什么
+
+### 1.1.Spring的能力
+
+[Spring 生态很庞大](https://spring.io/projects/spring-boot)：细数自己用过的。微观是Spring框架 宏观是一套解决方案生态圈！
+
+* Spring Boot
+* Spring Cloud (Spring Cloud Alibaba)
+* Spring Framework (Features:Integration->Caching)
+* Spring Data (JDBC、JPA、Redis [implementation](https://docs.spring.io/spring-data/data-redis/docs/current/reference/html/#redis:support:cache-abstraction) for Spring 3.1 cache abstraction)
+* Spring Session (Data Redis)
+* Spring AMQP (RabbitMQ)
+
+### 1.2.Spring5重大升级
+
+#### 1.2.1.响应式编程
+
+<img src="http://image.zzq8.cn/img/202302111528869.png" alt="image-20230211152821781" style="zoom: 67%;" />
+
+#### 1.2.2.内部源码设计
+
+由于Spring5重大升级 内部源码设计基于Java8的一些新特性，如：接口默认实现。重新设计源码架构！
+
+Spring5基于jdk8，jdk8特性多了接口的默认实现。带来的变化：
+**问题场景**：要是以前底层还需搞个==适配器模式==（适配器实现接口，实现类继承适配器重写 -> 避免必须实现一些不需要的方法）
+**处理**：接口都统一给一个默认实现，就不需要适配器类了！！！
+
+
+
+## 2.为什么用SpringBoot
+
+> 举例如要组装成一台电脑集合上面的技术 **配置地狱**，而这就是SpringBoot的存在意义它是一个高层框架底层是Spring为了整合Spring整个技术栈
+> 专心于业务逻辑（框架的框架），免于那么多繁琐的配置。不用自己手动组装电脑了，直接买个品牌机！无需掌握各种组装技术！！！
+
+### [2.1.SpringBoot优点](https://spring.io/projects/spring-boot)
+
+> 以下摘自官网，Title Link 可入 ~ 可以细看心里解读解读
+>
+> Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
+> 能快速创建出生产级别的Spring应用
+
+- Create stand-alone Spring applications
+
+- - 创建独立Spring应用
+
+- Embed Tomcat, Jetty or Undertow directly **(no need to deploy WAR files)**
+
+- - 内嵌web服务器
+
+- Provide opinionated 'starter' dependencies to simplify your build configuration
+
+- - 自动starter依赖，简化构建配置**（防止各jar包冲突）**
+
+- Automatically configure Spring and 3rd party libraries whenever possible
+
+- - 自动配置Spring以及第三方功能**（激动人心的特性，对于固定化配置全给你配好 例如mysql redis只要告诉地址之类的而不需要再告诉它什么东西怎么做例如配置数据源。）**
+
+- Provide production-ready features such as metrics, health checks, and externalized configuration
+
+- - 提供生产级别的监控、健康检查及外部化配置**（针对运维来说巴适，例如写个配置文件无需回头改代码再发布）**
+
+- Absolutely no code generation and no requirement for XML configuration
+
+- - 无代码生成、无需编写XML**（自动配置）**
+
+
+
+SpringBoot是整合Spring技术栈的一站式框架
+
+SpringBoot是简化Spring技术栈的快速开发脚手架
+
+
+
+### 2.2.时代背景
+
+陌生的两个东西：[听视频老师讲讲](https://www.bilibili.com/video/BV19K4y1L7MT?p=3&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)
+
+* Spring Cloud Data Flow（那张经典图三板斧中的，连接一切）
+* 云原生（同运维有很大关系！） Serverless（区别直接买一台几核几G的服务造成浪费，这个可以做到用多少占多少。虽然现在不理解但是先码上）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+# ==------分割线------==
+
+
+
+
+
+
+
+
+
+# 1）常用注解
 
 > 搞个时间重新排个版！知识待完善
 
@@ -9,6 +204,11 @@
 * #### @RquestBody
 
   * 获取请求体，**必须发送POST请求**。SpringMVC自动将请求体的数据**（json），转为对应Java对象**（+形参Entity上）
+  
+  * ```java
+    //以较简单的User对象接收前端传过来的ison数据(SpringMVC会智能的将符合要求的数据装配进该User对象中)
+    public String test(@RequestBody User user){}
+    ```
 
 
 
@@ -65,7 +265,7 @@
 
   * 场景：MyRabbitConfig对象创建完成以后，执行这个方法`rabbitTemplate.setConfirmCallback`用于设置确认回调 ConfirmCallback 
 
-
+> # [@RequestParam，@PathParam，@PathVariable等注解区别](https://blog.csdn.net/u011410529/article/details/66974974)
 
 * #### @PathVariable("page")
 
@@ -76,7 +276,25 @@
     }
     ```
 
+
+
+
+* 使用@RequestParam时，URL是这样的：http://host:port/path?参数名=参数值
+
+  使用@PathVariable时，URL是这样的：http://host:port/path/参数值
+
+  
+
+* #### @PathParam  发现post请求的话只能用这个来拿参数 注意参数过长拿不到需要用request类拿
+
+  * ```java
+    @PathParam("imegse") String imageBase64 //@PostMapping("/photo") 拿不到参数
+    String channel = request.getParameter("imegse"); //能拿到
+    ```
+
     
+
+***
 
 * #### @Builder
 
@@ -108,7 +326,7 @@
 
 
 
-# 二、技术点
+# 2）技术点
 
 ## 1）一些小点
 
@@ -338,7 +556,7 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 
 
-# 三、碰到过的问题
+# 3）碰到过的问题
 
 
 
@@ -376,7 +594,7 @@ spring:
 
 > 未解决：父 Module有
 >
-> [网上还有个解决方法不理解但可行!<path>](https://www.cnblogs.com/wandoupeas/p/spring-boot-configuration-processor-not-configured.html#!comments)
+> [网上还有个解决方法不理解但可行!<path>](https://www.cnblogs.com/wandoupeas/p/spring-boot-configuration-processor-not-configured.html#!comments)   看下面会出其它问题
 
 ```xml
 父有这个按道理子引入父应该也有
@@ -398,4 +616,20 @@ spring:
 
 
 
-> @import公共模块的实体类导致lombok的注解失效
+> @import公共模块的实体类导致lombok的注解失效  Gulimall未解决不做了，是做到限流突然就这个问题不做了
+
+![image-20230211140746713](http://image.zzq8.cn/img/202302111407769.png)
+
+今天重新导入这个项目时，看到 idea 的这个报错突然醒悟！！！看上面笔记当时为什么用它的场景
+
+```java
+<!--                    有这个注解会导致 lombok 注解不能正常编译！！！要么加进来要么去掉这个注解！-->
+<!--                    <annotationProcessorPaths>-->
+<!--                        <path>-->
+<!--                            <groupId>org.springframework.boot</groupId>-->
+<!--                            <artifactId>spring-boot-configuration-processor</artifactId>-->
+<!--                            <version>2.1.8.RELEASE</version>-->
+<!--                        </path>-->
+<!--                    </annotationProcessorPaths>-->
+```
+

@@ -8,7 +8,7 @@
 >
 > 1）可以围绕自己的仓库做一些流程自动化
 >
-> 2）CI/CD代表`持续集成`和`持续交付`  自动化构建部署 
+> 2）CI/CD代表`持续集成`和`持续交付`  自动化构建部署    **Continuous Integration/Continuous Deployment**
 >
 > ​	CI：新代码更新集成到现有的代码库中（GitHub Actions就是这个服务）
 >
