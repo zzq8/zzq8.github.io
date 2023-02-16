@@ -1,6 +1,6 @@
 # 分布式高级
 
-> [项目视频地址](https://www.bilibili.com/video/BV1np4y1C7Yf/)，碰到忘记点搜本笔记配合视频再度复习！
+> [项目视频地址](https://www.bilibili.com/video/BV1np4y1C7Yf/)，碰到忘记点搜本笔记配合视频再度复习！[自己代码地址](https://github.com/1024zzq/gulimall)
 >
 > Google 到的笔记，很详细比视频评论下我看初级篇找的要详细：[别人笔记](https://blog.csdn.net/hancoder/article/details/106922139) [还是评论区的更贴近视频](https://gitee.com/AdverseQ/gulimall_Advanced)  [别人代码](https://github.com/NiceSeason/gulimall-learning)  建议搭配食用
 >
@@ -910,6 +910,11 @@ public static final String SMS_CODE_CACHE_PREFIX = "sms:code:";
 密码存数据库加密分: 可逆 vs 不可逆（√）
 
 不可逆更合理一些   MD5+salt
+
+
+
+[apache base64](https://www.liaoxuefeng.com/wiki/1016959663602400/1017684507717184) 长度能改变么
+没有办法，base64是编码而已，是对称的，不是像md5那样的非对称的加密算法能够讲任意长度字符加密后长固定长度。
 
 #### MD5使用场景：百度网盘秒传功能
 

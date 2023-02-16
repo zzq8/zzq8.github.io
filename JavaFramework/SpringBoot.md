@@ -103,9 +103,41 @@ SpringBoot是简化Spring技术栈的快速开发脚手架
 
 
 
+# 二、了解自动配置原理
 
+> 两大优秀特性：依赖管理、自动配置
 
+## 1.依赖管理
 
+### 1.1.版本仲裁
+
+```xml
+1）依赖管理    
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.4.RELEASE</version>
+</parent>
+
+2）他的父项目：几乎声明了所有开发中常用的依赖的版本号,自动版本仲裁机制
+ <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-dependencies</artifactId>
+    <version>2.3.4.RELEASE</version>
+  </parent>
+
+-------------------------------------------------------
+1、引入依赖默认都可以不写版本
+2、引入非版本仲裁的jar，要写版本号。
+-------------------------------------------------------
+
+3）舍弃父依赖的版本控制，自定义版本
+查看spring-boot-dependencies里面规定当前依赖的版本 用的 key。
+在当前项目里面重写配置
+<properties>
+    <mysql.version>5.1.43</mysql.version>
+</properties>
+```
 
 
 

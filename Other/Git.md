@@ -152,7 +152,42 @@ git checkout -b 分支名
 
 ![image-20221020101841706](http://image.zzq8.cn/img/202210201018847.png)
 
-## 1.[Conflict](https://blog.csdn.net/daigualu/article/details/68936061)
+
+
+这还只是一部分！！有很多图标被版本控制的操作没显示出来 例如 stash
+
+# stash 命令
+
+我们有时会遇到这样的情况，正在dev分支开发新功能，做到一半时有人过来反馈一个bug，让马上解决，但是新功能做到了一半你又不想提交，这时就可以使用git stash命令先把当前进度保存起来，然后切换到另一个分支去修改bug，修改完提交后，再切回dev分支，使用git stash pop来恢复之前的进度继续开发新功能。
+
+
+
+
+
+# fetch 命令
+
+场景：自己web页面新建了个分支，explorer fetch下就可以拿到分支checkout过去
+
+**git fetch**：这将更新git remote 中所有的远程仓库所包含分支的最新commit-id, 将其记录到.git/FETCH_HEAD文件中
+
+git pull : 首先，基于本地的FETCH_HEAD记录，比对本地的FETCH_HEAD记录与远程仓库的版本号，然后git fetch 获得当前指向的远程分支的后续版本的数据，然后再利用git merge将其与本地的当前分支合并。所以可以认为git pull是git fetch和git merge两个步骤的结合。
+
+
+
+因此，git fetch是**从远程获取最新版本到本地，但不会自动merge**。
+而git pull则是**会获取所有远程索引并合并到本地分支中**来。效果相同时git pull将更为快捷。
+
+
+
+区分：pull    拉取/获取
+
+
+
+
+
+
+
+# 1.[Conflict](https://blog.csdn.net/daigualu/article/details/68936061)
 
 ### 1）三个板块
 
