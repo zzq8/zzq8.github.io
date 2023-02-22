@@ -4,7 +4,6 @@ import com.example.boot.bean.Cat;
 import com.example.boot.bean.User;
 import com.example.boot.bean.Vehicle;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,8 +23,8 @@ import org.springframework.context.annotation.ImportResource;
  * Lite(proxyBeanMethods = false)
  */
 @Import({Cat.class, User.class}) //导入组件默认组件名字是com.example.boot.bean.Cat 全类名
-@Configuration(proxyBeanMethods = false)//默认是true   //告诉SpringBoot这是一个配置类 == 配置文件
-@ImportResource("classpath:beans.xml")
+@Configuration(proxyBeanMethods = true)//默认是true   //告诉SpringBoot这是一个配置类 == 配置文件
+@ImportResource("classpath:beans.xml") //这里之所以要classpath，个人理解：resources不是相对路径
 /**
  * 配置绑定有两种方法：
  * 适用场景：假如要搞第三方jar包而且它没有注册到容器中，就可以这样！！
@@ -46,8 +45,7 @@ public class MyConfig {
      * 其次解析配置类，也就是@Configuration标注的类。最后开始解析配置类中定义的bean。
      *
      * 但是tomXXX的条件注解依赖的是user01，user01是被定义的配置类中的，
-     * 所以此时配置类的解析无法保证先后顺序，就会出现不生效的情况。
-     * @return
+     * 所以此时配置类的解析无法保证先后顺序，就会出现不生效的情况。     me：所以才会有condition这些？
      */
     //    User.class 两个，name = "user01"一个
     @ConditionalOnBean(name = "user01") //条件装配，如果容器中有user下面的才生效

@@ -5,4 +5,11 @@ mycar:
   brand: YD
   price: 88888
 
-#debug: true
+debug: true
+
+#actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

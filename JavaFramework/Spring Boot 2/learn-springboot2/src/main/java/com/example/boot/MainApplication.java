@@ -1,14 +1,9 @@
 package com.example.boot;
 
-import com.example.boot.bean.Cat;
-import com.example.boot.bean.User;
 import com.example.boot.config.MyConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.ImportResource;
-
-import java.util.Arrays;
 
 /**
  * @author zzq
@@ -25,8 +20,14 @@ public class MainApplication {
         //返回一个IOC容器
         ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
 
-        String[] names = run.getBeanDefinitionNames();
-        Arrays.stream(names).forEach(System.out::println);
+        MyConfig bean = run.getBean(MyConfig.class);
+        System.out.println(bean);
+        System.out.println(bean.ss() == bean.ss());
+
+
+
+//        String[] names = run.getBeanDefinitionNames();
+//        Arrays.stream(names).forEach(System.out::println);
         //使用getBean("tomXXX", Cat.class)这个构造方法返回的就是Cat类型，如使用getBean("tomXXX")返回Object
         //都是Singleton，那么Spring IoC容器中只会存在一个共享的bean实例
 //        System.out.println(run.getBean("tomXXX", Cat.class) == run.getBean("tomXXX", Cat.class));
@@ -37,12 +38,12 @@ public class MainApplication {
 //        MyConfig bean = run.getBean(MyConfig.class);
 //        System.out.println(bean);
 //        System.out.println(bean.tomcatPet() == bean.tomcatPet());
-        System.out.println("---------------------");
-        String[] beanNamesForType = run.getBeanNamesForType(Cat.class);
-        for (String s : beanNamesForType) {
-            System.out.println(s);
-        }
-
-        System.out.println(run.containsBean("user01"));
+//        System.out.println("---------------------");
+//        String[] beanNamesForType = run.getBeanNamesForType(Cat.class);
+//        for (String s : beanNamesForType) {
+//            System.out.println(s);
+//        }
+//
+//        System.out.println(run.containsBean("user01"));
     }
 }

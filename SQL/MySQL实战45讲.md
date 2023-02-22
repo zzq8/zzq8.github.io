@@ -36,7 +36,7 @@
 
 **事务（并不是所有的引擎都支持事务。比如 MySQL 原生的 MyISAM 引擎就不支持事务，这也是 MyISAM 被 InnoDB 取代的重要原因之一。）、**
 
-**索引、行锁...都是在这层实现！**
+==**索引、行锁...都是在这层实现！**==
 
 
 
@@ -587,6 +587,10 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 ## 2.索引的常见模型
 
 > 索引就是数据结构!!一种为了提升检索效率的数据结构。
+>
+> 哈希表这种结构适用于只有等值查询的场景
+> 有序数组索引只适用于静态存储引擎
+> 搜索树
 
 索引的出现是为了提高查询效率，但是实现索引的方式却有很多种，所以这里也就引入了索引模型的概念。可以用于提高读写效率的数据结构很多，这里我先给你介绍三种常见、也比较简单的数据结构，它们分别是**哈希表、有序数组和搜索树**。
 
@@ -600,7 +604,7 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 假设，你现在维护着一个身份证信息和姓名的表，需要根据身份证号查找对应的名字，这时对应的哈希索引的示意图如下所示：
 
-![](https://images.zzq8.cn/img/202212101020092.png)
+<img src="https://images.zzq8.cn/img/202212101020092.png" style="zoom:50%;" />
 
 <center>图 1 哈希表示意图</center>
 
@@ -616,7 +620,7 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 而**有序数组在等值查询（二分）和范围查询场景中的性能就都非常优秀**。还是上面这个根据身份证号查名字的例子，如果我们使用有序数组来实现的话，示意图如下所示：
 
-![](https://images.zzq8.cn/img/202212101020345.png)
+<img src="https://images.zzq8.cn/img/202212101020345.png" style="zoom:50%;" />
 
 <center>图 2 有序数组示意图</center>
 
@@ -630,7 +634,9 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 ### 2.3.==搜索树==
 
-二叉搜索树也是课本里的经典数据结构了。还是上面根据身份证号查名字的例子，如果我们用二叉搜索树来实现的话，示意图如下所示：![](https://images.zzq8.cn/img/202212101021739.png)
+二叉搜索树也是课本里的经典数据结构了。还是上面根据身份证号查名字的例子，如果我们用二叉搜索树来实现的话，示意图如下所示：
+
+<img src="https://images.zzq8.cn/img/202212101021739.png" style="zoom:50%;" />
 
 <center>图 3 二叉搜索树示意图</center>
 
@@ -661,6 +667,8 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 **补充：**数据库存储大多不适用二叉树，因为树高过高，会适用N叉树。  这里 N 叉树没很理解，B+树难道是 N 叉？
 
 ==答：B树和平衡二叉树不同，B树属于多叉树又名**平衡多路查找树**（查找路径不只两个）==
+
+**B+Tree这种多叉树，更加矮宽，更适合存储在磁盘中**
 
 为了让一个查询尽量少地读磁盘，就必须让查询过程访问尽量少的数据块。那么，我们就不应该使用二叉树，而是要使用“N 叉”树。这里，“N 叉”树中的“N”取决于数据块的大小。
 
@@ -696,7 +704,9 @@ mysql> create table T(
         index (k))engine=InnoDB;
 ```
 
-表中 R1~R5 的 (ID,k) 值分别为 (100,1)、(200,2)、(300,3)、(500,5) 和 (600,6)，两棵树的示例示意图如下。![](https://images.zzq8.cn/img/202212101040832.png)
+表中 R1~R5 的 (ID,k) 值分别为 (100,1)、(200,2)、(300,3)、(500,5) 和 (600,6)，两棵树的示例示意图如下。
+
+<img src="https://images.zzq8.cn/img/202212101040832.png" style="zoom:50%;" />
 
 <center>图 4 InnoDB 的索引组织结构</center>
 
@@ -790,7 +800,7 @@ B+ 树为了维护索引有序性，在插入新值的时候需要做必要的�
 
 
 
-### 补充：[int（4）、int（8）、int（11） 分别占用几个字节 ？](https://blog.csdn.net/qq_33378853/article/details/106723332)
+### ==补充：[int（4）、int（8）、int（11） 分别占用几个字节 ？](https://blog.csdn.net/qq_33378853/article/details/106723332)==
 
 他们都是 4 个字节。
 
@@ -828,7 +838,7 @@ mysql> create table T (
 insert into T values(100,1, 'aa'),(200,2,'bb'),(300,3,'cc'),(500,5,'ee'),(600,6,'ff'),(700,7,'gg');
 ```
 
-![](https://images.zzq8.cn/img/202212121140730.png)
+<img src="https://images.zzq8.cn/img/202212121140730.png" style="zoom:50%;" />
 
 <center>图 1 InnoDB 的索引组织结构</center>
 

@@ -1,14 +1,16 @@
 # 第一季:SpringBoot2核心技术
 
-> 三刷总算想起做点笔记，这点很重要   [语雀官方笔记](https://www.yuque.com/atguigu/springboot)
+> 三刷总算想起做点笔记，这点很重要   [语雀官方笔记](https://www.yuque.com/atguigu/springboot)   重点看源码讲解的视频、Web开发这一章
 >
 > [每导入一个 starter 改写哪些配置直接看官网！！！有些什么配置一目了然！](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
 >
-> 还有自动化配置文档，这个倒双shift也行
+> 还有自动化配置文档，这个倒idea双shift找properties也行
+>
+> 看到了P25，由于求职形势逼迫。搁浅... 做项目快速上手能干，往后再回头了    
 
 <img src="http://image.zzq8.cn/img/202302111035624.png" alt="image" style="zoom: 80%;" />
 
-上面图片的所有基础原生开发，都有另一套方案用响应式替代。
+上面图片的所有基础原生开发，都有另一套方案用响应式替代。支持两种模式开发 `@ConditionalOnWebApplication(type = Type.SERVLET)`
 Spring5 除现在用的原生Servlet外多了一套解决方案：响应式开发！！于是SpringBoot出2跟着整   第一季就是掌握整个Sevlet技术栈
 
 **第二季响应式还没出，坐等**，底层依赖reactor、Netty-reactor 异步非阻塞的方式占用少量资源处理大量并发
@@ -138,6 +140,230 @@ SpringBoot是简化Spring技术栈的快速开发脚手架
     <mysql.version>5.1.43</mysql.version>
 </properties>
 ```
+
+
+
+### 1.2.starter场景启动器
+
+> 重点第五点，这个starter又会带出 `spring-boot-autoconfigure` 具体看自动配置
+
+```xml
+1、见到很多 spring-boot-starter-* ： *就某种场景   All official starters follow a similar naming pattern; 
+2、只要引入starter，这个场景的所有常规需要的依赖我们都自动引入
+3、SpringBoot所有支持的场景
+https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter
+4、见到的  *-spring-boot-starter： 第三方为我们提供的简化开发的场景启动器。
+5、所有场景启动器最底层的依赖   每个 official starts 下的第一个 dependency 就是下面这个 ↓
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter</artifactId>
+  <version>2.3.4.RELEASE</version>
+  <scope>compile</scope>
+</dependency>
+```
+
+
+
+
+
+## ==2.自动配置（重要）==
+
+```java
+@SpringBootApplication
+等同于
+@SpringBootConfiguration              #配置类
+@EnableAutoConfiguration              #按需自动配置          **核心**
+    	1）@AutoConfigurationPackage
+    		  @Import(AutoConfigurationPackages.Registrar.class) //扫描的是配置类，区分@ComponentScan
+        2）@Import(AutoConfigurationImportSelector.class) //META-INF/spring.factories  
+@ComponentScan("com.atguigu.boot")    #扫描主启动类下所有组件
+```
+
+
+
+
+### 2.1.效果体现
+
+#### 2.1.1.What
+
+自动配置好了一切，包括SpringMVC常用组件（功能）   
+搜一下以前的帖子，Spring整合SpringMVC的帖子发现xml会配一大堆东西！！！这些组件springBoot启动的时候会把组件都装配到容器中，不用配。
+
+* 前端控制器DispatcherServlet：拦截所有的前端的请求；
+* 字符编码characterEncodingFilter：解决返回中文字符串乱码问题；
+* 视图解析器viewResolver：对返回的视图进行渲染呈现；
+* 文件上传解析器multipatResolver：文件上传；
+
+
+
+代码验证：打印所有启动时候装载的 Beans
+
+```java
+//返回一个IOC容器
+ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
+String[] names = run.getBeanDefinitionNames();
+Arrays.stream(names).forEach(System.out::println);
+```
+
+
+
+#### ==2.1.2.Why==
+
+> 这个jar里有几乎SpringBoot所需要全场景，有很多爆红的类其实导入相应的dependency就不会爆红了
+>
+> `spring-boot-starter-web` -> `spring-boot-starter` -> `spring-boot-autoconfigure`
+
+For example：以MySQL 配置数据源为例：DataSourceProperties 
+
+
+
+### 2.2.@AutoConfigurationPackage🌟
+
+ChatGPT：转念一想，这两个注解都如字面意思   这样就很好区分异同
+
+> springboot @ComponentScan和@AutoConfigurationPackage的区别
+>
+> 
+>
+> `@ComponentScan` 和 `@AutoConfigurationPackage` 都是 Spring Boot 中用来扫描组件和自动配置的注解，它们的区别在于：
+>
+> 1. `@ComponentScan`：这个注解是用来指定 Spring 扫描组件的位置，会扫描指定的包及其子包中的所有类，找到标记为 `@Component`、`@Service`、`@Repository` 等注解的类，并将其注册为 Spring 的 Bean。
+> 2. `@AutoConfigurationPackage`：这个注解是用来指定自动配置所在的包，它会扫描指定的包及其子包中的所有类，找到标记为 `@Configuration` 的类，并将其注册为 Spring 的 Bean。
+>
+> 简而言之，`@ComponentScan` 和 `@AutoConfigurationPackage` 都是用来扫描组件的注解，区别在于 `@ComponentScan` 扫描的是标记了特定注解的组件类，而 `@AutoConfigurationPackage` 扫描的是配置类。在 Spring Boot 应用中，通常会在启动类上使用 `@SpringBootApplication` 注解，该注解中已经包含了 `@ComponentScan` 和 `@AutoConfigurationPackage`，因此一般不需要单独使用这两个注解。
+
+
+
+### 2.3.@Import(AutoConfigurationImportSelector.class)🌟
+
+1、利用getAutoConfigurationEntry(annotationMetadata);给容器中批量导入一些组件
+2、调用List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes)获取到所有需要导入到容器中的配置类
+3、利用工厂加载 Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader)；得到所有的组件
+4、从META-INF/spring.factories位置来加载一个文件。
+	默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件
+    spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有 `META-INF/spring.factories`
+    
+
+作用：文件里面写死了spring-boot一启动就要给容器中加载的所有配置类，并不是所有都生效@Condition 例如AOP、Batch就需导入相关包才生效
+
+学习：可以找找各个第三方jar包里面的 xxxxxAutoConfiguration 分析是否生效装配进来了
+
+
+
+总结：
+
+1. 用户配的优先 @ConditionalOnMissingBean
+
+2. 如果用户配的bean名字不符合规范，就给你纠正过来，如下给容器中加入了文件上传解析器：
+
+```java
+    @Bean
+	@ConditionalOnBean(MultipartResolver.class)  //容器中有这个类型组件
+	@ConditionalOnMissingBean(name = DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME) //容器中没有这个名字 multipartResolver 的组件
+	public MultipartResolver multipartResolver(MultipartResolver resolver) {
+        //给@Bean标注的方法传入了对象参数，这个参数的值就会从容器中找。
+        //SpringMVC multipartResolver。防止有些用户配置的文件上传解析器不符合规范
+		// Detect if the user has created a MultipartResolver but named it incorrectly
+		return resolver;
+	}
+```
+3. 一般这些自动配置类都绑了xxxxProperties里面拿。xxxProperties和配置文件进行了绑定
+
+
+
+判断场景自动配置那些生效那些没生效：
+
+- - 自己分析，引入场景对应的自动配置一般都生效了
+
+  - 配置文件中debug=true开启自动配置报告。Negative（不生效）\Positive（生效）【方便分析源码】
+
+    
+
+  - - 自定义器  **XXXXXCustomizer**；【不熟】
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> 想不起配置文件怎么配 SQL 于是有了下文
+
+### 以MySQL 配置数据源为例：DataSourceProperties 
+
+```
+DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.properties
+```
+
+总结：
+
+- SpringBoot先加载所有的自动配置类  xxxxxAutoConfiguration
+- 每个自动配置类按照条件进行生效，默认都会绑定配置文件指定的值。xxxxProperties里面拿。xxxProperties和配置文件进行了绑定
+- 生效的配置类就会给容器中装配很多组件
+- 只要容器中有这些组件，相当于这些功能就有了
+- 定制化配置
+
+- - 用户直接自己@Bean替换底层的组件
+  - 用户去看这个组件是获取的配置文件什么值就去修改。
+
+**xxxxxAutoConfiguration ---> 组件  --->** **xxxxProperties里面拿值  ----> application.properties**
+
+![image-20220901180324251](http://image.zzq8.cn/img/202209011803186.png)
+
+
+
+![image-20220901213237083](http://image.zzq8.cn/img/202209012132180.png)
+
+
+
+
+
+
+
+
+
+![image-20230217115759420](http://image.zzq8.cn/img/202302171158502.png)
+
+
+
+![image-20220901220507136](http://image.zzq8.cn/img/202209012205178.png)
+
+
+
+### SpringBoot 自动装配
+
+> 有时间一定要自己回顾一遍，自己跟着 Debug。还有**spring-factories的详细原理**
+>
+> 看一下这个 spring boot autoconfigure 是不是所有 jar 都会包括
+
+1、利用getAutoConfigurationEntry(annotationMetadata);给容器中批量导入一些组件
+2、调用List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes)获取到所有需要导入到容器中的配置类
+3、利用工厂加载 Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader)；得到所有的组件
+4、从META-INF/spring.factories位置来加载一个文件。
+	==默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件==
+    spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有META-INF/spring.factories
+
+![img](http://image.zzq8.cn/img/202209012113729.png)
+
+
+
+加载所有jar包META-INF/spring.factories文件EnableAutoConfiguration属性指定的类，指的是：
+
+![](http://image.zzq8.cn/img/202209012117863.png)
+
+
+
+
 
 
 
@@ -276,20 +502,27 @@ SpringBoot是简化Spring技术栈的快速开发脚手架
 
   * 适用场景：pom 引入的 Common 有数据源，但是本 Demo 不需要。启动报错要求配
   * 后话：个人觉得pom exclude 应该也行
+
   
-  
-  
-* #### @EnableConfigurationProperties
+
+* #### ==@EnableConfigurationProperties==
 
   * 说白了 @<font color=red>Enable</font>ConfigurationProperties 相当于把使用 @ConfigurationProperties 的类进行了一次注入
-    因为这个类没有@Conponent，用这种方法放到 IOC 容器中才能用
+    **因为这个类没有@Conponent，用这种方法放到 IOC 容器中才能用**    只有容器中的组件才能有SpringBoot提供的强大的功能
   * 场景：如果@ConfigurationProperties是在第三方包中，那么@component是不能注入到容器的。只有@EnableConfigurationProperties才可以注入到容器。   RedisCacheConfiguration配置kv的序列化的时候需要把其它配置也给拿上就需要CacheProperties放入容器使用
 
+* #### @ConfigurationProperties
 
+  * 解决：以前得IO流拿properties里的k v
+
+
+​	
 
 * #### @Import & @ComponentScan
 
   * 我使用的场景：配置类放在 common 模块，其它模块都来用这个配置类
+  * 导入组件默认组件名字是 com.example.boot.bean.Cat 全类名
+  * 也可以导入dependence jar里的class
 
 
 
@@ -330,7 +563,7 @@ SpringBoot是简化Spring技术栈的快速开发脚手架
 
 * #### @Builder
 
-  * 为你的类生成相对略微复杂的构建器API，放随意参数的构造器 链式调用就行
+  * Lombok annotation为你的类生成相对略微复杂的构建器API，放随意参数的构造器 链式调用就行
 
 
 
@@ -352,6 +585,54 @@ SpringBoot是简化Spring技术栈的快速开发脚手架
     @ResponseBody
     @GetMapping(value = "/aliPayOrder",produces = "text/html")
     ```
+
+
+
+* #### @ComponentScan("com.example") -> @SpringBootApplication(scanBasePackages = "com.example")
+
+
+
+* #### @Configuration(proxyBeanMethods = false)//默认是true   //告诉SpringBoot这是一个配置类 == 配置文件
+
+  底层会有非常多这样的写法，为的就是加速容器启动过程，减少判断（前提：类组件之间无依赖关系）
+
+  * ```java
+    MyConfig bean = run.getBean(MyConfig.class);
+    System.out.println(bean); //`com.example.boot.config.MyConfig$$EnhancerBySpringCGLIB$$1@38fc34fd`    默认是Full模式，每一次都从容器中拿       相对的还有Lite即false模式，为什么这么叫因为这样不用去容器中对照来一个返回一个！
+    最佳实战：别人不依赖这些组件（Person里面拿Pet）就给调成false
+    System.out.println(bean.ss() == bean.ss()); //true
+    ```
+
+  * 最佳实战：
+
+    - 配置 类组件之间无依赖关系用Lite模式加速容器启动过程，减少判断
+  
+    - 配置类组件之间有依赖关系，方法会被调用得到之前单实例组件，用Full模式
+  
+  
+  * Mark！！！==Bean的加载顺序==
+    在spring ioc的过程中，
+    * 1）优先解析@Component，@Service，@Controller...注解的类。
+    * 2）其次解析配置类，也就是@Configuration标注的类
+    * 3）最后开始解析配置类中定义的bean。
+
+但是tomXXX的条件注解依赖的是user01，user01是被定义的配置类中的，
+所以此时配置类的解析无法保证先后顺序，就会出现不生效的情况。     me：所以才会有condition这些？
+
+
+
+
+
+* #### @ImportResource("classpath:beans.xml")
+
+  * 这里之所以要classpath，个人理解：resources不是相对路径
+  * 总有些老jar包或公司老配置需要的
+
+
+
+ 
+
+
 
 
 
@@ -515,66 +796,6 @@ public class GulimallWebConfig implements WebMvcConfigurer
 
 
 
-
-
-
-
-
-## 九、待补充 SpringBoot 自动装配：
-
-> 想不起配置文件怎么配 SQL 于是有了下文
-
-### 以MySQL 配置数据源为例：DataSourceProperties 
-
-```
-DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.properties
-```
-
-总结：
-
-- SpringBoot先加载所有的自动配置类  xxxxxAutoConfiguration
-- 每个自动配置类按照条件进行生效，默认都会绑定配置文件指定的值。xxxxProperties里面拿。xxxProperties和配置文件进行了绑定
-- 生效的配置类就会给容器中装配很多组件
-- 只要容器中有这些组件，相当于这些功能就有了
-- 定制化配置
-
-- - 用户直接自己@Bean替换底层的组件
-  - 用户去看这个组件是获取的配置文件什么值就去修改。
-
-**xxxxxAutoConfiguration ---> 组件  --->** **xxxxProperties里面拿值  ----> application.properties**
-
-![image-20220901180324251](http://image.zzq8.cn/img/202209011803186.png)
-
-
-
-![image-20220901213237083](http://image.zzq8.cn/img/202209012132180.png)
-
-
-
-![image-20220901220507136](http://image.zzq8.cn/img/202209012205178.png)
-
-
-
-### SpringBoot 自动装配
-
-> 有时间一定要自己回顾一遍，自己跟着 Debug。还有**spring-factories的详细原理**
->
-> 看一下这个 spring boot autoconfigure 是不是所有 jar 都会包括
-
-1、利用getAutoConfigurationEntry(annotationMetadata);给容器中批量导入一些组件
-2、调用List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes)获取到所有需要导入到容器中的配置类
-3、利用工厂加载 Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader)；得到所有的组件
-4、从META-INF/spring.factories位置来加载一个文件。
-	==默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件==
-    spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有META-INF/spring.factories
-
-![img](http://image.zzq8.cn/img/202209012113729.png)
-
-
-
-加载所有jar包META-INF/spring.factories文件EnableAutoConfiguration属性指定的类，指的是：
-
-![](http://image.zzq8.cn/img/202209012117863.png)
 
 
 
