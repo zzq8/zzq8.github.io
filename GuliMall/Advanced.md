@@ -1674,9 +1674,11 @@ ps：都会导致 订单回滚但是下面Feign调用的不会回滚
 
 [MySQL 事务隔离级别回顾](..\sql\mysql实战45讲#隔离性与隔离级别)
 
-😡TODO：事务的7大传播行为：**传播行为那里，防止本地事务失效**
+😡TODO：事务的7大传播行为：**传播行为那里，防止本地事务失效**   默认是 required
 
 ![](https://img-blog.csdnimg.cn/3a71d6de6f534303944a52c73a33335e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZWG5L-K5biF,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+<img src="http://image.zzq8.cn/img/202302231803673.png" alt="image-20230223180315464" style="zoom: 67%;" />
 
 分析 Maven 依赖发现：可能知道会有本地事务失效的问题，搞个AOP给你去代理解决
 

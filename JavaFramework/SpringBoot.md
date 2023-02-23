@@ -552,12 +552,16 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 * #### @PathParam  发现post请求的话只能用这个来拿参数 注意参数过长拿不到需要用request类拿
 
+  
+  * My：应该是Get URL有大小限制？  也不对request不是拿到了吗
+  
   * ```java
     @PathParam("imegse") String imageBase64 //@PostMapping("/photo") 拿不到参数
     String channel = request.getParameter("imegse"); //能拿到
     ```
-
+  
     
+  
 
 ***
 
@@ -649,7 +653,7 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 
 
-* #### ==Spring Boot 2.+默认连接池HikariCP==
+* #### ==Spring Boot 2.+默认连接池HikariCP==  ”黑卡丽“，光的意思很快 日本人发明。区分Druid连接池为监控而生扩展点多..
 
 * #### ==Spring MVC 的默认json解析器便是 Jackson==
 

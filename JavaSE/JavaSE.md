@@ -288,7 +288,7 @@ final byte b4=4,b5=6;
 b6=b4+b5; //在编译时就已经变为b6=10了，编译通过
 ```
 
-D选项，final修饰的变量，变量的引用（地址）是不可变得，但是引用的内容是可变的
+==D选项，final修饰的变量，变量的引用（地址）是不可变得，但是引用的内容是可变的==  梅开二度！
 
 ```java
 链接：https://www.nowcoder.com/questionTerminal/47ffaf4670384e34a925e294fcd686c0
@@ -638,7 +638,7 @@ String可以和boolean拼接
  局部变量：加载到栈空间
 ```
 
-**要能手写单例模式（饿汉（线程安全）、懒汉（线程不安全））**
+[**要能手写单例模式（饿汉（线程安全）、懒汉（线程不安全））**](https://www.nowcoder.com/questionTerminal/c329b173a9b34cb1af6165395b8e7635)
 
 **抽象、接口（自己的理解）：**
 ```java

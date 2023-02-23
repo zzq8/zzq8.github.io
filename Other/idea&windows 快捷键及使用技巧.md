@@ -54,6 +54,14 @@ ctrl+alt+left/right 跳上一个浏览过的文件
 
 
 
+ctrl+shift+a 输入maven就可用maven   idea右侧工具栏没有显示maven的时候，或者要加maven项目的时候用！！
+
+![image-20230223150958814](http://image.zzq8.cn/img/202302231509949.png)
+
+
+
+
+
 键盘End键可以到浏览器页面最底部，有道云笔记有效
 
 问题就在于List有多个实现类，如 LinkedList或者Vector等等，现在你用的是ArrayList，也许哪一天你需要换成其它的实现类呢？，这时你只要改变这一行就行了：List list = new LinkedList(); 其它使用了list地方的代码根本不需要改动。假设你开始用 ArrayList alist = new ArrayList(), 这下你有的改了，特别是如果你使用了 ArrayList特有的方法和属性。 ,如果没有特别需求的话,最好使用List list = new LinkedList(); ,便于程序代码的重构. 这就是面向接口编程的好处
