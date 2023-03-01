@@ -197,6 +197,30 @@ taskkill /T /F /PID 9000
 
 
 
+
+
+## 2）MySQL
+
+删除 my.ini 指定的 data文件的资料（也可备份里面的库，我这里没成功ibdata1一替换就有问题）
+
+
+
+1. mysqld --remove mysql5.7
+
+* mysqld --defaults-file="D:\programming environment\mysql-5.7.39-winx64\my.ini" --initialize --console（作用：此时data目录里面就有数据了，数据库的表什么都在这个目录）
+  mysqld --defaults-file="D:\programming environment\mysql-8.0.22-winx64\my.ini" --initialize --console
+
+* mysqld --install mysql5.7 --defaults-file="D:\programming environment\mysql-5.7.39-winx64\my.ini"
+  mysqld --install mysql8.0 --defaults-file="D:\programming environment\mysql-8.0.22-winx64\my.ini"
+
+
+
+alter user 'root'@'localhost' identified by '123456';
+
+
+
+
+
 # 三、Typora
 
 * #### 代码块： ctrl + shift + k
