@@ -739,7 +739,17 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
         }
     ```
 
+* #### 单元测试类中，初始化方法
+
+  * ```java
+    //单元测试类中，初始化方法    alt+insert SetUpMethod
+    //视频中是测 Jedis 用这个方法连 Redis
+    @BeforeEach
+    void setUp()
+    ```
+
     
+
 
 #### [补充：@SpringBootTest](https://blog.csdn.net/wwwwwww31311/article/details/115461920)
 

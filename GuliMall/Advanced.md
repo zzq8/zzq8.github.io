@@ -312,7 +312,7 @@ jvisualvm 能干什么 监控内存泄露，跟踪垃圾回收，执行时内存
 
 com.alibaba.fastjson.JSON     ->   `TypeReference`
 
-jackson 获取json字符串指定key的value值
+jackson都是操作ObjectMapper这个对象进行序列化、反序列化
 
 ```java
 String json = JSON.toJSONString(map);   //对象 -> Json
@@ -322,15 +322,15 @@ String json = JSON.toJSONString(map);   //对象 -> Json
  */
 JSON.parseObject(catalogJson, new TypeReference<Map<String, List<Catelog2Vo>>>(){})
     
------------------------------------------
-	// 创建 ObjectMapper 对象
+-----------------jackson 获取json字符串指定key的value值------------------------
+	// 创建 ObjectMapper 对象   
     ObjectMapper mapper = new ObjectMapper();
 	// 将 JSON 字符串转换为 JsonNode 对象
 	JsonNode jsonNode = mapper.readTree(user);
 	// 获取指定 key 的 value
     String id = jsonNode.get("id").asText();
     socialUser.setSocial_uid(id);
-
+-----------------------------------------
 
 <!--   反序列化报错（autoType）因为fastjson的漏洞解决: 我这里是降到有漏洞的版本     /  按官网加配置-->
         <dependency>
@@ -445,7 +445,7 @@ JMeter
 
 > 注：我这里 3）4) 都没有手动敲，印象没有那么深刻。以后再回顾，先往下赶进度了
 
-> 结合前面的笔记 +  [以及自己有篇笔记](../分布式锁/分布式锁全家桶#分布式锁)
+> 结合前面的笔记 +  [以及自己有篇笔记](../DistributedLock/DistributedLock.md#分布式锁)
 >
 > 分布式项目时，但本地锁只能锁住当前服务，需要分布式锁
 >
@@ -479,9 +479,30 @@ JMeter
 
 ## [4）分布式锁-Redisson](https://github.com/redisson/redisson/wiki/8.-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%92%8C%E5%90%8C%E6%AD%A5%E5%99%A8)
 
+它是底层基于Redis实现了一系列的工具（分布式的可伸缩的java工具）
+
 > JRedis、Lettuce一样都是 Redis 的JAVA客户端 / **redisson是作为分布式锁的客户端  只不过更强大提供分布式解决方案，我觉得可理解为再把JUC包了一层适用于分布式了，而JUC是单体。同样有加锁、信号量等后面项目用到的点！**
 >
 > 在分布式环境下这些本地锁JUC类都没法用 想用的话得用 [Redisson](https://github.com/mrniko/redisson) (Java implementation) 它对这些类封装成了分布式可用的！
+
+> 突然又看到官网：
+> **Redisson 是具有内存数据网格功能的 Redis Java 客户端**。它提供了更方便和最简单的方式来使用 Redis。Redisson 对象提供关注点分离，使您可以专注于数据建模和应用程序逻辑。
+>
+> OpenAI:
+>
+> Redisson是基于Redis的分布式Java对象和服务框架。它提供了一系列的分布式Java对象，例如分布式Map、分布式Set、分布式List等等，这些对象都是通过Redis进行存储和同步的。
+>
+> Redisson可以用来解决分布式系统中的一些常见问题，例如分布式锁、分布式集群选举、分布式对象存储和分布式限流等。Redisson支持多种部署模式，包括单机模式、哨兵模式、集群模式和云托管模式等，可以适应不同的部署需求。
+>
+> 除了基本的分布式对象，Redisson还提供了一些高级特性，例如分布式计数器、分布式BitSet、分布式消息队列等等，可以满足更加复杂的分布式应用场景。
+>
+> 总的来说，Redisson是一个功能强大的分布式Java框架，可以帮助开发者更加容易地构建分布式应用。
+
+> Q: 老师，问您个很简单的问题我不太懂，就是咱们这个不是一个单体项目嘛，怎么还用到了分布式锁呢？我以为只有分布式项目才会用到分布式锁呢哈哈哈
+>
+> A: 单体项目也可以水平扩展，部署多个机器，构成负载均衡集群。此时如果需要加锁，可能就需要分布式锁了
+
+![image-20230304152602369](http://image.zzq8.cn/img/202303041526511.png)
 
 pom start好处什么都配好了，只需要写两三个配置就行。而这里我们引入单纯的 Redisson 以学习为目的都自己搞一下
 

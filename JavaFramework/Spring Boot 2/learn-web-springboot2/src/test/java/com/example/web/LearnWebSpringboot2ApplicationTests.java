@@ -1,5 +1,6 @@
 package com.example.web;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 //@SpringBootTest
@@ -10,6 +11,13 @@ class LearnWebSpringboot2ApplicationTests {
         System.out.println("value="+switchit(4));//3
     }
 
+
+    //单元测试类中，初始化方法    alt+insert SetUpMethod
+    //视频中是测 Jedis 用这个方法连 Redis
+    @BeforeEach
+    void setUp() {
+
+    }
 
     public static int switchit(int x) {
         int j=1;

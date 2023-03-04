@@ -1,5 +1,11 @@
 # JUC & JVM +GC
 
+Links that usually browsed: 
+
+[2）new ThreadPoolExecutor(线程池七大参数)](#2）new ThreadPoolExecutor(线程池七大参数))
+
+
+
 > 2022/11/9 学于    [教学视频](https://www.bilibili.com/video/BV18b411M7xz/?spm_id_from=333.999.top_right_bar_window_default_collection.content.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)         [脑图](./2019互联网面试题第2季.mmap)        [Gitee 别人笔记（全）](https://gitee.com/moxi159753/LearningNotes/blob/master/%E6%A0%A1%E6%8B%9B%E9%9D%A2%E8%AF%95/JUC)      [别人的笔记 ](https://blog.csdn.net/u011863024/article/details/114684428)    21:32 预计 每天 2h  11d 完成！于22nd
 >
 > 会用只是 API 调用工程师、CURD 程序员！缩招不是不招聘，而是招聘更多更加优质的开发工程师。1 拿 1.8  干  3
@@ -1366,7 +1372,7 @@ new ThreadPoolExecutor(5,
 >
 > 说明：线程池的好处是减少在创建和销毁线程上所消耗的时间以及系统资源的开销，解决资源不足的问题。 如果不使用线程池，有可能造成系统创建大量同类线程而导致消耗完内存或者“过度切换”的问题。
 >
-> 4.【强制】**线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险**。
+> 4.【强制】**线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，`规避资源耗尽的风险`**。
 >
 > 说明：Executors 返回的线程池对象的弊端如下：
 >

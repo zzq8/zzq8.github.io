@@ -1,8 +1,26 @@
+# GitHub搜索技巧
+
+> 不要小看这个，真的可以挖掘Github这个宝藏库
+
+- in关键字限制搜索范围 ',' 是或的意思  `xxx in:name,readme,description`
+
+- 查找star大于1000，fork数在500到1000 `xxx stars:>1000 forks:500..1000`
+- awesome系列，一般用来收集学习、工具、书籍类相关的项目 `awesome xxx`
+  - 【陌生】搜出来第一条会有副红色眼镜    言下之意，你要学什么东西就用这个命令试试。   至少我搜了下SpringBoot还是蛮不错的
+- 高亮显示某行代码 一行：代码地址后面紧跟 `#L10` 多行：`#Lx - #Ln`
+- 项目内搜索 使用英文字母 `t` ,开启项目内搜索
+
+
+
+
+
 # Git
 
 > [Git 学习游戏网站](https://oschina.gitee.io/learn-git-branching/)
 
 # 一、常规流程
+
+> 命令行还是可以会一下，后面其实都可以用 TortoiseGit 图形化操作了...
 
 ## 前置设置
 
