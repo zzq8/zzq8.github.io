@@ -21,6 +21,8 @@
 > 使用Spring Data Redis的话默认实现的 lettuce，如想用 Jedis 需要单独引一下
 >
 > 需要注意的是，如果你需要对连接池进行更高级的配置，或者使用其他的连接池实现，可能需要手动引入 commons-pool2 依赖，并进行相应的配置。但通常情况下，使用 spring-boot-starter-data-redis 默认提供的配置已经足够满足大部分需求了。
+> 实测：还是需要引入commons-pool2，因为data-redis里面这个依赖是optional true
+> 总之，使用 `<optional>` 标签可以控制依赖的传递性，避免不必要的依赖冲突和版本冲突，但是需要注意，它的传递性也会被取消，需要手动处理相关的依赖。   **之所以有这个问题，是因为springboot版本低了的原因，导致有这个optional。后面高版本没有这个optional了！**
 
 ![image-20230304152602369](http://image.zzq8.cn/img/202303041526511.png)
 
@@ -31,9 +33,9 @@
 
 优势：自动处理序列化问题，不用自己代码层面转来转去了
 
-弊端：如下，占用额外内控空间去记录该反序列化的那个类的全类路径名
+弊端：如下，占用额外内控空间去记录该反序列化的那个类的全路径类名
 
-![image-20230304165847419](http://image.zzq8.cn/img/202303041658585.png)
+<img src="http://image.zzq8.cn/img/202303041658585.png" alt="image-20230304165847419" style="zoom:50%;" />
 
 ### 2.2.反序列化问题-StringRedisTemplate
 
@@ -53,5 +55,73 @@
 
 # 二、实战篇
 
+![image-20230306095441886](http://image.zzq8.cn/img/202303060954783.png)
+
 # 1.短信登录
 
+## 1.1.这里使用Hash保存用户信息
+
+> JSON串的格式，引号冒号还需保存，如果想加一个还得把整个串干掉
+>
+> 所以从优化的角度，推荐使用hash
+
+<img src="http://image.zzq8.cn/img/202303071617889.png" alt="image-20230307161347386" style="zoom: 67%;" />
+
+> 注意 Hash 结构跟 String 结构区分，这里有Redis的一个 key 而 value（K、V）才是真正的 Hash 结构
+>
+> ==StringRedisTemplate 对象可以创建 Hash！！！== stringRedisTemplate.opsForHash().putAll(tokenKey, userMap);【HASH，KV】
+>
+> Note：一般存 key 会加上业务前缀做区分
+
+![image-20230307161729539](http://image.zzq8.cn/img/202303071617089.png)
+
+![image-20230307162022703](http://image.zzq8.cn/img/202303071620766.png)
+
+为什么InterceptorRegistry不需要调用addPathPatterns("/**")也可以拦截所有请求
+
+
+
+
+
+InterceptorRegistry 不需要调用 addPathPatterns("/**") 也可以拦截所有请求，是因为在 InterceptorRegistry 中添加的拦截器默认会拦截所有的请求。
+
+当你向 InterceptorRegistry 中添加一个拦截器时，该拦截器会被注册到系统的拦截器链中，并被应用到所有请求上。在拦截器的 preHandle() 方法中，你可以对请求进行处理并决定是否允许请求继续执行或是拦截请求。
+
+因此，当你向 InterceptorRegistry 中添加一个拦截器时，该拦截器会自动拦截所有请求，而不需要显式地指定拦截路径。
+
+
+
+![img](data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e)![x d](https://chat.openai.com/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FAGNmyxaesWqCN7TAgnaq3djk6QgrKcLKfInbBp9Brcrs%3Ds96-c&w=64&q=75)
+
+但是我在源码看到的是 private final List<String> includePatterns = new ArrayList(); 不能理解为什么会默认拦截所有请求
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hutools Utils
+
+1. 复制Bean的属性，好像同Spring有个工具类一样 `BeanUtil.copyProperties`
+
+2. 将User对象转为HashMap存储到Redis `BeanUtil.beanToMap`
+
+   * ```java
+     //由于UserDTO类有属性是Long的，而StringRedisTemplate<String, String>，所以这里用hutools构造函数定制化全给String
+     //也可笨方法new map自己转成String
+     Map<String, Object> userMap = BeanUtil.beanToMap(userDTO, new HashMap<>(),
+                     CopyOptions.create()
+                             .setIgnoreNullValue(true)
+                             .setFieldValueEditor((fieldName, fieldValue) -> fieldValue.toString()));
+     ```
+
+   * **弹幕: 就这个错误，我在谷粒商城的springsession的序列化器转换异常搞了半天，也是Long类型的！！！！！！**
+
+3. 将Redis拿到的Hash填充到Bean `BeanUtil.fitlBeanWithMap`

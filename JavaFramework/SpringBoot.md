@@ -625,14 +625,32 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 
 
-
-
 * #### @ImportResource("classpath:beans.xml")
 
   * 这里之所以要classpath，个人理解：resources不是相对路径
   * 总有些老jar包或公司老配置需要的
 
 
+
+* #### @RestControllerAdvice
+
+  * @RestControllerAdvice 是 Spring MVC 提供的一个注解，**用于统一处理所有 Controller 层抛出的异常**。当 Controller 层抛出异常时，可以使用 @RestControllerAdvice 注解的类来捕获并处理异常，从而对异常进行统一处理。
+
+  * @RestControllerAdvice 注解的类通常会包含多个 @ExceptionHandler 注解的方法，每个 @ExceptionHandler 注解的方法用于处理不同类型的异常。例如，以下代码演示了如何使用 @RestControllerAdvice 注解处理 RuntimeException 类型的异常
+
+    ```java
+    @RestControllerAdvice
+    public class GlobalExceptionHandler {
+        @ExceptionHandler(RuntimeException.class)
+        public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Internal Server Error");
+        }
+    }
+    ```
+
+    **总结：**通过 @RestControllerAdvice 注解，我们可以将所有 Controller 层抛出的异常集中处理，避免代码重复，提高代码复用性和可维护性。同时，由于 @RestControllerAdvice 注解是基于 AOP 实现的，因此可以很方便地添加全局异常处理逻辑，例如日志记录、邮件通知等。
 
  
 
@@ -714,7 +732,59 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
    一般新建 Spring Boot 工程，默认是 <relativePath /> <!-- lookup parent from repository --> ，意思就是不会从上层目录寻找。会直接先从 local repository，如果没有则会从 remote repo 寻找，如果也没有，则报错。
    ```
    
-   
+
+
+
+* #### <optional>true</optional>
+
+  * 场景：我发现引入了data-redis，也要引入commons-pool2   不然启动报错
+
+    ```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-pool2</artifactId>
+    </dependency>
+    ```
+
+    原因：因为 `spring-boot-starter-data-redis` 下面的 `lettuce-core`
+
+    ```xml
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-pool2</artifactId>
+        <version>2.8.1</version>
+        <scope>compile</scope>
+        <optional>true</optional>
+    </dependency>
+    ```
+
+    chatgpt: 在 Maven 的 pom.xml 文件中，可以使用 `<optional>` 标签来指定一个依赖是否是可选的
+
+    这样的设置意味着，当这个依赖被其他模块引用时，它不会自动传递给这些模块。也就是说，如果一个模块引用了这个依赖，但是没有显式声明它，那么这个依赖不会被自动包含在该模块的依赖列表中。
+
+    使用 `<optional>` 标签可以有效地控制依赖的传递性，避免不必要的依赖冲突和版本冲突。例如，如果一个项目需要使用某个第三方库的某个功能，但是这个库又依赖于另外一个库，而这个库和项目中的其他依赖产生了冲突，就可以将这个库设置为可选依赖，只在需要时显式引入，避免不必要的冲突。
+
+    另外，值得注意的是，当一个依赖被设置为可选依赖时，它的传递性也会被取消。这意味着，如果这个依赖还依赖了其他库，这些库也不会自动传递给项目中的其他模块。如果需要使用这些库，也需要显式引入它们。
+
+    总之，使用 `<optional>` 标签可以控制依赖的传递性，避免不必要的依赖冲突和版本冲突，但是需要注意，它的传递性也会被取消，需要手动处理相关的依赖。
+
+    > Q: 2.3.12.RELEASE版本的springboot引入spring-boot-starter-data-redis为什么还需要显式的引入commons-pool2才能正常启动项目
+    >
+    > 在 Spring Boot 2.3.12.RELEASE 版本中，`spring-boot-starter-data-redis` 依赖中的 `lettuce-core` 版本为 `5.3.2.RELEASE`，它自带了 `commons-pool2` 依赖。但是在这个版本的 Spring Boot 中，`commons-pool2` 的依赖是以 `<optional>true</optional>` 的方式声明的，这意味着在默认情况下不会被引入。
+    >
+    > 如果你不显式地引入 `commons-pool2` 的依赖，而是只依赖于 `spring-boot-starter-data-redis`，那么在启动应用程序时，就会出现类似于“java.lang.NoClassDefFoundError: org/apache/commons/pool2/impl/GenericObjectPoolConfig”的错误，因为缺少了 `commons-pool2` 的依赖。
+    >
+    > 为了解决这个问题，你需要在你的 `pom.xml` 文件中显式地引入 `commons-pool2` 的依赖，这样它才会被正确地加载。
+
+    <img src="C:\Users\hasee\AppData\Roaming\Typora\typora-user-images\image-20230306141715713.png" alt="image-20230306141715713" style="zoom: 67%;" />
+
+​	
+
+
 
 ## 3）Test 测试类：
 
@@ -803,7 +873,15 @@ public class GulimallWebConfig implements WebMvcConfigurer
 
 
 
-
+> 为什么InterceptorRegistry不需要调用addPathPatterns("/**")也可以拦截所有请求 我在源码看到的是 private final List<String> includePatterns = new ArrayList(); 不能理解为什么会默认拦截所有请求
+>
+> 
+>
+> InterceptorRegistry 是 Spring 框架中用于管理拦截器的注册表，其本身并不具备拦截请求的能力。实际上，InterceptorRegistry 中的拦截器在拦截请求时，是由 HandlerMapping 所管理的 HandlerExecutionChain 中的拦截器链来调用的。而 HandlerMapping 中的拦截器链的触发是由 RequestMappingHandlerMapping 实现的。
+>
+> 在 Spring MVC 中，所有请求都会被 RequestMappingHandlerMapping 处理，而 RequestMappingHandlerMapping 会在初始化时自动注册一个拦截器 HandlerInterceptorAdapter，用于拦截所有请求。所以，即使我们没有在拦截器中调用 addPathPatterns("/**") 方法来设置拦截路径，也能默认拦截所有请求。
+>
+> 在实际开发中，如果我们需要自定义拦截器，并且只拦截部分请求，可以使用 addPathPatterns 方法来指定拦截路径。如果需要拦截所有请求，则无需设置拦截路径，InterceptorRegistry 会默认将拦截器添加到拦截器链中。
 
 
 
@@ -857,7 +935,7 @@ spring:
 
 
 
-
+***
 
 > 未解决：父 Module有
 >
@@ -900,3 +978,4 @@ spring:
 <!--                    </annotationProcessorPaths>-->
 ```
 
+***

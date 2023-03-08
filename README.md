@@ -31,6 +31,7 @@
 * [GuliMall Advanced](GuliMall/Advanced.md)
 * [MyBatis](JavaFramework/MyBatis.md)
 * [Redis](NoSQL/Redis.md)
+* [Redis Advanced](NoSQL/RedisAdvanced.md)
 * [RabbitMQ](MQ\RabbitMQ.md)
 * [ElasticSearch](GuliMall/ElasticSearch.md)
 
