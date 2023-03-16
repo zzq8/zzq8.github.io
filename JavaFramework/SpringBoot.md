@@ -13,7 +13,9 @@
 上面图片的所有基础原生开发，都有另一套方案用响应式替代。支持两种模式开发 `@ConditionalOnWebApplication(type = Type.SERVLET)`
 Spring5 除现在用的原生Servlet外多了一套解决方案：响应式开发！！于是SpringBoot出2跟着整   第一季就是掌握整个Sevlet技术栈
 
-**第二季响应式还没出，坐等**，底层依赖reactor、Netty-reactor 异步非阻塞的方式占用少量资源处理大量并发
+**第二季响应式还没出，坐等**，底层依赖reactor、Netty-reactor **异步非阻塞的方式占用少量资源处理大量并发**SpringBoot 2.0 基于 Spring 5 最大的变化就是引入了 React（响应式编程）->   Web Flux（可以非常容易的创建出高性能、高并发的 Web 应用）
+
+例如：Gateway 的跨域 Filter 网关，CorsWebFilter 它是属于 Webflux
 
 
 
@@ -784,6 +786,13 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 ​	
 
+* #### 打包jar指定名字
+
+  * ```xml
+    <build>
+       <finalName>webjava8</finalName>
+    ```
+
 
 
 ## 3）Test 测试类：
@@ -885,7 +894,23 @@ public class GulimallWebConfig implements WebMvcConfigurer
 
 
 
+## 7）Controller方法常用参数
 
+### 7.1.Model / RedirectAttributes
+
+可以往 Thymeleaf 携带参数，模拟的 HttpSession
+
+Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（addFlashAttribute方法代表只需要取一次！跳转取到后刷新页面就没了  | addAttribute():将数据放在url后面）
+
+
+
+* 重定向携带数据,利用session原理.将数据放在session中.
+
+* 只要跳到下一个页面取出这个数据以后,session里面的数据就会删掉
+
+  
+
+**问题：但是他是利用的session原理，所以后期我们需要解决分布式的session问题**
 
 
 

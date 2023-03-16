@@ -25,7 +25,7 @@
 
 
 
-高并发三宝：缓存、异步、消息队列
+==高并发三宝：缓存、异步、消息队列==
 
 ### 商品上架
 
@@ -33,7 +33,7 @@
 
 
 
-发请求是得益于 Fegin 的 MethodHandle，在**发请求之前会把请求的数据编码成 JSON**
+发请求是得益于 Fegin 的 MethodHandle，在**发请求之前会把请求的数据编码成 JSON**        XD：我想的是它可以看成HTTP+JSON
 
 接受请求体的 JSON 转成 List 得益于 SpringMVC 
 
@@ -109,7 +109,7 @@ vue 是客户端渲染，模板引擎是服务端渲染
 
 ### 2.1 视图映射
 
-> 发送一个请求直接跳转到一个页面。  ->  SpringMVC vicwcontroller;将请求和页面映射过来
+> 发送一个请求直接跳转到一个页面。  ->  SpringMVC viewcontroller;将请求和页面映射过来
 >
 > **视图映射：请求直接跳转页面的，用这种方式！不写空方法了**
 
@@ -160,7 +160,7 @@ Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（
 
 > 微服务模块在上线之前乃至上线之后都会进行压力测试   老师讲课时基本都是50线程持续压
 
-==先说答案：CPU核心数和线程数量没什么必然的关系。==
+==先说答案：CPU核心数和线程数量没什么必然的关系。==    线程是运行在内存中的，因此系统内存的大小也会影响可以创建的线程数
 你可以在只有一个核心的CPU上创建任意多线程，也可以在有多个核心的CPU上创建一个线程。要想充分利用多核，一般来说线程数至少不能少于核心数。
 
 压测目的：首先考虑自己的应用属于 **CPU 密集型 还是 IO 密集型**
@@ -260,7 +260,7 @@ jvisualvm 能干什么 监控内存泄露，跟踪垃圾回收，执行时内存
 
 ## 1）前言
 
-> 这个项目代码里很多 stream 中循环查表了！
+> 这个项目代码里很多 stream 中循环查表了！  看本文开头
 >
 > 初步解决：优化代码 -> 一次性查出所有数据，需要的时候再通过集合操作去filter拿对应的
 >
@@ -290,6 +290,10 @@ jvisualvm 能干什么 监控内存泄露，跟踪垃圾回收，执行时内存
 
 注意：**分片存概念**：集群的Redis 1号存id为1-1w的数据 2号存2-3w的数据以此类推
 
+> Redis 分片是一种将数据分散存储在多个 Redis 节点上的技术，它可以扩展 Redis 存储容量和吞吐量，以满足大规模应用程序的需求。在 Redis 分片中，数据被分割成多个较小的数据片段，每个数据片段存储在一个单独的 Redis 节点上。通过将数据分散存储在多个节点上，可以将负载均衡到多个节点上，提高系统的可扩展性和可靠性。
+>
+> Redis 分片的实现方式通常是将数据根据其键进行哈希，然后将哈希结果映射到不同的 Redis 节点上。具体来说，可以使用一致性哈希算法来实现 Redis 分片。在一致性哈希算法中，每个 Redis 节点被分配一个哈希值，每个键也被映射到一个哈希值。当需要将数据存储到 Redis 中时，可以使用一致性哈希算法将键哈希为一个值，然后将值映射到一个 Redis 节点上，从而将数据存储在相应的节点上。
+
 
 
 
@@ -304,7 +308,7 @@ jvisualvm 能干什么 监控内存泄露，跟踪垃圾回收，执行时内存
 
 
 
-<font color=red>==缓存中存的数据是json字符串==</font>   一般都是用 StringRedisTemplate 够用
+<font color=red>==缓存中存的数据是json字符串==</font>   一般都是用 StringRedisTemplate 够用    注意：至于为什么看自己[Redis笔记](../NoSQL/RedisAdvanced#反序列化问题-StringRedisTemplate)，这个也可操作Hash
 
 <font color=red>原因：JSON跨语言。跨平台兼容。  因为微服务各个模块不一定是用java写，php写的也可以去拿json。 <br>但是如果存的是java序列化对象php没用整个java系统不能解析。而JSON全语言全平台</font>
 
@@ -312,7 +316,7 @@ jvisualvm 能干什么 监控内存泄露，跟踪垃圾回收，执行时内存
 
 com.alibaba.fastjson.JSON     ->   `TypeReference`
 
-jackson都是操作ObjectMapper这个对象进行序列化、反序列化
+jackson都是操作ObjectMapper这个对象进行序列化、反序列化     XD：Jackson笔记官方的，更偏向于它 -> ObjectMapper
 
 ```java
 String json = JSON.toJSONString(map);   //对象 -> Json
@@ -388,11 +392,11 @@ JMeter
 
 ### 2.3 ==Redis 三大问题==
 
-> [自己的笔记](../nosql/redis)
+> [自己的笔记](../NoSQL/Redis)
 
 1）、读模式
 
-* 缓存穿透【空结果缓存】
+* 缓存穿透【空结果缓存||布隆过滤器】
 
 * 缓存雪崩【加随机时间】
 
@@ -520,8 +524,8 @@ pom start好处什么都配好了，只需要写两三个配置就行。而这�
 
 
 优秀的地方：模拟两个服务，业务处理3秒。第一个服务处理业务途中给停掉还没有释放锁，第二个服务此时发现过一过时间还是能拿到锁！【有ttl默认30s】
-没有手动解锁它也会给解锁
-看Redis的表现：锁的ttl30，刷新到18..再刷新又变成了30   看来是实现了自动续期【**看门狗**】
+没有手动解锁它也会给解锁 
+看Redis的表现：锁的ttl30，刷新到18..再刷新又变成了30   看来是实现了自动续期【**看门狗**】   ==注意：用带参参构造就不会用看门狗==
 
 ```java
 // 参数为锁名字  锁的粒度，越细越快。   即名字可以细致一点 不要很多都公用一把锁
@@ -558,6 +562,8 @@ lock.unlock();
 >
 > 缓存本来保证的就是 最终一致性，反正有 ttl 失效后重查放入缓存就又是最新数据了
 
+<img src="C:\Users\hasee\AppData\Roaming\Typora\typora-user-images\image-20230314161335765.png" alt="image-20230314161335765" style="zoom: 67%;" />
+
 ### 1）、双写模式：写数据库后，写缓存
 
 问题：脏数据（No.1写完数据库还没写缓存，此时 No.2也写完这两个了。这时No.1再写缓存就覆盖No.2的新数据了）
@@ -568,7 +574,7 @@ lock.unlock();
 
 
 
-### 2）、失效模式：写完数据库后，删缓存 
+### 2）、失效模式：写完数据库后，删缓存（推荐）
 
 解决：可以 读写锁  但是如果不关心这些数据有点延迟也没关系那就不加锁没事。例如 iphone 11刚发布的商品介绍变了点参数我晚一点看也不影响
 
@@ -631,6 +637,21 @@ Cache接口的实现包括RedisCache、EhCacheCache、ConcurrentMapCache等
 
 ### 6.3 [使用步骤：](https://www.cnblogs.com/songjilong/p/12901397.html)
 
+> `@Cacheable` 注解是用于将**方法的返回值**缓存起来
+>
+> 注意：**使用spring-data-redis2.x版本时，@Cacheable缓存key值时默认会给vlue或cacheNames后加上双引号**，具体看如下类
+> `org.springframework.data.redis.cache.CacheKeyPrefix`
+>
+> > SpringSession整合redis，Redis 存的 Session 是自动续期的吗
+> >
+> > 
+> >
+> > 一开始听chatgpt说是的，经过验证发现不是那么回事！！！
+> >
+> > 使用Spring Cache的`CacheManager`接口提供的`putIfAbsent`方法来更新缓存的过期时间。
+>
+> >框架实现的，保存会存类的全限定类名 用于反序列化，在RedisAdvaced笔记中说了这样占地方
+
 ```java
 1）导入 cache、Redis 的 Start
 2）spring:
@@ -650,6 +671,7 @@ Cache接口的实现包括RedisCache、EhCacheCache、ConcurrentMapCache等
 // sync表示该方法的缓存被读取时会加锁]【注意：是本地锁！！分布式锁重】 本地锁的确够了，一个单体锁一个查询，100个单体才100个查询
                 // value等同于cacheNames // key是SpEL表达式如果是字符串"''"
     @Cacheable(value = {"category"},key = "#root.method.name",sync = true) 
+    @Cacheable(value = "cache:shop", key = "#root.args[0]", sync = true)  //cache:shop::1
             //代表当前方法的结果需要缓存，如果缓存中有，方法不用调用。如果缓存中没有，会调用方法，最后将方法的结果放入缓存！
                 
                 
@@ -721,13 +743,34 @@ https://blog.51cto.com/u_15072908/3946684
 
 
 
-### 6.4 配置原理：
+### ==6.4 配置原理：==
 
 CacheAutoConfiguration -> RedisCacheConfiguration ->
 自动配置了RedisCacheManager->初始化所有的缓存->每个缓存决定使用什么配置
 ->如果redisCacheConfiguration有就用已有的，没有就用默认配置
 ->想改缓存的配置，只需要给容器中放一个RedisCacheConfiguration即可
 ->就会应用到当前RedisCacheManager管理的所有缓存分区中
+
+
+
+**全是抄的源码createConfiguration方法**，目的只是为了把value改为json序列化！源码key好像是用的string的
+`org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration#createConfiguration`
+
+> Q：我这里其实对每一次的`"config ="`都充满疑惑：这样不是每次都指向一个新对象那么意义何在？？？
+>
+> A：因为`RedisCacheConfiguration.class`中的属性都是`final`，所以每次`"config ="`等号右边可以理解为在`setxxx`
+>
+> > Q：我可以理解为这样的目的是使得final属性获得指定的值吗
+> >
+> > 不完全是这样的，如果某个属性是final类型，那么它只能在构造函数或者成员变量声明的时候初始化一次，并且不能被修改。因此，为了在构造RedisCacheConfiguration对象的时候能够对final属性进行初始化，我们需要使用这种“链式调用”的方式，每次调用方法时都会返回一个新的RedisCacheConfiguration对象，这样就能保证final属性每次都能被正确初始化。
+>
+> > Q：那上一次"config ="指向的对象不会被回收吗
+> >
+> > Java中的对象是有垃圾回收机制的，当对象不再被任何引用所指向时，垃圾回收机制会将其回收。在该代码片段中，每次重新赋值config时，前一次指向的对象会失去引用，如果没有其他引用指向该对象，则该对象会被垃圾回收机制回收。因此，不需要担心对象的内存泄漏问题。
+>
+> > Q：被回收掉后RedisCacheConfiguration的final属性变量所得到的值还会保留吗
+> >
+> > 是的，一旦一个final属性被初始化，它的值就不能被改变，即使它所引用的对象被回收了，final属性依然会持有它最初引用的对象的值。因此，在这种情况下，即使上一次"config ="所指向的对象被回收了，最终的返回值仍然会包含之前设置的所有属性和值。
 
 ```java
 @EnableConfigurationProperties(CacheProperties.class)
@@ -740,9 +783,11 @@ public class MyCacheConfig {
     public RedisCacheConfiguration redisCacheConfiguration(CacheProperties cacheProperties) { //这个参数能拿值？  这个方法就是给容器放东西，方法传的所有参数所有参数都会从容器中进行确定  所以会自动去IOC中拿
         RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig();
         config = config.serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()));
+        // 序列化 value 时使用此序列化方法
         config = config.serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
 
-        //下面抄源码，不然配置文件写的过期时间之类的失效   具体看 RedisCacheConfiguration.java
+
+        //下面抄源码，不然配置文件写的过期时间之类的失效   具体看 RedisCacheConfiguration.java【注意是autoconfigure包下的！】
         CacheProperties.Redis redisProperties = cacheProperties.getRedis();
         if (redisProperties.getTimeToLive() != null) {
             config = config.entryTtl(redisProperties.getTimeToLive());
@@ -761,7 +806,26 @@ public class MyCacheConfig {
 }
 ```
 
-
+> 碰到的问题
+>
+> * JDK8 中新的时间 API LocalDateTime，究其原因是 Jackson 在序列化 LocalDateTime 时输出的不是普通的字符串时间格式【解决】
+>
+>   * ```java
+>     /**
+>     //JDK8 中新的时间 API LocalDateTime，究其原因是 Jackson 在序列化 LocalDateTime 时输出的不是普通的字符串时间格式
+>     //解决Could not read JSON: Cannot construct instance of `java.time.LocalDateTime`
+>     //发现一开始我就错了，我return的是一个Bean才会引发这个。实际还是return list / map / String好一些
+>     */
+>     ObjectMapper objectMapper = new ObjectMapper();
+>     objectMapper.registerModule(new JavaTimeModule());
+>     // 序列化 value 时使用此序列化方法
+>     config = config.serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer(objectMapper)));
+>     ```
+>
+>     
+>
+> * 反序列化报错，总是用map强转相应的Bean
+>   * 我的解决 -> return list / map / String
 
 
 
@@ -1195,7 +1259,15 @@ String name = jsonObject.getString("name");
 
 
 
-Redis 存的 Session 是自动续期的
+==Redis 存的 Session 是自动续期的==   TODO：待验证
+
+> 是的，Spring Session 整合 Redis 后，Redis 存储的 Session 是自动续期的。
+>
+> 在 Spring Session 中，当一个 Session 被创建时，会生成一个唯一的 Session ID，并且这个 Session ID 会被用来作为 Redis 中存储 Session 的 key。同时，Spring Session 会将这个 Session ID 作为 cookie 发送给客户端。
+>
+> 当客户端发送请求时，Spring Session 会根据请求中携带的 Session ID 从 Redis 中获取对应的 Session 数据，并检查 Session 是否过期。如果 Session 没有过期，Spring Session 会自动将 Session 的过期时间延长，确保 Session 不会在使用期间过期。
+>
+> 因此，Spring Session 整合 Redis 后，Redis 存储的 Session 是自动续期的。
 
 
 
@@ -1316,6 +1388,8 @@ redis有5种不同数据结构，这里选择哪一种比较合适呢？`Map<Str
 
 ## 3.==ThreadLocal用户身份鉴别==
 
+常用应用场景：保存用户登录信息
+
 > 实现：参考京东，在点击购物车时，会为**临时用户**生成一个`name`为`user-key`的`cookie`临时标识，过期时间为一个月，如果手动清除`user-key`，那么临时购物车的购物项也被清除，所以`user-key`是用来标识和存储临时购物车数据的
 
 解决：搞个拦截器（**TODO：不知道能用AOP实现不，弹幕说执行太晚了**    **面试官：拦截器跟过滤器有什么区别**）
@@ -1361,6 +1435,8 @@ ChatGPT：通俗来说过滤器和拦截器的区别：
 
 拦截器拦完后，想要快速得到用户信息（to对象）：id,user-key
 <b style='color:red'>即截器定义好了，将来怎么把拦截器中获取的用户信息传递给后续的每个业务逻辑：</b>
+
+> 后续的每个业务逻辑也可以从 Redis 中直接获取用户信息，但是这样会增加 Redis 的访问次数，对系统性能造成影响。为了提高系统的响应速度，建议将用户信息存储到 ThreadLocal 中，并在业务逻辑中直接从 ThreadLocal 中获取用户信息，以避免频繁地访问 Redis。
 
 1. public类型的公共变量。线程不安全
 2. request对象。不够优雅
@@ -1679,7 +1755,7 @@ id字段一定是主键或者唯一索引，不然可能造成锁表的结果，
 
 ### 4.1.本地事务问题
 
-> @Transactional 是本地事务，Fegin 调用的是远程服务 即需要分布式事务
+> ==@Transactional 是本地事务，Fegin 调用的是远程服务 即需要分布式事务==
 >
 > 本地事务：在分布式系统 只能控制住自己的回滚，控制不了其他服务的回滚（同一个数据库&连接）
 >

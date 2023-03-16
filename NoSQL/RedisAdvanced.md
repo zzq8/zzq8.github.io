@@ -77,23 +77,41 @@
 
 ![image-20230307162022703](http://image.zzq8.cn/img/202303071620766.png)
 
-为什么InterceptorRegistry不需要调用addPathPatterns("/**")也可以拦截所有请求
+
+
+
+
+# 2.商户查询缓存
+
+> 场景：想着自己使用spring cache技术整合Redis，用注解简化
+>
+> 问题：反序列化报错：我的解决 -> return list / map / String
+> Could not read JSON: Cannot construct instance of `java.time.LocalDateTime`
+>
+> XX：衍生出的问题：缓存每次都不会命中
+>
+> ```
+> 之前以为控制台输出了sql就是没有命中缓存，自己方法里加了log来甄别方法到底执行没。发现还是按照预期来了的
+> ```
+
+[自己 Gulimall 笔记](../GuliMall/Advanced)
+
+[三种问题场景笔记 Redis](./Redis)
+
+亮点：缓存穿透/击穿 可以封装成工具类，给后面复用。  例如heima的视频，就活用泛型+lambda写这个工具类
+
+```java
+public <R,ID> R queryWithPassThrough(
+            String keyPrefix, ID id, Class<R> type, Function<ID, R> dbFallback, Long time, TimeUnit unit){
+    
+    //因为查询数据库是一段函数！！！这里就可以配合lambda这么用  有一个参数一个返回值
+    R r = dbFallback.apply(id);
+```
 
 
 
 
 
-InterceptorRegistry 不需要调用 addPathPatterns("/**") 也可以拦截所有请求，是因为在 InterceptorRegistry 中添加的拦截器默认会拦截所有的请求。
-
-当你向 InterceptorRegistry 中添加一个拦截器时，该拦截器会被注册到系统的拦截器链中，并被应用到所有请求上。在拦截器的 preHandle() 方法中，你可以对请求进行处理并决定是否允许请求继续执行或是拦截请求。
-
-因此，当你向 InterceptorRegistry 中添加一个拦截器时，该拦截器会自动拦截所有请求，而不需要显式地指定拦截路径。
-
-
-
-![img](data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e)![x d](https://chat.openai.com/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FAGNmyxaesWqCN7TAgnaq3djk6QgrKcLKfInbBp9Brcrs%3Ds96-c&w=64&q=75)
-
-但是我在源码看到的是 private final List<String> includePatterns = new ArrayList(); 不能理解为什么会默认拦截所有请求
 
 
 
@@ -107,11 +125,94 @@ InterceptorRegistry 不需要调用 addPathPatterns("/**") 也可以拦截所有
 
 
 
-Hutools Utils
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hutools Utils
 
 1. 复制Bean的属性，好像同Spring有个工具类一样 `BeanUtil.copyProperties`
 
-2. 将User对象转为HashMap存储到Redis `BeanUtil.beanToMap`
+2. 将User对象转为HashMap存储到Redis `BeanUtil.beanToMap`   org.springframework.beans的是 `BeanUtils`
 
    * ```java
      //由于UserDTO类有属性是Long的，而StringRedisTemplate<String, String>，所以这里用hutools构造函数定制化全给String
@@ -124,4 +225,26 @@ Hutools Utils
 
    * **弹幕: 就这个错误，我在谷粒商城的springsession的序列化器转换异常搞了半天，也是Long类型的！！！！！！**
 
-3. 将Redis拿到的Hash填充到Bean `BeanUtil.fitlBeanWithMap`
+   * 有个问题  BeanUtil.copyProperties的ignoreNullValue不生效
+
+   * setFieldValueEditor优先级要高于ignoreNullValue导致前者首先被触发，因此出现空指针问题。你在setFieldValueEditor中也需要判空。
+
+     这么设计的原因主要是，如果原值确实是null，但是你想给一个默认值，在此前过滤掉就不合理了，而你的值编辑后转换为null，后置的判断就会过滤掉。
+
+3. 和上面反着来，`JSONUtil.toBean(shopJson,Shop.class);`
+
+4. 将Redis拿到的Hash填充到Bean `BeanUtil.fitlBeanWithMap`
+
+5. `JSONUtil.toJsonStr`
+
+6. 判断字符串是否为null及size小于0 `StrUtil.isNotBlank(shopJson)`
+
+7. `BooleanUtil.isTrue(flag)`
+
+   ```java
+   Boolean flag = stringRedisTemplate.opsForValue().setIfAbsent(key, "1", 10, TimeUnit.SECONDS);
+   //因为这里自动拆箱有可能null，所以用hutools
+   return BooleanUtil.isTrue(flag);
+   ```
+
+8. 

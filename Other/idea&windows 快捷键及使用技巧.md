@@ -76,13 +76,17 @@ ctrl+shift+a 输入maven就可用maven   idea右侧工具栏没有显示maven的
 
 # 二、[Windows](https://www.zhihu.com/question/33635511/answer/57567053)
 
-Win+1/2..会跳到下面任务栏指定的应用   偶然发现！！！
+==windows 不区分大小写==（所以文件夹大写小写都一样），Linux 区分
+
+windows 访问文件是 "\\\\" 反斜杠还得注意转义的问题，而linux是正斜杠 "/" 没有转义问题
 
 ==运行  sysdm.cpl  快速打开环境变量==（system administrator . control panel）
 
-ctrl + home 可以到头，而home只能到光标在这行行头
+* #### ctrl+esc 开始界面
 
-==windows 不区分大小写==（所以文件夹大写小写都一样），Linux 区分
+* #### Win+1/2..会跳到下面任务栏指定的应用   偶然发现！！！
+
+* #### ctrl + home 可以到头，而home只能到光标在这行行头
 
 * #### ctrl+. 可以切换中英文标点
 
@@ -112,11 +116,11 @@ ctrl + home 可以到头，而home只能到光标在这行行头
 
 * #### calc   mspaint   notepad
 
-* #### ctrl + D 删除文件
+* #### ctrl+D 删除文件
 
 * #### 键盘D-destination 的意思
 
-* #### win + P 设置屏幕投影功能
+* #### win+P设置屏幕投影功能
 
 * #### 在文本输入过程中，键入Windows徽标键  + 。 (句点) . 将显示表情符号键盘。
 
@@ -267,6 +271,8 @@ alter user 'root'@'localhost' identified by '123456';
 在 Google 的搜索界面时可以 / 来聚焦到输入框
 
 Shift+Enter 新开浏览器界面搜
+
+* shift+esc 任务管理器
 
 
 

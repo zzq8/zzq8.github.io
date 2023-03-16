@@ -276,7 +276,7 @@ ES6 & Vue 快速入门
 >        age: 21,
 >        language: ['java', 'js', 'css']
 >    }
->                                     
+>                                        
 >    // var hello1 = (param) => console.log("hello," + param.name);
 >    // hello1(person);
 >    var hello2 = ({name}) => console.log("hello," + name);
@@ -1196,7 +1196,7 @@ https://blog.csdn.net/gao_jun1/article/details/111414976
 
 
 
-## 7. JSR 303
+## ==7. JSR 303==
 
 > 前端校验主要是给一般用户看的，提高用户体验。因为可用 PostMan 绕过直接给后端发请求！
 
@@ -1210,7 +1210,7 @@ https://blog.csdn.net/gao_jun1/article/details/111414976
 
 ### 使用过程
 
-1. **以前总觉得 Controller 类还要在类头加注解，记忆混乱了。实测不用！**
+1. **以前总觉得 Controller 类还要在类头加注解，记忆混乱了。实测不用！**  后话：不懂
 
    1. Entity 字段加 @NotNull etc.
    1. Controller 方法形参加注解 @Valid 
@@ -1355,9 +1355,11 @@ return 的 R 错误码可以看尚硅谷的文档，一般可以是5位，业务
 
 
 
-![image-20220822110956653](http://image.zzq8.cn/img/202208221109447.png)
+<img src="http://image.zzq8.cn/img/202208221109447.png" alt="image-20220822110956653" style="zoom: 67%;" />
 
-![image-20220822111210105](http://image.zzq8.cn/img/202208221112300.png)![image-20220822111429154](http://image.zzq8.cn/img/202208221114306.png)
+<img src="http://image.zzq8.cn/img/202208221112300.png" alt="image-20220822111210105" style="zoom:67%;" />
+
+<img src="http://image.zzq8.cn/img/202208221114306.png" alt="image-20220822111429154" style="zoom:67%;" />
 
 勾中快速展示：就是把它展示到商品介绍上
 
@@ -1398,7 +1400,7 @@ spring:
 
 ### Element UI Cascader 级联选择器
 
-![image-20220823205206340](http://image.zzq8.cn/img/202208232052487.png)
+<img src="http://image.zzq8.cn/img/202208232052487.png" alt="image-20220823205206340" style="zoom:67%;" />
 
 
 
@@ -1598,7 +1600,7 @@ stream() -> map() -> filter() -> collect()
 
 ### 采购
 
-![image-20220828224528971](http://image.zzq8.cn/img/202208282303184.png)
+<img src="http://image.zzq8.cn/img/202208282303184.png" alt="image-20220828224528971" style="zoom: 67%;" />
 
 
 

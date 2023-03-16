@@ -19,7 +19,7 @@
 * [JavaSE](JavaSE/JavaSE.md)
 * [JUC](JUC/JUC.md)
 * [MySQL 专栏【待整理】](SQL/MySQL实战45讲.md)
-* JVM【待学习】
+* JVM【待完善】
 
 
 
