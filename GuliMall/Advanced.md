@@ -2039,11 +2039,9 @@ Remote Address: 192.168.0.1:7890
 
 07 保证服务的稳，其它有了快
 
-![Snipaste_2020-10-27_12-24-58.png](https://github.com/NiceSeason/gulimall-learning/blob/master/docs/images/Snipaste_2020-10-27_12-24-58.png?raw=true)
+<img src="C:\Users\hasee\AppData\Roaming\Typora\typora-user-images\image-20230316140448941.png" alt="image-20230316140448941" style="zoom: 33%;" />
 
-![Snipaste_2020-10-27_12-26-00.png](https://github.com/NiceSeason/gulimall-learning/blob/master/docs/images/Snipaste_2020-10-27_12-26-00.png?raw=true)
-
-
+<img src="C:\Users\hasee\AppData\Roaming\Typora\typora-user-images\image-20230316140459330.png" alt="image-20230316140459330" style="zoom:33%;" />
 
 
 

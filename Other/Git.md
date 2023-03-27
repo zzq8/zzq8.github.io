@@ -272,3 +272,18 @@ git rebase <branch-name>
 
 
 加深理解：注意最左侧有个 “-”提示，代表此行不会纳入合并文件中
+
+
+
+# 2.global ignore
+
+> Non-versioned：TortoiseSVN 配置以下
+>
+> versioned：右键添加到 ignore-on-commit
+
+```
+### XD
+[miscellany]
+global-ignores = *.iml .idea *.class .idea .idea/ *.md5 *.log **/target/** classes generated-sources *.log.* localhost_access_log.*.txt
+```
+

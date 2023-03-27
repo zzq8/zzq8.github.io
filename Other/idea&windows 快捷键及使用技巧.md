@@ -76,6 +76,22 @@ ctrl+shift+a 输入maven就可用maven   idea右侧工具栏没有显示maven的
 
 # 二、[Windows](https://www.zhihu.com/question/33635511/answer/57567053)
 
+> Shell和cmd都是命令行界面下的解释器，用于执行命令和脚本。它们的作用类似，但是它们是针对不同的操作系统而设计的。
+>
+> Shell是Unix和Linux操作系统下的命令行解释器，它是一种脚本语言，通过命令行界面执行各种操作和管理系统。Shell可以处理输入和输出，控制进程和文件系统，以及执行各种命令和脚本。Shell还提供了一些内置命令和函数，可以方便地操作和处理文本、文件和系统。常见的Shell包括Bash、Csh、Ksh等。
+>
+> cmd是Windows操作系统下的命令行解释器，它也是一种脚本语言，可以执行各种操作和管理系统。cmd可以处理输入和输出，控制进程和文件系统，以及执行各种命令和脚本。cmd也提供了一些内置命令和函数，可以方便地操作和处理文本、文件和系统。与Shell不同的是，cmd的命令语法和内置函数与Unix和Linux的Shell不同，而是针对Windows操作系统进行设计。
+>
+> 因此，Shell和cmd都是命令行界面下的解释器，用于执行命令和脚本。Shell是Unix和Linux操作系统下的命令行解释器，而cmd是Windows操作系统下的命令行解释器。
+>
+> 
+>
+> 在macOS中，默认的shell是Bash（Bourne-Again SHell）直到macOS Catalina（版本10.15）中，Apple将默认的shell从Bash切换到了Zsh（Z Shell）。
+>
+> 可以这段放 Mac笔记上！！！！
+
+> 而在unix系统中，/表示目录。由于web遵循unix命名，所以在网址（URL）中，/表示目录。
+
 ==windows 不区分大小写==（所以文件夹大写小写都一样），Linux 区分
 
 windows 访问文件是 "\\\\" 反斜杠还得注意转义的问题，而linux是正斜杠 "/" 没有转义问题
