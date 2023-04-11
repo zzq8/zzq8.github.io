@@ -290,6 +290,8 @@ Shift+Enter 新开浏览器界面搜
 
 * shift+esc 任务管理器
 
+**ctrl+shift+delete 清缓存必备**
+
 
 
 ## 搜索技巧

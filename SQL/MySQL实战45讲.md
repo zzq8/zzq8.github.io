@@ -521,8 +521,10 @@ mysql> show variables like 'transaction_isolation';
 
 所以**在数据库中，因为有了 MVCC，所以我们可以形成两个组合：**
 
+> 补充：具体来说，`SELECT ... FOR UPDATE` 语句会对查询到的行加上排它锁（Exclusive Lock），这意味着其他事务不能同时对这些行进行修改。在多个事务同时查询同一组数据时，如果其中一个事务使用了 `FOR UPDATE`，则其他事务必须等待该事务释放锁之后才能进行修改操作。
+
 - `MVCC + 悲观锁：select * from xxxx where id = 1 for update;`
-  MVCC解决读写冲突，悲观锁解决写写冲突
+  MVCC 解决读写冲突，悲观锁解决写写冲突
 - `MVCC + 乐观锁：update t_goods set count = count -1 , version = version + 1 where good_id=2 and version = 1`
   MVCC 解决读写冲突，乐观锁解决写写冲突
 

@@ -350,6 +350,20 @@ JSON.parseObject(catalogJson, new TypeReference<Map<String, List<Catelog2Vo>>>()
 
 
 
+转 JSON对象 注意不是 String！！！
+
+> 我测出的两种好一点的方法：
+
+```
+		ObjectMapper mapper = new ObjectMapper();
+        JsonNode jsonNode = mapper.convertValue(res, JsonNode.class);
+        JsonNode jsonNode1 = mapper.valueToTree(res);
+```
+
+
+
+
+
 ### 2.2 lettuce堆外内存溢出bug
 
 > 这不就是面试中常问的"开发中遇到什么困难,怎么解决的嘛"
@@ -1388,7 +1402,22 @@ redis有5种不同数据结构，这里选择哪一种比较合适呢？`Map<Str
 
 ## 3.==ThreadLocal用户身份鉴别==
 
-常用应用场景：保存用户登录信息
+常用应用场景：保存用户登录信息  
+
+> Q：Threadlocal存用户信息比用session存用户信息有什么优势
+>
+> 
+>
+> ThreadLocal 和 Session 都是在多线程环境下存储用户信息的方式，但是它们的作用和使用场景有所不同。下面是 ThreadLocal 存储用户信息比 Session 存储用户信息的一些优势：
+>
+> 1. 线程安全性：ThreadLocal 是线程局部变量，每个线程拥有自己的一个变量副本，不同线程之间不会相互影响，可以有效地避免多线程环境下的竞态条件和线程安全问题。
+> 2. 跨请求访问：ThreadLocal 可以在同一线程内的多个请求之间共享数据，而 Session 则只能在同一会话（同一用户在同一浏览器中访问同一网站期间的所有请求）之间共享数据。
+> 3. 性能优势：由于 ThreadLocal 是线程内部的变量，存取速度相对于 Session 更快，而且不需要将数据序列化和反序列化，也不需要在不同的请求之间进行传输，因此对系统性能的影响更小。
+>
+> 需要注意的是，ThreadLocal 适用于单个线程内部共享数据，而不适合在不同线程之间传递数据。此外，使用 ThreadLocal 时需要注意及时清除数据，否则可能会出现内存泄漏等问题。
+>
+>
+> ThreadLocal 是一种线程本地存储的机制，它可以为每个线程维护一个独立的变量副本。因此，当多个线程访问同一个 ThreadLocal 变量时，它们看到的值是不同的。**在一个 Web 应用程序中，每个请求都由一个独立的线程处理，因此可以将用户信息存储在 ThreadLocal 中，以便在整个请求处理过程中都可以访问这些信息，而不必将这些信息存储在 Session 中。**
 
 > 实现：参考京东，在点击购物车时，会为**临时用户**生成一个`name`为`user-key`的`cookie`临时标识，过期时间为一个月，如果手动清除`user-key`，那么临时购物车的购物项也被清除，所以`user-key`是用来标识和存储临时购物车数据的
 
@@ -1871,7 +1900,7 @@ Why：在同一个类里面，编写两个方法，内部调用的时候，会�
 
 > [这里具体看 PDF！](./03、本地事务&分布式事务.pdf)注意方案是方案框架是框架（落地实现这个方案）  **✔是高并发优先考虑的，用MQ**    订单用异步确保型/商品保存可2PC
 
-* 2PC（Seata是这个的一个变形）还有3PC 
+* 2PC（Seata是这个的一个变形）还有3PC  【2 phase commit 二阶提交】
   注意和MySQL写日志的两阶段提交区分，是不一样的东西。Seata AT是第一阶段提交+2第二阶段看要不要补偿-2  只适合一般的分布式事务不合适高并发
 
 
