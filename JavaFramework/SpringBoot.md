@@ -395,6 +395,95 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 
 
+# Ⅰ、Spring 学习
+
+#### 1.Spring提供的IOC容器实现的两种方式（两个接口）
+
+> `ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");`
+
+ a）BeanFactory接口：IOC容器基本实现是Spring内部接口的使用接口，不提供给开发人员进行使用（加载配置文件时候不会创建对象，在获取对象时才会创建对象。）
+
+ b）ApplicationContext接口：BeanFactory接口的子接口，提供更多更强大的功能，提供给开发人员使用（加载配置文件时候就会把在配置文件对象进行创建）推荐使用！
+
+
+
+
+
+#### 2.IOC操作Bean管理
+
+ a）Bean管理就是两个操作：（1）Spring创建对象；（2）Spring注入属性
+
+
+
+基于（2）现在理解了：
+
+ a）set方式注入
+
+```java
+//（1）传统方式： 创建类，定义属性和对应的set方法
+public class Book {
+        //创建属性
+        private String bname;
+
+        //创建属性对应的set方法
+        public void setBname(String bname) {
+            this.bname = bname;
+        }
+   }
+```
+
+
+
+```xml
+<!--（2）spring方式： set方法注入属性-->
+<bean id="book" class="com.atguigu.spring5.Book">
+    <!--使用property完成属性注入
+        name：类里面属性名称
+        value：向属性注入的值
+    -->
+    <property name="bname" value="Hello"></property>
+    <property name="bauthor" value="World"></property>
+</bean>
+```
+
+ b）有参构造函数注入
+
+
+
+
+
+
+
+#### 3.Bean 生命周期
+
+> **bean 的后置处理器，bean 生命周期有七步** （正常生命周期为五步，而配置后置处理器后为七步）
+
+第一步：Construction 构造Bean对象
+
+第二步：set Bean 属性值
+
+==（1）把 bean 实例传递 bean 后置处理器的方法 postProcessBeforeInitialization==
+
+第三步：init调用自定义的初始化方法    //这前三步在 `new ClassPathXmlApplicationContext("beans-test.xml");` 就搞完
+
+==（2）把 bean 实例传递 bean 后置处理器的方法 postProcessAfterInitialization==
+
+第四步：获取实例化后的 Bean 可以开始使用 Bean  org.example.bean.BeanLife@649bec2e
+
+第五步：destroy调用自定义销毁的方法  //手动让 bean 实例销毁   context.close();  //ClassPathXmlApplicationContext
+
+​       
+
+```xml
+    <bean id="beanLife" class="org.example.bean.BeanLife" init-method="init" destroy-method="destroy">
+        <property name="properties" value="属性XD"/>
+    </bean>
+
+<!--配置后置处理器-->
+   <bean id="myBeanPost" class="org.example.config.MyBeanPost"/>
+```
+
+`public class MyBeanPost implements BeanPostProcessor //创建后置处理器实现类，对应（1）（2）`
 
 
 
@@ -404,8 +493,21 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 
 
+#### 4.AOP
+
+> Spring 框架一般都是基于 AspectJ 实现 AOP 操作，AspectJ 不是 Spring 组成部分，独立 AOP 框架，一般把 AspectJ 和 Spirng 框架一起使 用，进行 AOP 操作
 
 
+
+
+
+
+
+#### 5.Spring 事务
+
+> 问：项目中什么地方用到了 AOP    在 Spring 中进行事务管理中就用到了！！！
+
+==声明式事务：就是用注解的方式开启事务底层使用的是 AOP，相对的手动写代码开事务关事务==
 
 
 

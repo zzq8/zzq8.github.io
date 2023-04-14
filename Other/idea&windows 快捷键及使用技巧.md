@@ -255,7 +255,9 @@ alter user 'root'@'localhost' identified by '123456';
 
 # 四、Sublime
 
-* #### 可以查（匹配）整个文件夹里的内容
+* #### 搜索可以用正则，正则中的表达式可以用()包到里面，替换的时候可以用 $1..n（代表第1..n个括号） 来复用匹配到的内容！！！真的好用
+
+* #### ctrl+shift+f  可以查（匹配）整个文件夹里的内容，高频使用
 
 * #### [快速插入多行递增数字](https://blog.csdn.net/cxrsdn/article/details/82496800)
 
