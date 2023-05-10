@@ -369,9 +369,87 @@ select regexp_substr(profile,"male|female")
 
 
 
+# Boke
+
+> SQLServer if else
+
+select case when 1=1 then 1 else 2 end
+
+
+
+> 工作中犯的错误   BigInt不要用 ‘’ 包起来 where / set
+
+![image-20230425150628798](http://image.zzq8.cn/img/202304251506846.png)
+
+
+
+这是SQL Server中MERGE语句的语法形式，用于合并（更新或插入）源表中的数据到目标表中。具体语法如下：
+
+```sql
+MERGE INTO 目标表名称 AS 目标表别名
+USING 源表表达式 AS 源表别名
+ON 目标表列 = 源表列
+WHEN MATCHED THEN
+    UPDATE SET 目标表列 = 源表列
+WHEN NOT MATCHED THEN
+    INSERT (列1, 列2, ...) VALUES (值1, 值2, ...)
+```
+
+
+
+
+
+> Group by 作用
+
+* select 后可以用 聚合函数
+* 另外，还可以使用 GROUP BY 语句进行数据去重，以避免结果集中出现重复的行
+
+
+
+==做题时候发现：使用group by开头的 select 必须明确写清列名不能 *==
+
+```mysql
+select * from student s join score c on s.id=c.studentid group by s.id  -- Error
+select s.id, s.name from student s join score c on s.id=c.studentid group by s.id  -- success
+```
+
+1. SELECT 语句中使用了 *，表示查询所有列。在 GROUP BY 语句中分组的列应该是 SELECT 语句中列名的子集，否则会导致查询结果不准确或错误。因此，建议明确指定 SELECT 语句中需要查询的列，以免出现不必要的问题。
+2. 在 GROUP BY 语句中，只按学生 ID 进行分组，而未对其他列进行聚合函数处理（如 COUNT、SUM、AVG 等）。这意味着，如果一个学生的成绩表中有多条记录，则查询结果将随机返回一个记录，而不是计算该学生的总分或平均分等聚合值。
+
+
+
+> 子查询 + Group by 实践
+>
+> -- 要求:查询平均成绩大于等于68分的同学的信息并按总分从高到低排序。显示字段: 学生基本信息，总分，
+> -- 平均分 语文成绩，数学成绩，英语成绩
+
+```sql
+SELECT
+	s.id,
+	s. NAME,
+	sum(c.score) sum,
+	round(avg(c.score)) avg,
+	(select score from score where studentid=s.id and course='语文') '语文', -- 可以复用上面的结果！！
+    (select score from score where studentid=s.id and course='数学') '数学',
+   (select score from score where studentid=s.id and course='英语') '英语'
+FROM
+	student s
+JOIN score c ON s.id = c.studentid
+GROUP BY
+	s.id
+HAVING
+	avg >= 68
+ORDER BY
+	sum DESC
+```
+
+
+
+
+
 # 面试没答上来
 
-> 1）Union 和 Union All  --> 具体看上面
+> [1）Union 和 Union All  --> 具体看上面](#列转行用union all：一开始我没那么理解)
 
 
 
@@ -394,6 +472,21 @@ https://blog.csdn.net/qq_21993785/article/details/81017671
 > 3）分表、分区、分库
 >
 > 基于上面的补充，浅问了ChartGPT
+
+* 分库：分库是根据业务不同把相关的表切分到不同的数据库中，比如web、bbs、blog等库
+* 分表：通过分表可以提高表的访问效率。有两种拆分方法：
+  * 垂直拆分： 在主键和一些列放在一个表中，然后把主键和另外的列放在另一个表中。如果一个表中某些列常用，而另外一些不常用，则可以采用垂直拆分。
+  * 水平拆分：根据一列或者多列数据的值把数据行放到两个独立的表中。
+
+* 分区：分区就是把一张表的数据分成多个区块，这些区块可以在一个磁盘上，也可以在不同的磁盘上，分区后，表面上还是一张表，但是数据散列在多个位置，这样一来，多块硬盘同时处理不同的请求，从而提高磁盘**I/O读写性能。**实现比较简单，包括水平分区和垂直分区。
+
+
+
+  注意：分库分表最难解决的问题是统计，还有跨表的连接（比如这个表的订单在另外一张表），解决这个的方法就是使用中间件，比如大名鼎鼎的MyCat，用它来做路由，管理整个分库分表，乃至跨库跨表的连接
+
+分库解决的是数据库端 并发量的问题。分库和分表并不一定两个都要上，比如数据量很大，但是访问的用户很少，我们就可以只使用分表不使用分库。如果数据量只有1万，而访问用户有一千，那就只使用分库。  
+
+   
 
 ### 1.概念
 

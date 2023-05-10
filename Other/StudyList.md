@@ -2,21 +2,20 @@
 
 > 知行合一 ！！！慢慢来比较快！自己写点属于自己的 MD 笔记。<font color=red>保持热爱，留有期待！</font>
 >
-> 具体学习路线看 鱼皮的 Java 学习路线导图，<font color=blue>以求职为导向来学习</font>
+> 具体学习路线看 鱼皮的 Java 学习路线导图，<font color=blue>以求职为导向来学习</font> 主次关系需要分清楚！
+> `我更希望自己是在不断向上爬山，而不是重复劳动、绕山而行。`虽然后者更轻松，但我看不到山顶的风光，也没有成就感，曾经的热爱就慢慢消失了。
 >
 > 解释：✔ 代表现在正在做！加油！！！及时制定近期目标，避免无头苍蝇！
 
 ### 一、主线（连续空余时间进行，如周末）
 
-- [ ] JVM（书 + JavaGuide）
-- [x] Spring 源码（AOP..循环依赖、事务传播级别）  打算看Guigu视频涨见识
+- [x] 以求职为导向来学习 **八股文**
 
 
 
 ### 二、夯实（日常穿插进行，如每天早上）
 
-- [x] LeetCode 热题 HOT && 精选 TOP
-- [x] [Guide-MySQL](https://javaguide.cn/database/sql/sql-syntax-summary.html) 过完整个 SQL catalog
+- [ ] LeetCode 热题 HOT && 精选 TOP
 - [x] 牛客选择题刷完（**+SQL**） && 面试题过完
 - [x] **MySQL（45 讲专栏）**
 - [ ] 有必要把 eDiary 和 ppt 过一遍，实例变量都不知道！联合 goodnotes 假如 TODO 清单！
@@ -36,13 +35,12 @@
 
 ### 四、其它
 
+- [ ] JVM（书 + JavaGuide）
 - [ ] [Git 游戏](https://oschina.gitee.io/learn-git-branching/)
 - [ ] MongoDB
 - [ ] Netty
 
-平时：可以多看看别人的博客网站，个人经历分享！（例如 JavaGuide 就很有指导意义）
-
-
+**平时：可以多看看别人的博客网站，个人经历分享！（例如 JavaGuide 就很有指导意义）**
 
 
 
@@ -54,6 +52,7 @@
 >
 > 30岁以前拼命做加法，30岁以后做减法。以后总要给父母寄钱，给女朋友买个苹果手机电脑
 
+- [x] [Guide-MySQL](https://javaguide.cn/database/sql/sql-syntax-summary.html) 过完整个 SQL catalog
 - [x] `谷粒商城`【Unknown ~ 2023/2】 学到很多尤其是高级篇，多看笔记巩固
 - [x] SpringCloud & Alibaba (周阳 Zookeeper etc.)【unknown】
 - [x] JUC（周阳 大厂面试）【2022/11/29 】

@@ -497,7 +497,17 @@ public class Book {
 
 > Spring 框架一般都是基于 AspectJ 实现 AOP 操作，AspectJ 不是 Spring 组成部分，独立 AOP 框架，一般把 AspectJ 和 Spirng 框架一起使 用，进行 AOP 操作
 
+### Spring AOP 和 AspectJ AOP 有什么区别？
 
+**Spring AOP 属于运行时增强，而 AspectJ 是编译时增强。** Spring AOP 基于代理(Proxying)，而 AspectJ 基于字节码操作(Bytecode Manipulation)。
+
+Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系统中最完整的 AOP 框架了。AspectJ 相比于 Spring AOP 功能更加强大，但是 Spring AOP 相对来说更简单，
+
+如果我们的切面比较少，那么两者性能差异不大。但是，当切面太多的话，最好选择 AspectJ ，它比 Spring AOP 快很多。
+
+------
+
+著作权归所有 原文链接：https://javaguide.cn/system-design/framework/spring/spring-knowledge-and-questions-summary.html
 
 
 
@@ -507,7 +517,7 @@ public class Book {
 
 > 问：项目中什么地方用到了 AOP    在 Spring 中进行事务管理中就用到了！！！
 
-==声明式事务：就是用注解的方式开启事务底层使用的是 AOP，相对的手动写代码开事务关事务==
+==声明式事务：就是用注解的方式/xml开启事务底层使用的是 AOP，相对的手动写代码开事务关事务==
 
 
 
