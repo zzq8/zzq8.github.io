@@ -371,6 +371,22 @@ select regexp_substr(profile,"male|female")
 
 # Boke
 
+>  exists 和 not exists 条件
+
+如果子查询返回数据，则返回1或0。常用于判断条件。
+
+```mysql
+select *
+FROM GYSFHHZ d
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM GYSWM_Shiphead h
+  WHERE h.oid = d.soid
+);
+```
+
+
+
 > SQLServer if else
 
 select case when 1=1 then 1 else 2 end
@@ -379,11 +395,11 @@ select case when 1=1 then 1 else 2 end
 
 > 工作中犯的错误   BigInt不要用 ‘’ 包起来 where / set
 
-![image-20230425150628798](http://image.zzq8.cn/img/202304251506846.png)
+<img src="http://image.zzq8.cn/img/202304251506846.png" alt="image-20230425150628798" style="zoom: 67%;" />
 
 
 
-这是SQL Server中MERGE语句的语法形式，用于合并（更新或插入）源表中的数据到目标表中。具体语法如下：
+> ==这是SQL Server中MERGE语句的语法形式，用于合并（更新或插入）源表中的数据到目标表中。具体语法如下：==
 
 ```sql
 MERGE INTO 目标表名称 AS 目标表别名
@@ -394,6 +410,22 @@ WHEN MATCHED THEN
 WHEN NOT MATCHED THEN
     INSERT (列1, 列2, ...) VALUES (值1, 值2, ...)
 ```
+
+MySQL 的版本：
+
+如果在 `user_records` 表中已经存在 `user_id` 为 123，且 `record_date` 为 '2023-05-16' 的记录，那么该 SQL 语句将更新 `record_value` 的值为 100。否则，将插入一条新的记录，其中 `user_id` 为 123，`record_date` 为 '2023-05-16'，`record_value` 为 100。
+
+```sql
+INSERT INTO user_records (user_id, record_date, record_value)
+VALUES (123, '2023-05-16', 100)
+ON DUPLICATE KEY UPDATE record_value = 100;
+```
+
+
+
+
+
+
 
 
 

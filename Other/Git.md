@@ -277,13 +277,15 @@ git rebase <branch-name>
 
 # 2.global ignore
 
-> Non-versioned：TortoiseSVN 配置以下
+> commit 界面有个 no changelist 列表，这里面都是未被版本控制的文件
 >
-> versioned：右键添加到 ignore-on-commit
+> 突然想明白一个事，这里全局忽略文件写路径的时候， 脑袋里要有 Versioned / Non-Versioned 两种文件的概念
+> 然后写Non-Versioned的文件的相对路径，不要写带Versioned的有关的路径了！
+
+可以通过svn的全局配置文件给忽略掉不显示
 
 ```
 ### XD
 [miscellany]
-global-ignores = *.iml .idea *.class .idea .idea/ *.md5 *.log **/target/** classes generated-sources *.log.* localhost_access_log.*.txt
+global-ignores = *.iml .idea *.class *.md5 *.log classes *.log.* localhost_access_log.*.txt *.so *.tmp generated-sources generated-test-sources maven-archiver MyTest.java
 ```
-
