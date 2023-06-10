@@ -117,7 +117,12 @@ linux系统里的VI是编辑文本的命令，在vi里查找相应关键字的�
 
 # 三、常用 Linux 命令
 
+> https://wangchujiang.com/linux-command/
+
 ```bash
+#查看8080端口占用
+lsof -i:8080
+
 # cat find
 cat access.log |grep 'payed'
 
@@ -154,7 +159,7 @@ docker run -p 3306:3306 --name mysql \
 
 
 
-
+# 四、Linux 基础知识
 
 [Linux 文件基本属性](https://www.runoob.com/linux/linux-file-attr-permission.html)：看完就知道文件属性了，重点看里面的两幅图！
 
@@ -188,3 +193,10 @@ chmod -R 770 /mydata/elasticsearch/
 chmod -R 777 /mydata/elasticsearch/
 ```
 
+
+
+
+
+# 五、Shell
+
+![image-20230531110912384](http://image.zzq8.cn/img/202305311109374.png)
