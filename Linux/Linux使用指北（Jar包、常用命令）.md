@@ -119,22 +119,28 @@ linux系统里的VI是编辑文本的命令，在vi里查找相应关键字的�
 
 > https://wangchujiang.com/linux-command/
 
+在 Linux 系统中，`/sbin` 和 `/bin` 目录分别是系统管理员可执行文件和普通用户可执行文件的存储目录。这两个目录的主要区别在于它们包含的程序对系统运行的关键程度不同。
+
 ```bash
+#如果您不确定 Nginx 的可执行文件在哪个目录下，可以通过在终端中输入 which nginx 命令来查找。该命令会返回 Nginx 可执行文件的完整路径。
+#Nginx 的可执行文件通常位于 /usr/sbin/nginx 目录下   注意不是/usr/bin/nginx
+which nginx
+
 #查看8080端口占用
 lsof -i:8080
+netstat -nlp |grep :80  # 看指定端口 pid，方便后面 kill
 
 # cat find
 cat access.log |grep 'payed'
 
 
 free -m  #查看还有多少 MB 内存可用
+free -h  #查不到资料但是这个更好用
 
 #查看正在运行的某个进程
 ps aux|grep nginx
 ps -ef|grep java
 
-# 看指定端口 pid，方便后面 kill
-netstat -nlp |grep :80
 
 # 重命名
 mv file1.txt file2.txt

@@ -502,6 +502,11 @@ JMeter
 > JRedis、Lettuce一样都是 Redis 的JAVA客户端 / **redisson是作为分布式锁的客户端  只不过更强大提供分布式解决方案，我觉得可理解为再把JUC包了一层适用于分布式了，而JUC是单体。同样有加锁、信号量等后面项目用到的点！**
 >
 > 在分布式环境下这些本地锁JUC类都没法用 想用的话得用 [Redisson](https://github.com/mrniko/redisson) (Java implementation) 它对这些类封装成了分布式可用的！
+>
+> 
+>
+> Q：Redisson和redis有什么关联吗
+> 总之，Redisson 和 Redis 之间密切相关，Redisson 是 Redis 的一个客户端，并且对 Redis 进行了封装和扩展，提供了更方便的 Redis 功能和更多的分布式功能。
 
 > 突然又看到官网：
 > **Redisson 是具有内存数据网格功能的 Redis Java 客户端**。它提供了更方便和最简单的方式来使用 Redis。Redisson 对象提供关注点分离，使您可以专注于数据建模和应用程序逻辑。

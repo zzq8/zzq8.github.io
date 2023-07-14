@@ -565,6 +565,10 @@ MySQL分库分表是一种数据库技术，目的是把大量的数据分散到
 
 # 自我学习
 
+> mysql limit 0,10   第一个参数是0开始
+
+
+
 #### 全连接是外连接吗
 
 是的，全连接是一种外连接（outer join），它包括左外连接（left outer join）和右外连接（right outer join）的结果。
