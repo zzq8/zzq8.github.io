@@ -30,3 +30,6 @@ build/
 
 .idea
 *.iml
+
+# MacOS
+.DS_Store
