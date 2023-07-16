@@ -141,7 +141,8 @@ touch /mydata/redis/conf/redis.conf
 su root #切换到root用户
 sudo systemctl start docker #以管理员身份
 
-# shell已经为我们准备好了这个续行符 "\"，来把一行命令分解成多行
+# shell已经为我们准备好了这个续行符 "\"，来把一行命令分解成多行，注意 \ 前面要空格
+#v volume  e enviriment 
 docker run -p 3306:3306 --name mysql \
 -v /mydata/mysql/log:/var/log/mysql \
 -v /mydata/mysql/data:/var/lib/mysql \
