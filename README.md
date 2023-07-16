@@ -50,7 +50,7 @@
 
 ## 3.Other
 
-* [学习清单【未完成】](Other\Study%20List.md)
+* [学习清单【未完成】](Other\StudyList.md)
 * [我的云盘](https://share.zzq8.cn/)
 * [我的书签](https://gitee.com/codezzq/chrome-label)
 

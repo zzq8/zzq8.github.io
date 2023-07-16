@@ -369,9 +369,135 @@ select regexp_substr(profile,"male|female")
 
 
 
+# Boke
+
+> **复合索引和组合索引**是同一个概念，都是指对多个列同时创建一个索引。在不同的数据库管理系统中，可能会使用不同的术语来描述同样的概念。例如，在MySQL中，通常使用“复合索引”（Composite Index）来描述这个概念；而在Oracle数据库中，则更常用“组合索引”（Composite Index）这个词汇来描述这个概念。
+>
+> 联合索引（Compound Index）：也称为复合索引（Composite Index）
+
+
+
+> SQLServer 拼接null就是null
+
+```sql
+select '1'+null+'2' //null
+```
+
+
+
+
+
+>  exists 和 not exists 条件
+
+如果子查询返回数据，则返回1或0。常用于判断条件。
+
+```mysql
+select *
+FROM GYSFHHZ d
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM GYSWM_Shiphead h
+  WHERE h.oid = d.soid
+);
+```
+
+
+
+> SQLServer if else
+
+select case when 1=1 then 1 else 2 end
+
+
+
+> 工作中犯的错误   BigInt不要用 ‘’ 包起来 where / set
+
+<img src="http://image.zzq8.cn/img/202304251506846.png" alt="image-20230425150628798" style="zoom: 67%;" />
+
+
+
+> ==这是SQL Server中MERGE语句的语法形式，用于合并（更新或插入）源表中的数据到目标表中。具体语法如下：==
+
+```sql
+MERGE INTO 目标表名称 AS 目标表别名
+USING 源表表达式 AS 源表别名
+ON 目标表列 = 源表列
+WHEN MATCHED THEN
+    UPDATE SET 目标表列 = 源表列
+WHEN NOT MATCHED THEN
+    INSERT (列1, 列2, ...) VALUES (值1, 值2, ...)
+```
+
+MySQL 的版本：
+
+如果在 `user_records` 表中已经存在 `user_id` 为 123，且 `record_date` 为 '2023-05-16' 的记录，那么该 SQL 语句将更新 `record_value` 的值为 100。否则，将插入一条新的记录，其中 `user_id` 为 123，`record_date` 为 '2023-05-16'，`record_value` 为 100。
+
+```sql
+INSERT INTO user_records (user_id, record_date, record_value)
+VALUES (123, '2023-05-16', 100)
+ON DUPLICATE KEY UPDATE record_value = 100;
+```
+
+
+
+
+
+
+
+
+
+
+
+> Group by 作用
+
+* select 后可以用 聚合函数
+* 另外，还可以使用 GROUP BY 语句进行数据去重，以避免结果集中出现重复的行
+
+
+
+==做题时候发现：使用group by开头的 select 必须明确写清列名不能 *==
+
+```mysql
+select * from student s join score c on s.id=c.studentid group by s.id  -- Error
+select s.id, s.name from student s join score c on s.id=c.studentid group by s.id  -- success
+```
+
+1. SELECT 语句中使用了 *，表示查询所有列。在 GROUP BY 语句中分组的列应该是 SELECT 语句中列名的子集，否则会导致查询结果不准确或错误。因此，建议明确指定 SELECT 语句中需要查询的列，以免出现不必要的问题。
+2. 在 GROUP BY 语句中，只按学生 ID 进行分组，而未对其他列进行聚合函数处理（如 COUNT、SUM、AVG 等）。这意味着，如果一个学生的成绩表中有多条记录，则查询结果将随机返回一个记录，而不是计算该学生的总分或平均分等聚合值。
+
+
+
+> 子查询 + Group by 实践
+>
+> -- 要求:查询平均成绩大于等于68分的同学的信息并按总分从高到低排序。显示字段: 学生基本信息，总分，
+> -- 平均分 语文成绩，数学成绩，英语成绩
+
+```sql
+SELECT
+	s.id,
+	s. NAME,
+	sum(c.score) sum,
+	round(avg(c.score)) avg,
+	(select score from score where studentid=s.id and course='语文') '语文', -- 可以复用上面的结果！！
+    (select score from score where studentid=s.id and course='数学') '数学',
+   (select score from score where studentid=s.id and course='英语') '英语'
+FROM
+	student s
+JOIN score c ON s.id = c.studentid
+GROUP BY
+	s.id
+HAVING
+	avg >= 68
+ORDER BY
+	sum DESC
+```
+
+
+
+
+
 # 面试没答上来
 
-> 1）Union 和 Union All  --> 具体看上面
+> [1）Union 和 Union All  --> 具体看上面](#列转行用union all：一开始我没那么理解)
 
 
 
@@ -395,6 +521,21 @@ https://blog.csdn.net/qq_21993785/article/details/81017671
 >
 > 基于上面的补充，浅问了ChartGPT
 
+* 分库：分库是根据业务不同把相关的表切分到不同的数据库中，比如web、bbs、blog等库
+* 分表：通过分表可以提高表的访问效率。有两种拆分方法：
+  * 垂直拆分： 在主键和一些列放在一个表中，然后把主键和另外的列放在另一个表中。如果一个表中某些列常用，而另外一些不常用，则可以采用垂直拆分。
+  * 水平拆分：根据一列或者多列数据的值把数据行放到两个独立的表中。
+
+* 分区：分区就是把一张表的数据分成多个区块，这些区块可以在一个磁盘上，也可以在不同的磁盘上，分区后，表面上还是一张表，但是数据散列在多个位置，这样一来，多块硬盘同时处理不同的请求，从而提高磁盘**I/O读写性能。**实现比较简单，包括水平分区和垂直分区。
+
+
+
+  注意：分库分表最难解决的问题是统计，还有跨表的连接（比如这个表的订单在另外一张表），解决这个的方法就是使用中间件，比如大名鼎鼎的MyCat，用它来做路由，管理整个分库分表，乃至跨库跨表的连接
+
+分库解决的是数据库端 并发量的问题。分库和分表并不一定两个都要上，比如数据量很大，但是访问的用户很少，我们就可以只使用分表不使用分库。如果数据量只有1万，而访问用户有一千，那就只使用分库。  
+
+   
+
 ### 1.概念
 
 MySQL分库分表是一种数据库技术，目的是把大量的数据分散到多个数据库或数据表中，以提高数据库的可扩展性和稳定性。这样做的好处是：
@@ -415,3 +556,51 @@ MySQL分库分表是一种数据库技术，目的是把大量的数据分散到
 4. 基于时间：将数据按照数据的创建时间或更新时间分配到多个数据库或多个数据表中，这种方法适用于对时间敏感的情况。
 
 不同的应用场景对应不同的分库分表方法，在选择分库分表方法时，需要根据实际情况考虑应用场景、数据量、数据分布情况等因素。
+
+
+
+
+
+
+
+# 自我学习
+
+> mysql limit 0,10   第一个参数是0开始
+
+
+
+#### 全连接是外连接吗
+
+是的，全连接是一种外连接（outer join），它包括左外连接（left outer join）和右外连接（right outer join）的结果。
+
+```mysql
+SELECT *
+FROM table1
+FULL OUTER JOIN table2 ON table1.column = table2.column;
+```
+
+
+
+
+
+#### mysql中创建表时候必须指定主键吗
+
+在MySQL中，创建表时并不一定必须指定主键，但是建议为每个表指定一个主键。如果表中没有主键，那么它就是一个无主键表（unkeyed table），也称为堆表（heap table）。**在无主键表中，MySQL会为每一行隐式地分配一个ROWID**（或HEAPID），作为行的唯一标识符，但是这种行标识符并不是真正的主键。
+
+
+
+
+
+#### mysql没有索引查行数据怎么查
+
+如果MySQL表没有索引，可以使用全表扫描的方式来查找行数据。全表扫描是指MySQL会扫描整个表的每一行数据，然后逐行进行比较，找到符合条件的行数据。
+
+##### 全表扫码顺序有主键就根据主键扫，没有主键就是根据rowid来的是吗   Yes
+
+在MySQL中，如果表没有主键，那么MySQL会使用隐藏的ROWID（也称为物理地址或行指针）作为默认的聚簇索引，用于支持数据的物理存储和访问，因此在进行全表扫描时，MySQL会按照ROWID的顺序进行扫描。
+
+需要注意的是，ROWID是MySQL系统自动分配的，用于唯一标识表中每一行数据的物理地址，每次数据插入或删除都可能会导致ROWID的变化，因此ROWID的值不是稳定的，不应该依赖于ROWID进行数据访问和操作。
+
+如果表定义了主键，则MySQL会使用主键作为聚簇索引进行数据的物理存储和访问，因此在进行全表扫描时，MySQL会按照主键的顺序进行扫描。主键可以是单个列或多个列的组合，主键值必须唯一，不允许为空。
+
+在实际应用中，为了提高查询效率，建议在表中定义主键或者合适的索引来支持查询操作。如果表没有主键或者合适的索引，可能会导致查询效率低下，甚至出现全表扫描的情况。

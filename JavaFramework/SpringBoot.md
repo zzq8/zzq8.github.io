@@ -395,6 +395,95 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 
 
+# Ⅰ、Spring 学习
+
+#### 1.Spring提供的IOC容器实现的两种方式（两个接口）
+
+> `ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");`
+
+ a）BeanFactory接口：IOC容器基本实现是Spring内部接口的使用接口，不提供给开发人员进行使用（加载配置文件时候不会创建对象，在获取对象时才会创建对象。）
+
+ b）ApplicationContext接口：BeanFactory接口的子接口，提供更多更强大的功能，提供给开发人员使用（加载配置文件时候就会把在配置文件对象进行创建）推荐使用！
+
+
+
+
+
+#### 2.IOC操作Bean管理
+
+ a）Bean管理就是两个操作：（1）Spring创建对象；（2）Spring注入属性
+
+
+
+基于（2）现在理解了：
+
+ a）set方式注入
+
+```java
+//（1）传统方式： 创建类，定义属性和对应的set方法
+public class Book {
+        //创建属性
+        private String bname;
+
+        //创建属性对应的set方法
+        public void setBname(String bname) {
+            this.bname = bname;
+        }
+   }
+```
+
+
+
+```xml
+<!--（2）spring方式： set方法注入属性-->
+<bean id="book" class="com.atguigu.spring5.Book">
+    <!--使用property完成属性注入
+        name：类里面属性名称
+        value：向属性注入的值
+    -->
+    <property name="bname" value="Hello"></property>
+    <property name="bauthor" value="World"></property>
+</bean>
+```
+
+ b）有参构造函数注入
+
+
+
+
+
+
+
+#### 3.Bean 生命周期
+
+> **bean 的后置处理器，bean 生命周期有七步** （正常生命周期为五步，而配置后置处理器后为七步）
+
+第一步：Construction 构造Bean对象
+
+第二步：set Bean 属性值
+
+==（1）把 bean 实例传递 bean 后置处理器的方法 postProcessBeforeInitialization==
+
+第三步：init调用自定义的初始化方法    //这前三步在 `new ClassPathXmlApplicationContext("beans-test.xml");` 就搞完
+
+==（2）把 bean 实例传递 bean 后置处理器的方法 postProcessAfterInitialization==
+
+第四步：获取实例化后的 Bean 可以开始使用 Bean  org.example.bean.BeanLife@649bec2e
+
+第五步：destroy调用自定义销毁的方法  //手动让 bean 实例销毁   context.close();  //ClassPathXmlApplicationContext
+
+​       
+
+```xml
+    <bean id="beanLife" class="org.example.bean.BeanLife" init-method="init" destroy-method="destroy">
+        <property name="properties" value="属性XD"/>
+    </bean>
+
+<!--配置后置处理器-->
+   <bean id="myBeanPost" class="org.example.config.MyBeanPost"/>
+```
+
+`public class MyBeanPost implements BeanPostProcessor //创建后置处理器实现类，对应（1）（2）`
 
 
 
@@ -404,8 +493,31 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 
 
+#### 4.AOP
+
+> Spring 框架一般都是基于 AspectJ 实现 AOP 操作，AspectJ 不是 Spring 组成部分，独立 AOP 框架，一般把 AspectJ 和 Spirng 框架一起使 用，进行 AOP 操作
+
+### Spring AOP 和 AspectJ AOP 有什么区别？
+
+**Spring AOP 属于运行时增强，而 AspectJ 是编译时增强。** Spring AOP 基于代理(Proxying)，而 AspectJ 基于字节码操作(Bytecode Manipulation)。
+
+Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系统中最完整的 AOP 框架了。AspectJ 相比于 Spring AOP 功能更加强大，但是 Spring AOP 相对来说更简单，
+
+如果我们的切面比较少，那么两者性能差异不大。但是，当切面太多的话，最好选择 AspectJ ，它比 Spring AOP 快很多。
+
+------
+
+著作权归所有 原文链接：https://javaguide.cn/system-design/framework/spring/spring-knowledge-and-questions-summary.html
 
 
+
+
+
+#### 5.Spring 事务
+
+> 问：项目中什么地方用到了 AOP    在 Spring 中进行事务管理中就用到了！！！
+
+==声明式事务：就是用注解的方式/xml开启事务底层使用的是 AOP，相对的手动写代码开事务关事务==
 
 
 
@@ -922,11 +1034,41 @@ Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（
 
 
 
+# 3）Spring 循环依赖
+
+> 循环依赖解析
+
+是什么：
+
+> 在 Spring 应用程序中，一个 Bean 可以依赖于另一个 Bean。当一个 Bean 依赖于另一个 Bean 时，Spring 会在容器中查找并注入该 Bean，以满足当前 Bean 的需求。这种依赖关系可以是单向的，也可以是循环的。循环依赖指的是两个或多个 Bean 之间相互依赖的情况。
+>
+> 举个例子，假设我们有两个 Bean：Bean A 和 Bean B。Bean A 依赖于 Bean B，而 Bean B 也依赖于 Bean A。这种情况下，Spring 容器会在实例化 Bean A 和 Bean B 时发现循环依赖，因为它们相互依赖，无法先创建一个 Bean，然后注入另一个 Bean。
+>
+> 为了解决这个问题，Spring 提供了一个机制，称为“循环依赖解析”。在循环依赖解析期间，Spring 容器会创建一个 Bean 的“早期实例”，然后注入它所依赖的 Bean 的引用。然后，Spring 会继续创建依赖于当前 Bean 的其他 Bean，直到创建完整个 Bean 图，然后将这些 Bean 实例化并注入它们所依赖的 Bean。
+>
+> 总的来说，Spring 的循环依赖解析机制可以帮助开发人员处理循环依赖的情况，但是需要注意的是，过多的循环依赖可能会导致性能问题，并且在解析过程中也可能出现一些不可预测的问题。因此，在设计 Spring 应用程序时，应该尽可能减少循环依赖的使用，并合理设计 Bean 之间的依赖关系。
+
+
+
+循环依赖解析是指 Spring 框架中解决循环依赖问题的过程。循环依赖指的是两个或多个 Bean 之间相互依赖的情况，这会导致在 Bean 实例化时出现无限递归的问题，从而导致应用程序启动失败。
+
+在 Spring 容器中，**Bean 的创建分为两个阶段：实例化和初始化**。在实例化阶段，Spring 会为 Bean 创建一个空对象；在初始化阶段，Spring 会调用 Bean 的构造函数、Setter 方法和其他初始化方法，将 Bean 实例化并初始化。
+
+在解决循环依赖问题时，Spring 采用了“提前暴露”的策略。具体来说，当 Spring 容器在实例化一个 Bean 时，如果发现该 Bean 依赖于另一个还未创建的 Bean，那么 Spring 会先为依赖的 Bean 创建一个“早期暴露的半成品实例”，然后将其注入到当前 Bean 中。这个“早期暴露的半成品实例”是一个未完成初始化的 Bean 实例，它只包含当前 Bean 的依赖项，还没有完成初始化。当所有 Bean 实例都创建完成后，Spring 容器会按照依赖关系将这些“半成品实例”逐个进行初始化，从而完成 Bean 实例化和初始化的过程。
+
+需要注意的是，循环依赖解析的过程中可能会出现死循环的情况，因此 Spring 容器会设置一个默认值为 50 的解析深度限制，防止无限循环。如果超过了这个限制，Spring 会抛出异常，提示存在循环依赖的问题。
 
 
 
 
-# 3）碰到过的问题
+
+
+
+
+
+
+
+# 4）碰到过的问题
 
 
 
