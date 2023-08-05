@@ -1887,6 +1887,26 @@ Why：在同一个类里面，编写两个方法，内部调用的时候，会�
 
 
 
+#### 4.2.2.补充
+
+大概列举几种情况，仅供参考；
+
+1. 直接new出来的对象添加事务不起作用，因为只有spring定义的bean才接受事务。（XD：既然要享受Spring的好处，那就得是Spring）
+
+1. ﻿﻿由于mysql的引擎用Myisam不支持事务，所以如果使用mysal的myisam引擎的话，事务不起作用。
+2. ﻿﻿如果@Transaction注解到非public方法上，事务不起作用，这是因为spring的AOP特性。
+3. ﻿﻿如果在当前类中进行内部调用方法，比如在A类中有a方法和b方法，a方法没有加@Transaction，b方法加了@Transaction，在方法a中调用方法b，方法b中的事务也不会生效。这是因为spring在扫描bean的时候会自动为标注了@Transaction注解类生成一个代理类，在有注解方法被调用时，实际上是代理类调用的，代理类在调用之前会开启事务，执行事务操作。但是同类中的方法相互调用，相当于this.b（），此时的b方法并非代理类调用，而是直接通过原有的bean直接调用，所以注解不起作用。
+
+4. ﻿﻿异常类型错误，如果抛出的 **RuntimeException及其子类** 事务才会回滚。XD：（废话）不是废话，看下面例子
+
+   ```java
+   if (account.getBalance().compareTo(amount) < 0) {
+           throw new IOException("Insufficient balance"); // 抛出已检查异常
+       }
+   ```
+
+5. 如果异常被catch到，必须要抛出异常，事务才会回滚。
+
 
 
 
