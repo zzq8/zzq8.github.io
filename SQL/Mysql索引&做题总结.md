@@ -371,6 +371,122 @@ select regexp_substr(profile,"male|female")
 
 # Boke
 
+> WITH、COALESCE学习！！！想把两个列数一样的查询 例如  
+>
+> 1）A、B
+> 2）A、C
+>
+> 组成一个查询变成 A、B、C
+>
+> Union 是叠加行，这个有点叠加列的意思！
+
+当涉及复杂的查询或需要多次使用相同的子查询结果时，使用 WITH 子句（也称为公共表表达式或 CTE）可以更清晰地组织和重用查询逻辑。WITH 子句用于定义一个临时的命名查询，它可以在后续的查询中像表一样引用。
+
+以下是 WITH 子句的基本语法：
+
+```sql
+WITH cte_name (column1, column2, ..., columnN) AS (
+    -- 查询定义
+    SELECT ...
+    FROM ...
+    WHERE ...
+)
+-- 后续查询
+SELECT ...
+FROM cte_name
+WHERE ...
+```
+
+在上述语法中，`cte_name` 是公共表表达式的名称，可以在后续的查询中使用。括号中的列名列表是可选的，用于指定公共表表达式的列名。
+
+
+
+
+
+
+
+COALESCE 函数用于处理 NULL 值。它接受多个参数，并返回第一个非 NULL 参数的值。如果所有参数都为 NULL，则返回 NULL。
+
+以下是 COALESCE 函数的示例用法：
+
+```sql
+SELECT
+    COALESCE(column1, column2, ..., columnN) AS result
+FROM
+    table_name;
+```
+
+在上述示例中，COALESCE 函数将逐个检查列 `column1`、`column2`、...、`columnN`，并返回第一个非 NULL 的列值作为结果。
+
+
+
+
+
+
+
+实际语句:
+
+```
+WITH UsedTrays AS (
+    SELECT 
+        CASE trayllx
+            WHEN '1' THEN '小托盘'
+            WHEN '2' THEN '中托盘'
+            WHEN '3' THEN '大托盘'
+            WHEN '托盘' THEN '收货托盘'
+            WHEN '仓库' THEN '保税仓库'
+        END AS trayType,
+        COUNT(d2.oid) AS used
+    FROM TrayRow d1
+    JOIN Dict_Pallet d2 ON (RIGHT(d2.Name, 2) = d1.Name or d2.Name= d1.Name) AND d2.Enable = 1
+    WHERE EXISTS (
+        SELECT 1
+        FROM wm_quant q
+        WHERE q.QT_PALLET = d2.oid AND (q.QT_ONHAND_QTY > 0 OR q.DVERID > 0)
+    )
+    GROUP BY trayllx
+),
+NotUsedTrays AS (
+    SELECT 
+        CASE trayllx
+            WHEN '1' THEN '小托盘'
+            WHEN '2' THEN '中托盘'
+            WHEN '3' THEN '大托盘'
+            WHEN '托盘' THEN '收货托盘'
+            WHEN '仓库' THEN '保税仓库'
+        END AS trayType,
+        COUNT(d2.oid) AS notUsed
+    FROM TrayRow d1
+    JOIN Dict_Pallet d2 ON (RIGHT(d2.Name, 2) = d1.Name or d2.Name= d1.Name) AND d2.Enable = 1
+    WHERE NOT EXISTS (
+        SELECT 1
+        FROM wm_quant q
+        WHERE q.QT_PALLET = d2.oid AND (q.QT_ONHAND_QTY > 0 OR q.DVERID > 0)
+    )
+    GROUP BY trayllx
+)
+SELECT 
+    COALESCE(UsedTrays.trayType, NotUsedTrays.trayType) AS trayType,
+    COALESCE(UsedTrays.used, 0) AS used,
+    COALESCE(NotUsedTrays.notUsed, 0) AS notUsed
+FROM UsedTrays
+FULL JOIN NotUsedTrays ON UsedTrays.trayType = NotUsedTrays.trayType;
+```
+
+
+
+
+
+
+
+> 优化慢查询，原本要20s。  优化后毫秒级   整个查询3k row  子查询 6k row
+
+<img src="http://image.zzq8.cn/img/202307201700091.png" alt="image-20230720170008892" style="zoom: 67%;" />
+
+
+
+
+
 > **复合索引和组合索引**是同一个概念，都是指对多个列同时创建一个索引。在不同的数据库管理系统中，可能会使用不同的术语来描述同样的概念。例如，在MySQL中，通常使用“复合索引”（Composite Index）来描述这个概念；而在Oracle数据库中，则更常用“组合索引”（Composite Index）这个词汇来描述这个概念。
 >
 > 联合索引（Compound Index）：也称为复合索引（Composite Index）
@@ -564,6 +680,34 @@ MySQL分库分表是一种数据库技术，目的是把大量的数据分散到
 
 
 # 自我学习
+
+#### [MySQL中字段类型与合理的选择字段类型；int(11)最大长度是多少？varchar最大长度是多少？](https://segmentfault.com/a/1190000010012140)
+
+对于VARCHAR类型，MySQL会根据存储的实际数据长度来动态分配存储空间，因此VARCHAR类型的存储空间是根据实际存储的数据长度来动态分配的，并不会浪费存储空间。
+
+然而，在创建表时，如果没有明确指定VARCHAR类型的长度，MySQL将使用默认长度来定义该字段。在MySQL中，VARCHAR类型的默认长度为1，这意味着如果没有明确指定VARCHAR类型的长度，MySQL将为该字段分配一个字节的存储空间，这显然不足以存储实际数据。
+
+因此，在创建表时，如果没有明确指定VARCHAR类型的长度，可能会导致存储空间的浪费。例如，在VARCHAR类型的字段中存储了10个字符，如果没有指定长度，则MySQL将使用默认长度1来定义该字段，这将导致MySQL为该字段分配11个字节的存储空间，其中1个字节用于存储长度信息，**10个字节用于存储实际数据，因此将浪费1个字节的存储空间。**
+
+因此，为了避免存储空间的浪费，建议在创建表时明确指定VARCHAR类型的长度，以确保MySQL为该字段分配足够的存储空间来存储实际数据。
+
+
+
+> 在 MySQL 中，SQL 语句的执行顺序如下：
+
+1. FROM 子句：指定要查询的表
+2. JOIN 子句：使用 JOIN 连接表
+3. WHERE 子句：筛选满足条件的行
+4. GROUP BY 子句：将数据按照指定的列分组
+5. HAVING 子句：筛选满足条件的分组
+6. SELECT 子句：选择要查询的列以及进行计算和聚合的函数
+7. DISTINCT 关键字：去重
+8. ORDER BY 子句：按照指定的列排序
+9. LIMIT 关键字：限制查询结果的数量
+
+
+
+
 
 > mysql limit 0,10   第一个参数是0开始
 
