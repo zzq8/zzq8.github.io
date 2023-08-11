@@ -156,7 +156,17 @@ git checkout -b 分支名
 
    git commit -m "commit message" [file name]
 
-   
+
+
+
+> 超好用！！！
+>
+> `git commit -av` 是一个用于提交 Git 修改的命令。它结合了 `-a` 和 `-v` 两个选项，具有以下含义：
+>
+> - `-a`（或 `--all`）选项表示自动将所有已修改的文件添加到暂存区（Git Index），包括已经被 Git 跟踪的文件的修改。这样，你无需手动使用 `git add` 命令来将修改的文件添加到暂存区，Git 会自动处理。
+> - `-v`（或 `--verbose`）选项表示在提交时显示更详细的信息，包括每个修改的文件的 diff 内容。这对于查看每个文件的具体修改内容和变化非常有用。
+>
+> 因此，当你运行 `git commit -av` 命令时，Git 将自动添加所有已修改的文件到暂存区，并在提交时显示每个文件的 diff 内容。
 
 ![img](http://image.zzq8.cn/img/202206011611310.png)
 
