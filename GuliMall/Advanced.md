@@ -1864,7 +1864,12 @@ Why：在同一个类里面，编写两个方法，内部调用的时候，会�
         //b,c做任何设置都没用.都是和α公用一个事务 只相当于是把b()c()的代码放过来了 MY:这样bc的@Transactional失效
         //this.b();//没用
         //this.c();//没用
+      
+        //OrderServiceImpl is YourClassName  通过使用AopContext.currentProxy()方法来获取代理对象，并通过代理对象调用methodB方法，可以确保methodB方法被AOP代理捕获，从而使得事务注解生效。
+       //需要注意的是，使用AopContext.currentProxy()方法需要确保Spring的exposeProxy属性设置为true，以便让Spring能够在当前线程中暴露代理对象。@EnableAspectJAutoProxy(exposeProxy=true);这里没用Spring默认的AOP（JDK / CGLib）
         OrderServiceImpl orderService = (OrderServiceImpl) AopContext.currentProxy();
+
+
         orderService.b();
         orderService.c();
 
@@ -1886,6 +1891,50 @@ Why：在同一个类里面，编写两个方法，内部调用的时候，会�
 默认的事务传播属性是Propagation.REQUIRED
 
 
+
+#### 4.2.2.补充
+
+> @Transactional失效大概列举几种情况，仅供参考；
+
+1. 直接new出来的对象添加事务不起作用，因为只有spring定义的bean才接受事务。（XD：既然要享受Spring的好处，那就得是Spring）
+
+2. 由于mysql的引擎用Myisam不支持事务，所以如果使用mysal的myisam引擎的话，事务不起作用。
+3. 如果@Transaction注解到非public方法上，事务不起作用，这是因为spring的AOP特性。
+
+   * 当`@Transactional`注解应用于非public方法时，Spring的AOP代理机制默认只会代理public方法。这是因为Spring使用基于代理的AOP来实现事务管理，默认使用的是JDK动态代理或CGLIB代理。JDK动态代理只能代理实现接口的类的方法，而CGLIB代理可以代理任何类的方法。但无论是JDK动态代理还是CGLIB代理，它们都无法代理非public方法。因此，如果你将`@Transactional`注解应用于非public方法，事务将不会起作用。
+4. 如果在当前类中进行内部调用方法，比如在A类中有a方法和b方法，a方法没有加@Transaction，b方法加了@Transaction，在方法a中调用方法b，方法b中的事务也不会生效。这是因为spring在扫描bean的时候会自动为标注了@Transaction注解类生成一个代理类，在有注解方法被调用时，实际上是代理类调用的，代理类在调用之前会开启事务，执行事务操作。但是同类中的方法相互调用，相当于this.b（），此时的b方法并非代理类调用，而是直接通过原有的bean直接调用，所以注解不起作用。
+
+5. 异常类型错误，如果抛出的 **RuntimeException及其子类** 事务才会回滚。XD：（废话）不是废话，看下面例子
+
+   ```java
+   if (account.getBalance().compareTo(amount) < 0) {
+           throw new IOException("Insufficient balance"); // 抛出已检查异常
+       }
+   ```
+
+6. 如果异常被catch到，必须要抛出异常，事务才会回滚。
+
+
+
+> GPT：
+>
+> Spring AOP默认使用的是JDK动态代理或CGLIB代理吗？
+> 为什么不能代理非public方法？
+> aspectJ可以代理非public方法吗？
+
+默认情况下，Spring AOP 使用 JDK 动态代理来生成代理对象。JDK 动态代理是基于接口的代理，它通过运行时生成代理对象的方式来实现对目标对象方法的拦截和增强。
+
+Spring AOP 也支持使用 CGLIB 代理，当目标对象没有实现接口时，会自动切换到使用 CGLIB 代理。CGLIB 代理是基于继承的代理，它通过生成目标对象的子类来实现对方法的拦截和增强。
+
+关于代理非public方法的问题，这涉及到 JDK 动态代理和 CGLIB 代理的限制。
+
+JDK 动态代理只能代理实现了接口的目标对象，并且只能代理接口中定义的方法。它无法代理目标对象中的非 public 方法，因为接口中的方法默认为 public，而非 public 方法在接口中是不可见的。
+
+==CGLIB 代理可以代理目标对象中的非 public 方法，因为它是通过生成目标对象的子类来实现代理的，子类可以访问父类的非 public 方法。==但是，CGLIB 代理也有一个限制，就是无法代理被 final 关键字修饰的方法，因为 final 方法无法被子类重写。
+
+==关于 AspectJ，它是一个独立的 AOP 框架，与 Spring AOP 有所不同。AspectJ 可以代理非 public 方法，因为它在编译时织入切面，直接修改字节码。AspectJ 可以实现更强大的切面功能，包括对非 public 方法的拦截和增强。==
+
+总结起来，Spring AOP 默认使用 JDK 动态代理，无法代理非 public 方法。如果需要代理非 public 方法或使用更强大的切面功能，可以考虑使用 AspectJ。
 
 
 
