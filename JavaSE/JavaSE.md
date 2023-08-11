@@ -520,6 +520,20 @@ Java 中的 Arrays 类提供了一个 binarySearch 方法，用于在已排序�
 
 
 
+#### 26.Map 通过匿名内部类方式初始化会有内存泄漏问题
+
+<img src="E:\TyporaImages\image-20230720175442163.png" alt="image-20230720175442163" style="zoom:80%;" />
+
+
+
+
+
+
+
+
+
+
+
 ### Java基本语法
 
 #### 一、基础类型

@@ -206,3 +206,25 @@ chmod -R 777 /mydata/elasticsearch/
 # 五、Shell
 
 ![image-20230531110912384](http://image.zzq8.cn/img/202305311109374.png)
+
+
+
+
+
+> 为什么单独运行java -cp ./*:../app/* com.bokesoft.yes.dev.DevSuite会报以下错误zsh: no matches found: ./*:../app/*
+> 但是把这行单独放到一个.sh文件运行就又可以
+
+这个错误是由于在单独运行`java -cp ./*:../app/* com.bokesoft.yes.dev.DevSuite`命令时，所使用的shell（比如zsh）会对通配符（`*`）进行扩展，但是在当前目录下没有匹配的文件时，会报错。
+
+在单独执行命令时，如果当前目录下没有符合`./*`和`../app/*`通配符模式的文件或目录，shell会报错并显示"zsh: no matches found"。
+
+然而，当你将这行命令放入一个.sh文件中并执行该文件时，shell会将整个命令作为字符串传递给解释器，并且不会对通配符进行扩展。因此，在脚本文件中执行时，通配符不会引发错误。
+
+如果你想在命令行中单独运行这个命令而不报错，你可以使用引号将通配符模式括起来，以阻止shell扩展通配符。例如：
+
+```
+java -cp './*:../app/*' com.bokesoft.yes.dev.DevSuite //:号应该是分隔符，系统可能都不一样   这里后的app好像没用就用bat文件里的就行
+```
+
+这样，通配符将被视为字符串的一部分，而不会被shell进行扩展。
+

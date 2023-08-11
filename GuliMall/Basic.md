@@ -276,7 +276,7 @@ ES6 & Vue 快速入门
 >        age: 21,
 >        language: ['java', 'js', 'css']
 >    }
->                                        
+>                                           
 >    // var hello1 = (param) => console.log("hello," + param.name);
 >    // hello1(person);
 >    var hello2 = ({name}) => console.log("hello," + name);
@@ -1066,6 +1066,18 @@ logging:
 为了解决浏览器跨域问题，W3C 提出了跨源资源共享方案，即 `CORS`(Cross-Origin Resource Sharing)。它允许浏览器向跨源服务器，发出XMLHttpRequest请求。spring mvc 4.2版本增加了对cors的支持，通过spring boot可以非常简单的实现跨域访问。
 
 值得一看CorsConfig：[【跨域】使用CorsConfig和注解，解决跨域](https://juejin.cn/post/6947966470798180359)  和 [gateway跨域解决方案](https://juejin.cn/post/6941260113197924389)
+
+
+
+
+
+#### 补充：
+
+CORS与JSONP的使用目的相同，但是比JSONP更强大。
+
+==JSONP只支持`GET`请求，CORS支持所有类型的HTTP请求。==JSONP的优势在于支持老式浏览器，以及可以向不支持CORS的网站请求数据。
+
+
 
 
 
