@@ -581,7 +581,7 @@ lock.unlock();
 >
 > 缓存本来保证的就是 最终一致性，反正有 ttl 失效后重查放入缓存就又是最新数据了
 
-<img src="C:\Users\hasee\AppData\Roaming\Typora\typora-user-images\image-20230314161335765.png" alt="image-20230314161335765" style="zoom: 67%;" />
+<img src="http://image.zzq8.cn/img/202308231025871.png" alt="image-20230314161335765" style="zoom: 67%;" />
 
 ### 1）、双写模式：写数据库后，写缓存
 
@@ -1479,6 +1479,29 @@ ChatGPT：通俗来说过滤器和拦截器的区别：
 
 <img src="https://images.zzq8.cn/img/202301071601779.png" alt="image-20230107160059758" style="zoom:50%;" />
 
+```java
+/**
+threadLocals 是 Thread 类的属性之一
+1）它是一个 ThreadLocal.ThreadLocalMap 类型的对象，用于存储线程的局部变量。每个线程都有自己的 threadLocals 对象，用于管理该线程的局部变量。
+2）threadLocals 字段使用了线程封闭设计模式，确保每个线程都拥有自己独立的局部变量存储空间，避免了线程之间的数据共享和冲突。
+3）threadLocals 字段的类型为 ThreadLocal.ThreadLocalMap。它是 ThreadLocal 类的内部类，用于存储 ThreadLocal 实例和对应的局部变量值的映射关系。
+
+通过 threadLocals 字段，每个线程可以维护自己的局部变量，并且线程之间的局部变量不会相互干扰。
+需要注意的是，threadLocals 字段是 Thread 类的实例级别字段，每个线程对象都有自己的 threadLocals 对象。这意味着每个线程都可以独立地管理和访问其自己的局部变量。
+*/
+public class Thread implements Runnable {
+    /* ... */
+
+    /* ThreadLocal values pertaining to this thread. This map is maintained
+     * by the ThreadLocal class. */
+    ThreadLocal.ThreadLocalMap threadLocals = null;
+
+    /* ... */
+}
+```
+
+
+
 注意：java.lang.ThreadLocal 是一个类，用泛型来放我们的TO对象
 	 `public static ThreadLocal<MemberResponseVo> loginUser = new ThreadLocal<>();`
 
@@ -2123,9 +2146,9 @@ Remote Address: 192.168.0.1:7890
 
 07 保证服务的稳，其它有了快
 
-<img src="C:\Users\hasee\AppData\Roaming\Typora\typora-user-images\image-20230316140448941.png" alt="image-20230316140448941" style="zoom: 33%;" />
+<img src="http://image.zzq8.cn/img/202308231025296.png" alt="image-20230316140448941" style="zoom: 33%;" />
 
-<img src="C:\Users\hasee\AppData\Roaming\Typora\typora-user-images\image-20230316140459330.png" alt="image-20230316140459330" style="zoom:33%;" />
+<img src="http://image.zzq8.cn/img/202308231025131.png" alt="image-20230316140459330" style="zoom:33%;" />
 
 
 

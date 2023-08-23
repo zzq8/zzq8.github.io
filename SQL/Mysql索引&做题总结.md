@@ -494,6 +494,7 @@ FULL JOIN NotUsedTrays ON UsedTrays.trayType = NotUsedTrays.trayType;
 
 
 > SQLServer 拼接null就是null
+> 当NULL值与任何其他值进行拼接时，结果都将为NULL。这是因为NULL表示缺失或未知的值，它与任何具体的值进行拼接都无法确定其结果。
 
 ```sql
 select '1'+null+'2' //null
