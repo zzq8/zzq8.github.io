@@ -810,7 +810,7 @@ Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系�
 
 
 
-## 2）Pom文件：
+## 2）Pom文件/Maven：
 
  * #### [Pom.xml  -> \<relativePath>](https://blog.csdn.net/gzt19881123/article/details/105255138)
 
@@ -904,6 +904,60 @@ Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系�
     <build>
        <finalName>webjava8</finalName>
     ```
+
+
+
+* #### dependency scope
+
+XD: 我理解很多module的项目，其中一个module引入了`mybatis-plus-boot-starter`。那么其他module就算用到了它也只要引入的时候`<scope>provided</scope>`一下。避免Maven打包臃肿？
+
+
+
+Bingo：
+
+嗯，你的理解是正确的！在一个多模块项目中，如果只有一个模块需要使用`mybatis-plus-boot-starter`，而其他模块也需要使用它提供的功能，你可以通过在其他模块中将依赖的作用域设置为`<scope>provided</scope>`来避免Maven打包结果臃肿。
+
+通过将依赖的作用域设置为`provided`，Maven在编译和测试阶段会将依赖包含在类路径中，以便在编译代码和执行测试时使用。但在部署和运行阶段，Maven会将这些依赖排除在最终的构建结果中。
+
+这样做的好处是，避免了将重复的依赖打包到每个模块中，减小了最终构建结果的大小。同时，由于`mybatis-plus-boot-starter`依赖通常是由一个模块来提供运行时环境，其他模块可以依赖于该模块来获取`mybatis-plus-boot-starter`的功能，而不需要自己打包这些依赖。
+
+需要注意的是，这种使用方式需要确保在部署和运行时提供正确的运行时环境，以便其他模块能够正常使用`mybatis-plus-boot-starter`提供的功能。
+
+
+
+
+
+
+
+当把Maven中的`<scope>provided</scope>`应用于一个依赖时，它代表着你期望该依赖在运行时环境中被提供，比如Web容器或应用服务器。简而言之，它告诉Maven在编译和打包项目时不需要将这个依赖包含进来，因为它将在运行时环境中被提供。
+
+这种依赖通常是一些容器或框架提供的，比如Servlet API或Java EE容器的实现。它们已经存在于运行时环境中，不需要在你的应用程序中显式地包含它们。
+
+举个例子，如果你正在开发一个基于Java EE的Web应用程序，并且使用了Servlet API，你可以将Servlet API作为一个`provided`依赖。这样，Maven在编译和打包你的应用程序时不会包含Servlet API的jar文件，因为它将在Java EE容器中提供。
+
+> Q: 构建和打包项目时为什么要排除MyBatis-Plus框架，但是项目代码又要用
+
+
+A: 哦，我明白你的疑惑了。在构建和打包项目时排除MyBatis-Plus框架，但又在项目代码中使用它，通常是出于以下几个原因：
+
+减小部署包的大小： MyBatis-Plus框架是一个较大的依赖，它包含了许多功能和类库。如果将MyBatis-Plus框架打包到部署包中，会增加部署包的大小。通过将其排除在构建和打包过程之外，可以减小最终部署包的大小，提高部署效率。
+
+运行时环境提供依赖： MyBatis-Plus框架通常是作为Java应用程序的依赖库使用的，而不是作为独立运行的应用程序。运行时环境（如Java EE容器）通常会提供MyBatis-Plus框架的依赖。因此，在构建和打包过程中排除MyBatis-Plus框架，可以依赖运行时环境提供的版本，避免冗余的依赖。
+
+版本一致性控制： 通过排除MyBatis-Plus框架的构建和打包过程，你可以更好地控制所使用的框架版本。这样，你可以根据项目需求选择特定的版本，并确保项目代码与该版本兼容。
+
+需要注意的是，在项目代码中使用MyBatis-Plus框架时，你需要确保项目的依赖管理正确配置，以便在编译和运行时引入MyBatis-Plus框架。你可以在项目的构建脚本（如Maven的pom.xml文件）中添加MyBatis-Plus框架的依赖，并确保它们在编译和运行时可用。
+
+> Q: mybatis-plus-boot-starter为什么能使用<scope>provided</scope>，使打包不出问题
+
+
+嗯，mybatis-plus-boot-starter是一个用于集成MyBatis-Plus框架的Spring Boot Starter。它已经针对Spring Boot应用程序进行了特殊处理，使得在使用<scope>provided</scope>时可以正常打包和部署，而不会出现问题。
+
+这是因为mybatis-plus-boot-starter内部已经配置了Spring Boot的自动配置和依赖解析。它会自动检测和加载所需的依赖项，并在应用程序启动时进行适当的配置。这意味着，即使使用了<scope>provided</scope>排除了mybatis-plus-boot-starter的依赖，Spring Boot仍然能够正确地加载和使用MyBatis-Plus框架。
+
+在使用mybatis-plus-boot-starter时，你可以将<scope>provided</scope>应用于其他与运行时环境相关的依赖，例如Servlet API、JSP API等。这样，这些依赖将由运行时环境提供，并不会被打包到最终的构建结果中。
+
+需要注意的是，尽管mybatis-plus-boot-starter在使用<scope>provided</scope>时可以正常工作，但你仍然需要确保在部署和运行时，适当的运行时环境提供了MyBatis-Plus框架所
 
 
 
