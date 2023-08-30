@@ -276,7 +276,7 @@ ES6 & Vue 快速入门
 >        age: 21,
 >        language: ['java', 'js', 'css']
 >    }
->                                           
+>                                              
 >    // var hello1 = (param) => console.log("hello," + param.name);
 >    // hello1(person);
 >    var hello2 = ({name}) => console.log("hello," + name);
@@ -361,6 +361,22 @@ computed: {
 * `npm run dev`
 
 
+
+尚上优选笔记：
+
+```shell
+#全局安装命令行工具    实测：不执行这行下面的 vue 标识都识别不了  vue : 无法将“vue”项识别为 cmdlet、函数、脚本文件或可运行程序的名称
+npm install --location=global @vue/cli
+#创建一个项目
+vue create vue-test #选择vue2
+#进入到项目目录
+cd vue-test
+#启动程序
+npm run serve
+```
+
+如果启动不起来 digital envelope routines::unsupported
+可能是Node版本不一样，可以把 node_modules 目录删掉，重新 `npm install`  [不行，我换16版本才行]
 
 #### **1.4.2 常用的属性:**
 
