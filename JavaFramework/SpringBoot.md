@@ -587,7 +587,19 @@ Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系�
 * #### @ResponseBody
 
   * 例如，异步获取`json`数据，加上`@Responsebody`注解后，就会直接返回`json`数据。
+  
   * @RestController = @Controller + `@ResponseBody`
+  
+  * ```java
+    	@ExceptionHandler(Exception.class)
+        @ResponseBody //返回json数据
+        public Result error(Exception e){
+            e.printStackTrace();
+            return Result.fail(); //本来这里返回 Result 对象，但是加上上面注解。会返回 JSON（@ResponseBody）
+        }
+    ```
+  
+    
 
 
 
@@ -746,7 +758,14 @@ Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系�
 
 
 
+* #### @ControllerAdvice
+
+  * 基于 AOP 实现，不改变源代码增加原功能
+
 * #### @RestControllerAdvice
+
+  > `@RestControllerAdvice`是`@ControllerAdvice`的衍生注解，专门用于处理RESTful风格的控制器。与`@ControllerAdvice`类似，
+  > 使用`@RestControllerAdvice`的好处是，它不仅会处理异常，还会以RESTful风格返回响应，而不仅仅是视图。这对于构建RESTful API非常方便。
 
   * @RestControllerAdvice 是 Spring MVC 提供的一个注解，**用于统一处理所有 Controller 层抛出的异常**。当 Controller 层抛出异常时，可以使用 @RestControllerAdvice 注解的类来捕获并处理异常，从而对异常进行统一处理。
 
