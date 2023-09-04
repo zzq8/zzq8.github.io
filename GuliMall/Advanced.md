@@ -314,7 +314,7 @@ jvisualvm 能干什么 监控内存泄露，跟踪垃圾回收，执行时内存
 
 
 
-com.alibaba.fastjson.JSON     ->   `TypeReference`
+com.alibaba.fastjson.JSON（jackson也有这个类）     ->   `TypeReference`
 
 jackson都是操作ObjectMapper这个对象进行序列化、反序列化     XD：Jackson笔记官方的，更偏向于它 -> ObjectMapper
 
@@ -346,6 +346,14 @@ JSON.parseObject(catalogJson, new TypeReference<Map<String, List<Catelog2Vo>>>()
     
     后面我光order模块总是有这个问题，其它通过上述解决。不想再纠结了，就换了一个序列化
     https://blog.csdn.net/qq_40265247/article/details/114374706
+
+
+-----------------Boke Company 我常用------------------------
+  ObjectMapper mapper = new ObjectMapper();
+  //Map<String, Object> map = mapper.readValue(s, new TypeReference<Map<String, Object>>() {});
+  //一般二开不复杂，就把map对象转一下。传前端 JsonNode
+  JsonNode jsonNode = mapper.convertValue(map, JsonNode.class);
+  return jsonNode;
 ```
 
 

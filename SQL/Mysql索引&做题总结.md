@@ -371,6 +371,20 @@ select regexp_substr(profile,"male|female")
 
 # Boke
 
+> Sum 去除null值，发现只有最外层包有用    **因为Select 语句是无记录，0Row导致其它公式为null（1、4）**
+>
+> 它不是null，而是整行没有N/A
+
+```sql
+SELECT
+	SUM (isnull(RL_RECV_QTY, 0)) a, --null
+    isnull(SUM (RL_RECV_QTY), 0),   --0
+	SUM (RL_RECV_QTY),  --null
+    SUM (COALESCE(RL_RECV_QTY,0))  --null
+```
+
+
+
 > WITH、COALESCE学习！！！想把两个列数一样的查询 例如  
 >
 > 1）A、B

@@ -276,7 +276,7 @@ ES6 & Vue 快速入门
 >        age: 21,
 >        language: ['java', 'js', 'css']
 >    }
->                                           
+>                                              
 >    // var hello1 = (param) => console.log("hello," + param.name);
 >    // hello1(person);
 >    var hello2 = ({name}) => console.log("hello," + name);
@@ -838,8 +838,8 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
          */
         baseMapper.selectList(null);
 
----具体看 extends ServiceImpl 这个类的源码，public class ServiceImpl<M extends BaseMapper<T>, T> implements IService<T> 
----因为继承泛型是 categoryDao 到这个类投射成了 protected M baseMapper;
+//具体看 extends ServiceImpl 这个类的源码，public class ServiceImpl<M extends BaseMapper<T>, T> implements IService<T> 
+//因为继承泛型是 categoryDao 到这个类投射成了 protected M baseMapper;
 ```
 
 
