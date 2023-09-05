@@ -276,7 +276,7 @@ ES6 & Vue 快速入门
 >        age: 21,
 >        language: ['java', 'js', 'css']
 >    }
->                                              
+>                                                 
 >    // var hello1 = (param) => console.log("hello," + param.name);
 >    // hello1(person);
 >    var hello2 = ({name}) => console.log("hello," + name);
@@ -1084,6 +1084,12 @@ logging:
 值得一看CorsConfig：[【跨域】使用CorsConfig和注解，解决跨域](https://juejin.cn/post/6947966470798180359)  和 [gateway跨域解决方案](https://juejin.cn/post/6941260113197924389)
 
 
+
+==SSYX Project 补充：
+
+1）在后端接口controller添加@CorsConfig跨域注解最简单解决跨域  （跨域有多种解决方案，现在暂时这么做）
+
+2）可能后期还是以网关层面解决是最好==
 
 
 
