@@ -829,7 +829,7 @@ Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系�
 
 
 
-## 2）Pom文件/Maven：
+# 2.2）Pom文件/Maven：
 
  * #### [Pom.xml  -> \<relativePath>](https://blog.csdn.net/gzt19881123/article/details/105255138)
 
@@ -979,6 +979,10 @@ A: 哦，我明白你的疑惑了。在构建和打包项目时排除MyBatis-Plu
 需要注意的是，尽管mybatis-plus-boot-starter在使用<scope>provided</scope>时可以正常工作，但你仍然需要确保在部署和运行时，适当的运行时环境提供了MyBatis-Plus框架所
 
 
+
+> 公司Jar包 maven download source失败..判断依据：druid pom有以下两个标签，公司的没有
+
+* 检查依赖项的 POM 文件：在 Maven 项目中，每个依赖项都有一个对应的 POM（Project Object Model）文件。你可以查看该依赖项的 POM 文件，查找是否有指定源码的相关配置。具体来说，检查 `<build>` 部分或 `<plugins>` 部分是否有配置相关的插件或属性来下载源码。
 
 ## 3）Test 测试类：
 
