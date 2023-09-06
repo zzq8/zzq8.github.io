@@ -1,3 +1,7 @@
+> 摘自《Java面试指北》
+>
+> 先放到这一个文件，再去和自己的笔记合并。。。按模块汇总到自己的里面
+
 # 系统设计&场景题
 
 ## * 如何解决大文件上传问题?
@@ -121,6 +125,42 @@ AIO 也就是 NIO 2。Java 7 中引入了 NIO 的改进版 NIO 2,它是**异步*
 最后，来一张图，简单总结一下 Java 中的 BIO、NIO、AIO。
 
 ![image-20230905133151070](http://image.zzq8.cn/img/202309051331853.png)
+
+> 补充：Netty
+>
+> 很多小伙伴搞不清楚为啥要学习 Netty ，正式今天这篇文章开始之前，简单说一下自己的看法：
+>
+> * Netty 基于 NIO （NIO 是一种同步非阻塞的 I/O 模型，在 Java 1.4 中引入了 NIO），使用 Netty 可以极大地简化 TCP 和 UDP 套接字服务器等网络编程，并且性能以及安全性等很多方面都非常优秀。
+> * 我们平常经常接触的 Dubbo、RocketMQ、Elasticsearch、gRPC、Spark 等等热门开源项目都用到了 Netty。
+> * 大部分微服务框架底层涉及到网络通信的部分都是基于 Netty 来做的，比如说 Spring Cloud 生态系统中的网关 Spring Cloud Gateway。
+>
+> 好的！那我就简单用 3 点来概括一下 Netty 吧！
+>
+> 1. Netty 是一个 基于 NIO 的 ==client-server(客户端服务器)框架==，使用它可以快速简单地开发网络应用程序。
+> 2. 它极大地简化并优化了 TCP 和 UDP 套接字服务器等网络编程,并且性能以及安全性等很多方面甚至都要更好。
+> 3. 支持多种协议 如 FTP，SMTP，HTTP 以及各种二进制和基于文本的传统协议。
+>
+> 用官方的总结就是：Netty 成功地找到了一种在不妥协可维护性和性能的情况下实现易于开发，性能，稳定性和灵活性的方法。
+>
+> 网络编程我愿意称中 Netty 为王 。
+>
+>
+> 不用 NIO 主要是因为 NIO 的编程模型复杂而且存在一些 BUG，并且对编程功底要求比较高。下图就是一个典型的使用 NIO 进行编程的案例：
+>
+> 因为 Netty 具有下面这些优点，并且相比于直接使用 JDK 自带的 NIO 相关的 API 来说更加易用
+>
+> 凭借自己的了解，简单说一下吧！理论上来说，NIO 可以做的事情 ，使用 Netty 都可以做并且更好。Netty 主要用来做网络通信   
+>
+> * 作为 RPC 框架的网络通信工具 ： 我们在分布式系统中，不同服务节点之间经常需要相互调用，这个时候就需要 RPC 框架了。不同服务节点的通信是如何做的呢？可以使用 Netty 来做。比如我调用另外一个节点的方法的话，至少是要让对方知道我调用的是哪个类中的哪个方法以及相关参数吧！
+> * 实现一个自己的 HTTP 服务器 ：通过 Netty 我们可以自己实现一个简单的 HTTP 服务器，这个大家应该不陌生。说到 HTTP 服务器的话，作为 Java 后端开发，我们一般使用 Tomcat 比较多。一个最基本的 HTTP 服务器可要以处理常见的 HTTP Method 的请求，比如 POST 请求、GET 请求等等。
+> * 实现一个即时通讯系统 ： 使用 Netty 我们可以实现一个可以聊天类似微信的即时通讯系统，这方面的开源项目还蛮多的，可以自行去 Github 找一找。
+> * 实现消息推送系统 ：市面上有很多消息推送系统都是基于 Netty 来做的。
+
+
+
+
+
+
 
 ## * 泛型
 
@@ -492,5 +532,219 @@ true
 * s1和s2指向的是两个不同的 String 对象，因此返回 false
 * s2指向的就是驻留在字符串常量池的StringObject2，因此s2=="Hydra"为 true，而s1指向的不是常量池中的对象引用所以返回 false
 
-XD：我这题要理解成只要是 字面量 就是对应字符串常量池中的变量！才想得通
-查资料，new String 到底几个对象  这时候字符串常量池会不会有！！！！看这个文章迷惑了
+> XD：我这题要理解成**只要是 字面量 就是对应字符串常量池中的变量！（也得指向堆中一个变量，这样变量才能引用）**vs **只要是new的就是在堆中** 才想得通
+> 查资料，new String 到底几个对象  这时候字符串常量池会不会有！！！！看这个文章迷惑了
+> 应该是 2 个对象，具体可以看下 GoodNotes
+>
+> > 当调用 `s1.intern()` 方法时，如果字符串常量池中已经存在与 `s1` 相同内容的字符串对象，那么 `s2` 将引用该已存在的对象。这意味着 `s2` 和 `s1` 引用的是同一个字符串常量对象，而不是堆空间中的 `s1` 对象。
+> >
+> > 需要注意的是，字符串常量池是全局共享的，而堆空间中的对象是独立的。通过 `s1.intern()` 方法获取的对象是在字符串常量池中的对象，与堆空间中的对象没有直接关联。
+>
+> > 看以下好理解：字面量不止在字符串常量池中有，堆中也得有才能给变量拿去用！！！
+> > 看上图，可理解为第一步new的时候就有 堆中 现在能看到的所有东西了！！！！！！
+> >
+> > ```java
+> > // 在堆中创建字符串对象”ab“
+> > // 将字符串对象”ab“的引用保存在字符串常量池中
+> > String aa = "ab";
+> > // 直接返回字符串常量池中字符串对象”ab“的引用
+> > String bb = "ab";
+> > ```
+>
+> ###  String s1 = new String("abc");这句话创建了几个字符串对象？
+>
+> 会创建 1 或 2 个字符串对象。
+>
+> 1、如果字符串常量池中不存在字符串对象“abc”的引用，那么它将首先在字符串常量池中创建，然后在堆空间中创建，因此将创建总共 2 个字符串对象。
+>
+> ------
+>
+> 著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：https://javaguide.cn/java/basis/java-basic-questions-02.html
+
+上面是常量池中已存在内容相等的字符串驻留的情况，下面再看看常量池中不存在的情况，看下面的例子：
+
+```java
+String s1 = new String("Hy") + new String("dra");
+s1.intern();  //这里注释掉，结果就会相反
+String s2 = "Hydra";
+System.out.println(s1 == s2);
+```
+
+<details>
+    <summary>答案：</summary>
+true
+</details>
+
+简单分析一下这个过程，第一步会在堆上创建"Hy"和"dra"的字符串对象。第二部驻留到字符串常量池中。
+
+接下来，完成字符串的拼接操作，前面我们说过，实际上 jvm 会把拼接优化成StringBuilder的append方法，并最终调用toString方法返回一个 String 对象。在完成字符串的拼接后，字符串常量池中并没有驻留一个内容等于"Hydra"的字符串。
+
+<img src="http://images.zzq8.cn/img/image-20230906204748712.png" alt="image-20230906204748712" style="zoom:80%;" />
+
+所以，执行s1.intern()时，会在字符串常量池创建一个引用，指向前面StringBuilder创建的那个字符串，也就是变量s1所指向的字符串对象。在《深入理解 Java 虚拟机》这本书中，作者对这进行了解释，因为从 jdk7 开始，字符串常量池就已经移到了堆中，那么这里就只需要在字符串常量池中记录一下首次出现的实例引用即可。
+
+![image-20230906204837682](http://images.zzq8.cn/img/image-20230906204837682.png)
+
+最后，当执行String s2 = "Hydra"时，发现字符串常量池中已经驻留这个字符串，直接返回对象的引用，因此s1和s2指向的是相同的对象。
+
+![**image-20230906204951575**](http://images.zzq8.cn/img/image-20230906204951575.png)
+
+### 第 5 题，还是创建了几个对象？
+
+解决了前面数 String 对象个数的问题，那么我们接着加点难度，看看下面这段代码，创建了几个对象？
+
+`String s="a"+"b"+"c";`
+
+先揭晓答案，只创建了一个对象！ 可以直观的对比一下源代码和反编译后的字节码文件：
+
+![image-20230906212720611](http://images.zzq8.cn/img/image-20230906212720611.png)
+
+如果使用前面提到过的 debug 小技巧，也可以直观的看到语句执行完后，只增加了一个 String 对象，以及一个 char 数组对象。并且这个字符串就是驻留在字符串常量池中的那一个，如果后面再使用字面量"abc"的方式声明一个字符串，指向的仍是这一个，堆中 String 对象的数量不会发生变化。
+
+至于为什么源代码中字符串拼接的操作，在编译完成后会消失，直接呈现为一个拼接后的完整字符串，是因为在编译期间，应用了编译器优化中一种被称为常量折叠(Constant Folding)的技术。
+
+> 常量折叠会将编译期常量的加减乘除的运算过程在编译过程中折叠。编译器通过语法分析，会将常量表达式计算求值，并用求出的值来替换表达式，而不必等到运行期间再进行运算处理，从而在运行期间节省处理器资源。
+
+而上边提到的编译期常量的特点就是它的值在编译期就可以确定，并且需要完整满足下面的要求，才可能是一个编译期常量：
+
+* 被声明为final
+* 基本类型或者字符串类型
+* 声明时就已经初始化
+* 使用常量表达式进行初始化
+
+下面我们通过几段代码加深对它的理解： XD-看我图片文件夹String，只要字符串拼接带变量的都是在堆中 不是字符串常量池
+
+```java
+public static void main(String[] args) {
+    final String h1 = "hello";
+    String h2 = "hello";
+    String s1 = h1 + "Hydra";
+    String s2 = h2 + "Hydra";
+    System.out.println((s1 == "helloHydra"));
+    System.out.println((s2 == "helloHydra"));
+}
+```
+
+<details>
+    <summary>答案：</summary>
+true
+false
+</details>
+
+代码中字符串h1和h2都使用常量赋值，区别在于是否使用了final进行修饰，对比编译后的代码，s1进行了折叠而s2没有，可以印证上面的理论，final修饰的字符串变量才有可能是编译期常量。
+
+![image-20230906213034838](http://images.zzq8.cn/img/image-20230906213034838.png)
+
+再看一段代码，执行下面的程序，结果会返回什么呢？
+
+```java
+public static void main(String[] args) {
+    String h ="hello";
+    final String h2 = h;
+    String s = h2 + "Hydra";
+    System.out.println(s=="helloHydra");
+}
+```
+
+答案是false，因为虽然这里字符串h2被final修饰，**但是初始化时没有使用常量表达式**，因此它也不是编译期常量。那么，有的小伙伴就要问了，到底什么才是常量表达式呢？
+
+在Oracle官网的文档中，列举了很多种情况，下面对常见的情况进行列举（除了下面这些之外官方文档上还列举了不少情况，如果有兴趣的话，可以自己查看）：
+
+* 基本类型和 String 类型的字面量
+* 基本类型和 String 类型的强制类型转换
+* 使用+或-或!等一元运算符（不包括++和--）进行计算
+* 使用加减运算符+、-，乘除运算符*、 / 、% 进行计算
+* 使用移位运算符 >>、 <<、 >>>进行位移操作
+* ……
+
+至于我们从文章一开始就提到的字面量（literals），是用于表达源代码中一个固定值的表示法，在 Java 中创建一个对象时需要使用new关键字，但是给一个基本类型变量赋值时不需要使用new关键字，这种方式就可以被称为字面量。
+
+再说点题外话，和编译期常量相对的，另一种类型的常量是运行时常量，看一下下面这段代码：
+
+```java
+final String s1="hello "+"Hydra";
+final String s2=UUID.randomUUID().toString()+"Hydra";
+```
+
+编译器能够在编译期就得到s1的值是hello Hydra，不需要等到程序的运行期间，因此s1属于编译期常量。而对s2来说，虽然也被声明为final类型，并且在声明时就已经初始化，但使用的不是常量表达式，因此不属于编译期常量，这一类型的常量被称为运行时常量。
+
+
+
+# SpringBoot
+
+> 我只挑重点记录
+
+## * 简单介绍一下 Spring?有啥缺点?
+
+**虽然 Spring 的组件代码是轻量级的，但它的配置却是重量级的（需要大量 XML 配置）**
+
+为此，Spring 2.5 引入了基于注解的组件扫描，这消除了大量针对应用程序自身组件的显式 XML 配置。Spring 3.0 引入了基于 Java 的配置，这是一种类型安全的可重构配置方式，可以代替 XML。
+
+尽管如此，我们依旧没能逃脱配置的魔爪。开启某些 Spring 特性时，比如事务管理和 Spring MVC，还是需要用 XML 或 Java 进行显式配置。启用第三方库时也需要显式配置，比如基于 Thymeleaf 的 Web 视图。配置 Servlet 和过滤器（比如 Spring 的DispatcherServlet）同样需要在 web.xml 或 Servlet 初始化代码里进行显式配置。组件扫描减少了配置量，Java 配置让它看上去简洁不少，但 Spring 还是需要不少配置。
+
+光配置这些 XML 文件都够我们头疼的了，占用了我们大部分时间和精力。除此之外，相关库的依赖非常让人头疼，不同库之间的版本冲突也非常常见。
+
+## * 什么是 Spring Boot Starters?
+
+**Spring Boot Starters 是一系列依赖关系的集合**，因为它的存在，项目的依赖之间的关系对我们来说变的更加简单了。
+
+举个例子：在没有 Spring Boot Starters 之前，我们开发 REST 服务或 Web 应用程序时; 我们需要使用像 Spring MVC，Tomcat 和 Jackson 这样的库，这些依赖我们需要手动一个一个添加。但是，有了 Spring Boot Starters 我们只需要一个只需添加一个spring-boot-starter-web一个依赖就可以了，这个依赖包含的子依赖中包含了我们开发 REST 服务需要的所有依赖。
+
+## * Spring&SpringBoot常用注解总结
+
+https://javaguide.cn/system-design/framework/spring/spring-common-annotations.html
+
+## * 如何使用 Spring Boot 实现全局异常处理？
+
+可以使用 @ControllerAdvice 和 @ExceptionHandler 处理全局异常。
+
+更多内容请参考我的原创 ：[Spring Boot 异常处理在实际项目中的应用](https://snailclimb.gitee.io/springboot-guide/#/./docs/advanced/springboot-handle-exception-plus)
+
+## *Spring Boot 中如何实现定时任务 ? 
+
+我们使用 @Scheduled 注解就能很方便地创建一个定时任务。
+
+```java
+@Component
+public class ScheduledTasks {
+    private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+
+    /**
+     * fixedRate：固定速率执行。每5秒执行一次。
+     */
+    @Scheduled(fixedRate = 5000)
+    public void reportCurrentTimeWithFixedRate() {
+        log.info("Current Thread : {}", Thread.currentThread().getName());
+        log.info("Fixed Rate Task : The time is now {}", dateFormat.format(new Date()));
+    }
+}
+```
+
+单纯依靠 @Scheduled 注解 还不行，我们还需要在 SpringBoot 中我们只需要在启动类上加上@EnableScheduling 注解，这样才可以启动定时任务。@EnableScheduling 注解的作用是发现注解 @Scheduled 的任务并在后台执行该任务。
+
+## * SpringBoot自动配置原理
+
+[guiqp](https://www.yuque.com/guiqp)[2022-04-10 17:38](https://www.yuque.com/snailclimb/mf2z3k/vqe4gz#comment-22144694)
+
+SpringBoot自动配置原理，我的理解是这样的：
+
+1. 引入Starter组件
+2. SpringBoot基于约定去Starter组件的路径下（META-INF/spring.factories）去找配置类
+3. SpringBoot使用ImportSelector去导入这些配置类，并根据@Conditional动态加载配置类里面的Bean到容器
+
+有类似问题的小伙伴可以看看我写的这篇文章，写的比较详细：[https://javaguide.cn/system-design/framework/spring/spring-boot-auto-assembly-principles.htm](https://javaguide.cn/system-design/framework/spring/spring-boot-auto-assembly-principles.html#必看专栏) 
+
+
+
+
+
+简单来说就是自动去把第三方组件的Bean装载到IOC容器中，不需要开发人员再去写Bean相关的配置，在springboot应用里面只需要在启动类上去加上@SpringBootApplication注解，就可以去实现自动装配，它是一个复合注解真正去实现自动装配的注解是@EnableAutoConfiguration这样一个注解，自动装配的实现呢，主要依靠三个核心的关键技术。
+
+第一个，引入starter启动依赖组件的时候，这个组件里面必须包含有一个@Configuration配置类，而在这个配置类里面，我们需要通过@Bean这个注解去声明需要装配到IOC容器里面的Bean对象。
+
+第二个，第三方jar包里面的配置类全路径都将放在classpath:/META-INF/spring.factories文件里面，这样的话springboot就可以知道第三方jar包里面这个配置类的位置。这个步骤主要是用到了spring里面的SpringFactoriesLoader来完成的。
+
+第三个，springboot拿到所有第三方jar包里面声明的配置类以后，再通过Spring提供的ImportSelector这样一个接口（@Import注解功能），来实现对这些配置类的动态加载，从而去完成自动装配的动作。
+
+![image-20230906220544568](http://images.zzq8.cn/img/image-20230906220544568.png)
