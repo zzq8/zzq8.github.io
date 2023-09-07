@@ -9,20 +9,22 @@
 
 ### 一、主线（连续空余时间进行，如周末）
 
-1）**蘑菇博客学代码，debug+删了自己写 看自己感兴趣的模块    最后布到服务器**
+> September Regain your confidence!
 
-2）**八股** Fishing at work
+- [x] **蘑菇博客学代码，debug+删了自己写 看自己感兴趣的模块    最后布到服务器**
 
-3）尚上优选（Latest）
+- [x] **八股** Fishing at work 【Especially JavaGuide 《Java面试指北》】
+
+
 
 
 
 ### 二、夯实（日常穿插进行，如每天早上）
 
-- [x] 以求职为导向来学习 **八股文** ForExample-JavaGuide（到一定度可入下知识星球！）
-- [x] LeetCode 热题 HOT && 精选 TOP
-- [x] 牛客选择题刷完（**+SQL**） && 面试题过完
-- [x] **MySQL（45 讲专栏）**
+- [ ] 以求职为导向来学习 **八股文** ForExample-JavaGuide（到一定度可入下知识星球！）
+- [ ] LeetCode 热题 HOT && 精选 TOP
+- [ ] 牛客选择题刷完（**+SQL**） && 面试题过完
+- [ ] **MySQL（45 讲专栏）**
 - [ ] 有必要把 eDiary 和 ppt 过一遍，实例变量都不知道！联合 goodnotes 假如 TODO 清单！
 
 
@@ -40,10 +42,10 @@
 
 ### 四、其它
 
-- [ ] JVM（书 + JavaGuide）
+- [ ] JVM（康师傅视频 + 周志明Book + JavaGuide）
 - [ ] [Git 游戏](https://oschina.gitee.io/learn-git-branching/)
 - [ ] MongoDB
-- [ ] Netty
+- [ ] Netty（网络通信、NIO、分布式都有帮助）
 
 **平时：可以多看看别人的博客网站，个人经历分享！（例如 JavaGuide 就很有指导意义）**
 
