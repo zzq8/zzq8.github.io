@@ -748,3 +748,6 @@ SpringBoot自动配置原理，我的理解是这样的：
 第三个，springboot拿到所有第三方jar包里面声明的配置类以后，再通过Spring提供的ImportSelector这样一个接口（@Import注解功能），来实现对这些配置类的动态加载，从而去完成自动装配的动作。
 
 ![image-20230906220544568](http://images.zzq8.cn/img/image-20230906220544568.png)
+
+
+
