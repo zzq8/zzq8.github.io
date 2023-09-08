@@ -24,7 +24,7 @@
 - [ ] 以求职为导向来学习 **八股文** ForExample-JavaGuide（到一定度可入下知识星球！）
 - [ ] LeetCode 热题 HOT && 精选 TOP
 - [ ] 牛客选择题刷完（**+SQL**） && 面试题过完
-- [ ] **MySQL（45 讲专栏）**
+- [x] **MySQL（45 讲专栏）**  例如28讲 读写分离
 - [ ] 有必要把 eDiary 和 ppt 过一遍，实例变量都不知道！联合 goodnotes 假如 TODO 清单！
 
 
