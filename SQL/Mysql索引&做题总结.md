@@ -873,3 +873,8 @@ INSERT INTO `cus_order` (`id`, `score`, `name`) VALUES (1, 293854, 'user3');
 INSERT into `cus_order` (`id`, `score`, `name`) values(1, 426547, 'user1'),(1, 33, 'user2'),(1, 293854, 'user3');
 ```
 
+
+
+### 删除长期未使用的索引
+
+删除长期未使用的索引，不用的索引的存在会造成不必要的性能损耗 MySQL 5.7 可以通过查询 sys 库的 schema_unused_indexes 视图来查询哪些索引从未被使用

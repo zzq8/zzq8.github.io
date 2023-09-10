@@ -385,7 +385,7 @@ write pos 和 checkpoint 之间的是“粉板”上还空着的部分，可以�
 
 ==补充：在事务中语句更新会生成 undo log（回滚日志）吗？ 衍生出 多版本和 row trx_id 的概念== [08丨事务到底是隔离的还是不隔离的？](#08丨事务到底是隔离的还是不隔离的？)
 对于 MySQL 数据库来说，**不仅事务的更新操作会记录在 Binlog 中，非事务**的 UPDATE 语句也会被记录在 Binlog 中。
-Undo Log：记录了`事务`执行前的数据，用于回滚事务
+Undo Log：记录了`事务`执行前的数据，用于回滚事务 和 实现MVCC功能
 
 redo log 用于保证 crash-safe 能力。innodb_flush_log_at_trx_commit 这个参数设置成 1 的时候，表示每次事务的 redo log 都直接持久化到磁盘。这个参数我建议你设置成 1，这样可以保证 MySQL 异常重启之后数据不丢失。
 

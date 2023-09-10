@@ -782,3 +782,60 @@ ELK 是目前使用的比较多的一个开源的日志系统解决方案，背�
 * Logstash ：Logstash 主要用于日志的搜集、分析和过滤，支持对多种日志类型进行处理。在 ELK 日志系统中，Logstash 负责日志的收集和清洗。
 * Elasticsearch ：ElasticSearch 一款使用 Java 语言开发的搜索引擎，基于 Lucence 。可以解决使用数据库进行模糊搜索时存在的性能问题，提供海量数据近实时的检索体验。在 ELK 日志系统中，Elasticsearch 负责日志的搜素。
 * Kibana ：Kibana 是专门设计用来与 Elasticsearch 协作的，可以自定义多种表格、柱状图、饼状图、折线图对存储在 Elasticsearch 中的数据进行深入挖掘分析与可视化。 ELK 日志系统中，Logstash 主要负责对从 Elasticsearch 中搜索出来的日志进行可视化展示。
+
+
+
+# Tomcat 常见面试题总结
+
+## * 什么是 Tomcat?
+
+简单来说，Tomcat 就是一个“HTTP 服务器 + Servlet 容器”，我们通常也称呼 Tomcat 为 Web 容器。
+
+* HTTP 服务器 ：处理 HTTP 请求并响应结果。
+* Servlet 容器 ：HTTP 服务器将请求交给 Servlet 容器处理，Servlet 容器会将请求转发到具体的 Servlet（Servlet 容器用来加载和管理业务类）。
+
+## * 什么是 Servlet?有什么作用？
+
+Servlet 指的是任何实现了 Servlet 接口的类。Servlet 主要用于处理客户端传来的 HTTP 请求，并返回一个响应。
+
+Servlet 容器会根据 web.xml 文件中的映射关系，调用相应的 Servlet，Servlet 将处理的结果返回给 Servlet 容器，并通过 HTTP 服务器将响应传输给客户端。
+
+几乎所有的 Java Web 框架（比如 Spring）都是基于 Servlet 的封装。
+
+
+
+# HashMap
+
+> 待吸收美团的过来，系统化的搞定这块
+
+## HashMap 的长度为什么是 2 的幂次方 ⭐⭐⭐
+
+💡 提示：提高运算效率。
+
+> 在Java中，常见的哈希函数（如`hashCode()`方法）通常返回一个32位的整数作为哈希值。这是因为Java中的`int`类型是32位有符号整数，因此哈希值的范围是-2^31（-2147483648）到2^31-1（2147483647）之间的所有整数。
+
+当HashMap的长度为2的幂次方时，通过与运算（&）就可以将哈希码映射到数组的索引上。假设HashMap的长度为N，那么对哈希码进行与运算的结果将是0到N-1之间的整数，恰好对应数组的有效索引范围。
+
+XD: 我可以理解为从位运算角度 32个bit位（2^n）
+
+
+
+为了能让 HashMap 存取高效，尽量较少碰撞，也就是要尽量把数据分配均匀。我们上面也讲到了过了，Hash 值的范围值-2147483648 到 2147483647，前后加起来大概 40 亿的映射空间，只要哈希函数映射得比较均匀松散，一般应用是很难出现碰撞的。但问题是一个 40 亿长度的数组，内存是放不下的。所以这个散列值是不能直接拿来用的。用之前还要先做对数组的长度取模运算，得到的余数才能用来要存放的位置也就是对应的数组下标。这个数组下标的计算方法是“ `(n - 1) & hash`”。（n 代表数组长度）。这也就解释了 HashMap 的长度为什么是 2 的幂次方。
+
+**这个算法应该如何设计呢？**              XD: 这就是我之前LeetCode 学的一个点。。。好使
+
+我们首先可能会想到采用%取余的操作来实现。但是，重点来了：**“取余(%)操作中如果除数是 2 的幂次则等价于与其除数减一的与(&)操作（也就是说 hash%length==hash&(length-1)的前提是 length 是 2 的 n 次方；）。”** 并且 **采用二进制位操作 &，相对于%能够提高运算效率，这就解释了 HashMap 的长度为什么是 2 的幂次方。**
+
+------
+
+著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：https://javaguide.cn/java/collection/java-collection-questions-02.html
+
+
+
+### JDK 1.7 和 JDK 1.8 的 ConcurrentHashMap 实现有什么不同？
+
+* **线程安全实现方式**：JDK 1.7 采用 `Segment` 分段锁来保证安全， `Segment` 是继承自 `ReentrantLock`。JDK1.8 放弃了 `Segment` 分段锁的设计，采用 `Node + CAS + synchronized` 保证线程安全，锁粒度更细，`synchronized` 只锁定当前链表或红黑二叉树的首节点。
+
+- **Hash 碰撞解决方法** : JDK 1.7 采用拉链法，JDK1.8 采用拉链法结合红黑树（链表长度超过一定阈值时，将链表转换为红黑树）。
+  - JDK1.8 之前 ： 数组和链表
+    JDK1.8 之后 ： 多了红黑树
