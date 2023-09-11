@@ -1533,6 +1533,8 @@ private ThreadPoolExecutor executor;
 
 ## 1）concurrentHashMap分段加锁
 
+> 注意这是之前的回答。。。
+
 ChatGPT：
 
 ConcurrentHashMap 是 Java 中线程安全的哈希表实现，它的内部采用了分段锁的机制来提高并发性能，实现了读写分离，可以在多线程环境下高效地支持并发操作。
@@ -1543,3 +1545,10 @@ ConcurrentHashMap 的分段锁是基于数组的，将整个哈希表分成了�
 
 通过分段锁的机制，ConcurrentHashMap 可以支持高并发的操作，同时也能够保证线程安全。
 
+### JDK 1.7 和 JDK 1.8 的 ConcurrentHashMap 实现有什么不同？
+
+* **线程安全实现方式**：JDK 1.7 采用 `Segment` 分段锁来保证安全， `Segment` 是继承自 `ReentrantLock`。JDK1.8 放弃了 `Segment` 分段锁的设计，采用 `Node + CAS + synchronized` 保证线程安全，锁粒度更细，`synchronized` 只锁定当前链表或红黑二叉树的首节点。
+
+- **Hash 碰撞解决方法** : JDK 1.7 采用拉链法，JDK1.8 采用拉链法结合红黑树（链表长度超过一定阈值时，将链表转换为红黑树）。
+  - JDK1.8 之前 ： 数组和链表
+    JDK1.8 之后 ： 多了红黑树

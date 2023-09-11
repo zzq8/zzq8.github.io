@@ -1638,9 +1638,28 @@ Gulimall的时候雷神好像是用的拦截器，每次请求进来从spring se
 如果在线程池中使用ThreadLocal会造成内存泄漏,因为当ThreadLocal对象使用完之后,应该要把设置的key,value,也就是Entry对象进行回收,但线程池中的线程不会回收,而线程对象是通过强引用指向ThreadLocalMap,ThreadLocalMap也是通过强引用指向Entry对象,线程不被回收,Entry对象也就不会被回收,从而出现内存泄漏,解决办法是,在使用了
 ThreadLocal对象之后,手动调用ThreadLocal的remove方法,手动清除Entry对象
 
-```
-TODO
-补充代码 remove 的类
+==在拦截器中设置ThreadLocal的值，在请求处理完成后进行清理操作==
+
+```java
+public class LoginInterceptor implements HandlerInterceptor {
+    private static ThreadLocal<UserInfo> userInfoThreadLocal = new ThreadLocal<>();
+    
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+            throws Exception {
+        // 在拦截器中设置ThreadLocal的值
+        UserInfo userInfo = retrieveUserInfoFromRequest(request);
+        userInfoThreadLocal.set(userInfo);
+        return true;
+    }
+
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
+            throws Exception {
+        // 在请求处理完成后进行清理操作
+        userInfoThreadLocal.remove();
+    }
+}
 ```
 
 
