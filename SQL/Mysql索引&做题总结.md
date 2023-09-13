@@ -436,7 +436,7 @@ FROM
 
 实际语句:
 
-```
+```sql
 WITH UsedTrays AS (
     SELECT 
         CASE trayllx

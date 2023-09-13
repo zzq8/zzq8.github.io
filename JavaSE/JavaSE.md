@@ -1,16 +1,11 @@
-## javaSE 阶段复习
-[toc]
+# javaSE 阶段复习
 TOC--MD内容表
-英文缩写: 
-TOC
-中文全称: 
-MD内容表
-英文全称: 
+
 Table Of Contents (目录)
 
-### 后面补充的知识点
+## 一、碰到的问题
 
-#### ==1. 基础知识：unexpected token==
+#### ==* 基础知识：unexpected token==
 
 才发现成员变量不能 Ait + Enter 生成（必须从左到右写好），局部变量可以。
 
@@ -42,27 +37,20 @@ public class People {
 
 
 
-#### 2. Long 类型比较
+#### * Long 类型比较
 
-如果 == 比较久必须要是  -128 -127
+如果 == 比较就必须要是  -128 到 127 才相等，有个 `private static class LongCache ` 内部类，其它包装类型也一样
 
 ```java
 Long a = 153434L, b =153434L;
 System.out.println(a==b);   //false
-
-System.out.println("Long与int 300 == 结果" + (e == f));//true 会自动转换
-System.out.println("Long与long 300L == 结果" + (g == h));//true 会自动转换
-System.out.println("Long与int 300 equals 结果" + (e == f));//true
-System.out.println("Long与long 300L equals 结果" + (g == h));//true
-System.out.println("new Long与int 300 == 结果" + (i == f));//true 会自动转换
-System.out.println("new Long与long 300L == 结果" + (i == h));//true 会自动转换
 ```
 
 
 
-#### 3. 在计算机系统中，数值一律用**补码**来表示（存储）
+#### * 在计算机系统中，数值一律用**补码**来表示（存储）
 
-在计算机系统中，**数值一律用补码来表示和存储**。原因在于，使用补码，可以将符号位和数值域统一处理；同时，加法和减法也可以统一处理。此外，补码与原码相互转换，其运算过程是相同的，不需要额外的硬件电路。
+1）在计算机系统中，**数值一律用补码来表示和存储**。原因在于，使用补码，可以将符号位和数值域统一处理；同时，加法和减法也可以统一处理。此外，补码与原码相互转换，其运算过程是相同的，不需要额外的硬件电路。
 
 * 反码解决 减法
   * `1 - 1 = 1 + (-1) = [0000 0001]原 + [1000 0001]原= [0000 0001]反 + [1111 1110]反 = [1111 1111]反 = [1000 0000]原 = -0`
@@ -72,9 +60,8 @@ System.out.println("new Long与long 300L == 结果" + (i == h));//true 会自动
 
 
 
-
-对于两个 int 类型的数相加，如果它们的和超过了 int 类型的最大值，则会发生精度溢出。**如果最后的结果还要 /2 可以使用无符号右移解决**
-我的理解：想象一下两个二进制位相加，溢出也是顶多溢出最高位符号位一位bit。此时 >>> 刚好能解决！
+2）对于两个 int 类型的数相加，如果它们的和超过了 int 类型的最大值，则会发生精度溢出。**如果最后的结果还要 /2 可以使用无符号右移解决**
+我的理解：想象一下两个二进制位相加，溢出也是顶多溢出最高位符号位一位bit。此时 >>> 刚好能解决！ 【XD： 妙啊！数学的思想】
 
 * int mid = (left + right) / 2;（精度溢出）
 * int mid = left + (right - left) / 2;（✔）
@@ -82,23 +69,52 @@ System.out.println("new Long与long 300L == 结果" + (i == h));//true 会自动
 
 
 
-一个字节129存不下的，底层是有符号的二进制数来存储的，它是一个环，所以129前面应该是-128，-128前面是，-127。所以答案就是-127。或者算出补码也可得到解
+3）一个字节129存不下的，底层是有符号的二进制数来存储的，它是一个环，所以129前面应该是-128，-128前面是，-127。所以答案就是-127。或者算出补码也可得到解
+
+==！！！呼应题目，除了0特殊外。关注负数为补码形式!!!==
 
 ```java
 byte b = (byte)129;  //-127
+//byte range：-128 ~ 127
+//127：0111 1111
+//128：1000 0000 （-128）
+//129：1000 0001 =》（即二进制的10000001在补码表示中解释为-127） 
 ```
 
 
 
-#### 4. return 碰上 finally
+#### * return 碰上 finally
 
 一旦在finally块中使用了return或throw语句，将会导致try块，catch块中的return，throw语句失效
-
-
 
 摘自《疯狂Java 讲义》（第三版）P366
 
 
+
+#### * join & yield
+
+在 Java 中，`yield()` 方法不会显式释放锁资源。它只会让当前线程从运行状态转变为就绪状态，并让出 CPU 时间片给其他线程。但是，线程在就绪状态时仍然持有其所拥有的锁资源。
+
+`join()` 方法也不会显式释放锁资源。它只会让当前线程等待被调用的线程执行完毕，但是不会释放当前线程持有的锁资源。
+
+```java
+public static void main(String[] args) throws InterruptedException {
+        Thread thread1 = new MyThread("Thread 1");
+        Thread thread2 = new MyThread("Thread 2");
+
+        thread1.start();
+        thread2.start();
+
+        // 使用 yield() 方法暂停当前线程，让其他线程有机会执行
+        Thread.yield();
+
+        // 使用 join() 方法等待 thread1 和 thread2 执行完毕
+        thread1.join();
+        thread2.join();
+
+        System.out.println("All threads have finished execution.");
+    }
+```
 
 
 

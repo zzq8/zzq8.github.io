@@ -12,8 +12,8 @@
 > September Regain your confidence!
 
 - [x] **蘑菇博客学代码，debug+删了自己写 看自己感兴趣的模块    最后布到服务器**
-
 - [x] **八股** Fishing at work 【Especially JavaGuide 《Java面试指北》】
+- [x] 过牛客错题
 
 
 
