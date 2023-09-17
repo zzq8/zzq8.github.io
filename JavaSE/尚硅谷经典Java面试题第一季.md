@@ -1,0 +1,157 @@
+# [第一季](https://blog.csdn.net/qq_42999092/article/details/109068522)
+
+> Title 为评论区别人的笔记，很详细
+
+### [* i++](https://www.bilibili.com/video/BV1Eb411P7bP/?vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)
+
+```java
+i++  => i=i+1
+i = i++ => i=1 
+
+题目：
+ int i = 1;
+ i = i++;
+ int j = i++;
+ int k = i + ++i * i++;
+ System.out.println("i=" + i);
+ System.out.println("j=" + j);
+ System.out.println("k=" + k);
+```
+
+`i = i++;`
+
+```
+  2: iload_1
+  3: iinc          1, 1
+  6: istore_1
+```
+
+![image-20230915223439680](C:\Users\Fighting\AppData\Roaming\Typora\typora-user-images\image-20230915223439680.png)
+
+
+
+
+
+### * Singleton单例模式
+
+> 饿汉式: 在类初始化时直接创建实例对象,不管你是否需要这个对象都会创建
+> 饿汉式: 直接创建对象,不存在线程安全问题
+>
+> **如果是饿汉式,枚举形式最简单**
+> **如果是懒汉式,静态内部类形式最简单**
+
+1) 直接实例化饿汉式(简洁直观)
+
+```java
+public class Singleton1 {
+    public static final Singleton1 INSTANCE = new Singleton1();
+    private Singleton1() {}
+}
+```
+
+2. **枚举式(最简洁)  => 同上是一样的**
+
+```java
+/**
+ * 枚举类型:表示该类型的对象是有限的几个
+ * 我们可以限定为一个,就成了单例
+ */
+public enum Singleton2 {
+    INSTANCE
+}
+```
+
+3. 静态代码块饿汉式(适合复杂实例化)
+
+```java
+/**
+ * 可能想初始化一些变量，不要构造参数给值(这样要改代码不灵活)。。。是配置文件给值
+ * 文件的位置在src下的才能用类加载器加载 
+ */
+public class Singleton3 {
+    public static final Singleton3 INSTANCE;
+    private String info;
+
+    static {
+        try {
+            Properties pro = new Properties();
+            pro.load(Singleton3.class.getClassLoader().getResourceAsStream("single.properties"));
+            INSTANCE = new Singleton3(pro.getProperty("info"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private Singleton3(String info){
+        this.info = info;
+    }
+}
+```
+
+
+
+PS：注意，以上三个的属性都是 final 修饰！！！但是懒汉不是
+
+> 懒汉式:延迟创建对象
+
+1) 线程不安全(适用于单线程)    需要学习多线程使用!!!
+
+```java
+public class Singleton4 {
+    static Singleton4 instance;
+    private Singleton4() {}
+    public static Singleton4 getInstance() {
+            if (instance == null) {
+                instance = new Singleton4();
+            }
+            return instance;
+    }
+}
+```
+
+2. 线程安全(适用于多线程)
+
+```java
+public class Singleton5 {
+    /**
+     * 说白了，就是在上面的基础上加 synchronized
+     */
+    static Singleton5 instance;
+    private Singleton5() {}
+    public static Singleton5 getInstance() {
+        if (instance == null) {
+            synchronized (Singleton5.class) {
+                if (instance == null) {
+                    instance = new Singleton5();
+                }
+                return instance;
+            }
+        }
+        return instance;
+    }
+}
+```
+
+3. **静态内部类形式(适用于多线程)**
+
+```java
+/**
+ * 推荐静态内部类方式，既能懒加载，又保证了线程安全
+ */
+ public class Singleton6 {
+    /**
+     * 1、内部类被加载和初始化时，才创建INSTANCE实例对象
+     * 2、静态内部类不会自动创建,随着外部类的加载初始化而初始化，他是要单独去加载和实例化的
+     * 3、因为是在内部类加载和初始化时，创建的，因此线程安全
+     */
+    private Singleton6(){}
+
+    public static class Inner{
+        private static final Singleton6 INSTANCE = new Singleton6();
+    }
+    public static Singleton6 getInstance() {
+        return Inner.INSTANCE;
+    }
+}
+```
+

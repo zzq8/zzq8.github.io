@@ -1268,7 +1268,9 @@ public class SyncAndReentrantLockDemo {
 #### 3）Callable+FutureTask 【陌生】
 
 ```java
- FutureTask<Integer> futureTask = new FutureTask<>(new callable01());  //FutureTask 间接实现了 Runnable
+/*好像相对上面两个来说 可以拿返回值！！！这才是重点*/
+//以下语句也可替换成线程池版本  Future<Singleton04> futureTask1 = pool.submit(callable);
+FutureTask<Integer> futureTask = new FutureTask<>(new callable01());  //FutureTask 间接实现了 Runnable
  new Thread(futureTask).start();
  //阻塞等待整个线程执行完成,获取返回结果    你可以把这个get放在逻辑最后面,不影响其他逻辑的执行
  System.out.println(futureTask.get());  //get()获取 run()的返回值

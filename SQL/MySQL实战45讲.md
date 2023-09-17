@@ -974,6 +974,14 @@ CREATE TABLE `tuser` (
 mysql>SELECT `a`,`b`,`c` FROM A WHERE `a`='a1' ; //索引生效
 mysql>SELECT `a`,`b`,`c` FROM A WHERE `b`='b2' AND `c`='c2'; //索引失效
 mysql>SELECT `a`,`b`,`c` FROM A WHERE `a`='a3' AND `c`='c3'; //索引生效，实际上值使用了索引a
+
+--- 几个不支持索引的特别的点
+1）where a<>1会使用到索引吗
+	对于条件 a<>1，数据库优化器可能不会选择使用复合索引 (a, b, c)。这是因为在不等于条件下，查询需要返回不等于指定值的所有记录，而复合索	引是按照索引的顺序来存储数据的。因此，优化器可能会认为全表扫描（Table Scan）比使用复合索引更高效。
+2）where a is null and b is not null    
+	isnull支持索引但是isnotnull不支持
+3）where abs(a)=3
+	函数不支持
 ```
 
 看到这里你一定有一个疑问，如果为每一种查询都设计一个索引，索引是不是太多了。如果我现在要按照市民的身份证号去查他的家庭地址呢？虽然这个查询需求在业务中出现的概率不高，但总不能让它走全表扫描吧？反过来说，单独为一个不频繁的请求创建一个（身份证号，地址）的索引又感觉有点浪费。应该怎么做呢？
@@ -1018,7 +1026,7 @@ mysql> select * from tuser where name like '张 %' and age=10 and ismale=1;
 
 然后呢？
 
-当然是判断其他条件是否满足。
+当然是判断其他条件是否满足。 
 
 在 MySQL 5.6 之前，只能从 ID3 开始一个个回表。到主键索引上找出数据行，再对比字段值。
 
