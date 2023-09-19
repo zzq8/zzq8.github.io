@@ -33,7 +33,7 @@ i = i++ => i=1
   6: istore_1
 ```
 
-![image-20230915223439680](C:\Users\Fighting\AppData\Roaming\Typora\typora-user-images\image-20230915223439680.png)
+![image-20230915223439680](http://images.zzq8.cn/img/image-20230915223439680.png)
 
 
 
@@ -162,3 +162,56 @@ public class Singleton5 {
 }
 ```
 
+
+
+### * 方法参数传递机制
+
+> String的不可变性我又没理解！！！   ==已经无数次==  只对了数组，我真废物阿
+>
+> String、包装类等对象的不可变性（本来像对象这种都会跟着变，但这两者是会产生新对象所以。。）
+> XD：可以参考下构造 this.a=a 之所以要这一步可能就是因为这样  方法一执行完，形参都没的情况  所以要赋值出去
+
+```java
+public class Exam4 {
+    public static void main(String[] args) {
+        int i = 1;
+        String str = "hello";
+        Integer num = 200;
+        int[] arr = {1,2,3,4,5};
+        MyData my = new MyData();
+
+        change(i,str,num,arr,my);
+  
+        System.out.println("i= " + i);
+        System.out.println("str= " + str);
+        System.out.println("num= " + num);
+        System.out.println("arr= " + Arrays.toString(arr));
+        System.out.println("my.a= " + my.a);
+
+    }
+    public static void change(int j, String s, Integer n, int[] a, MyData m) {
+        j += 1;
+        s += "world";
+        n += 1;
+        a[0] += 1;
+        m.a += 1;
+    }
+}
+class MyData {
+    int a = 10;
+
+}
+```
+
+<details>
+    <summary>答案：</summary>
+	<p>arr my变了
+    i= 1
+str= hello
+num= 200
+arr= [2, 2, 3, 4, 5]
+my.a= 11
+    </p>
+</details>
+
+![变量初始化 以及运算时 栈堆内存的变化](http://images.zzq8.cn/img/20201014104401137.png)

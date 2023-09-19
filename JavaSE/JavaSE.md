@@ -48,7 +48,7 @@ System.out.println(a==b);   //false
 
 
 
-#### * 在计算机系统中，数值一律用**补码**来表示（存储）
+#### ==* 在计算机系统中，数值一律用**补码**来表示（存储）==
 
 1）在计算机系统中，**数值一律用补码来表示和存储**。原因在于，使用补码，可以将符号位和数值域统一处理；同时，加法和减法也可以统一处理。此外，补码与原码相互转换，其运算过程是相同的，不需要额外的硬件电路。
 
@@ -221,15 +221,15 @@ blockAblockBblockA
 
 
 
-总结：
+==总结：==
 
 (1) 父类静态对象和静态代码块
 
 (2) 子类静态对象和静态代码块
 
-(3) 父类非静态对象和非静态代码块
+(3) 父类非静态对象和非静态代码块  【例如下面的Father.class先（3）再（2）】
 
-(4) 父类构造函数（声明肯定都先于构造器）
+(4) 父类构造函数（声明肯定都先于构造器，XD：才能拿变量名赋值）
 
 * ① 默认初始化
 
@@ -239,6 +239,126 @@ blockAblockBblockA
 (5) 子类 非静态对象和非静态代码块
 
 (6) 子类构造函数
+
+
+
+终结版练习：
+
+> 字节码 <clinit>    <init> 方法
+> CL 代表 class
+> 有几个构造器就有几个<init>方法
+>
+> super 写或者不写都有
+
+```java
+/**
+ * 父类初始化<clinit>
+ * 1、j = method()
+ * 2、 父类的静态代码块
+ *
+ * 父类实例化方法:
+ * 1、super()（最前）
+ * 2、i = test() (9)
+ * 3、子类的非静态代码块 (3)
+ * 4、子类的无参构造（最后）(2)
+ *
+ *
+ * 非静态方法前面其实有一个默认的对象this
+ * this在构造器或<init> 他表示的是正在创建的对象，因为咱们这里是正在创建Son对象，所以
+ * test()执行的就是子类重写的代码(面向对象多态)
+ *
+ * 这里i=test() 执行的就是子类重写的test()方法
+ */
+public class Father {
+    private int i = test();
+    private static int j = method();
+
+    static{
+        System.out.println("(1)");
+    }
+    Father() {
+        System.out.println("(2)");
+    }
+    {
+        System.out.println("(3)");
+    }
+    public int test(){
+        System.out.println("(4)");
+        return 1;
+    }
+    public static int method() {
+        System.out.println("(5)");
+        return 1;
+    }
+}
+
+-----------------------------------------
+/**
+ * 子类的初始化<clinit>
+ * 1、j = method()
+ * 2、子类的静态代码块
+ *
+ * 先初始化父类 (5)(1)
+ * 初始化子类 (10) (6)
+ *
+ * 子类实例化方法:
+ * 1、super()（最前
+ * 2、i = test() (9)
+ * 3、子类的非静态代码块 (8)
+ * 4、子类的无参构造（最后）(7)
+ */ 
+public class Son extends Father {
+    private int i = test();
+    private static int j = method();
+    static {
+        System.out.println("(6)");
+    }
+    Son() {
+        super();
+        System.out.println("(7)");
+    }
+    {
+        System.out.println("(8)");
+    }
+    public int test(){
+        System.out.println("(9)");
+        return 1;
+    }
+    public static int method() {
+        System.out.println("(10)");
+        return 1;
+    }
+
+    public static void main(String[] args) {
+        Son son = new Son();
+        System.out.println();
+        Son son1 = new Son();
+    }
+}
+```
+
+<details>
+    <summary>答案：</summary>
+	<p>
+        (5)
+(1)
+(10)
+(6)
+(9)
+(3)
+(2)
+(9)
+(8)
+(7)
+        \n
+(9)
+(3)
+(2)
+(9)
+(8)
+(7)
+    </p>
+</details>
 
 
 
