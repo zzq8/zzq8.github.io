@@ -248,7 +248,7 @@ blockAblockBblockA
 > CL 代表 class
 > 有几个构造器就有几个<init>方法
 >
-> super 写或者不写都有
+> super 写或者不写都有   （注：代码块里的变量、形参都是局部变量）
 
 ```java
 /**
@@ -280,7 +280,7 @@ public class Father {
         System.out.println("(2)");
     }
     {
-        System.out.println("(3)");
+        System.out.println("(3)");    //我主要被这个代码块卡住，其实这块和上面的 int i 同等地位
     }
     public int test(){
         System.out.println("(4)");

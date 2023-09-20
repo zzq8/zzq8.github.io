@@ -367,6 +367,27 @@ select regexp_substr(profile,"male|female")
 
 # Boke
 
+有如下Table：
+
+414902/P-41	   NaN
+ATE/GQK/19A01210
+ATE/GQK/19A01210 赤道几内亚
+
+对于如下两行两列的表，我想根据第一列的字段去重，保留第二行两个字段都有值。sqlserver怎么做
+也会有其它数据第二列是空的情况我也需要，只不过当第一列一样第二列既有空的又有值的我想保留有值的一行
+
+答：上述查询使用了GROUP BY子句将数据按照第一列进行分组，然后使用MAX函数获取每个组中第二列和第三列的最大值。通过这种方式，如果第一列重复的记录中有至少一行的第二列有值，那么MAX函数将返回有值的行，否则将返回空值。
+
+请注意，上述查询假设第二列和第三列的数据类型是可比较的，例如字符串或数字类型。如果第二列和第三列的数据类型不同，您可能需要相应地调整查询以适应实际情况。
+
+```sql
+SELECT Column1, MAX(Column2) AS Column2, MAX(Column3) AS Column3
+FROM YourTable
+GROUP BY Column1
+```
+
+
+
 > Sum 去除null值，发现只有最外层包有用    **因为Select 语句是无记录，0Row导致其它公式为null（1、4）**
 >
 > 它不是null，而是整行没有N/A
@@ -394,6 +415,8 @@ SELECT
 
 以下是 WITH 子句的基本语法：
 
+公共表达式（Common Table Expressions，CTE）：使用"WITH"关键字来定义一个CTE，**即一个可以在查询中被引用的临时结果集**。使用CTE可以简化复杂查询的编写，并提高可读性。
+
 ```sql
 WITH cte_name (column1, column2, ..., columnN) AS (
     -- 查询定义
@@ -405,6 +428,16 @@ WITH cte_name (column1, column2, ..., columnN) AS (
 SELECT ...
 FROM cte_name
 WHERE ...
+
+-------------------------------  实测：不要漏了 as 会报错
+WITH SalesCTE AS (
+  SELECT ProductID, SUM(Quantity) AS TotalSales
+  FROM Sales
+  GROUP BY ProductID
+)
+SELECT *
+FROM SalesCTE
+WHERE TotalSales > 100
 ```
 
 在上述语法中，`cte_name` 是公共表表达式的名称，可以在后续的查询中使用。括号中的列名列表是可选的，用于指定公共表表达式的列名。
@@ -490,6 +523,8 @@ FULL JOIN NotUsedTrays ON UsedTrays.trayType = NotUsedTrays.trayType;
 
 
 > 优化慢查询，原本要20s。  优化后毫秒级   整个查询3k row  子查询 6k row
+>
+> **工作的这处优化我猜测：可能是结果集太大了，不适合 not in 要 join 效率高**
 
 <img src="http://image.zzq8.cn/img/202307201700091.png" alt="image-20230720170008892" style="zoom: 67%;" />
 

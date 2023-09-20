@@ -1,6 +1,8 @@
 # [第一季](https://blog.csdn.net/qq_42999092/article/details/109068522)
 
 > Title 为评论区别人的笔记，很详细
+>
+> 这一季基础的东西，每一集一道面试题。我全是错的，没对过一道  230920
 
 ### [* i++](https://www.bilibili.com/video/BV1Eb411P7bP/?vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)
 
