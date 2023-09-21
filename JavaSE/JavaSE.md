@@ -118,7 +118,7 @@ public static void main(String[] args) throws InterruptedException {
 
 
 
-#### 5. Map接口和Collection接口是同一等级的
+#### * Map接口和Collection接口是同一等级的
 
 
 

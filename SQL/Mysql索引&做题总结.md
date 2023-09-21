@@ -417,6 +417,8 @@ SELECT
 
 公共表达式（Common Table Expressions，CTE）：使用"WITH"关键字来定义一个CTE，**即一个可以在查询中被引用的临时结果集**。使用CTE可以简化复杂查询的编写，并提高可读性。
 
+1. 考虑使用临时表或公共表达式（CTE）：==如果查询中的子查询使用频繁，可以将其结果存储在临时表或使用 CTE==，以避免多次执行相同的子查询。
+
 ```sql
 WITH cte_name (column1, column2, ..., columnN) AS (
     -- 查询定义
