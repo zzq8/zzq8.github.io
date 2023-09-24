@@ -280,7 +280,7 @@ public class Father {
         System.out.println("(2)");
     }
     {
-        System.out.println("(3)");    //我主要被这个代码块卡住，其实这块和上面的 int i 同等地位
+        System.out.println("(3)");    //我主要被这个代码块卡住，其实这块和上面的 int i 同等地位。<inti>() 会执行
     }
     public int test(){
         System.out.println("(4)");

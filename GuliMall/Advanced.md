@@ -1863,14 +1863,36 @@ ps：都会导致 订单回滚但是下面Feign调用的不会回滚
 
 
 
-### 4.2.本地事务隔离级别&传播行为等复习
+### 4.2.事务的两大属性-本地事务隔离级别&传播行为
+
+针对 @Transactional 就是 propagation、isolation
+
+#### 4.2.1.传播行为
+
+> 事务的传播行为:一个方法运行在了一个开启了事务的方法中时,当前方法是使用原来的事务还是开启一个新的事务
+>
+> XD: 就是开启的 @Transactional 的方法里面调用的另外的方法也用了 @Transactional    ([以下例子视频 Link](https://www.bilibili.com/video/BV1Eb411P7bP?t=873.3&p=8))
 
 ```java
 @Transactional(isolation = Isolation.READ_COMMITTED) //设置事务的隔离级别
-@Transactional(propagation = Propagation.REQUIRED)   //设置事务的传播级别
+@Transactional(propagation = Propagation.REQUIRED)   //设置事务的传播级别，默认值就是这个
+							Propagation.REQUIRES_NEW  /*将原来的事务挂起,开启一个新的事务    记一下，这两个就行*/
+@Transactional                                
+method01{  /*前置：账户余额只有买一本书，现在方法调用要买两本  */
+    for bookShopService.purchase(); //1001、1002 两本书              
+}
+/*
+ * REQUIRES_NEW：
+ *  1）开启这个事务会成功买上一本，不开则都不成功。。
+ *  2）买1001、1002都是新事务，与上面的互不影响
+ *
+ * REQUIRED：都会用父method01的事务，两次买都会失败（事务原子性回滚）
+ */
+@Transactional(propagation = Propagation.REQUIRES_NEW) 
+purchase{
+    buyBook
+}
 ```
-
-[MySQL 事务隔离级别回顾](..\sql\mysql实战45讲#隔离性与隔离级别)
 
 😡TODO：事务的7大传播行为：**传播行为那里，防止本地事务失效**   默认是 required
 
@@ -1886,7 +1908,7 @@ ps：都会导致 订单回滚但是下面Feign调用的不会回滚
 
 
 
-#### [4.2.1.@Transactional](https://blog.csdn.net/shang_0122/article/details/120627232)
+##### [4.2.1.1.@Transactional](https://blog.csdn.net/shang_0122/article/details/120627232)
 
 My：方便本类方法互调！好像是用AOP的aspectJ实现同一个服务的不同方法用不同事务，不然默认都是用同一个事务
 
@@ -1947,7 +1969,13 @@ Why：在同一个类里面，编写两个方法，内部调用的时候，会�
 
 
 
-#### 4.2.2.补充
+#### 4.2.2.隔离级别
+
+##### 联想（Title 的另外一大特性 **事务属性** 具体看自己笔记）：[MySQL 事务隔离级别回顾](..\sql\mysql实战45讲#隔离性与隔离级别)
+
+
+
+#### 4.2.3.补充
 
 > @Transactional失效大概列举几种情况，仅供参考；
 

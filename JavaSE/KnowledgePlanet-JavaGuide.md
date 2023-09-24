@@ -1,4 +1,6 @@
-> 摘自《Java面试指北》
+# JavaGuide
+
+> [《Java面试指北》](https://www.yuque.com/snailclimb/mf2z3k?key=cnk4)
 >
 > 先放到这一个文件，再去和自己的笔记合并。。。按模块汇总到自己的里面
 
