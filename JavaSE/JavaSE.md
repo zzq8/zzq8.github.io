@@ -96,6 +96,7 @@ byte b = (byte)129;  //-127
 在 Java 中，`yield()` 方法不会显式释放锁资源。它只会让当前线程从运行状态转变为就绪状态，并让出 CPU 时间片给其他线程。但是，线程在就绪状态时仍然持有其所拥有的锁资源。
 
 `join()` 方法也不会显式释放锁资源。它只会让当前线程等待被调用的线程执行完毕，但是不会释放当前线程持有的锁资源。
+**thread.Join把指定的线程加入到当前线程，可以将两个交替执行的线程合并为顺序执行的线程。比如在线程B中调用了线程A的Join()方法，直到线程A执行完毕后，才会继续执行线程B。**
 
 ```java
 public static void main(String[] args) throws InterruptedException {
@@ -118,17 +119,26 @@ public static void main(String[] args) throws InterruptedException {
 
 
 
-#### 5. Map接口和Collection接口是同一等级的
+#### * Map接口和Collection接口是同一等级的
 
 
 
-#### 6. 重载只看参数列表
+#### * 重载只看参数列表
 
 重载是在同一个类中，有多个方法名相同，参数列表不同(参数个数不同，参数类型不同),**与方法的返回值无关，与权限修饰符无关**
 
 
 
-#### 7. is-a && ==like-a==
+#### * 赋值运算有返回值
+
+Java跟C的区别，C中赋值后会与0进行比较，如果大于0，就认为是true；而Java不会与0比较，而是直接把赋值后的结果放入括号。
+
+```
+int a;
+System.out.println(a=1); //1
+```
+
+#### * is-a && ==like-a==
 
 ##### **Is-a：**
 
@@ -156,7 +166,7 @@ public static void main(String[] args) throws InterruptedException {
 
 
 
-#### 8. ==static 初始化== & **类的加载顺序**
+#### * ==static 初始化== & **类的加载顺序**
 
 ```java
 public class B
@@ -364,7 +374,7 @@ public class Son extends Father {
 
 
 
-#### 9. 接口与其实现类
+#### * 接口与其实现类
 
 实际上这道题考查的是**两同两小一大**原则：
 
@@ -376,9 +386,7 @@ public class Son extends Father {
 
 
 
-
-
-#### 10. 四种引用类型
+#### * 四种引用类型
 
 ```
 被GCroot强引用=Gcroot对象来说，只要有强引用的存在，它就会一直存在于内存中
@@ -415,9 +423,9 @@ Object obj = new Object(); //只要obj还指向Object对象，Object对象就不
 
 
 
-#### 11. 构造方法
+#### * 构造方法
 
-构造方法就是：public 类名， 没有方法修饰符
+构造方法就是：public 类名， 没有方法修饰符（PS：可以是其它权限修饰符）
 
 ```java
 public class MyClass {
@@ -427,7 +435,7 @@ public class MyClass {
 
 
 
-#### 12. final 变量
+#### * final 变量
 
 被final修饰的变量是常量，这里的b6=b4+b5可以看成是b6=10；在编译时就已经变为b6=10了
 
@@ -449,11 +457,11 @@ final Student t = new Student();      t = new Teacher();   //t编译错误,因�
 
 
 
-#### 13. 静态变量只能在类主体中定义，不能在方法中定义
+#### * 静态变量只能在类主体中定义，不能在方法中定义
 
 
 
-#### 14. pc寄存器 就是 程序计数器
+#### * pc寄存器 就是 程序计数器
 
 程序计数器是**计算机 处理器 中的 寄存器** ，它包含当前正在执行的指令的地址（位置）。
 
@@ -465,7 +473,7 @@ final Student t = new Student();      t = new Teacher();   //t编译错误,因�
 
 
 
-#### 15. 导包
+#### * 导包
 
 **导包只可以导到当前层，不可以再导入包里面的包中的类**
 
@@ -477,18 +485,40 @@ final Student t = new Student();      t = new Teacher();   //t编译错误,因�
 
 
 
-#### ==16. JVM 参数==
+#### ==* JVM 参数==
 
 ##### 题目答案：好学
 
 先分析一下里面各个参数的含义： 
 
 * -Xms：1G ， 就是说初始堆大小为1G 
+
 * -Xmx：2G ， 就是说最大堆大小为2G 
-* -Xmn：500M ，就是说年轻代大小是500M（包括一个Eden和两个Survivor） 
+
+* -Xmn：500M ，就是说年轻代大小是500M（包括一个Eden和两个Survivor S0、S1） 
+
 * -XX:MaxPermSize：64M ， 就是说设置持久代（永久代）最大值为64M 
+
+  * > 在 JDK 8 及更高版本中，`-XX:MaxPermSize` 参数不再起作用。在 JDK 8 之前的版本中，Java 虚拟机使用永久代（Permanent Generation）来存储类的元数据、静态变量等信息。`-XX:MaxPermSize` 参数用于配置永久代的最大大小。
+    >
+    > 然而，从 JDK 8 开始，永久代被称为元空间（Metaspace），并且不再受到固定大小的限制。元空间的大小由系统的可用内存决定，并且可以根据需要自动扩展。因此，`-XX:MaxPermSize` 参数不再适用于 JDK 8 及更高版本。
+    >
+    > 取而代之的是使用 `-XX:MaxMetaspaceSize` 参数来配置元空间的最大大小。你可以使用该参数来限制元空间的增长，防止应用程序使用过多的内存。
+    >
+    > 例如，可以使用以下命令行参数来设置元空间的最大大小为 256MB：
+    >
+    > ```
+    > -XX:MaxMetaspaceSize=256m
+    > ```
+    >
+    > 需要注意的是，元空间的大小不再计入 Java 堆内存的限制，因此你不再需要为永久代或元空间单独分配内存。Java 虚拟机会根据应用程序的需求自动管理元空间的内存使用。==(XD 脑袋里想着那个三层的图就好。上两层可以看作是堆的，最下面一层就是这个参数点了)==
+
 * -XX:+UseConcMarkSweepGC ， 就是说使用使用CMS内存收集算法 
+
 * -XX:SurvivorRatio=3 ， 就是说Eden区与Survivor区的大小比值为3：1：1
+
+  * 在默认情况下，Eden区和Survivor0、Survivor1的比例是8:1:1
+
 
 题目中所问的Eden区的大小是指年轻代的大小，直接根据-Xmn：500M和-XX:SurvivorRatio=3可以直接计算得出
 500M*(3/(3+1+1)) 
@@ -503,7 +533,7 @@ final Student t = new Student();      t = new Teacher();   //t编译错误,因�
 2. 老生代(Old Generation)
 3. 永久代(Permanent Generation)
 
-![hotspot-heap-structure](https://javaguide.cn/assets/hotspot-heap-structure.41533631.png)
+![堆内存结构](https://oss.javaguide.cn/github/javaguide/java/jvm/hotspot-heap-structure.png)
 
 
 
@@ -539,7 +569,7 @@ final Student t = new Student();      t = new Teacher();   //t编译错误,因�
 
 
 
-#### 17. 二维数组命名
+#### * 二维数组命名
 
 二维数组中第一个中括号中必须要有值，它代表的是在该二维数组中有多少个一维数组。
 
@@ -551,13 +581,13 @@ final Student t = new Student();      t = new Teacher();   //t编译错误,因�
 
 
 
-#### 18. 可以的，实例对象也可以调用静态方法。(可以通过编译，但是不建议这样用)
+#### * 实例对象也可以调用静态方法。(可以通过编译，但是不建议这样用)
 
 static表示类方法，在类加载的时候就完成了，而那时对象还没创建完成，就不能用this
 
 
 
-#### 19. 类指外部类的访问修饰符
+#### * 类指外部类的访问修饰符
 
 * 修饰符有public(表示该类在项目所有类中可以被导入）
 * default(该类只能在同一个package中使用）
@@ -572,13 +602,13 @@ static表示类方法，在类加载的时候就完成了，而那时对象还�
 
 
 
-#### 20.interface 修饰符
+#### * interface 修饰符
 
 写酱紫的源代码![img](https://uploadfiles.nowcoder.com/images/20190909/571493834_1567991517942_FEA0BC99924C005C4D343BB1FBF44C63) ，使用反编译软件可以看到这个源代码编译之后的结果![img](https://uploadfiles.nowcoder.com/images/20190909/571493834_1567991575719_0F538A76F4479FCF84589A6913F46892)，我们知道，我们不写的修饰符，都会在编译阶段被加上，所以 **default 和 abstract 可以修饰接口**
 
 
 
-#### 21.值传递 i= i ++;
+#### * 值传递 i= i ++;
 
 ```java
 int i = 0;
@@ -608,17 +638,7 @@ System.out.println(i); //0
 
 
 
-
-
-#### 22.ThreadLocal
-
-ThreadLocal类用于创建一个线程本地变量
-在Thread中有一个成员变量ThreadLocals，该变量的类型是ThreadLocalMap,也就是一个Map，它的键是threadLocal，值就是变量的副本，ThreadLocal为每一个使用该变量的线程都提供了一个变量值的副本，每一个线程都可以独立地改变自己的副本，是线程隔离的。通过ThreadLocal的get()方法可以获取该线程变量的本地副本，在get方法之前要先set,否则就要重写initialValue()方法。
-ThreadLocal不是用来解决对象共享访问问题的，而主要是提供了保持对象的方法和避免参数传递的方便的对象访问方式。一般情况下，通过ThreadLocal.set() 到线程中的对象是该线程自己使用的对象，其他线程是不需要访问的，也访问不到的。各个线程中访问的是不同的对象。
-
-
-
-#### 23.switch语句中的参数
+#### * switch语句中的参数
 
 链接：https://www.nowcoder.com/questionTerminal/70bab9b529ec42ebafd850cd5877dcdd
 来源：牛客网
@@ -642,13 +662,7 @@ ThreadLocal不是用来解决对象共享访问问题的，而主要是提供了
 
 
 
-#### 24.join
-
-thread.Join把指定的线程加入到当前线程，可以将两个交替执行的线程合并为顺序执行的线程。比如在线程B中调用了线程A的Join()方法，直到线程A执行完毕后，才会继续执行线程B。
-
-
-
-#### 25.二分
+#### * 二分
 
 Java 中的 Arrays 类提供了一个 binarySearch 方法，用于在已排序的数组中进行二分查找。
 
@@ -656,7 +670,7 @@ Java 中的 Arrays 类提供了一个 binarySearch 方法，用于在已排序�
 
 
 
-#### 26.Map 通过匿名内部类方式初始化会有内存泄漏问题
+#### * Map 通过匿名内部类方式初始化会有内存泄漏问题
 
 <img src="E:\TyporaImages\image-20230720175442163.png" alt="image-20230720175442163" style="zoom:80%;" />
 
