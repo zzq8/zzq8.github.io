@@ -16,6 +16,41 @@ Replace：$1
 
 
 
+
+
+突然发现 Java 正则也可以用复用这个组的概念：
+
+```java
+public static void main(String[] args) {
+        String input = "#0:%洪都%;#1:%洪都%;#2:%洪都%;#3:0;#4:150;";
+
+        // 定义正则表达式匹配模式
+        String regex = "#\\d+:(.*?);";
+
+        // 创建 Pattern 对象
+        Pattern pattern = Pattern.compile(regex);
+
+        // 创建 Matcher 对象
+        Matcher matcher = pattern.matcher(input);
+
+        // 创建集合存储提取的结果
+        List<String> partsList = new ArrayList<>();
+
+        // 迭代匹配结果并提取部分内容
+        while (matcher.find()) {
+            String part = matcher.group(1);
+            partsList.add(part);
+        }
+
+        // 打印提取的结果
+        for (String part : partsList) {
+            System.out.println("提取的部分内容: " + part);
+        }
+    }
+```
+
+
+
 ## > lzay(?)
 
 > 场景：[\s\S]*? World xxxxxWorld，这样只会匹配到前面

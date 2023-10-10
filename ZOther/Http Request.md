@@ -43,7 +43,8 @@
 
 * `Cookie`: JSESSIONID=B4717473F69FD975072100C7E181E807; JSESSIONID=BF468917A7A82EB64D8E913D8F4457F5 
   * 这两个Name一样但是Path不一样
-
+  * ==Cookie是Web服务器发送给客户端的一小段信息，客户端请求时，可以读取该信息发送到服务器端==
+  
 * [DNT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/DNT): 1 （**D**o **N**ot **T**rack）
   * **已弃用：**不再推荐此功能。尽管某些浏览器可能仍然支持它
 

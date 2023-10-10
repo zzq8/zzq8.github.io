@@ -287,6 +287,13 @@ git rebase <branch-name>
 
 # 2.global ignore
 
+> 231008 Boke 再理解
+
+* ==整个SVN库，别人拉也有效==-TortoiseSVN右键有个ignore，给文件夹添加属性，然后commit可以把文件夹的属性提交【这个应该是适用于整个库的】
+* ==只针对本地自己，别人拉无效== - 如下写的可以从配置文件里设置 / setting -> Global ignore pattern: 设置也是一样的效果！！！【**记得需要重新右键commit打开一个新的框才能看到效果**   不然我老是觉得没有生效】
+
+
+
 > commit 界面有个 no changelist 列表，这里面都是未被版本控制的文件
 >
 > 突然想明白一个事，这里全局忽略文件写路径的时候， 脑袋里要有 Versioned / Non-Versioned 两种文件的概念
