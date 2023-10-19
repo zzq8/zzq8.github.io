@@ -2027,3 +2027,91 @@ MIN_TREEIFY_CAPACITY：桶中的Node被树化时最小的hash表容量:64
 非运行时异常 总是在我们写的时候就会出错 提醒我们try catch  或throw  (一般是 File、SQL 相关)
 
 但是运行时异常检查不出来，只有运行时才会出错，所以也不需try catch  (注意 ClassCastException)
+
+
+
+
+
+
+
+
+
+# Tomcat
+
+> Tomcat 包裹http+css+js静态包里面的其他文件  解决跨域问题不能访问
+>
+> 一个是 HTTP 协议，一个是 file 文件协议 【http://     file:///】
+
+> * 场景：为什么本地访问.js / .css文件却可以，唯独.json文件会报错
+>
+> 在本地访问`.js`和`.css`文件而不报错的原因是因为这些文件通常被浏览器解释为纯文本文件或脚本文件，并且不需要通过特定的解析器来处理。
+>
+> 而`.json`文件是一种特殊的文件类型，被解释为 JSON（JavaScript Object Notation）格式的数据。JSON 是一种用于存储和交换数据的文本格式，它具有特定的语法和结构。当浏览器遇到`.json`文件时，会尝试将其解析为有效的 JSON 数据。
+>
+> **由于安全和隐私的考虑，现代浏览器不允许直接从本地文件系统加载 JSON 文件，即使该文件位于你的计算机上。这是浏览器的安全策略之一，旨在防止网站通过访问本地文件系统来获取敏感信息。**
+>
+> 当你通过 HTTP 协议从服务器加载`.json`文件时，浏览器会遵循同源策略，并允许从同一个源加载该资源。这是因为浏览器认为服务器上的资源是安全的，且不会对用户的本地文件系统造成潜在的风险。
+>
+> 为了在本地访问`.json`文件而不报错，你可以将文件部署到一个本地服务器上，并通过 HTTP 协议进行访问，就像我之前提到的在本地运行时使用 Python 简单的 HTTP 服务器一样。这样可以避免浏览器的安全限制，并正常加载和解析 JSON 数据。
+>
+> 请注意，在实际的生产环境中，你应该将 JSON 文件部署到一个正式的 Web 服务器上，并通过合适的 URL 来访问，而不是依赖本地文件系统路径。
+>
+> 
+>
+> * 换句话说本地只支持html+css+js，其他文件类型都访问不到吗
+>
+> 在本地环境中，浏览器通常支持加载和渲染多种文件类型，包括 HTML、CSS、JavaScript、图像文件（如JPEG、PNG）、字体文件（如TTF、WOFF）、音频文件（如MP3、WAV）、视频文件（如MP4、WebM）等。
+>
+> 对于大多数文件类型，浏览器在本地运行时都可以正常加载和呈现，无论是直接通过文件路径访问还是通过本地服务器进行访问。
+>
+> 然而，对于某些文件类型，浏览器在本地环境中可能会施加一些安全限制。例如，对于包含敏感数据的`.json`文件，浏览器会限制直接从本地文件系统加载，以防止潜在的安全风险。
+>
+> 这些安全限制在本地环境中是为了保护用户的安全和隐私而存在的。当你需要在本地加载特定文件类型时，可以考虑使用本地服务器来提供这些文件，或者调整浏览器的安全设置以允许加载特定文件类型。
+>
+> 需要注意的是，在实际的生产环境中，文件的加载和访问通常通过一个正式的 Web 服务器来进行，而不是依赖本地文件系统路径。这样可以确保文件的可靠性、安全性和可访问性，并遵循浏览器的安全策略和同源策略。
+>
+> 
+>
+> * .txt支持吗
+>
+> 是的，大多数浏览器在本地环境中支持加载和显示文本文件（.txt）。文本文件是一种纯文本格式，可以包含普通文本、代码、配置信息等。
+
+Success：
+
+<img src="http://images.zzq8.cn/img/image-20231013163445699.png" alt="image-20231013163445699" style="zoom:50%;" />
+
+
+
+Error：
+
+![image-20231013163533698](http://images.zzq8.cn/img/image-20231013163533698.png)
+
+![image-20231013163547099](http://images.zzq8.cn/img/image-20231013163547099.png)
+
+
+
+其实像大屏那样处理就行，把 JSON 不要搞文件夹。直接粗暴放 JS 就行！！！
+
+PS: 这样也可以显示地图，但是一般不这样写
+
+![image-20231013171058244](http://images.zzq8.cn/img/image-20231013171058244.png)
+
+
+
+> Tomcat CORS 解决，不用自己写类
+
+```xml
+<filter>
+	<filter-name>CorsFilter</filter-name>
+	<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+	<init-param>
+		<param-name>cors.allowed.origins</param-name>
+		<param-value>*</param-value>
+	</init-param>
+</filter>
+<filter-mapping>
+	<filter-name>CorsFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+```
+

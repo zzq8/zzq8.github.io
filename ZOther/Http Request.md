@@ -78,6 +78,8 @@
 > 响应正文响应正文就是服务器返回的HTML页面或者json数据  text/html  application/json
 
 * Connection: keep-alive
+  * 可以看到请求头也有这个属性
+  * 服务器可以解析请求头中的 Connection 字段来了解客户端的连接偏好，并相应地处理连接的保持与关闭。
 * Content-Encoding: gzip
 * Content-Language: zh-CN
 * `Content-Type`: text/html;charset=utf-8
@@ -87,3 +89,4 @@
   * 设置和页面关联的Cookie
 * Content-Length: 6867
 * Keep-Alive: timeout=60 
+  * 这意味着在客户端与服务器之间的通信中，如果在 60 秒内没有新的请求或响应发生，连接可能会被关闭。

@@ -1,6 +1,8 @@
 # Redis
 
 > [个人定制化总结，详细信息看课件！](尚硅谷_Redis6课件.pdf)
+>
+> [狂神说Redis笔记](狂神说Redis笔记_去水印.pdf)
 
 # 一、模拟手机验证码
 
@@ -340,3 +342,13 @@ Lua 脚本原子性，在执行的时候别人不能打断
 # 八、Other
 
 > java 这个方法接下来都是要操作指定key的crud。有一个api bound  
+
+
+
+
+
+# 九、如何设计一个排行榜？
+
+https://www.yuque.com/snailclimb/mf2z3k/hbsnl8?pwd=cnk4
+
+Redis 有序集合 Zset(sorted set) 
