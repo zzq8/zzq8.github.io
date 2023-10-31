@@ -6,6 +6,130 @@
 >
 > [自己的笔记：JVM 参数](../JavaSE/JavaSE.md)
 
+# 自己汇总
+
+![img](https://images2015.cnblogs.com/blog/331425/201606/331425-20160623115845438-670228585.png)
+
+#### ==* JVM 参数==
+
+##### 题目答案：好学
+
+先分析一下里面各个参数的含义： 
+
+* -Xms：1G ， 就是说初始堆大小为1G 
+
+* -Xmx：2G ， 就是说最大堆大小为2G 
+
+* -Xmn：500M ，就是说年轻代大小是500M（包括一个Eden和两个Survivor S0、S1） 
+
+* -XX:MaxPermSize：64M ， 就是说设置持久代（永久代）最大值为64M 
+
+  * > 在 JDK 8 及更高版本中，`-XX:MaxPermSize` 参数不再起作用。在 JDK 8 之前的版本中，Java 虚拟机使用永久代（Permanent Generation）来存储类的元数据、静态变量等信息。`-XX:MaxPermSize` 参数用于配置永久代的最大大小。
+    >
+    > 然而，从 JDK 8 开始，永久代被称为元空间（Metaspace），并且不再受到固定大小的限制。元空间的大小由系统的可用内存决定，并且可以根据需要自动扩展。因此，`-XX:MaxPermSize` 参数不再适用于 JDK 8 及更高版本。
+    >
+    > 取而代之的是使用 `-XX:MaxMetaspaceSize` 参数来配置元空间的最大大小。你可以使用该参数来限制元空间的增长，防止应用程序使用过多的内存。
+    >
+    > 例如，可以使用以下命令行参数来设置元空间的最大大小为 256MB：
+    >
+    > ```
+    > -XX:MaxMetaspaceSize=256m
+    > ```
+    >
+    > 需要注意的是，元空间的大小不再计入 Java 堆内存的限制，因此你不再需要为永久代或元空间单独分配内存。Java 虚拟机会根据应用程序的需求自动管理元空间的内存使用。==(XD 脑袋里想着那个三层的图就好。上两层可以看作是堆的，最下面一层就是这个参数点了)==
+
+* -XX:+UseConcMarkSweepGC ， 就是说使用使用CMS内存收集算法 
+
+* -XX:SurvivorRatio=3 ， 就是说Eden区与Survivor区的大小比值为3：1：1
+
+  * 在默认情况下，Eden区和Survivor0、Survivor1的比例是8:1:1
+
+
+题目中所问的Eden区的大小是指年轻代的大小，直接根据-Xmn：500M和-XX:SurvivorRatio=3可以直接计算得出
+500M*(3/(3+1+1)) 
+=500M*（3/5） 
+=500M*0.6 
+=300M 
+所以Eden区域的大小为300M。
+
+##### 下图三层
+
+1. 新生代内存/ 年轻代 (Young Generation)  ：1 个 Eden 2 个 Survivor
+2. 老生代(Old Generation)
+3. 永久代(Permanent Generation)
+
+![堆内存结构](https://oss.javaguide.cn/github/javaguide/java/jvm/hotspot-heap-structure.png)
+
+
+
+先说VM选项， 三种：
+
+- \- : 标准VM选项，VM规范的选项
+- -X: 非标准VM选项，不保证所有VM支持
+- -XX: 高级选项，高级特性，但属于不稳定的选项
+
+参见 [Java HotSpot VM Options](https://link.zhihu.com/?target=http%3A//www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html%23Options)
+
+题主提到的参数前缀为X，显然属于第二类
+
+再说这几个参数，其语义分别是：
+
+- -Xmx: 堆的最大内存数，等同于-XX:MaxHeapSize
+- -Xms: 堆的初始化初始化大小
+- -Xmn: 堆中新生代初始及最大大小，如果需要进一步细化，初始化大小用-XX:NewSize，最大大小用-XX:MaxNewSize 
+- -Xss: 线程栈大小，等同于-XX:ThreadStackSize
+
+命名应该非简称，助记的话： memory maximum, memory startup, memory nursery/new, stack size.
+
+
+
+作者：Home3k
+链接：https://www.zhihu.com/question/59957834/answer/170775050
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
+
+#### * 方法区
+
+> JIT 代码缓存  TODO description
+
+![method-area-jdk1.7](https://oss.javaguide.cn/github/javaguide/java/jvm/method-area-jdk1.7.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # JVM-康师傅
 
 # 第一篇：内存与垃圾回收篇
@@ -136,33 +260,3 @@ ps：我也是刚刚学到这里，如有说的不对之处望大家指出，一
 
 
 
-
-# JVM的GC 参数为什么要这么命名：xms、xss、xmn和xmn?
-
-先说VM选项， 三种：
-
-- \- : 标准VM选项，VM规范的选项
-- -X: 非标准VM选项，不保证所有VM支持
-- -XX: 高级选项，高级特性，但属于不稳定的选项
-
-参见 [Java HotSpot VM Options](https://link.zhihu.com/?target=http%3A//www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html%23Options)
-
-题主提到的参数前缀为X，显然属于第二类
-
-再说这几个参数，其语义分别是：
-
-- -Xmx: 堆的最大内存数，等同于-XX:MaxHeapSize
-- -Xms: 堆的初始化初始化大小
-- -Xmn: 堆中新生代初始及最大大小，如果需要进一步细化，初始化大小用-XX:NewSize，最大大小用-XX:MaxNewSize 
-- -Xss: 线程栈大小，等同于-XX:ThreadStackSize
-
-命名应该非简称，助记的话： memory maximum, memory startup, memory nursery/new, stack size. 
-
-具体选项:   [java](https://link.zhihu.com/?target=https%3A//docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html%23BABDJJFI)
-
-
-
-作者：Home3k
-链接：https://www.zhihu.com/question/59957834/answer/170775050
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

@@ -1,5 +1,7 @@
 # Maven
 
+> 鱼皮这篇讲的细：https://mp.weixin.qq.com/s/mOFjOVYrM_b9I2UlNgeGxg
+
 # *）Pom文件/Maven：
 
  * #### [Pom.xml  -> \<relativePath>](https://blog.csdn.net/gzt19881123/article/details/105255138)
@@ -199,3 +201,20 @@ POM File：
 </mirror>
 ```
 
+
+
+
+
+
+
+#### maven项目pom文件 和 setting文件都有那个标签repository。是不是这两个文件作用一样
+
+
+
+不，POM文件和settings文件中的`<repository>`标签具有不同的作用。
+
+在Maven项目中，POM（Project Object Model）文件是项目的核心描述文件，它定义了项目的基本信息、依赖项、构建配置等。POM文件中的`<repository>`标签用于定义项目的仓库配置。仓库是Maven用于下载和管理项目依赖项的地方。通过在POM文件中定义`<repository>`标签，您可以指定要使用的仓库的位置、URL和其他相关信息。
+
+另一方面，settings文件是Maven的全局配置文件，它位于Maven安装目录下的`conf`文件夹中，或者位于用户的`.m2`文件夹中。settings文件中的`<repository>`标签用于配置全局的仓库设置，这些设置将应用于所有Maven项目。通过设置文件中的`<repository>`标签，您可以配置Maven使用的默认仓库、镜像仓库、身份验证等。
+
+因此，虽然POM文件和settings文件中的`<repository>`标签都涉及仓库配置，但它们的作用范围和使用方式不同。POM文件中的`<repository>`标签用于项目级别的仓库配置，而settings文件中的`<repository>`标签用于全局级别的仓库配置。

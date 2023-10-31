@@ -50,13 +50,18 @@ vs新建工作区 -> 将当前保存为工作区会有一个xxx.code-workspace�
 
 ## 1.MP 框架API(Get It)
 
+==这里已经挪到 lambda 笔记中==
+
 MP中有Lambda的Wrapper（为了避免了字段硬编码和拼写错误的问题，即使用普通QueryWrapper的缺陷）
 
 > 对于 `QueryWrapper` 类的 `like` 方法，它不支持使用 Lambda 表达式作为参数。只有 `LambdaQueryWrapper` 类支持使用 Lambda 表达式。
 >
 > 在 `LambdaQueryWrapper` 中，我们可以使用 `Role::getRoleName` 来指定查询条件的字段。而在 `QueryWrapper` 中，我们需要使用字符串 `"role_name"` 来指定数据库表中的字段名。
+>
+>
+> ==TODO 搞不懂这里的第一个参数的Lambda为什么拿的是@TableField("role_name")的值==
 
-```
+```java
 //创建条件构造器对象
 LambdaQueryWrapper<Role> wrapper = new LambdaQueryWrapper<>();
 

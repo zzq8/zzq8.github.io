@@ -538,6 +538,12 @@ mysql> show variables like 'transaction_isolation';
 >
 > 悲观锁SQL落地：具体来说，`SELECT ... FOR UPDATE` 语句会对查询到的行加上排它锁（Exclusive Lock），这意味着其他事务不能同时对这些行进行修改。在多个事务同时查询同一组数据时，如果其中一个事务使用了 `FOR UPDATE`，则其他事务必须等待该事务释放锁之后才能进行修改操作。
 >
+> > - 当 `SELECT... FOR UPDATE` 查询条件明确指定主键时，为**行锁**。
+> > - 当 `SELECT... FOR UPDATE` 查询条件明确指定索引时，为**行锁**，所有满足此条件的行都会被加锁。
+> > - 当 `SELECT... FOR UPDATE` 查询条件所指定主键为一个范围时，为**行锁**，所有满足此条件的行都会被加锁。
+> > - 当 `SELECT... FOR UPDATE` 查询条件无主键、无索引时，为**表锁**。
+> > - 当 `SELECT... FOR UPDATE` 查询条件明确指定索引或主键时，但查询无结果时，不会加行锁，更不会加表锁
+>
 > ```sql
 > 以下是一个使用悲观锁解决写写冲突的实例语句：
 > 
@@ -555,7 +561,7 @@ mysql> show variables like 'transaction_isolation';
 - `MVCC + 乐观锁：update t_goods set count = count -1 , version = version + 1 where good_id=2 and version = 1`
   MVCC 解决读写冲突，乐观锁解决写写冲突
 
-同时你会发现，即使现在有另外一个事务正在将 4 改成 5，这个事务跟 read-view A、B、C 对应的事务是不会冲突的。
+**同时你会发现，即使现在有另外一个事务正在将 4 改成 5，这个事务跟 read-view A、B、C 对应的事务是不会冲突的。**（XD：MVCC 解决读写冲突。我在自己视图改自己的，你们读取你们自己视图的互不冲突）
 
 你一定会问，回滚日志总不能一直保留吧，什么时候删除呢？答案是，在不需要的时候才删除。也就是说，系统会判断，当没有事务再需要用到这些回滚日志时，回滚日志会被删除。
 

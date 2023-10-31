@@ -341,7 +341,7 @@ alter user 'root'@'localhost' identified by '123456';
 | 打开新的标签页并执行 Google 搜索                             | 输入搜索字词并按 Alt + Enter 键      |
 | 跳转到地址栏                                                 | **Ctrl + l** 或 Alt + d 或 F6        |
 
-在 Google 的搜索界面时可以 / 来聚焦到输入框
+**在 Google 的搜索界面时可以 / 来聚焦到输入框**
 
 Shift+Enter 新开浏览器界面搜
 

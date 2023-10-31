@@ -32,8 +32,6 @@ list.stream().forEach(System.out::println);
 
 
 
-
-
 问题：
 
 > [取两个集合的某个字段的并集](https://www.yuque.com/bravo1988/java/bacf3g#pArKK)
