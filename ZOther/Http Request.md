@@ -80,14 +80,51 @@
 * Connection: keep-alive
   * 可以看到请求头也有这个属性
   * 服务器可以解析请求头中的 Connection 字段来了解客户端的连接偏好，并相应地处理连接的保持与关闭。
+  
 * Content-Encoding: gzip
+
 * Content-Language: zh-CN
+
 * `Content-Type`: text/html;charset=utf-8
   * 对应请求头的 Accept 告诉你采用的是哪个
+  
 * Date: Thu, 12 Jan 2023 08:27:16 GMT
+
 * `Set-Cookie`: xxx
   * 设置和页面关联的Cookie
+  
 * Content-Length: 6867
+
 * Keep-Alive: timeout=60 
   * 这意味着在客户端与服务器之间的通信中，如果在 60 秒内没有新的请求或响应发生，连接可能会被关闭。
+  
   * CATIC 商网就是做了这个限制，然后直接报错 504 (Gateway Time-out) 但实际上，你只要请求丢过去了他后台服务器就还在执行。返回值如果不重要的话，我这里就是 return true 不太重要     响应值丢了就丢了  反正接口幂等了
+  
+  * **Response Headers的参数Keep-Alive: timeout=60该在哪里设置**
+  
+    * **---对于Apache服务器：**
+      对于 Apache Tomcat，你可以通过修改 `server.xml` 文件来配置
+  
+      ```
+      <Connector port="8080" protocol="HTTP/1.1"
+                 connectionTimeout="60" />
+      ```
+  
+    * **---对于Nginx服务器：**
+      在 Nginx 的配置文件（通常是 `nginx.conf` 或位于 `sites-available` 目录中的虚拟主机配置文件）中，可以添加以下指令来设置 `Keep-Alive` 的超时时间：
+  
+      ```
+      keepalive_timeout 60s;
+      ```
+  
+      上述配置中，`keepalive_timeout` 设置为 `60s` 表示超时时间为60秒。
+  
+      请注意，以上配置示例仅供参考，实际配置可能会根据你的服务器环境和需求而有所不同。在修改服务器配置之前，请确保备份现有配置文件，并确保你对服务器配置有足够的了解。
+  
+      完成配置更改后，重新启动服务器以使更改生效。之后，服务器会在响应头中包含 `Keep-Alive: timeout=60`，指示客户端保持持久连接的时间为60秒。
+  
+    
+  
+    
+  
+    
