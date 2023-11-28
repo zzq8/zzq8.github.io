@@ -7,6 +7,14 @@
 > 还有自动化配置文档，这个倒idea双shift找properties也行
 >
 > 看到了P25，由于求职形势逼迫。搁浅... 做项目快速上手能干，往后再回头了    
+>
+> 
+>
+> 补充面试常问：SpringBoot：
+>
+> 1. 自动装载
+> 2. `怎么实现starter` （看我SpringBoot代码的Demo，要知道流程）
+> 3. bean的生命周期
 
 <img src="http://image.zzq8.cn/img/202302111035624.png" alt="image" style="zoom: 80%;" />
 
@@ -489,7 +497,13 @@ public class Book {
 
 
 
+#### 补充：springbean的生命周期
 
+- 实例化
+- 属性赋值 （构造参数注入，setter注入等）
+- 初始化 （检查aware接口，前置处理，后置处理等，这个过程中可能自定义了一些初始化之前的操作和之后的操作）
+- 使用
+- 销毁 （销毁前可能自己配置了一些销毁之前的方法)
 
 
 

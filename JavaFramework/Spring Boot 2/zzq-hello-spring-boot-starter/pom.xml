@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 <!--    这个场景启动器是未来让别人引用的-->
     <modelVersion>4.0.0</modelVersion>
-<!--流程是：现在这个starter -> autoconfigure -> springboot-starter（最底层的每一个模块都要用的）-->
+<!--流程是：现在这个starter -> autoconfigure(配到spring.factories) -> springboot-starter（最底层的每一个模块都要用的）-->
     <groupId>com.zzq</groupId>
     <artifactId>zzq-hello-spring-boot-starter</artifactId>
     <version>1.0-SNAPSHOT</version>

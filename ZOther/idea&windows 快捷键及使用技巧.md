@@ -334,11 +334,42 @@ alter user 'root'@'localhost' identified by '123456';
 
 # 五、Chrome & JS
 
+> What does %2F mean in a URL?     ASCII Encoding Reference
+
+场景：我用电脑识别 QR_Code 到 URL 浏览器  发现把里面的 `/` 全部转移成 `%2F` 了
+
+联想到 `空格` 是 `%20` 于是系统总结下：
+
+常见的需要转义的字符：https://www.w3schools.com/tags/ref_urlencode.ASP
+
+在线 URLDecode 解码工具
+
+
+
 > 实用 JS 到 Console
 
-复制一个 input 的 Selector, **我这里也有便捷方式，发现input有个 `readonly` 控制的不可编辑！！！把这个删了就行！~**
+1）复制一个 input 的 Selector, **我这里也有便捷方式，发现input有个 `readonly` 控制的不可编辑！！！把这个删了就行！~**
+
+在 JavaScript 字符串中需要转义的特殊字符：
+
+- 反斜杠 `\`: 反斜杠用于转义后面的字符，例如 `\\` 表示一个普通的反斜杠字符。
+- 引号 `"` 和 `'`: 如果字符串本身包含引号，需要使用反斜杠进行转义，例如 `\"` 或 `\'`。
+- 换行符 `\n`: 表示换行。
+- 回车符 `\r`: 表示回车。
+- 制表符 `\t`: 表示水平制表符。
 
 ![image-20231120173938571](http://images.zzq8.cn/img/image-20231120173938571.png)
+
+2）js如何给td标签设置值
+
+```js
+//tdElement 可以通过 getElementById / querySelector 获取
+tdElement.innerHTML = '新的值'; // 设置 <td> 的内容
+tdElement.textContent = '新的值';
+tdElement.innerText = '新的值';
+```
+
+
 
 
 
