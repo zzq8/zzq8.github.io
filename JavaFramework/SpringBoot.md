@@ -1091,6 +1091,6 @@ spring:
 
 > 多配置激活问题：active profiles   只要写application后面的名字就行，写全了反而失效！！！
 > https://segmentfault.com/q/1010000042312154
-> 也可    --spring.profiles.active=app-bpdev
+> 也可    --spring.profiles.active=app-bpdev   (等同于在idea中配置 如下图位置)
 
 ![image-20230802085814446](http://image.zzq8.cn/img/202308020858808.png)

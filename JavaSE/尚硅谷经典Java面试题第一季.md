@@ -124,6 +124,8 @@ public class Singleton4 {
 public class Singleton5 {
     /**
      * 说白了，就是在上面的基础上加 synchronized
+     * XD: synchronized 下面的这个 if 干什么用的？  【双重检查锁（Double-Checked Locking）】
+     *     因为多个线程可以突破第一个 if 是所以下面也要 if
      */
     static Singleton5 instance;
     private Singleton5() {}
