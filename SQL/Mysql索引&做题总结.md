@@ -813,6 +813,9 @@ https://blog.csdn.net/qq_21993785/article/details/81017671
 # 自我学习
 
 > 常翻的一张图，SQL JOINS 
+>
+> `假如 T1(a,b)  T2(a,a)  两表 join / left join / right join 都会有两行，因为交集部分 a 有两个！` 因为按道理 on 的时候得是唯一键    但是此时(a,a)并不是唯一键
+> 2023-12-13 Record, Because i Don't understand
 
 ![img](http://image.zzq8.cn/img/202309071713371.png)
 
