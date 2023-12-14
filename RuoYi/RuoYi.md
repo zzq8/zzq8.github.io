@@ -1,4 +1,8 @@
-# RuoYi
+# RuoYi-Vue
+
+> 该项目没用 MP，整完这个可以再整 [RuoYi-Cloud](https://doc.ruoyi.vip/ruoyi-cloud/)
+>
+> 基于SpringBoot、Spring Security、Jwt、Vue的前后端分离的后台管理系统
 
 # 1.验证码
 
@@ -28,8 +32,21 @@ Producer 接口下就两个方法
 Redis 写入两个内容：
 
 1. `sys_config:sys.account.captchaEnabled`
+
    * configService.selectCaptchaEnabled();  // XD：这里是否开启状态也会写入 Redis
+
+   * ```xml
+     <select id="selectConfig" parameterType="SysConfig" resultMap="SysConfigResult">
+         -- XD: 学到一招，相当于字符串拼接   fragment   
+         <include refid="selectConfigVo"/>
+         <include refid="sqlwhereSearch"/>
+     </select>
+     ```
+
+     
+
 2. `captcha_codes:e67884e45c464d418284441ab707b7b6` 
+
    * 验证码 `1+1=?@2` 答案 2 会写入 Redis， 1+1=? 会以流的形式转成图片给前端    【问题：登录的时候怎么把答案的key再带回给后端？   获取验证码的时候顺便把uuid也给了前端    前端Vue data部分直接给值！看 [1.2.前端](#1.2.前端) 代码块】  这个点谷粒商城雷神好像是直接用个隐藏的input实现的，这里直接就 vue data() 部分有个 uuid 直接赋值
 
 

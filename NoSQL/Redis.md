@@ -1,10 +1,115 @@
 # Redis
 
->  Redis 可以用来做限流、分布式锁
+>  Redis 可以用来做限流(MQ)、**分布式锁、缓存**
 >
 > [个人定制化总结，详细信息看课件！](尚硅谷_Redis6课件.pdf)
 >
 > [狂神说Redis笔记](狂神说Redis笔记_去水印.pdf)
+
+# 0、限流 / 分布式锁 / 缓存
+
+> 是的，Redis可以用于限流、分布式锁和缓存等功能。
+>
+> 1. 限流：通过利用Redis的数据结构和操作，如有序集合(sorted sets)、**带有过期时间的键**(keys with expiration)和原子操作(atomic operations)，可以实现限制请求处理速率的功能。
+> 2. 分布式锁：Redis可以用于实现分布式锁，通过使用**SETNX（如果不存在则设置）**命令来确保在分布式环境下的互斥访问。通过获取锁的客户端可以执行临界区代码，其他客户端则需要等待或执行其他逻辑。
+> 3. 缓存：Redis的主要功能之一是作为缓存存储，它提供了快速的读写操作和灵活的键值操作。通过将数据存储在Redis中，可以减少对后端存储系统（如数据库）的访问，从而提高系统的响应速度和性能。
+>
+> 需要注意的是，以上功能在Redis中是通过使用不同的数据结构和命令来实现的。因此，在具体实现时，需要根据业务需求和场景选择合适的Redis数据结构和操作。
+
+当涉及到使用Redis在Java中实现限流、分布式锁和缓存时，以下是一些示例代码：
+
+1. 限流：
+```java
+import redis.clients.jedis.Jedis;
+
+public class RateLimiter {
+    private Jedis jedis;
+    private String key;
+
+    public RateLimiter(String host, int port, String key) {
+        jedis = new Jedis(host, port);
+        this.key = key;
+    }
+
+    public boolean allowRequest() {
+        long currentTimestamp = System.currentTimeMillis();
+        long windowStartTimestamp = currentTimestamp - 1000; // 1秒的时间窗口
+        long count = jedis.zcount(key, windowStartTimestamp, currentTimestamp);
+        if (count < 10) { // 每秒限制10个请求
+            jedis.zadd(key, currentTimestamp, String.valueOf(currentTimestamp));
+            return true;
+        }
+        return false;
+    }
+}
+```
+
+2. 分布式锁：
+```java
+import redis.clients.jedis.Jedis;
+
+public class DistributedLock {
+    private Jedis jedis;
+    private String lockKey;
+    private int lockTimeout = 30000; // 锁的超时时间，默认30秒
+
+    public DistributedLock(String host, int port, String lockKey) {
+        jedis = new Jedis(host, port);
+        this.lockKey = lockKey;
+    }
+
+    public boolean acquireLock() {
+        long startTimestamp = System.currentTimeMillis();
+        while ((System.currentTimeMillis() - startTimestamp) < lockTimeout) {
+            String result = jedis.set(lockKey, "LOCKED", "NX", "PX", lockTimeout);
+            if ("OK".equals(result)) {
+                return true;
+            }
+            try {
+                Thread.sleep(100); // 等待一段时间后重试获取锁
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        return false;
+    }
+
+    public void releaseLock() {
+        jedis.del(lockKey);
+    }
+}
+```
+
+3. 缓存：
+```java
+import redis.clients.jedis.Jedis;
+
+public class Cache {
+    private Jedis jedis;
+
+    public Cache(String host, int port) {
+        jedis = new Jedis(host, port);
+    }
+
+    public void set(String key, String value) {
+        jedis.set(key, value);
+    }
+
+    public String get(String key) {
+        return jedis.get(key);
+    }
+
+    public void expire(String key, int seconds) {
+        jedis.expire(key, seconds);
+    }
+}
+```
+
+这些示例代码提供了基本的使用方法，但在实际应用中可能需要根据具体需求进行适当的调整和扩展。同时，请确保在使用完Redis资源后进行适当的资源释放和异常处理。
+
+
+
+
 
 # 一、模拟手机验证码
 
