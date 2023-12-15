@@ -127,4 +127,24 @@
   
     
   
-    
+
+
+
+***
+
+<center>---扩展知识---</center>
+
+
+
+
+
+
+
+# 1.[XHR (XMLHttpRequest)](https://zh.wikipedia.org/wiki/XMLHttpRequest)
+
+> https://www.cnblogs.com/xiaohuochai/p/6036475.html
+>
+> 概括起来，就是一句话，ajax通过原生的`XMLHttpRequest`对象发出HTTP请求，得到服务器返回的数据后，再进行处理
+>
+> Chrome  F12 筛选请求的时候可以勾这个，其实本质是 ajax 核心。。。。我理解为所有交互的请求都是这个
+> ajax技术的核心是XMLHttpRequest对象(简称XHR)

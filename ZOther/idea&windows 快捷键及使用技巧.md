@@ -76,6 +76,17 @@ ctrl+shift+a 输入maven就可用maven   idea右侧工具栏没有显示maven的
 
 # 二、[Windows](https://www.zhihu.com/question/33635511/answer/57567053)
 
+> 一些电脑自启动的东西，可以丢到一个目录
+
+`C:\Users\Fighting\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`
+
+* AutoHotkey Script
+* espanso Shortcut
+* WGestures 2 Shortcut
+* 天若识字
+
+
+
 > Shell和cmd都是命令行界面下的解释器，用于执行命令和脚本。它们的作用类似，但是它们是针对不同的操作系统而设计的。
 >
 > Shell是Unix和Linux操作系统下的命令行解释器，它是一种脚本语言，通过命令行界面执行各种操作和管理系统。Shell可以处理输入和输出，控制进程和文件系统，以及执行各种命令和脚本。Shell还提供了一些内置命令和函数，可以方便地操作和处理文本、文件和系统。常见的Shell包括Bash、Csh、Ksh等。
