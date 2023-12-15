@@ -12,7 +12,9 @@ MacOS Question:
 
 
 
+#### NodeJS
 
+我是直接官网下载安装的稳定版 v20
 
 #### SQLServer
 

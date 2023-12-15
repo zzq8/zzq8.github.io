@@ -964,7 +964,23 @@ Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（
 
 
 
+#### 8）idea设置程序根目录
 
+在 IntelliJ IDEA 中，你可以设置程序的根目录（Working Directory）来影响程序运行时的默认路径。这个设置决定了程序在启动时的默认工作目录。
+
+以下是在 IntelliJ IDEA 中设置程序根目录的步骤：
+
+1. 打开 IntelliJ IDEA，并打开你的项目。
+2. 在顶部菜单栏中，选择 "Run"（运行）菜单，然后选择 "Edit Configurations"（编辑配置）。
+3. 在弹出的窗口中，选择你要修改的运行配置（例如，一个 Java Application 或一个 Spring Boot Application）。
+4. 在右侧面板中，找到 "Configuration" 选项卡。
+5. 在 "Working directory"（工作目录）部分，选择 "Specified"（指定）选项。
+6. 点击 "..." 按钮，选择你想要设置为程序根目录的目录。
+7. 确认设置后，点击 "OK" 保存修改。
+
+现在，当你运行这个配置时，程序将使用你指定的目录作为根目录。在程序中使用相对路径时，它们将以这个根目录为基准。
+
+请注意，这个设置仅影响程序在 IntelliJ IDEA 中运行时的默认工作目录，并不会改变程序在实际部署或运行环境中的行为。在实际部署时，程序的根目录可能由部署环境或命令行参数决定。
 
 
 
