@@ -37,6 +37,16 @@
 
 
 
+#### shell
+
+* 创建并写入内容   `echo "test" > file1.txt`
+
+
+
+
+
+
+
 
 
 MacOS Question:
