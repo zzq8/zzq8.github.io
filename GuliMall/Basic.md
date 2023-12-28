@@ -276,7 +276,7 @@ ES6 & Vue 快速入门
 >        age: 21,
 >        language: ['java', 'js', 'css']
 >    }
->                                                          
+>                                                             
 >    // var hello1 = (param) => console.log("hello," + param.name);
 >    // hello1(person);
 >    var hello2 = ({name}) => console.log("hello," + name);
@@ -1020,6 +1020,8 @@ mybatis-plus:
 > yaml 配置日志，看 SQL 语句
 >
 > 看到 renren-fast 配置的是 logback-spring.xml
+>
+> XD: 用到 mybatis-plus 但是没有输出日志想着怎么配又回来回顾
 
 ```yaml
 logging:

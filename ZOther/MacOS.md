@@ -3,6 +3,41 @@
 > 由于第一次接触MacOS，花了三周的星期六（三天）来搭这台MacOS
 >
 > M 系列芯片好多软件还不支持，TortoiseSVN、SQLServer这种。。头疼了很久
+> 后补充：其实用 Shell 提好的
+
+#### 学到
+
+* `sudo vim /Library/LaunchDaemons/com.mysql.startup.plist` 
+  * 这个文件目录类似 Windows 的startup
+  * 目的：从官方网站下载的 MySQL 版本，并希望将其设置为 macOS 的自启动服务
+
+
+
+* 关闭 SIP
+  * 针对 M 系列芯片，长按开机键进入到恢复模式，Terminal `csrutil disable`
+
+
+
+* Shift+【 可以输出 「
+
+
+
+* Command-I	显示简介
+  我推测 "I" 可能代表 "Info"，因为 "Info" 是「信息」的简写。因此，Command-I 可以被理解为「显示简介」或「显示信息」
+
+
+
+* 好像网上下的 app 打不开的话可以执行一个命令就可以打开了
+
+  您提供的命令 `sudo xattr -d com.apple.quarantine /Applications/Tiny\ RDM.app` 用于删除 `/Applications/Tiny RDM.app` 应用程序的扩展属性中的 com.apple.quarantine 标记。这个标记通常由 macOS 用于标识从互联网或其他不可信来源下载的应用程序，以便在首次运行时显示安全警告。
+
+  通过运行该命令，您可以移除 Tiny RDM 应用程序的下载标记，以便在下次运行时不再显示安全警告。请确保您已经正确指定应用程序的路径，并在终端中以管理员权限（sudo）运行该命令。
+
+  请注意，在执行此命令之前，您应该确认已经从可信的来源下载了 Tiny RDM 应用程序，并且信任该应用程序。如果您不确定应用程序的来源或是否应该删除下载标记，请谨慎操作或咨询相关的安全建议。
+
+
+
+
 
 MacOS Question:
 
@@ -331,6 +366,8 @@ https://www.bilibili.com/video/BV1e14y1c7aJ?t=1881.0
 # 一、已成功的软件配置
 
 ## 1.Typora
+
+> 看上面菜单栏英文叫啥，直接到设置这里改就好。  + Code Fences
 
 <img src="http://images.zzq8.cn/img/image-20231215180744304.png" alt="image-20231215180744304" style="zoom:50%;" />
 

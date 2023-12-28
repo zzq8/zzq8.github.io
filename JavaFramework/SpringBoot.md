@@ -818,20 +818,27 @@ Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系�
 
 
 
+* 在 Spring Boot 中，您可以使用 `logging.level` 属性来配置不同包或类的日志级别。
+
+  * 通过配置 Spring Boot 的日志级别，您可以同时控制 MyBatis-Plus 和 MyBatis 的日志输出。
+
+  * ```yaml
+    logging:
+      level:
+        com.zzq.gulimall: DEBUG
+    ——————————————————————
+    logging:
+      level:
+        com.example.distributedlock.dao: debug #一定要加这一行指定目录，不然报错
+    ```
+
+    
+
 * #### ==Spring Boot 2.+默认连接池HikariCP==  ”黑卡丽“，光的意思很快 日本人发明。区分Druid连接池为监控而生扩展点多..
 
 * #### ==Spring MVC 的默认json解析器便是 Jackson==
 
   * 如果用了 Nacos 会依赖导入 fastjson（雷神用了这个）
-
-
-
-
-* ```
-  logging:
-    level:
-      com.example.distributedlock.dao: debug #一定要加这一行指定目录，不然报错
-  ```
 
 
 
