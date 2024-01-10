@@ -34,8 +34,18 @@ CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启�
 
 
 
-> 配置多个数据源
 
-我理解：重写三个bean
+
+
+
+# 配置多个数据源
+
+> 图片很清楚了
+
+我理解：重写三个bean   
+
+1. DataSourceProperties     这样即可在configuration配置我的数据源，区分开其他的加前缀
+2. DataSource  通过上者的 API Create 数据源，大致就是initializeDataSourceBuilder方法通过 ClassLoader 拿 driverClassName 创建
+3. PlatformTransactionManager    每个数据库都要设好自己对应的事务管理器
 
 <img src="http://image.zzq8.cn/img/202302231721768.png" alt="image-20230223172146262" style="zoom: 25%;" />

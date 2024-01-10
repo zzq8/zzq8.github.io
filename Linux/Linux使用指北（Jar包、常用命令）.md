@@ -6,7 +6,11 @@
 
 `nohup java -jar myblog-1.jar --server.port=80 &`
 
-
+> 2023/01/06 补充：执行完上面命令后可以追加 `tail -f nohup.out`
+> 就可以实时看到这个 jar 的输出运行日志！！！
+>
+>
+> 在 Linux 中，`tail -f` 是一个常用的命令，用于实时跟踪（追踪）文件的变化并输出新添加的内容。
 
 > **注意：--server.port 需要放 xx.jar 的后面！！！**
 >

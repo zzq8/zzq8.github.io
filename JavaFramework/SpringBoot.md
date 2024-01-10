@@ -527,6 +527,32 @@ Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系�
 
 
 
+##### RuoYi 补充 AOP 实操
+
+1.`@Before` 使用场景：*限流处理*
+
+```java
+@Aspect
+@Component
+public class RateLimiterAspect{
+    @Before("@annotation(rateLimiter)")
+    public void doBefore(JoinPoint point, RateLimiter rateLimiter)
+```
+
+Redis Key：  `rate_limit:com.ruoyi.web.controller.system.SysUserController-list`
+
+JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注解标注的类名及其方法名【**反射**】
+
+
+
+2.`@AfterReturning` 使用场景：日志记录 增删改
+
+*处理完请求后执行*
+
+
+
+
+
 #### 5.Spring 事务
 
 > 问：项目中什么地方用到了 AOP    在 Spring 中进行事务管理中就用到了！！！
@@ -587,10 +613,24 @@ Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系�
 
 [Spring注解驱动](https://liayun.blog.csdn.net/article/details/115053350)
 
+* #### @Retention(RetentionPolicy.RUNTIME) 
+
+  * 用于使注解在运行时可以通过反射来访问和处理。这对于某些需要在运行时动态处理注解的场景非常有用
+  * RuoYi 运行时候动态获取注解信息，比如
+
+  
+
+* #### @PostConstruct
+
+  * `@PostConstruct` 是一个在 Spring 框架中常用的注解，它用于指定在对象创建完成后需要立即执行的方法。当使用 `@PostConstruct` 注解标记一个方法时，Spring 在实例化该对象并完成依赖注入后，会自动调用该方法。
+  * RuoYi 中用来开启 quartz 
+
+
+
 * #### @RquestBody
 
   * 获取请求体，**必须发送POST请求**。SpringMVC自动将请求体的数据**（json），转为对应Java对象**（+形参Entity上）
-  
+
   * ```java
     //以较简单的User对象接收前端传过来的ison数据(SpringMVC会智能的将符合要求的数据装配进该User对象中)
     public String test(@RequestBody User user){}
@@ -1117,3 +1157,79 @@ spring:
 > 也可    --spring.profiles.active=app-bpdev   (等同于在idea中配置 如下图位置)
 
 ![image-20230802085814446](http://image.zzq8.cn/img/202308020858808.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# [玩转 Spring 全家桶](https://time.geekbang.org/course/intro/100023501)
+
+> 进 title link 看课程目录、课程介绍
+
+平板问题：
+
+springboot datasource自动装配mysql数据源。。h2为什么不用配数据源
+
+
+
+
+
+> 项目需要有自己的parel如何处置springboot的parent
+
+spring-boot-dependencies 放到 <denpendencyManagement>
+
+<img src="http://image.zzq8.cn/img/202302231452941.png" alt="image-20230223145242628" style="zoom: 25%;" />
+
+
+
+
+
+> CommandLineRunner 接口的作用
+
+CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启动后执行一些特定的任务。该接口只有一个方法 run()，当 Spring Boot 应用启动完成后，会自动执行 run() 方法。CommandLineRunner 接口常用于执行一些初始化任务，例如读取配置文件、初始化数据等。与之类似的还有另一个接口 ApplicationRunner，不同之处在于它的 run() 方法接收的参数是一个 ApplicationArguments 对象，该对象封装了命令行参数的信息。通常情况下，我们可以通过实现 CommandLineRunner 或 ApplicationRunner 接口，在 Spring Boot 应用启动后自动执行一些初始化任务。
+
+
+
+> h2数据库为什么不需要配置
+
+嵌入式数据库：H2数据库是一款嵌入式数据库，也就是说它可以被嵌入到Java应用程序中，作为Java程序的一个库。因此，H2数据库不需要独立的服务器进程，不需要额外的配置和管理，只需要在Java应用程序中进行简单的配置即可使用。
+
+
+
+
+
+
+
+
+
+## 配置多数据源
+
+> 图片很清楚了
+
+我理解：重写三个bean   每加一个数据源就重写一遍放到 Spring Bean
+
+1. DataSourceProperties     这样即可在configuration配置我的数据源，区分开其他的加前缀
+2. DataSource  通过上者的 API Create 数据源，大致就是initializeDataSourceBuilder方法通过 ClassLoader 拿 driverClassName 创建
+3. PlatformTransactionManager    每个数据库都要设好自己对应的事务管理器
+
+<img src="http://image.zzq8.cn/img/202302231721768.png" alt="image-20230223172146262" style="zoom: 25%;" />

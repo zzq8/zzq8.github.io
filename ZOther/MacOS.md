@@ -4,12 +4,25 @@
 >
 > M 系列芯片好多软件还不支持，TortoiseSVN、SQLServer这种。。头疼了很久
 > 后补充：其实用 Shell 提好的
+>
+> # 为什么Vue项目总是在1024端口启动？
+>
+> > 我猜你是Mac 用户～
+>
+> 在mac os中，非root用户是无法使用小于1024的常用端口的。
+> 如果小于1024端口，会从1024开始。
 
 #### 学到
 
-* `sudo vim /Library/LaunchDaemons/com.mysql.startup.plist` 
+* `sudo vim /Library/LaunchDaemons/com.mysql.startup.plist` 【没成功，不知道是否该转战brew】
+  * 启动时间：LaunchAgents 目录中的 Launch Agents 是在用户登录时自动启动的，而 LaunchDaemons 目录中的 Launch Daemons 是在系统启动时自动启动的，不依赖于用户登录。
+  * 运行权限：LaunchAgents 目录中的 Launch Agents 是以当前登录用户的身份运行的，仅对该用户有效。而 LaunchDaemons 目录中的 Launch Daemons 是以系统的管理员权限（root 用户）运行的，并对所有用户有效。【所以在 LaunchDaemons 权限必须是 Root 否则无法启动！！！`chown root:wheel jetbrains.vmoptions.plist`】
   * 这个文件目录类似 Windows 的startup
   * 目的：从官方网站下载的 MySQL 版本，并希望将其设置为 macOS 的自启动服务
+  * 
+    
+    像MySQL这种服务得放LaunchDaemons里，像激活idea这种得放 LaunchAgents 里。。。注意权限是否够（然后我说得 lemon 软件看是否启动！！！设置里看不到）
+  
 
 
 

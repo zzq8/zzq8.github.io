@@ -740,6 +740,14 @@ Test：
 
 ## 1. if
 
+> 在 MyBatis 中，`<if>` 标签用于在 SQL 映射文件中进行条件判断。`test` 属性指定了一个表达式
+>
+> ```xml
+> <if test="expression">
+>     <!-- SQL 语句片段 -->
+> </if>
+> ```
+
 xml:
 
 ```xml
