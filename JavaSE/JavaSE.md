@@ -597,9 +597,57 @@ Java 中的 Arrays 类提供了一个 binarySearch 方法，用于在已排序�
 
 
 
+#### * ConcurrenHashMap 1.7 vs 1.8
+
+jdk1.7 `数组+链表`，`分段锁`内部类 class Segment<K,V> extends ReentrantLock
+
+* 锁粒度包含多个节点 Hash`Entry`
+
+jdk1.8 `数组+链表+红黑树`，CAS+Synchronized
+
+* 锁粒度锁单节点 `Node`
+
+* 使用内選锁 Synchronized 代替重入锁 ReentrantLock, Synchronized 是官方一直在不断优化的，现在
+
+  性能已经比较可观，也是官方推荐使用的加锁方式。
 
 
 
+#### * 并发和并行有什么区别？
+
+并发：两个或多个事件在同一时间间隔发生。
+
+并行：两个或者多个事件在同一时刻发生。
+
+并行是真正意义上，同一时刻做多件事情，`而并发在同一时刻只会做一件事件，只是可以将时间切碎，交替做多件事情。`
+
+网上有个例子挺形象的：
+
+你吃饭吃到一半，电话来了，你一直到吃完了以后才去接，这就说明你不支持并发也不支持并行。
+
+你吃饭吃到一半，电话来了，你停了下来接了电话，接完后继续吃饭，这说明你支持并发。
+
+你吃饭吃到一半，电话来了，你一边打电话一边吃饭，这说明你支持并行。
+
+
+
+#### * 线程状态
+
+![41DA09DA-D781-4531-A6AF-6CA0B218112D_1_101_o](https://images.zzq8.cn/img/41DA09DA-D781-4531-A6AF-6CA0B218112D_1_101_o.jpeg)
+
+
+
+
+
+#### * 谈一谈你对面向对象的理解
+
+面向过程让计算机`有步骤地顺序做一件事`，是过程化思维，使用面向过程语言开发大型项目，`软件复用和维护存在很大问题`，模块之间耦合严重。
+
+`面向对象相对面向过程更适合解决规模较大的问题`，可以拆解问题复杂度，对现实事物进行抽象并映射为开发对象，`更接近人的思维。`
+
+例如开门这个动作，面向过程是 open（Door door），动宾结构，door 作为操作对象的参数传入方法，方法内定义开门的具体步骤。面向对象的方式首先会定义一个类 Door，抽象出门的属性（如尺寸、颜色）和行为（如open 和 close），主谓结构。
+
+面向过程代码松散，强调流程化解决问题。面向对象代码强调高内聚、低耦合，先抽象模型定义共性行为，再解决实际问题
 
 
 
@@ -619,6 +667,10 @@ byte、short、char、< int < long < float < double
     3. char c = ''; //编译不通过
 	4. char + int = int    
 ```
+
+`3.之所以不通过：String底层char[]数组长度为0个，而这里是1个char 所以必须指定内容`
+
+
 
 String可以和boolean拼接
 
@@ -889,6 +941,11 @@ class Solution extends B implements A {
 
 
 **异常：**
+
+补充：IOException 是 Java 中的一个受检异常（checked exception），这意味着在编译时编译器会强制要求对其进行处理或声明。
+
+搞清楚 checked exception 是必须要 try-catch 的不然报错不准运行！
+
 ```java
   要写出常见的异常
   
@@ -1170,8 +1227,7 @@ RuoYi 中注解一般头上加了 `@Retention(RetentionPolicy.RUNTIME)` 方便�
                     比较两个对象是否相同的标准：ComparaTo返回0  不再是 equals
                     
                     
-                    
-                    
+                                      
                     
                     
                     
@@ -1199,6 +1255,15 @@ RuoYi 中注解一般头上加了 `@Retention(RetentionPolicy.RUNTIME)` 方便�
         
         
 ```
+
+补充：         
+
+* LinkedHashMap:需要记录访问顺序或插入顺序 
+* TreeMap：需要自定义排序
+
+
+
+
 
 
 
@@ -1697,7 +1762,19 @@ public static void main(String[] args) {
 
 ![image-20230605154613437](http://image.zzq8.cn/img/202306051546511.png)
 
-#### 一、jdk1.7 HashMap头插法在多线程环境下链表成环的场景怎么形成
+#### 一、[jdk1.7 HashMap头插法在多线程环境下链表成环的场景怎么形成](https://www.bilibili.com/video/BV1n541177Ea/?spm_id_from=333.999.0.0)
+
+> 2024 再回顾彻底搞清：
+>
+> 核心：扩容完顺序会逆过来，一直没get到这个核心点。导致迷迷糊糊怎么也搞不明白
+>
+> `两个线程扩容传递的是两个新的table，原来是ABC，t扩容完成变成了CBA`，此时t2接着迁移对象遍历原来ABC，遍历到C的时候发现C的next节点是B，这样一直循环，这才叫死循环
+>
+> 头插法的锅，因为头插法打乱了链表的顺序，导致两个线程的数据结构不一致导致了bug。如果使用尾插法就没有这个bug。
+>
+> <img src="https://images.zzq8.cn/img/6C0599EE-D613-40D3-9C0D-BDEE167E13C1_1_201_a.jpeg" alt="6C0599EE-D613-40D3-9C0D-BDEE167E13C1_1_201_a"  />
+>
+> PS：JDK提供的HashMap从来就不是给多线程用的，现在非要内卷到研究把一个线程不安全的类放在多线程下会有什么问题，就好比ArrayList也是线程不安全的，我非要问你在多线程下使用ArrayList（没有别的同步保障）会有什么问题。如果是从研究源码的角度来说勉强说得过去，如果要说 ArrayList有问题，那是不是撑得？而且1.8的HashMap也是线程不安全的，所以才推荐用 ConcurrentHashMap。
 
 
 

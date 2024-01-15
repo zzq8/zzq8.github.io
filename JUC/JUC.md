@@ -14,16 +14,20 @@ Links that usually browsed:
 
 # 一、volatile
 
-[volatile](https://so.csdn.net/so/search?q=volatile&spm=1001.2101.3001.7020)是JVM提供的轻量级的同步机制
+> 使用场景：
+>
+> - 标志位：当一个共享的标志位需要在多个线程之间进行读写操作时，可以使用 `volatile` 关键字来保证其可见性，以便线程能够及时获取最新的状态。
+> - 双重检查锁定（Double-Checked Locking）：在单例模式中，当使用双重检查锁定来确保只有一个实例被创建时，需要将共享的实例变量声明为 `volatile`，以避免由于指令重排序导致的潜在问题。【看下面 5. 例子！！！】
+> - 轻量级同步：当对一个共享变量的操作非常频繁且不依赖于变量的当前值时，可以使用 `volatile` 替代 `synchronized` 来实现更轻量级的同步。
 
 > 能保证两个：主要自己不要把这个和 CAS 搞混了！应该是这个的缺点需要用到 CAS，==它本身是和 CAS 没任何关系的！==
 >
 > 对volatile变量的操作不会造成阻塞。--> C选项中，volatile修饰一个变量时，是不会加锁的；而只有在加锁情况下才会造成阻塞，所以C正确；
 
-1. 保证可见性
+1. `保证可见性`（这就指示 JVM，这个变量是共享且不稳定的，每次使用它都到主存中进行读取）
 2. **不保证原子性**
    * 所以需要配 CAS（CPU并发原语） ？
-3. 禁止指令重排（保证有序性）
+3. `禁止指令重排`（保证有序性 - 因为加入了CPU指令「内存屏障」所以能禁止指令优化重排 XD）
 
 ## 0. JMM（前置知识）
 
@@ -322,7 +326,7 @@ instance(memory); // 2、初始化对象
 instance = memory; // 3、设置instance指向刚刚分配的内存地址，此时instance != null
 ```
 
-但是我们通过上面的三个步骤，能够发现，步骤2 和 步骤3之间不存在 数据依赖关系，而且无论重排前 还是重排后，程序的执行结果在单线程中并没有改变，因此这种重排优化是允许的。
+但是我们通过上面的三个步骤，能够发现，步骤2 和 步骤3之间不存在 `数据依赖关系`，而且无论重排前 还是重排后，程序的执行结果在单线程中并没有改变，因此这种重排优化是允许的。
 
 ```java
 memory = allocate(); // 1、分配对象内存空间
@@ -351,9 +355,23 @@ private static volatile SingletonDemo instance = null;
 #### 2. + volatile 解决上述问题
 
 > 注意：是多线程环境
+>
+> > XD 以下解释很清白了：
+> >
+> > `uniqueInstance` 采用 `volatile` 关键字修饰也是很有必要的， `uniqueInstance = new Singleton();` 这段代码其实是分为三步执行：
+> >
+> > 1. 为 `uniqueInstance` 分配内存空间
+> > 2. 初始化 `uniqueInstance`
+> > 3. 将 `uniqueInstance` 指向分配的内存地址
+> >
+> > 但是由于 JVM 具有指令重排的特性，执行顺序有可能变成 1->3->2。指令重排在单线程环境下不会出现问题，但是在多线程环境下会导致一个线程获得还没有初始化的实例。例如，线程 T1 执行了 1 和 3，此时 T2 调用 `getUniqueInstance`() 后发现 `uniqueInstance` 不为空，因此返回 `uniqueInstance`，但此时 `uniqueInstance` 还未被初始化。
+> >
+> > ------
+> >
+> > 著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：https://javaguide.cn/java/concurrent/java-concurrent-questions-02.htms
 
 ```java
-private static volatile SingletonDemo instance = null;
+		private static volatile SingletonDemo instance = null;
 
     private SingletonDemo () {
         System.out.println(Thread.currentThread().getName() + "\t 我是构造方法SingletonDemo");
@@ -1283,6 +1301,10 @@ FutureTask<Integer> futureTask = new FutureTask<>(new callable01());  //FutureTa
 ***
 
 ==4）线程池【ExecutorService】==
+
+
+
+<center>Tips: 四种实现方式追其底层，其实只有一种，实现Runnble</center>
 
 ## ==2.线程池==
 
