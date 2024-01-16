@@ -16,58 +16,103 @@
     <a href="http://zzq8.cn/" target="_blank">个人博客</a>
   </nav>
   <div id="app">Please wait ..</div>
-  <script>
-    // 离线支持
-    if (typeof navigator.serviceWorker !== 'undefined') {
-      navigator.serviceWorker.register('sw.js')
-    }
-    window.$docsify = {
-      name: '1024zzq',
-      // repo: 'https://1024zzq.github.io/', //会在页面右上角渲染一个 GitHub Corner 挂件。
-      maxLevel: 4,//最大支持渲染的标题层级
-      //封面,_coverpage.md
-      // coverpage: true,
-      auto2top: true,//切换页面后是否自动跳转到页面顶部
-      search: {
-        //maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        paths: 'auto',
-        placeholder: '搜索',
-        noData: '找不到结果',
-        // 搜索标题的最大程级, 1 - 6
-        depth: 3,
-      },
-      // 字数统计
-      count: {
-        countable: true,
-        fontsize: '0.9em',
-        color: 'rgb(90,90,90)',
-        language: 'chinese'
-      }
-      //logo: 'https://gitee.com/codezzq/blogImage/raw/master/img/微信背景图.jpg',
-      //侧边栏折叠  还要多一个文件去写繁琐！所以不做
-  }
-</script>
+  <script>  
+      window.$docsify = {
+        name: "Blog",
+        // 侧边栏文档目录
+        loadSidebar: true,
 
-<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-<!--Java代码高亮-->
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-yaml.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-sql.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-python.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-json.min.js"></script>
-<!--全文搜索,直接用官方提供的无法生效-->
-<script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
-  <!--谷歌统计
-    <script src="//unpkg.com/docsify" data-ga="UA-138586553-1"></script>
-    <script src="//unpkg.com/docsify/lib/plugins/ga.js"></script>
-  -->
-<!-- 复制到剪贴板 -->
-<script src="//unpkg.com/docsify-copy-code"></script>
-<!-- 图片缩放 -->
-<script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
-<!-- 表情 -->
-<script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
-<!-- 字数统计 -->
-<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-</body>
+        subMaxLevel: 2,
+        alias: {
+          "/.*/_sidebar.md": "/_sidebar.md",
+        },
+        // 跳转后自动到顶部
+        auto2top: true,
+
+        coverpage: true,
+        // PLUGINS
+        // ----------------------------------------------------------------
+        // 页面右侧toc
+        toc: {
+          tocMaxLevel: 2,
+          target: "h2, h3, h4, h5, h6",
+        },
+
+        // 全文搜索
+        search: {
+          depth: 6,
+          noData: "没有搜到!",
+          placeholder: "搜索...",
+          // 避免搜索索引冲突,同一域下的多个网站之间
+          namespace: "website-1",
+        },
+        // 底部导航
+        pagination: {
+          previousText: "上一页",
+          nextText: "下一页",
+          crossChapter: true,
+          crossChapterText: true,
+        },
+        // 字数统计
+        count: {
+          countable: true,
+          position: "top",
+          margin: "10px",
+          float: "right",
+          fontsize: "0.9em",
+          color: "red",
+          language: "chinese",
+          localization: {
+            words: "",
+            minute: "",
+          },
+          isExpected: true,
+        },
+      };
+    </script>
+    <!-- docsify -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>  
+
+    <!-- 代码高亮  https://cdn.jsdelivr.net/npm/prismjs@1/components/ -->
+  
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script> 
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-cmake.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>     
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>  
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-powershell.min.js"></script>  
+
+
+    <!-- 多tab支持 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
+
+    <!-- 代码复制 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
+
+    <!-- 底部 上一页下一页 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/ga.min.js"></script>
+
+    <!-- 全文搜索 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+
+    <!-- 图片放大缩小 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+
+    <!-- 字数统计 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
+
+    <!-- 侧边栏目录折叠 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+
+    <!-- 页面右侧 TOC -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-toc@1.1.0/dist/docsify-plugin-toc.min.js"></script>
+
+      <!-- emoji -->
+      <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  </body>
 </html>

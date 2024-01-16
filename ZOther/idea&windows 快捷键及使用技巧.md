@@ -345,6 +345,44 @@ alter user 'root'@'localhost' identified by '123456';
 
 # 五、Chrome & JS
 
+
+
+> url地址栏区分大小写吗
+
+在大多数常见的浏览器中，URL地址栏通常是不区分大小写的。这意味着无论您输入的是大写字母、小写字母还是大小写混合，浏览器都会将其视为相同的URL。
+
+例如，以下URL在地址栏中是等效的：
+
+复制
+
+```
+http://www.example.com
+HTTP://WWW.EXAMPLE.COM
+http://www.Example.com
+```
+
+不过需要注意的是，尽管地址栏不区分大小写，但是URL路径和查询参数部分可能会受到服务器的影响。某些服务器可能会对URL路径和查询参数进行区分大小写的处理。这意味着在特定的服务器环境中，`/path` 和 `/Path` 可能被视为不同的路径。
+
+
+
+
+
+在Spring Boot中，默认情况下，`@GetMapping("/A")` 和 `@GetMapping("/a")` 是被视为两个不同的路径的。这是因为Spring Boot默认情况下是区分路径的大小写的。
+
+所以，当您使用`@GetMapping("/A")`注解时，它将映射到路径`/A`，而`@GetMapping("/a")`将映射到路径`/a`。这两个路径被视为不同的URL。
+
+如果您希望路径大小写不敏感，即`/A`和`/a`被视为相同的路径，可以在Spring Boot的配置中进行相应的设置。您可以在`application.properties`或`application.yml`文件中添加以下配置：
+
+```
+spring.mvc.pathmatch.matching-strategy=ant_path_matcher
+```
+
+
+
+
+
+
+
 > What does %2F mean in a URL?     ASCII Encoding Reference
 
 场景：我用电脑识别 QR_Code 到 URL 浏览器  发现把里面的 `/` 全部转移成 `%2F` 了
