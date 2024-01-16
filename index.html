@@ -52,7 +52,9 @@
       toc: {
         tocMaxLevel: 2,
         target: "h2, h3, h4, h5, h6",
-      }
+      },
+      // 侧边栏文档目录
+      loadSidebar: true
   }
 </script>
 
@@ -79,7 +81,14 @@
 <script src="https://unpkg.com/docsify-count/dist/countable.js"></script>
 
 
+<!-- 后面添加 -->
 <!-- 页面右侧 TOC -->
 <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-toc@1.1.0/dist/docsify-plugin-toc.min.js"></script>  
+<!-- 侧边栏目录折叠 -->
+<script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>   
+<!-- 图片放大缩小 -->
+<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script> 
+<!-- 多tab支持 -->
+<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
 </body>
 </html>
