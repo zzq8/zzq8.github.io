@@ -20,13 +20,16 @@ jobs:
         run: npm install
 
       - name: Run autoSidebar.js
-        run: node autoSidebar.js
+        run: |
+          export GITHUB_WORKSPACE=$(pwd)
+          node autoSidebar.js
 
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
         run: |
           git config --global user.name "Git Actions"
           git config --global user.email "actions@example.com"
-          git config --global user.password ${{ secrets.SECRET_TOKEN }}
           git add -A
           git commit -m "Update sidebar"
           git push
