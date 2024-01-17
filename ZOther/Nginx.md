@@ -117,3 +117,62 @@ server {
 access.log
 
 看过一篇订阅号，可以通过这个访问日志拿到所有访问者的ip地址  然后写脚本进行限制恶意访问
+
+
+
+
+
+# 五、配置详解
+
+## 5.1.root & alias
+
+> 场景：想搭建本地静态资源Web服务器
+>
+> 在Nginx中，`root` 和 `alias` 都是用于定义服务器上的文件路径的指令，但它们之间存在一些区别。
+
+`root` 指令用于定义一个目录作为请求的根目录。当一个请求到达时，Nginx将在指定的根目录下查找相应的文件。以下是一个示例：
+
+```nginx
+server {
+    listen 80;
+    server_name example.com;
+    root /var/www/html;
+}
+```
+
+在上面的配置中，当用户访问 `example.com` 时，Nginx将在 `/var/www/html` 目录下查找相应的文件并返回给用户。如果用户请求的URI是 `/index.html`，Nginx将尝试找到并返回 `/var/www/html/index.html` 文件。
+
+`alias` 指令用于指定一个别名路径，它用于将请求映射到文件系统中的不同位置，而不是直接将请求与根目录进行拼接。以下是一个示例：
+
+```nginx
+server {
+    listen 80;
+    server_name example.com;
+    location /static/ {
+        alias /var/www/static/;
+    }
+}
+```
+
+在上面的配置中，当用户访问 `example.com/static/file.txt` 时，Nginx将在 `/var/www/static/` 目录下查找相应的文件并返回给用户。与 `root` 不同的是，`alias` 可以指定一个不同于URI的文件系统路径。（==记得alias最后要带上 /==）
+
+总结一下：
+
+- `root` 指令指定的路径是与URI拼接的，适用于将请求直接映射到文件系统路径。
+- `alias` 指令指定了一个别名路径，用于将请求映射到文件系统中的不同位置。
+
+
+
+
+
+实践：特喵的感觉一样的效果
+
+```nginx
+location / {
+            #root   html;
+            #root /Users/xd/Documents/GitRepo/StudyNotes;
+            alias /Users/xd/Documents/GitRepo/StudyNotes/;    #不加 / 会访问不到
+            index  index.html index.htm;
+        }
+```
+
