@@ -1,0 +1,27 @@
+name: Auto Sidebar
+
+on:
+  push:
+    branches:
+      - main  # 指定要触发工作流程的分支
+
+
+jobs:
+  run-coupons: # 任务名
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main  #采用main分支下的
+           
+      - name: Setup Node.js
+        uses: actions/setup-node@v2  #安装node.js
+        with:
+          node-version: '14'
+          
+      - name: Install Dependency       
+        run: |
+          npm install
+          npm install parse
+          npm install got
+          npm install xmlhttprequest
+          npm install tough-cookie         
+          node ./autoSidebar.js  # 要运行的js脚本，放在根目录下
