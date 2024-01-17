@@ -9,7 +9,7 @@ jobs:
   run-coupons:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v2
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -20,6 +20,12 @@ jobs:
         run: npm install
 
       - name: Run autoSidebar.js
+        run: node autoSidebar.js
+
+      - name: Commit and push changes
         run: |
-          cd $GITHUB_WORKSPACE #将工作目录更改为仓库的根目录
-          node autoSidebar.js
+          git config --global user.name "Git Actions"
+          git config --global user.email "actions@example.com"
+          git add -A
+          git commit -m "Update sidebar"
+          git push
