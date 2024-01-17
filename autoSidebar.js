@@ -1,6 +1,6 @@
 var sidebarTxt = '- [**README**](/README.md)\n';
 var path = require('path');
-var curPath = path.resolve('./');
+var curPath = process.env.GITHUB_WORKSPACE; // 获取仓库根目录 //path.resolve('./');
 var baseDirArr = [];
 
 function walkSync(currentDirPath, callback) {
