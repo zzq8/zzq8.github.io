@@ -5,16 +5,23 @@ on:
     branches:
       - main  # 指定要触发工作流程的分支
 
+
 jobs:
-  build:
+  run-coupons: # 任务名
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: npm ci  # 或者使用您的依赖安装命令
-
-      - name: Run autoSidebar.js
-        run: node autoSidebar.js
+      - uses: actions/checkout@main  #采用main分支下的
+           
+      - name: Setup Node.js
+        uses: actions/setup-node@v2  #安装node.js
+        with:
+          node-version: '14'
+          
+      - name: Install Dependency       
+        run: |
+          npm install
+          npm install parse
+          npm install got
+          npm install xmlhttprequest
+          npm install tough-cookie         
+          node ./autoSidebar.js  # 要运行的js脚本，放在根目录下
