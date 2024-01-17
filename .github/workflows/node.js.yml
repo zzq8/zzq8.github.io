@@ -24,4 +24,4 @@ jobs:
           npm install got
           npm install xmlhttprequest
           npm install tough-cookie         
-          node ./autoSidebar.js  # 要运行的js脚本，放在根目录下
+          node autoSidebar.js  # 要运行的js脚本，放在根目录下
