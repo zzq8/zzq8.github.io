@@ -14,6 +14,22 @@
 
 #### 学到
 
+* `export vs set` 
+  在 Windows 中，`export` 命令不是一个内置的命令。它是在类Unix系统（如Linux和macOS）中用于设置环境变量的命令。在Windows中，要设置环境变量，需要使用不同的命令。
+
+  在Windows中，要设置环境变量，可以使用以下命令：
+
+  1. 使用 `set` 命令：可以使用 `set` 命令来设置临时环境变量，例如：   
+     ```
+     set MY_VARIABLE=value
+     ```
+
+     这将在当前命令提示符会话中设置名为 `MY_VARIABLE` 的环境变量，并将其值设置为 `value`。==但是，这种方式设置的环境变量只在当前会话中有效，关闭会话后会失效。==
+
+  2. 使用系统属性窗口：你可以通过打开系统属性窗口来设置永久环境变量。你可以按下 `Win + Pause/Break` 键来打开系统属性窗口，然后选择 "高级系统设置"，在弹出的对话框中选择 "环境变量"。在环境变量对话框中，你可以添加、编辑或删除系统或用户级别的环境变量。
+
+  
+
 * `sudo vim /Library/LaunchDaemons/com.mysql.startup.plist` 【没成功，不知道是否该转战brew】
   * 启动时间：LaunchAgents 目录中的 Launch Agents 是在用户登录时自动启动的，而 LaunchDaemons 目录中的 Launch Daemons 是在系统启动时自动启动的，不依赖于用户登录。
   * 运行权限：LaunchAgents 目录中的 Launch Agents 是以当前登录用户的身份运行的，仅对该用户有效。而 LaunchDaemons 目录中的 Launch Daemons 是以系统的管理员权限（root 用户）运行的，并对所有用户有效。【所以在 LaunchDaemons 权限必须是 Root 否则无法启动！！！`chown root:wheel jetbrains.vmoptions.plist`】

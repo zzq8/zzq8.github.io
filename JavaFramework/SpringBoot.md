@@ -852,6 +852,36 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 ## 1）一些小点
 
+* 我 download 了upupor的开源项目发现项目里的数据库敏感信息都是 ${} 方式给的！！！
+
+  * > 在 Spring Boot 项目的 YAML 配置文件中，`${}` 是用于引用外部属性或配置的占位符。你可以为这些占位符提供具体的值，以替换配置文件中的 `${}` 表达式。
+    >
+    > 有几种方式可以给 `${}` 占位符提供值：
+    >
+    > 1. application.properties/application.yml 文件：在 Spring Boot 项目的 `src/main/resources` 目录下，你可以创建一个 `application.properties` 文件（或 `application.yml`，根据你的选择）来提供属性的具体值。例如，如果你在配置文件中有 `${my.property}` 占位符，那么你可以在 `application.properties` 文件中添加以下内容：
+    >    ```
+    >    my.property=具体的值
+    >    ```
+    >
+    > 2. 命令行参数：你可以在启动项目时通过命令行参数来传递属性值。例如，使用以下命令启动 Spring Boot 项目，并为 `${my.property}` 提供具体值：  【idea Environment variables 里面给也行！！！】
+    >    ```
+    >    java -jar myproject.jar --my.property=具体的值
+    >    ```
+    >
+    > 3. 环境变量：你可以将属性值设置为环境变量，并在项目启动时读取这些环境变量。例如，将 `${my.property}` 设置为环境变量 `MY_PROPERTY`，然后在项目启动时，它将自动读取该环境变量的值。
+    >
+    > 这些是最常用的给 `${}` 占位符提供值的方法。你可以根据实际需求选择适合的方式来提供属性的具体值。
+    >
+    > 需要注意的是，如果你在 `application.properties` 文件中定义了属性的默认值，那么当没有其他方式提供属性值时，将使用该默认值。例如：
+    > ```
+    > my.property=默认值
+    > ```
+    > 如果没有其他方式提供 `${my.property}` 的具体值，它将默认使用 "默认值"。
+    >
+    > 希望这可以帮助你给 Spring Boot 项目的 YAML 文件中的 `${}` 占位符提供具体的值。如有进一步的疑问，请随时提问。
+
+
+
 * #### SpringBoot,因为默认加入了==Slf4j-api和logback==的依赖,所以只需要添加[lombok](https://so.csdn.net/so/search?q=lombok&spm=1001.2101.3001.7020)的依赖即可.
 
   * 注意IDEA 2020.3以及之后的版本内置了lombok插件
