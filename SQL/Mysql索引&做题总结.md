@@ -92,6 +92,32 @@ DELETE FROM 表名
 UPDATE 表名 SET 字段名=新值
 ```
 
+**2024/2/1 再扩展： update mysql vs Sqlserver这部分语法有区别**
+
+原因：
+
+```
+update t2 set t2.StorageNum=1
+from InventoryAdjustDetail t1 join wm_quant t2 on t1.wm_quantID=t2.oid
+
+报错：
+1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from InventoryAdjustDetail t1 join wm_quant t2 on t1.wm_quantID=t2.oid' at line 2
+```
+
+需要：
+
+```
+UPDATE InventoryAdjustDetail t1
+JOIN wm_quant t2 ON t1.wm_quantID = t2.oid
+SET t2.StorageNum = 1;
+```
+
+如果是sqlserver数据库上述语法有问题吗： ==在SQL Server中，可以使用FROM子句来指定要进行连接的表，并在SET子句中更新目标表的列。==
+
+
+
+
+
 
 
 #### 可以把 null 字段过滤成 0    或者用 if

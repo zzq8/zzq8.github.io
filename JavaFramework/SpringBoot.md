@@ -507,6 +507,30 @@ public class Book {
 
 
 
+##### 补充：构造参数注入 ==vs==  setter注入
+
+> 以前一直不懂 **构造参数注入**
+
+```java
+@RequiredArgsConstructor     //XD   lombook
+@RequestMapping("member")  
+public class MemberController {
+    private final MemberOperateService memberBusinessService;    //XD  final
+```
+
+
+
+> setter 注入估计就是 @Autowired
+
+
+
+总结起来：
+
+- `@RequiredArgsConstructor`与`private final`一起使用是一种构造函数注入的方式。
+- `@Autowired`注解可以用于字段、setter方法或构造函数，用于实现自动装配（autowiring），可以通过setter注入或构造函数注入的方式来注入依赖项。
+
+
+
 #### 4.AOP
 
 > Spring 框架一般都是基于 AspectJ 实现 AOP 操作，AspectJ 不是 Spring 组成部分，独立 AOP 框架，一般把 AspectJ 和 Spirng 框架一起使 用，进行 AOP 操作

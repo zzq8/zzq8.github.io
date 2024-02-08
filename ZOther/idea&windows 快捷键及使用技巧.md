@@ -319,6 +319,10 @@ alter user 'root'@'localhost' identified by '123456';
 
 # 四、Sublime
 
+* #### shortcut： 1）快速定位到修改过的地方的快捷键-好用     2）书签快捷键    3）还有github中python的批量保存关闭快捷键
+
+  * ![image-20240130182956675](http://images.zzq8.cn/img/image-20240130182956675.png)
+
 * #### 在 Sublime Text 4 中，当你尝试替换文本时，它默认会保持替换的文本与原始文本的大小写一致。这意味着，如果你选择替换为大写文本，但原始文本是小写的，替换后的文本也会保持小写。
 
   * 踩坑，ctrl h左下角有个选项 preserve case
@@ -441,6 +445,10 @@ Shift+Enter 新开浏览器界面搜
 * shift+esc 任务管理器
 
 **ctrl+shift+delete 清缓存必备**
+
+
+
+F12 == ctrl+shift+i
 
 
 
