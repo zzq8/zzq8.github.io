@@ -20,11 +20,11 @@
 
 图中第一个是开三个线程处理，第二个直接给MQ发个通知就不管了那三个自己通过订阅拿消息慢慢处理（不关心这三个接口怎么写的，因为无需调用）
 
-![image-20220712110324017](http://image.zzq8.cn/img/202207121103133.png)
+![image-20220712110324017](https://images.zzq8.cn/img/202207121103133.png)
 
-<img src="http://image.zzq8.cn/img/202301121505498.png" alt="image-20230112150550482" style="zoom:67%;" />
+<img src="https://images.zzq8.cn/img/202301121505498.png" alt="image-20230112150550482" style="zoom:67%;" />
 
-<img src="http://image.zzq8.cn/img/202301121506067.png" alt="image-20230112150652998" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202301121506067.png" alt="image-20230112150652998" style="zoom: 67%;" />
 
 
 
@@ -38,7 +38,7 @@
 
 留得江山在，还怕没柴烧？你敢说每次发送验证码的时候是一发你就收到了的么？
 
-![image-20220712111100552](http://image.zzq8.cn/img/202207121111658.png)
+![image-20220712111100552](https://images.zzq8.cn/img/202207121111658.png)
 
 ### 1.3 没有哪一门技术是“银弹”，消息队列也有它的副作用
 
@@ -117,7 +117,7 @@ ps：RabbitMQ 有很多复杂概念，这个打通其它MQ不是问题 因为其
 
 > 微服务如有一起用 Java、PHP 那么如果 Java 挂了可能就会影响 PHP 的服务，而 `虚拟主机` 每个一套环境的感觉
 
-![image-20230112172607355](http://image.zzq8.cn/img/202301121726461.png)
+![image-20230112172607355](https://images.zzq8.cn/img/202301121726461.png)
 
 * Message 消息，消息是不具名的，它由消息头和消息体组成。消息体是不透明的，而消息头则由一系列的可选属性组成，这些属性包括routing-key（路由键）、priority（相对于其他消息的优先权）、delivery-mode（指出该消息可能需要持久性存储）等。
 * Publisher 消息的生产者，也是一个向交换器发布消息的客户端应用程序。
@@ -150,7 +150,7 @@ NameServer：类似中介，跟eureka差不多服务的注册与发现
 
 Broker：消息队列服务器
 
-<img src="http://image.zzq8.cn/img/202207151500160.jpeg" alt="img" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202207151500160.jpeg" alt="img" style="zoom: 67%;" />
 
 但是，我们上文提到过 `Broker` 是需要保证高可用的，如果整个系统仅仅靠着一个 `Broker` 来维持的话，那么这个 `Broker` 的压力会不会很大？所以我们需要使用多个 `Broker` 来保证 **负载均衡** 。
 
@@ -323,7 +323,7 @@ spring.rabbitmq.template.mandatory=true
 spring.rabbitmq.listener.simple.acknowledge-mode=manual
 ```
 
-<img src="http://image.zzq8.cn/img/202301131650214.png" alt="image-20230113165049968" style="zoom:67%;" />
+<img src="https://images.zzq8.cn/img/202301131650214.png" alt="image-20230113165049968" style="zoom:67%;" />
 
 #### 2.4.1 发送端确认
 
@@ -455,7 +455,7 @@ try {
 
 而延时队列，下订单的时候 -> 消息队列（30M）-> 关闭订单    没有时效性问题！
 
-<img src="http://image.zzq8.cn/img/202301310936100.png" alt="image-20230131093624726" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202301310936100.png" alt="image-20230131093624726" style="zoom: 67%;" />
 
 
 
@@ -465,7 +465,7 @@ try {
 
 #### 3.2.1.队列过期（推荐）
 
-![image-20230131105835211](http://image.zzq8.cn/img/202301311058168.png)
+![image-20230131105835211](https://images.zzq8.cn/img/202301311058168.png)
 
 #### 3.2.2.消息过期
 
@@ -481,7 +481,7 @@ try {
 
 > 一个交换机即可，路由到不同的队列         **延时队列（TTL到了就放死信） & 死信队列（给消费者删，例如解锁库存）**
 
-![image-20230131111753174](http://image.zzq8.cn/img/202301311117376.png)
+![image-20230131111753174](https://images.zzq8.cn/img/202301311117376.png)
 
 
 

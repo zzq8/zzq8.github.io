@@ -590,7 +590,7 @@ lock.unlock();
 >
 > 缓存本来保证的就是 最终一致性，反正有 ttl 失效后重查放入缓存就又是最新数据了
 
-<img src="http://image.zzq8.cn/img/202308231025871.png" alt="image-20230314161335765" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202308231025871.png" alt="image-20230314161335765" style="zoom: 67%;" />
 
 ### 1）、双写模式：写数据库后，写缓存
 
@@ -2325,9 +2325,9 @@ Remote Address: 192.168.0.1:7890
 
 07 保证服务的稳，其它有了快
 
-<img src="http://image.zzq8.cn/img/202308231025296.png" alt="image-20230316140448941" style="zoom: 33%;" />
+<img src="https://images.zzq8.cn/img/202308231025296.png" alt="image-20230316140448941" style="zoom: 33%;" />
 
-<img src="http://image.zzq8.cn/img/202308231025131.png" alt="image-20230316140459330" style="zoom:33%;" />
+<img src="https://images.zzq8.cn/img/202308231025131.png" alt="image-20230316140459330" style="zoom:33%;" />
 
 
 

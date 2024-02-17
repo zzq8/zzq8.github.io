@@ -129,7 +129,7 @@ protected-mode yes # 保护模式   改成no
 
 ## 2. 模拟业务场景: 手机验证码
 
-![image-20220410204001304](http://image.zzq8.cn/img/202205171956974.png)
+![image-20220410204001304](https://images.zzq8.cn/img/202205171956974.png)
 
 具体代码看文件
 
@@ -145,13 +145,13 @@ protected-mode yes # 保护模式   改成no
 >
 > discard (命令): 类似回滚事务
 
-![image-20220413201848353](http://image.zzq8.cn/img/202204132019207.png)
+![image-20220413201848353](https://images.zzq8.cn/img/202204132019207.png)
 
 
 
 > 组队的时候有任何一个命令失败, 就都不会成功
 
-![image-20220413203729944](http://image.zzq8.cn/img/202204132037991.png)
+![image-20220413203729944](https://images.zzq8.cn/img/202204132037991.png)
 
 
 
@@ -159,7 +159,7 @@ protected-mode yes # 保护模式   改成no
 >
 > Redis单条命令式保存原子性的，但是**事务不保证原子性**！
 
-![image-20220413205107400](http://image.zzq8.cn/img/202204132051128.png)
+![image-20220413205107400](https://images.zzq8.cn/img/202204132051128.png)
 
 
 
@@ -171,7 +171,7 @@ protected-mode yes # 保护模式   改成no
 >
 > 乐观锁典型例子: **抢票** 可以很多人抢, 但只能一个人支付成功
 
-![image-20220413211028112](http://image.zzq8.cn/img/202204132110320.png)
+![image-20220413211028112](https://images.zzq8.cn/img/202204132110320.png)
 
 **乐观锁适用于多读的应用类型，这样可以提高吞吐量**。Redis就是利用这种check-and-set机制实现事务的。
 
@@ -183,13 +183,13 @@ protected-mode yes # 保护模式   改成no
 >
 >测试多线程修改值 , 使用watch 可以当做redis的乐观锁操作！
 
-![image-20220413213359161](http://image.zzq8.cn/img/202204132133211.png)
+![image-20220413213359161](https://images.zzq8.cn/img/202204132133211.png)
 
 
 
 ## Redis 秒杀案例
 
-![image-20210619095633057](http://image.zzq8.cn/img/202204161621469.png)
+![image-20210619095633057](https://images.zzq8.cn/img/202204161621469.png)
 
 > Redis ab压测安装
 
@@ -301,11 +301,11 @@ masterauth 547061946   # 别忘记这一步，如果有密码的话！
 
 贴个图意思就是一条线串起来，压力就没那么大了
 
-![image-20220510145507853](http://image.zzq8.cn/img/202205171953830.png)
+![image-20220510145507853](https://images.zzq8.cn/img/202205171953830.png)
 
 区分：一主二仆
 
-![image-20220510145619913](http://image.zzq8.cn/img/202205171953801.png)
+![image-20220510145619913](https://images.zzq8.cn/img/202205171953801.png)
 
 ## 4. 反客为主
 
@@ -343,7 +343,7 @@ https://blog.csdn.net/qq_45950109/article/details/115014763
 缺点：多建操作mset这种不被支持 etc.
 无中心化集群，可以贴一下图
 
-![04-集群简介](http://image.zzq8.cn/img/202205171953203.png)注意旧版本还得装ruby环境    有没有这个环境可以看下src目录有没有redis-trib.rb
+![04-集群简介](https://images.zzq8.cn/img/202205171953203.png)注意旧版本还得装ruby环境    有没有这个环境可以看下src目录有没有redis-trib.rb
 
 集群搭建好后，cli连接要用集群的方式连接 -c
 `redis -cli -c -p 6379`   这里用任何一个端口都是可以的6379、6380、6381。因为是无中心化集群，任何一台都可以作为集群的一个入口

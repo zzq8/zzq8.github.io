@@ -14,11 +14,11 @@
 
 > GUliMall 压测章节也用了好用。可以搭配 jvisualvm     这个软件可以直接设置中文就不用看的那么费劲了！
 
-![image-20220901090225517](http://image.zzq8.cn/img/202209010902577.png)
+![image-20220901090225517](https://images.zzq8.cn/img/202209010902577.png)
 
 throughput 吞吐量
 
-![image-20220901000424905](http://image.zzq8.cn/img/202209010004959.png)
+![image-20220901000424905](https://images.zzq8.cn/img/202209010004959.png)
 
 
 
@@ -33,7 +33,7 @@ throughput 吞吐量
 >
 > 在实际开发中很少出现，因为一般我们的共享资源在服务外部（MySQL...）由此引出分布式锁
 >
-> ![image-20220901005746190](http://image.zzq8.cn/img/202209010057437.png)
+> ![image-20220901005746190](https://images.zzq8.cn/img/202209010057437.png)
 
 
 
@@ -51,7 +51,7 @@ throughput 吞吐量
      * 每个请求的都是一个单独的对象，锁不住。单例模式所有请求都是同一个对象
    * 事务（事务B在事务A提交之前获取锁，就相当于事务B把A的事又干一遍）
      * 事务设置 read_uncommitted 可解决，但是我们不能这样用。（==这里还需来理解==）
-     * ![image-20220902232830929](http://image.zzq8.cn/img/202209022328177.png)
+     * ![image-20220902232830929](https://images.zzq8.cn/img/202209022328177.png)
    * 集群部署（和多例模式有点类似）
 
    不推荐JVM本地锁
@@ -88,11 +88,11 @@ throughput 吞吐量
 
 4. #### 乐观锁：时间戳、version版本号、CAS 机制（变量等于旧值就允许更新，例如==修改密码==）
 
-   * <img src="http://image.zzq8.cn/img/202209031621459.png" alt="image-20220903162138040" style="zoom: 50%;" />
+   * <img src="https://images.zzq8.cn/img/202209031621459.png" alt="image-20220903162138040" style="zoom: 50%;" />
    * 不会导致死锁，悲观锁则有一定概率会
    * 在高并发下，吞吐量低。因为总是在内旋重试，浪费CPU资源
    * ==ABA问题（图片很形象）==
-     * ![image-20220903163701486](http://image.zzq8.cn/img/202209031637908.png)
+     * ![image-20220903163701486](https://images.zzq8.cn/img/202209031637908.png)
    * ==如果写并发量较低（多读），争抢不是很激烈的情况下优先选择：乐观锁==
 
 
@@ -164,7 +164,7 @@ throughput 吞吐量
 2. 解锁：del
 3. 重试：递归、循环
 
-<img src="http://image.zzq8.cn/img/202209041046981.png" alt="image-20220904104624847" style="zoom: 50%;" />
+<img src="https://images.zzq8.cn/img/202209041046981.png" alt="image-20220904104624847" style="zoom: 50%;" />
 
 
 
@@ -209,7 +209,7 @@ else
 	代码块
 end
 
-![image-20220904144154210](http://image.zzq8.cn/img/202209041441300.png)
+![image-20220904144154210](https://images.zzq8.cn/img/202209041441300.png)
 
 
 

@@ -171,7 +171,7 @@ git checkout -b 分支名
 >
 > 注意：进入这个命令后跟编辑 vim 流程一样，输入 message 后需要 `:wq` 即可提交
 
-![img](http://image.zzq8.cn/img/202206011611310.png)
+![img](https://images.zzq8.cn/img/202206011611310.png)
 
 
 
@@ -181,7 +181,7 @@ git checkout -b 分支名
 
 # TortoiseSVN
 
-![image-20221020101841706](http://image.zzq8.cn/img/202210201018847.png)
+![image-20221020101841706](https://images.zzq8.cn/img/202210201018847.png)
 
 
 

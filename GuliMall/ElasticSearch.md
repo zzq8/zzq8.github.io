@@ -23,7 +23,7 @@ Port：9200              kibana：5601
 
 ### 倒排索引机制：分词
 
-![image-20220907215603856](http://image.zzq8.cn/img/202209072156269.png)
+![image-20220907215603856](https://images.zzq8.cn/img/202209072156269.png)
 
 
 
@@ -108,7 +108,7 @@ docker run --name kibana -e ELASTICSEARCH_HOSTS=http://zzq8.cn:9200 -p 5601:5601
 
 zzq8.cn:9200/customer/external/1  路径 index/type/id 可以理解成 数据库/表/数据
 
-<img src="http://image.zzq8.cn/img/202209101952264.png" alt="image-20220910195209067" style="zoom:50%;" />
+<img src="https://images.zzq8.cn/img/202209101952264.png" alt="image-20220910195209067" style="zoom:50%;" />
 
 
 
@@ -345,7 +345,7 @@ GET bank/_search
 
 ## 4. nested 去扁平化
 
-![image-20221018170313908](http://image.zzq8.cn/img/202210181703256.png)
+![image-20221018170313908](https://images.zzq8.cn/img/202210181703256.png)
 
 ## 5. 分词器
 

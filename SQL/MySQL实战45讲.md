@@ -512,7 +512,7 @@ mysql> show variables like 'transaction_isolation';
 
 理解了事务的隔离级别，我们再来看看事务隔离具体是怎么实现的。这里我们展开说明“可重复读”。(MySQL default isolation level)
 
-<img src="http://image.zzq8.cn/img/202306031634681.png" alt="image-20230603163250059" style="zoom:50%;" />
+<img src="https://images.zzq8.cn/img/202306031634681.png" alt="image-20230603163250059" style="zoom:50%;" />
 
 在 MySQL 中，实际上==每条记录在更新的时候都会同时记录一条回滚操作==。记录上的最新值，通过回滚操作，都可以得到前一个状态的值。
 
@@ -520,7 +520,7 @@ mysql> show variables like 'transaction_isolation';
 
 <img src="https://images.zzq8.cn/img/202212081753521.png" style="zoom:67%;" />
 
-<img src="http://image.zzq8.cn/img/202306031640164.png" alt="image-20230603163923678" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202306031640164.png" alt="image-20230603163923678" style="zoom: 67%;" />
 
 当前值是 4，但是在查询这条记录的时候，**不同时刻启动的事务会有不同的 read-view**。如图中看到的，在视图 A、B、C 里面，这一个记录的值分别是 1、2、4，==同一条记录在系统中可以存在多个版本，就是数据库的多版本并发控制（MVCC)==。对于 read-view A，要得到 1，就必须将当前值依次执行图中所有的回滚操作得到。                 MVCC 可以看作是行级锁的一个升级，所以 MyISAM 不支持 MVCC，而 InnoDB 支持
 
@@ -1546,7 +1546,7 @@ InnoDB 里面每个事务有一个唯一的事务 ID，叫作 transaction id。�
 
 如图 2 所示，就是一个记录被多个事务连续更新后的状态。
 
-<img src="http://image.zzq8.cn/img/202302131727261.png" alt="image-20230213172729310" style="zoom:50%;" />
+<img src="https://images.zzq8.cn/img/202302131727261.png" alt="image-20230213172729310" style="zoom:50%;" />
 
 <center>图 2 行状态变更图</center>
 
@@ -1574,7 +1574,7 @@ InnoDB 里面每个事务有一个唯一的事务 ID，叫作 transaction id。�
 
 这个视图数组把所有的 row trx_id 分成了几种不同的情况。
 
-<img src="http://image.zzq8.cn/img/202302131728617.png" alt="image-20230213172858315" style="zoom:50%;" />
+<img src="https://images.zzq8.cn/img/202302131728617.png" alt="image-20230213172858315" style="zoom:50%;" />
 
 <center>图 3 数据版本可见性规则</center>
 

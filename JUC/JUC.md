@@ -51,7 +51,7 @@ JMM(Java内存模型Java Memory Model,简称JMM)本身是一种抽象的概念 �
 
 这个时候就出现了一个问题，缓存是跟线程挂钩的还是跟核心挂钩的？答案是跟核心，所以单核多线程不会有缓存共享问题。请记住是缓存数据共享，但是依旧会产生并发。
 
-![image-20221109115044681](http://image.zzq8.cn/img/202211091150769.png)
+![image-20221109115044681](https://images.zzq8.cn/img/202211091150769.png)
 数据传输速率：硬盘 < 内存 < < cache < CPU
 
 
@@ -60,7 +60,7 @@ JMM(Java内存模型Java Memory Model,简称JMM)本身是一种抽象的概念 �
 
 由于JVM运行程序的实体是线程,而每个线程创建时JVM都会为其创建一个工作内存(有些地方成为栈空间),工作内存是每个线程的私有数据区域,而Java内存模型中规定所有变量都存储在主内存,主内存是共享内存区域,所有线程都可访问,**但线程对变量的操作(读取赋值等)必须在工作内存中进行,首先要将变量从主内存拷贝到自己的工作空间,然后对变量进行操作,操作完成再将变量写回主内存**,不能直接操作主内存中的变量,各个线程中的工作内存储存着主内存中的**变量副本拷贝**,因此不同的线程无法访问对方的工作内存,此案成间的通讯(传值) 必须通过主内存来完成,其简要访问过程如下图:
 
-![image-20221109175055161](http://image.zzq8.cn/img/202211091750424.png)
+![image-20221109175055161](https://images.zzq8.cn/img/202211091750424.png)
 
 
 
@@ -76,7 +76,7 @@ JMM(Java内存模型Java Memory Model,简称JMM)本身是一种抽象的概念 �
 
 ### 复现：
 
-![image-20200309174220675](http://image.zzq8.cn/img/202211111100844.png)
+![image-20200309174220675](https://images.zzq8.cn/img/202211111100844.png)
 
 下面我们将一个简单的number++操作，转换为字节码文件一探究竟
 
@@ -262,7 +262,7 @@ Volatile实现禁止指令重排优化，从而避免了多线程环境下程序
 
 由于编译器和处理器都能执行指令重排的优化，如果在指令间插入一条Memory Barrier则会告诉编译器和CPU，不管什么指令都不能和这条Memory Barrier指令重排序，也就是说 `通过插入内存屏障禁止在内存屏障前后的指令执行重排序优化`。 内存屏障另外一个作用是刷新出各种CPU的缓存数，因此任何CPU上的线程都能读取到这些数据的最新版本。
 
-![image-20200310162654437](http://image.zzq8.cn/img/202211121459789.png)
+![image-20200310162654437](https://images.zzq8.cn/img/202211121459789.png)
 
 也就是过在Volatile的写 和 读的时候，加入屏障，防止出现指令重排的
 
@@ -431,7 +431,7 @@ private static volatile SingletonDemo instance = null;
 
 这个方法其实底层调用的是 Unsafe 类下面的方法 
 
-![image-20200310203030720](http://image.zzq8.cn/img/202211121750557.png)
+![image-20200310203030720](https://images.zzq8.cn/img/202211121750557.png)
 
 Unsafe是CAS的核心类，由于Java方法无法直接访问底层系统，需要通过本地（Native）方法来访问，Unsafe相当于一个后门，基于该类可以直接操作特定的内存数据。Unsafe类存在sun.misc包中，其内部方法操作可以像C的指针一样直接操作内存，因为Java中的CAS操作的执行依赖于Unsafe类的方法。
 
@@ -453,7 +453,7 @@ Unsafe就是根据内存偏移地址获取数据的。
 
 为什么用 CAS（两者都保证） 不用 synchronized（只保证一致性不保证并发性）
 
-![image-20200310210701761](http://image.zzq8.cn/img/202211121801105.png)
+![image-20200310210701761](https://images.zzq8.cn/img/202211121801105.png)
 
 var5：就是我们从主内存中拷贝到工作内存中的值(每次都要从主内存拿到最新的值到自己的本地内存，然后执行compareAndSwapInt()在再和主内存的值进行比较。因为线程不可以直接越过高速缓存，直接操作主内存，所以执行上述方法需要比较一次，在执行加1操作)
 
@@ -1077,7 +1077,7 @@ public static void main(String[] args) {
 
 - lock await signal
 
-![image-20200317101210376](http://image.zzq8.cn/img/202211261015124.png)
+![image-20200317101210376](https://images.zzq8.cn/img/202211261015124.png)
 
 ### 问题
 
@@ -1092,7 +1092,7 @@ public static void main(String[] args) {
 
 javap 看底层
 
-![image-20221126101938997](http://image.zzq8.cn/img/202211261019143.png)
+![image-20221126101938997](https://images.zzq8.cn/img/202211261019143.png)
 
 2）使用方法：
 
@@ -1460,7 +1460,7 @@ private ThreadPoolExecutor executor;
 
 业务场景： 查询商品详情页的逻辑比较复杂，有些数据还需要远程调用，必然需要花费更多的时间。
 
-<img src="http://image.zzq8.cn/img/202212311607836.png" alt="image-20221231160756132" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202212311607836.png" alt="image-20221231160756132" style="zoom: 67%;" />
 
 假如商品详情页的每个查询，需要如下标注的时间才能完成 那么，用户需要 5.5s 后才能看到商品详情页的内容。很显然是不能接受的。`如果有多个线程同时完成这 6 步操作，也许只需要 1.5s 即可完成响应。`
 
@@ -1496,7 +1496,7 @@ private ThreadPoolExecutor executor;
 
 倒着看由简入繁
 
-<img src="http://image.zzq8.cn/img/202212311649553.png" alt="image-20221231164942303" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202212311649553.png" alt="image-20221231164942303" style="zoom: 67%;" />
 
 
 

@@ -16,7 +16,7 @@
 > 2. `怎么实现starter` （看我SpringBoot代码的Demo，要知道流程）
 > 3. bean的生命周期
 
-<img src="http://image.zzq8.cn/img/202302111035624.png" alt="image" style="zoom: 80%;" />
+<img src="https://images.zzq8.cn/img/202302111035624.png" alt="image" style="zoom: 80%;" />
 
 上面图片的所有基础原生开发，都有另一套方案用响应式替代。支持两种模式开发 `@ConditionalOnWebApplication(type = Type.SERVLET)`
 Spring5 除现在用的原生Servlet外多了一套解决方案：响应式开发！！于是SpringBoot出2跟着整   第一季就是掌握整个Sevlet技术栈
@@ -48,7 +48,7 @@ Spring5 除现在用的原生Servlet外多了一套解决方案：响应式开�
 
 #### 1.2.1.响应式编程
 
-<img src="http://image.zzq8.cn/img/202302111528869.png" alt="image-20230211152821781" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202302111528869.png" alt="image-20230211152821781" style="zoom: 67%;" />
 
 #### 1.2.2.内部源码设计
 
@@ -328,25 +328,25 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 **xxxxxAutoConfiguration ---> 组件  --->** **xxxxProperties里面拿值  ----> application.properties**
 
-![image-20220901180324251](http://image.zzq8.cn/img/202209011803186.png)
+![image-20220901180324251](https://images.zzq8.cn/img/202209011803186.png)
 
 
 
-![image-20220901213237083](http://image.zzq8.cn/img/202209012132180.png)
-
-
-
-
+![image-20220901213237083](https://images.zzq8.cn/img/202209012132180.png)
 
 
 
 
 
-![image-20230217115759420](http://image.zzq8.cn/img/202302171158502.png)
 
 
 
-![image-20220901220507136](http://image.zzq8.cn/img/202209012205178.png)
+
+![image-20230217115759420](https://images.zzq8.cn/img/202302171158502.png)
+
+
+
+![image-20220901220507136](https://images.zzq8.cn/img/202209012205178.png)
 
 
 
@@ -363,13 +363,13 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 	==默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件==
     spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有META-INF/spring.factories
 
-![img](http://image.zzq8.cn/img/202209012113729.png)
+![img](https://images.zzq8.cn/img/202209012113729.png)
 
 
 
 加载所有jar包META-INF/spring.factories文件EnableAutoConfiguration属性指定的类，指的是：
 
-![](http://image.zzq8.cn/img/202209012117863.png)
+![](https://images.zzq8.cn/img/202209012117863.png)
 
 
 
@@ -938,7 +938,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 * #### 快速定位报错原因
 
-  * ![image-20221017164745509](http://image.zzq8.cn/img/202210171647567.png)
+  * ![image-20221017164745509](https://images.zzq8.cn/img/202210171647567.png)
 
 
 
@@ -1185,7 +1185,7 @@ spring:
 
 > @import公共模块的实体类导致lombok的注解失效  Gulimall未解决不做了，是做到限流突然就这个问题不做了
 
-![image-20230211140746713](http://image.zzq8.cn/img/202302111407769.png)
+![image-20230211140746713](https://images.zzq8.cn/img/202302111407769.png)
 
 今天重新导入这个项目时，看到 idea 的这个报错突然醒悟！！！看上面笔记当时为什么用它的场景
 
@@ -1210,7 +1210,7 @@ spring:
 > https://segmentfault.com/q/1010000042312154
 > 也可    --spring.profiles.active=app-bpdev   (等同于在idea中配置 如下图位置)
 
-![image-20230802085814446](http://image.zzq8.cn/img/202308020858808.png)
+![image-20230802085814446](https://images.zzq8.cn/img/202308020858808.png)
 
 
 
@@ -1252,7 +1252,7 @@ springboot datasource自动装配mysql数据源。。h2为什么不用配数据�
 
 spring-boot-dependencies 放到 <denpendencyManagement>
 
-<img src="http://image.zzq8.cn/img/202302231452941.png" alt="image-20230223145242628" style="zoom: 25%;" />
+<img src="https://images.zzq8.cn/img/202302231452941.png" alt="image-20230223145242628" style="zoom: 25%;" />
 
 
 
@@ -1286,4 +1286,4 @@ CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启�
 2. DataSource  通过上者的 API Create 数据源，大致就是initializeDataSourceBuilder方法通过 ClassLoader 拿 driverClassName 创建
 3. PlatformTransactionManager    每个数据库都要设好自己对应的事务管理器
 
-<img src="http://image.zzq8.cn/img/202302231721768.png" alt="image-20230223172146262" style="zoom: 25%;" />
+<img src="https://images.zzq8.cn/img/202302231721768.png" alt="image-20230223172146262" style="zoom: 25%;" />
