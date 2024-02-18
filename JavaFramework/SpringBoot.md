@@ -772,6 +772,14 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 * #### @Builder
 
   * Lombok annotation为你的类生成相对略微复杂的构建器API，放随意参数的构造器 链式调用就行
+  
+  * ```java
+    User.builder()
+        .userName("hh")
+        .passWord("123");
+    ```
+  
+    
 
 
 
@@ -1085,6 +1093,38 @@ Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（
 
 
 
+## 8) 实现ApplicationContextAware接口的作用
+
+实现 `ApplicationContextAware` 接口的作用是允许一个类获取对 Spring 应用程序上下文（`ApplicationContext`）的访问权限。通过实现该接口，类可以获得对应用程序上下文的引用，从而能够进行更高级别的操作，例如获取和管理 Spring Bean、发布应用程序事件等。
+
+具体来说，当一个类实现了 `ApplicationContextAware` 接口，它必须实现接口中的 `setApplicationContext()` 方法。Spring 在初始化该类的实例时，会自动调用 `setApplicationContext()` 方法，并将应用程序上下文作为参数传递给该方法。通过该方法，类可以将传递的应用程序上下文存储为一个成员变量，以便在需要时进行访问。
+
+下面是一个示例：
+
+```java
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class MyBean implements ApplicationContextAware {
+
+    private ApplicationContext applicationContext;
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
+
+    public static <T> T getBean(Class<T> clazz) throws BeansException {
+        return applicationContext.getBean(clazz);
+    }
+}
+
+-----------------即可在 CcEmailUtils.class 等没有被Spring管理的工具类中使用Spring对象
+    TrueSend trueSend = SpringContextUtils.getBean(TrueSend.class);
+```
+
+通过实现 `ApplicationContextAware` 接口，类可以直接访问应用程序上下文，从而获得更多的灵活性和功能。例如，可以根据需要获取其他 Bean 的引用、发布应用程序事件、访问配置属性等。
+
 
 
 
@@ -1117,13 +1157,74 @@ Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（
 
 
 
+# 4)事件驱动-@EventListener
+
+笔记：https://www.cnblogs.com/dafengdeai/articles/17073114.html
+
+视频：https://www.bilibili.com/video/BV1Cd4y1q7Vm/?spm_id_from=333.337.search-card.all.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0
+
+> ==Spring、SpringBoot常用扩展特性之事件驱动==  看代码demo  Spring Boot 2 项目
+>
+> 一般搭配以下两个注解一起使用：  **@EventListener @Async**
+>
+> 1. @0rder指定执行顺序在同步的情况下生效
+> 2. @Async 异步执行需要 @EnableAsync 开启异步
+
+> 事件驱动:即跟随当前时间点上出现的事件,调动可用资源,执行相关任务,使不断出现的问题得以解决,防止事务堆积.
+> 如:注册账户时会收到短信验证码,火车发车前收到提醒,预定酒店后收到短信通知等.如:浏宽器中点击按钮请求后台,鼠标点击变化内容,键盘输入显示数据,服务接收请求后分发请求等.在解决上述问题时,应用程序是由"事件驱动运行的,这类程序在编写时往往可以采用相同的模型实现,我们可以将这种编程模型称为事件驱动模型.
+> (PS:事件驱动模型其实是一种抽象模型,用于对由外部事件驱动系统业务逻辑这类应用程序进行建模.)
+
+debug走到一步，不懂
+
+```java
+@Resource
+private ApplicationEventPublisher eventPublisher;
+
+//UNKNOWN @FunctionalInterface这里的作用是什么          @EventListener注解！！！！！？？？？
+eventPublisher.publishEvent(sendEmailEvent);
+```
+
+
+
+1. Spring事件驱动最基本的使用 `ApplicationEventPublisher`,`ApplicationEvent`,`ApplicationListener` （Spring抽象出了这基本的三个。  事件生产方、事件、事件消费方）
+2. ApplicotionEventPublisher 子类 `ApplicationContext` （在启动类中这个常用一些applicationContext.publishEvent(new ApplicationEvent(this){})）
+3. 事件源、监听器需要被spring管理
+4. 监听器需要实现ApplicationListener<ApplicotionEvent>    xd: 可注解！
+5. **可体现事件源和监听器之间的松耦合仅依赖spring、ApplicationEvent**（发布、监听两个类中都没有另一个的引用！）
+
+
+
+XD：
+
+1. publisher-生产者，       Listener（注解到方法）-消费者
+   publishEvent几次，listener就会消费几次
+
+2. ApplicationEvent 可以不实现，看顶层的这个接口源码其实也转成了 Object，但是按规范注释来说希望所有的事件类都最好实现 ApplicationEvent 
+
+   * ```java
+     ApplicationEventPublisher.class
+     
+     
+     default void publishEvent(ApplicationEvent event) {
+         publishEvent((Object) event);
+     }
+     	
+     
+     //所以事件类没有extends ApplicationEvent也行其实走的是这里
+     void publishEvent(Object event);
+     ```
+
+     
 
 
 
 
 
 
-# 4）碰到过的问题
+
+
+
+# OO）碰到过的问题
 
 
 
@@ -1260,7 +1361,51 @@ spring-boot-dependencies 放到 <denpendencyManagement>
 
 > CommandLineRunner 接口的作用
 
-CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启动后执行一些特定的任务。该接口只有一个方法 run()，当 Spring Boot 应用启动完成后，会自动执行 run() 方法。CommandLineRunner 接口常用于执行一些初始化任务，例如读取配置文件、初始化数据等。与之类似的还有另一个接口 ApplicationRunner，不同之处在于它的 run() 方法接收的参数是一个 ApplicationArguments 对象，该对象封装了命令行参数的信息。通常情况下，我们可以通过实现 CommandLineRunner 或 ApplicationRunner 接口，在 Spring Boot 应用启动后自动执行一些初始化任务。
+CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启动后执行一些特定的任务。该接口只有一个方法 run()，当 Spring Boot 应用启动完成后，会自动执行 run() 方法。CommandLineRunner 接口常用于执行一些初始化任务，例如读取配置文件、初始化数据等。与之类似的还有另一个接口 ApplicationRunner，`不同之处在于它的 run() 方法接收的参数是一个 ApplicationArguments 对象，该对象封装了命令行参数的信息。`通常情况下，我们可以通过实现 CommandLineRunner 或 ApplicationRunner 接口，在 Spring Boot 应用启动后自动执行一些初始化任务。
+
+**XD: 其实一样的，可能就是ApplicationArguments这个对象封装了更好操作 程序参数（Program arguments）而已。。。`args.getSourceArgs()`**
+**而 String... args其实一样可以拿参数！！！**
+
+
+
+
+
+java -jar your-project.jar --param1=value1 --param2=value2
+通过在 `java -jar` 命令后添加参数，==-- 开头的这些参数被认为是程序参数（Program arguments）。     区分（Environment variables）==
+
+
+
+
+
+以下几种方式都可以被@Value读取到:
+
+#### 1、VM options
+
+`java -jar -Dserver.port=8888 -Xms1024m demo.jar`
+这种方式增加的参数是被设置到应用的系统属性中，可以使用System.getProperty(“server.port”)获取（可以在idea的idea VM options中配置，以空格分隔） 
+
+**VM options其实就是我们在程序中需要的运行时环境变量，它需要以-D或-X或-XX开头，每个参数使用空格分隔** 使用最多的就是-Dkey=value设定系统属性值，比如-Dspring.profiles.active=dev3
+-D（defintion）表示自定义参数
+
+#### 2、Program arguments
+
+`java -jar demo.jar --server.port=8888`
+这种方式增加的参数是属于命令行参数，即会从springboot启动时的main方法的String[] args中作为参数传入（可以在idea的program arguments中配置，**以空格分隔**）
+
+**Program arguments为我们传入main方法的字符串数组args[]，==它通常以--开头==**，如--spring.profiles.active=dev3
+
+等价于-Dspring.profiles.active=dev3如果同时存在，以Program arguments配置优先
+
+#### 3、Environment variables
+
+从操作系统的环境变量中读取
+这种方式的参数即属于操作系统方面的，比如安装jdk时设置的环境变量，定义JAVA_HOME，也可以通过System.getenv(“JAVA_HOME”)获取，（可以在idea的VM Environment variables中配置，以;分隔）
+
+Environment variables没有前缀，优先级低于VM options，即如果VM options有一个变量和Environment variable中的变量的key相同，则以VM options中为准。
+
+#### 4、通过项目中配置文件bootstrap/application文件载入
+
+这种方式是在项目中配置的方式，比较常见
 
 
 
