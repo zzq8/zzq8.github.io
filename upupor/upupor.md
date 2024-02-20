@@ -1,5 +1,11 @@
 # upuporStudy
 
+https://eco.upupor.com/upupor/
+
+可以看这个网址，记录作者对这个Blog的很多思路。。。。包括MinIO、mysql的备份，以及服务的部署！
+
+![https://eco.upupor.com/assets/upupor-architecture.c16039e8.svg](https://eco.upupor.com/assets/upupor-architecture.c16039e8.svg)
+
 # 一、前置环境
 
 > 1. 过启动时候 log 看触发哪些配置项
@@ -67,7 +73,7 @@ private ApplicationEventPublisher eventPublisher;
 eventPublisher.publishEvent(sendEmailEvent);
 ```
 
-
+==重点就是这三个类，搞清就行！！！可以看自己写的代码    注意：ApplicationEvent 可以不实现所以重心其实就两个类==
 
 1. Spring事件驱动最基本的使用 `ApplicationEventPublisher`,`ApplicationEvent`,`ApplicationListener` （Spring抽象出了这基本的三个。  事件生产方、事件、事件消费方）
 2. ApplicotionEventPublisher 子类 `ApplicationContext` （在启动类中这个常用一些applicationContext.publishEvent(new ApplicationEvent(this){})）
@@ -147,4 +153,14 @@ public class MyBean implements ApplicationContextAware {
 
 TODO
 
+* 站内信息
 * LOG_PATH_IS_UNDEFINEDbackup   文件夹发现会压缩错误日志到里面！
+* 上传音频
+
+
+
+
+
+Question:
+
+* Nginx 配置头像静态资源访问不到，因为我代码是保存到指定的本地目录而项目是以jar包方式运行导致会保存到jar的相对路径

@@ -176,3 +176,36 @@ location / {
         }
 ```
 
+
+
+https://www.cnblogs.com/qingshan-tang/p/12763522.html
+
+```json
+五.重点
+
+　　重点是理解alias与root的区别，root与alias主要区别在于nginx如何解释location后面的uri，这使两者分别以不同的方式将请求映射到服务器文件上。
+
+　　alias（别名）是一个目录别名。
+
+　　　　例子：
+
+　　　　　　location /123/abc/ {
+
+　　　　　　　　root /ABC;
+　　　　　　}
+　　　　　　当请求http://qingshan.com/123/abc/logo.png时，会返回 /ABC/123/abc/logo.png文件，即用/ABC 加上 /123/abc。
+ 
+
+ 
+
+　　root（根目录）是最上层目录的定义。
+
+例子：
+
+　　　　　　location /123/abc/ {
+
+　　　　　　　　alias /ABC;
+　　　　　　}
+　　　　　　当请求http://qingshan.com/123/abc/logo.png时，会返回 /ABC/logo.png文件，即用/ABC替换 /123/abc。
+```
+
