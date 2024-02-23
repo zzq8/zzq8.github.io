@@ -653,6 +653,27 @@ jdk1.8 `数组+链表+红黑树`，CAS+Synchronized
 
 
 
+#### * 类加载具体过程？
+
+类加载是Java虚拟机（JVM）将类的字节码加载到内存中并转换为可执行的Java类的过程。类加载过程包括以下几个步骤：
+
+1. 加载（Loading）：通过类的全限定名（Fully Qualified Name），获取类的字节码数据。字节码可以来自文件、网络、数据库等各种来源。
+2. 验证（Verification）：对字节码进行验证，确保其符合Java虚拟机规范。验证过程包括文件格式验证、元数据验证、字节码验证、符号引用验证等。
+3. 准备（Preparation）：为类的静态变量分配内存空间，并设置默认初始值。不包括实例变量，实例变量的准备是在对象实例化时进行的。
+4. 解析（Resolution）：将类、接口、字段和方法的符号引用转换为直接引用。符号引用包括类或接口的全限定名、字段或方法的名称和描述符等。
+   * 换句话说，符号引用是一种符号化的表示方式，用于描述类、接口、字段或方法的名称和类型等信息，而直接引用是一种具体的内存地址，用于直接访问类、接口、字段或方法在内存中的实际数据。
+   * 将字节码文件转换为机器码是在Java虚拟机执行类加载过程中的解析和执行阶段进行的。具体来说，这一步骤是在解析阶段进行的
+5. 初始化（Initialization）：执行类的初始化代码，包括静态变量的赋值和静态代码块的执行。在这个阶段，会执行类中的静态初始化器（Static Initializer）。
+6. 使用（Usage）：类加载完成后，可以通过创建对象、调用方法等方式使用该类。
+
+需要注意的是，类的加载是按需进行的，即在使用到类时才会进行加载。另外，类加载过程是由Java虚拟机的类加载器（ClassLoader）负责执行的。Java虚拟机提供了三种内建的类加载器：启动类加载器（Bootstrap Class Loader）、扩展类加载器（Extension Class Loader）和应用程序类加载器（Application Class Loader）
+
+类加载器具体看 [JVM.md](../JVM/JVM.md)
+
+
+
+
+
 ### Java基本语法
 
 #### 一、基础类型
@@ -1253,6 +1274,10 @@ RuoYi 中注解一般头上加了 `@Retention(RetentionPolicy.RUNTIME)` 方便�
                 Properties ------> 常用来处理配置文件，框架！key/value都是String类型
         
         
+
+                            
+                            
+哈希桶（数组的每个位置称为一个桶） 
         
 ```
 
@@ -1450,7 +1475,7 @@ java不是动态语言，但java可以称为准动态语言
     
     
     
-        获取Class实例：
+        1）获取Class实例：
         
         //方式一：调用运行时类的属性：.class  编译时就写死了，没有体现动态性
         //通过 类名.class 获取到字节码文件对象（任意数据类型都具备一个class静态属性）
@@ -1471,7 +1496,24 @@ java不是动态语言，但java可以称为准动态语言
         
         //方式四:ClassLoader 了解    类加载器的作用就是把类(cllas)装载进内存中   具体到JVM学类加载器，有三个
         
-        
+
+
+		2）创建对象（基于上一步）
+            //方式一：直接Class对象API newInstance()
+      	    // 获取Class对象
+            Class<?> clazz = MyClass.class;
+            // 创建对象
+            Object obj = clazz.newInstance();
+            
+
+			//方式二：通过Class对象获取构造对象，调用构造对象同名方法 newInstance()
+			// 获取Class对象
+            Class<?> clazz = MyClass.class;
+            // 获取构造函数
+            Constructor<?> constructor = clazz.getConstructor(String.class, int.class);
+            // 创建对象
+            Object obj = constructor.newInstance("example", 123);
+            
         
         需要学习JVM
         
@@ -1517,7 +1559,7 @@ java不是动态语言，但java可以称为准动态语言
 
 **反射的应用：动态代理**
 
-> 动态代理的优点是它可以在运行时创建代理对象，而不需要在编译时指定代理类
+> **动态代理的优点是它可以在运行时创建代理对象，而不需要在编译时指定代理类**
 
 ```java
 
@@ -1640,12 +1682,12 @@ Junit是自动化的测试，手动的输出会导致一直阻塞，也就是说
 
 ### 为什么重写 equals() 时必须重写 hashCode() 方法？
 
+> 在 Java 中，重写 `equals()` 和 `hashCode()` 方法是因为它们在使用集合类（如 `HashMap`、`HashSet`、`Hashtable` 等）进行元素比较和存储时起着重要的作用。
+
 #### 集合Set添加某元素时，先调用hashCode()方法，定位到此元素实际存储位置，如果这个位置没有元素，说明是第一次存储；若此位置有对象存在，调用equals()进行比较，相等就舍弃此元素不存，不等则散列到其他地址。
 
 上面的示例也说明了为什么equals()相等，则hashCode()必须相等，进而当重写了equals方法，也要对hashCode()方法进行重写。
 https://blog.csdn.net/wo541075754/article/details/114994906
-
-在 Java 中，重写 `equals()` 和 `hashCode()` 方法是因为它们在使用集合类（如 `HashMap`、`HashSet`、`Hashtable` 等）进行元素比较和存储时起着重要的作用。
 
 
 

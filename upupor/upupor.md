@@ -153,6 +153,7 @@ public class MyBean implements ApplicationContextAware {
 
 TODO
 
+* blog文章加密方式，为什么
 * 站内信息
 * LOG_PATH_IS_UNDEFINEDbackup   文件夹发现会压缩错误日志到里面！
 * 上传音频
@@ -164,3 +165,4 @@ TODO
 Question:
 
 * Nginx 配置头像静态资源访问不到，因为我代码是保存到指定的本地目录而项目是以jar包方式运行导致会保存到jar的相对路径
+  * 所有资源保存需要
