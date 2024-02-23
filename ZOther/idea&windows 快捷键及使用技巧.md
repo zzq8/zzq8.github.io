@@ -76,6 +76,12 @@ ctrl+shift+a 输入maven就可用maven   idea右侧工具栏没有显示maven的
 
 # 二、[Windows](https://www.zhihu.com/question/33635511/answer/57567053)
 
+* #### Win+K 打开「连接」设备 快速连耳机   （暂时联想记忆为Link）
+
+* win+.  /  win+;   emoji
+
+
+
 > 一些电脑自启动的东西，可以丢到一个目录
 
 `C:\Users\Fighting\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`

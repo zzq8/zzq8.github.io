@@ -1416,6 +1416,8 @@ redis有5种不同数据结构，这里选择哪一种比较合适呢？`Map<Str
 
 ## 3.==ThreadLocal用户身份鉴别==
 
+> 通常情况下,我们创建的变量是可以被任何一个线程访问并修改的.如果想实现每一个线程都有自己的专属本地变量该如何解决呢?
+
 常用应用场景：保存用户登录信息  
 需要注意的是，ThreadLocal 存储的数据仅对当前线程可见，因此适合存储一些只有在当前线程中使用的数据，例如用户信息等。而 Session 存储的数据对于整个 Web 应用程序都是可见的，因此适合存储一些需要在多个页面或请求之间共享的数据，例如用户登录状态、购物车信息等。
 
@@ -1679,9 +1681,15 @@ Gulimall的时候雷神好像是用的拦截器，每次请求进来从spring se
 
 
 
-> 注意如果是线程池的话 ThreadLocal 记得回收
+> !!!  ThreadLocal 记得回收         
+>
+> ThreadLocal内存泄漏问题与线程的创建方式没有直接的关联。
+> 需要注意的是，使用线程池的情况下，由于线程是被重用的，可能会导致ThreadLocal中的数据在多个任务之间共享。这可能会引发意料之外的问题
 
-如果在线程池中使用ThreadLocal会造成内存泄漏,因为当ThreadLocal对象使用完之后,应该要把设置的key,value,也就是Entry对象进行回收,但线程池中的线程不会回收,而线程对象是通过强引用指向ThreadLocalMap,ThreadLocalMap也是通过强引用指向Entry对象,线程不被回收,Entry对象也就不会被回收,从而出现内存泄漏,解决办法是,在使用了
+ThreadLocalMap中使用的 key 为ThreadLocal 的弱引用,而 value 是强引用
+
+具体来说，如果在线程执行过程中，使用ThreadLocal存储了一些对象或数据，并且没有在线程执行结束后手动清理ThreadLocal变量，那么这些对象或数据将会一直被ThreadLocal持有，无法被垃圾回收，从而导致内存泄漏。
+
 ThreadLocal对象之后,手动调用ThreadLocal的remove方法,手动清除Entry对象
 
 ==在拦截器中设置ThreadLocal的值，在请求处理完成后进行清理操作==
@@ -1918,6 +1926,8 @@ ps：都会导致 订单回滚但是下面Feign调用的不会回滚
 > 事务的传播行为:一个方法运行在了一个开启了事务的方法中时,当前方法是使用原来的事务还是开启一个新的事务
 >
 > XD: 就是开启的 @Transactional 的方法里面调用的另外的方法也用了 @Transactional    ([以下例子视频 Link](https://www.bilibili.com/video/BV1Eb411P7bP?t=873.3&p=8))
+>
+> ==注意：看了视频，以下两个方法分别属于不同的类==
 
 ```java
 @Transactional(isolation = Isolation.READ_COMMITTED) //设置事务的隔离级别
@@ -1992,12 +2002,9 @@ Why：在同一个类里面，编写两个方法，内部调用的时候，会�
        //需要注意的是，使用AopContext.currentProxy()方法需要确保Spring的exposeProxy属性设置为true，以便让Spring能够在当前线程中暴露代理对象。@EnableAspectJAutoProxy(exposeProxy=true);这里没用Spring默认的AOP（JDK / CGLib）
         OrderServiceImpl orderService = (OrderServiceImpl) AopContext.currentProxy();
 
-
         orderService.b();
         orderService.c();
 
-        //bService.b(); //a事务
-        //cService.c(); //新事务(不回滚)
         int i = 10/0;
     }
 
@@ -2012,6 +2019,41 @@ Why：在同一个类里面，编写两个方法，内部调用的时候，会�
 为什么会失效呢？`其实原因很简单，Spring在扫描Bean的时候会自动为标注了@Transactional注解的类生成一个代理类（proxy）,当有注解的方法被调用的时候，实际上是代理类调用的，代理类在调用之前会开启事务，执行事务的操作，但是同类中的方法互相调用，相当于this.B()，此时的B方法并非是代理类调用，而是直接通过原有的Bean直接调用，所以注解会失效。`
 
 默认的事务传播属性是Propagation.REQUIRED
+
+
+
+> 后来补充：因为看了上面笔记 REQUIRES_NEW 以为是同一个类的两个方法 看了视频后发现不是。。。仍不知道以下是否成立
+>
+> > TODO：是否也能通过 @Transactional(propagation = Propagation.REQUIRES_NEW) 解决
+> >
+> > 同一个对象内事务方法互调默认失效可以通过代理对象调用解决，是否也可以通过@Transactional(propagation = Propagation.REQUIRES_NEW) 设置事务的传播行为解决
+>
+> 是的，您可以通过使用`@Transactional(propagation = Propagation.REQUIRES_NEW)`注解来设置事务的传播行为，以解决同一个对象内事务方法互调时默认失效的问题。
+>
+> 当一个事务方法（例如`method01`）内部调用同一个对象的另一个事务方法（例如`purchase`）时，默认情况下，Spring事务管理器会忽略内部方法的事务设置，而沿用外部方法的事务。这意味着内部方法的事务设置将被忽略，事务行为将按照外部方法的事务来执行。
+>
+> 为了解决这个问题，可以在内部方法上使用`@Transactional(propagation = Propagation.REQUIRES_NEW)`注解。这将使内部方法在一个新的事务中运行，而不受外部方法事务的影响。当内部方法调用完成后，外部方法的事务会继续执行。
+>
+> 下面是示例代码：
+>
+> ```java
+> @Transactional
+> public void method01() {
+>     // 事务A
+>     bookShopService.purchase(); // 事务B
+> }
+> 
+> @Transactional(propagation = Propagation.REQUIRES_NEW)
+> public void purchase() {
+>     // 事务B的逻辑
+> }
+> ```
+>
+> 在上面的代码中，`method01`方法标记了`@Transactional`注解，表示它运行在一个事务（事务A）中。而`purchase`方法标记了`@Transactional(propagation = Propagation.REQUIRES_NEW)`注解，表示它运行在一个新的事务（事务B）中。
+>
+> 当`method01`方法调用`bookShopService.purchase()`时，`purchase`方法将在一个新的事务B中执行，独立于外部方法的事务A。如果在`purchase`方法内部发生异常，只会回滚事务B，而事务A将不受影响。
+>
+> 通过设置事务的传播行为为`Propagation.REQUIRES_NEW`，您可以解决同一个对象内事务方法互调时默认失效的问题。这样，内部方法的事务设置将得到正确的应用，并且可以独立于外部方法的事务运行。
 
 
 

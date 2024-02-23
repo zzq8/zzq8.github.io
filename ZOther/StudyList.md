@@ -1,4 +1,4 @@
-# Study List
+# [Study List](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html)
 
 > 知行合一 ！！！慢慢来比较快！自己写点属于自己的 MD 笔记。<font color=red>保持热爱，留有期待！</font>
 >
@@ -19,7 +19,11 @@
 
 2024/02/20 Tuesday ✔
 
+2024/02/21 Wednesday ❌
 
+2024/02/22 Thursday ❌
+
+2024/02/23 Friday ✔
 
 
 

@@ -194,7 +194,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot
 
 ### 2.1.效果体现
 
-#### 2.1.1.What
+#### 2.1.1.What（效果）
 
 自动配置好了一切，包括SpringMVC常用组件（功能）   
 搜一下以前的帖子，Spring整合SpringMVC的帖子发现xml会配一大堆东西！！！这些组件springBoot启动的时候会把组件都装配到容器中，不用配。
@@ -217,7 +217,7 @@ Arrays.stream(names).forEach(System.out::println);
 
 
 
-#### ==2.1.2.Why==
+#### ==2.1.2.Why（怎么做到的）==
 
 > 这个jar里有几乎SpringBoot所需要全场景，有很多爆红的类其实导入相应的dependency就不会爆红了
 >
@@ -250,7 +250,7 @@ ChatGPT：转念一想，这两个注解都如字面意思   这样就很好区�
 2、调用List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes)获取到所有需要导入到容器中的配置类
 3、利用工厂加载 Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader)；得到所有的组件
 4、从META-INF/spring.factories位置来加载一个文件。
-	默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件
+	**默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件**
     spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有 `META-INF/spring.factories`
     
 
@@ -297,15 +297,7 @@ ChatGPT：转念一想，这两个注解都如字面意思   这样就很好区�
 
 
 
-
-
-
-
-
-
-
-
-
+## 3.自动配置-实践
 
 > 想不起配置文件怎么配 SQL 于是有了下文
 
@@ -338,64 +330,11 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 
 
-
-
-
-
 ![image-20230217115759420](https://images.zzq8.cn/img/202302171158502.png)
 
 
 
 ![image-20220901220507136](https://images.zzq8.cn/img/202209012205178.png)
-
-
-
-### SpringBoot 自动装配
-
-> 有时间一定要自己回顾一遍，自己跟着 Debug。还有**spring-factories的详细原理**
->
-> 看一下这个 spring boot autoconfigure 是不是所有 jar 都会包括
-
-1、利用getAutoConfigurationEntry(annotationMetadata);给容器中批量导入一些组件
-2、调用List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes)获取到所有需要导入到容器中的配置类
-3、利用工厂加载 Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader)；得到所有的组件
-4、从META-INF/spring.factories位置来加载一个文件。
-	==默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件==
-    spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有META-INF/spring.factories
-
-![img](https://images.zzq8.cn/img/202209012113729.png)
-
-
-
-加载所有jar包META-INF/spring.factories文件EnableAutoConfiguration属性指定的类，指的是：
-
-![](https://images.zzq8.cn/img/202209012117863.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -520,7 +459,13 @@ public class MemberController {
 
 
 
-> setter 注入估计就是 @Autowired
+> setter 注入估计就是 @Autowired          好像不是
+
+Q&A 因为有三种注入方式：
+
+1.set方法注入
+2.构造方法注入
+3.@autowire自动注入
 
 
 

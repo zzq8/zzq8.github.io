@@ -972,14 +972,15 @@ CREATE TABLE `tuser` (
 
 （2）在创建多列索引时，要根据业务需求，where子句中使用最频繁的一列放在最左边；
 
-**当创建(a,b,c)复合索引时，想要索引生效的话，只能使用 a和ab、ac和abc三种组合！**
+**当创建index(a,b,c)复合索引时，想要索引生效的话，只能使用 a和ab、ac和abc三种组合！**（其中 ac 只用到a）
 
 实例：以下是常见的几个查询：
 
 ```js
 mysql>SELECT `a`,`b`,`c` FROM A WHERE `a`='a1' ; //索引生效
 mysql>SELECT `a`,`b`,`c` FROM A WHERE `b`='b2' AND `c`='c2'; //索引失效
-mysql>SELECT `a`,`b`,`c` FROM A WHERE `a`='a3' AND `c`='c3'; //索引生效，实际上值使用了索引a
+mysql>SELECT `a`,`b`,`c` FROM A WHERE `a`='a3' AND `c`='c3'; //索引生效，实际上只使用了索引a
++++++ where a=3 and b>4 and c=5  //只用到了a、b 因为c不能在范围之后
 
 --- 几个不支持索引的特别的点
 1）where a<>1会使用到索引吗
@@ -992,6 +993,33 @@ mysql>SELECT `a`,`b`,`c` FROM A WHERE `a`='a3' AND `c`='c3'; //索引生效，�
 
 联合索引给(a,b,c)添加，如果where a,c,b 索引会生效吗？（生效，优化器会优化）
 ```
+
+详细点的Table：假设index(a,b,c)
+
+| Where语句                                               | 素引是否被使用                                               |
+| ------------------------------------------------------- | ------------------------------------------------------------ |
+| where a = 3                                             | Y,使用到a                                                    |
+| where a = 3 and b = 5                                   | Y,使用到a，b                                                 |
+| where a = 3 and b = 5 and c = 4                         | Y,使用到a,b,c                                                |
+| where b = 3 或者 where b = 3 and c = 4 或者 where c = 4 | N                                                            |
+| where a = 3 and c = 5                                   | 使用到a， 但是c不可以，b中间断了                             |
+| where a = 3 and b > 4 and c = 5                         | 使用到a和b， c不能用在范围之后，b断了                        |
+| where a is null and b is not null                       | is null 支持索引 但是is not null 不支持,所以 a 可以使用索引,但是 b不一定能用上索引（8.0） |
+| where a <> 3                                            | 不能使用索引                                                 |
+| where abs(a) =3                                         | 不能使用 索引                                                |
+| where a = 3 and b like ‘kk%’ and c = 4                  | Y,使用到a,b,c                                                |
+| where a = 3 and b like ‘%kk’ and c = 4                  | Y,只用到a                                                    |
+| where a = 3 and b like ‘%kk%’ and c = 4                 | Y,只用到a                                                    |
+| where a = 3 and b like ‘k%kk%’ and c = 4                | Y,使用到a,b,c                                                |
+
+补充：
+
+* **无过滤不索引**
+  * 语句没有where 只有 order by不会用索引explain的type为all，所以要加上where才会走索引
+* order by非最左 filesort（也需和where的一样遵循最左匹配原则）
+  * 在MySQL的`EXPLAIN`语句中，当查询执行使用了`Using filesort`时，表示MySQL需要进行排序操作，但无法使用索引来完成排序，而是需要通过临时文件进行排序
+
+
 
 看到这里你一定有一个疑问，如果为每一种查询都设计一个索引，索引是不是太多了。如果我现在要按照市民的身份证号去查他的家庭地址呢？虽然这个查询需求在业务中出现的概率不高，但总不能让它走全表扫描吧？反过来说，单独为一个不频繁的请求创建一个（身份证号，地址）的索引又感觉有点浪费。应该怎么做呢？
 
@@ -1372,10 +1400,10 @@ MySQL 的行锁是在引擎层由各个引擎自己实现的。但并不是所�
 
 当并发系统中不同线程出现循环资源依赖，涉及的线程都在等待别的线程释放资源时，就会导致这几个线程都进入无限等待的状态，称为死锁。这里我用数据库中的行锁举个例子。
 
-![](https://images.zzq8.cn/img/202212131532800.jpeg)这时候，事务 A 在等待事务 B 释放 id=2 的行锁，而事务 B 在等待事务 A 释放 id=1 的行锁。 事务 A 和事务 B 在互相等待对方的资源释放，就是进入了死锁状态。当出现死锁以后，有两种策略：
+![](https://images.zzq8.cn/img/202212131532800.jpeg)这时候，事务 A 在等待事务 B 释放 id=2 的行锁，而事务 B 在等待事务 A 释放 id=1 的行锁。 事务 A 和事务 B 在互相等待对方的资源释放，就是进入了死锁状态。当出现死锁以后，有两种策略：（XD：两者可同时存在，不是二选一)
 
-- 一种策略是，直接进入等待，直到超时。这个超时时间可以通过参数 innodb_lock_wait_timeout 来设置。
-- 另一种策略是，发起死锁检测，发现死锁后，主动回滚死锁链条中的某一个事务，让其他事务得以继续执行。将参数 innodb_deadlock_detect 设置为 on，表示开启这个逻辑。
+- 一种策略是，直接进入等待，直到超时。这个超时时间可以通过参数 innodb_lock_wait_timeout 来设置。（默认值是`50`秒）
+- 另一种策略是，发起死锁检测，发现死锁后，主动回滚死锁链条中的某一个事务，让其他事务得以继续执行。将参数 innodb_deadlock_detect 设置为 on，表示开启这个逻辑。（默认值是`ON`）
 
 在 InnoDB 中，innodb_lock_wait_timeout 的默认值是 50s，意味着如果采用第一个策略，当出现死锁以后，第一个被锁住的线程要过 50s 才会超时退出，然后其他线程才有可能继续执行。对于在线服务来说，这个等待时间往往是无法接受的。
 
