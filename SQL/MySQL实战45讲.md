@@ -600,6 +600,23 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 ## 5.小结
 
+> 补充面试题：==说一下mysql中事务的实现原理==
+>
+> 1. mysql是由mvcc实现的事务控制
+>
+> 2. MVCC的实现依赖于：隐藏字段、ReadView、undolog
+>
+> 3. ReadView 数据的可见性和事务的隔离级别有关
+>
+> 
+>
+>
+> PS: 隐藏字段 
+>
+> * DB_TRX_ID(事务ID)
+> * DB_ROLL_PTR(指向该行的 undo log)
+> * DB_ROW_ID（如果没有主键则会自动生成这个当主键）
+
 这篇文章里面，我介绍了 MySQL 的事务隔离级别的现象和实现，根据实现原理分析了长事务存在的风险，以及如何用正确的方式避免长事务。希望我举的例子能够帮助你理解事务，并更好地使用 MySQL 的事务特性。
 
 > Q：如何避免长事务对业务的影响？

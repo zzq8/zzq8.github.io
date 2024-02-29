@@ -240,7 +240,7 @@ select product_id, 'store3' store, store3 price from products where store3 is no
     
          2.不要求合并的表列名称相同时，以第一个sql 表列名为准；
     
-         3.使用union 时，完全相等的行，将会被合并，由于合并比较耗时，一般不直接使用 union 进行合并，而是通常采用union all 进行合并；
+         3.使用union 时，完全相等的行，将会被合并，由于合并比较耗时，一般不直接使用 union 进行合并，而是通常采用union all 进行合并；(因为数据库资源要比应用服务器资源更加珍贵,去重工作可交给后台)
     
          4.被union 连接的sql 子句，单个子句中不用写order by ，因为不会有排序的效果。但可以对最终的结果集进行排序；
 
@@ -893,6 +893,10 @@ https://blog.csdn.net/qq_21993785/article/details/81017671
 
 
 > mysql limit 0,10   第一个参数是0开始
+
+小技巧-对于深分页：
+
+limit 100000,30;    ->     where id>10000 limit 30;
 
 
 

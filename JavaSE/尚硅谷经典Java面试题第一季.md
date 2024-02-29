@@ -122,7 +122,7 @@ public class Singleton4 {
 
 2. 线程安全(适用于多线程)
 
-> TODO    XD: 2024/01/12 貌似有问题，具体看 JUC 笔记中的 volatile
+> TODO    XD: 2024/01/12 貌似有问题，具体看 JUC 笔记中的 volatile（不加会有指令重排问题！！！）
 >
 > `uniqueInstance` 采用 `volatile` 关键字修饰也是很有必要的， `uniqueInstance = new Singleton();` 这段代码其实是分为三步执行：
 >
