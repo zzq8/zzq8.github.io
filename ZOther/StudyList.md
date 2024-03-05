@@ -9,12 +9,12 @@
 
 ## 近期目标
 
-2024/02/20 ~ 2024/02/29 =  10d   -24th & 25th  =  8d 
+2024/02/20 ~ 2024/02/29 =  10d   -24th & 25th  =  8d       AC 4天有效时间
 
 ==求职刻不容缓！！！==
 
-- [x] 牛客 5 道（10 Minute） 加上检查（10 Minute）- 需答对 5 题才能收工
-- [ ] 一个 八股 模块 / MySQL（45 讲专栏） /  梳理笔记 & 根据牛客八股针对性  自我面试（最好派个人问）
+- [ ] 牛客 5 道（10 Minute） 加上检查（10 Minute）- 需答对 5 题才能收工
+- [ ] 一个 八股 模块 / MySQL（45 讲专栏） /  梳理笔记 & 根据牛客八股针对性  自我面试（最好派个人问 **openai 模拟面试官 & 牛客AI面试**）
 - [ ] 八股视频
 - [ ] 找个牛客面试，复制下来本地一个个答         
 
@@ -30,9 +30,13 @@
 
 2024/02/27 Tuesday ❌
 
-2024/02/28 Thursday ✔
+2024/02/28 Wednesday ✔
 
+2024/02/29 Thursday ✔
 
+***
+
+2024/03/01 Friday ✔
 
 
 
@@ -108,3 +112,26 @@ ps：八股搞的差不多了的话，我觉得还是要回归项目上的！简
 
 
 
+
+
+
+
+
+
+# 慢就是快
+
+> [程序员的技术成长战略](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html#_2-4-%E6%A1%88%E4%BE%8B%E5%B0%8F%E7%BB%93)：==以此为终生指导！==
+
+#### 以终为始是牛人和普通人的一大区别。
+
+![以终为始](http://images.zzq8.cn/img/format,png-20230309231833871.png)
+
+
+
+## [学习金字塔和刻意训练](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html#三、学习金字塔和刻意训练)
+
+**人与人之间的先天身体其实都差不多，但是后天身体素质和能力有差异，这些差异，很大程度是由后天对身体和大脑的训练质量、频度和强度所造成的。**
+
+明白这个道理之后，心智成熟和自律的人就会对自己进行持续地 **刻意训练** 。
+
+![学习金字塔](http://images.zzq8.cn/img/format,png-20230309231836811.png)

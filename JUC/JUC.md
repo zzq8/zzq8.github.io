@@ -1061,7 +1061,7 @@ public static void main(String[] args) {
 
 有个虚假唤醒问题，需要用 while 循坏。我这里暂时掠过，用到的时候再回头看[别人笔记](https://gitee.com/moxi159753/LearningNotes/blob/master/%E6%A0%A1%E6%8B%9B%E9%9D%A2%E8%AF%95/JUC/8_%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97/README.md#%E7%94%9F%E6%88%90%E8%80%85%E5%92%8C%E6%B6%88%E8%B4%B9%E8%80%8530) Coding
 
-
+在回顾发现一个虚假唤醒的 https://blog.csdn.net/jerry11112/article/details/114481542
 
 
 
@@ -1457,6 +1457,12 @@ private ThreadPoolExecutor executor;
 ## ==3.CompletableFuture 异步编排==
 
 > Promise 的感觉， 嵌套 调用，变成 链式 调用        能提升系统的性能和吞吐量！
+>
+> > vs @Async
+> >
+> > 需要注意的是，`@Async` 是基于线程池的异步执行方式，而 `CompletableFuture` 可以更加灵活地控制异步执行的方式，例如使用指定的线程池、设置超时等。
+> >
+> > 这是 `@Async` 和 `CompletableFuture` 两种常见的异步编程方式，你可以根据具体的需求选择合适的方式来实现异步操作。
 
 业务场景： 查询商品详情页的逻辑比较复杂，有些数据还需要远程调用，必然需要花费更多的时间。
 

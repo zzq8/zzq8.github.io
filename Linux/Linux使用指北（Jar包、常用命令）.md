@@ -108,7 +108,7 @@ fg 23
 
 ​	过程如下：
 
-	1. 安装unzip    命令：`yum install -y unzip zip`
+	1. 安装unzip    命令：`yum install -y unzip zip`   #忽略  好像默认有
 	2. 直接vim jar包名
 	3. /要找的文件名定位修改的文件
 	4. 在定位到后，该配置文件会标黄，直接回车进入编辑模式，即可编辑了
@@ -192,15 +192,6 @@ touch /mydata/redis/conf/redis.conf
 
 su root #切换到root用户
 sudo systemctl start docker #以管理员身份
-
-# shell已经为我们准备好了这个续行符 "\"，来把一行命令分解成多行，注意 \ 前面要空格
-#v volume  e enviriment 
-docker run -p 3306:3306 --name mysql \
--v /mydata/mysql/log:/var/log/mysql \
--v /mydata/mysql/data:/var/lib/mysql \
--v /mydata/mysql/conf:/etc/mysql \
--e MYSQL_ROOT_PASSWORD=root \
--d mysql:5.7
 ```
 
 
@@ -246,6 +237,25 @@ chmod -R 777 /mydata/elasticsearch/
 
 
 # 五、Shell
+
+* #### linux 自带任务轮询  `crontab -e`
+
+
+
+* #### 一般写日志输出 sh test.sh > log.txt 其实 > 就等同于 1> 
+
+首先了解下1和2在Linux中代表什么
+在Linux系统中0 1 2是一个文件描述符
+
+名称 代码 操作符 Java中表示 Linux 下文件描述符（Debian 为例)
+
+| 名称                 | 代码 | 操作符           | Java中表示                     | Linux 下文件描述符（Debian 为例)             |
+| -------------------- | ---- | ---------------- | ------------------------------ | -------------------------------------------- |
+| 标准输入(stdin)      | 0    | < 或 <<          | [System.in](http://system.in/) | /dev/stdin -> /proc/self/fd/0 -> /dev/pts/0  |
+| 标准输出(stdout)     | 1    | >, >>, 1> 或 1>> | System.out                     | /dev/stdout -> /proc/self/fd/1 -> /dev/pts/0 |
+| 标准错误输出(stderr) | 2    | 2> 或 2>>        | System.err                     | /dev/stderr -> /proc/self/fd/2 -> /dev/pts/0 |
+
+
 
 ![image-20230531110912384](https://images.zzq8.cn/img/202305311109374.png)
 

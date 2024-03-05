@@ -1072,6 +1072,107 @@ public class MyBean implements ApplicationContextAware {
 
 
 
+## 9）Spring-静态资源启用版本控制
+
+> upupor blog          Spring版本控制yaml+MinIO+Thymeleaf
+
+犹记毕业第一年时，公司每次发布完成后，都会在一个群里通知【版本更新，各部门清理缓存，有问题及时反馈】之类的话。归根结底就是资源缓存的问题，浏览器会将请求到的静态资源，如JS、CSS等文件缓存到用户本地，当用户再次访问时就不需要再次请求这些资源了，以此也是提升了用户体验。但是也正是因为这些资源缓存，导致客户端的静态文件往往不是当前最新版本。后来有同事增加了时间戳、随机数等，确实这也解决了客户端缓存的问题，但是却又带来了新的麻烦，导致每次访问都要请求服务器，无形中增加了服务器的压力。
+
+https://www.cnblogs.com/laoyeye/p/10034617.html
+
+> Q&A 
+>
+> <link th:href="${ossStatic} + @{/semantic-ui/semantic.min.css}" type="text/css" rel="stylesheet"> 
+>
+> Thymeleaf这里@{}会导致 .css 之前会拼接一串-99e54d8e467b26ef66ff560393a00091 为什么？
+
+Thymeleaf中的`@{}`语法用于生成URL，并在URL中附加上下文路径。在你提供的示例中，`.css`之前附加的`-99e54d8e467b26ef66ff560393a00091`是一个哈希值，可能是由于你的应用程序或Thymeleaf的资源管理策略而生成的。
+
+这种哈希值的添加通常是为了解决浏览器缓存的问题。当静态资源（如CSS文件）发生更改时，为了确保浏览器加载最新的版本而不使用缓存，可以通过在URL中添加哈希值来创建一个唯一的URL。当资源发生更改时，哈希值也会随之变化，从而强制浏览器重新加载资源。
+
+在你的示例中，`${ossStatic}`是一个变量，可能包含了资源的基本URL路径。而`@{/semantic-ui/semantic.min.css}`则使用了Thymeleaf的URL表达式生成相对于当前请求上下文的CSS文件URL。结合起来，生成的URL将是`${ossStatic}`的值加上`/semantic-ui/semantic.min.css`，并附加上哈希值。
+
+如果你想去除哈希值的附加，可以检查你的应用程序或Thymeleaf的资源管理配置，看是否有相关配置项控制哈希值的添加。具体配置方式可能因你所使用的框架或工具而异。
+
+
+
+是由Spring配置控制的：    使用MD5生成版本号进行管理             ==资源名-md5 方式==
+
+```yaml
+spring:
+  # 静态资源启用版本控制
+  resources:
+    chain:
+      strategy:
+        #MD5实现
+        content:
+          enabled: true
+          paths: /**
+          
+          
+注：第二种、版本号实现
+spring: 
+  resources:
+    chain:
+      strategy:
+        fixed:
+          enabled: true
+          paths: /mods/admin/*.js
+          version: 20181128
+<script src="/20181128/mods/admin/login.js"></script>
+```
+
+ps: MD5（Message Digest Algorithm 5）是一种哈希函数，用于将任意长度的数据映射为固定长度的哈希值。因此，可以说MD5是通过哈希实现的。
+
+**注** 实现该功能的是`ResourceUrlEncodingFilter`，它在模板运行期会重写资源链接，Thymeleaf，Velocity和FreeMarker会自动配置该filter，JSP需要手动配置。其他模板引擎还没自动支持，不过你可以使用[ResourceUrlProvider](http://docs.spring.io/spring/docs/4.3.3.RELEASE/javadoc-api/org/springframework/web/servlet/resource/ResourceUrlProvider.html)自定义模块宏或帮助类。
+
+
+
+### 9.1.MinIO处理
+
+upupor博主处理方式为 py 改名用CLI上传文件
+
+我这里就简单粗暴的把 MinIO 的文件全部改名
+GPT：递归地处理当前文件夹及其所有子文件夹中的文件，并更改它们的文件名（在文件名的后缀名前附加"-<文件的MD5值>"）
+
+```python
+import os
+import hashlib
+
+def calculate_md5(filename):
+    md5_hash = hashlib.md5()
+    with open(filename, 'rb') as f:
+        for chunk in iter(lambda: f.read(4096), b''):
+            md5_hash.update(chunk)
+    return md5_hash.hexdigest()
+
+def rename_files_with_md5(folder_path):
+    # 定义要处理的后缀名列表
+    allowed_extensions = ['.svg', '.webp', '.js', '.css', '.png', '.jpeg', '.jpg', '.ico']
+
+    for root, dirs, files in os.walk(folder_path):
+        for filename in files:
+            file_path = os.path.join(root, filename)
+            file_name, file_ext = os.path.splitext(filename)
+
+            # 检查文件后缀名是否在允许的列表中
+            if file_ext.lower() in allowed_extensions:
+                md5_value = calculate_md5(file_path)
+                new_filename = f"{file_name}-{md5_value}{file_ext}"
+                new_file_path = os.path.join(root, new_filename)
+                os.rename(file_path, new_file_path)
+
+# 获取当前文件夹路径
+current_folder = os.getcwd()
+
+# 调用函数递归处理文件夹中的文件
+rename_files_with_md5(current_folder)
+```
+
+
+
+
+
 
 
 # 3）Spring 循环依赖
@@ -1159,7 +1260,19 @@ XD：
      void publishEvent(Object event);
      ```
 
-     
+
+
+
+
+
+# 5）SpringMVC的执行流程
+
+1. 用户发起请求，请求先被 Servlet 拦截转发给 Spring MVC 框架
+2. Spring MVC 里面的 DispatcherSerlvet 核心控制器，会接收到请求并转发给HandlerMapping
+3. HandlerMapping 负责解析请求，根据请求信息和配置信息找到匹配的 Controller类，不过这里如果有配置拦截器，就会按照顺序执行拦截器里面的 preHandle方法
+4. 找到匹配的 Controller 以后，把请求参数传递给 Controller 里面的方法
+5. Controller 中的方法执行完以后，会返回一个 ModeAndView，这里面会包括视图名称和需要传递给视图的模型数据
+6. 视图解析器根据名称找到视图，然后把数据模型填充到视图里面再渲染成 Html 内容返回给客户端
 
 
 

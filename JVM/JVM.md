@@ -138,6 +138,8 @@ JVM 相关的知识点，一般是大厂才会问到，面试中小厂就没必�
 >
 > 虽然 Java 虚拟机规范把方法区描述为堆的一个逻辑部分，但是它却有一个别名叫做 `Non-Heap（非堆）`，目的应该是与 Java 堆区分开来。
 
+当程序运行时被加载到内存后，这些符号才有对应的内存地址信息。这些常量一旦被转入内存就会变成**运行时**常量池。运行时常量池在方法区中。
+
 ![method-area-jdk1.7](https://oss.javaguide.cn/github/javaguide/java/jvm/method-area-jdk1.7.png)
 
 

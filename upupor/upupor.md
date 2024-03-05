@@ -147,6 +147,116 @@ public class MyBean implements ApplicationContextAware {
 
 
 
+## 2.[Spring-静态资源启用版本控制](../JavaFramework/SpringBoot#9）Spring-静态资源启用版本控制)
+
+> 记到了 SpringBoot.md 中，具体 link title
+
+犹记毕业第一年时，公司每次发布完成后，都会在一个群里通知【版本更新，各部门清理缓存，有问题及时反馈】之类的话。归根结底就是资源缓存的问题，浏览器会将请求到的静态资源，如JS、CSS等文件缓存到用户本地，当用户再次访问时就不需要再次请求这些资源了，以此也是提升了用户体验。但是也正是因为这些资源缓存，导致客户端的静态文件往往不是当前最新版本。后来有同事增加了时间戳、随机数等，确实这也解决了客户端缓存的问题，但是却又带来了新的麻烦，导致每次访问都要请求服务器，无形中增加了服务器的压力。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Minio 
+
+* 必须要手动上传不能资源管理器复制进去
+
+* 资源管理器上传的文件不是源文件，好像被它加密了
+
+* 配合Spring的版本    在上传到minio时计算下md5后再上传
+
+  * ```python
+    # 生产
+    targetDic = "/upupor/apps/codes/upupor/upupor-web/src/main/resources/static"
+    targetPath = os.walk(targetDic)
+    ossTargetDic = "/upupor_static"
+    
+    def getMd5(localFile):
+        f = open(localFile,'rb')
+        md5_obj = hashlib.md5()
+        md5_obj.update(f.read())
+        hash_code = md5_obj.hexdigest()
+        f.close()
+        md5 = str(hash_code).lower()
+        return md5
+    
+    #
+    client = Minio(
+        endpoint="ip:port",
+        access_key="xxxx",
+        secret_key="xxxxxx",
+        secure=False,
+    )
+    
+    # client.trace_on(sys.stdout)
+    
+    for path,dir_list,file_list in targetPath:
+        for file_name in file_list:
+            if '.map' in file_name:
+                continue
+            if '.DS_Store' in file_name:
+                continue
+            # 本地文件
+            localFile = os.path.join(path, file_name)
+            # 计算md5值
+            md5value = getMd5(localFile)
+            # 将md5值添加到文件名上
+            local_file_md5_name = localFile.replace(targetDic,'').replace('\\','/')\
+                                  .replace('.svg','-'+md5value+".svg")\
+                                  .replace('.webp','-'+md5value+".webp")\
+                                  .replace('.js','-'+md5value+".js")\
+                                  .replace('.css','-'+md5value+".css")\
+                                  .replace('.png','-'+md5value+".png")\
+                                  .replace('.jpeg','-'+md5value+".jpeg")\
+                                  .replace('.jpg','-'+md5value+".jpg")\
+                                  .replace('.ico','-'+md5value+".ico")
+            ossObjectName = ossTargetDic + local_file_md5_name
+            # if exist == True:
+            #     print('已存在,无需上传------------'+ossObjectName)
+            #     continue
+            # print('正在上传... ' + ossObjectName)
+    
+            in_get_content_type="application/octet-stream";
+            md5FileName = local_file_md5_name.split('/',-1)[-1]
+            suffix = md5FileName.split('.',-1)[-1];
+            if suffix == 'js':
+                in_get_content_type='application/x-javascript'
+    
+            if suffix == 'css':
+                in_get_content_type='text/css'
+    
+            
+            if suffix == 'svg':
+                in_get_content_type='image/svg+xml'
+    
+            #print(in_get_content_type)
+            #print(suffix)
+            client.fput_object(bucket_name="upupor-img", object_name=ossObjectName, file_path=localFile,content_type=in_get_content_type)
+            print(ossObjectName + '  已上传')
+    ```
+
+## 
+
+
+
+
+
+
+
 
 
 
@@ -166,3 +276,4 @@ Question:
 
 * Nginx 配置头像静态资源访问不到，因为我代码是保存到指定的本地目录而项目是以jar包方式运行导致会保存到jar的相对路径
   * 所有资源保存需要
+*  静态资源启用版本控制             #XD UNKONW这里启用了hash版本文件名为了避免缓存，但是minio我不知道在哪里配置跟上hash名字访问！！！
