@@ -637,6 +637,15 @@ jdk1.8 `数组+链表+红黑树`，CAS+Synchronized
 
 
 
+#### * [Java集合](https://javaguide.cn/java/collection/java-collection-questions-01.html#%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0)
+
+> java中ArrayDeque和Stack类哪个用来实现栈方便一些
+>
+> `ArrayDeque`更加方便实现栈，它具有更好的性能、更多的功能和更好的代码风格。因此，在实际开发中，推荐使用`ArrayDeque`来实现栈的功能。
+> `Stack`是较早版本的类
+
+![https://oss.javaguide.cn/github/javaguide/java/collection/java-collection-hierarchy.png](https://oss.javaguide.cn/github/javaguide/java/collection/java-collection-hierarchy.png)
+
 
 
 #### * 谈一谈你对面向对象的理解
