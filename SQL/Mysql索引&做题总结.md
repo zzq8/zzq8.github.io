@@ -213,6 +213,8 @@ group_concat(distinct product order by product separator ',') as products
 
 #### 列转行用union all：一开始我没那么理解
 
+> XD再学习：同一个表不同列放一列
+
 ```mysql
 #'store1' store 值store1在store这个字段名（别名）下！
 select product_id, 'store1' store, store1 price from products where store1 is not null

@@ -1006,7 +1006,7 @@ mysql>SELECT `a`,`b`,`c` FROM A WHERE `a`='a3' AND `c`='c3'; //索引生效，�
 	函数不支持
 
 
-联合索引给(a,b,c)添加，如果where a,c,b 索引会生效吗？（生效，优化器会优化）
+XD: 联合索引给(a,b,c)添加，如果where a,c,b 索引会生效吗？（生效，优化器会优化）
 ```
 
 详细点的Table：假设index(a,b,c)

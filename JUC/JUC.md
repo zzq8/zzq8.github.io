@@ -403,13 +403,21 @@ private static volatile SingletonDemo instance = null;
 
 # 二、CAS
 
-> CAS的全称是Compare-And-Swap，它是**CPU并发原语**
+> CAS的全称是Compare-And-Swap，它是**CPU并发原语 **，是实现并发算法时常用到的一种技术
 >
 > * 所谓原语，一般是指由若干条指令组成的程序段，用来实现某个特定功能，在执行过程中不可被中断。
 >
 > * 原语一旦开始执行，就要连续执行完，不允许中断 [1] 。
 >
 > 它的功能是判断内存某个位置的值是否为预期值，如果是则更改为新的值，这个过程是原子的
+>
+> 
+>
+> > 我们都知道，CAS 是一条 CPU 的原子指令（cmpxchg 指令），不会造成所谓的数据不一致问题，`Unsafe` 提供的 CAS 方法（如 `compareAndSwapXXX`）底层实现即为 CPU 指令 `cmpxchg`
+> >
+> > ------
+> >
+> > 著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：https://javaguide.cn/java/basis/unsafe.html
 
 ##  1. 概念
 
@@ -529,6 +537,23 @@ t1 可以执行了，看了下还是 A 觉得没问题！但真的没问题吗�
 
 
 > ABA我听懂了，但是没想到什么场景会产生危害
+>
+> 
+>
+> > 假设有一个库存管理系统，其中有一个共享的原子变量`stock`表示某个商品的库存数量。
+> >
+> > 1. 初始状态：`stock`的值为10，表示商品的库存数量为10个。
+> > 2. 线程A和线程B同时读取`stock`的值为10。
+> > 3. 线程A将`stock`的值减少2，并执行一些操作。
+> > 4. 线程B将`stock`的值减少3，并执行一些操作。
+> > 5. 线程A将`stock`的值增加2，并执行一些操作。
+> > 6. 线程B将`stock`的值增加3，并执行一些操作。
+> >
+> > 在这个简化的例子中，线程A和线程B分别对`stock`进行了多次操作，其中包括减少和增加操作。==由于CAS操作只关注`stock`的当前值，而不考虑过程中的变化，可能导致ABA问题的发生。==
+> >
+> > 假设线程A的操作执行顺序是减少2，然后增加2，此时`stock`的值仍为10，CAS操作可以成功。然而，线程B在线程A执行过程中执行了减少3和增加3的操作，并将`stock`的值从10减少到7，然后又增加回10。由于CAS操作只检查当前值与预期值是否相等，而不考虑过程中的变化，线程B的操作可能会被误判为未修改过`stock`的值。
+> >
+> > 为了解决这个问题，可以使用带有版本号的原子引用或其他适当的同步机制，以确保CAS操作同时考虑值的变化和状态的变化，避免ABA问题的发生。
 
 我把太子换成狸猫，中途打了太子一顿，再换回太子。但中途太子受到了伤害
 
@@ -1563,24 +1588,14 @@ private ThreadPoolExecutor executor;
 
 # 七、其它
 
-## 1）concurrentHashMap分段加锁
+#### # AQS
 
-> 注意这是之前的回答。。。
+AQS 的全称为 `AbstractQueuedSynchronizer` ，翻译过来的意思就是抽象队列同步器。这个类在 `java.util.concurrent.locks` 包下面。
 
-ChatGPT：
+AQS 就是一个抽象类，主要用来构建锁和同步器
 
-ConcurrentHashMap 是 Java 中线程安全的哈希表实现，它的内部采用了分段锁的机制来提高并发性能，实现了读写分离，可以在多线程环境下高效地支持并发操作。
+AQS 为构建锁和同步器提供了一些通用功能的实现，因此，使用 AQS 能简单且高效地构造出应用广泛的大量的同步器，比如我们提到的 `ReentrantLock`，`Semaphore`，其他的诸如 `ReentrantReadWriteLock`，`SynchronousQueue`等等皆是基于 AQS 的
 
-ConcurrentHashMap 的分段锁是基于数组的，将整个哈希表分成了多个段，每个段都是一个独立的哈希表，拥有自己的锁，不同的线程可以同时访问不同的段。当一个线程访问一个段时，只需要获取该段的锁，而不需要获取整个哈希表的锁，==这样可以避免锁的粒度过大导致的性能问题。==
+------
 
-在实现上，ConcurrentHashMap 将哈希表的容量按照固定的大小分成了多个段，每个段维护一个数组，数组中的每个元素都是一个链表结构。当插入或者查找一个元素时，ConcurrentHashMap 先根据元素的哈希值找到对应的段，然后再在该段的链表上进行操作。在对链表进行插入、删除、查找等操作时，需要获取对应段的锁，而其他段的操作不受影响。
-
-通过分段锁的机制，ConcurrentHashMap 可以支持高并发的操作，同时也能够保证线程安全。
-
-### JDK 1.7 和 JDK 1.8 的 ConcurrentHashMap 实现有什么不同？
-
-* **线程安全实现方式**：JDK 1.7 采用 `Segment` 分段锁来保证安全， `Segment` 是继承自 `ReentrantLock`。JDK1.8 放弃了 `Segment` 分段锁的设计，采用 `Node + CAS + synchronized` 保证线程安全，锁粒度更细，`synchronized` 只锁定当前链表或红黑二叉树的首节点。
-
-- **Hash 碰撞解决方法** : JDK 1.7 采用拉链法，JDK1.8 采用拉链法结合红黑树（链表长度超过一定阈值时，将链表转换为红黑树）。
-  - JDK1.8 之前 ： 数组和链表
-    JDK1.8 之后 ： 多了红黑树
+著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：https://javaguide.cn/java/concurrent/java-concurrent-questions-03.html

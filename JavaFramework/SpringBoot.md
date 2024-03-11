@@ -501,7 +501,7 @@ Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系�
 1.`@Before` 使用场景：*限流处理*
 
 ```java
-@Aspect
+@Aspect  //切面声明？
 @Component
 public class RateLimiterAspect{
     @Before("@annotation(rateLimiter)")
@@ -517,6 +517,21 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 2.`@AfterReturning` 使用场景：日志记录 增删改
 
 *处理完请求后执行*
+
+
+
+
+
+##### Upupor 补充 AOP 实操
+
+1. `@Around` 使用场景：博客下面统计记录 **响应时间** （spring的 StopWatch 类 + @Around 实现！！！）
+
+```java
+@Around("controllerLog()")
+    public Object doAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    // 调用业务方法
+    result = proceedingJoinPoint.proceed();   //XD 这里调用目标方法，这之前的代码都是【前置逻辑】    下面的代码都是【后置逻辑】
+```
 
 
 
@@ -1209,11 +1224,13 @@ rename_files_with_md5(current_folder)
 
 视频：https://www.bilibili.com/video/BV1Cd4y1q7Vm/?spm_id_from=333.337.search-card.all.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0
 
+更好的视频：https://www.bilibili.com/video/BV1Wa4y1477d?p=3&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0
+
 > ==Spring、SpringBoot常用扩展特性之事件驱动==  看代码demo  Spring Boot 2 项目
 >
 > 一般搭配以下两个注解一起使用：  **@EventListener @Async**
 >
-> 1. @0rder指定执行顺序在同步的情况下生效
+> 1. @0rder指定执行顺序在同步的情况下生效     看视频也可以搭配这个注解，加个权重   假如多个Listener消费谁先
 > 2. @Async 异步执行需要 @EnableAsync 开启异步
 
 > 事件驱动:即跟随当前时间点上出现的事件,调动可用资源,执行相关任务,使不断出现的问题得以解决,防止事务堆积.
@@ -1228,6 +1245,13 @@ private ApplicationEventPublisher eventPublisher;
 
 //UNKNOWN @FunctionalInterface这里的作用是什么          @EventListener注解！！！！！？？？？
 eventPublisher.publishEvent(sendEmailEvent);
+
+--------后来懂了，上面是发布事件了              有相对于的方法监听消费这个事件：--------
+    @EventListener
+    @Async
+    public void sendEmail(EmailEvent emailEvent) 
+    
+PS：方法参数需要和发布 sendEmailEvent 类型对应，   这样才是一一对应消费
 ```
 
 ==重点就是这三个类，搞清就行！！！可以看自己写的代码    注意：ApplicationEvent 可以不实现所以重心其实就两个类==
@@ -1250,7 +1274,6 @@ XD：
    * ```java
      ApplicationEventPublisher.class
      
-     
      default void publishEvent(ApplicationEvent event) {
          publishEvent((Object) event);
      }
@@ -1260,7 +1283,7 @@ XD：
      void publishEvent(Object event);
      ```
 
-
+     
 
 
 

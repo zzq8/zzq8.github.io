@@ -18,6 +18,7 @@ https://eco.upupor.com/upupor/
 数据库会新产生一个 flyway_schema_history 的表
 
 * 这个表会记录每一个 sql 脚本文件的操作，以及是否执行成功
+* 作用：upupor使用了flyway,因此数据库SQL文件维护在upupor-web/src/main/resources/db/migration目录,只需要配置好DB然后启动程序,就会创建相应的表以及执行相应的SQL. 后续如果想新增表或者执行SQL可以直接在migration目录按照规则新建migration文件即可,程序启动时会自动执行.         Flyway是一个开源的数据库版本控制工具，它用于管理和跟踪数据库结构的变化
 
 小技巧：用 IDEA 操作数据库新增列会产生语句，这个时候就可以复制这个语句了！
 
@@ -44,7 +45,7 @@ SQL脚本文件有固定命名规则
 
 
 
-# 二、邮件-注册
+# 二、注册-邮件
 
 ## 1.事件驱动-@EventListener
 
@@ -52,11 +53,13 @@ SQL脚本文件有固定命名规则
 
 视频：https://www.bilibili.com/video/BV1Cd4y1q7Vm/?spm_id_from=333.337.search-card.all.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0
 
+更好的视频：https://www.bilibili.com/video/BV1Wa4y1477d?p=3&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0
+
 > ==Spring、SpringBoot常用扩展特性之事件驱动==  看代码demo  Spring Boot 2 项目
 >
 > 一般搭配以下两个注解一起使用：  **@EventListener @Async**
 >
-> 1. @0rder指定执行顺序在同步的情况下生效
+> 1. @0rder指定执行顺序在同步的情况下生效     看视频也可以搭配这个注解，加个权重   假如多个Listener消费谁先
 > 2. @Async 异步执行需要 @EnableAsync 开启异步
 
 > 事件驱动:即跟随当前时间点上出现的事件,调动可用资源,执行相关任务,使不断出现的问题得以解决,防止事务堆积.
@@ -71,6 +74,13 @@ private ApplicationEventPublisher eventPublisher;
 
 //UNKNOWN @FunctionalInterface这里的作用是什么          @EventListener注解！！！！！？？？？
 eventPublisher.publishEvent(sendEmailEvent);
+
+--------后来懂了，上面是发布事件了              有相对于的方法监听消费这个事件：--------
+    @EventListener
+    @Async
+    public void sendEmail(EmailEvent emailEvent) 
+    
+PS：方法参数需要和发布 sendEmailEvent 类型对应，   这样才是一一对应消费
 ```
 
 ==重点就是这三个类，搞清就行！！！可以看自己写的代码    注意：ApplicationEvent 可以不实现所以重心其实就两个类==
@@ -93,7 +103,6 @@ XD：
    * ```java
      ApplicationEventPublisher.class
      
-     
      default void publishEvent(ApplicationEvent event) {
          publishEvent((Object) event);
      }
@@ -102,8 +111,71 @@ XD：
      //所以事件类没有extends ApplicationEvent也行其实走的是这里
      void publishEvent(Object event);
      ```
-
      
+  
+
+
+
+# 三、UUID
+
+> com.upupor.framework.utils.CcUtils#getUuId
+
+
+
+
+
+# 四、文章压缩
+
+`com.upupor.framework.utils.DeflaterUtils`
+
+> 在 Java 中，`Deflater` 是一个用于数据压缩的类。它提供了一种在内存中压缩数据的方式，使得数据可以更有效地存储和传输。
+>
+> `Deflater` 类使用 DEFLATE 压缩算法，这是一种无损数据压缩算法，广泛应用于诸如 ZIP 文件、HTTP 压缩和其他数据传输场景中。
+>
+> 使用 `Deflater` 类可以将数据压缩为压缩格式，然后可以将压缩后的数据存储到文件中、传输给其他系统或在内存中进行处理。
+
+`Deflater` 和 `base64` 是两种完全不同的概念和功能。
+
+1. `Deflater` 是用于数据压缩的类，它使用 DEFLATE 压缩算法将数据压缩为更小的形式。它通过消除数据中的冗余和重复信息来减小数据的大小，使得数据可以更有效地存储和传输。压缩后的数据可以在需要时进行解压缩以恢复原始数据。
+2. `base64` 是一种编码方式，用于将二进制数据转换为可打印的 ASCII 字符串。它并不进行数据压缩，而是将数据按照一定的规则进行编码，以便在传输或保存时能够处理二进制数据。`base64` 编码将每 3 个字节的二进制数据编码为 4 个可打印字符，编码后的字符串长度通常会比原始数据增加约 33%。
+
+`Deflater` 和 `base64` 通常用于不同的场景和目的：
+
+- `Deflater` 适用于需要对数据进行压缩，以减小数据的大小，节省存储空间或在网络传输中降低带宽消耗的情况。
+- `base64` 适用于需要将二进制数据转换为可打印的 ASCII 字符串，例如在传输二进制数据时，由于某些通信协议或数据传输的限制，只能传输可打印字符，而不能直接传输二进制数据。
+
+
+
+# 五、TODO-获取文章内容
+
+> 一开始我只想确认文章展示是不是需要 unzip 解压缩
+>
+> 我现在都不知道入口在哪，头晕~  一步步的太恐怖了    源码
+
+
+
+# 六、响应时间
+
+> 在 Spring 框架中，`StopWatch` 是一个用于测量代码执行时间的工具类。它提供了一种简单的方式来跟踪代码块的执行时间，并可以用于性能分析、调优和监控。
+
+博客底下的那个计时怎么实现   怎么前后的  
+
+* spring的 StopWatch 类 + @Around 实现！！！
+* `com.upupor.web.aspects.ControllerAspectAspect#doAround`
+
+
+
+
+
+# 七、基于Redis滑动窗口实现用户限流
+
+RuoYi 也有，对比实现逻辑
+
+
+
+
+
+
 
 
 
@@ -157,7 +229,9 @@ public class MyBean implements ApplicationContextAware {
 
 
 
+## 3.Lucene
 
+Lucene和Elasticsearch之间存在密切的关联。实际上，Elasticsearch是建立在Lucene之上的分布式搜索和分析引擎，它提供了更高级的功能和易用性的接口，以便于构建和管理大规模的分布式搜索应用程序。
 
 
 
@@ -261,19 +335,42 @@ Minio
 
 
 
-TODO
+# TODO
 
 * blog文章加密方式，为什么
+
+  * com.upupor.framework.utils.DeflaterUtils
+
+    * `Deflater` 类使用 DEFLATE 压缩算法，这是一种无损数据压缩算法，广泛应用于诸如 ZIP 文件、HTTP 压缩和其他数据传输场景中。
+
+      使用 `Deflater` 类可以将数据压缩为压缩格式，然后可以将压缩后的数据存储到文件中、传输给其他系统或在内存中进行处理。
+
+* 草稿？是定时任务实现吗
+
+  * 前端实现
+
+    ```js
+    // 自动保存 10秒执行一次
+        autoSaveInterval = setInterval(function () {
+            autoSave();
+        }, auto_save_timeout);
+    ```
+
 * 站内信息
+
+  * 一张 message 表
+
 * LOG_PATH_IS_UNDEFINEDbackup   文件夹发现会压缩错误日志到里面！
+
+  * 好像是 `logback.xml` 实现
+
 * 上传音频
 
+  * js 实现的blob 音频文件
+
+* * 
 
 
 
 
-Question:
 
-* Nginx 配置头像静态资源访问不到，因为我代码是保存到指定的本地目录而项目是以jar包方式运行导致会保存到jar的相对路径
-  * 所有资源保存需要
-*  静态资源启用版本控制             #XD UNKONW这里启用了hash版本文件名为了避免缓存，但是minio我不知道在哪里配置跟上hash名字访问！！！

@@ -1297,6 +1297,10 @@ String name = jsonObject.getString("name");
 >
 > 因此，Spring Session 整合 Redis 后，Redis 存储的 Session 是自动续期的。
 
+GPT：
+
+会话过期时间重置：每当用户进行会话操作时（例如访问页面或发送请求），Spring Session 会自动更新 Redis 中存储的会话的过期时间。这样，只要用户保持活动状态，会话就会自动续期，不会过期。
+
 
 
 ## 4.单点登录-SSO

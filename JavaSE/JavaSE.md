@@ -597,7 +597,7 @@ Java 中的 Arrays 类提供了一个 binarySearch 方法，用于在已排序�
 
 
 
-#### * ConcurrenHashMap 1.7 vs 1.8
+#### * ConcurrentHashMap 1.7 vs 1.8
 
 jdk1.7 `数组+链表`，`分段锁`内部类 class Segment<K,V> extends ReentrantLock
 
@@ -973,6 +973,7 @@ class Solution extends B implements A {
 **异常：**
 
 补充：IOException 是 Java 中的一个受检异常（checked exception），这意味着在编译时编译器会强制要求对其进行处理或声明。
+	XD: 后来补充-SQLException也是（checked exception）
 
 搞清楚 checked exception 是必须要 try-catch 的不然报错不准运行！
 

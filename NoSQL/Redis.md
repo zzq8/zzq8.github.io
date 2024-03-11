@@ -1,6 +1,14 @@
 # Redis
 
->  Redis 可以用来做限流(MQ)、**分布式锁、缓存**
+> Q: Redis的lO性能比数据库高的原因是什么？
+>
+> 1. 基于内存，sql基于磁盘 - 所以少了一步磁盘IO      
+> 2. 单线程模型 - 少了上下文切换开销
+> 3. 非阻塞IO - 6.0往后出现**网络IO多路复用**    TODO？  允许一个线程同时监听和处理多个网络连接的 I/O 操作
+> 4. **数据结构简单重设计** - SDS？压=      TODO？*Sds*（Simple Dynamic String，简单动态字符串）是Redis 底层所使用的字符串表示 
+>    C 是char 不足 总的来说，Redis 的 SDS 结构在原本字符数组之上，增加了三个元数据：len、alloc、flags，用来解决 C 语言字符串的缺陷
+
+>  Redis 可以用来做限流(MQ)、**分布式锁、缓存**     发布订阅（publish、subscribe）
 >
 > [个人定制化总结，详细信息看课件！](尚硅谷_Redis6课件.pdf)
 >
@@ -18,7 +26,7 @@
 
 当涉及到使用Redis在Java中实现限流、分布式锁和缓存时，以下是一些示例代码：
 
-1. 限流：
+1. #### 限流：
 ```java
 import redis.clients.jedis.Jedis;
 
@@ -44,7 +52,7 @@ public class RateLimiter {
 }
 ```
 
-2. 分布式锁：
+2. #### 分布式锁：
 ```java
 import redis.clients.jedis.Jedis;
 
@@ -80,7 +88,7 @@ public class DistributedLock {
 }
 ```
 
-3. 缓存：
+3. #### 缓存：
 ```java
 import redis.clients.jedis.Jedis;
 
@@ -459,3 +467,16 @@ Lua 脚本原子性，在执行的时候别人不能打断
 https://www.yuque.com/snailclimb/mf2z3k/hbsnl8?pwd=cnk4
 
 Redis 有序集合 Zset(sorted set) 
+
+
+
+总结
+
+上面我一共提到了两种设计排行榜的方法：
+
+1**MySQL 的 ORDER BY 关键字**
+2Redis 的 sorted set
+
+其实，这两种没有孰好孰坏，还是要看具体的业务场景。如果说你的项目需要排序数据量比较小并且业务场景不复杂的话（比如你对你博客的所有文章按照阅读量来排序），我觉得直接使用 MySQL 的 ORDER BY 关键字就可以了，没必要为了排行榜引入一个 Redis。
+
+另外，在没有分页并且数据量不大的情况下，直接在前端拿到所有需要用到的数据之后再进行排序也是可以的。
