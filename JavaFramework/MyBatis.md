@@ -3,6 +3,17 @@
 # MyBatis-雷神
 
 > MyBatis 框架： MyBatis 本是 apache 的一个开源项目 iBatis, 2010 年这个项目由 apache software foundation 迁移到了 google code，并且改名为 MyBatis 。2013 年 11 月迁移到 Github。
+>
+> 
+>
+> XD `MyBatis本身并不提供连接池功能，它主要关注于SQL映射和数据库操作的框架。连接池是与数据库交互的一部分，但并不是MyBatis默认的方式。`
+>
+> 在使用MyBatis时，你可以选择使用第三方的连接池库来管理数据库连接。常见的连接池库包括：
+>
+> Apache Commons DBCP
+> `HikariCP`
+> C3P0
+> `Druid`
 
 # 一、Hello World
 

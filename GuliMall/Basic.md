@@ -276,7 +276,7 @@ ES6 & Vue 快速入门
 >        age: 21,
 >        language: ['java', 'js', 'css']
 >    }
->                                                                
+>                                                                   
 >    // var hello1 = (param) => console.log("hello," + param.name);
 >    // hello1(person);
 >    var hello2 = ({name}) => console.log("hello," + name);
@@ -1043,7 +1043,7 @@ logging:
 
 
 
-> 理解 [简单请求](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS#简单请求) 和[预检请求](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS#预检请求)
+> 理解 [简单请求](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS#简单请求) 和[预检请求](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS#预检请求)         看Title解释，1）请求类型得是Get,Post   2）Content-Type：text，form             
 
 不是简单请求的都需要发送一个预检请求 比如看标题链接，这里发的是 Application/json 浏览器响应
 

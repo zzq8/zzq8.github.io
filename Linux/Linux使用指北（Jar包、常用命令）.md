@@ -280,3 +280,22 @@ java -cp './*:../app/*' com.bokesoft.yes.dev.DevSuite //:号应该是分隔符�
 
 这样，通配符将被视为字符串的一部分，而不会被shell进行扩展。
 
+
+
+
+
+
+
+# 问题
+
+备份数据库：#介绍了有问题的原因
+
+```bash
+d=`date +%Y%m%d%H%M`
+docker exec mysql mysqldump -uroot -pa59964360 --single-transaction --databases upupor > /home/minio/data/blog/SQLBackup/upupor${d}.sql
+#此处再接命令会导致上面命令upupor${d}.sql文件名多换行
+echo hh
+gzip -c /home/minio/data/blog/SQLBackup/upupor${d}.sql > /home/minio/data/blog/SQLBackup/upupor${d}.sql.gz
+rm -rf "/home/minio/data/blog/SQLBackup/upupor${d}.sql"
+```
+

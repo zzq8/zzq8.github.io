@@ -478,6 +478,122 @@ Q&A 因为有三种注入方式：
 
 #### 4.AOP
 
+> RuoYi、upupor  自定义注解全是和 AOP 相关
+>
+> 除了有个注解是配合SpringSecurity实现注解地方放行访问    （RUOYI） 
+
+> #### 学习手册.pdf 补充：
+>
+> 多个切面的情况下，可以通过 @Order 指定先后顺序，数字越小，优先级越高。
+>
+> <img src="C:\Users\Fighting\AppData\Roaming\Typora\typora-user-images\image-20240315165659313.png" alt="image-20240315165659313" style="zoom:50%;" />
+>
+> #### 说说你平时有用到AOP吗？ （例子很好，要知行合一）
+>
+> PS：这道题老三的同事面试候选人的时候问到了，候选人说了一堆AOP原理，同事 就势来一句，你能现场写一下AOP的应用吗？结果——场面一度很尴尬。虽然我对面 试写这种百度就能出来的东西持保留意见，但是还是加上了这一问，毕竟招人最后 都是要撸代码的。 
+>
+> 这里给出一个小例子，SpringBoot项目中，利用AOP打印接口的入参和出参日志，以 及执行时间，还是比较快捷的。
+>
+> * 引入依赖：引入AOP依赖 
+>
+>   ```xml
+>   <dependency>
+>   <groupId>org.springframework.boot</groupId>
+>   <artifactId>spring-boot-starter-aop</artifactId>
+>   </dependency>
+>   ```
+>
+> * 自定义注解：自定义一个注解作为切点 
+>
+>   ```java
+>   @Retention(RetentionPolicy.RUNTIME)
+>   @Target({ElementType.METHOD})
+>   @Documented
+>   public @interface WebLog {
+>   }
+>   ```
+>
+> * 配置AOP切面：
+>
+>   * @Aspect：标识切面
+>   * @Pointcut：设置切点，这里以自定义注解为切点，定义切点有很多其它种方 式，自定义注解是比较常用的一种。 
+>   * @Before：在切点之前织入，打印了一些入参信息 
+>   * @Around：环绕切点，打印返回参数和接口执行时间
+>
+>   ```java
+>   @Aspect
+>   @Component
+>   public class WebLogAspect {
+>   	private final static Logger logger =
+>   	LoggerFactory.getLogger(WebLogAspect.class);
+>   	/**
+>   	* 以自定义 @WebLog 注解为切点
+>   	**/
+>   	@Pointcut("@annotation(cn.fighter3.spring.aop_demo.WebLog)")
+>   	public void webLog() {}
+>   	/**
+>   	* 在切点之前织入
+>   	*/
+>   	@Before("webLog()")
+>   	public void doBefore(JoinPoint joinPoint) throws Throwable {
+>   		// 开始打印请求日志
+>   		ServletRequestAttributes attributes = (ServletRequestAttributes)
+>   		RequestContextHolder.getRequestAttributes();
+>   		HttpServletRequest request = attributes.getRequest();
+>   		// 打印请求相关参数
+>   		logger.info("============ Start==========================================");
+>   		// 打印请求 url
+>   		logger.info("URL : {}", request.getRequestURL().toString());
+>   		// 打印 Http method
+>   		logger.info("HTTP Method : {}", request.getMethod());
+>   		// 打印调用 controller 的全路径以及执行方法
+>   		logger.info("Class Method : {}.{}",
+>   			joinPoint.getSignature().getDeclaringTypeName(),
+>   			joinPoint.getSignature().getName());
+>   		// 打印请求的 IP
+>   		logger.info("IP : {}", request.getRemoteAddr());
+>   		// 打印请求入参
+>   		logger.info("Request Args : {}",new
+>   			ObjectMapper().writeValueAsString(joinPoint.getArgs()));
+>   	}
+>   	/**
+>   	* 在切点之后织入
+>   	*/
+>   	@After("webLog()")
+>   	public void doAfter() throws Throwable {
+>   		// 结束后打个分隔线，方便查看
+>   		logger.info("================== End===========================================");
+>   	}
+>   	/**
+>   	* 环绕
+>   	*/
+>   	@Around("webLog()")
+>   	public Object doAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+>   		//开始时间
+>   		long startTime = System.currentTimeMillis();
+>   		Object result = proceedingJoinPoint.proceed();
+>   		// 打印出参
+>   		logger.info("Response Args : {}", new
+>   			ObjectMapper().writeValueAsString(result));
+>   		// 执行耗时
+>   		logger.info("Time-Consuming : {} ms", System.currentTimeMillis() - startTime);
+>   		return result;
+>   	}
+>   }
+>   ```
+>
+> * 使用：只需要在接口上加上自定义注解
+>
+>   ```java
+>   @GetMapping("/hello")
+>   @WebLog(desc = "这是一个欢迎接口")
+>   public String hello(String name){
+>   	return "Hello "+name;
+>   }
+>   ```
+>
+>   
+
 > Spring 框架一般都是基于 AspectJ 实现 AOP 操作，AspectJ 不是 Spring 组成部分，独立 AOP 框架，一般把 AspectJ 和 Spirng 框架一起使 用，进行 AOP 操作
 
 ### Spring AOP 和 AspectJ AOP 有什么区别？
@@ -545,19 +661,19 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
+#### 6.用到了哪些设计模式
 
+> 至少前5种答出来
 
-
-
-
-
-
-
-
-
-
-
-
+1. IOC 工厂模式 : Spring 容器本质是一个大工厂，使用工厂模式通过 BeanFactory、 ApplicationContext 创建 bean 对象。 
+2. AOP 代理模式 : **Spring AOP 功能就是通过代理模式来实现的**，分为动态代理和静 态代理。 
+3. IOC 单例模式 : Spring 中的 Bean 默认都是单例的，这样有利于容器对Bean的管理。 
+4. 模板模式 : Spring 中 JdbcTemplate、RestTemplate 等以 Template结尾的对数据 库、网络等等进行操作的模板类，就使用到了模板模式。 
+5. 观察者模式: Spring 事件驱动模型就是观察者模式很经典的一个应用。 
+   * 可以将观察者模式看作是发布订阅模式的一个特例
+   * 在Spring框架中，事件驱动的编程模型是基于发布订阅模式的。
+6. 适配器模式 :Spring AOP 的增强或通知 (Advice) 使用到了适配器模式、Spring MVC 中也是用到了适配器模式适配 Controller。
+7. 策略模式：Spring中有一个Resource接口，它的不同实现类，会根据不同的策略 去访问资源。
 
 
 
@@ -1192,7 +1308,15 @@ rename_files_with_md5(current_folder)
 
 # 3）Spring 循环依赖
 
-> 循环依赖解析
+> PS：其实正确答案是开发人员做好设计，别让Bean循环依赖，但是没办法，面 试官不想听这个。
+>
+> 我们都知道，单例Bean初始化完成，要经历三步：`实例化、属性赋值、初始化`    使用、销毁
+>
+> **注入就发生在第二步，属性赋值，结合这个过程，Spring 通过`三级缓存`解决了循环依赖：**   采用了**“`提前暴露`”**的策略
+>
+> 1. 一级缓存 : Map singletonObjects，单例池，用于保存实例化、属 性赋值（注入）、初始化完成的 bean 实例 
+> 2. 二级缓存 : Map earlySingletonObjects，早期曝光对象，用于保存实例化完成的 bean 实例 
+> 3. 三级缓存 : Map> singletonFactories，早期曝光对象工厂，用于保存 bean 创建工厂，以便于后面扩展有机会创建代理对象。
 
 是什么：
 

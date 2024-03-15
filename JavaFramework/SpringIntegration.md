@@ -9,7 +9,7 @@
 #### 常见集成模式：
 
 1. 通过文件传输的形式（保障平台 - ERP通过xml）File Transfer                <FTP>
-2. 通过接口远程方法调用怕【WMS常用 -return json POJO到对方系统去保存Yigo-】          <HTTP>
+2. 通过接口远程方法调用怕【WMS常用 -return json POJO到对方系统去保存Yigo】          <HTTP>
 3. 共享公共数据库方式，同1的文件传输类似通过外部【WMS也用 -保存到Yigo2-】      <JDBC-API>
 4. 通过Event到消息总线，相互发消息
 
