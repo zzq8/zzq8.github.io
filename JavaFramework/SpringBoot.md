@@ -115,7 +115,7 @@ SpringBoot是简化Spring技术栈的快速开发脚手架
 
 
 
-# 二、了解自动配置原理
+# 二、自动配置
 
 > 两大优秀特性：依赖管理、自动配置
 
@@ -344,7 +344,7 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 # Ⅰ、Spring 学习
 
-#### 1.Spring提供的IOC容器实现的两种方式（两个接口）
+## 1.Spring提供的IOC容器实现的两种方式（两个接口）
 
 > `ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");`
 
@@ -352,11 +352,24 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
  b）ApplicationContext接口：BeanFactory接口的子接口，提供更多更强大的功能，提供给开发人员使用（加载配置文件时候就会把在配置文件对象进行创建）推荐使用！
 
+```java
+//upupor          TrueSend trueSend = SpringContextUtils.getBean(TrueSend.class);
+@Component
+public class SpringContextUtils implements ApplicationContextAware {
+    //UNKNOWN 这里不用注入吗     XD 因为实现了 ApplicationContextAware 此接口重写方法拿到了
+    private static ApplicationContext applicationContext;
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) {
+        SpringContextUtils.applicationContext = applicationContext;
+    }
+    .......
+```
 
 
 
 
-#### 2.IOC操作Bean管理
+
+## 2.IOC操作Bean管理
 
  a）Bean管理就是两个操作：（1）Spring创建对象；（2）Spring注入属性
 
@@ -399,11 +412,45 @@ public class Book {
 
 
 
+##### 补充：构造参数注入 ==vs==  setter注入
+
+> 以前一直不懂 **构造参数注入**
+
+```java
+@RequiredArgsConstructor     //XD   lombook
+@RequestMapping("member")  
+public class MemberController {
+    private final MemberOperateService memberBusinessService;    //XD  final
+```
 
 
-#### 3.Bean生命周期
+
+> setter 注入估计就是 @Autowired          好像不是
+
+Q&A 因为有三种注入方式：
+
+1.set方法注入
+2.构造方法注入
+3.@autowire自动注入
+
+
+
+总结起来：
+
+- `@RequiredArgsConstructor`与`private final`一起使用是一种构造函数注入的方式。
+- `@Autowired`注解可以用于字段、setter方法或构造函数，用于实现自动装配（autowiring），可以通过setter注入或构造函数注入的方式来注入依赖项。
+
+
+
+## 3.Bean生命周期
 
 > **bean 的后置处理器，bean 生命周期有七步** （正常生命周期为五步，而配置后置处理器后为七步）
+>
+> - 实例化
+> - 属性赋值 （构造参数注入，setter注入等）
+> - 初始化 （检查aware接口，前置处理，后置处理等，这个过程中可能自定义了一些初始化之前的操作和之后的操作）
+> - 使用
+> - 销毁 （销毁前可能自己配置了一些销毁之前的方法)
 
 第一步：Construction 构造Bean对象
 
@@ -436,47 +483,7 @@ public class Book {
 
 
 
-#### 补充：springbean的生命周期
-
-- 实例化
-- 属性赋值 （构造参数注入，setter注入等）
-- 初始化 （检查aware接口，前置处理，后置处理等，这个过程中可能自定义了一些初始化之前的操作和之后的操作）
-- 使用
-- 销毁 （销毁前可能自己配置了一些销毁之前的方法)
-
-
-
-##### 补充：构造参数注入 ==vs==  setter注入
-
-> 以前一直不懂 **构造参数注入**
-
-```java
-@RequiredArgsConstructor     //XD   lombook
-@RequestMapping("member")  
-public class MemberController {
-    private final MemberOperateService memberBusinessService;    //XD  final
-```
-
-
-
-> setter 注入估计就是 @Autowired          好像不是
-
-Q&A 因为有三种注入方式：
-
-1.set方法注入
-2.构造方法注入
-3.@autowire自动注入
-
-
-
-总结起来：
-
-- `@RequiredArgsConstructor`与`private final`一起使用是一种构造函数注入的方式。
-- `@Autowired`注解可以用于字段、setter方法或构造函数，用于实现自动装配（autowiring），可以通过setter注入或构造函数注入的方式来注入依赖项。
-
-
-
-#### 4.AOP
+## 4.AOP
 
 > RuoYi、upupor  自定义注解全是和 AOP 相关
 >
@@ -596,7 +603,7 @@ Q&A 因为有三种注入方式：
 
 > Spring 框架一般都是基于 AspectJ 实现 AOP 操作，AspectJ 不是 Spring 组成部分，独立 AOP 框架，一般把 AspectJ 和 Spirng 框架一起使 用，进行 AOP 操作
 
-### Spring AOP 和 AspectJ AOP 有什么区别？
+#### 补充：Spring AOP 和 AspectJ AOP 有什么区别？
 
 **Spring AOP 属于运行时增强，而 AspectJ 是编译时增强。** Spring AOP 基于代理(Proxying)，而 AspectJ 基于字节码操作(Bytecode Manipulation)。
 
@@ -653,7 +660,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
-#### 5.Spring 事务
+## 5.Spring 事务
 
 > 问：项目中什么地方用到了 AOP    在 Spring 中进行事务管理中就用到了！！！
 
@@ -661,7 +668,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
-#### 6.用到了哪些设计模式
+## 6.设计模式
 
 > 至少前5种答出来
 
@@ -675,9 +682,17 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 6. 适配器模式 :Spring AOP 的增强或通知 (Advice) 使用到了适配器模式、Spring MVC 中也是用到了适配器模式适配 Controller。
 7. 策略模式：Spring中有一个Resource接口，它的不同实现类，会根据不同的策略 去访问资源。
 
+## 7.哪些模块组成
 
+> https://juejin.cn/post/6997930907227127838
 
+* 四个**核心模块**
 
+![image-20210818214831566](http://images.zzq8.cn/img/928164d48bbf4019a6a5131fd4cdfec9~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp)
+
+* 根据 `Spring` 源码模块中的 `gradle` 依赖，可以整理出这么一张**依赖关系图**
+
+![image-20210818222259022](http://images.zzq8.cn/img/062d90e772644ee9962185234ee6d12e~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp)
 
 
 

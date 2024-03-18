@@ -1,5 +1,7 @@
 # 分布式高级
 
+> [API 文档](https://easydoc.net/s/78237135/ZUqEdvA4/hKJTcbfd)
+>
 > [项目视频地址](https://www.bilibili.com/video/BV1np4y1C7Yf/)，碰到忘记点搜本笔记配合视频再度复习！[自己代码地址](https://github.com/1024zzq/gulimall)
 >
 > Google 到的笔记，很详细比视频评论下我看初级篇找的要详细：[别人笔记](https://blog.csdn.net/hancoder/article/details/106922139) [还是评论区的更贴近视频](https://gitee.com/AdverseQ/gulimall_Advanced)  [别人代码](https://github.com/NiceSeason/gulimall-learning)  建议搭配食用
