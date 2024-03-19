@@ -276,7 +276,7 @@ ES6 & Vue 快速入门
 >        age: 21,
 >        language: ['java', 'js', 'css']
 >    }
->                                                                   
+>                                                                      
 >    // var hello1 = (param) => console.log("hello," + param.name);
 >    // hello1(person);
 >    var hello2 = ({name}) => console.log("hello," + name);
@@ -354,6 +354,8 @@ computed: {
 > 在 MVVM 之前，开发人员从后端获取需要的数据模型，然后要通过DOM操作Model 渲染到 View 中。而后当用户操作视图，我们还需要通过 DOM 获取 View 中的数据，然后同步到Model 中。 
 >
 > 而 MVVM 中的 VM 要做的事情就是把 DOM 操作完全封装起来，**开发人员不用再关心Model 和 View 之间是如何互相影响的**
+>
+> > 虚拟DOM：Vue.js 使用虚拟DOM（Virtual DOM）来优化性能。在数据发生变化时，Vue.js 会生成一个虚拟DOM树，然后通过比较新旧虚拟DOM树的差异，最小化实际DOM操作的次数，从而提高性能和响应速度。
 
 #### **1.4.1 新建项目：**
 

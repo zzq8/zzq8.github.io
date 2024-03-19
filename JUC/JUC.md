@@ -1586,9 +1586,9 @@ private ThreadPoolExecutor executor;
 
 
 
-# 七、其它
+# 七、面试题
 
-#### # AQS
+## # AQS
 
 AQS 的全称为 `AbstractQueuedSynchronizer` ，翻译过来的意思就是抽象队列同步器。这个类在 `java.util.concurrent.locks` 包下面。
 
@@ -1599,3 +1599,77 @@ AQS 为构建锁和同步器提供了一些通用功能的实现，因此，使�
 ------
 
 著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：https://javaguide.cn/java/concurrent/java-concurrent-questions-03.html
+
+
+
+
+
+## # 了解锁升级吗？
+
+> 中软猎头问到，我不会！           高级工程师问题
+
+synchroinzed升级过程：无锁---->偏向锁----->轻量级锁(自旋锁)----->重量级锁
+
+具体流程：
+
+初次执行到synchronized代码块时候，锁对象变成偏向锁，偏向于第一个获得它的线程的锁，执行完同步代码块后，线程不主动释放偏向锁，第二次到达同步代码块时，线程会判断此时持有锁的线程是否是自己，正常则往下执行，由于没有释放锁，这里不需要重新加锁，性能高
+
+有第二个线程加入锁竞争，偏向锁升级为轻量级锁，在锁竞争下，没有获得到锁的线程自旋：不停地循环判断是否能够成功获取锁，自旋线程会原地空耗CPU，执行不了任务，处于忙等状态，如果多个线程用一个锁但是没有锁竞争或者轻微锁竞争，synchronized用轻量级锁。轻量级锁的目的是用短时间忙等换取线程在用户态和内核态切换的开销。
+
+如果锁竞争严重，某个达到最大自旋次数的线程会升级为重量级锁，后续线程尝试获取锁时，发现被占用的是重量级锁直接将自己挂起
+
+
+
+【XD 这个up汇总的很好】
+
+作者：raxcl
+链接：https://www.nowcoder.com/discuss/465219671411773440?sourceSSR=users
+来源：牛客网
+
+
+
+
+
+## # ReenTrantLock和Synchronized区别
+
+​    首先都是可重入锁，然后他们的区别主要有几个方面，第一个是锁的实现不同，
+
+​        synchronized是JVM实现的关键字
+
+​        ReentrantLock是JDK实现的类
+
+​    第二个是性能，
+
+​         synchronized与ReentrantLock大致相同，但是新版本Java对synchronized进行了很多优化，如自旋锁
+
+​    第三个是等待可中断
+
+​        可中断：当持有锁的线程长期不释放锁的时候，正在等待的线程可以选择放弃等待，处理其他事情
+
+​        ReentrantLock可中断
+
+​        synchronized不可中断
+
+​    第四个是公平锁
+
+​        synchronized的锁是非公平的
+
+​        ReentranlLock默认非公平，也可以调为公平
+
+​    第五个是可以实现选择性通知
+
+​        一个ReentrantLock可以同时绑定多个Condition对象，可以指定线程信息去实现选择性通知
+
+当时错误的回答：
+
+说了分布式锁
+
+面试官提示：可以结合业务场景去说
+
+业务场景：防止用户点击多次，要保证只有一个请求能进方法里面（这里应该是同单据number下），需要加分布式锁，用单据号作为分布式锁的key，原理采用到了 ReentrantLock ,以及lua脚本去保证它的原子性
+
+
+
+作者：raxcl
+链接：https://www.nowcoder.com/discuss/465219671411773440?sourceSSR=users
+来源：牛客网
