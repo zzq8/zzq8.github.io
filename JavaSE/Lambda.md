@@ -788,3 +788,26 @@ public class ClosureDemo2 {
 
 ```
 
+
+
+
+
+
+
+# Stream流
+
+## stream流可以收集多次吗？
+
+stream属于管道流，只能消费一次，当第一个stream流调用完毕方法,数据就会流转到下一个Stream上
+
+而这时第一个stream流已经使用完毕，就会关闭了，所以第一个Stream流就不能再调用方法
+
+## stream().map()时，stream是否已经被操作了？
+
+不是，stream流属于惰式执行。stream上的操作并不会立即执行，只有等到用户真正需要结果的时候才会执行。
+
+
+
+作者：raxcl
+链接：https://www.nowcoder.com/discuss/465219671411773440?sourceSSR=users
+来源：牛客网

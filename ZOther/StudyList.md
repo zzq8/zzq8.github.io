@@ -9,40 +9,12 @@
 
 ## 近期目标
 
-2024/02/20 ~ 2024/02/29 =  10d   -24th & 25th  =  8d       AC 4天有效时间
-
-==求职刻不容缓！！！==  学习：实操为主  多做笔记
+学习：实操为主  多做笔记
 
 - [ ] 牛客 5 道（10 Minute） 加上检查（10 Minute）- 需答对 5 题才能收工
 - [ ] 一个 八股 模块 / MySQL（45 讲专栏） /  梳理笔记 & 根据牛客八股针对性  自我面试（最好派个人问 **openai 模拟面试官 & 牛客AI面试**）
 - [ ] 八股视频
 - [ ] 找个牛客面试，复制下来本地一个个答         
-
-2024/02/20 Tuesday ✔
-
-2024/02/21 Wednesday ❌
-
-2024/02/22 Thursday ❌
-
-2024/02/23 Friday ✔
-
-2024/02/26 Monday ❌
-
-2024/02/27 Tuesday ❌
-
-2024/02/28 Wednesday ✔
-
-2024/02/29 Thursday ✔
-
-***
-
-2024/03/01 Friday ✔
-
-2024/03/04 Monday ✔
-
-2024/03/05 Tuesday ✔
-
-
 
 
 
@@ -102,6 +74,7 @@ ps：八股搞的差不多了的话，我觉得还是要回归项目上的！简
 >
 > zhangsan：我是靠打卡，背单词打卡，学习做笔记然后同步到 github 小绿点打卡，看书用微信读书做任务打卡。不知不觉坚持两年了
 
+- [x] ...
 - [x] [Guide-MySQL](https://javaguide.cn/database/sql/sql-syntax-summary.html) 过完整个 SQL catalog
 - [x] `谷粒商城`【Unknown ~ 2023/2】 学到很多尤其是高级篇，多看笔记巩固
 - [x] SpringCloud & Alibaba (周阳 Zookeeper etc.)【unknown】

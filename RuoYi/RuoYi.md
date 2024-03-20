@@ -361,7 +361,7 @@ return stringBuffer.toString();
 
 * 防止重复提交拦截器, 获取注解类不为空即判断（看下）
 * *判断请求**url**和数据是否和上一次相同，*    借助 Redis 存 「唯一标识（指定key + url + 消息头『${token.header}』）:values」  `compareParams(nowDataMap, preDataMap) && compareTime(nowDataMap, preDataMap, annotation.interval())`
-* 经过debug发现后端判断重复逻辑和前端其实差不多。难点在于如何确定同一个人的同一个请求，ry使用的url+token的方式，确定同一个人同一个请求。
+* 经过debug发现后端判断重复逻辑和前端其实差不多。**难点在于如何确定同一个人的同一个请求，ry使用的url+token的方式**，确定同一个人同一个请求。
 
 
 

@@ -352,6 +352,8 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
  b）ApplicationContext接口：BeanFactory接口的子接口，提供更多更强大的功能，提供给开发人员使用（加载配置文件时候就会把在配置文件对象进行创建）推荐使用！
 
+ps：容器的话主要有两个，BeanFactory和ApplicationContext，他们简单区别就是：BeanFactory是低级容器，延迟加载bean，编程时方式创建；ApplicationContext是 BeanFactory 的子接口，是高级容器，一次性加载bean，以声明式方式创建
+
 ```java
 //upupor          TrueSend trueSend = SpringContextUtils.getBean(TrueSend.class);
 @Component
@@ -601,6 +603,18 @@ Q&A 因为有三种注入方式：
 >
 >   
 
+> ## 静态代理为什么是静态代理？
+>
+> aop就是用的代理实现，代理分为静态代理和动态代理
+>
+> 静态代理比如 AspectJ，AOP框架会在编译阶段生成AOP代理类，属于编译时的增强
+>
+> 动态代理比如 jdk动态代理 和 CGLIB ，AOP框架不会去修改字节码，而是每次运行时在内存临时为方法生成一个AOP对象，AOP对象包含了目标对象的全部方法，在特定切点做了增强处理，并回调原对象的方法。
+>
+> 当时的回答：spring使用的就是动态代理，动态代理有两个：jdk自带的和Cglib，jdk的代理效率会高一些，Cglib是动态代码生成库
+>
+> 
+>
 > Spring 框架一般都是基于 AspectJ 实现 AOP 操作，AspectJ 不是 Spring 组成部分，独立 AOP 框架，一般把 AspectJ 和 Spirng 框架一起使 用，进行 AOP 操作
 
 #### 补充：Spring AOP 和 AspectJ AOP 有什么区别？
