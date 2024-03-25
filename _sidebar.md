@@ -1,4 +1,9 @@
 - [**README**](/README.md)
+- **408-Network**
+  - [HttpRequest](/408-Network\HttpRequest.md)
+  - [JWT](/408-Network\JWT.md)
+  - [Nginx](/408-Network\Nginx.md)
+  - [计网问题（待解决）](/408-Network\计网问题（待解决）.md)
 - **DistributedLock**
   - [DistributedLock](/DistributedLock\DistributedLock.md)
 - **GuliMall**
@@ -9,6 +14,7 @@
   - [MyBatis](/JavaFramework\MyBatis.md)
   - [SpringBoot](/JavaFramework\SpringBoot.md)
   - [SpringCloud](/JavaFramework\SpringCloud.md)
+  - [SpringIntegration](/JavaFramework\SpringIntegration.md)
   - [SpringSecurity](/JavaFramework\SpringSecurity.md)
 - **JavaSE**
   - [Java 核心技术面试精讲](/JavaSE\Java 核心技术面试精讲.md)
@@ -35,16 +41,15 @@
 - **SQL**
   - [MySQL实战45讲](/SQL\MySQL实战45讲.md)
   - [Mysql索引&做题总结](/SQL\Mysql索引&做题总结.md)
-- **upupor**
-  - [Books](/upupor\Books.md)
-  - [FirstYear](/upupor\FirstYear.md)
-  - [upupor](/upupor\upupor.md)
+- **Upupor**
+  - [Books](/Upupor\Books.md)
+  - [FirstYear](/Upupor\FirstYear.md)
+  - [upupor](/Upupor\upupor.md)
 - **ZOther**
   - **408**
     - [OS](/ZOther\408\OS.md)
     - [快排（分治思想）](/ZOther\408\快排（分治思想）.md)
     - [计组原](/ZOther\408\计组原.md)
-    - [计网问题（待解决）](/ZOther\408\计网问题（待解决）.md)
   - [5am-Project](/ZOther\5am-Project.md)
   - **Abandon_Project**
     - **SpringGeekbang**
@@ -53,11 +58,9 @@
   - [Clash](/ZOther\Clash.md)
   - [Git&SVN](/ZOther\Git&SVN.md)
   - [GitHub Actions](/ZOther\GitHub Actions.md)
-  - [HttpRequest](/ZOther\HttpRequest.md)
   - [idea&windows 快捷键及使用技巧](/ZOther\idea&windows 快捷键及使用技巧.md)
   - [MacOS](/ZOther\MacOS.md)
   - [Maven](/ZOther\Maven.md)
-  - [Nginx](/ZOther\Nginx.md)
   - [Regexr](/ZOther\Regexr.md)
   - [StudyList](/ZOther\StudyList.md)
   - [WTG (WindowsToGo)](/ZOther\WTG (WindowsToGo).md)
