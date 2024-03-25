@@ -444,6 +444,17 @@ Q&A 因为有三种注入方式：
 
 
 
+@Resource默认通过名称注入，如名称无法找到则通过类型注入；
+@Autowired默认通过类型注入，如存在多个类型则通过名称注入，也可以配合@Qualifier注解，在@Qualifier中指定bean的名字来注入你想要的那个bean
+
+**其实lombok有个@RequiredArgsConstructor注解，可以帮你用构造器注入**
+
+
+
+
+
+
+
 ## 3.Bean生命周期
 
 > **bean 的后置处理器，bean 生命周期有七步** （正常生命周期为五步，而配置后置处理器后为七步）
@@ -978,7 +989,9 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
  
 
+* #### @ServletComponentScan
 
+  * Servlet（控制器）、Filter（过滤器）、Listener（监听器）可以直接通过@WebServlet、@WebFilter、@WebListener注解自动注册到Spring容器中，无需其他代码。
 
 
 
@@ -1453,6 +1466,22 @@ XD：
 
 
 
+
+# 6）CORS 跨域
+
+> 1995年，同源政策由 Netscape 公司引入浏览器。目前，所有浏览器都实行这个政策
+>
+> **其实，准确的来说，跨域机制是阻止了数据的跨域获取，不是阻止请求发送。**
+
+### 目的：解决springboot跨域请求的问题
+
+#### 第一种 （CorsConfig ） 
+
+配置 @Bean CorsFilter.class 实现全局跨域,自定义可以访问的地址
+
+#### 第二种：注解方式
+
+@CrossOrigin
 
 
 

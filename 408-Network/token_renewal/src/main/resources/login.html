@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>系统登录</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        用户名字：<input type="text" name="username" ref="username" autocomplete="off" /><br />
+        用户密码：<input type="password" name="password" ref="password" /><br />
+        <input type="button" value="登录" @click="submit" />
+    </div>
+    <script>
+        const appConfig = {
+            methods: {
+                submit() {
+                    let url = "http://localhost:8080/login";
+                    axios
+                        .post(url, {
+                            username: this.$refs.username.value,
+                            password: this.$refs.password.value,
+                        })
+                        .then((res) => {
+                            if (res.data.code == 200) {
+                                sessionStorage.setItem(
+                                    "accessToken",
+                                    JSON.stringify(res.data.data.accessToken)
+                                );
+                                sessionStorage.setItem(
+                                    "refreshToken",
+                                    JSON.stringify(res.data.data.refreshToken)
+                                );
+                                location.href = "blog.html";
+                            }
+                        });
+                },
+            },
+        };
+        const app = Vue.createApp(appConfig);
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

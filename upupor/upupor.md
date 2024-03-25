@@ -112,7 +112,7 @@ XD：
      void publishEvent(Object event);
      ```
      
-  
+
 
 
 
@@ -174,6 +174,26 @@ RuoYi 也有，对比实现逻辑
 
 
 
+
+# 八、页面下版本时间信息
+
+启动类给上静态变量！！！在 `@Around("controllerLog()")` 里调用 bz，也就是说有xhr就会触发
+
+```java
+modelAndView.addObject(STATIC_SOURCE_VERSION, UpuporWebApplication.STATIC_SOURCE_VERSION);
+```
+
+
+
+```java
+public class UpuporWebApplication implements CommandLineRunner {
+    public static final String STATIC_SOURCE_VERSION;
+
+    static {
+        System.setProperty("druid.mysql.usePingMethod", "false");
+        STATIC_SOURCE_VERSION = LocalDateTime.now(ZoneId.of("Asia/Shanghai")).toString();
+    }
+```
 
 
 
