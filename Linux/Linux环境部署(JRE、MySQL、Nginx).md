@@ -1,6 +1,323 @@
-> 起因: 使用了一下云服务器的Redis开了6379端口写了点SpringBoot整合Redis的测试代码，结果用着用着突然连接断了，且腾讯云发来警告CPU和带宽被跑满。Redis没设密码结合百度发现中招了(可能被肉鸡了)，花了挺多时间不想再搞了就直接重装系统了，正好花点时间写一篇环境的部署的总结。
+# LinuxCloud-Docker
+
+> 以前碰过 Redis 没设密码被挖矿，现在设成简单密码依旧。。。
+
+# 1.基础环境
+
+## 1.1.[Docker](https://www.runoob.com/docker/centos-docker-install.html)
+
+> 实测用idea操作Docker比用 xshell 舒服太多了！！！
+
+> 理解成 Linux 和 Docker容器（**可以理解为一个完整的Linux**【容器的 bin/bash 里没有 wget，外面 linux有】）是隔离的，所以需要端口映射、目录挂载！！！
+>
+> 一个镜像可以创建多个容器
+>
+> 容器可  --restart=always 
+>
+> ==当你在Docker容器中进行文件挂载时，宿主机必须存在这个文件==     实测目录不用会自己新建
+
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+
+systemctl start docker
+
+docker search jdk
+
+为了永久性保留更改，您可以修改 `/etc/docker/daemon.json` 文件并添加上 registry-mirrors 键值。
+
+```csharp
+{
+	"registry-mirrors": ["https://registry.docker-cn.com","https://pee6w651.mirror.aliyuncs.com"]
+}
+
+```
+
+修改保存后重启 Docker 以使配置生效。
+
+`systemctl restart docker`
+
+## 1.2.JAVA
+
+1. 拉取指定的版本 `docker pull java:8`
+
+2. 运行上面拉去的镜像成容器 `docker run -d -it --name java java:8`    【必须加 -it 否则STATUS为Exited】
+
+- `-d`：（daemon）  守护进程【后台运行】
+  - 如果不加`-d`选项，表示在前台（foreground）模式下运行容器。这意味着容器的输出将直接显示在当前终端上，并且您将无法继续在该终端中执行其他命令，直到容器停止。【前台运行】
+- `-it`：表示分配一个伪终端（pseudo-TTY），并将其与容器的标准输入（stdin）关联起来，以便可以与容器进行交互。
+  - `-it`参数：容器的 Shell 映射到当前的 Shell，然后你在本机窗口输入的命令，就会传入容器。
+  - 这意味着你可以在启动的Java 8容器中进行交互式操作
+  - ==xd 实测如果我不加这个容器run完状态是 exit==
+  - interactive + tty（Linux 终端(*TTY*). *TTY* 是Teletype 或Teletypewriter 的缩写） 我这里理解为Terminal更好记
+    - shell 交互命令的接口  所以最后还可以给 bash | /bin/bash
+- `--name java`：表示为容器指定一个名称，这里命名为"java"。
+- `java:8`：表示使用名为"java"的Docker镜像的版本8。
+
+3. docker exec -it java bash
+
+## 1.3.MySQL
+
+1. `docker pull mysql:5.7`
+
+2. ```bash
+   docker run -p 3306:3306 --name mysql \
+   -v /root/mysql/log:/var/log/mysql \
+   -v /root/mysql/data:/var/lib/mysql \
+   -v /root/mysql/conf:/etc/mysql \
+   -e MYSQL_ROOT_PASSWORD=123456 \
+   -d mysql:5.7
+   ```
+
+3. `docker exec -it mysql bash`
+
+
+
+#### 修改密码
+
+修改默认密码 `ALTER USER 'root'@'localhost' IDENTIFIED BY 'new password';` 其中‘new password’替换成你要设置的密码，注意:密码设置必须要大小写字母数字和特殊符号（,/';:等）,不然不能配置成功
+
+* MySQL版本5.7.6版本以前用户可以使用如下命令：**[实测有用](https://blog.csdn.net/muziljx/article/details/81541896)**：场景提示密码过期需修改
+
+  ```delphi
+  mysql> SET PASSWORD = PASSWORD('123456'); 
+  ```
+
+
+
+#### 开启mysql的远程访问-Navicat
+
+1. 执行以下命令开启远程访问限制（注意：下面命令开启的IP是 所有的，如要开启192.168.0.1，用IP代替%）：`grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;`
+2. 刷新权限表 `flush privileges; `
+3. 按Ctrl+D退出数据库后输入 `service mysqld restart` 重启mysql服务
+
+
+
+
+
+## 1.4.Redis
+
+> 如果要通过配置文件启动 Redis 就需要先创好文件！
+
+1. `docker pull redis`
+
+2. ```bash
+   docker run -p 6379:6379 --name redis \
+   -v /root/redis/data:/data \
+   -v /root/redis/conf:/etc/redis \
+   --requirepass 'Redis密码' \
+   -d redis
+   ```
+
+3. `docker exec -it redis bash`
+
+4. Redis 从cli中设置密码 `config set requirepass xxx`
+
+
+
+## 1.5.Nginx
+
+> 注意 `nginx.conf` 是个文件不是文件夹  `touch ~/nginx/conf/nginx.conf`
+>
+> 再把这个文件填上网上的内容了就可以了，但是挂载的这些其他目录还是空的改没东西还是没东西
+>
+> ```
+> /roc/docker/nginx  -- 自己的根目录
+> ├── nginx.conf -- 主配置文件
+> ├── html 
+> 	└──  index.html -- 存放 nginx 默认 index.html
+> ├── conf.d 
+> 	└──  default.conf -- 默认的子配置文件
+> └── log -- nginx 日志存放目录
+> 	└──  xxx.log  
+> ```
+
+1. `docker pull nginx`
+
+2. 自己宿主机新建一个对应的文件并从网上给上默认内容 `touch ~/nginx/conf/nginx.conf`
+
+3. ```bash
+   docker run -d -p 443:443 -p 80:80 \
+   --name nginx \
+   -v ~/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
+   -v ~/nginx/conf/conf.d:/etc/nginx/conf.d \
+   -v ~/nginx/log:/var/log/nginx \
+   -v ~/nginx/html:/usr/share/nginx/html \
+   -v ~/nginx/conf/ssl:/etc/nginx/ssl  \
+   -d nginx
+   ```
+
+4. html 也可以自己随便给个index.html文件 【非必须】
+
+## 1.6.MinIO
+
+> 9090是web网页后台，9000是url请求地址
+>
+> Buckets-Access Policy 记得改  public
+
+1. `docker pull minio/minio`
+
+2. mkdir -p ~/minio/config
+   mkdir -p ~/minio/data
+
+3. ```
+   docker run -p 9000:9000 -p 9090:9090 \
+        --net=host \
+        --name minio \
+        -d --restart=always \
+        -e "MINIO_ACCESS_KEY=minioadmin" \
+        -e "MINIO_SECRET_KEY=minioadmin" \
+        -v ~/minio/data:/data \
+        -v ~/minio/config:/root/.minio \
+        minio/minio server \
+        /data --console-address ":9090" -address ":9000"
+   ```
+
+   * `--net=host`: 使用主机网络模式，将容器与主机共享网络命名空间，使得容器可以通过主机的IP地址访问网络。
+   * `minio/minio server`: 使用minio/minio镜像来运行MinIO服务器。
+   * `/data --console-address ":9090" -address ":9000"`: 指定MinIO服务器的数据存储路径为`/data`，Web控制台的访问地址为":9090"，MinIO服务器的访问地址为":9000"。
+
+4. http://101.34.55.204:9090/
+
+
+
+
+
+# 2.upupor
+
+Navicat连接，新建空数据库
+
+
+
+> 推荐直接 idea 连接服务器的 Docker 省时省力！！！   直接idea运行Dockerfile
+
+1. 使用 Dockerfile 定制镜像
+
+   * `vim Dockerfile` 
+
+   * ```
+     FROM java:8 
+     ADD upupor-web-1.0.0.jar  /blog/upupor-web-1.0.0.jar
+     EXPOSE 2020
+     ENTRYPOINT ["java","-jar","/blog/upupor-web-1.0.0.jar"]
+     ```
+
+   * `docker build -t blog .`
+
+2. 即可看到  `docker imagse`
+
+3. 需要用到Env variment相当于普通 java -jar之前的export步骤**（注意docker run jar的话，像mysql、redis的ip地址不能为localhost必须为服务器ip！！！）**
+
+   1. `vim .docker_blog_env`
+
+4. `docker run -d --name=upupor -p 2020:2020 blog`
+
+   * 如果配置文件没用敏感信息就  --env-file ~/blog/.docker_blog_env blog
+   * 我这里直接用了 application.properties 里面写好了敏感信息所以上述这部省略
+
+
+
+
+
+# Git-备份
+
+## [1.前置配置](https://blog.csdn.net/weixin_42310154/article/details/118340458)
+
+> 云服务器的 Git 我捣鼓了好久~
+> 由于云服务器网络、地区CN   http协议去连 Github 有点抽风，固我第一次尝试了 ssh 协议！！！   好使
+
+1. 生成ssh key  `ssh-keygen -t rsa -C "xxx@xxx.com"` 
+2. 获取ssh key公钥内容（id_rsa.pub）   `cat ~/.ssh/id_rsa.pub`
+3. 把 cat 到的公钥内容放入 Github SSH配置里
+4. 验证是否设置成功   `ssh -T git@github.com`
+
+### 通俗解释！！
+
+重点来了：**一定要知道ssh key的配置是针对每台主机的！**，比如我在某台主机上操作git和我的远程仓库，想要push时不输入账号密码，走ssh协议，就需要配置ssh key，放上去的key是**当前主机的ssh公钥**。那么如果我换了一台其他主机，想要实现无密登录，也就需要重新配置。
+
+下面解释开头提出的问题：
+（1）为什么要配？
+配了才能实现push代码的时候不需要反复输入自己的github账号密码，更方便
+（2）每使用一台主机都要配？
+是的，每使用一台新主机进行git远程操作，想要实现无密，都需要配置。并不是说每个账号配一次就够了，而是每一台主机都需要配。
+（3）配了为啥就不用密码了？
+因为配置的时候是把当前主机的公钥放到了你的github账号下，相当于当前主机和你的账号做了一个关联，你在这台主机上已经登录了你的账号，此时此刻github认为是该账号主人在操作这台主机，在配置ssh后就信任该主机了。所以下次在使用git的时候即使没有登录github，也能直接从本地push代码到远程了。当然这里不要混淆了，你不能随意push你的代码到任何仓库，你只能push到你自己的仓库或者其他你有权限的仓库！
+
+
+
+## 2.备份 MinIO
+
+> 场景：备份 MinIO 的文件到 Git
+>
+> 1. 使用 `crontab -e` 
+> 2. 一分钟执行一次  `* * * * * /home/minio/data/blog/test.sh  >> /home/minio/data/test.log 2>&1`
+>
+> 问题：我需要保证我的shell脚本的git命令 auth 这一步
+>
+> ​	手动一行行命令的时候用 `http` 可以：`git remote set-url origin http://github.com/zzq8/MinIO-upupor.git`
+>
+> ​	但是shell中批量总是报错！！！auth问题，网上冲浪发现用ssh好使   1）需要云服务器加私钥 2）把公钥加到Git
+> ​	`git remote set-url origin git@github.com:zzq8/MinIO-upupor.git`
+
+test.sh:
+
+```bash
+cd /home/minio/data/blog
+git pull origin master
+git add .
+git commit -m 'backup upupor static resource'
+git push
+```
+
+
+
+## 3.备份 sql
+
+```bash
+d=`date +%Y%m%d%H%M`
+# 因为upupor的mysql数据库服务部署在docker容器中,所以`mysqldump`在容器中执行,然后将备份好的文件写到宿主主机地址      > 后的目录需要提前建好
+docker exec mysql mysqldump -uroot -pxxx --single-transaction --databases upupor > /home/minio/data/blog/SQLBackup/upupor${d}.sql
+gzip -c /home/minio/data/blog/SQLBackup/upupor${d}.sql > /home/minio/data/blog/SQLBackup/upupor${d}.sql.gz
+rm -rf /home/minio/data/blog/SQLBackup/upupor${d}.sql
+```
+
+
+
+`00 03 * * * /home/minio/data/blog/SQLBackup/sqlbackup.sh  >> /home/minio/data/sqlbackup.log 2>&1`
+
+
+
+
+
+
+
+
+
+
+
+# 
+
+
+
+***
+
+
+
+# 
+
+# 
+
+
+
+
+
+
+
+# ---下面是手工---
 
 # Linux环境部署(JRE、MySQL、Nginx)
+
+> 起因: 使用了一下云服务器的Redis开了6379端口写了点SpringBoot整合Redis的测试代码，结果用着用着突然连接断了，且腾讯云发来警告CPU和带宽被跑满。Redis没设密码结合百度发现中招了(可能被肉鸡了)，花了挺多时间不想再搞了就直接重装系统了，正好花点时间写一篇环境的部署的总结。
+
+
 
 > 后话：今天学了用Docker，不过自己写的这篇很多东西还可以借鉴
 
@@ -123,11 +440,11 @@ firewall-cmd --reload #重新载入
 
 1. 首先重新登录mysql，然后输入status，可以看到，红色框框处不是utf-8
 
-![img](http://image.zzq8.cn/img/202207241646499.png)
+![img](https://images.zzq8.cn/img/202207241646499.png)
 
 2. 因此我们先退出mysql，然后再到etc目录下的my.cnf文件下修改一下文件内容 `vim /etc/my.cnf`
 
-![img](http://image.zzq8.cn/img/202207241646626.png)
+![img](https://images.zzq8.cn/img/202207241646626.png)
 
 ```bash
 #开头处
@@ -141,7 +458,7 @@ collation-server=utf8mb4_general_ci
 
 3. 保存更改后的my.cnf文件后，重启下mysql `service mysqld restart`，然后进入mysql输入status再次查看，你就会发现变化啦
 
-![img](http://image.zzq8.cn/img/202207241647349.png)
+![img](https://images.zzq8.cn/img/202207241647349.png)
 
 ps: 可以到Windows下用cmd命令启动mysql啦，个人喜欢用Navicat
 

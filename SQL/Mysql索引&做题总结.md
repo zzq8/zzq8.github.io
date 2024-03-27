@@ -92,6 +92,32 @@ DELETE FROM 表名
 UPDATE 表名 SET 字段名=新值
 ```
 
+**2024/2/1 再扩展： update mysql vs Sqlserver这部分语法有区别**
+
+原因：
+
+```
+update t2 set t2.StorageNum=1
+from InventoryAdjustDetail t1 join wm_quant t2 on t1.wm_quantID=t2.oid
+
+报错：
+1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from InventoryAdjustDetail t1 join wm_quant t2 on t1.wm_quantID=t2.oid' at line 2
+```
+
+需要：
+
+```
+UPDATE InventoryAdjustDetail t1
+JOIN wm_quant t2 ON t1.wm_quantID = t2.oid
+SET t2.StorageNum = 1;
+```
+
+如果是sqlserver数据库上述语法有问题吗： ==在SQL Server中，可以使用FROM子句来指定要进行连接的表，并在SET子句中更新目标表的列。==
+
+
+
+
+
 
 
 #### 可以把 null 字段过滤成 0    或者用 if
@@ -187,6 +213,8 @@ group_concat(distinct product order by product separator ',') as products
 
 #### 列转行用union all：一开始我没那么理解
 
+> XD再学习：同一个表不同列放一列
+
 ```mysql
 #'store1' store 值store1在store这个字段名（别名）下！
 select product_id, 'store1' store, store1 price from products where store1 is not null
@@ -214,7 +242,7 @@ select product_id, 'store3' store, store3 price from products where store3 is no
     
          2.不要求合并的表列名称相同时，以第一个sql 表列名为准；
     
-         3.使用union 时，完全相等的行，将会被合并，由于合并比较耗时，一般不直接使用 union 进行合并，而是通常采用union all 进行合并；
+         3.使用union 时，完全相等的行，将会被合并，由于合并比较耗时，一般不直接使用 union 进行合并，而是通常采用union all 进行合并；(因为数据库资源要比应用服务器资源更加珍贵,去重工作可交给后台)
     
          4.被union 连接的sql 子句，单个子句中不用写order by ，因为不会有排序的效果。但可以对最终的结果集进行排序；
 
@@ -337,11 +365,11 @@ group by stock_name
 
 
 
-1、COUNT(字段) 会统计该字段在表中出现的次数，忽略字段为null 的情况。==即不统计字段为null 的记录。== 
+1、COUNT(字段) 会统计该字段在表中出现的次数，忽略字段为null 的情况。==即不统计字段为 null 的记录。== 
 
-2、COUNT(*) 则不同，它执行时返回检索到的行数的计数，不管这些行是否包含null值，
+2、COUNT(*) 则不同，它执行时返回检索到的行数的计数，**不管这些行是否包含null值**
 
-3、COUNT(1)跟COUNT(*)类似，不将任何列是否null列入统计标准，仅用1代表代码行，所以在统计结果的时候，不会忽略列值为NULL的行。
+3、COUNT(1)跟COUNT(*)类似，不将任何列是否null列入统计标准，仅用1代表代码行，所以在统计结果的时候，**不会忽略列值为NULL的行**
 
 
 
@@ -583,7 +611,7 @@ FULL JOIN NotUsedTrays ON UsedTrays.trayType = NotUsedTrays.trayType;
 >
 > **工作的这处优化我猜测：可能是结果集太大了，不适合 not in 要 join 效率高**
 
-<img src="http://image.zzq8.cn/img/202307201700091.png" alt="image-20230720170008892" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202307201700091.png" alt="image-20230720170008892" style="zoom: 67%;" />
 
 
 
@@ -630,7 +658,7 @@ select case when 1=1 then 1 else 2 end
 
 > 工作中犯的错误   BigInt不要用 ‘’ 包起来 where / set
 
-<img src="http://image.zzq8.cn/img/202304251506846.png" alt="image-20230425150628798" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202304251506846.png" alt="image-20230425150628798" style="zoom: 67%;" />
 
 
 
@@ -714,7 +742,7 @@ ORDER BY
 
 
 
-# 面试没答上来
+# 面试
 
 > [1）Union 和 Union All  --> 具体看上面](#列转行用union all：一开始我没那么理解)
 
@@ -794,13 +822,21 @@ https://blog.csdn.net/qq_21993785/article/details/81017671
 
 而且，你需要了解的是在实现分库分表过程中，数据从单库单表迁移多库多表是一件即繁杂又容易出错的事情，而且如果我们初期没有规划得当，后面要继续增加数据库数或者表数时，我们还要经历这个迁移的过程。所以，从我的经验出发，对于分库分表的原则主要有以下几点：
 
-1. 如果在性能上没有瓶颈点那么就尽量不做分库分表；
+1. ==如果在性能上没有瓶颈点那么就尽量不做分库分表；==
 2. 如果要做，就尽量一次到位，比如说 16 库 64 表就基本能够满足为了几年内你的业务的需求。
 3. 很多的 NoSQL 数据库，例如 Hbase，MongoDB 都提供 auto sharding 的特性，如果你的团队内部对于这些组件比较熟悉，有较强的运维能力，那么也可以考虑使用这些 NoSQL 数据库替代传统的关系型数据库。
 
 其实，在我看来，有很多人并没有真正从根本上搞懂为什么要拆分，拆分后会带来哪些问题，只是一味地学习大厂现有的拆分方法，从而导致问题频出。 **所以，你在使用一个方案解决一个问题的时候一定要弄清楚原理，搞清楚这个方案会带来什么问题，要如何来解决，要知其然也知其所以然，这样才能在解决问题的同时避免踩坑。**
 
-## 
+
+
+分库需了解：
+
+ID 问题：了解 1 最简单的设置步长
+
+1. **还是自增，只不过自增步长设置一下。比如现在有三张表，步长设置为3，三张 表 ID 初始值分别是1、2、3。 这样第一张表的 ID 增长是 1、4、7。第二张表是 2、5、8。第三张表是3、6、9，这样就不会重复了。** 
+2. UUID，这种最简单，但是不连续的主键插入会导致严重的页分裂，性能比较差。 
+3. 分布式 ID，比较出名的就是 Twitter 开源的 sonwlake 雪花算法
 
 
 
@@ -817,7 +853,7 @@ https://blog.csdn.net/qq_21993785/article/details/81017671
 > `假如 T1(a,b)  T2(a,a)  两表 join / left join / right join 都会有两行，因为交集部分 a 有两个！` 因为按道理 on 的时候得是唯一键    但是此时(a,a)并不是唯一键
 > 2023-12-13 Record, Because i Don't understand
 
-![img](http://image.zzq8.cn/img/202309071713371.png)
+![img](https://images.zzq8.cn/img/202309071713371.png)
 
 
 
@@ -830,7 +866,7 @@ https://blog.csdn.net/qq_21993785/article/details/81017671
 
 🌈 这里要额外补充一点：只有保证了事务的持久性、原子性、隔离性之后，一致性才能得到保障。也就是说 A、I、D 是手段，C 是目的！ 想必大家也和我一样，被 ACID 这个概念被误导了很久! 我也是看周志明老师的公开课[《周志明的软件架构课》](https://time.geekbang.org/opencourse/intro/100064201)才搞清楚的（多看好书！！！）。
 
-![image-20230907171603497](http://image.zzq8.cn/img/202309071716290.png)
+![image-20230907171603497](https://images.zzq8.cn/img/202309071716290.png)
 
 
 
@@ -867,6 +903,10 @@ https://blog.csdn.net/qq_21993785/article/details/81017671
 
 
 > mysql limit 0,10   第一个参数是0开始
+
+小技巧-对于深分页：
+
+limit 100000,30;    ->     where id>10000 limit 30;
 
 
 
@@ -924,7 +964,7 @@ FULL OUTER JOIN table2 ON table1.column = table2.column;
 
 > 【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致;多表关联查询时，保证被关联 的字段需要有索引。
 
-![image-20230908141221249](http://image.zzq8.cn/img/202309081412617.png)
+![image-20230908141221249](https://images.zzq8.cn/img/202309081412617.png)
 
 join 的效率比较低，主要原因是因为其使用嵌套循环（Nested Loop）来实现关联查询，三种不同的实现效率都不是很高：
 
@@ -952,7 +992,7 @@ join 的效率比较低，主要原因是因为其使用嵌套循环（Nested Lo
 
 不得使用外键与级联，一切外键概念必须在应用层解决。
 
-![image-20230908145317711](http://image.zzq8.cn/img/202309081453445.png)
+![image-20230908145317711](https://images.zzq8.cn/img/202309081453445.png)
 
 网络上已经有非常多分析外键与级联缺陷的文章了，个人认为不建议使用外键主要是因为对分库分表不友好，性能方面的影响其实是比较小的。
 
@@ -1001,3 +1041,65 @@ INSERT into `cus_order` (`id`, `score`, `name`) values(1, 426547, 'user1'),(1, 3
 ### 删除长期未使用的索引
 
 删除长期未使用的索引，不用的索引的存在会造成不必要的性能损耗 MySQL 5.7 可以通过查询 sys 库的 schema_unused_indexes 视图来查询哪些索引从未被使用
+
+
+
+
+
+# 00 | 面试题
+
+#### 面试题-百万级别以上的数据如何删除？ 
+
+> 索引只对查询有好处？批量删大量数据不好
+
+关于索引：由于索引需要额外的维护成本，因为索引文件是单独存在的文件,所以当 我们对数据的增加,修改,删除,都会产生额外的对索引文件的操作,这些操作需要消耗额 外的IO,会降低增/改/删的执行效率。 （XD：想象树图也要落入磁盘）
+
+所以，在我们删除数据库百万级别数据的时候，查询MySQL官方手册得知**删除数据的速度和创建的索引数量是成正比的**
+
+1. 所以我们想要删除百万数据的时候可以先删除索引 
+2. **然后删除其中无用数据** 
+3. 删除完成后**重新创建索引创建索引也非常快**
+
+#### 面试题-百万千万级大表如何添加字段？
+
+> 当线上的数据库数据量到达几百万、上千万的时候，加一个字段就没那么简单，因 为可能会==长时间锁表==
+
+* **通过中间表转换过去（先了解这一个）**
+
+  创建一个临时的新表，把旧表的结构完全复制过去，添加字段，再把旧表数据复 制过去，删除旧表，新表命名为旧表的名称，这种方式**可能回丢掉一些数据**
+
+* 用pt-online-schema-change 
+
+​	pt-online-schema-change 是percona公司开发的一个工具，它可以在线修改表结 构，它的原理也是通过中间表。 
+
+* 先在从库添加 再进行主从切换 
+
+​	如果一张表数据量大且是热表（读写特别频繁），则可以考虑先在从库添加，再 进行主从切换，切换后再将其他几个节点上添加字段。
+
+#### 面试mai题-MySQL 数据库 cpu 飙升的话，要怎么处理呢？ 
+
+排查过程： 
+
+（1）使用 top 命令观察，确定是 mysqld 导致还是其他原因。 
+
+（2）如果是 mysqld 导致的，**show processlist，查看 session 情况**，确定是不是有 消耗资源的 sql 在运行。 
+
+（3）找出消耗高的 sql，看看执行计划是否准确， 索引是否缺失，数据量是否太 大。 
+
+处理： 
+
+（1）kill 掉这些线程 (同时观察 cpu 使用率是否下降)， 
+
+（2）进行相应的调整 (比如说加索引、改 sql、改内存参数) 
+
+（3）重新跑这些 SQL。 
+
+其他情况： 也有可能是每个 sql 消耗资源并不多，但是突然之间，有大量的 session 连进来导致 cpu 飙升，这种情况就需要跟应用一起来分析为何连接数会激增，再做出相应的调 整，比如说限制连接数等
+
+
+
+#### 聚簇索引一个表为什么只能有一个？
+
+由于聚簇索引是将索引和数据放在一起的，有多个的话会出现数据冗余。
+
+隐藏点：通常主键索引就是聚簇索引，但也可以指定为非聚簇索引，这样就可以建立其他聚簇索引

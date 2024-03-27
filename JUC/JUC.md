@@ -18,7 +18,9 @@ Links that usually browsed:
 >
 > - 标志位：当一个共享的标志位需要在多个线程之间进行读写操作时，可以使用 `volatile` 关键字来保证其可见性，以便线程能够及时获取最新的状态。
 > - 双重检查锁定（Double-Checked Locking）：在单例模式中，当使用双重检查锁定来确保只有一个实例被创建时，需要将共享的实例变量声明为 `volatile`，以避免由于指令重排序导致的潜在问题。【看下面 5. 例子！！！】
-> - 轻量级同步：当对一个共享变量的操作非常频繁且不依赖于变量的当前值时，可以使用 `volatile` 替代 `synchronized` 来实现更轻量级的同步。
+>   - 禁止指令重排
+> - ==轻量级同步==：**这个变量是共享且不稳定的,每次使用它都到主存中进行读取**，可以使用 `volatile` 替代 `synchronized` 来实现更轻量级的同步。
+>   - 保证可见性
 
 > 能保证两个：主要自己不要把这个和 CAS 搞混了！应该是这个的缺点需要用到 CAS，==它本身是和 CAS 没任何关系的！==
 >
@@ -51,7 +53,7 @@ JMM(Java内存模型Java Memory Model,简称JMM)本身是一种抽象的概念 �
 
 这个时候就出现了一个问题，缓存是跟线程挂钩的还是跟核心挂钩的？答案是跟核心，所以单核多线程不会有缓存共享问题。请记住是缓存数据共享，但是依旧会产生并发。
 
-![image-20221109115044681](http://image.zzq8.cn/img/202211091150769.png)
+![image-20221109115044681](https://images.zzq8.cn/img/202211091150769.png)
 数据传输速率：硬盘 < 内存 < < cache < CPU
 
 
@@ -60,7 +62,7 @@ JMM(Java内存模型Java Memory Model,简称JMM)本身是一种抽象的概念 �
 
 由于JVM运行程序的实体是线程,而每个线程创建时JVM都会为其创建一个工作内存(有些地方成为栈空间),工作内存是每个线程的私有数据区域,而Java内存模型中规定所有变量都存储在主内存,主内存是共享内存区域,所有线程都可访问,**但线程对变量的操作(读取赋值等)必须在工作内存中进行,首先要将变量从主内存拷贝到自己的工作空间,然后对变量进行操作,操作完成再将变量写回主内存**,不能直接操作主内存中的变量,各个线程中的工作内存储存着主内存中的**变量副本拷贝**,因此不同的线程无法访问对方的工作内存,此案成间的通讯(传值) 必须通过主内存来完成,其简要访问过程如下图:
 
-![image-20221109175055161](http://image.zzq8.cn/img/202211091750424.png)
+![image-20221109175055161](https://images.zzq8.cn/img/202211091750424.png)
 
 
 
@@ -76,7 +78,7 @@ JMM(Java内存模型Java Memory Model,简称JMM)本身是一种抽象的概念 �
 
 ### 复现：
 
-![image-20200309174220675](http://image.zzq8.cn/img/202211111100844.png)
+![image-20200309174220675](https://images.zzq8.cn/img/202211111100844.png)
 
 下面我们将一个简单的number++操作，转换为字节码文件一探究竟
 
@@ -262,7 +264,7 @@ Volatile实现禁止指令重排优化，从而避免了多线程环境下程序
 
 由于编译器和处理器都能执行指令重排的优化，如果在指令间插入一条Memory Barrier则会告诉编译器和CPU，不管什么指令都不能和这条Memory Barrier指令重排序，也就是说 `通过插入内存屏障禁止在内存屏障前后的指令执行重排序优化`。 内存屏障另外一个作用是刷新出各种CPU的缓存数，因此任何CPU上的线程都能读取到这些数据的最新版本。
 
-![image-20200310162654437](http://image.zzq8.cn/img/202211121459789.png)
+![image-20200310162654437](https://images.zzq8.cn/img/202211121459789.png)
 
 也就是过在Volatile的写 和 读的时候，加入屏障，防止出现指令重排的
 
@@ -401,13 +403,21 @@ private static volatile SingletonDemo instance = null;
 
 # 二、CAS
 
-> CAS的全称是Compare-And-Swap，它是**CPU并发原语**
+> CAS的全称是Compare-And-Swap，它是**CPU并发原语 **，是实现并发算法时常用到的一种技术
 >
 > * 所谓原语，一般是指由若干条指令组成的程序段，用来实现某个特定功能，在执行过程中不可被中断。
 >
 > * 原语一旦开始执行，就要连续执行完，不允许中断 [1] 。
 >
 > 它的功能是判断内存某个位置的值是否为预期值，如果是则更改为新的值，这个过程是原子的
+>
+> 
+>
+> > 我们都知道，CAS 是一条 CPU 的原子指令（cmpxchg 指令），不会造成所谓的数据不一致问题，`Unsafe` 提供的 CAS 方法（如 `compareAndSwapXXX`）底层实现即为 CPU 指令 `cmpxchg`
+> >
+> > ------
+> >
+> > 著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：https://javaguide.cn/java/basis/unsafe.html
 
 ##  1. 概念
 
@@ -431,7 +441,7 @@ private static volatile SingletonDemo instance = null;
 
 这个方法其实底层调用的是 Unsafe 类下面的方法 
 
-![image-20200310203030720](http://image.zzq8.cn/img/202211121750557.png)
+![image-20200310203030720](https://images.zzq8.cn/img/202211121750557.png)
 
 Unsafe是CAS的核心类，由于Java方法无法直接访问底层系统，需要通过本地（Native）方法来访问，Unsafe相当于一个后门，基于该类可以直接操作特定的内存数据。Unsafe类存在sun.misc包中，其内部方法操作可以像C的指针一样直接操作内存，因为Java中的CAS操作的执行依赖于Unsafe类的方法。
 
@@ -453,7 +463,7 @@ Unsafe就是根据内存偏移地址获取数据的。
 
 为什么用 CAS（两者都保证） 不用 synchronized（只保证一致性不保证并发性）
 
-![image-20200310210701761](http://image.zzq8.cn/img/202211121801105.png)
+![image-20200310210701761](https://images.zzq8.cn/img/202211121801105.png)
 
 var5：就是我们从主内存中拷贝到工作内存中的值(每次都要从主内存拿到最新的值到自己的本地内存，然后执行compareAndSwapInt()在再和主内存的值进行比较。因为线程不可以直接越过高速缓存，直接操作主内存，所以执行上述方法需要比较一次，在执行加1操作)
 
@@ -527,6 +537,23 @@ t1 可以执行了，看了下还是 A 觉得没问题！但真的没问题吗�
 
 
 > ABA我听懂了，但是没想到什么场景会产生危害
+>
+> 
+>
+> > 假设有一个库存管理系统，其中有一个共享的原子变量`stock`表示某个商品的库存数量。
+> >
+> > 1. 初始状态：`stock`的值为10，表示商品的库存数量为10个。
+> > 2. 线程A和线程B同时读取`stock`的值为10。
+> > 3. 线程A将`stock`的值减少2，并执行一些操作。
+> > 4. 线程B将`stock`的值减少3，并执行一些操作。
+> > 5. 线程A将`stock`的值增加2，并执行一些操作。
+> > 6. 线程B将`stock`的值增加3，并执行一些操作。
+> >
+> > 在这个简化的例子中，线程A和线程B分别对`stock`进行了多次操作，其中包括减少和增加操作。==由于CAS操作只关注`stock`的当前值，而不考虑过程中的变化，可能导致ABA问题的发生。==
+> >
+> > 假设线程A的操作执行顺序是减少2，然后增加2，此时`stock`的值仍为10，CAS操作可以成功。然而，线程B在线程A执行过程中执行了减少3和增加3的操作，并将`stock`的值从10减少到7，然后又增加回10。由于CAS操作只检查当前值与预期值是否相等，而不考虑过程中的变化，线程B的操作可能会被误判为未修改过`stock`的值。
+> >
+> > 为了解决这个问题，可以使用带有版本号的原子引用或其他适当的同步机制，以确保CAS操作同时考虑值的变化和状态的变化，避免ABA问题的发生。
 
 我把太子换成狸猫，中途打了太子一顿，再换回太子。但中途太子受到了伤害
 
@@ -1061,7 +1088,7 @@ public static void main(String[] args) {
 
 有个虚假唤醒问题，需要用 while 循坏。我这里暂时掠过，用到的时候再回头看[别人笔记](https://gitee.com/moxi159753/LearningNotes/blob/master/%E6%A0%A1%E6%8B%9B%E9%9D%A2%E8%AF%95/JUC/8_%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97/README.md#%E7%94%9F%E6%88%90%E8%80%85%E5%92%8C%E6%B6%88%E8%B4%B9%E8%80%8530) Coding
 
-
+在回顾发现一个虚假唤醒的 https://blog.csdn.net/jerry11112/article/details/114481542
 
 
 
@@ -1077,7 +1104,7 @@ public static void main(String[] args) {
 
 - lock await signal
 
-![image-20200317101210376](http://image.zzq8.cn/img/202211261015124.png)
+![image-20200317101210376](https://images.zzq8.cn/img/202211261015124.png)
 
 ### 问题
 
@@ -1092,7 +1119,7 @@ public static void main(String[] args) {
 
 javap 看底层
 
-![image-20221126101938997](http://image.zzq8.cn/img/202211261019143.png)
+![image-20221126101938997](https://images.zzq8.cn/img/202211261019143.png)
 
 2）使用方法：
 
@@ -1457,10 +1484,16 @@ private ThreadPoolExecutor executor;
 ## ==3.CompletableFuture 异步编排==
 
 > Promise 的感觉， 嵌套 调用，变成 链式 调用        能提升系统的性能和吞吐量！
+>
+> > vs @Async
+> >
+> > 需要注意的是，`@Async` 是基于线程池的异步执行方式，而 `CompletableFuture` 可以更加灵活地控制异步执行的方式，例如使用指定的线程池、设置超时等。
+> >
+> > 这是 `@Async` 和 `CompletableFuture` 两种常见的异步编程方式，你可以根据具体的需求选择合适的方式来实现异步操作。
 
 业务场景： 查询商品详情页的逻辑比较复杂，有些数据还需要远程调用，必然需要花费更多的时间。
 
-<img src="http://image.zzq8.cn/img/202212311607836.png" alt="image-20221231160756132" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202212311607836.png" alt="image-20221231160756132" style="zoom: 67%;" />
 
 假如商品详情页的每个查询，需要如下标注的时间才能完成 那么，用户需要 5.5s 后才能看到商品详情页的内容。很显然是不能接受的。`如果有多个线程同时完成这 6 步操作，也许只需要 1.5s 即可完成响应。`
 
@@ -1496,7 +1529,7 @@ private ThreadPoolExecutor executor;
 
 倒着看由简入繁
 
-<img src="http://image.zzq8.cn/img/202212311649553.png" alt="image-20221231164942303" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202212311649553.png" alt="image-20221231164942303" style="zoom: 67%;" />
 
 
 
@@ -1553,26 +1586,90 @@ private ThreadPoolExecutor executor;
 
 
 
-# 七、其它
+# 七、面试题
 
-## 1）concurrentHashMap分段加锁
+## # AQS
 
-> 注意这是之前的回答。。。
+AQS 的全称为 `AbstractQueuedSynchronizer` ，翻译过来的意思就是抽象队列同步器。这个类在 `java.util.concurrent.locks` 包下面。
 
-ChatGPT：
+AQS 就是一个抽象类，主要用来构建锁和同步器
 
-ConcurrentHashMap 是 Java 中线程安全的哈希表实现，它的内部采用了分段锁的机制来提高并发性能，实现了读写分离，可以在多线程环境下高效地支持并发操作。
+AQS 为构建锁和同步器提供了一些通用功能的实现，因此，使用 AQS 能简单且高效地构造出应用广泛的大量的同步器，比如我们提到的 `ReentrantLock`，`Semaphore`，其他的诸如 `ReentrantReadWriteLock`，`SynchronousQueue`等等皆是基于 AQS 的
 
-ConcurrentHashMap 的分段锁是基于数组的，将整个哈希表分成了多个段，每个段都是一个独立的哈希表，拥有自己的锁，不同的线程可以同时访问不同的段。当一个线程访问一个段时，只需要获取该段的锁，而不需要获取整个哈希表的锁，==这样可以避免锁的粒度过大导致的性能问题。==
+------
 
-在实现上，ConcurrentHashMap 将哈希表的容量按照固定的大小分成了多个段，每个段维护一个数组，数组中的每个元素都是一个链表结构。当插入或者查找一个元素时，ConcurrentHashMap 先根据元素的哈希值找到对应的段，然后再在该段的链表上进行操作。在对链表进行插入、删除、查找等操作时，需要获取对应段的锁，而其他段的操作不受影响。
+著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：https://javaguide.cn/java/concurrent/java-concurrent-questions-03.html
 
-通过分段锁的机制，ConcurrentHashMap 可以支持高并发的操作，同时也能够保证线程安全。
 
-### JDK 1.7 和 JDK 1.8 的 ConcurrentHashMap 实现有什么不同？
 
-* **线程安全实现方式**：JDK 1.7 采用 `Segment` 分段锁来保证安全， `Segment` 是继承自 `ReentrantLock`。JDK1.8 放弃了 `Segment` 分段锁的设计，采用 `Node + CAS + synchronized` 保证线程安全，锁粒度更细，`synchronized` 只锁定当前链表或红黑二叉树的首节点。
 
-- **Hash 碰撞解决方法** : JDK 1.7 采用拉链法，JDK1.8 采用拉链法结合红黑树（链表长度超过一定阈值时，将链表转换为红黑树）。
-  - JDK1.8 之前 ： 数组和链表
-    JDK1.8 之后 ： 多了红黑树
+
+## # 了解锁升级吗？
+
+> 中软猎头问到，我不会！           高级工程师问题
+
+synchroinzed升级过程：无锁---->偏向锁----->轻量级锁(自旋锁)----->重量级锁
+
+具体流程：
+
+初次执行到synchronized代码块时候，锁对象变成偏向锁，偏向于第一个获得它的线程的锁，执行完同步代码块后，线程不主动释放偏向锁，第二次到达同步代码块时，线程会判断此时持有锁的线程是否是自己，正常则往下执行，由于没有释放锁，这里不需要重新加锁，性能高
+
+有第二个线程加入锁竞争，偏向锁升级为轻量级锁，在锁竞争下，没有获得到锁的线程自旋：不停地循环判断是否能够成功获取锁，自旋线程会原地空耗CPU，执行不了任务，处于忙等状态，如果多个线程用一个锁但是没有锁竞争或者轻微锁竞争，synchronized用轻量级锁。轻量级锁的目的是用短时间忙等换取线程在用户态和内核态切换的开销。
+
+如果锁竞争严重，某个达到最大自旋次数的线程会升级为重量级锁，后续线程尝试获取锁时，发现被占用的是重量级锁直接将自己挂起
+
+
+
+【XD 这个up汇总的很好】
+
+作者：raxcl
+链接：https://www.nowcoder.com/discuss/465219671411773440?sourceSSR=users
+来源：牛客网
+
+
+
+
+
+## # ReenTrantLock和Synchronized区别
+
+​    首先都是可重入锁，然后他们的区别主要有几个方面，第一个是锁的实现不同，
+
+​        synchronized是JVM实现的关键字
+
+​        ReentrantLock是JDK实现的类
+
+​    第二个是性能，
+
+​         synchronized与ReentrantLock大致相同，但是新版本Java对synchronized进行了很多优化，如自旋锁
+
+​    第三个是等待可中断
+
+​        可中断：当持有锁的线程长期不释放锁的时候，正在等待的线程可以选择放弃等待，处理其他事情
+
+​        ReentrantLock可中断
+
+​        synchronized不可中断
+
+​    第四个是公平锁
+
+​        synchronized的锁是非公平的
+
+​        ReentranlLock默认非公平，也可以调为公平
+
+​    第五个是可以实现选择性通知
+
+​        一个ReentrantLock可以同时绑定多个Condition对象，可以指定线程信息去实现选择性通知
+
+当时错误的回答：
+
+说了分布式锁
+
+面试官提示：可以结合业务场景去说
+
+业务场景：防止用户点击多次，要保证只有一个请求能进方法里面（这里应该是同单据number下），需要加分布式锁，用单据号作为分布式锁的key，原理采用到了 ReentrantLock ,以及lua脚本去保证它的原子性
+
+
+
+作者：raxcl
+链接：https://www.nowcoder.com/discuss/465219671411773440?sourceSSR=users
+来源：牛客网

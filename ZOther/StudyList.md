@@ -1,4 +1,4 @@
-# Study List
+# [Study List](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html)
 
 > 知行合一 ！！！慢慢来比较快！自己写点属于自己的 MD 笔记。<font color=red>保持热爱，留有期待！</font>
 >
@@ -7,81 +7,28 @@
 >
 > 解释：✔ 代表现在正在做！加油！！！及时制定近期目标，避免无头苍蝇！不要麻木！！！
 
-### ==2023/12/12 离职，距离过年得有一个计划==
+## 近期目标
 
-距离春节 2024/02/10  59天   差不多 9 周，算 `50` 天有效时间（周六也在计划内）   40天（不算周六）
-12/15 休息一天倒腾MacOS & 显示器
-12/16
-12/17 LJ放假玩
+学习：实操为主  多做笔记
 
-
-
-#### 2023/12
-
-> 上午   9:30 - 12:00        2.5h
-
-- [ ] 单词 （10 Minute）
-- [ ] LeetCode （1 Hour）
-- [ ] 牛客 5 道（10 Minute） 加上检查（10 Minute）
-- [ ] 一个 八股 模块 / MySQL（45 讲专栏） /  梳理笔记 & 根据牛客八股针对性  自我面试（最好派个人问）
+- [ ] 牛客 5 道（10 Minute） 加上检查（10 Minute）- 需答对 5 题才能收工
+- [ ] 一个 八股 模块 / MySQL（45 讲专栏） /  梳理笔记 & 根据牛客八股针对性  自我面试（最好派个人问 **openai 模拟面试官 & 牛客AI面试**）
+- [ ] 八股视频
+- [ ] 找个牛客面试，复制下来本地一个个答         
 
 
 
-> 下午   14:00 - 18:00       4h
-
-- [ ] 若依（需要保障 3 Hour 有效学习）
-  
-  13-15th 第一周
-  
-  - 12/13  P3 (借口：第一天加之了解前端费时)    0.5h
-  - 12/14  P4 (借口：上午洗衣服事多  刷PPX浪费时间    尝试自己写验证码逻辑 TODO)   0.5h
-  
-  18-22th 二
-  
-  - XX-12/18  周一，没学   
-  
-  25-29th 三  （3+4*5=23 天）
-  
-  * 2023/12/28 根据网友笔记粗略过完 SpringSecurity
-
-
-
-#### 2024/01
-
-1-4 休息（234 同LJ调休）
-
-5th - 玩
-6th - 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-***
-
-
+ps：八股搞的差不多了的话，我觉得还是要回归项目上的！简历上的项目  一定要有项目抛砖给面试官去问的
 
 ### 一、主线（连续空余时间进行，如周末）
 
 > Regain your confidence!
 
-- [ ] **蘑菇博客学代码，debug+删了自己写 看自己感兴趣的模块    最后布到服务器**
-- [x] 若依（觉得先学，因为广泛性 + 更容易入手 + 教程多）
+- [ ] upupor
+- [ ] 若依（觉得先学，因为广泛性 + 更容易入手 + 教程多）
 - [x] **八股** Fishing at work. Especially JavaGuide 《Java面试指北》
 - [x] 过牛客错题
 - [ ] LeetCode 75 题
-
-
 
 
 
@@ -117,8 +64,6 @@
 
 
 
-
-
 ### Finish：
 
 > 8小时以内求生存，8小时以外求发展，做五休二
@@ -129,6 +74,7 @@
 >
 > zhangsan：我是靠打卡，背单词打卡，学习做笔记然后同步到 github 小绿点打卡，看书用微信读书做任务打卡。不知不觉坚持两年了
 
+- [x] ...
 - [x] [Guide-MySQL](https://javaguide.cn/database/sql/sql-syntax-summary.html) 过完整个 SQL catalog
 - [x] `谷粒商城`【Unknown ~ 2023/2】 学到很多尤其是高级篇，多看笔记巩固
 - [x] SpringCloud & Alibaba (周阳 Zookeeper etc.)【unknown】
@@ -136,3 +82,33 @@
 - [x] JavaGuide 干货，需多过两遍【unknown】
 - [x] SpringBoot 再过一遍视频啃源码 雷神  写好自动配置笔记   26/3=8 day  22/2/6二刷现在三刷   争取三月初完结   简单啃了前面
 - [x] 黑马点评 - redis 那个点评项目【学了开头，后面学不进觉得用不到暂时搁置等需要再学】
+- [ ] [若依](../RuoYi/RuoYi)【学了SpringSecurity, 及其部分代码】
+- [ ] [upupor](../upupor/upupor)【学了事件驱动】
+
+
+
+
+
+
+
+
+
+
+
+# 慢就是快
+
+> [程序员的技术成长战略](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html#_2-4-%E6%A1%88%E4%BE%8B%E5%B0%8F%E7%BB%93)：==以此为终生指导！==
+
+#### 以终为始是牛人和普通人的一大区别。
+
+![以终为始](http://images.zzq8.cn/img/format,png-20230309231833871.png)
+
+
+
+## [学习金字塔和刻意训练](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html#三、学习金字塔和刻意训练)
+
+**人与人之间的先天身体其实都差不多，但是后天身体素质和能力有差异，这些差异，很大程度是由后天对身体和大脑的训练质量、频度和强度所造成的。**
+
+明白这个道理之后，心智成熟和自律的人就会对自己进行持续地 **刻意训练** 。
+
+![学习金字塔](http://images.zzq8.cn/img/format,png-20230309231836811.png)

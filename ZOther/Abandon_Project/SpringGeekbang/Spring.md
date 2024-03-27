@@ -14,7 +14,7 @@ springboot datasource自动装配mysql数据源。。h2为什么不用配数据�
 
 spring-boot-dependencies 放到 <denpendencyManagement>
 
-<img src="http://image.zzq8.cn/img/202302231452941.png" alt="image-20230223145242628" style="zoom: 25%;" />
+<img src="https://images.zzq8.cn/img/202302231452941.png" alt="image-20230223145242628" style="zoom: 25%;" />
 
 
 
@@ -22,7 +22,7 @@ spring-boot-dependencies 放到 <denpendencyManagement>
 
 > CommandLineRunner 接口的作用
 
-CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启动后执行一些特定的任务。该接口只有一个方法 run()，当 Spring Boot 应用启动完成后，会自动执行 run() 方法。CommandLineRunner 接口常用于执行一些初始化任务，例如读取配置文件、初始化数据等。与之类似的还有另一个接口 ApplicationRunner，不同之处在于它的 run() 方法接收的参数是一个 ApplicationArguments 对象，该对象封装了命令行参数的信息。通常情况下，我们可以通过实现 CommandLineRunner 或 ApplicationRunner 接口，在 Spring Boot 应用启动后自动执行一些初始化任务。
+CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启动后执行一些特定的任务。该接口只有一个方法 run()，当 Spring Boot 应用启动完成后，会自动执行 run() 方法。CommandLineRunner 接口常用于执行一些初始化任务，例如读取配置文件、初始化数据等。**与之类似的还有另一个接口 ApplicationRunner**，不同之处在于它的 run() 方法接收的参数是一个 ApplicationArguments 对象，该对象封装了命令行参数的信息。通常情况下，我们可以通过实现 CommandLineRunner 或 ApplicationRunner 接口，在 Spring Boot 应用启动后自动执行一些初始化任务。
 
 
 
@@ -48,4 +48,4 @@ CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启�
 2. DataSource  通过上者的 API Create 数据源，大致就是initializeDataSourceBuilder方法通过 ClassLoader 拿 driverClassName 创建
 3. PlatformTransactionManager    每个数据库都要设好自己对应的事务管理器
 
-<img src="http://image.zzq8.cn/img/202302231721768.png" alt="image-20230223172146262" style="zoom: 25%;" />
+<img src="https://images.zzq8.cn/img/202302231721768.png" alt="image-20230223172146262" style="zoom: 25%;" />

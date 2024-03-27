@@ -20,6 +20,11 @@
 
 "the sky is blue".split("\\s*");  //以 Char 为单位
 
+* 警告:表达式可以返回空匹配项，也可以匹配
+  在某些用例中是无限的。
+  有15个字符没有找到匹配项，包括14个空匹配项(*不显示)。
+  插入点:第0行，col 15，索引15
+
 "the sky is blue".split("\\s+");  //以 Word 为单位  
 
 
@@ -97,11 +102,36 @@ b *be* *be*e *be*er *be*ers
 
 
 
-## > positive lookahead / negative lookahead
+## ==> positive lookahead / negative lookahead==
 
 > 匹配主表达式后面的组而不将其包含在结果中。 (?=ABC)
 >
 > 指定主表达式后无法匹配的组（如果匹配，则结果将被丢弃）。(?!ABC)
+>
+> > 2024 再次使用，==目的 -> 匹配最小长度满足条件的值==
+> >
+> > 错误使用：`<DataBinding[\S\s]*?ColumnKey="StartBusinessDate"`
+> >
+> > 文本：
+> >
+> > ```
+> > <DataBinding
+> > asdasd
+> > <DataBinding TableKey="DepositCollectHead" ColumnKey="StartBusinessDate"/>
+> > ```
+> >
+> >
+> > 需要改为：`<DataBinding(?:(?!<\/DataBinding>).)*?ColumnKey="StartBusinessDate"\/>`     //也是错的！不知道怎么处理
+> >
+> > ----------------还未理解透彻
+> >
+> > ## 自己再研究
+> >
+> > 发现：`<DataBinding(.*)ColumnKey="StartBusinessDate"\/>` 就行
+> >
+> > 其实就是区分 [\S\s]*  和   .*    的区分！！！！            ==前者包括换行符，后者不包只匹一行==
+> >
+> > 如果需要匹配跨行文本或保留换行符，则使用 "[\S\s]*" 可能更合适。而当只需匹配单行文本时，使用 ".*" 可能更简洁和直观。
 
 (?=ABC)
 
@@ -136,4 +166,7 @@ b *be* *be*e *be*er *be*ers
 ## Other
 
 * /：代表正则表达式的头和尾，所以很多时候需要转义再用
-  * `\([A-Z])\w+\/\`
+
+* 其实就是区分 [\S\s]*  和   .*    的区分！！！！            ==前者包括换行符，后者不包只匹一行==          【看上面场景案例(?=ABC)】
+
+  如果需要匹配跨行文本或保留换行符，则使用 "[\S\s]*" 可能更合适。而当只需匹配单行文本时，使用 ".*" 可能更简洁和直观。

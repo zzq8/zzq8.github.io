@@ -56,7 +56,7 @@ ctrl+alt+left/right 跳上一个浏览过的文件
 
 ctrl+shift+a 输入maven就可用maven   idea右侧工具栏没有显示maven的时候，或者要加maven项目的时候用！！
 
-![image-20230223150958814](http://image.zzq8.cn/img/202302231509949.png)
+![image-20230223150958814](https://images.zzq8.cn/img/202302231509949.png)
 
 
 
@@ -75,6 +75,12 @@ ctrl+shift+a 输入maven就可用maven   idea右侧工具栏没有显示maven的
 
 
 # 二、[Windows](https://www.zhihu.com/question/33635511/answer/57567053)
+
+* #### Win+K 打开「连接」设备 快速连耳机   （暂时联想记忆为Link）
+
+* win+.  /  win+;   emoji
+
+
 
 > 一些电脑自启动的东西，可以丢到一个目录
 
@@ -175,6 +181,7 @@ windows 访问文件是 "\\\\" 反斜杠还得注意转义的问题，而linux�
 Everyone -> 勾选 替换子容器和对象的所有者（重点！容易忽略）
 
 要是还删不了了，就到资源监视器中**搜索句柄**搜这个文件夹名字，我这里是被Typora占用了，结束的就可以了
+新发现：可能并不是权限问题，就是单纯被占用了   句柄里查被谁占用关掉就行  例如typora、sublime
 
 
 
@@ -319,6 +326,10 @@ alter user 'root'@'localhost' identified by '123456';
 
 # 四、Sublime
 
+* #### shortcut： 1）快速定位到修改过的地方的快捷键-好用     2）书签快捷键    3）还有github中python的批量保存关闭快捷键
+
+  * ![image-20240130182956675](http://images.zzq8.cn/img/image-20240130182956675.png)
+
 * #### 在 Sublime Text 4 中，当你尝试替换文本时，它默认会保持替换的文本与原始文本的大小写一致。这意味着，如果你选择替换为大写文本，但原始文本是小写的，替换后的文本也会保持小写。
 
   * 踩坑，ctrl h左下角有个选项 preserve case
@@ -441,6 +452,10 @@ Shift+Enter 新开浏览器界面搜
 * shift+esc 任务管理器
 
 **ctrl+shift+delete 清缓存必备**
+
+
+
+F12 == ctrl+shift+i
 
 
 

@@ -6,13 +6,17 @@ TOC--MD内容表
 
 Table Of Contents (目录)
 
+Java 集合框架概览
 
+![Java 集合框架概览](http://images.zzq8.cn/img/java-collection-hierarchy.png)
+
+ArrayDeque 双端队列是后出的API，LeetCode常用当模拟栈、队列
 
 #### ==* 基础知识：unexpected token==
 
 才发现成员变量不能 Ait + Enter 生成（必须从左到右写好），局部变量可以。
 
-![image-20220901002801554](http://image.zzq8.cn/img/202209010028622.png)
+![image-20220901002801554](https://images.zzq8.cn/img/202209010028622.png)
 
 原因：
 
@@ -597,9 +601,9 @@ Java 中的 Arrays 类提供了一个 binarySearch 方法，用于在已排序�
 
 
 
-#### * ConcurrenHashMap 1.7 vs 1.8
+#### * ConcurrentHashMap 1.7 vs 1.8
 
-jdk1.7 `数组+链表`，`分段锁`内部类 class Segment<K,V> extends ReentrantLock
+jdk1.7 `数组+链表`，`分段锁`==内部类== class Segment<K,V> extends ReentrantLock
 
 * 锁粒度包含多个节点 Hash`Entry`
 
@@ -637,6 +641,15 @@ jdk1.8 `数组+链表+红黑树`，CAS+Synchronized
 
 
 
+#### * [Java集合](https://javaguide.cn/java/collection/java-collection-questions-01.html#%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0)
+
+> java中ArrayDeque和Stack类哪个用来实现栈方便一些
+>
+> `ArrayDeque`更加方便实现栈，它具有更好的性能、更多的功能和更好的代码风格。因此，在实际开发中，推荐使用`ArrayDeque`来实现栈的功能。
+> `Stack`是较早版本的类
+
+![https://oss.javaguide.cn/github/javaguide/java/collection/java-collection-hierarchy.png](https://oss.javaguide.cn/github/javaguide/java/collection/java-collection-hierarchy.png)
+
 
 
 #### * 谈一谈你对面向对象的理解
@@ -650,6 +663,124 @@ jdk1.8 `数组+链表+红黑树`，CAS+Synchronized
 面向过程代码松散，强调流程化解决问题。面向对象代码强调高内聚、低耦合，先抽象模型定义共性行为，再解决实际问题
 
 
+
+
+
+#### * 类加载具体过程？
+
+类加载是Java虚拟机（JVM）将类的字节码加载到内存中并转换为可执行的Java类的过程。类加载过程包括以下几个步骤：
+
+1. 加载（Loading）：通过类的全限定名（Fully Qualified Name），获取类的字节码数据。字节码可以来自文件、网络、数据库等各种来源。
+2. 验证（Verification）：对字节码进行验证，确保其符合Java虚拟机规范。验证过程包括文件格式验证、元数据验证、字节码验证、符号引用验证等。
+3. 准备（Preparation）：为类的静态变量分配内存空间，并设置默认初始值。不包括实例变量，实例变量的准备是在对象实例化时进行的。
+4. 解析（Resolution）：将类、接口、字段和方法的符号引用转换为直接引用。符号引用包括类或接口的全限定名、字段或方法的名称和描述符等。
+   * 换句话说，符号引用是一种符号化的表示方式，用于描述类、接口、字段或方法的名称和类型等信息，而直接引用是一种具体的内存地址，用于直接访问类、接口、字段或方法在内存中的实际数据。
+   * 将字节码文件转换为机器码是在Java虚拟机执行类加载过程中的解析和执行阶段进行的。具体来说，这一步骤是在解析阶段进行的
+5. 初始化（Initialization）：执行类的初始化代码，包括静态变量的赋值和静态代码块的执行。在这个阶段，会执行类中的静态初始化器（Static Initializer）。
+6. 使用（Usage）：类加载完成后，可以通过创建对象、调用方法等方式使用该类。
+
+需要注意的是，类的加载是按需进行的，即在使用到类时才会进行加载。另外，类加载过程是由Java虚拟机的类加载器（ClassLoader）负责执行的。Java虚拟机提供了三种内建的类加载器：启动类加载器（Bootstrap Class Loader）、扩展类加载器（Extension Class Loader）和应用程序类加载器（Application Class Loader）
+
+类加载器具体看 [JVM.md](../JVM/JVM.md)
+
+
+
+#### #重载和重写
+
+ 首先他们都是实现多态的方式
+
+然后说一下他们基本的概念
+
+**不同点：**
+
+重载是编译时多态性，重写是运行时多态性
+
+重载发生在一个类中，重写发生在子类和父类之间
+
+重载不要求返回类型，重写要求返回类型相同
+
+
+
+注意点：重写的返回类型不要求完全一样 - 返回类型使用父类的子类
+
+
+
+**已下这两个不构成重载：**
+
+public void getSum(int i,int j)
+
+public int getSum(int i,int j)
+
+
+
+#### #讲一下 HashMap 的哈希函数怎么实现
+
+`（h = key.hashCode()）^ (h >>> 16)`，首先调用 hashCode() 方法对 key 求 hash值，然后将hash值的低 16 位bit和高 16 位 bit 做异或运算获得 新的 hash 值，然后  `(n - 1) & hash` 获得下标 （n 指数组的长度）
+
+**为什么要和高16位进行 ^ 运算？**
+
+- 哈希桶的选择是通过对哈希码进行进一步的运算转换得到的。HashMap使用哈希码的高位和低位进行异或运算，**以获得一个更均匀的分布**。
+- 运算的目的是将哈希码的高位和低位的信息结合起来，使得哈希码的分布更加均匀，减少哈希冲突的概率，并提高查找的效率。
+
+**为什么 & 位必须是（length - 1）？**
+
+长度是2的幂次，length -1 的所有二进制都是1，相当于 取余数，但是比 % 运算更快， table[i = （n -1）& hash];   
+XD: 这个可以看Chrome书签 因为 2^n 满足 & 条件   
+
+**为什么用 ^ 而不是用 & 或 |**
+
+因为 & 和 | 都会使结果偏向 0 或者 1,并不是均匀的概念，所以用 ^
+
+
+
+#### #然后讲一下 hashmap 线程并发安全问题
+
+* 多个线程同时 put ， 当 put 的 key 一样造成一个线程 put 的数据被覆盖
+
+* 多个线程同时检测到元素个数超过数组大小 * loadFactor, 同时对Node 数组 进行扩容，都重新计算元素位置和复制数据，最终只有一个线程扩容后的数据会复制成功，其他线程丢失，并且 put 的数据也丢失。
+* 链表和红黑树转换的时候会抛出类型转化异常：两个线程同时将红黑树转换成链表，一个线程转换成功，红黑树变成链表了，另一个线程开始转换就会发现红黑树变成了链表，就会抛出类型转化异常。
+
+
+
+
+
+#### #说一下java对象中的对象拷贝？
+
+浅拷贝：拷贝对象时，对基本数据类型进行拷贝，而引用数据类型只进行了引用地址的传递，**没有创建新对象**
+
+深拷贝：引用数据类型拷贝创建了新的对象，并复制其内的成员变量
+
+ps: clone() 是浅拷贝
+
+
+
+如何进行深拷贝：
+
+方法一：
+
+1. 对应的引用类型class也实现了cloneable接口
+2. 对当前对象 clone（），对其内部的`引用类型`再一次clone（）
+
+```java
+public class User implements Cloneable {
+    private String name;
+    private Address address;
+    // constructors, getters and setters
+    @Override
+    public User clone() throws CloneNotSupportedException {
+        User user = (User) super.clone();
+        user.setAddress(this.address.clone());
+        return user;
+    }
+}
+//name 不可变性所以没关系，original的改变不会影响deepCopy
+```
+
+
+
+方法二：
+
+序列化这个对象，再反序列化回来就是一个新对象
 
 
 
@@ -717,7 +848,7 @@ String可以和boolean拼接
         //要求手动实现   十六进制表示形式3C.
 
         //分析：0-255 8位所以只关注后面8位就行，且按规则每4位组一个数
-        //15的二进制数是1111 所以取这个数的后四位就是&15 这是关键*****
+        //15的二进制数是1111 所以取这个数的后四位就是&15 这是关键*****  【每个十六进制位对应4个二进制位】
         int n = 60;
         int ans01 = n & 15;
         String s1 = ans01 > 9 ? (char)(ans01-10+'A')+"" : ans01+"";
@@ -794,6 +925,16 @@ String可以和boolean拼接
 [**要能手写单例模式（饿汉（线程安全）、懒汉（线程不安全））**](https://www.nowcoder.com/questionTerminal/c329b173a9b34cb1af6165395b8e7635)
 
 **抽象、接口（自己的理解）：**
+
+> 共同点：1）不能实例化 2）可包含抽象方法  3）都可以由默认实现 default
+>
+> 不同点：
+>
+> ​	语法方面 1）单继承多实现  2）接口成员变量只能 public static final
+>
+> ​	设计方面 1）接口用于对类的行为进行约束，抽象类用于代码复用强调所属关系【接口是“有没有”，集成是“是不是”】
+> ​			2）**接口是一种行为规范，辐射式设计，有没有，是一种自顶向下的设计。抽象类是一种模板式设计，是自底向上的。**
+
 ```java
     抽象和接口用到多态，因为它们不能实例化（new）。
     例如：Employee x = new Manager();
@@ -943,6 +1084,7 @@ class Solution extends B implements A {
 **异常：**
 
 补充：IOException 是 Java 中的一个受检异常（checked exception），这意味着在编译时编译器会强制要求对其进行处理或声明。
+	XD: 后来补充-SQLException也是（checked exception）
 
 搞清楚 checked exception 是必须要 try-catch 的不然报错不准运行！
 
@@ -1253,6 +1395,10 @@ RuoYi 中注解一般头上加了 `@Retention(RetentionPolicy.RUNTIME)` 方便�
                 Properties ------> 常用来处理配置文件，框架！key/value都是String类型
         
         
+
+                            
+                            
+哈希桶（数组的每个位置称为一个桶） 
         
 ```
 
@@ -1450,7 +1596,7 @@ java不是动态语言，但java可以称为准动态语言
     
     
     
-        获取Class实例：
+        1）获取Class实例：
         
         //方式一：调用运行时类的属性：.class  编译时就写死了，没有体现动态性
         //通过 类名.class 获取到字节码文件对象（任意数据类型都具备一个class静态属性）
@@ -1471,7 +1617,24 @@ java不是动态语言，但java可以称为准动态语言
         
         //方式四:ClassLoader 了解    类加载器的作用就是把类(cllas)装载进内存中   具体到JVM学类加载器，有三个
         
-        
+
+
+		2）创建对象（基于上一步）
+            //方式一：直接Class对象API newInstance()
+      	    // 获取Class对象
+            Class<?> clazz = MyClass.class;
+            // 创建对象
+            Object obj = clazz.newInstance();
+            
+
+			//方式二：通过Class对象获取构造对象，调用构造对象同名方法 newInstance()
+			// 获取Class对象
+            Class<?> clazz = MyClass.class;
+            // 获取构造函数
+            Constructor<?> constructor = clazz.getConstructor(String.class, int.class);
+            // 创建对象
+            Object obj = constructor.newInstance("example", 123);
+            
         
         需要学习JVM
         
@@ -1517,7 +1680,7 @@ java不是动态语言，但java可以称为准动态语言
 
 **反射的应用：动态代理**
 
-> 动态代理的优点是它可以在运行时创建代理对象，而不需要在编译时指定代理类
+> **动态代理的优点是它可以在运行时创建代理对象，而不需要在编译时指定代理类**
 
 ```java
 
@@ -1585,6 +1748,12 @@ ps: 具体看Lambda表达式.md文件
 
 ps: java8两个重要的改变，一个是Lambda另一个就是Stream API
 
+> #### stream流和for的区别？
+>
+> stream流可以看作是for循环的一个语法糖；
+>
+> stream有并发流，在超过百万级数据量时，使用stream流效率更高；
+
 ```java
 
     Stream API可以对集合数据进行操作，就类似SQL执行数据库查询
@@ -1640,12 +1809,12 @@ Junit是自动化的测试，手动的输出会导致一直阻塞，也就是说
 
 ### 为什么重写 equals() 时必须重写 hashCode() 方法？
 
+> 在 Java 中，重写 `equals()` 和 `hashCode()` 方法是因为它们在使用集合类（如 `HashMap`、`HashSet`、`Hashtable` 等）进行元素比较和存储时起着重要的作用。
+
 #### 集合Set添加某元素时，先调用hashCode()方法，定位到此元素实际存储位置，如果这个位置没有元素，说明是第一次存储；若此位置有对象存在，调用equals()进行比较，相等就舍弃此元素不存，不等则散列到其他地址。
 
 上面的示例也说明了为什么equals()相等，则hashCode()必须相等，进而当重写了equals方法，也要对hashCode()方法进行重写。
 https://blog.csdn.net/wo541075754/article/details/114994906
-
-在 Java 中，重写 `equals()` 和 `hashCode()` 方法是因为它们在使用集合类（如 `HashMap`、`HashSet`、`Hashtable` 等）进行元素比较和存储时起着重要的作用。
 
 
 
@@ -1760,7 +1929,7 @@ public static void main(String[] args) {
 >**A -> B（线程1 插入 A）**
 >**B（线程2插入 B 后醒来继续改指针，此时发现head指针在 A 前面 B -> A -> B）**
 
-![image-20230605154613437](http://image.zzq8.cn/img/202306051546511.png)
+![image-20230605154613437](https://images.zzq8.cn/img/202306051546511.png)
 
 #### 一、[jdk1.7 HashMap头插法在多线程环境下链表成环的场景怎么形成](https://www.bilibili.com/video/BV1n541177Ea/?spm_id_from=333.999.0.0)
 
@@ -1855,24 +2024,7 @@ XD：线程 A 没有感知到 B，所以 A 把 head 指向了自己的 1 号元�
 堆，我们将new出来的结构（比如：数组、对象）加载在对空间中。补充：对象的属性（非static的）加载在堆空间中。
 方法区：类的加载信息、常量池、静态域
 
-![image-20230317095440667](http://image.zzq8.cn/img/202303170954784.png)
-
-
-
-#### 方法的重载的概念
-
-定义：在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或者参数类型不同即可。
-
- * 	总结："两同一不同":同一个类、相同方法名
-              参数列表不同：参数个数不同，参数类型不同
-
-
-
-#### 已下这两个不构成重载
-
-public void getSum(int i,int j)
-
-public int getSum(int i,int j)
+![image-20230317095440667](https://images.zzq8.cn/img/202303170954784.png)
 
 
 
@@ -1995,7 +2147,7 @@ MIN_TREEIFY_CAPACITY：桶中的Node被树化时最小的hash表容量:64
 
 #### 一定要区分：实例变量 vs 类变量
 
-![image-20230317101128183](http://image.zzq8.cn/img/202303171011092.png)
+![image-20230317101128183](https://images.zzq8.cn/img/202303171011092.png)
 
 实例变量指的是类中定义的变量，即成员变量
 注意：两者如果没有初始化，都会有默认值。

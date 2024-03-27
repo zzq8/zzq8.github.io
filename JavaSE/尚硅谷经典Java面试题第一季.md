@@ -29,6 +29,8 @@ i = i++ => i=1
 
 `i = i++;`
 
+> XD: i++也是一个表达式，是有返回值的，返回值就是i自增前的值。因此执行i = i++后，虽然i自增为2，但是又被i++的返回值给重新赋值了
+
 ```
   2: iload_1
   3: iinc          1, 1
@@ -120,7 +122,7 @@ public class Singleton4 {
 
 2. 线程安全(适用于多线程)
 
-> TODO    XD: 2024/01/12 貌似有问题，具体看 JUC 笔记中的 volatile
+> TODO    XD: 2024/01/12 貌似有问题，具体看 JUC 笔记中的 volatile（不加会有指令重排问题！！！）
 >
 > `uniqueInstance` 采用 `volatile` 关键字修饰也是很有必要的， `uniqueInstance = new Singleton();` 这段代码其实是分为三步执行：
 >

@@ -1,3 +1,49 @@
+# Git-云服务器使用
+
+## [1.前置配置](https://blog.csdn.net/weixin_42310154/article/details/118340458)
+
+> 云服务器的 Git 我捣鼓了好久~
+> 由于云服务器网络、地区CN   http协议去连 Github 有点抽风，固我第一次尝试了 ssh 协议！！！   好使
+
+1. 生成ssh key  `ssh-keygen -t rsa -C "xxx@xxx.com"` 
+2. 获取ssh key公钥内容（id_rsa.pub）   `cat ~/.ssh/id_rsa.pub`
+3. 把 cat 到的公钥内容放入 Github SSH配置里
+4. 验证是否设置成功   `ssh -T git@github.com`
+
+### 通俗解释！！
+
+重点来了：**一定要知道ssh key的配置是针对每台主机的！**，比如我在某台主机上操作git和我的远程仓库，想要push时不输入账号密码，走ssh协议，就需要配置ssh key，放上去的key是**当前主机的ssh公钥**。那么如果我换了一台其他主机，想要实现无密登录，也就需要重新配置。
+
+下面解释开头提出的问题：
+（1）为什么要配？
+配了才能实现push代码的时候不需要反复输入自己的github账号密码，更方便
+（2）每使用一台主机都要配？
+是的，每使用一台新主机进行git远程操作，想要实现无密，都需要配置。并不是说每个账号配一次就够了，而是每一台主机都需要配。
+（3）配了为啥就不用密码了？
+因为配置的时候是把当前主机的公钥放到了你的github账号下，相当于当前主机和你的账号做了一个关联，你在这台主机上已经登录了你的账号，此时此刻github认为是该账号主人在操作这台主机，在配置ssh后就信任该主机了。所以下次在使用git的时候即使没有登录github，也能直接从本地push代码到远程了。当然这里不要混淆了，你不能随意push你的代码到任何仓库，你只能push到你自己的仓库或者其他你有权限的仓库！
+
+
+
+## 1.备份 MinIO
+
+> 场景：备份 MinIO 的文件到 Git
+>
+> 1. 使用 `crontab -e` 
+> 2. 一分钟执行一次  `* * * * * /home/minio/data/blog/test.sh  >> /home/minio/data/test.log 2>&1`
+>
+> 问题：我需要保证我的shell脚本的git命令 auth 这一步
+>
+> ​	手动一行行命令的时候用 `http` 可以：`git remote set-url origin http://github.com/zzq8/MinIO-upupor.git`
+>
+> ​	但是shell中批量总是报错！！！auth问题，网上冲浪发现用ssh好使   1）需要云服务器加私钥 2）把公钥加到Git
+> ​	`git remote set-url origin git@github.com:zzq8/MinIO-upupor.git`
+
+
+
+token   可以当密码auth的时候
+
+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
+
 # GitHub搜索技巧
 
 > 不要小看这个，真的可以挖掘Github这个宝藏库
@@ -171,7 +217,7 @@ git checkout -b 分支名
 >
 > 注意：进入这个命令后跟编辑 vim 流程一样，输入 message 后需要 `:wq` 即可提交
 
-![img](http://image.zzq8.cn/img/202206011611310.png)
+![img](https://images.zzq8.cn/img/202206011611310.png)
 
 
 
@@ -181,7 +227,7 @@ git checkout -b 分支名
 
 # TortoiseSVN
 
-![image-20221020101841706](http://image.zzq8.cn/img/202210201018847.png)
+![image-20221020101841706](https://images.zzq8.cn/img/202210201018847.png)
 
 
 

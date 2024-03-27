@@ -6,7 +6,7 @@
 
  * #### [Pom.xml  -> \<relativePath>](https://blog.csdn.net/gzt19881123/article/details/105255138)
 
-   ![image-20221017102235784](http://image.zzq8.cn/img/202210171022851.png)
+   ![image-20221017102235784](https://images.zzq8.cn/img/202210171022851.png)
 
    ```
    设定一个空值将始终从仓库中获取，不从本地路径获取，如<relativePath/> 看这句就很明了了！这里就是去本地../bokeerp路径去拿这个pom文件

@@ -16,7 +16,7 @@
 > 2. `怎么实现starter` （看我SpringBoot代码的Demo，要知道流程）
 > 3. bean的生命周期
 
-<img src="http://image.zzq8.cn/img/202302111035624.png" alt="image" style="zoom: 80%;" />
+<img src="https://images.zzq8.cn/img/202302111035624.png" alt="image" style="zoom: 80%;" />
 
 上面图片的所有基础原生开发，都有另一套方案用响应式替代。支持两种模式开发 `@ConditionalOnWebApplication(type = Type.SERVLET)`
 Spring5 除现在用的原生Servlet外多了一套解决方案：响应式开发！！于是SpringBoot出2跟着整   第一季就是掌握整个Sevlet技术栈
@@ -48,7 +48,7 @@ Spring5 除现在用的原生Servlet外多了一套解决方案：响应式开�
 
 #### 1.2.1.响应式编程
 
-<img src="http://image.zzq8.cn/img/202302111528869.png" alt="image-20230211152821781" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202302111528869.png" alt="image-20230211152821781" style="zoom: 67%;" />
 
 #### 1.2.2.内部源码设计
 
@@ -115,7 +115,7 @@ SpringBoot是简化Spring技术栈的快速开发脚手架
 
 
 
-# 二、了解自动配置原理
+# 二、自动配置
 
 > 两大优秀特性：依赖管理、自动配置
 
@@ -194,7 +194,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot
 
 ### 2.1.效果体现
 
-#### 2.1.1.What
+#### 2.1.1.What（效果）
 
 自动配置好了一切，包括SpringMVC常用组件（功能）   
 搜一下以前的帖子，Spring整合SpringMVC的帖子发现xml会配一大堆东西！！！这些组件springBoot启动的时候会把组件都装配到容器中，不用配。
@@ -217,7 +217,7 @@ Arrays.stream(names).forEach(System.out::println);
 
 
 
-#### ==2.1.2.Why==
+#### ==2.1.2.Why（怎么做到的）==
 
 > 这个jar里有几乎SpringBoot所需要全场景，有很多爆红的类其实导入相应的dependency就不会爆红了
 >
@@ -250,7 +250,7 @@ ChatGPT：转念一想，这两个注解都如字面意思   这样就很好区�
 2、调用List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes)获取到所有需要导入到容器中的配置类
 3、利用工厂加载 Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader)；得到所有的组件
 4、从META-INF/spring.factories位置来加载一个文件。
-	默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件
+	**默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件**
     spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有 `META-INF/spring.factories`
     
 
@@ -297,15 +297,7 @@ ChatGPT：转念一想，这两个注解都如字面意思   这样就很好区�
 
 
 
-
-
-
-
-
-
-
-
-
+## 3.自动配置-实践
 
 > 想不起配置文件怎么配 SQL 于是有了下文
 
@@ -328,74 +320,21 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 **xxxxxAutoConfiguration ---> 组件  --->** **xxxxProperties里面拿值  ----> application.properties**
 
-![image-20220901180324251](http://image.zzq8.cn/img/202209011803186.png)
+![image-20220901180324251](https://images.zzq8.cn/img/202209011803186.png)
 
 
 
-![image-20220901213237083](http://image.zzq8.cn/img/202209012132180.png)
-
-
-
-
+![image-20220901213237083](https://images.zzq8.cn/img/202209012132180.png)
 
 
 
 
 
-![image-20230217115759420](http://image.zzq8.cn/img/202302171158502.png)
+![image-20230217115759420](https://images.zzq8.cn/img/202302171158502.png)
 
 
 
-![image-20220901220507136](http://image.zzq8.cn/img/202209012205178.png)
-
-
-
-### SpringBoot 自动装配
-
-> 有时间一定要自己回顾一遍，自己跟着 Debug。还有**spring-factories的详细原理**
->
-> 看一下这个 spring boot autoconfigure 是不是所有 jar 都会包括
-
-1、利用getAutoConfigurationEntry(annotationMetadata);给容器中批量导入一些组件
-2、调用List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes)获取到所有需要导入到容器中的配置类
-3、利用工厂加载 Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader)；得到所有的组件
-4、从META-INF/spring.factories位置来加载一个文件。
-	==默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件==
-    spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有META-INF/spring.factories
-
-![img](http://image.zzq8.cn/img/202209012113729.png)
-
-
-
-加载所有jar包META-INF/spring.factories文件EnableAutoConfiguration属性指定的类，指的是：
-
-![](http://image.zzq8.cn/img/202209012117863.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![image-20220901220507136](https://images.zzq8.cn/img/202209012205178.png)
 
 
 
@@ -405,7 +344,7 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 # Ⅰ、Spring 学习
 
-#### 1.Spring提供的IOC容器实现的两种方式（两个接口）
+## 1.Spring提供的IOC容器实现的两种方式（两个接口）
 
 > `ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");`
 
@@ -413,11 +352,26 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
  b）ApplicationContext接口：BeanFactory接口的子接口，提供更多更强大的功能，提供给开发人员使用（加载配置文件时候就会把在配置文件对象进行创建）推荐使用！
 
+ps：容器的话主要有两个，BeanFactory和ApplicationContext，他们简单区别就是：BeanFactory是低级容器，延迟加载bean，编程时方式创建；ApplicationContext是 BeanFactory 的子接口，是高级容器，一次性加载bean，以声明式方式创建
+
+```java
+//upupor          TrueSend trueSend = SpringContextUtils.getBean(TrueSend.class);
+@Component
+public class SpringContextUtils implements ApplicationContextAware {
+    //UNKNOWN 这里不用注入吗     XD 因为实现了 ApplicationContextAware 此接口重写方法拿到了
+    private static ApplicationContext applicationContext;
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) {
+        SpringContextUtils.applicationContext = applicationContext;
+    }
+    .......
+```
 
 
 
 
-#### 2.IOC操作Bean管理
+
+## 2.IOC操作Bean管理
 
  a）Bean管理就是两个操作：（1）Spring创建对象；（2）Spring注入属性
 
@@ -460,11 +414,56 @@ public class Book {
 
 
 
+##### 补充：构造参数注入 ==vs==  setter注入
+
+> 以前一直不懂 **构造参数注入**
+
+```java
+@RequiredArgsConstructor     //XD   lombook
+@RequestMapping("member")  
+public class MemberController {
+    private final MemberOperateService memberBusinessService;    //XD  final
+```
 
 
-#### 3.Bean 生命周期
+
+> setter 注入估计就是 @Autowired          好像不是
+
+Q&A 因为有三种注入方式：
+
+1.set方法注入
+2.构造方法注入
+3.@autowire自动注入
+
+
+
+总结起来：
+
+- `@RequiredArgsConstructor`与`private final`一起使用是一种构造函数注入的方式。
+- `@Autowired`注解可以用于字段、setter方法或构造函数，用于实现自动装配（autowiring），可以通过setter注入或构造函数注入的方式来注入依赖项。
+
+
+
+@Resource默认通过名称注入，如名称无法找到则通过类型注入；
+@Autowired默认通过类型注入，如存在多个类型则通过名称注入，也可以配合@Qualifier注解，在@Qualifier中指定bean的名字来注入你想要的那个bean
+
+**其实lombok有个@RequiredArgsConstructor注解，可以帮你用构造器注入**
+
+
+
+
+
+
+
+## 3.Bean生命周期
 
 > **bean 的后置处理器，bean 生命周期有七步** （正常生命周期为五步，而配置后置处理器后为七步）
+>
+> - 实例化
+> - 属性赋值 （构造参数注入，setter注入等）
+> - 初始化 （检查aware接口，前置处理，后置处理等，这个过程中可能自定义了一些初始化之前的操作和之后的操作）
+> - 使用
+> - 销毁 （销毁前可能自己配置了一些销毁之前的方法)
 
 第一步：Construction 构造Bean对象
 
@@ -497,21 +496,139 @@ public class Book {
 
 
 
-#### 补充：springbean的生命周期
+## 4.AOP
 
-- 实例化
-- 属性赋值 （构造参数注入，setter注入等）
-- 初始化 （检查aware接口，前置处理，后置处理等，这个过程中可能自定义了一些初始化之前的操作和之后的操作）
-- 使用
-- 销毁 （销毁前可能自己配置了一些销毁之前的方法)
+> RuoYi、upupor  自定义注解全是和 AOP 相关
+>
+> 除了有个注解是配合SpringSecurity实现注解地方放行访问    （RUOYI） 
 
+> #### 学习手册.pdf 补充：
+>
+> 多个切面的情况下，可以通过 @Order 指定先后顺序，数字越小，优先级越高。
+>
+> <img src="C:\Users\Fighting\AppData\Roaming\Typora\typora-user-images\image-20240315165659313.png" alt="image-20240315165659313" style="zoom:50%;" />
+>
+> #### 说说你平时有用到AOP吗？ （例子很好，要知行合一）
+>
+> PS：这道题老三的同事面试候选人的时候问到了，候选人说了一堆AOP原理，同事 就势来一句，你能现场写一下AOP的应用吗？结果——场面一度很尴尬。虽然我对面 试写这种百度就能出来的东西持保留意见，但是还是加上了这一问，毕竟招人最后 都是要撸代码的。 
+>
+> 这里给出一个小例子，SpringBoot项目中，利用AOP打印接口的入参和出参日志，以 及执行时间，还是比较快捷的。
+>
+> * 引入依赖：引入AOP依赖 
+>
+>   ```xml
+>   <dependency>
+>   <groupId>org.springframework.boot</groupId>
+>   <artifactId>spring-boot-starter-aop</artifactId>
+>   </dependency>
+>   ```
+>
+> * 自定义注解：自定义一个注解作为切点 
+>
+>   ```java
+>   @Retention(RetentionPolicy.RUNTIME)
+>   @Target({ElementType.METHOD})
+>   @Documented
+>   public @interface WebLog {
+>   }
+>   ```
+>
+> * 配置AOP切面：
+>
+>   * @Aspect：标识切面
+>   * @Pointcut：设置切点，这里以自定义注解为切点，定义切点有很多其它种方 式，自定义注解是比较常用的一种。 
+>   * @Before：在切点之前织入，打印了一些入参信息 
+>   * @Around：环绕切点，打印返回参数和接口执行时间
+>
+>   ```java
+>   @Aspect
+>   @Component
+>   public class WebLogAspect {
+>   	private final static Logger logger =
+>   	LoggerFactory.getLogger(WebLogAspect.class);
+>   	/**
+>   	* 以自定义 @WebLog 注解为切点
+>   	**/
+>   	@Pointcut("@annotation(cn.fighter3.spring.aop_demo.WebLog)")
+>   	public void webLog() {}
+>   	/**
+>   	* 在切点之前织入
+>   	*/
+>   	@Before("webLog()")
+>   	public void doBefore(JoinPoint joinPoint) throws Throwable {
+>   		// 开始打印请求日志
+>   		ServletRequestAttributes attributes = (ServletRequestAttributes)
+>   		RequestContextHolder.getRequestAttributes();
+>   		HttpServletRequest request = attributes.getRequest();
+>   		// 打印请求相关参数
+>   		logger.info("============ Start==========================================");
+>   		// 打印请求 url
+>   		logger.info("URL : {}", request.getRequestURL().toString());
+>   		// 打印 Http method
+>   		logger.info("HTTP Method : {}", request.getMethod());
+>   		// 打印调用 controller 的全路径以及执行方法
+>   		logger.info("Class Method : {}.{}",
+>   			joinPoint.getSignature().getDeclaringTypeName(),
+>   			joinPoint.getSignature().getName());
+>   		// 打印请求的 IP
+>   		logger.info("IP : {}", request.getRemoteAddr());
+>   		// 打印请求入参
+>   		logger.info("Request Args : {}",new
+>   			ObjectMapper().writeValueAsString(joinPoint.getArgs()));
+>   	}
+>   	/**
+>   	* 在切点之后织入
+>   	*/
+>   	@After("webLog()")
+>   	public void doAfter() throws Throwable {
+>   		// 结束后打个分隔线，方便查看
+>   		logger.info("================== End===========================================");
+>   	}
+>   	/**
+>   	* 环绕
+>   	*/
+>   	@Around("webLog()")
+>   	public Object doAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+>   		//开始时间
+>   		long startTime = System.currentTimeMillis();
+>   		Object result = proceedingJoinPoint.proceed();
+>   		// 打印出参
+>   		logger.info("Response Args : {}", new
+>   			ObjectMapper().writeValueAsString(result));
+>   		// 执行耗时
+>   		logger.info("Time-Consuming : {} ms", System.currentTimeMillis() - startTime);
+>   		return result;
+>   	}
+>   }
+>   ```
+>
+> * 使用：只需要在接口上加上自定义注解
+>
+>   ```java
+>   @GetMapping("/hello")
+>   @WebLog(desc = "这是一个欢迎接口")
+>   public String hello(String name){
+>   	return "Hello "+name;
+>   }
+>   ```
+>
+>   
 
-
-#### 4.AOP
-
+> ## 静态代理为什么是静态代理？
+>
+> aop就是用的代理实现，代理分为静态代理和动态代理
+>
+> 静态代理比如 AspectJ，AOP框架会在编译阶段生成AOP代理类，属于编译时的增强
+>
+> 动态代理比如 jdk动态代理 和 CGLIB ，AOP框架不会去修改字节码，而是每次运行时在内存临时为方法生成一个AOP对象，AOP对象包含了目标对象的全部方法，在特定切点做了增强处理，并回调原对象的方法。
+>
+> 当时的回答：spring使用的就是动态代理，动态代理有两个：jdk自带的和Cglib，jdk的代理效率会高一些，Cglib是动态代码生成库
+>
+> 
+>
 > Spring 框架一般都是基于 AspectJ 实现 AOP 操作，AspectJ 不是 Spring 组成部分，独立 AOP 框架，一般把 AspectJ 和 Spirng 框架一起使 用，进行 AOP 操作
 
-### Spring AOP 和 AspectJ AOP 有什么区别？
+#### 补充：Spring AOP 和 AspectJ AOP 有什么区别？
 
 **Spring AOP 属于运行时增强，而 AspectJ 是编译时增强。** Spring AOP 基于代理(Proxying)，而 AspectJ 基于字节码操作(Bytecode Manipulation)。
 
@@ -532,7 +649,7 @@ Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系�
 1.`@Before` 使用场景：*限流处理*
 
 ```java
-@Aspect
+@Aspect  //切面声明？
 @Component
 public class RateLimiterAspect{
     @Before("@annotation(rateLimiter)")
@@ -553,7 +670,22 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
-#### 5.Spring 事务
+##### Upupor 补充 AOP 实操
+
+1. `@Around` 使用场景：博客下面统计记录 **响应时间** （spring的 StopWatch 类 + @Around 实现！！！）
+
+```java
+@Around("controllerLog()")
+    public Object doAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    // 调用业务方法
+    result = proceedingJoinPoint.proceed();   //XD 这里调用目标方法，这之前的代码都是【前置逻辑】    下面的代码都是【后置逻辑】
+```
+
+
+
+
+
+## 5.Spring 事务
 
 > 问：项目中什么地方用到了 AOP    在 Spring 中进行事务管理中就用到了！！！
 
@@ -561,23 +693,31 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
+## 6.设计模式
 
+> 至少前5种答出来
 
+1. IOC 工厂模式 : Spring 容器本质是一个大工厂，使用工厂模式通过 BeanFactory、 ApplicationContext 创建 bean 对象。 
+2. AOP 代理模式 : **Spring AOP 功能就是通过代理模式来实现的**，分为动态代理和静 态代理。 
+3. IOC 单例模式 : Spring 中的 Bean 默认都是单例的，这样有利于容器对Bean的管理。 
+4. 模板模式 : Spring 中 JdbcTemplate、RestTemplate 等以 Template结尾的对数据 库、网络等等进行操作的模板类，就使用到了模板模式。 
+5. 观察者模式: Spring 事件驱动模型就是观察者模式很经典的一个应用。 
+   * 可以将观察者模式看作是发布订阅模式的一个特例
+   * 在Spring框架中，事件驱动的编程模型是基于发布订阅模式的。
+6. 适配器模式 :Spring AOP 的增强或通知 (Advice) 使用到了适配器模式、Spring MVC 中也是用到了适配器模式适配 Controller。
+7. 策略模式：Spring中有一个Resource接口，它的不同实现类，会根据不同的策略 去访问资源。
 
+## 7.哪些模块组成
 
+> https://juejin.cn/post/6997930907227127838
 
+* 四个**核心模块**
 
+![image-20210818214831566](http://images.zzq8.cn/img/928164d48bbf4019a6a5131fd4cdfec9~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp)
 
+* 根据 `Spring` 源码模块中的 `gradle` 依赖，可以整理出这么一张**依赖关系图**
 
-
-
-
-
-
-
-
-
-
+![image-20210818222259022](http://images.zzq8.cn/img/062d90e772644ee9962185234ee6d12e~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp)
 
 
 
@@ -748,6 +888,14 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 * #### @Builder
 
   * Lombok annotation为你的类生成相对略微复杂的构建器API，放随意参数的构造器 链式调用就行
+  
+  * ```java
+    User.builder()
+        .userName("hh")
+        .passWord("123");
+    ```
+  
+    
 
 
 
@@ -841,7 +989,9 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
  
 
+* #### @ServletComponentScan
 
+  * Servlet（控制器）、Filter（过滤器）、Listener（监听器）可以直接通过@WebServlet、@WebFilter、@WebListener注解自动注册到Spring容器中，无需其他代码。
 
 
 
@@ -851,6 +1001,36 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 # 2）技术点
 
 ## 1）一些小点
+
+* 我 download 了upupor的开源项目发现项目里的数据库敏感信息都是 ${} 方式给的！！！
+
+  * > 在 Spring Boot 项目的 YAML 配置文件中，`${}` 是用于引用外部属性或配置的占位符。你可以为这些占位符提供具体的值，以替换配置文件中的 `${}` 表达式。
+    >
+    > 有几种方式可以给 `${}` 占位符提供值：
+    >
+    > 1. application.properties/application.yml 文件：在 Spring Boot 项目的 `src/main/resources` 目录下，你可以创建一个 `application.properties` 文件（或 `application.yml`，根据你的选择）来提供属性的具体值。例如，如果你在配置文件中有 `${my.property}` 占位符，那么你可以在 `application.properties` 文件中添加以下内容：
+    >    ```
+    >    my.property=具体的值
+    >    ```
+    >
+    > 2. 命令行参数：你可以在启动项目时通过命令行参数来传递属性值。例如，使用以下命令启动 Spring Boot 项目，并为 `${my.property}` 提供具体值：  【idea Environment variables 里面给也行！！！】
+    >    ```
+    >    java -jar myproject.jar --my.property=具体的值
+    >    ```
+    >
+    > 3. 环境变量：你可以将属性值设置为环境变量，并在项目启动时读取这些环境变量。例如，将 `${my.property}` 设置为环境变量 `MY_PROPERTY`，然后在项目启动时，它将自动读取该环境变量的值。
+    >
+    > 这些是最常用的给 `${}` 占位符提供值的方法。你可以根据实际需求选择适合的方式来提供属性的具体值。
+    >
+    > 需要注意的是，如果你在 `application.properties` 文件中定义了属性的默认值，那么当没有其他方式提供属性值时，将使用该默认值。例如：
+    > ```
+    > my.property=默认值
+    > ```
+    > 如果没有其他方式提供 `${my.property}` 的具体值，它将默认使用 "默认值"。
+    >
+    > 希望这可以帮助你给 Spring Boot 项目的 YAML 文件中的 `${}` 占位符提供具体的值。如有进一步的疑问，请随时提问。
+
+
 
 * #### SpringBoot,因为默认加入了==Slf4j-api和logback==的依赖,所以只需要添加[lombok](https://so.csdn.net/so/search?q=lombok&spm=1001.2101.3001.7020)的依赖即可.
 
@@ -884,7 +1064,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 * #### 快速定位报错原因
 
-  * ![image-20221017164745509](http://image.zzq8.cn/img/202210171647567.png)
+  * ![image-20221017164745509](https://images.zzq8.cn/img/202210171647567.png)
 
 
 
@@ -1031,13 +1211,154 @@ Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（
 
 
 
+## 8) 实现ApplicationContextAware接口的作用
+
+实现 `ApplicationContextAware` 接口的作用是允许一个类获取对 Spring 应用程序上下文（`ApplicationContext`）的访问权限。通过实现该接口，类可以获得对应用程序上下文的引用，从而能够进行更高级别的操作，例如获取和管理 Spring Bean、发布应用程序事件等。
+
+具体来说，当一个类实现了 `ApplicationContextAware` 接口，它必须实现接口中的 `setApplicationContext()` 方法。Spring 在初始化该类的实例时，会自动调用 `setApplicationContext()` 方法，并将应用程序上下文作为参数传递给该方法。通过该方法，类可以将传递的应用程序上下文存储为一个成员变量，以便在需要时进行访问。
+
+下面是一个示例：
+
+```java
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class MyBean implements ApplicationContextAware {
+
+    private ApplicationContext applicationContext;
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
+
+    public static <T> T getBean(Class<T> clazz) throws BeansException {
+        return applicationContext.getBean(clazz);
+    }
+}
+
+-----------------即可在 CcEmailUtils.class 等没有被Spring管理的工具类中使用Spring对象
+    TrueSend trueSend = SpringContextUtils.getBean(TrueSend.class);
+```
+
+通过实现 `ApplicationContextAware` 接口，类可以直接访问应用程序上下文，从而获得更多的灵活性和功能。例如，可以根据需要获取其他 Bean 的引用、发布应用程序事件、访问配置属性等。
+
+
+
+## 9）Spring-静态资源启用版本控制
+
+> upupor blog          Spring版本控制yaml+MinIO+Thymeleaf
+
+犹记毕业第一年时，公司每次发布完成后，都会在一个群里通知【版本更新，各部门清理缓存，有问题及时反馈】之类的话。归根结底就是资源缓存的问题，浏览器会将请求到的静态资源，如JS、CSS等文件缓存到用户本地，当用户再次访问时就不需要再次请求这些资源了，以此也是提升了用户体验。但是也正是因为这些资源缓存，导致客户端的静态文件往往不是当前最新版本。后来有同事增加了时间戳、随机数等，确实这也解决了客户端缓存的问题，但是却又带来了新的麻烦，导致每次访问都要请求服务器，无形中增加了服务器的压力。
+
+https://www.cnblogs.com/laoyeye/p/10034617.html
+
+> Q&A 
+>
+> <link th:href="${ossStatic} + @{/semantic-ui/semantic.min.css}" type="text/css" rel="stylesheet"> 
+>
+> Thymeleaf这里@{}会导致 .css 之前会拼接一串-99e54d8e467b26ef66ff560393a00091 为什么？
+
+Thymeleaf中的`@{}`语法用于生成URL，并在URL中附加上下文路径。在你提供的示例中，`.css`之前附加的`-99e54d8e467b26ef66ff560393a00091`是一个哈希值，可能是由于你的应用程序或Thymeleaf的资源管理策略而生成的。
+
+这种哈希值的添加通常是为了解决浏览器缓存的问题。当静态资源（如CSS文件）发生更改时，为了确保浏览器加载最新的版本而不使用缓存，可以通过在URL中添加哈希值来创建一个唯一的URL。当资源发生更改时，哈希值也会随之变化，从而强制浏览器重新加载资源。
+
+在你的示例中，`${ossStatic}`是一个变量，可能包含了资源的基本URL路径。而`@{/semantic-ui/semantic.min.css}`则使用了Thymeleaf的URL表达式生成相对于当前请求上下文的CSS文件URL。结合起来，生成的URL将是`${ossStatic}`的值加上`/semantic-ui/semantic.min.css`，并附加上哈希值。
+
+如果你想去除哈希值的附加，可以检查你的应用程序或Thymeleaf的资源管理配置，看是否有相关配置项控制哈希值的添加。具体配置方式可能因你所使用的框架或工具而异。
+
+
+
+是由Spring配置控制的：    使用MD5生成版本号进行管理             ==资源名-md5 方式==
+
+```yaml
+spring:
+  # 静态资源启用版本控制
+  resources:
+    chain:
+      strategy:
+        #MD5实现
+        content:
+          enabled: true
+          paths: /**
+          
+          
+注：第二种、版本号实现
+spring: 
+  resources:
+    chain:
+      strategy:
+        fixed:
+          enabled: true
+          paths: /mods/admin/*.js
+          version: 20181128
+<script src="/20181128/mods/admin/login.js"></script>
+```
+
+ps: MD5（Message Digest Algorithm 5）是一种哈希函数，用于将任意长度的数据映射为固定长度的哈希值。因此，可以说MD5是通过哈希实现的。
+
+**注** 实现该功能的是`ResourceUrlEncodingFilter`，它在模板运行期会重写资源链接，Thymeleaf，Velocity和FreeMarker会自动配置该filter，JSP需要手动配置。其他模板引擎还没自动支持，不过你可以使用[ResourceUrlProvider](http://docs.spring.io/spring/docs/4.3.3.RELEASE/javadoc-api/org/springframework/web/servlet/resource/ResourceUrlProvider.html)自定义模块宏或帮助类。
+
+
+
+### 9.1.MinIO处理
+
+upupor博主处理方式为 py 改名用CLI上传文件
+
+我这里就简单粗暴的把 MinIO 的文件全部改名
+GPT：递归地处理当前文件夹及其所有子文件夹中的文件，并更改它们的文件名（在文件名的后缀名前附加"-<文件的MD5值>"）
+
+```python
+import os
+import hashlib
+
+def calculate_md5(filename):
+    md5_hash = hashlib.md5()
+    with open(filename, 'rb') as f:
+        for chunk in iter(lambda: f.read(4096), b''):
+            md5_hash.update(chunk)
+    return md5_hash.hexdigest()
+
+def rename_files_with_md5(folder_path):
+    # 定义要处理的后缀名列表
+    allowed_extensions = ['.svg', '.webp', '.js', '.css', '.png', '.jpeg', '.jpg', '.ico']
+
+    for root, dirs, files in os.walk(folder_path):
+        for filename in files:
+            file_path = os.path.join(root, filename)
+            file_name, file_ext = os.path.splitext(filename)
+
+            # 检查文件后缀名是否在允许的列表中
+            if file_ext.lower() in allowed_extensions:
+                md5_value = calculate_md5(file_path)
+                new_filename = f"{file_name}-{md5_value}{file_ext}"
+                new_file_path = os.path.join(root, new_filename)
+                os.rename(file_path, new_file_path)
+
+# 获取当前文件夹路径
+current_folder = os.getcwd()
+
+# 调用函数递归处理文件夹中的文件
+rename_files_with_md5(current_folder)
+```
+
+
+
 
 
 
 
 # 3）Spring 循环依赖
 
-> 循环依赖解析
+> PS：其实正确答案是开发人员做好设计，别让Bean循环依赖，但是没办法，面 试官不想听这个。
+>
+> 我们都知道，单例Bean初始化完成，要经历三步：`实例化、属性赋值、初始化`    使用、销毁
+>
+> **注入就发生在第二步，属性赋值，结合这个过程，Spring 通过`三级缓存`解决了循环依赖：**   采用了**“`提前暴露`”**的策略
+>
+> 1. 一级缓存 : Map singletonObjects，单例池，用于保存实例化、属 性赋值（注入）、初始化完成的 bean 实例 
+> 2. 二级缓存 : Map earlySingletonObjects，早期曝光对象，用于保存实例化完成的 bean 实例 
+> 3. 三级缓存 : Map> singletonFactories，早期曝光对象工厂，用于保存 bean 创建工厂，以便于后面扩展有机会创建代理对象。
 
 是什么：
 
@@ -1063,13 +1384,110 @@ Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（
 
 
 
+# 4)事件驱动-@EventListener
+
+笔记：https://www.cnblogs.com/dafengdeai/articles/17073114.html
+
+视频：https://www.bilibili.com/video/BV1Cd4y1q7Vm/?spm_id_from=333.337.search-card.all.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0
+
+更好的视频：https://www.bilibili.com/video/BV1Wa4y1477d?p=3&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0
+
+> ==Spring、SpringBoot常用扩展特性之事件驱动==  看代码demo  Spring Boot 2 项目
+>
+> 一般搭配以下两个注解一起使用：  **@EventListener @Async**
+>
+> 1. @0rder指定执行顺序在同步的情况下生效     看视频也可以搭配这个注解，加个权重   假如多个Listener消费谁先
+> 2. @Async 异步执行需要 @EnableAsync 开启异步
+
+> 事件驱动:即跟随当前时间点上出现的事件,调动可用资源,执行相关任务,使不断出现的问题得以解决,防止事务堆积.
+> 如:注册账户时会收到短信验证码,火车发车前收到提醒,预定酒店后收到短信通知等.如:浏宽器中点击按钮请求后台,鼠标点击变化内容,键盘输入显示数据,服务接收请求后分发请求等.在解决上述问题时,应用程序是由"事件驱动运行的,这类程序在编写时往往可以采用相同的模型实现,我们可以将这种编程模型称为事件驱动模型.
+> (PS:事件驱动模型其实是一种抽象模型,用于对由外部事件驱动系统业务逻辑这类应用程序进行建模.)
+
+debug走到一步，不懂
+
+```java
+@Resource
+private ApplicationEventPublisher eventPublisher;
+
+//UNKNOWN @FunctionalInterface这里的作用是什么          @EventListener注解！！！！！？？？？
+eventPublisher.publishEvent(sendEmailEvent);
+
+--------后来懂了，上面是发布事件了              有相对于的方法监听消费这个事件：--------
+    @EventListener
+    @Async
+    public void sendEmail(EmailEvent emailEvent) 
+    
+PS：方法参数需要和发布 sendEmailEvent 类型对应，   这样才是一一对应消费
+```
+
+==重点就是这三个类，搞清就行！！！可以看自己写的代码    注意：ApplicationEvent 可以不实现所以重心其实就两个类==
+
+1. Spring事件驱动最基本的使用 `ApplicationEventPublisher`,`ApplicationEvent`,`ApplicationListener` （Spring抽象出了这基本的三个。  事件生产方、事件、事件消费方）
+2. ApplicotionEventPublisher 子类 `ApplicationContext` （在启动类中这个常用一些applicationContext.publishEvent(new ApplicationEvent(this){})）
+3. 事件源、监听器需要被spring管理
+4. 监听器需要实现ApplicationListener<ApplicotionEvent>    xd: 可注解！
+5. **可体现事件源和监听器之间的松耦合仅依赖spring、ApplicationEvent**（发布、监听两个类中都没有另一个的引用！）
+
+
+
+XD：
+
+1. publisher-生产者，       Listener（注解到方法）-消费者
+   publishEvent几次，listener就会消费几次
+
+2. ApplicationEvent 可以不实现，看顶层的这个接口源码其实也转成了 Object，但是按规范注释来说希望所有的事件类都最好实现 ApplicationEvent 
+
+   * ```java
+     ApplicationEventPublisher.class
+     
+     default void publishEvent(ApplicationEvent event) {
+         publishEvent((Object) event);
+     }
+     	
+     
+     //所以事件类没有extends ApplicationEvent也行其实走的是这里
+     void publishEvent(Object event);
+     ```
+
+     
+
+
+
+
+# 5）SpringMVC的执行流程
+
+1. 用户发起请求，请求先被 Servlet 拦截转发给 Spring MVC 框架
+2. Spring MVC 里面的 DispatcherSerlvet 核心控制器，会接收到请求并转发给HandlerMapping
+3. HandlerMapping 负责解析请求，根据请求信息和配置信息找到匹配的 Controller类，不过这里如果有配置拦截器，就会按照顺序执行拦截器里面的 preHandle方法
+4. 找到匹配的 Controller 以后，把请求参数传递给 Controller 里面的方法
+5. Controller 中的方法执行完以后，会返回一个 ModeAndView，这里面会包括视图名称和需要传递给视图的模型数据
+6. 视图解析器根据名称找到视图，然后把数据模型填充到视图里面再渲染成 Html 内容返回给客户端
 
 
 
 
 
+# 6）CORS 跨域
 
-# 4）碰到过的问题
+> 1995年，同源政策由 Netscape 公司引入浏览器。目前，所有浏览器都实行这个政策
+>
+> **其实，准确的来说，跨域机制是阻止了数据的跨域获取，不是阻止请求发送。**
+
+### 目的：解决springboot跨域请求的问题
+
+#### 第一种 （CorsConfig ） 
+
+配置 @Bean CorsFilter.class 实现全局跨域,自定义可以访问的地址
+
+#### 第二种：注解方式
+
+@CrossOrigin
+
+
+
+
+
+# OO）碰到过的问题
 
 
 
@@ -1131,7 +1549,7 @@ spring:
 
 > @import公共模块的实体类导致lombok的注解失效  Gulimall未解决不做了，是做到限流突然就这个问题不做了
 
-![image-20230211140746713](http://image.zzq8.cn/img/202302111407769.png)
+![image-20230211140746713](https://images.zzq8.cn/img/202302111407769.png)
 
 今天重新导入这个项目时，看到 idea 的这个报错突然醒悟！！！看上面笔记当时为什么用它的场景
 
@@ -1156,7 +1574,7 @@ spring:
 > https://segmentfault.com/q/1010000042312154
 > 也可    --spring.profiles.active=app-bpdev   (等同于在idea中配置 如下图位置)
 
-![image-20230802085814446](http://image.zzq8.cn/img/202308020858808.png)
+![image-20230802085814446](https://images.zzq8.cn/img/202308020858808.png)
 
 
 
@@ -1198,7 +1616,7 @@ springboot datasource自动装配mysql数据源。。h2为什么不用配数据�
 
 spring-boot-dependencies 放到 <denpendencyManagement>
 
-<img src="http://image.zzq8.cn/img/202302231452941.png" alt="image-20230223145242628" style="zoom: 25%;" />
+<img src="https://images.zzq8.cn/img/202302231452941.png" alt="image-20230223145242628" style="zoom: 25%;" />
 
 
 
@@ -1206,7 +1624,51 @@ spring-boot-dependencies 放到 <denpendencyManagement>
 
 > CommandLineRunner 接口的作用
 
-CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启动后执行一些特定的任务。该接口只有一个方法 run()，当 Spring Boot 应用启动完成后，会自动执行 run() 方法。CommandLineRunner 接口常用于执行一些初始化任务，例如读取配置文件、初始化数据等。与之类似的还有另一个接口 ApplicationRunner，不同之处在于它的 run() 方法接收的参数是一个 ApplicationArguments 对象，该对象封装了命令行参数的信息。通常情况下，我们可以通过实现 CommandLineRunner 或 ApplicationRunner 接口，在 Spring Boot 应用启动后自动执行一些初始化任务。
+CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启动后执行一些特定的任务。该接口只有一个方法 run()，当 Spring Boot 应用启动完成后，会自动执行 run() 方法。CommandLineRunner 接口常用于执行一些初始化任务，例如读取配置文件、初始化数据等。与之类似的还有另一个接口 ApplicationRunner，`不同之处在于它的 run() 方法接收的参数是一个 ApplicationArguments 对象，该对象封装了命令行参数的信息。`通常情况下，我们可以通过实现 CommandLineRunner 或 ApplicationRunner 接口，在 Spring Boot 应用启动后自动执行一些初始化任务。
+
+**XD: 其实一样的，可能就是ApplicationArguments这个对象封装了更好操作 程序参数（Program arguments）而已。。。`args.getSourceArgs()`**
+**而 String... args其实一样可以拿参数！！！**
+
+
+
+
+
+java -jar your-project.jar --param1=value1 --param2=value2
+通过在 `java -jar` 命令后添加参数，==-- 开头的这些参数被认为是程序参数（Program arguments）。     区分（Environment variables）==
+
+
+
+
+
+以下几种方式都可以被@Value读取到:
+
+#### 1、VM options
+
+`java -jar -Dserver.port=8888 -Xms1024m demo.jar`
+这种方式增加的参数是被设置到应用的系统属性中，可以使用System.getProperty(“server.port”)获取（可以在idea的idea VM options中配置，以空格分隔） 
+
+**VM options其实就是我们在程序中需要的运行时环境变量，它需要以-D或-X或-XX开头，每个参数使用空格分隔** 使用最多的就是-Dkey=value设定系统属性值，比如-Dspring.profiles.active=dev3
+-D（defintion）表示自定义参数
+
+#### 2、Program arguments
+
+`java -jar demo.jar --server.port=8888`
+这种方式增加的参数是属于命令行参数，即会从springboot启动时的main方法的String[] args中作为参数传入（可以在idea的program arguments中配置，**以空格分隔**）
+
+**Program arguments为我们传入main方法的字符串数组args[]，==它通常以--开头==**，如--spring.profiles.active=dev3
+
+等价于-Dspring.profiles.active=dev3如果同时存在，以Program arguments配置优先
+
+#### 3、Environment variables
+
+从操作系统的环境变量中读取
+这种方式的参数即属于操作系统方面的，比如安装jdk时设置的环境变量，定义JAVA_HOME，也可以通过System.getenv(“JAVA_HOME”)获取，（可以在idea的VM Environment variables中配置，以;分隔）
+
+Environment variables没有前缀，优先级低于VM options，即如果VM options有一个变量和Environment variable中的变量的key相同，则以VM options中为准。
+
+#### 4、通过项目中配置文件bootstrap/application文件载入
+
+这种方式是在项目中配置的方式，比较常见
 
 
 
@@ -1232,4 +1694,4 @@ CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启�
 2. DataSource  通过上者的 API Create 数据源，大致就是initializeDataSourceBuilder方法通过 ClassLoader 拿 driverClassName 创建
 3. PlatformTransactionManager    每个数据库都要设好自己对应的事务管理器
 
-<img src="http://image.zzq8.cn/img/202302231721768.png" alt="image-20230223172146262" style="zoom: 25%;" />
+<img src="https://images.zzq8.cn/img/202302231721768.png" alt="image-20230223172146262" style="zoom: 25%;" />

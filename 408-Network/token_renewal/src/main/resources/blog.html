@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>发表博客</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        博客标题：<br />
+        <input type="text" name="blogTitle" ref="blogTitle" autocomplete="off" /><br />
+        博客正文：<br />
+        <textarea name="blogContent" ref="blogContent" rows="10" cols="23"></textarea><br />
+        <input type="button" value="发表" @click="submit" />
+    </div>
+    <script>
+        //axios请求拦截器
+        axios.interceptors.request.use(config => {
+            let token = null;
+            //加入头信息配置(刷新token的请求不配置头信息)        
+            let url = config.url;
+            if (sessionStorage.getItem("accessToken") != null && url.indexOf('/newToken') == -1) {
+                token = JSON.parse(sessionStorage.getItem("accessToken"));
+                config.headers['accessToken'] = token;
+            }
+            return config;
+        }, error => {
+            return Promise.reject(error);
+        })
+        //刷新token的函数
+        function getNetToken() {
+            let url = "http://localhost:8080/newToken";
+            let token = null;
+            if (sessionStorage.getItem("refreshToken") != null) {
+                token = JSON.parse(sessionStorage.getItem("refreshToken"));
+            }
+            return axios.get(url, { headers: { accessToken: token }, isRefresh: true });
+        }
+        //axios响应拦截器
+        axios.interceptors.response.use(async (res) => {
+            //判断：拦截401状态码，自动续期(不拦截刷新token的响应)
+            if (res.data.code == 401 && !res.config.isRefresh) {
+                //自动续期
+                const res2 = await getNetToken();
+                if (res2.data.code == 200) {
+                    console.log('自动续期成功：' + new Date().toLocaleString());
+                    // 更新sessionStorage中的相关token
+                    sessionStorage.setItem(
+                        "accessToken",
+                        JSON.stringify(res2.data.data.accessToken)
+                    );
+                    sessionStorage.setItem(
+                        "refreshToken",
+                        JSON.stringify(res2.data.data.refreshToken)
+                    );
+                    //重新请求
+                    res = await axios.request(res.config);
+                }
+            }
+            return res;
+        }, error => {
+            return Promise.reject(error);
+        })
+        const appConfig = {
+            methods: {
+                submit() {
+                    let url = "http://localhost:8080/blog";
+                    axios
+                        .post(url)
+                        .then((res) => {
+                            console.log(res.data.data);
+                        });
+                },
+            },
+        };
+        const app = Vue.createApp(appConfig);
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

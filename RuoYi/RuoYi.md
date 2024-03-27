@@ -361,7 +361,7 @@ return stringBuffer.toString();
 
 * 防止重复提交拦截器, 获取注解类不为空即判断（看下）
 * *判断请求**url**和数据是否和上一次相同，*    借助 Redis 存 「唯一标识（指定key + url + 消息头『${token.header}』）:values」  `compareParams(nowDataMap, preDataMap) && compareTime(nowDataMap, preDataMap, annotation.interval())`
-* 经过debug发现后端判断重复逻辑和前端其实差不多。难点在于如何确定同一个人的同一个请求，ry使用的url+token的方式，确定同一个人同一个请求。
+* 经过debug发现后端判断重复逻辑和前端其实差不多。**难点在于如何确定同一个人的同一个请求，ry使用的url+token的方式**，确定同一个人同一个请求。
 
 
 
@@ -379,3 +379,46 @@ return stringBuffer.toString();
 我们一般知道，注解是给程序看的，给机器看的，当然也是给程序员看的。注解如果没有==注解解析器==（注解处理器，注解解释器），那么注解就没有什么作用。所以@Anonyous一定是在某个地方被干嘛干嘛了！
 
 上三个都是有注解的搭配着注解解析器实现相应功能，限流、定时任务、防重
+
+
+
+# 8.Token过期问题
+
+> 杭州面试问到这个，全是针对项目的技术栈在问！！！
+
+若依是支持token续期的，具体续期的代码在TokenService类下的verifyToken()方法中，默认是不到20分钟就进行续期，但是必须发生请求才行，可以通过
+
+更改MILLIS_MINUTE_TEN修改续期判断的剩余时间。按理说只要一直都在发生请求的话是不会出现token过期的情况的。
+
+
+
+在Ruoyi开源项目中，对于令牌续期（Token Renewal）问题的处理通常如下：
+
+1. 刷新令牌（Refresh Token）：Ruoyi使用JWT（JSON Web Token）进行身份验证和授权。JWT令牌包含了用户的身份信息和权限，并设置了一个有效期。当令牌即将过期时，可以使用刷新令牌来获取新的访问令牌，而无需重新进行用户身份验证。
+2. 拦截器处理：Ruoyi使用拦截器（Interceptor）来对请求进行拦截和处理。在拦截器中，会检查JWT令牌的有效性和过期时间。如果令牌即将过期，拦截器会执行刷新令牌的逻辑，获取新的令牌并将其返回给客户端。客户端可以使用新的令牌继续进行后续请求。
+3. 过期错误处理：如果令牌已经过期，拦截器会捕获到过期错误，并返回相应的错误响应给客户端。客户端可以根据错误响应中的提示信息，重新进行用户身份验证或刷新令牌操作。
+4. 刷新令牌接口：Ruoyi通常会提供一个刷新令牌的接口，用于客户端发送刷新令牌的请求。该接口会根据刷新令牌的有效性，颁发一个新的访问令牌，并返回给客户端。客户端可以使用新的访问令牌继续进行后续请求。
+
+
+
+`刷新令牌的拦截器通常是通过Spring Security框架的拦截器实现的 `    GPT:
+
+```java
+public class JwtTokenRefreshFilter extends OncePerRequestFilter {
+  
+  @Override
+  protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    // 检查请求中是否携带有效的JWT令牌
+    
+    // 验证JWT令牌的有效性和过期时间
+    
+    // 如果令牌即将过期，执行刷新令牌的操作
+    
+    // 将新的令牌添加到响应头中
+    
+    // 继续执行过滤器链，处理后续请求
+  }
+  
+}
+```
+

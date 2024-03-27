@@ -512,7 +512,7 @@ mysql> show variables like 'transaction_isolation';
 
 理解了事务的隔离级别，我们再来看看事务隔离具体是怎么实现的。这里我们展开说明“可重复读”。(MySQL default isolation level)
 
-<img src="http://image.zzq8.cn/img/202306031634681.png" alt="image-20230603163250059" style="zoom:50%;" />
+<img src="https://images.zzq8.cn/img/202306031634681.png" alt="image-20230603163250059" style="zoom:50%;" />
 
 在 MySQL 中，实际上==每条记录在更新的时候都会同时记录一条回滚操作==。记录上的最新值，通过回滚操作，都可以得到前一个状态的值。
 
@@ -520,7 +520,7 @@ mysql> show variables like 'transaction_isolation';
 
 <img src="https://images.zzq8.cn/img/202212081753521.png" style="zoom:67%;" />
 
-<img src="http://image.zzq8.cn/img/202306031640164.png" alt="image-20230603163923678" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202306031640164.png" alt="image-20230603163923678" style="zoom: 67%;" />
 
 当前值是 4，但是在查询这条记录的时候，**不同时刻启动的事务会有不同的 read-view**。如图中看到的，在视图 A、B、C 里面，这一个记录的值分别是 1、2、4，==同一条记录在系统中可以存在多个版本，就是数据库的多版本并发控制（MVCC)==。对于 read-view A，要得到 1，就必须将当前值依次执行图中所有的回滚操作得到。                 MVCC 可以看作是行级锁的一个升级，所以 MyISAM 不支持 MVCC，而 InnoDB 支持
 
@@ -538,6 +538,8 @@ mysql> show variables like 'transaction_isolation';
 >
 > 悲观锁SQL落地：具体来说，`SELECT ... FOR UPDATE` 语句会对查询到的行加上排它锁（Exclusive Lock），这意味着其他事务不能同时对这些行进行修改。在多个事务同时查询同一组数据时，如果其中一个事务使用了 `FOR UPDATE`，则其他事务必须等待该事务释放锁之后才能进行修改操作。
 >
+> > 行级锁都是基于索引的，如果一条 SQL 语句用不到索引是不会使用行级锁的，而会使用表级锁把整张表锁住，这点需要咱们格外的注意
+> >
 > > - 当 `SELECT... FOR UPDATE` 查询条件明确指定主键时，为**行锁**。
 > > - 当 `SELECT... FOR UPDATE` 查询条件明确指定索引时，为**行锁**，所有满足此条件的行都会被加锁。
 > > - 当 `SELECT... FOR UPDATE` 查询条件所指定主键为一个范围时，为**行锁**，所有满足此条件的行都会被加锁。
@@ -598,6 +600,23 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 ## 5.小结
 
+> 补充面试题：==说一下mysql中事务的实现原理==
+>
+> 1. mysql是由mvcc实现的事务控制
+>
+> 2. MVCC的实现依赖于：隐藏字段、ReadView、undolog
+>
+> 3. ReadView 数据的可见性和事务的隔离级别有关
+>
+> 
+>
+>
+> PS: 隐藏字段 
+>
+> * DB_TRX_ID(事务ID)
+> * DB_ROLL_PTR(指向该行的 undo log)
+> * DB_ROW_ID（如果没有主键则会自动生成这个当主键）
+
 这篇文章里面，我介绍了 MySQL 的事务隔离级别的现象和实现，根据实现原理分析了长事务存在的风险，以及如何用正确的方式避免长事务。希望我举的例子能够帮助你理解事务，并更好地使用 MySQL 的事务特性。
 
 > Q：如何避免长事务对业务的影响？
@@ -629,30 +648,27 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 一句话简单来说，索引的出现其实就是为了提高数据查询的效率，就像书的目录一样。一本 500 页的书，如果你想快速找到其中的某一个知识点，在不借助目录的情况下，那我估计你可得找一会儿。同样，对于数据库的表而言，索引其实就是它的“目录”。
 
+### 补充：索引的优缺点
+
+#### 优点:
 
 
-<details>
-<summary>
-    <font size=5px>补充：索引的优缺点</font>
-    </summary>
+* 使用索引可以大大加快 数据的检索速度（大大减少检索的数据量）, 这也是创建索引的最主要的原因。
+* 通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性。
 
-<h4>优点:</h4>
-    <li>使用索引可以大大加快 数据的检索速度（大大减少检索的数据量）, 这也是创建索引的最主要的原因。</li>
-    <li>通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性。</li>
 <h4>缺点:</h4>
-    <li>创建索引和维护索引需要耗费许多时间。当对表中的数据进行增删改的时候，如果数据有索引，那么索引也需要动态的修改，会降低 SQL 执行效率。</li>
-    <li>索引需要使用物理文件存储，也会耗费一定空间。</li>
-    
-    <br/>
+* 创建索引和维护索引需要耗费许多时间。**当对表中的数据进行==增删改==的时候，如果数据有索引，那么索引也需要动态的修改，会降低 SQL 执行效率。**
+* 索引需要使用物理文件存储，也会耗费一定空间。
 
 但是，<b>使用索引一定能提高查询性能吗?</b>
-<br/>
-    <br/>
+
 大多数情况下，索引查询都是比全表扫描要快的。但是如果数据库的数据量不大，那么使用索引也不一定能够带来很大提升。
-    <br/>
-    <br/>
-    <a href="https://javaguide.cn/database/mysql/mysql-index.html#%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9">原文链接</a>
-</details>
+
+<a href="https://javaguide.cn/database/mysql/mysql-index.html#%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9">原文链接</a>
+
+#### 面试题-百万级别以上的数据如何删除？ 
+
+看下文 title
 
 
 
@@ -972,14 +988,15 @@ CREATE TABLE `tuser` (
 
 （2）在创建多列索引时，要根据业务需求，where子句中使用最频繁的一列放在最左边；
 
-**当创建(a,b,c)复合索引时，想要索引生效的话，只能使用 a和ab、ac和abc三种组合！**
+**当创建index(a,b,c)复合索引时，想要索引生效的话，只能使用 a和ab、ac和abc三种组合！**（其中 ac 只用到a）
 
 实例：以下是常见的几个查询：
 
 ```js
 mysql>SELECT `a`,`b`,`c` FROM A WHERE `a`='a1' ; //索引生效
 mysql>SELECT `a`,`b`,`c` FROM A WHERE `b`='b2' AND `c`='c2'; //索引失效
-mysql>SELECT `a`,`b`,`c` FROM A WHERE `a`='a3' AND `c`='c3'; //索引生效，实际上值使用了索引a
+mysql>SELECT `a`,`b`,`c` FROM A WHERE `a`='a3' AND `c`='c3'; //索引生效，实际上只使用了索引a
++++++ where a=3 and b>4 and c=5  //只用到了a、b 因为c不能在范围之后
 
 --- 几个不支持索引的特别的点
 1）where a<>1会使用到索引吗
@@ -990,8 +1007,35 @@ mysql>SELECT `a`,`b`,`c` FROM A WHERE `a`='a3' AND `c`='c3'; //索引生效，�
 	函数不支持
 
 
-联合索引给(a,b,c)添加，如果where a,c,b 索引会生效吗？（生效，优化器会优化）
+XD: 联合索引给(a,b,c)添加，如果where a,c,b 索引会生效吗？（生效，优化器会优化）
 ```
+
+详细点的Table：假设index(a,b,c)
+
+| Where语句                                               | 素引是否被使用                                               |
+| ------------------------------------------------------- | ------------------------------------------------------------ |
+| where a = 3                                             | Y,使用到a                                                    |
+| where a = 3 and b = 5                                   | Y,使用到a，b                                                 |
+| where a = 3 and b = 5 and c = 4                         | Y,使用到a,b,c                                                |
+| where b = 3 或者 where b = 3 and c = 4 或者 where c = 4 | N                                                            |
+| where a = 3 and c = 5                                   | 使用到a， 但是c不可以，b中间断了                             |
+| where a = 3 and b > 4 and c = 5                         | 使用到a和b， c不能用在范围之后，b断了                        |
+| where a is null and b is not null                       | is null 支持索引 但是is not null 不支持,所以 a 可以使用索引,但是 b不一定能用上索引（8.0） |
+| where a <> 3                                            | 不能使用索引                                                 |
+| where abs(a) =3                                         | 不能使用 索引                                                |
+| where a = 3 and b like ‘kk%’ and c = 4                  | Y,使用到a,b,c                                                |
+| where a = 3 and b like ‘%kk’ and c = 4                  | Y,只用到a                                                    |
+| where a = 3 and b like ‘%kk%’ and c = 4                 | Y,只用到a                                                    |
+| where a = 3 and b like ‘k%kk%’ and c = 4                | Y,使用到a,b,c                                                |
+
+补充：
+
+* **无过滤不索引**
+  * 语句没有where 只有 order by不会用索引explain的type为all，所以要加上where才会走索引
+* order by非最左 filesort（也需和where的一样遵循最左匹配原则）
+  * 在MySQL的`EXPLAIN`语句中，当查询执行使用了`Using filesort`时，表示MySQL需要进行排序操作，但无法使用索引来完成排序，而是需要通过临时文件进行排序
+
+
 
 看到这里你一定有一个疑问，如果为每一种查询都设计一个索引，索引是不是太多了。如果我现在要按照市民的身份证号去查他的家庭地址呢？虽然这个查询需求在业务中出现的概率不高，但总不能让它走全表扫描吧？反过来说，单独为一个不频繁的请求创建一个（身份证号，地址）的索引又感觉有点浪费。应该怎么做呢？
 
@@ -1372,10 +1416,10 @@ MySQL 的行锁是在引擎层由各个引擎自己实现的。但并不是所�
 
 当并发系统中不同线程出现循环资源依赖，涉及的线程都在等待别的线程释放资源时，就会导致这几个线程都进入无限等待的状态，称为死锁。这里我用数据库中的行锁举个例子。
 
-![](https://images.zzq8.cn/img/202212131532800.jpeg)这时候，事务 A 在等待事务 B 释放 id=2 的行锁，而事务 B 在等待事务 A 释放 id=1 的行锁。 事务 A 和事务 B 在互相等待对方的资源释放，就是进入了死锁状态。当出现死锁以后，有两种策略：
+![](https://images.zzq8.cn/img/202212131532800.jpeg)这时候，事务 A 在等待事务 B 释放 id=2 的行锁，而事务 B 在等待事务 A 释放 id=1 的行锁。 事务 A 和事务 B 在互相等待对方的资源释放，就是进入了死锁状态。当出现死锁以后，有两种策略：（XD：两者可同时存在，不是二选一)
 
-- 一种策略是，直接进入等待，直到超时。这个超时时间可以通过参数 innodb_lock_wait_timeout 来设置。
-- 另一种策略是，发起死锁检测，发现死锁后，主动回滚死锁链条中的某一个事务，让其他事务得以继续执行。将参数 innodb_deadlock_detect 设置为 on，表示开启这个逻辑。
+- 一种策略是，直接进入等待，直到超时。这个超时时间可以通过参数 innodb_lock_wait_timeout 来设置。（默认值是`50`秒）
+- 另一种策略是，发起死锁检测，发现死锁后，主动回滚死锁链条中的某一个事务，让其他事务得以继续执行。将参数 innodb_deadlock_detect 设置为 on，表示开启这个逻辑。（默认值是`ON`）
 
 在 InnoDB 中，innodb_lock_wait_timeout 的默认值是 50s，意味着如果采用第一个策略，当出现死锁以后，第一个被锁住的线程要过 50s 才会超时退出，然后其他线程才有可能继续执行。对于在线服务来说，这个等待时间往往是无法接受的。
 
@@ -1546,7 +1590,7 @@ InnoDB 里面每个事务有一个唯一的事务 ID，叫作 transaction id。�
 
 如图 2 所示，就是一个记录被多个事务连续更新后的状态。
 
-<img src="http://image.zzq8.cn/img/202302131727261.png" alt="image-20230213172729310" style="zoom:50%;" />
+<img src="https://images.zzq8.cn/img/202302131727261.png" alt="image-20230213172729310" style="zoom:50%;" />
 
 <center>图 2 行状态变更图</center>
 
@@ -1574,7 +1618,7 @@ InnoDB 里面每个事务有一个唯一的事务 ID，叫作 transaction id。�
 
 这个视图数组把所有的 row trx_id 分成了几种不同的情况。
 
-<img src="http://image.zzq8.cn/img/202302131728617.png" alt="image-20230213172858315" style="zoom:50%;" />
+<img src="https://images.zzq8.cn/img/202302131728617.png" alt="image-20230213172858315" style="zoom:50%;" />
 
 <center>图 3 数据版本可见性规则</center>
 

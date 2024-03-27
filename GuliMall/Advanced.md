@@ -1,5 +1,7 @@
 # 分布式高级
 
+> [API 文档](https://easydoc.net/s/78237135/ZUqEdvA4/hKJTcbfd)
+>
 > [项目视频地址](https://www.bilibili.com/video/BV1np4y1C7Yf/)，碰到忘记点搜本笔记配合视频再度复习！[自己代码地址](https://github.com/1024zzq/gulimall)
 >
 > Google 到的笔记，很详细比视频评论下我看初级篇找的要详细：[别人笔记](https://blog.csdn.net/hancoder/article/details/106922139) [还是评论区的更贴近视频](https://gitee.com/AdverseQ/gulimall_Advanced)  [别人代码](https://github.com/NiceSeason/gulimall-learning)  建议搭配食用
@@ -545,6 +547,47 @@ pom start好处什么都配好了，只需要写两三个配置就行。而这�
 ### 4.1 初体验
 
 > 看下面代码注释！理清看门狗    结合官方文档
+>
+> 看门狗机制是Redission提供的一种自动延期机制，这个机制使得**Redission提供的分布式锁是可以自动续期的**。
+>
+> ```java
+> private long lockWatchdogTimeout = 30 * 1000;
+> ```
+>
+> **看门狗机制提供的默认超时时间是30\*1000毫秒，也就是30秒**
+>
+> **在Redission中想要启动看门狗机制，那么我们就不用获取锁的时候自己定义`leaseTime(锁自动释放时间)`。**
+>
+> 如果自己定义了锁自动释放时间的话，无论是通过`lock`还是`tryLock`方法，都无法启用看门狗机制。
+>
+> 但是，如果传入的`leaseTime`为-1，也是会开启看门狗机制的。
+>
+> > 看门狗机制的工作原理如下：
+> >
+> > 1. **当一个线程成功获取到分布式锁后，看门狗会启动一个定时任务**（默认加锁 30秒，每10秒钟检查一次，如果存在就重新设置 过期时间为30秒）
+> > 2. 定时任务会定期发送续约请求到Redis，更新锁的过期时间。
+> > 3. 如果获取锁的线程因为某种原因（如网络故障、线程挂起等）未能及时续约锁的过期时间，锁会在过期时间到达后自动释放，其他线程可以获取到锁。
+> > 4. 如果获取锁的线程仍然活跃，并且定时任务成功续约了锁的过期时间，那么锁将一直保持有效，直到线程显式释放锁。
+>
+> > #### 项目上怎么用的分布式锁，原理是什么？
+> >
+> > 首先分布式锁是一种**跨进程跨机器节点的互斥锁**，可以保证在多机器节点下对共享资源的排他性，通过第三方服务比如 reids 去共享锁，保证同一时刻只能有一个实例能够获取到锁。
+> >
+> > 然后分布式锁主要使用 Redisson 去实现的，Redisson的底层逻辑是基于 lua 脚本去实现的；
+> >
+> > 如果是第一次加锁，就会在 key 对应的 hash结构中添加一个 UUID：线程标识和1，代表了该线程对这个 key加锁了一次；
+> >
+> > 并且key的过期时间默认为30秒，如果启用了 watchdog机制，就会在后台启用一个线程，该线程会去执行一个定时任务，每10秒检查一次，如果key存在，就重置key的生存时间为30秒；
+> >
+> > 并且 Redisson 也实现了可重入锁的机制，当再次加锁，会对key对应的value加1，当value为0或者宕机，锁就会释放。
+> >
+> > #### 分布式锁用的redis的哪种数据结构？
+> >
+> > hash结构，用来线程id+重入次数，（然后扯一下它的流程和原理）
+> >
+> > `String lockKey = "DISTRIBUTE_LOCK:redissonLock:product_" + productId;`
+> >
+> > ![在这里插入图片描述](http://images.zzq8.cn/img/8813c6efcba2437dad736fe89b43ebc5.png)
 
 基于Redis的Redisson分布式可重入锁[`RLock`](http://static.javadoc.io/org.redisson/redisson/3.10.0/org/redisson/api/RLock.html) Java对象实现了`java.util.concurrent.locks.Lock`接口。
 也就是如果学过 Lock 就不用再花时间成本学了，都是一样的API。厉害的点是：一个本地锁一个分布式锁
@@ -590,7 +633,7 @@ lock.unlock();
 >
 > 缓存本来保证的就是 最终一致性，反正有 ttl 失效后重查放入缓存就又是最新数据了
 
-<img src="http://image.zzq8.cn/img/202308231025871.png" alt="image-20230314161335765" style="zoom: 67%;" />
+<img src="https://images.zzq8.cn/img/202308231025871.png" alt="image-20230314161335765" style="zoom: 67%;" />
 
 ### 1）、双写模式：写数据库后，写缓存
 
@@ -1297,6 +1340,10 @@ String name = jsonObject.getString("name");
 >
 > 因此，Spring Session 整合 Redis 后，Redis 存储的 Session 是自动续期的。
 
+GPT：
+
+会话过期时间重置：每当用户进行会话操作时（例如访问页面或发送请求），Spring Session 会自动更新 Redis 中存储的会话的过期时间。这样，只要用户保持活动状态，会话就会自动续期，不会过期。
+
 
 
 ## 4.单点登录-SSO
@@ -1415,6 +1462,8 @@ redis有5种不同数据结构，这里选择哪一种比较合适呢？`Map<Str
 
 
 ## 3.==ThreadLocal用户身份鉴别==
+
+> 通常情况下,我们创建的变量是可以被任何一个线程访问并修改的.如果想实现每一个线程都有自己的专属本地变量该如何解决呢?
 
 常用应用场景：保存用户登录信息  
 需要注意的是，ThreadLocal 存储的数据仅对当前线程可见，因此适合存储一些只有在当前线程中使用的数据，例如用户信息等。而 Session 存储的数据对于整个 Web 应用程序都是可见的，因此适合存储一些需要在多个页面或请求之间共享的数据，例如用户登录状态、购物车信息等。
@@ -1679,9 +1728,15 @@ Gulimall的时候雷神好像是用的拦截器，每次请求进来从spring se
 
 
 
-> 注意如果是线程池的话 ThreadLocal 记得回收
+> !!!  ThreadLocal 记得回收         
+>
+> ThreadLocal内存泄漏问题与线程的创建方式没有直接的关联。
+> 需要注意的是，使用线程池的情况下，由于线程是被重用的，可能会导致ThreadLocal中的数据在多个任务之间共享。这可能会引发意料之外的问题
 
-如果在线程池中使用ThreadLocal会造成内存泄漏,因为当ThreadLocal对象使用完之后,应该要把设置的key,value,也就是Entry对象进行回收,但线程池中的线程不会回收,而线程对象是通过强引用指向ThreadLocalMap,ThreadLocalMap也是通过强引用指向Entry对象,线程不被回收,Entry对象也就不会被回收,从而出现内存泄漏,解决办法是,在使用了
+ThreadLocalMap中使用的 key 为ThreadLocal 的弱引用,而 value 是强引用
+
+具体来说，如果在线程执行过程中，使用ThreadLocal存储了一些对象或数据，并且没有在线程执行结束后手动清理ThreadLocal变量，那么这些对象或数据将会一直被ThreadLocal持有，无法被垃圾回收，从而导致内存泄漏。
+
 ThreadLocal对象之后,手动调用ThreadLocal的remove方法,手动清除Entry对象
 
 ==在拦截器中设置ThreadLocal的值，在请求处理完成后进行清理操作==
@@ -1777,6 +1832,8 @@ PS：Feign 源码暂时掠过了，其实想看一下自己new request、set过�
 ## [==3.接口幂等性==](02、接口幂等性.pdf)
 
 > 面试这里是高频考点，认真听！！！！！！！
+>
+> ==说白了幂等性设计就是：通过 redis 或者数据库唯一键==
 
 ### 1）前言
 
@@ -1821,7 +1878,7 @@ TODO：这不是可以刷新重复提交吗  :   理解刷新会覆盖，然后�
 
 > **随着互联网三高架构（高并发、高性能、高可用）的提出，悲观锁已经越来越少的被使用到生产环境中了，尤其是并发量比较大的业务场景。**
 
-使用 `select* from xxx where id = 1 for update;` 查询的时候锁定该条数据
+使用 `select * from xxx where id = 1 for update;` 查询的时候锁定该条数据
 
 ```mysql
 //0.开始事务
@@ -1847,7 +1904,7 @@ id字段一定是主键或者唯一索引，不然可能造成锁表的结果，
 	第一次操作库存时，得到version为1，调用库存服务version变成了2﹔但返回给订单服务出现了问题，订单服务又一次发起调用库存服务，当订单服务传的version还是1，再执行上面的sal语句时，就不会执行﹔因为version已经变为2了，where条件就不成立。这样就保证了不管调用几次，只会真正的处理一次。
     乐观锁主要使用于处理读多写少的问题
 
-##### 2.2.3.分布式锁：(TODO 不太理解)
+##### 2.2.3.分布式锁：(TODO 不太理解   XD:20240320再学Redisson理解了)
 
 ​	例如集群下多个定时器处理相同的数据，可以加分布式锁，锁定此数据，处理完成后释放锁。获取到锁的必须先判断这个数据是否被处理过（double check）
 
@@ -1918,6 +1975,8 @@ ps：都会导致 订单回滚但是下面Feign调用的不会回滚
 > 事务的传播行为:一个方法运行在了一个开启了事务的方法中时,当前方法是使用原来的事务还是开启一个新的事务
 >
 > XD: 就是开启的 @Transactional 的方法里面调用的另外的方法也用了 @Transactional    ([以下例子视频 Link](https://www.bilibili.com/video/BV1Eb411P7bP?t=873.3&p=8))
+>
+> ==注意：看了视频，以下两个方法分别属于不同的类==
 
 ```java
 @Transactional(isolation = Isolation.READ_COMMITTED) //设置事务的隔离级别
@@ -1992,12 +2051,9 @@ Why：在同一个类里面，编写两个方法，内部调用的时候，会�
        //需要注意的是，使用AopContext.currentProxy()方法需要确保Spring的exposeProxy属性设置为true，以便让Spring能够在当前线程中暴露代理对象。@EnableAspectJAutoProxy(exposeProxy=true);这里没用Spring默认的AOP（JDK / CGLib）
         OrderServiceImpl orderService = (OrderServiceImpl) AopContext.currentProxy();
 
-
         orderService.b();
         orderService.c();
 
-        //bService.b(); //a事务
-        //cService.c(); //新事务(不回滚)
         int i = 10/0;
     }
 
@@ -2012,6 +2068,41 @@ Why：在同一个类里面，编写两个方法，内部调用的时候，会�
 为什么会失效呢？`其实原因很简单，Spring在扫描Bean的时候会自动为标注了@Transactional注解的类生成一个代理类（proxy）,当有注解的方法被调用的时候，实际上是代理类调用的，代理类在调用之前会开启事务，执行事务的操作，但是同类中的方法互相调用，相当于this.B()，此时的B方法并非是代理类调用，而是直接通过原有的Bean直接调用，所以注解会失效。`
 
 默认的事务传播属性是Propagation.REQUIRED
+
+
+
+> 后来补充：因为看了上面笔记 REQUIRES_NEW 以为是同一个类的两个方法 看了视频后发现不是。。。仍不知道以下是否成立
+>
+> > TODO：是否也能通过 @Transactional(propagation = Propagation.REQUIRES_NEW) 解决
+> >
+> > 同一个对象内事务方法互调默认失效可以通过代理对象调用解决，是否也可以通过@Transactional(propagation = Propagation.REQUIRES_NEW) 设置事务的传播行为解决
+>
+> 是的，您可以通过使用`@Transactional(propagation = Propagation.REQUIRES_NEW)`注解来设置事务的传播行为，以解决同一个对象内事务方法互调时默认失效的问题。
+>
+> 当一个事务方法（例如`method01`）内部调用同一个对象的另一个事务方法（例如`purchase`）时，默认情况下，Spring事务管理器会忽略内部方法的事务设置，而沿用外部方法的事务。这意味着内部方法的事务设置将被忽略，事务行为将按照外部方法的事务来执行。
+>
+> 为了解决这个问题，可以在内部方法上使用`@Transactional(propagation = Propagation.REQUIRES_NEW)`注解。这将使内部方法在一个新的事务中运行，而不受外部方法事务的影响。当内部方法调用完成后，外部方法的事务会继续执行。
+>
+> 下面是示例代码：
+>
+> ```java
+> @Transactional
+> public void method01() {
+>     // 事务A
+>     bookShopService.purchase(); // 事务B
+> }
+> 
+> @Transactional(propagation = Propagation.REQUIRES_NEW)
+> public void purchase() {
+>     // 事务B的逻辑
+> }
+> ```
+>
+> 在上面的代码中，`method01`方法标记了`@Transactional`注解，表示它运行在一个事务（事务A）中。而`purchase`方法标记了`@Transactional(propagation = Propagation.REQUIRES_NEW)`注解，表示它运行在一个新的事务（事务B）中。
+>
+> 当`method01`方法调用`bookShopService.purchase()`时，`purchase`方法将在一个新的事务B中执行，独立于外部方法的事务A。如果在`purchase`方法内部发生异常，只会回滚事务B，而事务A将不受影响。
+>
+> 通过设置事务的传播行为为`Propagation.REQUIRES_NEW`，您可以解决同一个对象内事务方法互调时默认失效的问题。这样，内部方法的事务设置将得到正确的应用，并且可以独立于外部方法的事务运行。
 
 
 
@@ -2325,9 +2416,9 @@ Remote Address: 192.168.0.1:7890
 
 07 保证服务的稳，其它有了快
 
-<img src="http://image.zzq8.cn/img/202308231025296.png" alt="image-20230316140448941" style="zoom: 33%;" />
+<img src="https://images.zzq8.cn/img/202308231025296.png" alt="image-20230316140448941" style="zoom: 33%;" />
 
-<img src="http://image.zzq8.cn/img/202308231025131.png" alt="image-20230316140459330" style="zoom:33%;" />
+<img src="https://images.zzq8.cn/img/202308231025131.png" alt="image-20230316140459330" style="zoom:33%;" />
 
 
 

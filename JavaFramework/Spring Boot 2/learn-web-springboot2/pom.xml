@@ -29,6 +29,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+<!--            Bingo-->
             <optional>true</optional>
         </dependency>
         <dependency>

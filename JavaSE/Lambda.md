@@ -1,6 +1,13 @@
 # Lambda表达式 #
 
 > 自己买了一本小书很不错  《Java 8函数式编程》
+>
+> Lambda vs Stream
+>
+> Lambda表达式是一种简洁而强大的语法特性，它允许我们以更紧凑的方式编写匿名函数。Lambda表达式可以作为参数传递给方法或函数式接口，并且可以更方便地处理集合数据
+>
+> stream流可以看作是for循环的一个语法糖；
+> stream有并发流，在超过百万级数据量时，使用stream流效率更高；
 
 ## Zero、XD
 
@@ -781,3 +788,26 @@ public class ClosureDemo2 {
 
 ```
 
+
+
+
+
+
+
+# Stream流
+
+## stream流可以收集多次吗？
+
+stream属于管道流，只能消费一次，当第一个stream流调用完毕方法,数据就会流转到下一个Stream上
+
+而这时第一个stream流已经使用完毕，就会关闭了，所以第一个Stream流就不能再调用方法
+
+## stream().map()时，stream是否已经被操作了？
+
+不是，stream流属于惰式执行。stream上的操作并不会立即执行，只有等到用户真正需要结果的时候才会执行。
+
+
+
+作者：raxcl
+链接：https://www.nowcoder.com/discuss/465219671411773440?sourceSSR=users
+来源：牛客网

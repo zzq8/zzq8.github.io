@@ -1,6 +1,6 @@
 # 个人学习笔记
 
-> Java学习之路笔记汇总，docsify地址：https://1024zzq.github.io/
+> Java学习之路笔记汇总，此文档均为个人笔记。博客可点击右上角 / zzq8.cn 跳转
 >
 > 后来，对于笔记而言。我希望是用自己笼统的语言去描述它而不是一堆官方术语，自己写的东西更容易回顾起来！
 
@@ -8,16 +8,14 @@
 
 # 一、自己总结
 
-> [StudyList ](ZOther\StudyList.md)**尽早以求职为导向来学习**，**以终为始。**
-
 ## 1.系统学习
 
 ### 1.1.基础
 
 * [JavaSE](JavaSE/JavaSE.md)
 * [JUC](JUC/JUC.md)
-* [MySQL实战45讲【Doing】](SQL/MySQL实战45讲.md)
-* [Mysql索引&做题总结【Doing】](SQL/Mysql索引&做题总结.md)
+* [MySQL实战45讲](SQL/MySQL实战45讲.md)
+* [Mysql索引&做题总结](SQL/Mysql索引&做题总结.md)
 
 
 
@@ -87,3 +85,9 @@
 * [Java 学习路线导图.xmind](其他\Java%20学习路线导图.xmind)
 * [尚硅谷SpringCloud第2季2020.3.2.mmap](JavaFramework\Spring%20Cloud\尚硅谷SpringCloud第2季2020.3.2.mmap)
 * [2019互联网面试题第2季.mmap](JUC\2019互联网面试题第2季.mmap)
+
+
+
+# 四、StudyList
+
+* [StudyList ](ZOther\StudyList.md)**尽早以求职为导向来学习**，**以终为始。**
