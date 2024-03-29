@@ -124,7 +124,7 @@ RESTORE DATABASE [ZS_SCM] FROM DISK='/home/ZC_SCM0426002.BAK'
 ## 访达
 
 * cmd+shift+h 用户目录
-* ctrl+shift+. 显示隐藏文件
+* cmd+shift+. 显示隐藏文件
 * cmd+ctrl+f 全屏
 * cmd+opt+v 剪切
 
