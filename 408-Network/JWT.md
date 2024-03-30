@@ -11,6 +11,8 @@
 
 我感觉这里 JWT 都有点多余，顶多是看上去更安全？？？？（我感觉是单体项目其实完全可 Session 解决，这里用 Token 避免分布式共享?其实UUID也行？）
 
+感觉RuoYi是只用Redis ttl实现的， Token的作用像是只充当了个UUID和Redis关联
+
 > 个人总结：
 >
 > * axios配置请求、响应拦截器
@@ -117,6 +119,12 @@ jwt--> JSONWeb Token，以JSON为载体，在不同系统（或语言）之间�
 
 
 还有一种更方便的，不生成token直接生成一个guid当token用，redis里存过期时间。就是有点不安全哈
+
+
+
+* ==我们的方案是这样的，设置token过期时间30分钟，每次请求的时候走过滤器判断token是否过期，如果将要过期取token里用户名重新生成token返回前端，如果已经过期重新跳登==
+  * 和RuoYi一样，只不过RuoYi是只用Redis ttl实现的， Token的作用像是只充当了个UUID和Redis关联
+
 
 
 

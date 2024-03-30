@@ -1,4 +1,6 @@
-# [http 请求包含哪几个部分（请求行、请求头、请求体）](https://blog.csdn.net/f110300641/article/details/115342356)
+# 0 | HttpRequest
+
+[http 请求包含哪几个部分（请求行、请求头、请求体）](https://blog.csdn.net/f110300641/article/details/115342356)
 
 > 这里放一些常见的，具体的去搜
 
@@ -140,8 +142,10 @@
 
 
 
-# 1.[XHR (XMLHttpRequest)](https://zh.wikipedia.org/wiki/XMLHttpRequest)
+## 四.[XHR ](https://zh.wikipedia.org/wiki/XMLHttpRequest)
 
+> XMLHttpRequest
+>
 > https://www.cnblogs.com/xiaohuochai/p/6036475.html
 >
 > 概括起来，就是一句话，ajax通过原生的`XMLHttpRequest`对象发出HTTP请求，得到服务器返回的数据后，再进行处理
@@ -161,7 +165,7 @@
 
 ***
 
-# Cookie & Session & JWT
+
 
 
 
@@ -214,9 +218,9 @@ Cookie 头标将之返回到服务器。与其它技术比较，Cookie 的一个
 
 
 
-# 三、token（JWT -- JSON WEB TOKEN）
+# 三、token
 
-
+> JWT -- JSON WEB TOKEN
 
 基于token的鉴权机制类似于http协议也是无状态的，它不需要在服务端去保留用户的认证信息或者会话信息。这就意味着基于token认证机制的应用不需要去考虑用户在哪一台服务器登录了，这就为应用的扩展提供了便利。
 
@@ -254,3 +258,134 @@ Cookie 头标将之返回到服务器。与其它技术比较，Cookie 的一个
 ## 讲一下TCP三次握手 为什么要3次，两次或者四次不行吗
 
 TCP 建立连接时，通过三次握手能**防止历史连接的建立，能减少双方不必要的资源开销，能帮助双方同步初始化序列号**。序列号能够保证数据包不重复、不丢弃和按序传输。
+
+
+
+
+
+# 五、Base64
+
+介绍：
+
+* base64 - ==只是一种编码方法，并不是加密算法==  所有的数据都是明文存储
+* **可以把任意的二进制（图片、视频、音频、字符串）转成可打印的字符**
+
+原理：
+
+* 由来 2^6=64位二进制，把所有字符串转成二进制然后每6位一个转成base64
+* 编码后的长度要是4的倍数，不是则需最后补上一个等号
+
+
+
+
+
+# 六、Chrome & JS
+
+## 1.Chrome-Url
+
+> url地址栏区分大小写吗
+
+在大多数常见的浏览器中，URL地址栏通常是不区分大小写的。这意味着无论您输入的是大写字母、小写字母还是大小写混合，浏览器都会将其视为相同的URL。
+
+例如，以下URL在地址栏中是等效的：
+
+复制
+
+```
+http://www.example.com
+HTTP://WWW.EXAMPLE.COM
+http://www.Example.com
+```
+
+不过需要注意的是，尽管地址栏不区分大小写，但是URL路径和查询参数部分可能会受到服务器的影响。某些服务器可能会对URL路径和查询参数进行区分大小写的处理。这意味着在特定的服务器环境中，`/path` 和 `/Path` 可能被视为不同的路径。
+
+
+
+
+
+在Spring Boot中，默认情况下，`@GetMapping("/A")` 和 `@GetMapping("/a")` 是被视为两个不同的路径的。这是因为Spring Boot默认情况下是区分路径的大小写的。
+
+所以，当您使用`@GetMapping("/A")`注解时，它将映射到路径`/A`，而`@GetMapping("/a")`将映射到路径`/a`。这两个路径被视为不同的URL。
+
+如果您希望路径大小写不敏感，即`/A`和`/a`被视为相同的路径，可以在Spring Boot的配置中进行相应的设置。您可以在`application.properties`或`application.yml`文件中添加以下配置：
+
+```
+spring.mvc.pathmatch.matching-strategy=ant_path_matcher
+```
+
+
+
+> What does %2F mean in a URL?     ASCII Encoding Reference
+
+场景：我用电脑识别 QR_Code 到 URL 浏览器  发现把里面的 `/` 全部转移成 `%2F` 了
+
+联想到 `空格` 是 `%20` 于是系统总结下：
+
+常见的需要转义的字符：https://www.w3schools.com/tags/ref_urlencode.ASP
+
+在线 URLDecode 解码工具
+
+
+
+## 2.F12-JS
+
+> 实用 JS 到 Console
+
+1）复制一个 input 的 Selector, **我这里也有便捷方式，发现input有个 `readonly` 控制的不可编辑！！！把这个删了就行！~**
+
+在 JavaScript 字符串中需要转义的特殊字符：
+
+- 反斜杠 `\`: 反斜杠用于转义后面的字符，例如 `\\` 表示一个普通的反斜杠字符。
+- 引号 `"` 和 `'`: 如果字符串本身包含引号，需要使用反斜杠进行转义，例如 `\"` 或 `\'`。
+- 换行符 `\n`: 表示换行。
+- 回车符 `\r`: 表示回车。
+- 制表符 `\t`: 表示水平制表符。
+
+![image-20231120173938571](http://images.zzq8.cn/img/image-20231120173938571.png)
+
+2）js如何给td标签设置值
+
+```js
+//tdElement 可以通过 getElementById / querySelector 获取
+tdElement.innerHTML = '新的值'; // 设置 <td> 的内容
+tdElement.textContent = '新的值';
+tdElement.innerText = '新的值';
+```
+
+
+
+
+
+## 3.Chrome-ShortcutKey
+
+> [Chrome 官网快捷键总结](https://support.google.com/chrome/answer/157179)
+
+| 操作                                                         | 快捷键                               |
+| :----------------------------------------------------------- | ------------------------------------ |
+| 为网站名称添加 `www.` 和 `.com`，然后在当前标签页中打开该网址 | 输入网站名称并按 **Ctrl + Enter** 键 |
+| 打开新的标签页并执行 Google 搜索                             | 输入搜索字词并按 Alt + Enter 键      |
+| 跳转到地址栏                                                 | **Ctrl + l** 或 Alt + d 或 F6        |
+
+* shift+esc 任务管理器
+
+* **ctrl+shift+delete 清缓存必备**
+* F12 == ctrl+shift+i
+
+### 3.1.搜索技巧
+
+只搜索某个站点： 空格域名
+
+排除某个站点： 空格 -域名
+
+
+
+## 4.HTML
+
+让网页多长时间（秒）刷新自己，或在多长时间后让网页自动链接到其它网页。
+
+```
+<meta http-equiv="refresh" content="1;url=http://www.baidu.com/">
+or
+<body onload="parent.location='http://www.baidu.com'">
+```
+
