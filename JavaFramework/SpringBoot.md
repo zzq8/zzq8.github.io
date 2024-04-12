@@ -1299,8 +1299,6 @@ ps: MD5（Message Digest Algorithm 5）是一种哈希函数，用于将任意�
 
 **注** 实现该功能的是`ResourceUrlEncodingFilter`，它在模板运行期会重写资源链接，Thymeleaf，Velocity和FreeMarker会自动配置该filter，JSP需要手动配置。其他模板引擎还没自动支持，不过你可以使用[ResourceUrlProvider](http://docs.spring.io/spring/docs/4.3.3.RELEASE/javadoc-api/org/springframework/web/servlet/resource/ResourceUrlProvider.html)自定义模块宏或帮助类。
 
-
-
 ### 9.1.MinIO处理
 
 upupor博主处理方式为 py 改名用CLI上传文件
@@ -1343,6 +1341,69 @@ rename_files_with_md5(current_folder)
 ```
 
 
+
+
+
+## 10. [SpringBoot 配置加载优先级详解](https://blog.csdn.net/lazycheerup/article/details/122257003)
+
+### 1. 加载位置与顺序
+
+
+
+```
+file:./config/
+file:./
+classpath:/config/
+classpath:/
+```
+
+- file: 指当前项目根目录
+- classpath: 指当前项目的resources目录
+
+### 2. Q&A
+
+Q: springboot项目同时有application.properties和application-default.properties配置文件，启动应用两个都会生效吗
+
+A: 是的，Spring Boot应用程序同时拥有application.properties和application-default.properties配置文件时，启动应用程序时会同时生效。
+
+先后顺序如下：
+
+application.properties
+application-{active}.properties（例如，application-dev.properties、application-prod.properties）
+application-default.properties
+
+详细：
+
+> **综上，本地及Nacos配置中心共同加载顺序为**：
+>
+> 1. bootstrap.yaml
+> 2. bootstrap.properties
+> 3. bootstrap-{profile}.yaml
+> 4. bootstrap-{profile}.properties
+> 5. application.yaml
+> 6. application.properties
+> 7. application-{profile}.yaml
+> 8. application-{profile}.properties
+> 9. nacos配置中心共享配置（通过spring.cloud.nacos.config.shared-configs指定）
+> 10. Nacos配置中心该服务配置（通过spring.cloud.nacos.config.prefix和spring.cloud.nacos.config.file-extension指定）
+> 11. Nacos配置中心该服务-{profile}配置（通过spring.cloud.nacos.config.prefix和spring.cloud.nacos.config.file-extension、以及spring.profiles.active指定）
+>
+> **因此，配置生效覆盖关系：**
+>
+>   对于key名相同，后加载会覆盖掉前加载，故而最终为后加载的配置项生效！
+>
+>   对于key名不同，则直接生效（会加载，但不会被覆盖）；
+>
+>   **注意：不能理解为文件级整体覆盖，而仅是同名key会被后加载的键值覆盖。**
+>
+> 实测 application-default.properties 覆盖 application.properties
+
+ps: 
+
+* 也就是说如果没有指定 {active} & 如果有 default 那么它就会生效
+
+* 如果你在 `application.properties` 中设置了 `spring.profiles.active=dev`，那么 `application-default.properties` 的属性值将不会生效，而是会根据当前活动的配置文件来加载对应的属性。
+* 因此，application.properties文件的优先级高于application-default.properties文件。在同一个包下，如果存在同名的属性，则后者会覆盖前者（==没有active的话两者都是会生效的==）
 
 
 

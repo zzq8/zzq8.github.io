@@ -2,59 +2,144 @@
 
 > 由于第一次接触MacOS，花了三周的星期六（三天）来搭这台MacOS
 >
-> M 系列芯片好多软件还不支持，TortoiseSVN、SQLServer这种。。头疼了很久
-> 后补充：其实用 Shell 提好的
->
-> # 为什么Vue项目总是在1024端口启动？
->
-> > 我猜你是Mac 用户～
->
-> 在mac os中，非root用户是无法使用小于1024的常用端口的。
-> 如果小于1024端口，会从1024开始。
 
-#### 学到
+## Software
 
-* `export vs set` 
-  在 Windows 中，`export` 命令不是一个内置的命令。它是在类Unix系统（如Linux和macOS）中用于设置环境变量的命令。在Windows中，要设置环境变量，需要使用不同的命令。
+> Apr. 12th 2024
 
-  在Windows中，要设置环境变量，可以使用以下命令：
-
-  1. 使用 `set` 命令：可以使用 `set` 命令来设置临时环境变量，例如：   
-     ```
-     set MY_VARIABLE=value
-     ```
-
-     这将在当前命令提示符会话中设置名为 `MY_VARIABLE` 的环境变量，并将其值设置为 `value`。==但是，这种方式设置的环境变量只在当前会话中有效，关闭会话后会失效。==
-
-  2. 使用系统属性窗口：你可以通过打开系统属性窗口来设置永久环境变量。你可以按下 `Win + Pause/Break` 键来打开系统属性窗口，然后选择 "高级系统设置"，在弹出的对话框中选择 "环境变量"。在环境变量对话框中，你可以添加、编辑或删除系统或用户级别的环境变量。
-
-  
-
-* `sudo vim /Library/LaunchDaemons/com.mysql.startup.plist` 【没成功，不知道是否该转战brew】
-  * 启动时间：LaunchAgents 目录中的 Launch Agents 是在用户登录时自动启动的，而 LaunchDaemons 目录中的 Launch Daemons 是在系统启动时自动启动的，不依赖于用户登录。
-  * 运行权限：LaunchAgents 目录中的 Launch Agents 是以当前登录用户的身份运行的，仅对该用户有效。而 LaunchDaemons 目录中的 Launch Daemons 是以系统的管理员权限（root 用户）运行的，并对所有用户有效。【所以在 LaunchDaemons 权限必须是 Root 否则无法启动！！！`chown root:wheel jetbrains.vmoptions.plist`】
-  * 这个文件目录类似 Windows 的startup
-  * 目的：从官方网站下载的 MySQL 版本，并希望将其设置为 macOS 的自启动服务
-  * 
-    
-    像MySQL这种服务得放LaunchDaemons里，像激活idea这种得放 LaunchAgents 里。。。注意权限是否够（然后我说得 lemon 软件看是否启动！！！设置里看不到）
-  
+* Karabiner (win autohotkey)
+* Alfred (Lib & Everything)
+  * in 关键词（可以搜文件里面的内容！）
+* Stats
+* Clash
+* Easydict
+* IINA
+* Omi
+* Lunar（两台电脑连一台显示器软件方式切信号源通过 CLI）
+* iShot
+* 腾讯会议
+* Dash
+* Espanso
+* Chrome
+* iTerm
+* Karabiner
+* Office
+* Parallels
+* QuickShade
+* Paste
+* SoundSource
+* Sublime
+* Lemon
+* Thor
+* Tiles + WGestures
+* Postman Navicat IDEA PS Sourcetree TinyRDM
 
 
 
-* 关闭 SIP
-  * 针对 M 系列芯片，长按开机键进入到恢复模式，Terminal `csrutil disable`
+
+
+补充：
+
+* Typora
+
+  * 注意：在官网这里[键位映射表](https://support.typora.io/Shortcut-Keys/#change-shortcut-keys) 搜名字，要对应起来，Mac 设置到 App 快捷键
+
+  <img src="http://images.zzq8.cn/img/image-20231215180744304.png" alt="image-20231215180744304" style="zoom: 25%;" />
+
+* SourceTree
+
+  * Q：M 系列芯片好多软件还不支持，TortoiseSVN、SQLServer这种。。头疼了很久
+    后补充：
+
+    * 其实用 Shell 挺好用的
+    * 而且其实 idea 自带的就很好
+    * 后又发现 SourceTree 很好用，管理自己的 Git 蛮好
+
+    XD: 240330, 发现一个不错的软件 看的从 0 到 Thor 图发现的，  SourceTree
+    **注意 - sourceTree push 的时候如无法 auth 明明密码账号正确！解决 - 设置换 git 内核用 mac 本地的！！！**
 
 
 
+## ShortKey
+
+* cmd+shift+h 用户目录
+* cmd+shift+. 显示隐藏文件
+* cmd+ctrl+f 全屏
+* cmd+opt+v 剪切
+* ⭐️ Command-I	显示简介
+  * 我推测 "I" 可能代表 "Info"，因为 "Info" 是「信息」的简写。因此，Command-I 可以被理解为「显示简介」或「显示信息」
 * Shift+【 可以输出 「
 
 
 
-* Command-I	显示简介
-  我推测 "I" 可能代表 "Info"，因为 "Info" 是「信息」的简写。因此，Command-I 可以被理解为「显示简介」或「显示信息」
+## Tips
+
+* 😭 TODO 软链？
+  ln -s 表示软链，    XD：删掉本来目录的 base.yml ，把自己目录做好的 base.yml 软链到本来目录！
+
+* 对某段文字 Click Double 会自动选取系统认为的词组      Click Three Times 就会 check 这一整行
+
+* 不显示隐藏文件
+  `command+shift+.` 可以临时切换显示隐藏文件。
+
+  使用以下方法永久设置（似乎对浏览器出发的文件选择器未生效）
+
+  ```shell
+  defaults write com.apple.finder AppleShowAllFiles -bool true # 显示隐藏文件
+  defaults write com.apple.finder AppleShowAllFiles -bool false # 不显示隐藏文件
+  killall Finder # 重启 Finder
+  ```
+
+* shell windows scroll     我的替代方案：用CMD+上下滚动，不用鼠标滚轮
+
+* 开了2个chrome窗口 macos如何快捷键切换 (cmd+`)   【现在用的很频繁】
 
 
+
+> macmini连接一台4k分辨率显示器，在设置中设置显示器的缩放分辨率只会影响UI字体并不会影响真实的4k分辨率是吗
+
+是的，当您连接一台4K分辨率的显示器到Mac mini上时，您可以在系统设置中调整显示器的缩放分辨率。这将影响显示器上的UI元素（如菜单栏、窗口和图标）的大小和清晰度，但不会实际改变显示器的物理分辨率。
+
+Mac mini会输出其默认的分辨率（通常是显示器的原生分辨率），而您在系统设置中进行的缩放只会调整UI元素的大小，以适应更高或更低的分辨率。这意味着物理像素的数量不会改变，只是它们在屏幕上的显示大小会发生变化。
+
+如果您想要实际更改显示器的分辨率，您可以在系统设置中选择显示器的原生分辨率或其他支持的分辨率选项。这将直接影响物理像素的数量，以获得更高的清晰度和细节。注意，更高的分辨率可能需要更强大的图形处理能力，并可能导致图形性能下降。
+
+
+
+昨天去了王府井apm苹果店，和工作人员交流了一下，这个不是降分辨率，就是和win10一样只是调大了系统的字体（但是也不是完全一样，win10只是调节了字体，而macos是调节了字体，icon和窗口的大小）。在调节后的屏幕上会显示一个更低的分辨率，那个的意思是说现在的字体大小和更低分辨率的缺省字体一样的，正是这个不好的ui或者说系统提醒的这句话让大家有了误解。建议苹果可以在新版本中修改这句让人误解的话。
+
+作者：Peterwen
+链接：https://www.zhihu.com/question/443961913/answer/1726069699
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
+
+> Q：MySQL 服务自启动
+
+`sudo vim /Library/LaunchDaemons/com.mysql.startup.plist` 【没成功，不知道是否该转战brew】
+
+* 启动时间：LaunchAgents 目录中的 Launch Agents 是在用户登录时自动启动的，而 LaunchDaemons 目录中的 Launch Daemons 是在系统启动时自动启动的，不依赖于用户登录。
+* 运行权限：LaunchAgents 目录中的 Launch Agents 是以当前登录用户的身份运行的，仅对该用户有效。而 LaunchDaemons 目录中的 Launch Daemons 是以系统的管理员权限（root 用户）运行的，并对所有用户有效。【所以在 LaunchDaemons 权限必须是 Root 否则无法启动！！！`chown root:wheel jetbrains.vmoptions.plist`】
+* ==这个文件目录类似 Windows 的startup==
+* 目的：从官方网站下载的 MySQL 版本，并希望将其设置为 macOS 的自启动服务
+* 像MySQL这种服务得放LaunchDaemons里，像激活idea这种得放 LaunchAgents 里。。。注意权限是否够（然后我说得 lemon 软件看是否启动！！！设置里看不到）
+
+
+
+> 为什么Vue项目总是在1024端口启动？
+
+我猜你是Mac 用户～
+
+在mac os中，非root用户是无法使用小于1024的常用端口的。
+如果小于1024端口，会从1024开始。
+
+* 
+
+## Mac Knowledge
+
+* 关闭 SIP
+  * 针对 M 系列芯片，长按开机键进入到恢复模式，Terminal `csrutil disable`
 
 * 好像网上下的 app 打不开的话可以执行一个命令就可以打开了
 
@@ -66,32 +151,7 @@
 
 
 
-#### shell
-
-* 创建并写入内容   `echo "test" > file1.txt`
-* echo "547061946" | sudo -S <command>
-  * 在这个命令中，`<command>` 是你要以超级用户身份运行的实际命令。将密码作为输入通过管道传递给 `sudo` 命令，并使用 `-S` 选项告诉 `sudo` 从标准输入读取密码。
-
-
-
-
-
-
-
-
-
-
-MacOS Question:
-
-1. shell windows scroll     我的替代方案：用CMD+上下滚动，不用鼠标滚轮
-   但是滚动其他的还是很不舒服，建议嗖嗖
-2. 开了2个chrome窗口 macos如何快捷键切换        (option+`   系统设置可弄)
-
-
-
-#### NodeJS
-
-我是直接官网下载安装的稳定版 v20
+## Other
 
 #### SQLServer
 
@@ -113,346 +173,6 @@ RESTORE DATABASE [ZS_SCM] FROM DISK='/home/ZC_SCM0426002.BAK'
 
 
 
-#### SVN & Git
-
-> SnailSVNLite 是最像 TortoiseSVN的 MacOS端的客户端工具，但是专业版要钱（我这里直接用 idea 自带）
->
-> XD: 240330, 发现一个不错的软件 看的从 0 到 Thor 图发现的，  SourceTree
-> **注意 - sourceTree push 的时候如无法 auth 明明密码账号正确！解决 - 设置换 git 内核用 mac 本地的！！！**
-
-#### 
-
-
-
-## 访达
-
-* cmd+shift+h 用户目录
-* cmd+shift+. 显示隐藏文件
-* cmd+ctrl+f 全屏
-* cmd+opt+v 剪切
-
-
-
-## Alfred
-
-* in 关键词   （可以搜文件里面的内容！）
-
-
-
-需熟悉
-
-* 单独控制 eudic 音量小
-
-
-
-未完成
-
-* 手势置顶
-* 控制屏幕亮度及其音量，有没有 shell
-
-
-
-* 窗口 zoom
-* Git/SVN 客户端 - 感觉没有好的替代品，估计用 idea 自带的还行
-* 截图软件
-* 亮度必须软件打开状态才能调，看有没有更原生办法。或者开机自启
-
-
-
-无法实现的痛点：
-
-Wgesture notepad  实现
-
-声音无法控制（外接音箱就能控制了）
-
-
-
-
-
-知识
-
-* 对某段文字 Click Double 会自动选取系统认为的词组      Click Three Times 就会 check 这一整行
-* 窗口最大化上 Zoom      全屏上 Full Screen
-* mac 中删除桌面上的图标 – 使用 command+退格键 即可删除选中的图标。
-* 不显示隐藏文件
-  `command+shift+.` 可以临时切换显示隐藏文件。
-
-  使用以下方法永久设置（似乎对浏览器出发的文件选择器未生效）
-
-  ```shell
-  defaults write com.apple.finder AppleShowAllFiles -bool true # 显示隐藏文件
-  defaults write com.apple.finder AppleShowAllFiles -bool false # 不显示隐藏文件
-  killall Finder # 重启 Finder
-  ```
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-## brew command
-
-* brew search mysql
-* brew install
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**MacOS**
-
-
-
-\>主体参考 https://www.sorrycc.com/posts/macbook-pro-configuration-from-zero
-
-
-
-192.168.10.253
-
-255.255.255.0
-
-192.168.10.1
-
-
-
-
-
-Keyboard
-
-- cmd+q 完全退出应用
-
-
-
-
-
-自己额外操作：
-
-1.mos
-
-
-
-
-
-
-
-
-
-问题：
-
-1.TODO 设置环境变量？
-
-**MAC 安装 brew 报 Warning: /opt/homebrew/bin is not in your PATH.**
-
-
-
-
-
-[**2.data.bilibili.com**](http://2.data.bilibili.com)  **香港01 节点可以**
-
-
-
-
-
-
-
-**扫盲**
-
-命令列介面 (Command-line interface) cli工具
-
-- export -p 显示所有环境变量
-
-注意：export https_proxy=http://127.0.0.1:7890 。。。只在当前 cmd 中生效，一开始不知道！！！
-
-
-
-
-
-
-
-- env 查看当前环境中所有环境变量的列表
-- source命令用于在当前shell环境中读取和执行指定文件中的命令。常见的用法是在shell脚本中使用该命令来加载另一个脚本文件或配置文件中的环境变量和函数定义。
-- 如果您向$PATH环境变量添加了一个新路径/opt/myapp/bin，您可以使用以下命令使更改立即生效：source ~/.bashrc
-- echo命令用于在终端窗口中输出指定的文本字符串。该命令通常用于在脚本中打印文本消息，也可以用于在终端窗口中进行调试和输出
-- $符号通常用于引用环境变量的值，echo $HOME 有一个HOME的环境变量
-
-
-
-
-
-
-
-.bash_profile是一个文本文件，通常用于配置bash shell的用户特定设置。当您打开新的终端窗口时，系统会自动执行.bash_profile文件中列出的命令和配置。
-
-
-
-执行以下命令，在.bash_profile文件中添加新路径：
-
-\> 在命令行中，>>是一个重定向运算符，用于将命令的输出附加到文件的末尾，而不是覆盖文件中原有的内容。
-
-echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.bash_profile
-
-
-
-
-
-
-
-
-
-macOS终端应用程序在默认情况下是以非登录shell模式启动的，这意味着当您启动终端应用程序时，它不会读取/etc/profile和~/.bash_profile文件中的环境变量。
-
-相反，macOS终端应用程序会读取~/.bashrc文件中的环境变量。因此，如果您想要在终端会话中使用环境变量，最好将其添加到~/.bashrc文件中。
-
-注意，如果您从macOS的登录窗口登录，或者通过SSH登录到远程macOS系统，则终端应用程序会作为登录shell启动，而不是作为非登录shell启动。在这种情况下，终端应用程序将读取/etc/profile和~/.bash_profile文件中的环境变量。
-
-
-
-Bash shell 有两种启动模式：登录模式和非登录模式。非登录模式是指 Bash shell 通过执行脚本或者其他程序来启动的模式，例如通过在终端输入命令来启动 Bash shell。而登录模式是指在登录到操作系统时所启动的 Bash shell。
-
-
-
-
-
-
-
-- ~/.bash_profile：这个文件在每次登录shell时执行，例如通过SSH登录远程机器时；
-- ~/.bashrc：这个文件在每次打开一个新的shell时执行，例如在终端中执行bash命令打开一个新的子shell时；
-- ~/.zshrc：这个文件在每次打开一个新的zsh shell时执行，zsh是macOS终端中默认的shell。
-
-如果您使用bash shell，可以将这些命令添加到~/.bash_profile或~/.bashrc文件中。如果您使用zsh shell，可以将这些命令添加到~/.zshrc文件中。
-
-
-
-在macOS终端中，可以使用以下命令来查看当前使用的shell：
-
-bash
-
-
-
-Copy code
-
-echo $SHELL
-
-
-
-
-
-
-
-\#XD
-
-export https_proxy=http://127.0.0.1:7890
-
-export http_proxy=http://127.0.0.1:7890
-
-export all_proxy=socks5://127.0.0.1:7890
-
-
-
-
-
-
-
-
-
-软链？
-
-ln -s 表示软链，
-
-XD：删掉本来目录的 base.yml ，把自己目录做好的 base.yml 软链到本来目录！
-
-
-
-
-
-
-
-Bash是Shell的一种。 Bash（Bourne-Again SHell）是一个Unix shell
-
-
-
-配到这里了，要开始idea 了
-
-
-
-https://www.bilibili.com/video/BV1e14y1c7aJ?t=1881.0
-
-
-
-
-
-
-
-
-
-
-
-# 一、已成功的软件配置
-
-## 1.Typora
-
-> 看上面菜单栏英文叫啥，直接到设置这里改就好。  + Code Fences
-
-<img src="http://images.zzq8.cn/img/image-20231215180744304.png" alt="image-20231215180744304" style="zoom:50%;" />
-
-[键位映射表](https://support.typora.io/Shortcut-Keys/#change-shortcut-keys)
-
-
-
-
-
-
-
-
-
-# 二、疑惑点解答
-
-> macmini连接一台4k分辨率显示器，在设置中设置显示器的缩放分辨率只会影响UI字体并不会影响真实的4k分辨率是吗
-
-是的，当您连接一台4K分辨率的显示器到Mac mini上时，您可以在系统设置中调整显示器的缩放分辨率。这将影响显示器上的UI元素（如菜单栏、窗口和图标）的大小和清晰度，但不会实际改变显示器的物理分辨率。
-
-Mac mini会输出其默认的分辨率（通常是显示器的原生分辨率），而您在系统设置中进行的缩放只会调整UI元素的大小，以适应更高或更低的分辨率。这意味着物理像素的数量不会改变，只是它们在屏幕上的显示大小会发生变化。
-
-如果您想要实际更改显示器的分辨率，您可以在系统设置中选择显示器的原生分辨率或其他支持的分辨率选项。这将直接影响物理像素的数量，以获得更高的清晰度和细节。注意，更高的分辨率可能需要更强大的图形处理能力，并可能导致图形性能下降。
-
-
-
-昨天去了王府井apm苹果店，和工作人员交流了一下，这个不是降分辨率，就是和win10一样只是调大了系统的字体（但是也不是完全一样，win10只是调节了字体，而macos是调节了字体，icon和窗口的大小）。在调节后的屏幕上会显示一个更低的分辨率，那个的意思是说现在的字体大小和更低分辨率的缺省字体一样的，正是这个不好的ui或者说系统提醒的这句话让大家有了误解。建议苹果可以在新版本中修改这句让人误解的话。
-
-作者：Peterwen
-链接：https://www.zhihu.com/question/443961913/answer/1726069699
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
-
-
-
-
-
-
-
-
 
 
 
@@ -467,19 +187,19 @@ Mac mini会输出其默认的分辨率（通常是显示器的原生分辨率）
 
 
 
+# 
 
+# ---------
 
-# [ChenCheng's Personal Site](https://www.sorrycc.com/)
+# 
 
 
 
 # 如何从 0 开始配置 MacBook Pro
 
-2023/02/08
+> [ChenCheng's Personal Site](https://www.sorrycc.com/)
 
-![介绍](https://img.alicdn.com/imgextra/i2/O1CN01Q93IFG1zkvJLH40c6_!!6000000006753-2-tps-2560-1440.png)
 
-题图：介绍。
 
 > 昨天新的 MBP 终于到了，要从 0 开始配置成趁手的还是需要一些时间的，我总共花了 4 小时左右。在此记录下，希望对大家有所帮助，这可以算是「装了啥」的详细版。如果我基于这篇文章再来一遍，应该可以减少到 2 小时以下。但是，应该不会再来一次了，自己的电脑走 TimeMachine 就好了。
 
