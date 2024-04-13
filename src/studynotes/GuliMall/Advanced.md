@@ -2250,7 +2250,7 @@ JDK 动态代理只能代理实现了接口的目标对象，并且只能代理�
 >
 > 出现异常的话，会执行 try, cancel 方法。
 >
-> <img src="C:\Users\Fighting\AppData\Roaming\Typora\typora-user-images\image-20230907213650656.png" alt="image-20230907213650656" style="zoom:50%;" />
+> <img src="http://images.zzq8.cn/img/image-20230907213650656.png" alt="image-20230907213650656" style="zoom:50%;" />
 >
 > Try 阶段出现问题的话，可以执行 Cancel。那如果 Confirm 或者 Cancel 阶段失败了怎么办呢？
 >
@@ -2264,7 +2264,7 @@ JDK 动态代理只能代理实现了接口的目标对象，并且只能代理�
 >
 > TCC 事务模型的思想类似 2PC，我简单花了一张图对比一下二者。
 >
-> <img src="C:\Users\Fighting\AppData\Roaming\Typora\typora-user-images\image-20230907213858567.png" alt="image-20230907213858567" style="zoom:67%;" />
+> <img src="http://images.zzq8.cn/img/image-20230907213858567.png" alt="image-20230907213858567" style="zoom:67%;" />
 >
 > 
 

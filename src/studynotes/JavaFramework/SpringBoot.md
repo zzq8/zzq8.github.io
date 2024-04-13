@@ -506,7 +506,7 @@ Q&A 因为有三种注入方式：
 >
 > 多个切面的情况下，可以通过 @Order 指定先后顺序，数字越小，优先级越高。
 >
-> <img src="C:\Users\Fighting\AppData\Roaming\Typora\typora-user-images\image-20240315165659313.png" alt="image-20240315165659313" style="zoom:50%;" />
+> <img src="http://images.zzq8.cn/img/image-20240315165659313.png" alt="image-20240315165659313" style="zoom:50%;" />
 >
 > #### 说说你平时有用到AOP吗？ （例子很好，要知行合一）
 >
