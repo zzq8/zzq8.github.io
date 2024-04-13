@@ -12,7 +12,7 @@ springboot datasource自动装配mysql数据源。。h2为什么不用配数据�
 
 > 项目需要有自己的parel如何处置springboot的parent
 
-spring-boot-dependencies 放到 <denpendencyManagement>
+spring-boot-dependencies 放到 \<denpendencyManagement>
 
 <img src="https://images.zzq8.cn/img/202302231452941.png" alt="image-20230223145242628" style="zoom: 25%;" />
 
