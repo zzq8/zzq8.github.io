@@ -184,17 +184,15 @@ Cookie 头标将之返回到服务器。与其它技术比较，Cookie 的一个
 在客户端计算机重启后它仍可以保留其值
 4）.Session：使用 setAttribute(String str,Object obj)方法将对象捆绑到一个会话
 
-# 一、Session 缺点
+## Session 缺点
 
 > **其实Session是依据Cookie来识别是否是同一个用户**。
 
-## 1）为什么要使用Session技术？
+### 为什么要使用Session技术？
 
 **Session比Cookie使用方便，Session可以解决Cookie解决不了的事情【Session可以存储对象，Cookie只能存储字符串。】。**
 
-
-
-## 2）Sessin 缺点：
+### Sessin 缺点：
 
 * **Session**: 每个用户经过我们的应用认证之后，我们的应用都要在服务端做一次记录，以方便用户下次请求的鉴别，<font color=red>通常而言session都是保存在内存</font>中，而随着**认证用户的增多，服务端的开销会明显增大**。
 * **CSRF**: 因为是基于cookie来进行用户识别的, cookie如果被截获，用户就会很容易受到**跨站请求伪造的攻击**
@@ -212,13 +210,13 @@ Cookie 头标将之返回到服务器。与其它技术比较，Cookie 的一个
 
 
 
-# 二、[Cookie](https://mp.weixin.qq.com/s/JW7mxXEqrV1rZ_pQOteXGQ)
+## [Cookie](https://mp.weixin.qq.com/s/JW7mxXEqrV1rZ_pQOteXGQ)
 
 
 
 
 
-# 三、token
+## token
 
 > JWT -- JSON WEB TOKEN
 
@@ -240,9 +238,9 @@ Cookie 头标将之返回到服务器。与其它技术比较，Cookie 的一个
 
 
 
-# 四、计网学习
+## 计网面试题
 
-## 26.TCP和UDP的区别，TCP靠什么保证可靠连接？
+### TCP和UDP的区别，TCP靠什么保证可靠连接？
 
 > TCP通过以下机制来保证可靠连接：
 >
@@ -253,9 +251,7 @@ Cookie 头标将之返回到服务器。与其它技术比较，Cookie 的一个
 
 
 
-
-
-## 讲一下TCP三次握手 为什么要3次，两次或者四次不行吗
+### 讲一下TCP三次握手 为什么要3次，两次或者四次不行吗
 
 TCP 建立连接时，通过三次握手能**防止历史连接的建立，能减少双方不必要的资源开销，能帮助双方同步初始化序列号**。序列号能够保证数据包不重复、不丢弃和按序传输。
 
@@ -263,7 +259,7 @@ TCP 建立连接时，通过三次握手能**防止历史连接的建立，能�
 
 
 
-# 五、Base64
+## Base64
 
 介绍：
 
@@ -279,9 +275,9 @@ TCP 建立连接时，通过三次握手能**防止历史连接的建立，能�
 
 
 
-# 六、Chrome & JS
+## Chrome & JS
 
-## 1.Chrome-Url
+### Chrome-Url
 
 > url地址栏区分大小写吗
 
@@ -327,7 +323,7 @@ spring.mvc.pathmatch.matching-strategy=ant_path_matcher
 
 
 
-## 2.F12-JS
+### F12-JS
 
 > 实用 JS 到 Console
 
@@ -356,7 +352,7 @@ tdElement.innerText = '新的值';
 
 
 
-## 3.Chrome-ShortcutKey
+### Chrome-ShortcutKey
 
 > [Chrome 官网快捷键总结](https://support.google.com/chrome/answer/157179)
 
@@ -371,7 +367,9 @@ tdElement.innerText = '新的值';
 * **ctrl+shift+delete 清缓存必备**
 * F12 == ctrl+shift+i
 
-### 3.1.搜索技巧
+
+
+> 搜索技巧
 
 只搜索某个站点： 空格域名
 
@@ -379,7 +377,7 @@ tdElement.innerText = '新的值';
 
 
 
-## 4.HTML
+### HTML 刷新
 
 让网页多长时间（秒）刷新自己，或在多长时间后让网页自动链接到其它网页。
 
