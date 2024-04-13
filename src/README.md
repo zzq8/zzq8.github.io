@@ -4,7 +4,7 @@ icon: home
 title: 个人主页
 heroImage: /logo.png
 heroText: ^(*￣(oo)￣)^の 
-tagline: ✨Need Study Everyday✨
+tagline: ✨Only you can control your future.✨
 features:
   - title: 博客
     icon: carrot
