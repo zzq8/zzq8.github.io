@@ -1,0 +1,15 @@
+server:
+  port: 8888
+
+mycar:
+  brand: YD
+  price: 88888
+
+debug: true
+
+#actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -1,0 +1,69 @@
+#忘了 ** 了
+#spring:
+#  mvc:
+#    static-path-pattern: /res
+
+#spring:
+#  mvc:
+#    static-path-pattern: /res/**
+
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/mybatis_plus
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jdbc:
+    template:
+      query-timeout: 3 #默认是second秒
+#    type: com.zaxxer.hikari.HikariDataSource 这里默认的用的Hikari数据库连接池
+
+
+
+  redis:
+    host: 101.34.55.204
+    port: 6379
+    database: 0
+
+
+
+
+
+  #mybatis:
+#  configuration:
+#    map-underscore-to-camel-case: true
+#  #  xml文件不生效，找了很久的错误！！！！！犯了和 myBlog 一样的错误   Invalid bound statement！！！
+##  mapper-locations: classpath*:/**/mapper/*/*.xml
+#
+#
+#    #class 可以理解成 classes目录
+##  mapper-locations: classpath:com/example/admin/mapper/xml/*.xml
+#
+#  #现在这样可以但是多写点xml不知道还行不行了。。。。（实测可以）   因为使用classpath:这种前缀，就只能代表一个文件。
+#  mapper-locations: classpath:**/*.xml
+##  mapper-locations: classpath*:**/*.xml
+##  classpath: 这里又不用类路径了！！！    搞定什么时候用！！！什么时候不用  可能是得编译之前就找到
+#  type-aliases-package: com/example/admin/bean
+
+
+
+  #下面这个用了 classpath 不行， 我可以换种思路想，上面的mapper是因为编译后要找到用，下面这个是编译前得知道
+  #明显 classpath是编译后的classes文件
+#  type-aliases-package: classpath:com/example/admin/bean
+mybatis-plus:
+  type-aliases-package: com/example/admin/bean
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath*:/**/mapper/*/*.xml
+
+
+
+
+
+
+

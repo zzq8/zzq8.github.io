@@ -1,0 +1,29 @@
+person:
+  userName: "zhangsan"
+  boss: true
+  birth: 2019/12/12 20:12:33
+  age: 18
+  pet:
+    name: "Tom"
+    weight: 52
+  interests:
+    - "篮球"
+    - "羽毛球"
+#  {"cat", "dog"}不能有空格??animal":null   答案是写错了要用[]
+#  animal: {"cat","dog"}
+#  animal:
+#    - jerry
+#    - mario
+  animal: ["cat", "dog"]
+  score: {"English":50,"math":80}
+  salarys:
+    - 8888.8
+    - 9999.9
+  allPets:
+    "pet1s":
+      - {name: "阿花", weight: 53}
+      - name: "旺财"
+        weight: 99
+#    下面这两个都是单独的一个"allPets":{"pet1s":[{"name":"阿花","weight":53.0},{"name":"”xx“","weight":null},{"name":null,"weight":55.0}]}}
+      - name: ”xx“
+      - weight: 55

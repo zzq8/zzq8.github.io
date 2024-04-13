@@ -1,0 +1,6 @@
+person:
+  nickname: a
+
+#下面这个可以
+person.nickname: sdf
+

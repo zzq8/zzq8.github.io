@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.EmployeeMapper">
+
+    <!-- public Employee getEmpById(Integer id); -->
+    <select id="getEmpById" resultType="employee">
+        select * from tbl_employee where id=#{id}
+    </select>
+
+    <!--public List<Employee> getEmps();  -->
+    <select id="getEmps" resultType="employee">
+        select * from tbl_employee
+    </select>
+</mapper>
