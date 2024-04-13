@@ -4,9 +4,10 @@ import sidebar from "./sidebar.js";
 import { gitPlugin } from '@vuepress/plugin-git'
 
 export default hopeTheme({
+  // 当前网站部署到的域名
   // headerDepth: 2,
   pageInfo: ["Author", "Category", "Tag", "Original", "Word", "ReadingTime"],
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "https://doc.zzq8.cn",
 
   // author: {
   //   name: "大智",
@@ -17,7 +18,7 @@ export default hopeTheme({
 
   logo: "/logo.png",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "https://github.com/zzq8/zzq8",
 
   docsDir: "src",
 
@@ -35,6 +36,7 @@ export default hopeTheme({
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
+      "/studynotes/ZOther/StudyList.html": ["547061946"],
     },
   },
 

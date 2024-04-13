@@ -5,6 +5,7 @@ title: 个人主页
 heroImage: /logo.png
 heroText: ^(*￣(oo)￣)^の 
 tagline: ✨Only you can control your future.✨
+favicon: /favicon.ico
 features:
   - title: 博客
     icon: carrot
