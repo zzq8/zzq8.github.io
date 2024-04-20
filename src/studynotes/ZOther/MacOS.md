@@ -74,6 +74,8 @@
 
 ## Tips
 
+* MAC click dock APP icon 会切桌面同应用不同 window
+  
 * 😭 TODO 软链？
   ln -s 表示软链，    XD：删掉本来目录的 base.yml ，把自己目录做好的 base.yml 软链到本来目录！
 

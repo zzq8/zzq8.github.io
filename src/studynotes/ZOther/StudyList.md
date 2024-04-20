@@ -13,13 +13,13 @@
 
 > Regain your confidence!
 
-- [ ] upupor
-- [ ] 若依（觉得先学，因为广泛性 + 更容易入手 + 教程多）
+- [ ] upupor (单体博客按照图片功能点全走通)
+- [x] 若依（觉得先学，因为广泛性 + 更容易入手 + 教程多）【已下视频到本地】
 - [x] **八股** Fishing at work. Especially JavaGuide 《Java面试指北》
 - [x] 过牛客错题
 - [ ] LeetCode 75 题
 
-
+立长志？  多邻国，单词？   最迟转正后加入知识星球
 
 ### 二、夯实（日常穿插进行，如每天早上）
 

@@ -6,6 +6,13 @@ heroImage: /logo.png
 heroText: ^(*￣(oo)￣)^の 
 tagline: ✨Only you can control your future.✨
 favicon: /favicon.ico
+actions:
+  - text: 开始阅读
+    link: studynotes/
+    type: primary
+  - text: 还没想好 
+    link: https://gnmd.cn
+    type: default
 features:
   - title: 博客
     icon: carrot
@@ -16,4 +23,3 @@ features:
     details: 构建我的护城河
     link: studynotes/
 ---
-
