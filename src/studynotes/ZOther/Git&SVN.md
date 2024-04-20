@@ -1,5 +1,9 @@
 # Git-云服务器使用
-
+> 日常自己仓库就三步:
+git status -sb
+git commit -av
+git push
+> 有时间再梳理这篇文章, 只保留有用的             不要繁琐,繁琐了不会看
 ## [1.前置配置](https://blog.csdn.net/weixin_42310154/article/details/118340458)
 
 > 云服务器的 Git 我捣鼓了好久~
