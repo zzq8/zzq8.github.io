@@ -1103,3 +1103,9 @@ INSERT into `cus_order` (`id`, `score`, `name`) values(1, 426547, 'user1'),(1, 3
 由于聚簇索引是将索引和数据放在一起的，有多个的话会出现数据冗余。
 
 隐藏点：通常主键索引就是聚簇索引，但也可以指定为非聚簇索引，这样就可以建立其他聚簇索引
+
+
+
+#### [MySQL 使用not in条件就一定不走索引吗？答案是不一定！](https://blog.csdn.net/weixin_38924697/article/details/119980350)
+
+值列表太长可能不会走

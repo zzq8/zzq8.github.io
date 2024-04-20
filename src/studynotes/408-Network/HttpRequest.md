@@ -277,6 +277,10 @@ TCP 建立连接时，通过三次握手能**防止历史连接的建立，能�
 
 ## Chrome & JS
 
+### F12-crul
+
+f12 右键一个请求 copy as cURL 可以得到一个 curl 命令集， Ant Work 中就是这样给我们接口信息，我们组数据做 QA 对语料喂给 GPT
+
 ### Chrome-Url
 
 > url地址栏区分大小写吗

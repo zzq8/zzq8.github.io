@@ -1730,7 +1730,7 @@ Gulimall的时候雷神好像是用的拦截器，每次请求进来从spring se
 
 > !!!  ThreadLocal 记得回收         
 >
-> ThreadLocal内存泄漏问题与线程的创建方式没有直接的关联。
+> ==ThreadLocal内存泄漏问题==与线程的创建方式没有直接的关联。
 > 需要注意的是，使用线程池的情况下，由于线程是被重用的，可能会导致ThreadLocal中的数据在多个任务之间共享。这可能会引发意料之外的问题
 
 ThreadLocalMap中使用的 key 为ThreadLocal 的弱引用,而 value 是强引用
