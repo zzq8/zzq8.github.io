@@ -63,6 +63,7 @@
 ## ShortKey
 
 * cmd+shift+h 用户目录
+* command＋shift＋G 访达跳转路径，同 win 上面那个里
 * cmd+shift+. 显示隐藏文件
 * cmd+ctrl+f 全屏
 * cmd+opt+v 剪切

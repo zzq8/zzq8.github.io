@@ -1,4 +1,4 @@
-# Elasticsearch
+## Elasticsearch
 
 Port：9200              kibana：5601
 
@@ -14,20 +14,20 @@ Port：9200              kibana：5601
 >
 > 将MySQL数据往ES里面存一份
 
-# 一、入门
+## 一、入门
 
 > 在此系统中两种： 后话 -> ES我这里学的非常模糊，后面商品搜索也是照抄代码，暂时掠过待有需要回头再学
 >
 > 1. 商品搜索
 > 2. 日志搜索
 
-### 倒排索引机制：分词
+#### 倒排索引机制：分词
 
 ![image-20220907215603856](https://images.zzq8.cn/img/202209072156269.png)
 
 
 
-### 基本概念
+#### 基本概念
 
 Elasticsearch也是基于Lucene的全文检索库，本质也是存储数据，很多概念与MySQL类似的。
 
@@ -53,9 +53,9 @@ Elasticsearch也是基于Lucene的全文检索库，本质也是存储数据，�
 
 
 
-## Docker 安装 ES
+### Docker 安装 ES
 
-### 下载镜像文件 
+#### 下载镜像文件 
 
 > **踩坑：我没有指定版本号，Tag：latest 看一下 created 居然是三年前的 5.6.12！**
 >
@@ -96,11 +96,11 @@ docker run --name kibana -e ELASTICSEARCH_HOSTS=http://zzq8.cn:9200 -p 5601:5601
 
 
 
-# 二、使用
+## 二、使用
 
 > 参照官方文档，具体一些命令怎么用 [官方文档](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html)
 
-## 使用 postman 测试
+### 使用 postman 测试
 
 > 对 ES 的所有操作，它都封装成了 Rest Api
 
@@ -112,15 +112,15 @@ zzq8.cn:9200/customer/external/1  路径 index/type/id 可以理解成 数据库
 
 
 
-## 乐观锁
+### 乐观锁
 
 更新携带 ?if_seq_no=0&if_primary_term=1
 
 根据 seq_no 来比对版本
 
-# 三、查询
+## 三、查询
 
-## 1. _cat 看基本信息
+### 1. _cat 看基本信息
 
 ```mysql
 GET /_cat/nodes：查看所有节点
@@ -131,7 +131,7 @@ GET /_cat/indices：查看所有索引 show databases;
 
 
 
-## 2. _update 更新
+### 2. _update 更新
 
 带 _update 就会对比原来的数据，如果更新和原来一样就会 noop（no opration）不进行操作。带 _update 的记得要按照下面这样写：==加 doc==
 
@@ -149,7 +149,7 @@ GET /_cat/indices：查看所有索引 show databases;
 
 
 
-## 3. Query DSL
+### 3. Query DSL
 
 > Elasticsearch提供了一个可以执行查询的Json风格的DSL。这个被称为Query DSL，该查询语言非常全面。
 >
@@ -163,7 +163,7 @@ GET /_cat/indices：查看所有索引 show databases;
 > >
 > > **为了解决某一类任务而专门设计的计算机语言。**
 
-### 1）匹配所有
+#### 1）匹配所有
 
 ```json
 GET /atguigu/_search
@@ -179,7 +179,7 @@ GET /atguigu/_search
 
 
 
-### 2）条件匹配
+#### 2）条件匹配
 
 ```json
 GET bank/_search
@@ -194,7 +194,7 @@ GET bank/_search
 
 
 
-### 3）match_phrase 短句匹配
+#### 3）match_phrase 短句匹配
 
 ==match_phrase和match的区别，观察如下实例：==
 
@@ -214,7 +214,7 @@ GET bank/_search
 
 
 
-### 4）multi_math 多字段匹配
+#### 4）multi_math 多字段匹配
 
 state或者address中包含mill，并且在查询过程中，会对于查询条件进行分词。
 
@@ -235,7 +235,7 @@ GET bank/_search
 
 
 
-### 5）bool用来做复合查询
+#### 5）bool用来做复合查询
 
 布尔查询又叫**组合查询**
 
@@ -281,7 +281,7 @@ GET bank/_search
 
 
 
-### 6）Filter【结果过滤】
+#### 6）Filter【结果过滤】
 
 所有的查询都会影响到文档的评分及排名。如果我们需要在查询结果中进行过滤，并且**不希望过滤条件影响评分**，那么就不要把过滤条件作为查询条件来用。而是使用`filter`方式：
 
@@ -323,7 +323,7 @@ GET bank/_search
 
 
 
-### 7）term
+#### 7）term
 
 match模糊匹配 term精确匹配
 
@@ -343,11 +343,11 @@ GET bank/_search
 
 
 
-## 4. nested 去扁平化
+### 4. nested 去扁平化
 
 ![image-20221018170313908](https://images.zzq8.cn/img/202210181703256.png)
 
-## 5. 分词器
+### 5. 分词器
 
 #使用 standard 分词，会把一个个单词分开
 #中文需额外搞分词器 => [ik 分词器](https://github.com/medcl/elasticsearch-analysis-ik/releases)
@@ -364,7 +364,7 @@ POST _analyze
 
 ik_smart、ik_max_word
 
-#### 分词器可以有自定义词库，给一个远程文本地址，配置后就可根据里面的分
+##### 分词器可以有自定义词库，给一个远程文本地址，配置后就可根据里面的分
 
 重启 ES 即可识别
 

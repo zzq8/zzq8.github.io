@@ -20,9 +20,9 @@
 >
 > 个人觉得 GuliMall 从本地锁开始层层递进阐述抛出问题好理解。而这一篇可能自己走马观花了
 
-# 前言
+## 前言
 
-## 1. 认识 JMeter
+### 1. 认识 JMeter
 
 > GUliMall 压测章节也用了好用。可以搭配 jvisualvm     这个软件可以直接设置中文就不用看的那么费劲了！
 
@@ -36,7 +36,7 @@ throughput 吞吐量
 
 
 
-# 一、JVM 本地锁
+## JVM 本地锁
 
 > Java 自带的锁只适用于单个 JVM 内的线程同步
 >
@@ -57,7 +57,7 @@ throughput 吞吐量
 
 ***
 
-# 分布式锁
+## 分布式锁
 
 以下两种方式是：
 
@@ -66,7 +66,7 @@ throughput 吞吐量
 
 
 
-# 二、MySQL
+## MySQL
 
 > 没有最好的，只有最适合的
 
@@ -129,17 +129,17 @@ throughput 吞吐量
 
 
 
-# 三、Redis
+## Redis
 
 > 这个笔记很详细！！！  [老师的Redis 笔记](../Redis/尚硅谷_Redis6课件.docx)  结合这个看！！！案例都一样
 >
 > 注意在 xShell 云服务器上用 Redis 命令有提示，方便些
 
-#### 1. jvm本地锁机制（单机情况下）
+### 1. jvm本地锁机制（单机情况下）
 
 
 
-#### 2. redis乐观锁：事务 + 乐观锁（Watch）+ Lua
+### 2. redis乐观锁：事务 + 乐观锁（Watch）+ Lua
 
 > [自己的Redis 笔记](../Redis/Redis.md)
 >
@@ -260,7 +260,7 @@ end
 
 
 
-#### 可以这样操作 Redis 数据库里的数据：
+**可以这样操作 Redis 数据库里的数据：**
 
 eval "return redis.call('get', 'stock')" 0 
 
@@ -268,7 +268,7 @@ eval "return redis.call('get', 'stock')" 0
 
 
 
-# [ReentrantLock 底层](../juc/juc)
+## [ReentrantLock 底层](../juc/juc)
 
 略。。。[看自己juc篇的笔记](../juc/juc)
 

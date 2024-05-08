@@ -1,6 +1,6 @@
 > 2022/1/13  自己很久以前学了这一套但学的不系统，现在花3-4天重新过一遍，并归纳总结为笔记。 from: XD
 
-# MyBatis
+## MyBatis
 
 > MyBatis 框架： MyBatis 本是 apache 的一个开源项目 iBatis, 2010 年这个项目由 apache software foundation 迁移到了 google code，并且改名为 MyBatis 。2013 年 11 月迁移到 Github。
 >
@@ -15,19 +15,19 @@
 > C3P0
 > `Druid`
 
-# 一、Hello World
+## 一、Hello World
 
-## 1. 搭建环境
+### 1. 搭建环境
 
 有什么问题优先看官网  [MyBatis中文网](https://mybatis.net.cn/)
 
-### 1.1.  搭建数据库MySQL
+#### 1.1.  搭建数据库MySQL
 
 略
 
-### 1.2. idea 环境
+#### 1.2. idea 环境
 
-#### 1.2.1. Maven
+##### 1.2.1. Maven
 
 ```xml
 <!-- https://mvnrepository.com/artifact/log4j/log4j -->
@@ -77,7 +77,7 @@
 </build>
 ```
 
-#### 1.2.2. jdbc.properties
+##### 1.2.2. jdbc.properties
 
 ```properties
 driver=com.mysql.jdbc.Driver
@@ -87,7 +87,7 @@ username=root
 password=123456
 ```
 
-#### 1.2.3. log4j.properties
+##### 1.2.3. log4j.properties
 
 ```properties
 #如果一个数据库操作出现了异常，我们需要排错。日志就是最好的助手！！！
@@ -106,7 +106,7 @@ log4j.logger.java.sql.Statement=DEBUG
 log4j.logger.java.sql.PreparedStatement=DEBUG
 ```
 
-#### 1.2.4. mybatis-config.xml
+##### 1.2.4. mybatis-config.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -175,9 +175,9 @@ ps:
 
 
 
-## 2. 编写代码
+### 2. 编写代码
 
-### 2.1. MyBatisUtil 工具类
+#### 2.1. MyBatisUtil 工具类
 
 ```java
 package org.example.util;
@@ -213,7 +213,7 @@ public class MybatisUtils {
 }
 ```
 
-### 2.2. 增删改查
+#### 2.2. 增删改查
 
 具体的一些写法看官网，这里只贴出一个简单的测试。
 
@@ -246,9 +246,9 @@ public void test01(){
 
 
 
-# 二、映射文件
+## 二、映射文件
 
-## 1. 获取自增主键的值
+### 1. 获取自增主键的值
 
 ```xml
     <!--
@@ -263,17 +263,17 @@ public void test01(){
 
 
 
-## 2. 参数处理
+### 2. 参数处理
 
-### 2.1. 单个参数
+#### 2.1. 单个参数
 
 \#{arg}: 直接取出参数值；只有一个参数时可以随便写
 
-### 2.2. 多个参数
+#### 2.2. 多个参数
 
 MyBatis会做特殊处理，多个参数会被封装成一个 **Map**，参数可以使用 `#{arg0}` 或 `#{param1}`这种形式取出
 
-### 2.3. 命名参数
+#### 2.3. 命名参数
 
 使用注解 `@Param` 指定参数的 `key`
 
@@ -292,17 +292,17 @@ User getAnnoParam(@Param("name") String name,String pwd);
 </select>
 ```
 
-### 2.4. POJO
+#### 2.4. POJO
 
 多个参数正好是业务逻辑的数据模型(实体类),直接传入**pojo(对象)**
 
-### 2.4. TO
+#### 2.4. TO
 
 多个参数不是业务模型中的数据, 但经常要使用, 推荐编写TO(Transfer Object)数据传输对象, 就是再专门写个类
 
 
 
-## 3. #{} 和 ${} 的区别
+### 3. #{} 和 ${} 的区别
 
 \#{}是占位符，${}是拼接符。
 
@@ -326,15 +326,15 @@ Mybatis 在处理$ {}时，就是把${}替换成变量的值。
 
 
 
-## 4. 返回List和Map
+### 4. 返回List和Map
 
-### 4.1. List
+#### 4.1. List
 
 正常写~ 只不过返回值是List，resultType还是javaBean
 
-### 4.2. Map
+#### 4.2. Map
 
-### 4.2.1. key -> 列名		value -> 列值
+#### 4.2.1. key -> 列名		value -> 列值
 
 StudentMapper接口：
 
@@ -371,7 +371,7 @@ StudentMapper.Xml:
     }
 ```
 
-### 4.2.1. key -> 主键		value -> 实体对象
+#### 4.2.1. key -> 主键		value -> 实体对象
 
 StudentMapper接口：
 
@@ -395,7 +395,7 @@ StudentMapper.Xml:
 
 
 
-## 5. resultType属性
+### 5. resultType属性
 
 具体看官网~
 
@@ -405,9 +405,9 @@ StudentMapper.Xml:
 
 
 
-## 6. resultMap（自定义结果集映射）
+### 6. resultMap（自定义结果集映射）
 
-### 6.1. 简单使用
+#### 6.1. 简单使用
 
 resultMap的更大作用应该是在于其内部的association标签和collection标签,这两个标签主要用于多表联合查询,以及discriminator鉴别器
 
@@ -450,9 +450,9 @@ Test：
     }
 ```
 
-### 6.2. association（一对一）
+#### 6.2. association（一对一）
 
-#### 6.2.1.  级联属性封装结果集：
+##### 6.2.1.  级联属性封装结果集：
 
 ```xml
 <!--
@@ -480,7 +480,7 @@ Test：
 	</select>
 ```
 
-#### 6.2.2. 使用association定义关联的单个对象的封装规则：
+##### 6.2.2. 使用association定义关联的单个对象的封装规则：
 
 <font color='red'>探究：为什么这里不会自动封装了 ? </font>
 
@@ -516,7 +516,7 @@ Test：
 	</select>
 ```
 
-#### 6.2.3. 分步查询
+##### 6.2.3. 分步查询
 
 此时产生两条查询语句
 
@@ -545,7 +545,7 @@ Test：
 	</select>
 ```
 
-#### 6.2.4. 延迟加载
+##### 6.2.4. 延迟加载
 
 在**分布查询**的基础上，我们通过配置文件开启懒加载，只查其中一个表的某个字段就会发现只会产生一次查询！
 
@@ -566,9 +566,9 @@ Test：
 
 ![xxx](https://images.zzq8.cn/img/202201121637104.png)
 
-### 6.3. collection（一对多）
+#### 6.3. collection（一对多）
 
-#### 6.3.1. 封装List\<Employee> emps;
+##### 6.3.1. 封装List\<Employee> emps;
 
 注意 collection 里是用的 **ofType** 不要用 javaType
 
@@ -599,7 +599,7 @@ Test：
 	</select>
 ```
 
-#### 6.3.2. 分步查询
+##### 6.3.2. 分步查询
 
 和association是一样的效果，也是按需加载、懒加载
 
@@ -650,7 +650,7 @@ Test
 
 
 
-### 6.4. 扩展
+#### 6.4. 扩展
 
 ```xml
 例：
@@ -669,7 +669,7 @@ Test
 
 
 
-### 6.5. 鉴别器
+#### 6.5. 鉴别器
 
 EmployeeMapperPlus.xml：
 
@@ -745,11 +745,11 @@ Test：
 
 
 
-# 三、动态SQL
+## 三、动态SQL
 
 场景：只想根据传过来的javaBean对象有值的参数作为条件
 
-## 1. if
+### 1. if
 
 > 在 MyBatis 中，`<if>` 标签用于在 SQL 映射文件中进行条件判断。`test` 属性指定了一个表达式
 >
@@ -821,7 +821,7 @@ Preparing: select * from tbl_employee where id = ? and last_name like ? and emai
 
 
 
-## 2. where
+### 2. where
 
 基于上面发现**问题**：假如id赋值为null就会出问题 `Preparing: select * from tbl_employee where and last_name like ? and email=? `
 
@@ -836,7 +836,7 @@ Preparing: select * from tbl_employee where id = ? and last_name like ? and emai
 
 
 
-## 3. trim
+### 3. trim
 
 基于where不能去掉后面多出来的and或者or的**问题**
 
@@ -875,7 +875,7 @@ Preparing: select * from tbl_employee where id = ? and last_name like ? and emai
 
 
 
-## 4. choose
+### 4. choose
 
 choose (when, otherwise):分支选择；**带了break的swtich-case**
 如果带了id就用id查，如果带了lastName就用lastName查;只会进入其中一个
@@ -905,7 +905,7 @@ choose (when, otherwise):分支选择；**带了break的swtich-case**
 
 
 
-## 5. set
+### 5. set
 
 场景：只想根据传过来的javaBean对象有值的参数进行修改。null的不改。
 
@@ -947,9 +947,9 @@ choose (when, otherwise):分支选择；**带了break的swtich-case**
 
 
 
-## 6. foreach
+### 6. foreach
 
-### 6.1 用法一：
+#### 6.1 用法一：
 
 注意：这里的collection只能填list或者是map，如果想填ids，需要在参数上加@Param注解
 
@@ -989,7 +989,7 @@ public void test02(){
 }
 ```
 
-### 6.2 用法二：
+#### 6.2 用法二：
 
 注意：需要到数据库连接属性后面加上allowMultiQueries=true；
 
@@ -1019,7 +1019,7 @@ public void test02(){
 
 
 
-## 7. 两个内置参数
+### 7. 两个内置参数
 
 场景：
 
@@ -1059,13 +1059,13 @@ public void test02(){
 
 
 
-## 8. bind
+### 8. bind
 
 场景：模糊查询 like ’%e%‘ 。假如我在传值的时候只想传e就可以用bind。像是创造一个变量，给下面用。具体见上面代码
 
 
 
-## 9. sql
+### 9. sql
 
 ```xml
 	insert into employees(
@@ -1096,9 +1096,9 @@ public void test02(){
 
 
 
-# 四、缓存
+## 四、缓存
 
-## 1. 简介
+### 1. 简介
 
 > 其实现在更多的用Redis或者其它的做缓存，mybatis留了Cache接口
 
@@ -1117,9 +1117,9 @@ public void test02(){
 
   
 
-## 2. 一级缓存（本地缓存）
+### 2. 一级缓存（本地缓存）
 
-### 2.1. 特点
+#### 2.1. 特点
 
 * sqlSession级别的缓存。一级缓存是一直开启的；SqlSession级别的一个Map
 
@@ -1144,7 +1144,7 @@ public void test04(){
 
 ![image-20220113092935272](https://images.zzq8.cn/img/202201130929856.png)
 
-### 2.2. 一级缓存失效情况
+#### 2.2. 一级缓存失效情况
 
 > 没有使用到当前一级缓存的情况，效果就是，还需要再向数据库发出查询：
 
@@ -1155,11 +1155,11 @@ public void test04(){
 
 
 
-## 3. 二级缓存
+### 3. 二级缓存
 
 > 基于namespace级别的缓存：一个namespace对应一个二级缓存：
 
-### 3.1. 工作机制：
+#### 3.1. 工作机制：
 
 1. 一个会话，查询一条数据，这个数据就会被放在当前会话的一级缓存中；
 
@@ -1171,7 +1171,7 @@ public void test04(){
 
 4. 不同namespace查出的数据会放在自己对应的缓存中（map）
 
-### 3.2. 效果：
+#### 3.2. 效果：
 
 * 数据会从二级缓存中获取
 * 查出的数据都会被默认先放在一级缓存中。
@@ -1194,7 +1194,7 @@ public void test04(){
     }
 ```
 
-### 3.3. 使用：
+#### 3.3. 使用：
 
 1. 开启全局二级缓存配置：`<setting name="cacheEnabled" value="true"/>`
 2. 去mapper.xml中配置使用二级缓存：`<cache></cache>`
@@ -1226,7 +1226,7 @@ public void test04(){
 
 
 
-## 4. 和缓存有关的设置/属性：
+### 4. 和缓存有关的设置/属性：
 
 * cacheEnabled=true：false：关闭缓存（二级缓存关闭）(一级缓存一直可用的)
 * 每个select标签都有useCache="true"：
@@ -1250,13 +1250,13 @@ public void test04(){
 
 
 
-## 5. 缓存原理图
+### 5. 缓存原理图
 
 ![image-20220113172652692](https://images.zzq8.cn//img/202201131728029.png)
 
 
 
-## 6. 第三方缓存整合
+### 6. 第三方缓存整合
 
 思路：导入相关jar包技术后只要自己写一个cache的实现，保存数据的时候拿第三方来实现。
 
@@ -1272,19 +1272,19 @@ public void test04(){
 
 
 
-# 五、SSM 整合
+## 五、SSM 整合
 
 > 配置地狱，经历过这个阶段后，就会发现SpringBoot真的舒服
 
-## 1. 前言
+### 1. 前言
 
-### 1.1. 好处
+#### 1.1. 好处
 
 以前光用mybatis时，包扫描xml文件和mapper类得在一个目录下，现在整合spring后可以不用一个目录了。
 
 @Autowired:自动注入mapper；  这样就避免了每要用一个mapper得先SqlSessionFactory还要openSession()这样的一堆操作
 
-### 1.2. 我的问题
+#### 1.2. 我的问题
 
 classpath 和 classpath* 区别：
 
@@ -1304,9 +1304,9 @@ classpath路径是来引用文件的，在编译生成的项目下的bulid/class
 "**/applicationContext-*.xml" 表示任意目录下的以"applicationContext-"开头的XML文件。 
 ```
 
-## 2. 整合流程
+### 2. 整合流程
 
-### 2.1 踩坑
+#### 2.1 踩坑
 
 注意加上web模块，配上tomcat：
 
@@ -1316,9 +1316,9 @@ classpath路径是来引用文件的，在编译生成的项目下的bulid/class
 
 ![image-20220113160927268](https://images.zzq8.cn/img/202201131609347.png)
 
-### 2.2. 代码
+#### 2.2. 代码
 
-#### 2.2.1. maven
+##### 2.2.1. maven
 
 ```xml
 <dependencies>
@@ -1409,7 +1409,7 @@ classpath路径是来引用文件的，在编译生成的项目下的bulid/class
   </dependencies>
 ```
 
-#### 2.2.2. web.xml
+##### 2.2.2. web.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1483,7 +1483,7 @@ classpath路径是来引用文件的，在编译生成的项目下的bulid/class
 </web-app>
 ```
 
-#### 2.2.3. spring-mvc.xml
+##### 2.2.3. spring-mvc.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1519,7 +1519,7 @@ classpath路径是来引用文件的，在编译生成的项目下的bulid/class
 </beans>
 ```
 
-#### 2.2.3. dbconfig.properties
+##### 2.2.3. dbconfig.properties
 
 ```properties
 jdbc.driverClassName=com.mysql.jdbc.Driver
@@ -1528,7 +1528,7 @@ jdbc.username=root
 jdbc.password=123456
 ```
 
-#### 2.2.4. applicationContext.xml【重头戏】
+##### 2.2.4. applicationContext.xml【重头戏】
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1617,7 +1617,7 @@ jdbc.password=123456
 </beans>
 ```
 
-#### 2.2.5. log4j.properties
+##### 2.2.5. log4j.properties
 
 ```properties
 log4j.rootLogger=DEBUG, Console
@@ -1634,7 +1634,7 @@ log4j.logger.java.sql.Statement=DEBUG
 log4j.logger.java.sql.PreparedStatement=DEBUG
 ```
 
-#### 2.2.6. mybatis-config.xml
+##### 2.2.6. mybatis-config.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -1657,7 +1657,7 @@ log4j.logger.java.sql.PreparedStatement=DEBUG
 </configuration>
 ```
 
-### 2.3. 项目结构
+#### 2.3. 项目结构
 
 ![image-20220113161851133](https://images.zzq8.cn/img/202201131618205.png)
 
@@ -1665,7 +1665,7 @@ ps：其他的java类和测试就不贴了，就简单的测了一下。
 
 
 
-# 六、逆向工程 ( MBG )
+## 六、逆向工程 ( MBG )
 
 `MyBatis Generator` 简称 `MBG` ，是一个专门为 `MyBatis` 框架使用者定制的**代码生成器**，可以快速的根据表生成对应的映射文件，接口，以及 `bean` 类。支持基本的增删改查，以及 `QBC` 风格的条件查询。但是表连接、存储过程等这些复杂 `sql` 的定义需要我们手工编写
 
@@ -1673,7 +1673,7 @@ ps：其他的java类和测试就不贴了，就简单的测了一下。
 
 
 
-# 七、MyBatis 运行原理（重点）
+## 七、MyBatis 运行原理（重点）
 
 1. 获取sqlSessionFactory对象
 
@@ -1749,7 +1749,7 @@ ps：其他的java类和测试就不贴了，就简单的测了一下。
 
 
 
-# 八、插件原理
+## 八、插件原理
 
 在四大对象创建的时候
 
@@ -1799,7 +1799,7 @@ public Object pluginAll(Object target) {
 
 
 
-# 九、pageHelper 分页查询
+## 九、pageHelper 分页查询
 
 插件基于拦截器
 

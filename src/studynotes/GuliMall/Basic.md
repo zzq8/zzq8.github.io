@@ -1,4 +1,4 @@
-# Basic
+## Basic
 
 > 谷粒商城是一个B2C模式的电商平台，销售自营商品给客户
 >
@@ -12,19 +12,19 @@
 >
 > 最高境界就是数据库设计师和系统架构师
 
-# 一、前言
+## 一、前言
 
-## 1. 项目简介
+### 1. 项目简介
 
 > 市面上有5种常见的电商模式 B2B、B2C、C2B、C2C、O2O
 
-#### 1.1 B2B 模式
+##### 1.1 B2B 模式
 
 ```markdown
 B2B(Business to Business)，是指商家和商家建立的商业关系，如阿里巴巴
 ```
 
-#### 1.2 B2C 模式
+##### 1.2 B2C 模式
 
 ```markdown
 B2C(Business to Consumer) 就是我们经常看到的供应商直接把商品买个
@@ -36,13 +36,13 @@ etc.
 
 
 
-## ==**2. 架构图：**==
+### ==**2. 架构图：**==
 
 ![image-20220720220817554](https://images.zzq8.cn/img/202207202224096.png)
 
 ![image-20220722154237978](https://images.zzq8.cn/img/202207221542079.png)
 
-## 3. 分布式基础概念
+### 3. 分布式基础概念
 
 常见的负载均衡算法：记一下最后一个！
 
@@ -56,7 +56,7 @@ etc.
 
 ![在这里插入图片描述](https://images.zzq8.cn/img/202207221518690.png)
 
-# 二、Docker 学习
+## 二、Docker 学习
 
 > 根据 [官网文档](https://docs.docker.com/engine/install/centos/) 来安装...
 >
@@ -67,7 +67,7 @@ etc.
 因为 DockerHub 是国外网站，可以登录 **阿里云** 找到容器镜像服务，使用镜像加速器
 
 ```bash
-# 配置镜像加速
+## 配置镜像加速
 sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
@@ -82,9 +82,9 @@ sudo systemctl restart docker
 
 ==**小 Tip 值得学习**==：用 Docker 就参考这个例子！
 
-## 1. MySQL
+### 1. MySQL
 
-### 1.1 安装
+#### 1.1 安装
 
 拉镜像 **注意 -v 已经 Docker 我下面的理念理解！**
 
@@ -98,7 +98,7 @@ docker pull mysql #默认拉最新的
 docker pull mysql:5.7 #拉取指定的
 
 --- 2 启动mysql容器 ---
-# --name指定容器名字 -v目录挂载 -p指定端口映射  -e设置mysql参数 -d后台运行
+## --name指定容器名字 -v目录挂载 -p指定端口映射  -e设置mysql参数 -d后台运行
 docker run -p 3306:3306 --name mysql \
 -v /mydata/mysql/log:/var/log/mysql \
 -v /mydata/mysql/data:/var/lib/mysql \
@@ -137,7 +137,7 @@ docker update xxx --restart=always
 
 
 
-### 1.2 配置
+#### 1.2 配置
 
 1. 在挂载的 conf 目录加 MySQL 配置
 
@@ -156,27 +156,27 @@ skip-name-resolve
 2. 进 MySQL 容器 验证挂载生效！
 
 ```bash
-# 使用 docker ps 来查看我们正在运行的容器：
+## 使用 docker ps 来查看我们正在运行的容器：
 docker ps
 
 docker exec -it mysql bin/bash
 cd /etc/mysql
 
-# 重启指定 image，用于改完配置后重启
+## 重启指定 image，用于改完配置后重启
 docker restart mysql
 
 ```
 
 
 
-### 1.3 使用
+#### 1.3 使用
 
 ```bash
-# 进入容器  推荐大家使用 docker exec 命令，因为此命令会退出容器终端，但不会导致容器的停止。
-# -it【交互模式】  bin/bash【控制台】
+## 进入容器  推荐大家使用 docker exec 命令，因为此命令会退出容器终端，但不会导致容器的停止。
+## -it【交互模式】  bin/bash【控制台】
 docker exec -it mysql /bin/bash
 
-# 通过容器的 mysql 命令行工具连接
+## 通过容器的 mysql 命令行工具连接
 docker exec -it mysql mysql -uroot -p123456
 ```
 
@@ -184,7 +184,7 @@ docker exec -it mysql mysql -uroot -p123456
 
 
 
-## 2. Redis
+### 2. Redis
 
 > 注意和 MySQL 不同，因为要通过配置文件启动 Redis 所以需要先创好文件！
 
@@ -209,21 +209,21 @@ docker exec -it mysql mysql -uroot -p123456
 
 
 ```bash
-# Redis 从cli中设置密码
+## Redis 从cli中设置密码
 config set requirepass test123
 
-# 加配置
+## 加配置
 bind 0.0.0.0 开启远程权限
 appendonly yes 开启aof持久化
 ```
 
 
 
-# 三、项目准备
+## 三、项目准备
 
-## 1. 前端
+### 1. 前端
 
-### 1.1 前言
+#### 1.1 前言
 
 > vsCode 好用的快捷键，Ctrl E 选中下一个同名单词 / Alt 点击光标多个
 >
@@ -249,7 +249,7 @@ ES6 & Vue 快速入门
 
 
 
-### 1.2 ES6
+#### 1.2 ES6
 
 具体看文档：[03、前端开发基础知识](https://gitee.com/codezzq/study-notes/raw/master/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/03%E3%80%81%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.pdf) 点 **原始数据** 可以看！
 
@@ -332,7 +332,7 @@ computed: {
 
 
 
-### 1.3 模块化
+#### 1.3 模块化
 
 > 模块化就是把代码进行拆分，方便重复利用。**类似 java 中的导包**：要使用一个包，必须先导包。而 JS 中没有包的概念，换来的是 模块。
 
@@ -347,7 +347,7 @@ computed: {
 
 
 
-### 1.4 ==Vue 2==
+#### 1.4 ==Vue 2==
 
 > 详细点看：[Vue入门学习笔记](https://blog.csdn.net/qq_42295733/article/details/104077906)   &   [03、前端开发基础知识](https://gitee.com/codezzq/study-notes/raw/master/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/03%E3%80%81%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.pdf) 
 >
@@ -357,7 +357,7 @@ computed: {
 >
 > > 虚拟DOM：Vue.js 使用虚拟DOM（Virtual DOM）来优化性能。在数据发生变化时，Vue.js 会生成一个虚拟DOM树，然后通过比较新旧虚拟DOM树的差异，最小化实际DOM操作的次数，从而提高性能和响应速度。
 
-#### **1.4.1 新建项目：**
+##### **1.4.1 新建项目：**
 
 * 当前工程要用 npm `npm init -y` 初始化项目，出来一个 package.json
 
@@ -385,7 +385,7 @@ npm run serve
 如果启动不起来 digital envelope routines::unsupported
 可能是Node版本不一样，可以把 node_modules 目录删掉，重新 `npm install`  [不行，我换16版本才行]
 
-#### **1.4.2 常用的属性:**
+##### **1.4.2 常用的属性:**
 
 - v-if
 - v-else-if
@@ -599,7 +599,7 @@ npm run serve
 
 
 
-##### 注意：**组件的 data 必须是一个函数，不再是一个对象。**  data + return
+###### 注意：**组件的 data 必须是一个函数，不再是一个对象。**  data + return
 
 可全局 / 局部
 
@@ -658,7 +658,7 @@ npm run serve
 
 
 
-#### 1.4.3 模块化开发
+##### 1.4.3 模块化开发
 
 > 使用 vue-cli 快速搭建脚手架工程
 >
@@ -689,7 +689,7 @@ src/main.js 主程序
 
 
 
-#### 1.4.3 Element-UI
+##### 1.4.3 Element-UI
 
 Element UI 基于 Vue 2.0 的桌面端组件库（具体看官网）
 
@@ -716,7 +716,7 @@ Vue.use(ElementUI);
 
 
 
-#### 1.4.4 解决闪烁问题
+##### 1.4.4 解决闪烁问题
 
 ```html
     <!--v-cloak 解决闪烁问题-->
@@ -729,7 +729,7 @@ Vue.use(ElementUI);
 
 
 
-#### 1.4.5 ==生命周期方法==
+##### 1.4.5 ==生命周期方法==
 
 ```json
   			"components: {},",
@@ -769,7 +769,7 @@ Vue.use(ElementUI);
 
 
 
-### 1.5 高级部分
+#### 1.5 高级部分
 
 ==父子组件传递数据==：仔细看下面的例子便于理解！
 
@@ -795,7 +795,7 @@ this.$emit("tree-node-click", data, node, component);
 
 
 
-## 2. 后端
+### 2. 后端
 
 导入[人人开源](https://gitee.com/renrenio)的项目到idea时，报错。通过改parent的boot版本解决！
 
@@ -825,7 +825,7 @@ this.$emit("tree-node-click", data, node, component);
 
 
 
-## 3. 技术选型
+### 3. 技术选型
 
 结合 SpringCloud Alibaba 我们最终的技术搭配方案： 
 
@@ -840,9 +840,9 @@ this.$emit("tree-node-click", data, node, component);
 
 
 
-# 四、项目开始
+## 四、项目开始
 
-## 1. 注意小点
+### 1. 注意小点
 
 > 使用 MyBatis-Plus 时候，==ServiceImpl 可以不用 注入 Dao，可以直接使用 baseMapper==
 
@@ -1035,7 +1035,7 @@ logging:
 
 
 
-## 2. [跨源资源共享（CORS）](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS)
+### 2. [跨源资源共享（CORS）](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS)
 
 **跨域：指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是==浏览器对javascript施加的安全限制==。**
 
@@ -1057,7 +1057,7 @@ logging:
 
 
 
-### 解决跨域
+#### 解决跨域
 
 （一）使用nginx部署为同一域          感觉：套了一层又一层
 
@@ -1102,7 +1102,7 @@ logging:
 
 
 
-#### 补充：[我现在说的两种方式（1.第一种 （CorsConfig ） 2.注解方式）](https://blog.csdn.net/Tomwildboar/article/details/82422761)    Nginx 算一种，还有RuoYi前端Vue解决
+##### 补充：[我现在说的两种方式（1.第一种 （CorsConfig ） 2.注解方式）](https://blog.csdn.net/Tomwildboar/article/details/82422761)    Nginx 算一种，还有RuoYi前端Vue解决
 
 CORS与JSONP的使用目的相同，但是比JSONP更强大。
 
@@ -1112,18 +1112,18 @@ CORS与JSONP的使用目的相同，但是比JSONP更强大。
 
 
 
-## 3. [==axios和vue-axios的关系及使用区别==](https://www.panziye.com/java/web/4033.html)
+### 3. [==axios和vue-axios的关系及使用区别==](https://www.panziye.com/java/web/4033.html)
 
 所以说 axios 使用方式就是用this.$http：**Vue.prototype.$http = axios**  
 
 ```js
-# 第一步：安装
+## 第一步：安装
 npm install --save axios
-# 第二步：在入口文件main.js中配置
+## 第二步：在入口文件main.js中配置
 import Vue from 'vue'
 import axios from 'axios'
 Vue.prototype.$http = axios
-# 第三步：使用案例
+## 第三步：使用案例
 this.$http.get('/user?id=666').then((response) => {
   console.log(response.data)
 }).catch( (error) => {
@@ -1133,7 +1133,7 @@ this.$http.get('/user?id=666').then((response) => {
 
 
 
-## 4. 三级菜单：拖拽前端业务实现
+### 4. 三级菜单：拖拽前端业务实现
 
 * 能否拖拽的实现思路是自己简单一个 if 判断没有用雷神的
 * 拖拽的 **handleDrop** 方法实现那三点cv的没有去看 (抽空可以再看看)
@@ -1154,9 +1154,9 @@ this.$refs.menuTree.filter(val);
 
 
 
-## 5. 踩坑
+### 5. 踩坑
 
-### 逻辑删除
+#### 逻辑删除
 
 /product/brand/update    传的data：`{brandId,showStatus}`
 
@@ -1185,7 +1185,7 @@ Preparing: UPDATE pms_brand SET show_status=? WHERE ==show_status=1== AND (brand
 
 
 
-### 前端校验
+#### 前端校验
 
 > 排序必须是一个大于等于0的整数
 >
@@ -1193,7 +1193,7 @@ Preparing: UPDATE pms_brand SET show_status=? WHERE ==show_status=1== AND (brand
 
 
 
-## 6. OSS（Object Storage Service）
+### 6. OSS（Object Storage Service）
 
 服务端SDK在上传方面主要提供两种功能：
 
@@ -1239,7 +1239,7 @@ https://blog.csdn.net/gao_jun1/article/details/111414976
 
 
 
-## ==7. JSR 303==
+### ==7. JSR 303==
 
 > 前端校验主要是给一般用户看的，提高用户体验。因为可用 PostMan 绕过直接给后端发请求！
 
@@ -1251,7 +1251,7 @@ https://blog.csdn.net/gao_jun1/article/details/111414976
 
 注意：spring-boot-starter-web 里面有 validation
 
-### 使用过程
+#### 使用过程
 
 1. **以前总觉得 Controller 类还要在类头加注解，记忆混乱了。实测不用！**  后话：不懂
 
@@ -1306,7 +1306,7 @@ return 的 R 错误码可以看尚硅谷的文档，一般可以是5位，业务
 
 
 
-### 分组校验
+#### 分组校验
 
 > 场景：新增 / 修改时我们想要校验的字段和规则可能是不一样的！比如说，ID 字段 新增时不需要携带。而修改时必须要携带
 
@@ -1362,7 +1362,7 @@ return 的 R 错误码可以看尚硅谷的文档，一般可以是5位，业务
 
 
 
-### 自定义校验（仿照别的校验写）
+#### 自定义校验（仿照别的校验写）
 
 可以多看下代码，学学雷神的思想境界！
 
@@ -1384,7 +1384,7 @@ return 的 R 错误码可以看尚硅谷的文档，一般可以是5位，业务
 
 
 
-## 8. SPU 与 SKU
+### 8. SPU 与 SKU
 
 >SPU（Standard Product Unit）：就是iphone xs 的一些标准信息（像素，尺寸等）-- > **基本属性** / 规格与包装
 >
@@ -1408,9 +1408,9 @@ return 的 R 错误码可以看尚硅谷的文档，一般可以是5位，业务
 
 
 
-## 9. 其他重要的点
+### 9. 其他重要的点
 
-### 关于 MyBatis-Plus
+#### 关于 MyBatis-Plus
 
 ```
 Query   PageUtils   都是gulimall-common的自定义类封装（来源于 renrenfast 封装）
@@ -1419,7 +1419,7 @@ Query   PageUtils   都是gulimall-common的自定义类封装（来源于 renre
 
 
 
-### ==Jackson== 介绍
+#### ==Jackson== 介绍
 
 Jackson [/ˈdʒæksən/] 是当前用的比较广泛的，用来序列化和反序列化json的Java开源框架。Jackson社区相对比较活跃，更新速度也比较快， 从Github中的统计来看，Jackson是最流行的json解析器之一，**Spring MVC的默认json解析器便是Jackson。**
 
@@ -1441,7 +1441,7 @@ spring:
 
 
 
-### Element UI Cascader 级联选择器
+#### Element UI Cascader 级联选择器
 
 <img src="https://images.zzq8.cn/img/202208232052487.png" alt="image-20220823205206340" style="zoom:67%;" />
 
@@ -1449,7 +1449,7 @@ spring:
 
 
 
-### Issue
+#### Issue
 
 假设x是一个已知仅包含字符串的列表（List）。以下代码可用于将列表转储到新分配的String数组中：
 
@@ -1469,7 +1469,7 @@ String[] strings1 = list.toArray(new String[list.size()]);
 
 
 
-### Other
+#### Other
 
 合理的冗余字段是为了快速查询，减少IO次数
 
@@ -1485,7 +1485,7 @@ save功能，前端没有传这两个字段，想办法加这两个就不用再�
 
 
 
-### Object 划分
+#### Object 划分
 
 PO：各种 Entity
 
@@ -1502,7 +1502,7 @@ VO：View Object 视图对象
 
 
 
-### 常用的封装类
+#### 常用的封装类
 
 >==要把 VO 的属性复制到 PO，一个个 set 很麻烦： BeanUtils==
 >
@@ -1574,7 +1574,7 @@ Controller 与 Service 关系：Controller应该只需三句话           1（�
 
 
 
-### 技巧
+#### 技巧
 
 ==在线解析 Json  的网站，有可以把 Json 转成 Java 对象！！！==
 
@@ -1582,7 +1582,7 @@ Controller 与 Service 关系：Controller应该只需三句话           1（�
 
 
 
-### idea占用内存过大，服务过多
+#### idea占用内存过大，服务过多
 
 [JavaGuide 最重要的 JVM 参数总结](https://javaguide.cn/java/jvm/jvm-parameters-intro.html#_2-1-%E6%98%BE%E5%BC%8F%E6%8C%87%E5%AE%9A%E5%A0%86%E5%86%85%E5%AD%98%E2%80%93xms%E5%92%8C-xmx) 
 
@@ -1594,7 +1594,7 @@ Controller 与 Service 关系：Controller应该只需三句话           1（�
 
 
 
-### 为了方便重启一部分服务可以用，Compound 包起来
+#### 为了方便重启一部分服务可以用，Compound 包起来
 
 ![image-20220828171101974](https://images.zzq8.cn/img/202208281711096.png)
 
@@ -1602,7 +1602,7 @@ Controller 与 Service 关系：Controller应该只需三句话           1（�
 
 
 
-### 集群负载均衡，取巧
+#### 集群负载均衡，取巧
 
 为了下一章节演示nacos的负载均衡，参照9001新建9002
 
@@ -1616,7 +1616,7 @@ Controller 与 Service 关系：Controller应该只需三句话           1（�
 
 
 
-#### 后端加了事务 @Transactional 还没提交前的语句看不到数据库的变换
+##### 后端加了事务 @Transactional 还没提交前的语句看不到数据库的变换
 
 为了测试方便，将当前会话的隔离级别降低。有了它就可以很方便的看数据库的变化了，可读到没有提交的数据。
 
@@ -1631,7 +1631,7 @@ SELECT * FROM `pms_spu_info`;
 
 
 
-### 踩坑
+#### 踩坑
 
 好使
 
@@ -1641,7 +1641,7 @@ stream() -> map() -> filter() -> collect()
 
 
 
-### 采购
+#### 采购
 
 <img src="https://images.zzq8.cn/img/202208282303184.png" alt="image-20220828224528971" style="zoom: 67%;" />
 
@@ -1651,7 +1651,7 @@ stream() -> map() -> filter() -> collect()
 
 
 
-### 用好数据库连接池：
+#### 用好数据库连接池：
 
 [场景：springboot项目启动开始可以访问数据库，但是几分钟之后就会报错](https://blog.csdn.net/cobracanary/article/details/105257594)
 
@@ -1673,9 +1673,9 @@ MAX_LIFETIME = TimeUnit.MINUTES.toMillis(30L);
 
 
 
-# 五、基础篇总结
+## 五、基础篇总结
 
-#### 从商品保存开始就对业务走马观花，都是CV没去自己写
+##### 从商品保存开始就对业务走马观花，都是CV没去自己写
 
 
 
@@ -1687,7 +1687,7 @@ SpringBoot 2.0 基于 Spring 5 最大的变化就是引入了 React（响应式�
 
 
 
-# 摘自评论
+## 摘自评论
 
 耗时三个月断断续续敲完，高级篇功能打通，准备面试！
 文档地址：https://www.cnblogs.com/JuneQS/p/projectdemo.html

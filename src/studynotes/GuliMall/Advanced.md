@@ -10,7 +10,9 @@
 >
 > 个人认为<font color=red>新增商品，商品上架，保存订单数据，支付</font>这四个功能为该项目最折磨人功能，一P能卡一两天
 
-### 前言
+## 一、商城业务/架构
+
+### 1.前言
 
 视频中雷神stream循环查库了，我问了ChatGPT：
 
@@ -29,7 +31,7 @@
 
 ==高并发三宝：缓存、异步、消息队列==
 
-### 商品上架
+#### 商品上架
 
 由于是结合 ES 的，我这里就看视频 CV 了。视频给我的感觉还挺繁琐的！
 
@@ -46,9 +48,7 @@
 
 
 
-
-
-# 一、商城业务/架构
+### 1.Nginx
 
 > Q：静态资源放 nginx
 >
@@ -65,10 +65,6 @@
 
 
 
-
-
-## 1.Nginx
-
 > 由于这里需要本地开虚拟机操作，我跳过了！如果我要用云服务的Nginx有没有解决方法？ 内网穿透？？？TODO 待定
 >
 > 注意点：Nginx 代理后会丢失很多东西，比如 host 就是。所以需要注意，看图片红色部分
@@ -77,7 +73,7 @@
 
 这两块流程具体看我的 Nginx 笔记
 
-### Nginx反向代理流程：
+#### Nginx反向代理流程：
 
 1. 本地配Hosts gulimall.com 127.0.0.1
 2. 虚拟机 Nginx 代理 Hosts 里面配的域名转发到 网关（Nginx配置记得set Host不然会丢失）
@@ -93,7 +89,7 @@ Nginx代理*.gulimall.com丢给网关
 
 
 
-### Nginx 动静分离
+#### Nginx 动静分离
 
 配置一个 location 静态资源就到 Nginx 拿了！
 
@@ -101,7 +97,7 @@ Nginx代理*.gulimall.com丢给网关
 
 
 
-## 2.Thymeleaf
+### 2.Thymeleaf
 
 为了教学目的考虑：加 Thymeleaf 并关闭缓存
 
@@ -109,7 +105,7 @@ vue 是客户端渲染，模板引擎是服务端渲染
 
 
 
-### 2.1 视图映射
+#### 2.1 视图映射
 
 > 发送一个请求直接跳转到一个页面。  ->  SpringMVC viewcontroller;将请求和页面映射过来
 >
@@ -136,7 +132,7 @@ public class GulimallWebConfig implements WebMvcConfigurer {
 
 
 
-### 2.2 Model / RedirectAttributes
+#### 2.2 Model / RedirectAttributes
 
 可以往 Thymeleaf 携带参数，模拟的 HttpSession
 
@@ -156,9 +152,9 @@ Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（
 
 
 
-# ==二、性能压测==
+## ==二、性能压测==
 
-## 1）前言
+### 1）前言
 
 > 微服务模块在上线之前乃至上线之后都会进行压力测试   老师讲课时基本都是50线程持续压
 
@@ -172,7 +168,7 @@ Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（
 * 考察当前软硬件环境下系统所能承受的最大负荷并帮助找出系统瓶颈所在
 * 使用压力测试，我们有希望找到很多种用其他测试方法更难发现的错误。有两种错误类型是: 内存泄漏，并发与同步。
 
-## 2）压力测试-线程
+### 2）压力测试-线程
 
 重要指标-吞吐量：
 
@@ -200,7 +196,7 @@ JMeter 压测的时候搭配 jvisualvm 看图形化分析
 
 
 
-## ==3）性能监控-JVM==
+### ==3）性能监控-JVM==
 
 > 这几集才是成长的精髓啊 以前都不知道这东西
 >
@@ -224,7 +220,7 @@ jvisualvm 能干什么 监控内存泄露，跟踪垃圾回收，执行时内存
 
 
 
-## ==4）两者结合-压测同时看性能==
+### ==4）两者结合-压测同时看性能==
 
 各个中间件的压测数据：04、性能与压力测试.pdf      其实浏览器F12也可以看到一个响应时间也可做一部分依据
 
@@ -258,9 +254,9 @@ jvisualvm 能干什么 监控内存泄露，跟踪垃圾回收，执行时内存
 
 
 
-# 三、缓存
+## 三、缓存
 
-## 1）前言
+### 1）前言
 
 > 这个项目代码里很多 stream 中循环查表了！  看本文开头
 >
@@ -300,9 +296,9 @@ jvisualvm 能干什么 监控内存泄露，跟踪垃圾回收，执行时内存
 
 
 
-## 2）Redis使用
+### 2）Redis使用
 
-### 2.1 引入 Redis：注意 -> 云服务器redis不设密容易被挖矿
+#### 2.1 引入 Redis：注意 -> 云服务器redis不设密容易被挖矿
 
 1. 引入 pom
 2. **no-sql 和sql一样配地址密码**
@@ -375,13 +371,13 @@ JSON.parseObject(catalogJson, new TypeReference<Map<String, List<Catelog2Vo>>>()
 
 
 
-### 2.2 lettuce堆外内存溢出bug
+#### 2.2 lettuce堆外内存溢出bug
 
 > 这不就是面试中常问的"开发中遇到什么困难,怎么解决的嘛"
 >
 > **lettuce和jedis是操作redis的底层客户端**，RedisTemplate是再次封装
 
-##### 单个自己测单线程没问题，但当进行压力测试时后期会出现**堆外内存溢出OutOfDirectMemoryError**
+###### 单个自己测单线程没问题，但当进行压力测试时后期会出现**堆外内存溢出OutOfDirectMemoryError**
 
 产生原因：lettuce 可能没有及时释放掉内存，导致堆外内存溢出。（源码体现某一块可能没有减内存导致溢出）
 
@@ -415,7 +411,7 @@ JMeter
 
 
 
-### 2.3 ==Redis 三大问题==
+#### 2.3 ==Redis 三大问题==
 
 > [自己的笔记](../NoSQL/Redis)
 
@@ -470,7 +466,7 @@ JMeter
 
 
 
-## 3）分布式锁
+### 3）分布式锁
 
 > 注：我这里 3）4) 都没有手动敲，印象没有那么深刻。以后再回顾，先往下赶进度了
 
@@ -482,7 +478,7 @@ JMeter
 
 正规笔记看我另一篇笔记，现在是我看视频我接地气的理解：
 
-#### 加锁：
+##### 加锁：
 
 1. xshell多开，通过撰写栏同时执行  `set K V NX` 【保证只有一个线程会拿到锁，独占排它 ==这是分布式锁的基本原理！==】
    * 前提，锁的key是一定的，value不重要。重点是排它  作为一把锁来用
@@ -490,7 +486,7 @@ JMeter
 2. 代码初步写好，发现会有死锁问题！expire【防宕机没释放锁，导致死锁】  while好一点，这里递归太容易内存溢出![image-20221226183938038](https://images.zzq8.cn/img/202212261839248.png)
    * 问题来了：设置锁和设置过期时间 java代码体现得有两行。没有原子性！ 换成一行的 API 是有的！
 
-#### 解锁：
+##### 解锁：
 
 3. 业务还没处理完锁就过期，这时候又去删锁就是删别的线程的锁了！【value利用起来，用来辨别当前锁是不是自己拿着】
 
@@ -506,7 +502,7 @@ JMeter
 
 
 
-## [4）分布式锁-Redisson](https://github.com/redisson/redisson/wiki/8.-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%92%8C%E5%90%8C%E6%AD%A5%E5%99%A8)
+### [4）分布式锁-Redisson](https://github.com/redisson/redisson/wiki/8.-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%92%8C%E5%90%8C%E6%AD%A5%E5%99%A8)
 
 它是底层基于Redis实现了一系列的工具（分布式的可伸缩的java工具）
 
@@ -544,7 +540,7 @@ pom start好处什么都配好了，只需要写两三个配置就行。而这�
 
 具体：看GitHub的Redisson官方文档就行，有中文。看着配：视频以程序化配置讲解
 
-### 4.1 初体验
+#### 4.1 初体验
 
 > 看下面代码注释！理清看门狗    结合官方文档
 >
@@ -627,7 +623,7 @@ lock.unlock();
 
 
 
-## 5）分布式锁-缓存数据一致性
+### 5）分布式锁-缓存数据一致性
 
 > 缓存里面的数据如何和数据库保持一致，针对读多写少的场景
 >
@@ -635,7 +631,7 @@ lock.unlock();
 
 <img src="https://images.zzq8.cn/img/202308231025871.png" alt="image-20230314161335765" style="zoom: 67%;" />
 
-### 1）、双写模式：写数据库后，写缓存
+#### 1）、双写模式：写数据库后，写缓存
 
 问题：脏数据（No.1写完数据库还没写缓存，此时 No.2也写完这两个了。这时No.1再写缓存就覆盖No.2的新数据了）
 
@@ -645,7 +641,7 @@ lock.unlock();
 
 
 
-### 2）、失效模式：写完数据库后，删缓存（推荐）
+#### 2）、失效模式：写完数据库后，删缓存（推荐）
 
 解决：可以 读写锁  但是如果不关心这些数据有点延迟也没关系那就不加锁没事。例如 iphone 11刚发布的商品介绍变了点参数我晚一点看也不影响
 
@@ -666,7 +662,7 @@ lock.unlock();
 我们不应该过度设计，增加系统的复杂性
 遇到实时性、一致性要求高的数据，就应该查数据库，即使慢点。
 
-### 5.1 Canal 了解
+#### 5.1 Canal 了解
 
 最好的解决方法：Canal 原理伪装成mysql的一个从服务器	通过订阅 binlog 拿每一次的更新
 好处：只需要关心数据库就好，不用管缓存（屏蔽了对整个缓存的操作）  缺点又加了个中间件
@@ -678,17 +674,17 @@ canal 还可以做数据异构：jd 首页每个人的个性化推荐
 
 
 
-## 6）[SpringCache](https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#cache)
+### 6）[SpringCache](https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#cache)
 
 > 这是属于 Spring 框架里面的 Integration 里面有个 Caching（具体看官网文档！）
 
-### 6.1 Why：
+#### 6.1 Why：
 
 先读缓存，缓存没有再读数据库 封装查询一大块。每次都那样写缓存太麻烦了。有简单的方式处理这些 Spring Cache可以通过简单的几个注解把缓存功能跑起来，不用编写一大堆的模式代码了。spring从3.1开始定义了Cache、CacheManager接口来统一不同的缓存技术。并支持使用JCache(JSR-107)注解简化我们的开发
 
 
 
-### 6.2 初步理解：
+#### 6.2 初步理解：
 
 CacheManager（Redis） 规则制定者管理不同名字的 Cache   Cache则是管自己的CRUD
 CacheManager(RedisCacheManager)->Cache(RedisCache)->Cache负责缓存的读写
@@ -706,7 +702,7 @@ Cache接口的实现包括RedisCache、EhCacheCache、ConcurrentMapCache等
 
 
 
-### 6.3 [使用步骤：](https://www.cnblogs.com/songjilong/p/12901397.html)
+#### 6.3 [使用步骤：](https://www.cnblogs.com/songjilong/p/12901397.html)
 
 > `@Cacheable` 注解是用于将**方法的返回值**缓存起来
 >
@@ -766,7 +762,7 @@ Cache接口的实现包括RedisCache、EhCacheCache、ConcurrentMapCache等
 
 
 
-#### 补充：题外-redis热部署不生效
+##### 补充：题外-redis热部署不生效
 
 [**Springboot重新加载Bean**](https://blog.51cto.com/u_15072908/3946684) @Bean 在 application 启动的时候加载！所以配置文件改了热部署也没用
 有解决方案但是要多写个接口调用一下：销毁这个Bean再重新注册进来：
@@ -814,7 +810,7 @@ https://blog.51cto.com/u_15072908/3946684
 
 
 
-### ==6.4 配置原理：==
+#### ==6.4 配置原理：==
 
 CacheAutoConfiguration -> RedisCacheConfiguration ->
 自动配置了RedisCacheManager->初始化所有的缓存->每个缓存决定使用什么配置
@@ -900,7 +896,7 @@ public class MyCacheConfig {
 
 
 
-# 四、检索服务
+## 四、检索服务
 
 js 报错 search() 不是一个方法，前面加`javascript:`解决
 
@@ -919,7 +915,7 @@ js 报错 search() 不是一个方法，前面加`javascript:`解决
 
 
 
-## 1）商品搜索
+### 1）商品搜索
 
 重点：
 
@@ -944,7 +940,7 @@ Other：
 
 
 
-# 五、异步&线程池
+## 五、异步&线程池
 
 > CompletableFuture 异步编排、  实现 Callable 接口 + FutureTask 
 >
@@ -958,7 +954,7 @@ Other：
 
 
 
-# 六、认证服务
+## 六、认证服务
 
 > 架构图-认证中心：处理**登录**注册，再放行请求到服务器
 >
@@ -970,9 +966,9 @@ SMS 具体看ali官网给的文档就行，优雅一点放配置文件 @Configur
 
 
 
-## 1.注册流程
+### 1.注册流程
 
-### 1.1 JS 验证码倒计时
+#### 1.1 JS 验证码倒计时
 
 点击获取验证码后，进入倒计时
 
@@ -1019,7 +1015,7 @@ $(function () { //当文档载入完成的时候执行的
 public static final String SMS_CODE_CACHE_PREFIX = "sms:code:";
 ```
 
-#### `缺点：`
+##### `缺点：`
 
 * 1）暴露了短信接口API，会被别人恶意调用 【接口防刷 -> Redis拼个_时间戳校验】
   2）倒计时刷新就没用了 【同上用时间戳校验】  
@@ -1027,7 +1023,7 @@ public static final String SMS_CODE_CACHE_PREFIX = "sms:code:";
 
 
 
-### 1.2 JSR303
+#### 1.2 JSR303
 
 > 值得学习：哪天完全脱离自己写，要有这思路
 
@@ -1061,7 +1057,7 @@ public static final String SMS_CODE_CACHE_PREFIX = "sms:code:";
 
 
 
-### 1.3 MD5
+#### 1.3 MD5
 
 密码存数据库加密分: 可逆 vs 不可逆（√）
 
@@ -1072,7 +1068,7 @@ public static final String SMS_CODE_CACHE_PREFIX = "sms:code:";
 [apache base64](https://www.liaoxuefeng.com/wiki/1016959663602400/1017684507717184) 长度能改变么
 没有办法，base64是编码而已，是对称的，不是像md5那样的非对称的加密算法能够讲任意长度字符加密后长固定长度。
 
-#### MD5使用场景：百度网盘秒传功能
+##### MD5使用场景：百度网盘秒传功能
 
 > Answer：算出MD5值，看别人有没有上传过
 
@@ -1107,7 +1103,7 @@ Md5Crypt.md5Crypt("123456".getBytes(), "$1$1");
 
 
 
-#### 解决：org.springframework.security -> `BCryptPasswordEncoder.class`  把盐交给 Spring 工具类
+##### 解决：org.springframework.security -> `BCryptPasswordEncoder.class`  把盐交给 Spring 工具类
 
 ```java
 /**
@@ -1131,7 +1127,7 @@ public void testBCryptPasswordEncoder(){
 
 
 
-### 1.4 总结
+#### 1.4 总结
 
 1. 校验表单 JSR303  redis 存key-phone,value-code
 2. 截串取 Redis 验证码
@@ -1141,7 +1137,7 @@ public void testBCryptPasswordEncoder(){
 
 
 
-## 2.社交登录
+### 2.社交登录
 
 > 社交登录指的是用QQ微信等方式登录
 
@@ -1149,7 +1145,7 @@ public void testBCryptPasswordEncoder(){
 - 引导跳转到QQ授权页
 - 用户主动点击授权，跳回之前网页
 
-### 2.1 OAuth2.0
+#### 2.1 OAuth2.0
 
 上面社交登录的流程就是OAuth协议
 
@@ -1176,9 +1172,9 @@ OAuth（开放授权）是一个开放标准，允许用户授权第三方移动
 
 
 
-### [2.2 GitHub](https://docs.github.com/zh/developers/apps/building-oauth-apps/authorizing-oauth-apps)
+#### [2.2 GitHub](https://docs.github.com/zh/developers/apps/building-oauth-apps/authorizing-oauth-apps)
 
-#### 1）大致流程
+##### 1）大致流程
 
 授权获取重定向到自己url 会拼个code  【获取code】
 
@@ -1188,7 +1184,7 @@ accessToken访问GitHub开放的API openAPI获取用户信息
 
 
 
-#### 2）HttpUtils 
+##### 2）HttpUtils 
 
 是搞短信验证码ali的文档给的java示例代码教引入的，这里可以拿来用
 
@@ -1212,14 +1208,14 @@ String name = jsonObject.getString("name");
 
 
 
-## 3.分布式session
+### 3.分布式session
 
 > 原理：session存储在服务端 tomcat 源码其实就是个 map，jsessionId存在客户端，每次通过`jsessionid`取出保存的数据
 >
 > org.apache.tomcat.embed:tomcat-embed-core:9.0.24 (tomcat-embed-core-9.0.24.jar)
 > javax.servlet.http.HttpSession#setAttribute
 
-### 3.1 Session 两个问题：
+#### 3.1 Session 两个问题：
 
 问题 1：**Session 不能跨不同域名共享**
 场景：在 auth 模块存的session，只在它这个模块的登录页面有 session 而 product对应的主页模块没有 session
@@ -1233,11 +1229,11 @@ String name = jsonObject.getString("name");
 
 
 
-### 3.2 分布式session解决方案
+#### 3.2 分布式session解决方案
 
 `不用的两种方案：`
 
-##### 1) session复制
+###### 1) session复制
 
 用户登录后得到session后，服务把session也复制到别的机器上，显然这种处理很不好
 
@@ -1249,7 +1245,7 @@ String name = jsonObject.getString("name");
 
 `可用的两种方案：`
 
-##### 3) hash一致性
+###### 3) hash一致性
 
 > 记得看了个文章还是视频：问 hash 有什么应用场景，这里就是。负载均衡
 
@@ -1257,7 +1253,7 @@ String name = jsonObject.getString("name");
 
 ![img](https://images.zzq8.cn/img/202301051653500.png)
 
-##### 4) redis统一存储
+###### 4) redis统一存储
 
 最终的选择方案，把session放到redis中
 
@@ -1265,11 +1261,11 @@ String name = jsonObject.getString("name");
 
 
 
-### 3.3 SpringSession整合redis
+#### 3.3 SpringSession整合redis
 
 > 针对上面的 4） Spring 早就想到了解决方案：SpringSession   和 SpringCache 样的去官网摸索
 
-#### 3.3.1 简单配置
+##### 3.3.1 简单配置
 
 怎么用：[spring 官网！！！](https://docs.spring.io/spring-session/reference/samples.html) 必须学会看[官方文档](https://docs.spring.io/spring-session/reference/http-session.html#httpsession)解决问题！！！官网解决不了的再 Google
 
@@ -1292,7 +1288,7 @@ String name = jsonObject.getString("name");
 
 
 
-#### 3.3.2 Bean 配置
+##### 3.3.2 Bean 配置
 
 解决上述两个问题：看官网！ctrl+f 搜 keyword: customize
 两个@Bean解决  GulimallSessionConfig.java
@@ -1303,9 +1299,9 @@ String name = jsonObject.getString("name");
 
 
 
-### 3.4 我遇到的坑
+#### 3.4 我遇到的坑
 
-#### 1）redis、session的yaml配置每个model都要
+##### 1）redis、session的yaml配置每个model都要
 
 解决：放Nacos，配置 `shared-dataids: common.yaml`
 
@@ -1313,13 +1309,13 @@ String name = jsonObject.getString("name");
 
 
 
-#### 2）GulimallSessionConfig 这个配置类每个model都要
+##### 2）GulimallSessionConfig 这个配置类每个model都要
 
 解决：放common模块 `@ComponentScan({"com.zzq"})` or `@Import`
 
 
 
-### 3.5 [SpringSession核心原理 - 装饰者模式](https://blog.csdn.net/m0_46539364/article/details/110533408)
+#### 3.5 [SpringSession核心原理 - 装饰者模式](https://blog.csdn.net/m0_46539364/article/details/110533408)
 
 > 这里我暂时掠过
 
@@ -1346,7 +1342,7 @@ GPT：
 
 
 
-## 4.单点登录-SSO
+### 4.单点登录-SSO
 
 > Single Sign-On，简称 SSO
 >
@@ -1413,9 +1409,9 @@ web-sample2：项目1 、8082 、client2.com
 
 
 
-# [七、购物车](09、商城业务.pdf)
+## [七、购物车](09、商城业务.pdf)
 
-## 1.需求描述
+### 1.需求描述
 
 > 在线购物车 vs 离线购物车
 
@@ -1440,7 +1436,7 @@ web-sample2：项目1 、8082 、client2.com
 
 
 
-## 2.Redis 存储设计 & VO：
+### 2.Redis 存储设计 & VO：
 
 * 每个人都有购物车
 * 购物车排列有顺序，例如选择了第三个商品进行增删改查
@@ -1461,7 +1457,7 @@ redis有5种不同数据结构，这里选择哪一种比较合适呢？`Map<Str
 
 
 
-## 3.==ThreadLocal用户身份鉴别==
+### 3.==ThreadLocal用户身份鉴别==
 
 > 通常情况下,我们创建的变量是可以被任何一个线程访问并修改的.如果想实现每一个线程都有自己的专属本地变量该如何解决呢?
 
@@ -1612,7 +1608,7 @@ public class Thread implements Runnable {
 
 ​	
 
-## [3.1.上面补充：](https://mp.weixin.qq.com/s/nPCQadj8-7WBu7GVJRv4JQ)
+### [3.1.上面补充：](https://mp.weixin.qq.com/s/nPCQadj8-7WBu7GVJRv4JQ)
 
 > 具体结合 title link 一起看，还有下面自己的文中 link
 >
@@ -1765,7 +1761,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 
 
-# 八、消息队列 
+## 八、消息队列 
 
 
 
@@ -1777,9 +1773,9 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 
 
-# 九、订单服务
+## 九、订单服务
 
-## 1.模块介绍
+### 1.模块介绍
 
 > 比较复杂且重要：需要多模块查询检索  复杂的流程调用，具体看 PDF  结算的Service是我看过的最繁琐的
 
@@ -1795,11 +1791,11 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 
 
-## 2.Feign 两个问题
+### 2.Feign 两个问题
 
 > 看两张图特别清楚，涉及到 Feign 的底层逻辑要看个大概
 
-### 1）Feign远程调用丢失请求头问题
+#### 1）Feign远程调用丢失请求头问题
 
 > 场景：Feign 源码会自创 Request 导致丢失老Request Cookie，而自创的时候用到拦截器增强
 > 解决：即可DIY个拦截器把原Requset Cookie放新Request   解决重点：Spring类 `RequestContextHolder`
@@ -1808,7 +1804,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 
 
-### [2）Feign异步情况丢失上下文问题](#3.1.上面补充：)
+#### [2）Feign异步情况丢失上下文问题](#3.1.上面补充：)
 
 > 场景：`RequestContextHolder` 也是通过 ThreadLocal 拿数据，就会每个线程都不一样（异步编排会丢失 ThreadLocal）
 >
@@ -1829,22 +1825,22 @@ PS：Feign 源码暂时掠过了，其实想看一下自己new request、set过�
 
 
 
-## [==3.接口幂等性==](02、接口幂等性.pdf)
+### [==3.接口幂等性==](02、接口幂等性.pdf)
 
 > 面试这里是高频考点，认真听！！！！！！！
 >
 > ==说白了幂等性设计就是：通过 redis 或者数据库唯一键==
 
-### 1）前言
+#### 1）前言
 
-#### 哪些情况需要防止：
+##### 哪些情况需要防止：
 
 * 用户多次点击按钮
 * 用户页面回退再次提交
 * 微服务互相调用，由于网络问题，导致请求失败。feign触发重试机制
 * 其他业务情况 例如update tab1 set col1=col1+1 where col2 = 2，每次执行结果不一样
 
-#### 天然幂等性：
+##### 天然幂等性：
 
 * 查询接口
 * 更新接口update tab1 set col1=1 where col2=2
@@ -1853,9 +1849,9 @@ PS：Feign 源码暂时掠过了，其实想看一下自己new request、set过�
 
 
 
-### 2）解决方案
+#### 2）解决方案
 
-#### 2.1 token令牌机制
+##### 2.1 token令牌机制
 
 服务器存储了一个令牌，页面请求时要带上令牌，服务器接收请求后会匹配令牌，匹配成功则删除令牌（再次提交则匹配失败，服务器已删除令牌。但是F5刷新的话就不一样了，会有新的token产生）
 
@@ -1872,9 +1868,9 @@ TODO：这不是可以刷新重复提交吗  :   理解刷新会覆盖，然后�
 
 
 
-#### 2.2 各种锁机制
+##### 2.2 各种锁机制
 
-##### 2.2.1.数据库悲观锁
+###### 2.2.1.数据库悲观锁
 
 > **随着互联网三高架构（高并发、高性能、高可用）的提出，悲观锁已经越来越少的被使用到生产环境中了，尤其是并发量比较大的业务场景。**
 
@@ -1897,20 +1893,20 @@ commit;
 悲观锁使用时一般伴随事务一起使用，数据锁定时间可能会很长，需要根据实际情况选用。
 id字段一定是主键或者唯一索引，不然可能造成锁表的结果，处理起来会非常麻烦。
 
-##### 2.2.2.数据库乐观锁【带上版本号】
+###### 2.2.2.数据库乐观锁【带上版本号】
 
 这种方法适合在更新的场景中 `update t_goods set count = count-1,version =version + 1 where good_id=2 and version = 1`
 	根据version版本，也就是在操作库存前先获取当前商品的version版本号，然后操作的时候带上此version号。
 	第一次操作库存时，得到version为1，调用库存服务version变成了2﹔但返回给订单服务出现了问题，订单服务又一次发起调用库存服务，当订单服务传的version还是1，再执行上面的sal语句时，就不会执行﹔因为version已经变为2了，where条件就不成立。这样就保证了不管调用几次，只会真正的处理一次。
     乐观锁主要使用于处理读多写少的问题
 
-##### 2.2.3.分布式锁：(TODO 不太理解   XD:20240320再学Redisson理解了)
+###### 2.2.3.分布式锁：(TODO 不太理解   XD:20240320再学Redisson理解了)
 
 ​	例如集群下多个定时器处理相同的数据，可以加分布式锁，锁定此数据，处理完成后释放锁。获取到锁的必须先判断这个数据是否被处理过（double check）
 
 
 
-#### 2.3 各种唯一约束
+##### 2.3 各种唯一约束
 
 1.数据库唯一约束 order_sn字段【数据库层面】
 
@@ -1919,14 +1915,14 @@ id字段一定是主键或者唯一索引，不然可能造成锁表的结果，
 
 
 
-#### 2.4 防重表
+##### 2.4 防重表
 
 数据库创建防重表，插入成功才可以操作【不采用，DB慢】
 使用订单号orderNo作为去重表唯一索引，然后将数据插入去重表+业务操作 放在同一事物中，如果插入失败事物回滚导致业务操作也同时回滚，（如果业务操作失败也会导致插入去重表回滚）保证了数据一致性
 
 
 
-#### 2.5 全局唯一id
+##### 2.5 全局唯一id
 
 > 全局请求唯一id：Fegin重复请求会带上老的id去（感觉是Token的感觉），弹幕中很多人公司是这么做的
 
@@ -1944,9 +1940,9 @@ id字段一定是主键或者唯一索引，不然可能造成锁表的结果，
 
 
 
-## [4.分布式事务](./03、本地事务&分布式事务.pdf)
+### [4.分布式事务](./03、本地事务&分布式事务.pdf)
 
-### 4.1.本地事务问题
+#### 4.1.本地事务问题
 
 > ==@Transactional 是本地事务，Fegin 调用的是远程服务 即需要分布式事务==
 >
@@ -1966,11 +1962,11 @@ ps：都会导致 订单回滚但是下面Feign调用的不会回滚
 
 
 
-### 4.2.事务的两大属性-本地事务隔离级别&传播行为
+#### 4.2.事务的两大属性-本地事务隔离级别&传播行为
 
 针对 @Transactional 就是 propagation、isolation
 
-#### 4.2.1.传播行为
+##### 4.2.1.传播行为
 
 > 事务的传播行为:一个方法运行在了一个开启了事务的方法中时,当前方法是使用原来的事务还是开启一个新的事务
 >
@@ -2013,7 +2009,7 @@ purchase{
 
 
 
-##### [4.2.1.1.@Transactional](https://blog.csdn.net/shang_0122/article/details/120627232)
+###### [4.2.1.1.@Transactional](https://blog.csdn.net/shang_0122/article/details/120627232)
 
 My：方便本类方法互调！好像是用AOP的aspectJ实现同一个服务的不同方法用不同事务，不然默认都是用同一个事务
 
@@ -2106,13 +2102,13 @@ Why：在同一个类里面，编写两个方法，内部调用的时候，会�
 
 
 
-#### 4.2.2.隔离级别
+##### 4.2.2.隔离级别
 
-##### 联想（Title 的另外一大特性 **事务属性** 具体看自己笔记）：[MySQL 事务隔离级别回顾](..\sql\mysql实战45讲#隔离性与隔离级别)
+###### 联想（Title 的另外一大特性 **事务属性** 具体看自己笔记）：[MySQL 事务隔离级别回顾](..\sql\mysql实战45讲#隔离性与隔离级别)
 
 
 
-#### 4.2.3.补充
+##### 4.2.3.补充
 
 > @Transactional失效大概列举几种情况，仅供参考；
 
@@ -2160,7 +2156,7 @@ JDK 动态代理只能代理实现了接口的目标对象，并且只能代理�
 
 
 
-### [4.3.分布式事务几种方案](./03、本地事务&分布式事务.pdf)
+#### [4.3.分布式事务几种方案](./03、本地事务&分布式事务.pdf)
 
 > 后面补充：（前言）：[JavaGuide-《Java面试指北》-服务治理：分布式事务解决方案有哪些？](https://www.yuque.com/snailclimb/mf2z3k/ng9vmg)这一篇讲的真好，真细致！！！🤺🤺🤺
 >
@@ -2270,13 +2266,13 @@ JDK 动态代理只能代理实现了接口的目标对象，并且只能代理�
 
 
 
-## 5.RabbitMQ延时队列(实现定时任务)
+### 5.RabbitMQ延时队列(实现定时任务)
 
 [MQ笔记](../mq/rabbitmq)
 
 [该业务的MQ架构图](消息队列流程.jpg)
 
-## 6.解锁库存
+### 6.解锁库存
 
 看着有些繁琐，直接 CV ，没有去捋了
 
@@ -2284,11 +2280,11 @@ JDK 动态代理只能代理实现了接口的目标对象，并且只能代理�
 
 
 
-## 7.支付
+### 7.支付
 
 > 以后有空可以试着做做微信的！项目代码中他做了！！！可以参考
 
-### 7.1.前言
+#### 7.1.前言
 
 > 用的是支付宝的沙盒，测试时候这个通了正式环境改个参数就行
 
@@ -2300,13 +2296,13 @@ JDK 动态代理只能代理实现了接口的目标对象，并且只能代理�
 
 
 
-### 7.2.使用
+#### 7.2.使用
 
 具体想体验深一点可以下载ali的model有几个jsp页面和一个配置类，导入Eclipse进行测试。这个model有很多东西可以抽出来用。
 
 雷神自己根据 ali 的 model 封装了一个`AlipayTemplate` 使用就 `alipayTemplate.pay(payVo)` 完成！其它全是配参数
 
-#### 7.2.1.异步回调
+##### 7.2.1.异步回调
 
 我这里由于没有用内网穿透暂且搁置
 
@@ -2334,7 +2330,7 @@ mvc配时间格式
 
 
 
-#### 7.2.2.收单
+##### 7.2.2.收单
 
 pay时候可以根据官网给一个时间参数
 
@@ -2346,17 +2342,17 @@ pay时候可以根据官网给一个时间参数
 
 也可 搞个定时任务与支付宝对账    这些在ali api中都有示例
 
-## 8.内网穿透
+### 8.内网穿透
 
 > 支付宝服务器异步回调 验签、改订单状态 时候。肯定需要公网ip才能访问到你
 
-### 8.1.原理
+#### 8.1.原理
 
 说白了就是用内网穿透服务商备案好了的提供给你用   主域名备案好了下面的二级三级就不需要了
 
 <img src="https://images.zzq8.cn/img/202302021058877.png" alt="image-20230202105845657" style="zoom:67%;" />
 
-### 8.2.适用场景
+#### 8.2.适用场景
 
 1、开发测试（微信、支付宝） 
 
@@ -2366,7 +2362,7 @@ pay时候可以根据官网给一个时间参数
 
 
 
-### 8.3.服务商
+#### 8.3.服务商
 
 utools也可以内网穿透，我之前用过
 
@@ -2380,7 +2376,7 @@ utools也可以内网穿透，我之前用过
 
 
 
-### 8.4.我的问题
+#### 8.4.我的问题
 
 注意支付成功后的异步回调需要内网穿透和Nginx联调
 
@@ -2402,7 +2398,7 @@ Remote Address: 192.168.0.1:7890
 
 
 
-# 十、秒杀
+## 十、秒杀
 
 > ==打算一口气看完视频，后期自己根据网友笔记再补代码==  跳过
 >
@@ -2410,7 +2406,7 @@ Remote Address: 192.168.0.1:7890
 
 秒杀具有瞬间高并发的特点，针对这一特点，必须要做限流 + 异步+ 缓存（页面静态化）+ 独立部署。
 
-## 1. 秒杀（高并发）系统关注的问题
+### 1. 秒杀（高并发）系统关注的问题
 
 前端限流：点一下要1s后才能再点..
 
@@ -2422,12 +2418,12 @@ Remote Address: 192.168.0.1:7890
 
 
 
-## 2.Quartz
+### 2.Quartz
 
 > jdk Timer.class 可以做一点定时任务，包括Spring也有自己的定时任务注解。可能实际开发更多的是用框架 Quartz
 > 视频用的就是 Spring 的定时任务
 
-### 2.1.cron 表达式	
+#### 2.1.cron 表达式	
 
 可以使用在线的Cron表达式生成器
 
@@ -2439,7 +2435,7 @@ Remote Address: 192.168.0.1:7890
 
 
 
-### 2.2.Spring 定时任务Demo
+#### 2.2.Spring 定时任务Demo
 
 ```java
 /**

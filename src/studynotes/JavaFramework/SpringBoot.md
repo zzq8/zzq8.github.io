@@ -1,4 +1,4 @@
-# SpringBoot2
+## SpringBoot2
 
 > 三刷总算想起做点笔记，这点很重要   [语雀官方笔记](https://www.yuque.com/atguigu/springboot)   重点看源码讲解的视频、Web开发这一章
 >
@@ -27,13 +27,13 @@ Spring5 除现在用的原生Servlet外多了一套解决方案：响应式开�
 
 
 
-# ------基础入门------
+## ------基础入门------
 
-# 一、Spring与SpringBoot
+## 一、Spring与SpringBoot
 
-## 1.Spring能做什么
+### 1.Spring能做什么
 
-### 1.1.Spring的能力
+#### 1.1.Spring的能力
 
 [Spring 生态很庞大](https://spring.io/projects/spring-boot)：细数自己用过的。微观是Spring框架 宏观是一套解决方案生态圈！
 
@@ -44,13 +44,13 @@ Spring5 除现在用的原生Servlet外多了一套解决方案：响应式开�
 * Spring Session (Data Redis)
 * Spring AMQP (RabbitMQ)
 
-### 1.2.Spring5重大升级
+#### 1.2.Spring5重大升级
 
-#### 1.2.1.响应式编程
+##### 1.2.1.响应式编程
 
 <img src="https://images.zzq8.cn/img/202302111528869.png" alt="image-20230211152821781" style="zoom: 67%;" />
 
-#### 1.2.2.内部源码设计
+##### 1.2.2.内部源码设计
 
 由于Spring5重大升级 内部源码设计基于Java8的一些新特性，如：接口默认实现。重新设计源码架构！
 
@@ -60,12 +60,12 @@ Spring5基于jdk8，jdk8特性多了接口的默认实现。带来的变化：
 
 
 
-## 2.为什么用SpringBoot
+### 2.为什么用SpringBoot
 
 > 举例如要组装成一台电脑集合上面的技术 **配置地狱**，而这就是SpringBoot的存在意义它是一个高层框架底层是Spring为了整合Spring整个技术栈
 > 专心于业务逻辑（框架的框架），免于那么多繁琐的配置。不用自己手动组装电脑了，直接买个品牌机！无需掌握各种组装技术！！！
 
-### [2.1.SpringBoot优点](https://spring.io/projects/spring-boot)
+#### [2.1.SpringBoot优点](https://spring.io/projects/spring-boot)
 
 > 以下摘自官网，Title Link 可入 ~ 可以细看心里解读解读
 >
@@ -104,7 +104,7 @@ SpringBoot是简化Spring技术栈的快速开发脚手架
 
 
 
-### 2.2.时代背景
+#### 2.2.时代背景
 
 陌生的两个东西：[听视频老师讲讲](https://www.bilibili.com/video/BV19K4y1L7MT?p=3&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)
 
@@ -115,13 +115,13 @@ SpringBoot是简化Spring技术栈的快速开发脚手架
 
 
 
-# 二、自动配置
+## 二、自动配置
 
 > 两大优秀特性：依赖管理、自动配置
 
-## 1.依赖管理
+### 1.依赖管理
 
-### 1.1.版本仲裁
+#### 1.1.版本仲裁
 
 ```xml
 1）依赖管理    
@@ -153,7 +153,7 @@ SpringBoot是简化Spring技术栈的快速开发脚手架
 
 
 
-### 1.2.starter场景启动器
+#### 1.2.starter场景启动器
 
 > 重点第五点，这个starter又会带出 `spring-boot-autoconfigure` 具体看自动配置
 
@@ -176,7 +176,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot
 
 
 
-## ==2.自动配置（重要）==
+### ==2.自动配置（重要）==
 
 ```java
 @SpringBootApplication
@@ -192,9 +192,9 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot
 
 
 
-### 2.1.效果体现
+#### 2.1.效果体现
 
-#### 2.1.1.What（效果）
+##### 2.1.1.What（效果）
 
 自动配置好了一切，包括SpringMVC常用组件（功能）   
 搜一下以前的帖子，Spring整合SpringMVC的帖子发现xml会配一大堆东西！！！这些组件springBoot启动的时候会把组件都装配到容器中，不用配。
@@ -217,7 +217,7 @@ Arrays.stream(names).forEach(System.out::println);
 
 
 
-#### ==2.1.2.Why（怎么做到的）==
+##### ==2.1.2.Why（怎么做到的）==
 
 > 这个jar里有几乎SpringBoot所需要全场景，有很多爆红的类其实导入相应的dependency就不会爆红了
 >
@@ -227,7 +227,7 @@ For example：以MySQL 配置数据源为例：DataSourceProperties
 
 
 
-### 2.2.@AutoConfigurationPackage🌟
+#### 2.2.@AutoConfigurationPackage🌟
 
 ChatGPT：转念一想，这两个注解都如字面意思   这样就很好区分异同
 
@@ -244,7 +244,7 @@ ChatGPT：转念一想，这两个注解都如字面意思   这样就很好区�
 
 
 
-### 2.3.@Import(AutoConfigurationImportSelector.class)🌟
+#### 2.3.@Import(AutoConfigurationImportSelector.class)🌟
 
 1、利用getAutoConfigurationEntry(annotationMetadata);给容器中批量导入一些组件
 2、调用List\<String> configurations = getCandidateConfigurations(annotationMetadata, attributes)获取到所有需要导入到容器中的配置类
@@ -297,11 +297,11 @@ ChatGPT：转念一想，这两个注解都如字面意思   这样就很好区�
 
 
 
-## 3.自动配置-实践
+### 3.自动配置-实践
 
 > 想不起配置文件怎么配 SQL 于是有了下文
 
-### 以MySQL 配置数据源为例：DataSourceProperties 
+#### 以MySQL 配置数据源为例：DataSourceProperties 
 
 ```
 DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.properties
@@ -342,9 +342,9 @@ DataSourceAutoConfiguration -> 组件 -> DataSourceProperties -> application.pro
 
 
 
-# Ⅰ、Spring 学习
+## Ⅰ、Spring 学习
 
-## 1.Spring提供的IOC容器实现的两种方式（两个接口）
+### 1.Spring提供的IOC容器实现的两种方式（两个接口）
 
 > `ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");`
 
@@ -371,7 +371,7 @@ public class SpringContextUtils implements ApplicationContextAware {
 
 
 
-## 2.IOC操作Bean管理
+### 2.IOC操作Bean管理
 
  a）Bean管理就是两个操作：（1）Spring创建对象；（2）Spring注入属性
 
@@ -414,7 +414,7 @@ public class Book {
 
 
 
-##### 补充：构造参数注入 ==vs==  setter注入
+###### 补充：构造参数注入 ==vs==  setter注入
 
 > 以前一直不懂 **构造参数注入**
 
@@ -455,7 +455,7 @@ Q&A 因为有三种注入方式：
 
 
 
-## 3.Bean生命周期
+### 3.Bean生命周期
 
 > **bean 的后置处理器，bean 生命周期有七步** （正常生命周期为五步，而配置后置处理器后为七步）
 >
@@ -496,7 +496,7 @@ Q&A 因为有三种注入方式：
 
 
 
-## 4.AOP
+### 4.AOP
 
 > RuoYi、upupor  自定义注解全是和 AOP 相关
 >
@@ -628,7 +628,7 @@ Q&A 因为有三种注入方式：
 >
 > Spring 框架一般都是基于 AspectJ 实现 AOP 操作，AspectJ 不是 Spring 组成部分，独立 AOP 框架，一般把 AspectJ 和 Spirng 框架一起使 用，进行 AOP 操作
 
-#### 补充：Spring AOP 和 AspectJ AOP 有什么区别？
+##### 补充：Spring AOP 和 AspectJ AOP 有什么区别？
 
 **Spring AOP 属于运行时增强，而 AspectJ 是编译时增强。** Spring AOP 基于代理(Proxying)，而 AspectJ 基于字节码操作(Bytecode Manipulation)。
 
@@ -644,7 +644,7 @@ Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系�
 
 
 
-##### RuoYi 补充 AOP 实操
+###### RuoYi 补充 AOP 实操
 
 1.`@Before` 使用场景：*限流处理*
 
@@ -670,7 +670,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
-##### Upupor 补充 AOP 实操
+###### Upupor 补充 AOP 实操
 
 1. `@Around` 使用场景：博客下面统计记录 **响应时间** （spring的 StopWatch 类 + @Around 实现！！！）
 
@@ -685,7 +685,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
-## 5.Spring 事务
+### 5.Spring 事务
 
 > 问：项目中什么地方用到了 AOP    在 Spring 中进行事务管理中就用到了！！！
 
@@ -693,7 +693,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
-## 6.设计模式
+### 6.设计模式
 
 > 至少前5种答出来
 
@@ -707,7 +707,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 6. 适配器模式 :Spring AOP 的增强或通知 (Advice) 使用到了适配器模式、Spring MVC 中也是用到了适配器模式适配 Controller。
 7. 策略模式：Spring中有一个Resource接口，它的不同实现类，会根据不同的策略 去访问资源。
 
-## 7.哪些模块组成
+### 7.哪些模块组成
 
 > https://juejin.cn/post/6997930907227127838
 
@@ -735,7 +735,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 ***
 
-# ==------分割线------==
+## ==------分割线------==
 
 
 
@@ -745,7 +745,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
-# 1）常用注解
+## 1）常用注解
 
 > 搞个时间重新排个版！知识待完善
 
@@ -998,9 +998,9 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
-# 2）技术点
+## 2）技术点
 
-## 1）一些小点
+### 1）一些小点
 
 * 我 download 了upupor的开源项目发现项目里的数据库敏感信息都是 ${} 方式给的！！！
 
@@ -1072,7 +1072,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 * 
 
-## 3）Test 测试类：
+### 3）Test 测试类：
 
 * #### ==[org.junit.jupiter.api.Test和org.junit.Test区别](https://blog.csdn.net/qq_36050981/article/details/119565383)==
 
@@ -1107,7 +1107,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
     
 
 
-#### [补充：@SpringBootTest](https://blog.csdn.net/wwwwwww31311/article/details/115461920)
+##### [补充：@SpringBootTest](https://blog.csdn.net/wwwwwww31311/article/details/115461920)
 
 我们新建 SpringBoot 程序发现 src 包和 test 包路径一开始初始化就是一样的！
 
@@ -1122,7 +1122,7 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
-## ==[4）有参数的@Bean，@Configuration注解](https://codeantenna.com/a/6mscWp9KMx)==
+### ==[4）有参数的@Bean，@Configuration注解](https://codeantenna.com/a/6mscWp9KMx)==
 
 > ：）以前竟然不知道
 
@@ -1138,13 +1138,13 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 
 
-## 5）数据校验
+### 5）数据校验
 
 [分布式高级](../gulimall/分布式高级#注册流程)
 
 
 
-## 6）拦截器
+### 6）拦截器
 
 实现步骤:
 
@@ -1171,9 +1171,9 @@ public class GulimallWebConfig implements WebMvcConfigurer
 
 
 
-## 7）Controller方法常用参数
+### 7）Controller方法常用参数
 
-### 7.1.Model / RedirectAttributes
+#### 7.1.Model / RedirectAttributes
 
 可以往 Thymeleaf 携带参数，模拟的 HttpSession
 
@@ -1191,7 +1191,7 @@ Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（
 
 
 
-#### 8）idea设置程序根目录
+##### 8）idea设置程序根目录
 
 在 IntelliJ IDEA 中，你可以设置程序的根目录（Working Directory）来影响程序运行时的默认路径。这个设置决定了程序在启动时的默认工作目录。
 
@@ -1211,7 +1211,7 @@ Model 数据是在请求域中的！  vs   RedirectAttributes 重定向视图（
 
 
 
-## 8) 实现ApplicationContextAware接口的作用
+### 8) 实现ApplicationContextAware接口的作用
 
 实现 `ApplicationContextAware` 接口的作用是允许一个类获取对 Spring 应用程序上下文（`ApplicationContext`）的访问权限。通过实现该接口，类可以获得对应用程序上下文的引用，从而能够进行更高级别的操作，例如获取和管理 Spring Bean、发布应用程序事件等。
 
@@ -1245,7 +1245,7 @@ public class MyBean implements ApplicationContextAware {
 
 
 
-## 9）Spring-静态资源启用版本控制
+### 9）Spring-静态资源启用版本控制
 
 > upupor blog          Spring版本控制yaml+MinIO+Thymeleaf
 
@@ -1299,7 +1299,7 @@ ps: MD5（Message Digest Algorithm 5）是一种哈希函数，用于将任意�
 
 **注** 实现该功能的是`ResourceUrlEncodingFilter`，它在模板运行期会重写资源链接，Thymeleaf，Velocity和FreeMarker会自动配置该filter，JSP需要手动配置。其他模板引擎还没自动支持，不过你可以使用[ResourceUrlProvider](http://docs.spring.io/spring/docs/4.3.3.RELEASE/javadoc-api/org/springframework/web/servlet/resource/ResourceUrlProvider.html)自定义模块宏或帮助类。
 
-### 9.1.MinIO处理
+#### 9.1.MinIO处理
 
 upupor博主处理方式为 py 改名用CLI上传文件
 
@@ -1333,10 +1333,10 @@ def rename_files_with_md5(folder_path):
                 new_file_path = os.path.join(root, new_filename)
                 os.rename(file_path, new_file_path)
 
-# 获取当前文件夹路径
+## 获取当前文件夹路径
 current_folder = os.getcwd()
 
-# 调用函数递归处理文件夹中的文件
+## 调用函数递归处理文件夹中的文件
 rename_files_with_md5(current_folder)
 ```
 
@@ -1344,9 +1344,9 @@ rename_files_with_md5(current_folder)
 
 
 
-## 10. [SpringBoot 配置加载优先级详解](https://blog.csdn.net/lazycheerup/article/details/122257003)
+### 10. [SpringBoot 配置加载优先级详解](https://blog.csdn.net/lazycheerup/article/details/122257003)
 
-### 1. 加载位置与顺序
+#### 1. 加载位置与顺序
 
 
 
@@ -1360,7 +1360,7 @@ classpath:/
 - file: 指当前项目根目录
 - classpath: 指当前项目的resources目录
 
-### 2. Q&A
+#### 2. Q&A
 
 Q: springboot项目同时有application.properties和application-default.properties配置文件，启动应用两个都会生效吗
 
@@ -1409,7 +1409,7 @@ ps:
 
 
 
-# 3）Spring 循环依赖
+## 3）Spring 循环依赖
 
 > PS：其实正确答案是开发人员做好设计，别让Bean循环依赖，但是没办法，面 试官不想听这个。
 >
@@ -1445,7 +1445,7 @@ ps:
 
 
 
-# 4)事件驱动-@EventListener
+## 4)事件驱动-@EventListener
 
 笔记：https://www.cnblogs.com/dafengdeai/articles/17073114.html
 
@@ -1515,7 +1515,7 @@ XD：
 
 
 
-# 5）SpringMVC的执行流程
+## 5）SpringMVC的执行流程
 
 1. 用户发起请求，请求先被 Servlet 拦截转发给 Spring MVC 框架
 2. Spring MVC 里面的 DispatcherSerlvet 核心控制器，会接收到请求并转发给HandlerMapping
@@ -1528,19 +1528,19 @@ XD：
 
 
 
-# 6）CORS 跨域
+## 6）CORS 跨域
 
 > 1995年，同源政策由 Netscape 公司引入浏览器。目前，所有浏览器都实行这个政策
 >
 > **其实，准确的来说，跨域机制是阻止了数据的跨域获取，不是阻止请求发送。**
 
-### 目的：解决springboot跨域请求的问题
+#### 目的：解决springboot跨域请求的问题
 
-#### 第一种 （CorsConfig ） 
+##### 第一种 （CorsConfig ） 
 
 配置 @Bean CorsFilter.class 实现全局跨域,自定义可以访问的地址
 
-#### 第二种：注解方式
+##### 第二种：注解方式
 
 @CrossOrigin
 
@@ -1548,7 +1548,7 @@ XD：
 
 
 
-# OO）碰到过的问题
+## OO）碰到过的问题
 
 
 
@@ -1661,7 +1661,7 @@ spring:
 
 
 
-# [玩转 Spring 全家桶](https://time.geekbang.org/course/intro/100023501)
+## [玩转 Spring 全家桶](https://time.geekbang.org/course/intro/100023501)
 
 > 进 title link 看课程目录、课程介绍
 
@@ -1703,7 +1703,7 @@ java -jar your-project.jar --param1=value1 --param2=value2
 
 以下几种方式都可以被@Value读取到:
 
-#### 1、VM options
+##### 1、VM options
 
 `java -jar -Dserver.port=8888 -Xms1024m demo.jar`
 这种方式增加的参数是被设置到应用的系统属性中，可以使用System.getProperty(“server.port”)获取（可以在idea的idea VM options中配置，以空格分隔） 
@@ -1711,7 +1711,7 @@ java -jar your-project.jar --param1=value1 --param2=value2
 **VM options其实就是我们在程序中需要的运行时环境变量，它需要以-D或-X或-XX开头，每个参数使用空格分隔** 使用最多的就是-Dkey=value设定系统属性值，比如-Dspring.profiles.active=dev3
 -D（defintion）表示自定义参数
 
-#### 2、Program arguments
+##### 2、Program arguments
 
 `java -jar demo.jar --server.port=8888`
 这种方式增加的参数是属于命令行参数，即会从springboot启动时的main方法的String[] args中作为参数传入（可以在idea的program arguments中配置，**以空格分隔**）
@@ -1720,14 +1720,14 @@ java -jar your-project.jar --param1=value1 --param2=value2
 
 等价于-Dspring.profiles.active=dev3如果同时存在，以Program arguments配置优先
 
-#### 3、Environment variables
+##### 3、Environment variables
 
 从操作系统的环境变量中读取
 这种方式的参数即属于操作系统方面的，比如安装jdk时设置的环境变量，定义JAVA_HOME，也可以通过System.getenv(“JAVA_HOME”)获取，（可以在idea的VM Environment variables中配置，以;分隔）
 
 Environment variables没有前缀，优先级低于VM options，即如果VM options有一个变量和Environment variable中的变量的key相同，则以VM options中为准。
 
-#### 4、通过项目中配置文件bootstrap/application文件载入
+##### 4、通过项目中配置文件bootstrap/application文件载入
 
 这种方式是在项目中配置的方式，比较常见
 
@@ -1745,7 +1745,7 @@ Environment variables没有前缀，优先级低于VM options，即如果VM opti
 
 
 
-## 配置多数据源
+### 配置多数据源
 
 > 图片很清楚了
 

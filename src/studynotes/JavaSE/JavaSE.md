@@ -1521,12 +1521,6 @@ RuoYi 中注解一般头上加了 `@Retention(RetentionPolicy.RUNTIME)` 方便�
           不过一般序列化传值很少传Person这种，一般都是json(字符串格式，默认是可序列化的)
         序列化保存的是对象的状态，静态变量属于类的状态，因此，序列化并不保存静态变量。
 ```
-![1](https://note.youdao.com/yws/api/personal/file/WEBae0be3f42c99eb0aacbd856475b5bda7?method=getImage&version=731&cstk=oV7Al1ZS)
-
-
-
-![编码问题看尚硅谷p602](https://note.youdao.com/yws/api/personal/file/WEB8e07e6221d4a717b4b03ef300f4d2ef6?method=getImage&version=740&cstk=d_8ZVZdO)
-
 
 
 

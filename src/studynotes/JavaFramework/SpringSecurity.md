@@ -1,4 +1,4 @@
-# [SpringSecurity](https://www.bilibili.com/video/BV1mm4y1X7Hc/?spm_id_from=333.337.search-card.all.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)
+## [SpringSecurity](https://www.bilibili.com/video/BV1mm4y1X7Hc/?spm_id_from=333.337.search-card.all.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)
 
 > 6 h   SpringSecurity + JWT   核心：认证 & 授权
 >
@@ -7,9 +7,9 @@
 > 题外话：ali 的 SpringBoot 启动模板真不错，还带测试Controller+html 
 > https://start.aliyun.com/
 
-# 一、铺垫
+## 一、铺垫
 
-## 1.介绍
+### 1.介绍
 
 springsecurity是安全框架，准确来说是安全管理框架。相比与另外一个安全框架**Shiro**，springsecurity提供了更丰富的功能，社区资源也比Shiro丰富
 
@@ -21,7 +21,7 @@ springsecurity框架用于Web应用的需要进行`认证`和`授权`
 
 **认证和授权也是SpringSecurity作为安全框架的核心功能**
 
-## 2.项目流程
+### 2.项目流程
 
 1. 搭SpringBoot项目（aliyun 模板好用）
 
@@ -32,7 +32,7 @@ springsecurity框架用于Web应用的需要进行`认证`和`授权`
 
 ps: 除了拦截所有请求到登陆页面，也有 https://localhost:8080/logout 登出 API
 
-## 3.流程图
+### 3.流程图
 
 springsecurity的权限管理，是先授权后认证，所以我们先学习认证这一部分
 
@@ -40,13 +40,13 @@ springsecurity的权限管理，是先授权后认证，所以我们先学习认
 
 ![img](https://images.zzq8.cn/img/1689586875709-6eb3d7ed-ee86-4245-9b5f-5bbe49b7144b.jpg)
 
-#### 需要调整的点：默认帮我们实现很多东西，我们需要定制改
+##### 需要调整的点：默认帮我们实现很多东西，我们需要定制改
 
 1. 登陆界面得换成系统的，肯定不能用 SpringSecutiry 默认的了
 2. 账号密码不能用默认的，得和真实 user 表关联
 3. 前后端不分离好像用的是后端的 Session 存的Tonken，分离的话肯定不能这样。
 
-## 4.springsecurity原理
+### 4.springsecurity原理
 
 SpringSecurity的原理其实就是一个过滤器链(10+)，内部包含了提供各种功能的过滤器。例如快速入门案例里面使用到的三种过滤器，如下图
 
@@ -64,11 +64,11 @@ SpringSecurity的原理其实就是一个过滤器链(10+)，内部包含了提�
 
 
 
-# 二、认证
+## 二、认证
 
 > 需要结合上面的 `流程图 & 原理` 部分看
 
-## 1.认证流程图（橙色部分）
+### 1.认证流程图（橙色部分）
 
 `UsernamePasswordAuthenticationFilter`
 `UserDetailsService`
@@ -88,7 +88,7 @@ ps: 第 10 步好像是通过 ThreadLocal 存给红色授权过滤器拿信息
 
 
 
-## 2.思路分析
+### 2.思路分析
 
 `第一步和第四步换成自己的代码：`
 
@@ -98,17 +98,17 @@ ps: 第 10 步好像是通过 ThreadLocal 存给红色授权过滤器拿信息
 
 引入 `Redis`、`JWT` 依赖（不用对 JWT 有太过深入的了解，基本调用工具类就可以了！！！）
 
-### - 后端：
+#### - 后端：
 
 ![image-20231222154855650](https://images.zzq8.cn/img/image-20231222154855650.png)
 
-### - 前端：
+#### - 前端：
 
 ![image-20231222155309514](https://images.zzq8.cn/img/image-20231222155309514.png)
 
 
 
-## 3.认证实现-UserDetailsService
+### 3.认证实现-UserDetailsService
 
 > 重写流程图-第四个类    认证登陆接口的账号、密码的后台默认实现改为落库查询
 
@@ -152,7 +152,7 @@ public class LoginUser implements UserDetails{
 
 
 
-### 3.1.密码加密校验问题
+#### 3.1.密码加密校验问题
 
 **注意：如果要测试，需要往用户表中写入用户数据，并且如果你想让用户的密码是明文存储，需要在密码前加｛noop｝。**
 Username：Admin，Password：{noop}123456
@@ -215,7 +215,7 @@ ps:
 
 
 
-## 4.登陆接口-xxx（JWT）
+### 4.登陆接口-xxx（JWT）
 
 > 重写流程图-第一个类，自定义登录接口实现这个功能需要使用到jwt
 > 用到上面 3.认证 后台实现落库查Form
@@ -234,7 +234,7 @@ XD：
 
 
 
-## 5.校验其他接口-定义jwt认证过滤器
+### 5.校验其他接口-定义jwt认证过滤器
 
 > 配置只放开了登录接口，其他接口全到这个过滤器来。有 Token 遍走 Redis 拿用户信息放 `SecurityContextHolder` 里即可！
 >
@@ -290,7 +290,7 @@ Q：那为什么不只放 ID
 
 
 
-## 6.退出登录
+### 6.退出登录
 
 > XD: 感觉 Token 也只是为了拿 ID，然后数据有无还得看 Redis，例如下面注销登录就是删 Redis 就行了
 >
@@ -300,11 +300,11 @@ Q：那为什么不只放 ID
 
 
 
-# 三、授权
+## 三、授权
 
 > 相当于只是在认证的基础上，jwt认证过滤器上 set 上权限的 List
 
-## 1.实现
+### 1.实现
 
 在SpringSecurity中，会使用默认的FilterSecurityInterceptor来进行权限校验。在FilterSecurityInterceptor中会从SecurityContextHolder获取其中的Authentication，然后获取其中的权限信息。当前用户是否拥有访问当前资源所需的权限
 
@@ -329,7 +329,7 @@ Q：那为什么不只放 ID
 1. 查库的时候 User JavaBean 权限属性 set 进去
 2. 认证过滤器 set 到 `SecurityContextHolder`
 
-## 2.RBAC权限模型
+### 2.RBAC权限模型
 
 RBAC权限模型 (Role-Based Access Control) ，是权限系统用到的经典模型，基于角色的权限控制。该模型由以下五个主要组成部分构成:
 
@@ -345,7 +345,7 @@ RBAC权限模型 (Role-Based Access Control) ，是权限系统用到的经典�
 
 
 
-# 四、自定义异常处理
+## 四、自定义异常处理
 
 上面的我们学习了 '认证' 和 '授权'，实现了基本的权限管理，然后也学习了从数据库获取授权的 '授权-RBAC权限模型'，实现了从数据库获取用户具备的权限字符串。到此，我们完整地实现了权限管理的功能。
 
@@ -367,9 +367,9 @@ RBAC权限模型 (Role-Based Access Control) ，是权限系统用到的经典�
 
 
 
-# 五、其他
+## 五、其他
 
-## 1.一些其他的过滤器
+### 1.一些其他的过滤器
 
 '登录成功的处理器' AuthenticationSuccessHandler
 
@@ -381,7 +381,7 @@ LogoutSuccessHandlerr '登出成功的处理器'
 
 
 
-## 2.以前没这么用过，postman测
+### 2.以前没这么用过，postman测
 
 由于 `HttpServletRequest` 和 `HttpServletResponse` 对象是局部对象，它们的作用域仅限于当前请求的处理过程中。一旦请求处理完成，这些对象将被销毁。
 
