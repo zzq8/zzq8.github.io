@@ -17,6 +17,8 @@
 >
 > 知识：
 >
+> * 规定了[commit message](https://zhuanlan.zhihu.com/p/182553920)的格式（TODO，我个人觉得还蛮重要，看网站提到的背景）
+>
 > * `--`在命令行中的作用是提供一个明确的分隔符，以确保命令的选项、参数或文件路径被正确解析。
 >   * 例如，`git log -- -file.txt`中的`--`用于明确表示`-file.txt`是参数而不是选项
 >   * 例如，`git checkout branch-name -- file.txt`中的`--`用于分隔`branch-name`和`file.txt`，以明确表示`file.txt`是文件路径而不是分支名称。

@@ -6,9 +6,11 @@
 > 搜 Linux 命令解释好使！！！
 
 * 创建并写入内容   `echo "test" > file1.txt`
+  * 实测多次运行就是追加的形式，追加行！
+
 * ⭐️ grep "password" /var/log/mysqld.log (强大的文本搜索工具)
   * grep -rF xxx .命令作用  （Linux 查日志命令需要好好学习，MsgBroker 搜 id）
-
+  * cat access.log | grep 'payed'
 * ⭐️ `echo "547061946" | sudo -S <command>`
   * 在这个命令中，`<command>` 是你要以超级用户身份运行的实际命令。
   * 将密码作为输入通过管道传递给 `sudo` 命令，并使用 `-S` 选项我猜是 Standard 读取密码。
@@ -37,7 +39,6 @@
 * kill -9 进程ID（PID）
 * ps -e|grep java
 * netstat -nlp |grep :80  # 看指定端口 pid，方便后面 kill
-* cat access.log |grep 'payed'
 * `export vs set` export 类似 win 的 `set MY_VARIABLE=value`，设置一个当前窗口会话的临时变量
   * 注意：export https_proxy=http://127.0.0.1:7890 。。。只在当前 cmd 中生效，一开始不知道！！！
 
