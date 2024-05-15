@@ -30,7 +30,13 @@ iload iadd istore
 
 
 
-#### * ArrayList可以在循环时删除里面的数据吗😡TODO
+#### * HashMap 重写了tostring     
+
+System.out.println(map);   return key + "=" + value; 
+
+
+
+#### * ⭐️ ArrayList可以在循环时删除里面的数据吗😡TODO
 
 for删会有问题，要用迭代器删  为什么？？？
 
@@ -39,6 +45,28 @@ for删会有问题，要用迭代器删  为什么？？？
 当你使用 `ArrayList` 的 `remove()` 方法删除元素时，会改变列表的大小。这会影响到后续的循环迭代，可能导致一些元素被跳过或重复处理。这是因为在删除元素后，后续元素的索引会向前移动，但循环变量可能不会相应地更新。
 
 
+
+#### * ⭐️ Map 也是迭代的时候不能删东西，补充笔记   踩坑严重  最后用两个集合解决
+
+```
+Exception in thread "main" java.util.ConcurrentModificationException：
+for (Map.Entry<String,String> e : map2Platform.entrySet()) {
+                if (e.getKey().matches(pageLayoutId)) {
+                    map2Platform.put(spaceId,e.getValue());
+                    map2Platform.remove(e.getKey());
+                }
+            }
+```
+
+```
+Map<String, String> toAdd = new HashMap<>();
+            Set<String> toRemove = new HashSet<>();
+// 在遍历结束后修改map
+toRemove.forEach(map2Platform::remove);
+map2Platform.putAll(toAdd);
+```
+
+* 
 
 #### ==* 基础知识：unexpected token==
 

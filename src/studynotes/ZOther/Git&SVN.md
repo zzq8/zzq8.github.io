@@ -1,9 +1,25 @@
 # Git-云服务器使用
+> > 有时间再梳理这篇文章, 只保留有用的   不要繁琐,繁琐了不会看
+>
 > 日常自己仓库就三步:
-git status -sb
-git commit -av
-git push
-> 有时间再梳理这篇文章, 只保留有用的             不要繁琐,繁琐了不会看
+>
+> * git status -sb (--short, --branch)   ==xd 不会了就 git status -help==
+> * git commit -av
+> * git push
+>
+> 
+>
+> * git log --oneline (单行形式展示日志)
+> * git rm -r --cached xx (清除指定文件的 git 版本控制)
+> * git checkout <上一个版本的提交哈希值> -- <文件路径> （git 回滚指定文件到上一个版本）
+>
+> 
+>
+> 知识：
+>
+> * `--`在命令行中的作用是提供一个明确的分隔符，以确保命令的选项、参数或文件路径被正确解析。
+>   * 例如，`git log -- -file.txt`中的`--`用于明确表示`-file.txt`是参数而不是选项
+>   * 例如，`git checkout branch-name -- file.txt`中的`--`用于分隔`branch-name`和`file.txt`，以明确表示`file.txt`是文件路径而不是分支名称。
 ## [1.前置配置](https://blog.csdn.net/weixin_42310154/article/details/118340458)
 
 > 云服务器的 Git 我捣鼓了好久~

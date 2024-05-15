@@ -141,7 +141,12 @@ Mac mini会输出其默认的分辨率（通常是显示器的原生分辨率）
 
 ## Mac Knowledge
 
+* 续航：公司 MacAir M2 五一假期拔掉充电线   盒盖待机放假回来看还有 50%+ 的电量
+
+
+
 * 关闭 SIP
+
   * 针对 M 系列芯片，长按开机键进入到恢复模式，Terminal `csrutil disable`
 
 * 好像网上下的 app 打不开的话可以执行一个命令就可以打开了
@@ -194,7 +199,7 @@ RESTORE DATABASE [ZS_SCM] FROM DISK='/home/ZC_SCM0426002.BAK'
 
 # ---------
 
-# 
+#  
 
 
 

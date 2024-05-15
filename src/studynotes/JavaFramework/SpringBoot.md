@@ -178,6 +178,8 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot
 
 ### ==2.自动配置（重要）==
 
+> springboot METAINFO-spring.factoies   是 SPI 机制！！！  写这里面的类会暴露给 EnableAutoConfiguration注解
+
 ```java
 @SpringBootApplication
 等同于
@@ -753,6 +755,12 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 
 [Spring注解驱动](https://liayun.blog.csdn.net/article/details/115053350)
 
+* #### @EnableTransactionManagement // 开启注解事务管理，等价于xml配置方式的 <tx:annotation-driven />
+
+  * 	Spring提供了一个@EnableTransactionManagement 注解以在配置类上开启声明式事务的支持。添加该注解后，Spring容器会自动扫描被@Transactional注解的方法和类。
+
+
+
 * #### @Retention(RetentionPolicy.RUNTIME) 
 
   * 用于使注解在运行时可以通过反射来访问和处理。这对于某些需要在运行时动态处理注解的场景非常有用
@@ -1001,6 +1009,29 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
 ## 2）技术点
 
 ### 1）一些小点
+
+* classpath 和 classpath* 区别：
+
+  * classpath：只会到你的class路径中查找找文件。 classpath*：不仅包含class路径，还包括jar文件中（class路径）进行查找
+
+
+  ```xml
+  问题提出：
+  <!-- 指定MyBatis Mapper文件的位置 -->    <!-- 我就是这里配错了找了半天！！！注意加上 /*.xml -->
+  <!-- 提出问题：在引入资源文件时，classpath 什么时候用，什么时候不用？  以前这个错误我踩过两次坑，找了很久！！！ -->
+  <!--猜测：引用包时不加，引用具体文件时候加？-->
+  
+  目前的答案：
+  classpath：只会到你的class路径中查找找文件;
+  classpath*：不仅包含class路径，还包括jar文件中(class路径)进行查找 ---- 够深入的吧
+  classpath路径是来引用文件的，在编译生成的项目下的bulid/classes/ 下具有的文件都是classpath 路径下的文件，都可以通过classpath：方法获取。
+      如何获取项目类编译后的路径
+      **String path = 类名.class.getClassLoader().getResource("").getPath();**
+  "**/" 表示的是任意目录； 
+  "**/applicationContext-*.xml" 表示任意目录下的以"applicationContext-"开头的XML文件。 
+  ```
+
+  
 
 * 我 download 了upupor的开源项目发现项目里的数据库敏感信息都是 ${} 方式给的！！！
 

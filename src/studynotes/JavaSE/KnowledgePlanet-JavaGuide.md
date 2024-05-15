@@ -851,6 +851,8 @@ XD: 我可以理解为从位运算角度 32个bit位（2^n）
 > API vs SPI（Service Provider Interface）机制
 >
 > > XD: 可以理解为 API 接口在被调用方，SPI 接口在调用方
+> >
+> > springboot METAINFO-spring.factoies   是 SPI 机制！！！  写这里面的类会暴露给 EnableAutoConfiguration注解
 >
 > 在面向对象的设计原则中，一般推荐模块之间基于接口编程，通常情况下调用方模块是不会感知到被调用方模块的内部具体实现。一旦代码里面涉及具体实现类，就违反了开闭原则。如果需要替换一种实现，就需要修改代码。
 >

@@ -2,6 +2,10 @@
 
 > 鱼皮这篇讲的细：https://mp.weixin.qq.com/s/mOFjOVYrM_b9I2UlNgeGxg
 
+## TODO
+
+https://blog.csdn.net/weixin_45433031/article/details/125284806 （还需理解到maven笔记，springboot打包插件如果我不加以下会有什么影响：）
+
 # *）Pom文件/Maven：
 
  * #### [Pom.xml  -> \<relativePath>](https://blog.csdn.net/gzt19881123/article/details/105255138)

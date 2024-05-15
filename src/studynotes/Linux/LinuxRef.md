@@ -6,23 +6,24 @@
 > 搜 Linux 命令解释好使！！！
 
 * 创建并写入内容   `echo "test" > file1.txt`
+* ⭐️ grep "password" /var/log/mysqld.log (强大的文本搜索工具)
+  * grep -rF xxx .命令作用  （Linux 查日志命令需要好好学习，MsgBroker 搜 id）
+
 * ⭐️ `echo "547061946" | sudo -S <command>`
   * 在这个命令中，`<command>` 是你要以超级用户身份运行的实际命令。
   * 将密码作为输入通过管道传递给 `sudo` 命令，并使用 `-S` 选项我猜是 Standard 读取密码。
-* `export vs set` export 类似 win 的 `set MY_VARIABLE=value`，设置一个当前窗口会话的临时变量
-  * 注意：export https_proxy=http://127.0.0.1:7890 。。。只在当前 cmd 中生效，一开始不知道！！！
 * ⭐️ export -p 显示所有环境变量
 * ⭐️ $ 符号通常用于引用环境变量的值，echo $HOME 有一个HOME的环境变量
 * ⭐️ 在macOS终端中，可以使用以下命令来查看当前使用的shell：bash
-
 * ⭐️ linux 自带任务轮询  `crontab -e`
   * crond 是linux下用来周期性的执行某种任务或等待处理某些事件的一个守护进程，与windows下的计划任务类似
+* ⭐️ pkill = 进程名    //pkill nginx  #杀死所有的nginx
+* ⭐️ lsof -i:8080   //查看8080端口占用
 
 
 * `nohup java -jar myblog-1.jar --server.port=80 &`
 * `tail -f nohup.out`
   * 就可以实时看到这个 jar 的输出运行日志！！！（"f"代表"follow"）
-
 * df -h  可以查linux内存占用，一般看类似 /dev/vda1     ‘/’开头的路径的容量就行！！！
   * 内存不足会导致的场景-XD均已实践以下两点：
 
@@ -33,12 +34,12 @@
   * 如果您不确定 Nginx 的**可执行文件**在哪个目录下，可以通过在终端中输入 which nginx 命令来查找。该命令会返回 Nginx 可执行文件的完整路径。  Nginx 的可执行文件通常位于 /usr/sbin/nginx 目录下   注意不是/usr/bin/nginx
 * whereis ==找文件==
 * `find / -type d -name "*redis*"`  ==找文件夹==
-* ⭐️ pkill = 进程名    //pkill nginx  #杀死所有的nginx
 * kill -9 进程ID（PID）
-* ⭐️ lsof -i:8080   //查看8080端口占用
 * ps -e|grep java
 * netstat -nlp |grep :80  # 看指定端口 pid，方便后面 kill
 * cat access.log |grep 'payed'
+* `export vs set` export 类似 win 的 `set MY_VARIABLE=value`，设置一个当前窗口会话的临时变量
+  * 注意：export https_proxy=http://127.0.0.1:7890 。。。只在当前 cmd 中生效，一开始不知道！！！
 
 
 

@@ -35,6 +35,8 @@
 
 * Cache-Control: max-age=0 
 
+* Content-Type：xxx         这个补充到笔记，请求也有这不光response
+
 * Connection: keep-alive 
 
   * 面试常问1.1和1.0的区别。。有必要说明的是，HTTP/1.0 仍提供了长连接选项，即在请求头中加入`Connection: Keep-alive`。同样的，在 HTTP/1.1 中，如果不希望使用长连接选项，也可以在请求头中加入`Connection: close`，这样会通知服务器端：“我不需要长连接，连接成功后即可关闭”。
@@ -391,3 +393,14 @@ or
 <body onload="parent.location='http://www.baidu.com'">
 ```
 
+
+
+## Curl
+
+> https://www.ruanyifeng.com/blog/2019/09/curl-reference.html
+
+curl -XPOST localhost:8888/user  -d 'id=42' -d 'name=Tom'  (POST学习！！)
+
+curl -XPOST localhost:8888/user -H 'Content-Type:application/json' -d '{"id":42, "name":"Tom"}'
+
+* 使用-d参数以后，HTTP 请求会自动加上标头Content-Type : application/x-www-form-urlencoded。并且会自动将请求转为 POST 方法，因此可以省略-X POST。
