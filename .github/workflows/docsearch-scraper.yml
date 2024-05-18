@@ -2,9 +2,11 @@ name: 索引爬虫 docsearch-scraper
 
 on:
   push:
-    branches: [master]
+    branches:
+      - main
   pull_request:
-    branches: [master]
+    branches:
+      - main
 
 jobs:
   scan:
