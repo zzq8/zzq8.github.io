@@ -54,18 +54,8 @@ export default hopeTheme({
       // 你的选项
       // appId, apiKey 和 indexName 是必填的
       appId: "ADSVTUJF43",
-      apiKey: "ce680cd766327882764fa072b3b72216",
-      indexName: "zzq8",
-      locales: {
-        '/': {
-          placeholder: '搜索文档',
-          translations: {
-            button: {
-              buttonText: '搜索文档',
-            },
-          },
-        }
-      },
+      apiKey: "b0b3107c998fce0ac141a3f775cad66e",
+      indexName: "zzq8"
     },
 
     components: {
