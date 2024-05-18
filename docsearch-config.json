@@ -13,10 +13,6 @@
   "sitemap_urls": [
     "https://doc.zzq8.cn/sitemap.xml"
   ],
-  "sitemap_alternate_links": true,
-  "stop_urls": [
-    "/tests"
-  ],
   "selectors": {
     "studynotes": {
       "lvl0": {
@@ -31,18 +27,18 @@
       "lvl6": ".theme-container h6",
       "content": ".theme-container p, .theme-container li"
     },
-    "lvl0": {
-      "selector": "(//ul[contains(@class,'menu__list')]//a[contains(@class, 'menu__link menu__link--sublist menu__link--active')]/text() | //nav[contains(@class, 'navbar')]//a[contains(@class, 'navbar__link--active')]/text())[last()]",
-      "type": "xpath",
-      "global": true,
-      "default_value": "Documentation"
-    },
-    "lvl1": "header h1",
-    "lvl2": "article h2",
-    "lvl3": "article h3",
-    "lvl4": "article h4",
-    "lvl5": "article h5, article td:first-child",
-    "lvl6": "article h6",
-    "text": "article p, article li, article td:last-child"
+    "default": {
+            "lvl0": {
+                "selector": "",
+                "default_value": "文章"
+            },
+            "lvl1": ".theme-default-content h1",
+            "lvl2": ".theme-default-content h2",
+            "lvl3": ".theme-default-content h3",
+            "lvl4": ".theme-default-content h4",
+            "lvl5": ".theme-default-content h5",
+            "lvl6": ".theme-default-content h6",
+            "content": ".theme-default-content p, .theme-default-content li"
+        }
   }
 }
