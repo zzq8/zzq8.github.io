@@ -55,7 +55,7 @@ export default hopeTheme({
       // appId, apiKey 和 indexName 是必填的
       appId: "ADSVTUJF43",
       apiKey: "ce680cd766327882764fa072b3b72216",
-      indexName: "doc.zzq8.cn"
+      indexName: "zzq8"
     },
 
     components: {
