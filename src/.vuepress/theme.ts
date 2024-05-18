@@ -49,7 +49,7 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
-
+    
     docsearch: {
       // 你的选项
       // appId, apiKey 和 indexName 是必填的
@@ -57,7 +57,7 @@ export default hopeTheme({
       apiKey: "ce680cd766327882764fa072b3b72216",
       indexName: "doc.zzq8.cn"
     },
-    
+
     components: {
       components: ["Badge", "VPCard"],
     },
