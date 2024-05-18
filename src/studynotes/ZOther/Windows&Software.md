@@ -1,5 +1,9 @@
 # [Windows](https://www.zhihu.com/question/33635511/answer/57567053)
 
+C:\Windows   路径 exe 文件可以直接 cmd 调用
+* 将文件重命名为 jq.exe
+* cmd： jq --version
+
 # 1.常用快捷键
 
 * #### win+ppause 看电脑系统参数
