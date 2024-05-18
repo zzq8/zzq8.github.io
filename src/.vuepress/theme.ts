@@ -1,7 +1,7 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
-import { gitPlugin } from '@vuepress/plugin-git'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch';
 
 export default hopeTheme({
   // 当前网站部署到的域名
@@ -50,9 +50,15 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
-    searchPro: true,
-    // 注意: 仅用于测试! 你必须自行生成并在生产环境中使用自己的评论服务
 
+    docsearch: {
+      // 你的选项
+      // appId, apiKey 和 indexName 是必填的
+      appId: "ADSVTUJF43",
+      apiKey: "ce680cd766327882764fa072b3b72216",
+      indexName: "doc.zzq8.cn"
+    },
+    
     components: {
       components: ["Badge", "VPCard"],
     },
