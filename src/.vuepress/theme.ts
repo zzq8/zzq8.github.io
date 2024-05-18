@@ -1,7 +1,6 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
-import { docsearchPlugin } from '@vuepress/plugin-docsearch';
 
 export default hopeTheme({
   // 当前网站部署到的域名
