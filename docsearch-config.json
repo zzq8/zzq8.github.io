@@ -5,7 +5,7 @@
       "url": "https://doc.zzq8.cn/studynotes/",
       "selectors_key": "studynotes",
       "variables": {
-        "lang": ["zh-CN"],
+        "lang": ["zh-CN"]
       },
       "tags": [
         "studynotes"
