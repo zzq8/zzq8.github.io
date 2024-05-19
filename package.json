@@ -1,7 +1,7 @@
 {
-  "name": "studylist",
+  "name": "zzq8doc",
   "version": "2.0.0",
-  "description": "A project of vuepress-theme-hope",
+  "description": "second project xd",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -12,10 +12,11 @@
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.9",
-    "@vuepress/plugin-docsearch": "^2.0.0-rc.24",
-    "@vuepress/plugin-git": "^2.0.0-rc.22",
-    "vue": "^3.4.21",
+    "vue": "^3.4.27",
     "vuepress": "2.0.0-rc.9",
-    "vuepress-theme-hope": "2.0.0-rc.36"
+    "vuepress-theme-hope": "2.0.0-rc.43"
+  },
+  "dependencies": {
+    "@vuepress/plugin-docsearch": "^2.0.0-rc.28"
   }
 }

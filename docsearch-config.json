@@ -46,5 +46,10 @@
   },
   "custom_settings": {
     "attributesForFaceting": ["lang"]
+  },
+  "initial_index_settings": {
+    "zzq8": {
+      "attributesForFaceting": ["lang"]
+    }
   }
 }
