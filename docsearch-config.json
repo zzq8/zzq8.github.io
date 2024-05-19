@@ -44,12 +44,11 @@
       "content": ".theme-default-content p, .theme-default-content li"
     }
   },
+  "strip_chars": " .,;:!",
   "custom_settings": {
-    "attributesForFaceting": ["lang"]
-  },
-  "initial_index_settings": {
-    "zzq8": {
-      "attributesForFaceting": ["lang"]
-    }
+    "attributesForFaceting": [
+      "language",
+      "version"
+    ]
   }
 }
