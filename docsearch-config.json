@@ -48,7 +48,7 @@
   "custom_settings": {
     "attributesForFaceting": [
       "lang",
-      "language",
+      "language"
     ]
   },
   "languages": ["zh-CN"]
