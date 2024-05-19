@@ -51,7 +51,7 @@ export default hopeTheme({
   plugins: {
     
     docsearch: {
-      // 你的选项
+      // XDD：用这个搜索踩坑两天，场景：有数据但是vuepress去搜不到，解决：爬虫指定 lang 这个配置硬是找不到
       // appId, apiKey 和 indexName 是必填的
       appId: "ADSVTUJF43",
       apiKey: "ce680cd766327882764fa072b3b72216",
