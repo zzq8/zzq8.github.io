@@ -47,8 +47,8 @@
   "strip_chars": " .,;:!",
   "custom_settings": {
     "attributesForFaceting": [
-      "language",
-      "version"
+      "language"
     ]
-  }
+  },
+  "languages": ["zh-CN"]
 }
