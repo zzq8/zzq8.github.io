@@ -43,5 +43,8 @@
       "lvl6": ".theme-default-content h6",
       "content": ".theme-default-content p, .theme-default-content li"
     }
+  },
+  "custom_settings": {
+    "attributesForFaceting": ["lang"]
   }
 }
