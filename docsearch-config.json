@@ -1,55 +1,40 @@
 {
   "index_name": "zzq8",
   "start_urls": [
-    {
-      "url": "https://doc.zzq8.cn/studynotes/",
-      "selectors_key": "studynotes",
-      "variables": {
-        "lang": ["zh-CN"]
-      },
-      "tags": [
-        "studynotes"
-      ]
-    },
     "https://doc.zzq8.cn/"
   ],
   "sitemap_urls": [
     "https://doc.zzq8.cn/sitemap.xml"
-  ],
+  ], 
+  "stop_urls": [],
   "selectors": {
-    "studynotes": {
-      "lvl0": {
-        "selector": "",
-        "default_value": "代码笔记"
-      },
-      "lvl1": ".theme-container h1",
-      "lvl2": ".theme-container h2",
-      "lvl3": ".theme-container h3",
-      "lvl4": ".theme-container h4",
-      "lvl5": ".theme-container h5",
-      "lvl6": ".theme-container h6",
-      "content": ".theme-container p, .theme-container li"
+    "lvl0": {
+      "selector": "p.sidebar-heading.open",
+      "global": true,
+      "default_value": "Documentation"
     },
-    "default": {
-      "lvl0": {
-        "selector": "",
-        "default_value": "文章"
-      },
-      "lvl1": ".theme-default-content h1",
-      "lvl2": ".theme-default-content h2",
-      "lvl3": ".theme-default-content h3",
-      "lvl4": ".theme-default-content h4",
-      "lvl5": ".theme-default-content h5",
-      "lvl6": ".theme-default-content h6",
-      "content": ".theme-default-content p, .theme-default-content li"
+    "lvl1": "main h1",
+    "lvl2": "main h2",
+    "lvl3": "main h3",
+    "lvl4": "main h4",
+    "lvl5": "main h5",
+    "text": "main p, main li",
+    "lang": {
+      "selector": "/html/@lang",
+      "type": "xpath",
+      "global": true,
+      "default_value": "zh-CN"
     }
   },
-  "strip_chars": " .,;:!",
+  "strip_chars": " .,;:#",
   "custom_settings": {
     "attributesForFaceting": [
-      "lang",
-      "language"
+      "lang"
     ]
   },
-  "languages": ["zh-CN"]
+  "conversation_id": [
+    "1585404165"
+  ],
+  "scrape_start_urls": false,
+  "nb_hits": 40079
 }
