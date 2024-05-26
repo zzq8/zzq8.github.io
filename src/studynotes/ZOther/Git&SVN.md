@@ -1,4 +1,16 @@
 # Git-云服务器使用
+
+> https://m.runoob.com/git/git-basic-operations.html
+
+<img src="https://www.runoob.com/wp-content/uploads/2015/02/git-command.jpg" alt="img" style="zoom:150%;" />
+
+- workspace：工作区
+- staging area：暂存区/缓存区
+- local repository：版本库或本地仓库
+- remote repository：远程仓库
+
+
+
 > > 有时间再梳理这篇文章, 只保留有用的   不要繁琐,繁琐了不会看
 >
 > 日常自己仓库就三步:
