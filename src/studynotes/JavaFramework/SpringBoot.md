@@ -1,4 +1,4 @@
-## SpringBoot2
+# SpringBoot2
 
 > 三刷总算想起做点笔记，这点很重要   [语雀官方笔记](https://www.yuque.com/atguigu/springboot)   重点看源码讲解的视频、Web开发这一章
 >
@@ -683,7 +683,10 @@ JoinPoint point    这个类可以获取 AOP 前置通知（Before Advice）注�
     result = proceedingJoinPoint.proceed();   //XD 这里调用目标方法，这之前的代码都是【前置逻辑】    下面的代码都是【后置逻辑】
 ```
 
+Q: 为什么要用Threadlocal来包装stopwatch呢？
+作者回复: 我在执行前后需要使用同一个StopWatch，所以需要有个地方暂存一下，而且每次为请求计时都需要一个不同的StopWatch，不能共用一个，既然是一个线程在处理一个请求，那比较简单的方法就是放在ThreadLocal里。
 
+* 核实 upupor 是不是也是这样  geektime.spring.springbucks.waiter.controller.PerformanceInteceptors
 
 
 

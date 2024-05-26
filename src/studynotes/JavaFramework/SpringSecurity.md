@@ -1,4 +1,4 @@
-## [SpringSecurity](https://www.bilibili.com/video/BV1mm4y1X7Hc/?spm_id_from=333.337.search-card.all.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)
+# [SpringSecurity](https://www.bilibili.com/video/BV1mm4y1X7Hc/?spm_id_from=333.337.search-card.all.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)
 
 > 6 h   SpringSecurity + JWT   核心：认证 & 授权
 >

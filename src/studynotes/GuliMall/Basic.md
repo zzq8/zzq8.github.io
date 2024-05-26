@@ -1,4 +1,4 @@
-## Basic
+# Basic
 
 > 谷粒商城是一个B2C模式的电商平台，销售自营商品给客户
 >
@@ -276,7 +276,7 @@ ES6 & Vue 快速入门
 >        age: 21,
 >        language: ['java', 'js', 'css']
 >    }
->                                                                            
+>                                                                               
 >    // var hello1 = (param) => console.log("hello," + param.name);
 >    // hello1(person);
 >    var hello2 = ({name}) => console.log("hello," + name);
