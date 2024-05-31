@@ -76,6 +76,8 @@
 
 ## Tips
 
+* ⭐️ **增加系统快捷键** - 键盘设置里 - App快捷键 - 表情与符号（xd 这个菜单名一定要填对，其实看一下每个应用的task bar应该都能设置！！！）
+  
 * MAC click dock APP icon 会切桌面同应用不同 window
   
 * 😭 TODO 软链？
