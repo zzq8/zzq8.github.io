@@ -18,6 +18,11 @@ export default navbar([
         icon: "play",
         link: "videos/",
       },
+      {
+        text: "Demo",
+        icon: "fa-solid fa-handshake",
+        link: "demo/",
+      },
     ],
   },{
     text: "网站相关",

@@ -6,6 +6,11 @@
 >
 > 但是 1）没有笔记目录 2）而且 JavaGuide 逛多了 希望搞个一样的
 
+## Feature
+
+* md 里面可以写 js+vue 语法 会渲染到页面   具体参考demo     【真牛】
+* md 加 frontmatter 设置各种参数 icon、title
+
 ## search plug
 
 > 引入algolia并自定义crawler爬虫

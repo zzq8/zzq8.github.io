@@ -77,7 +77,6 @@ title: 页面标题
 <ul>
   <li v-for="i in 3">{{ i }}</li>
 </ul>
-
 <!-- markdownlint-enable MD033 -->
 
 你也可以创建并引入你自己的组件。
@@ -86,7 +85,6 @@ title: 页面标题
 
 <script setup>
 import { defineComponent, h, ref } from 'vue';
-
 const MyComponent = defineComponent({
   setup() {
     const input = ref('Hello world!');
