@@ -51,6 +51,14 @@ http://localhost:8080/sitemap.xml
 
 > 构建 md 解析错误
 
-{brandId,showStatus}
+`{brandId,showStatus}`
 
 这种 vuepress 解析会有错误，，最好``包一下
+
+
+
+😭 为什么，上面一开始我没加导致又报错，又犯了一次错误
+
+​	1.	**Vue 模板语法冲突**：VuePress 使用 Vue 作为底层框架，Vue 模板语法中的大括号 {} 会被识别为 Vue 模板中的插值表达式。如果你的 Markdown 文件中包含 {}，Vue 可能会尝试解析它们，这会导致渲染问题。
+
+​	2.	**未转义的大括号**：如果你的 Markdown 文件中包含原始的大括号 {}，这些字符可能需要转义，避免被 Vue 模板引擎解析。
