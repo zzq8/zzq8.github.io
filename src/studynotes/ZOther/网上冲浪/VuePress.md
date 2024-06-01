@@ -26,6 +26,16 @@
 ## sitemap plug
 
 > 搞了一下午，卡在版本的问题    结果我就在npm一个个试所有的version   直到不报错！！！   ==肯定有其他方法==
+>
+> 第二次搞：
+>
+> > * npm install 没报错
+> >
+> > * 测试时候先测 `npm run docs:build` 后测 `npm run docs:dev` 两个都没问题就行
+>
+> 1. 先所有都整成最新版 `npm install --legacy-peer-deps`
+> 2. 后再试试 npm install 哪些依赖冲突（npm ci）
+>    * 我这里是 vuepress、vuepress-theme-hope 统一降一个版本就又好了
 
 http://localhost:8080/sitemap.xml
 
