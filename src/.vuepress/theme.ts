@@ -3,6 +3,8 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
+  // 是否在导航栏内显示仓库链接，默认为 `true`
+  repoDisplay: false,
   // 当前网站部署到的域名
   // headerDepth: 2,
   pageInfo: ["Author", "Category", "Tag", "Original", "Word", "ReadingTime"],
@@ -13,7 +15,7 @@ export default hopeTheme({
   //   url: "https://mister-hope.com",
   // },
 
-  iconAssets: "fontawesome-with-brands",
+  iconAssets: "fontawesome",
 
   logo: "/logo.png",
 
@@ -35,6 +37,7 @@ export default hopeTheme({
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
+      "/daily": ["zzq","zhuzhiquan","朱智权"],
       "/studynotes/ZOther/StudyList.html": ["547061946"],
     },
   },
@@ -49,7 +52,6 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
-    
     docsearch: {
       // XDD：用这个搜索踩坑两天，场景：有数据但是vuepress去搜不到，解决：爬虫指定 lang 这个配置硬是找不到
       // appId, apiKey 和 indexName 是必填的

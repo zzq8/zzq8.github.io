@@ -6,7 +6,11 @@
 >
 > 但是 1）没有笔记目录 2）而且 JavaGuide 逛多了 希望搞个一样的
 
-## 引入algolia并自定义crawler爬虫
+## search plug
+
+> 引入algolia并自定义crawler爬虫
+>
+> XDDD 终于两天时间，配置这里"lang"解决问题！！！
 
 **处理了两天的问题**：已用 actions 爬虫 上传站点信息的 records 到 Algolia 平台，但是 vuepress 集成的这个插件去搜怎么都搜不到，其他测试平台地方一下就可以搜：https://codesandbox.io/p/sandbox/suspicious-nash-xfpsjv?file=%2Fsrc%2Findex.js%3A11%2C1
 
@@ -14,9 +18,13 @@
 
 最后的最后解决是处理修改上传的爬虫配置，让 records 带上 lang 信息即可，这一点我搜 GPT 帮我带错了很多次。还是在一个网站多试了别人的才成功：https://hub.nstudy.org/p2024/12/Vuepress/148a1e.html
 
+## sitemap plug
 
+> 搞了一下午，卡在版本的问题    结果我就在npm一个个试所有的version   直到不报错！！！   ==肯定有其他方法==
 
-XDDD 终于两天时间，配置这里"lang"解决问题！！！
+http://localhost:8080/sitemap.xml
+
+这个插件 npm install 完后不需要配什么东西，可以直接访问试下就拿到数据了！！！
 
 ## 碰到的问题
 
