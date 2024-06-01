@@ -88,17 +88,17 @@
 
 
 
-# # 慢就是快
+# 慢就是快
 
 > [程序员的技术成长战略](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html#_2-4-%E6%A1%88%E4%BE%8B%E5%B0%8F%E7%BB%93)：==以此为终生指导！==
 
-#### 以终为始是牛人和普通人的一大区别。
+### 以终为始是牛人和普通人的一大区别。
 
 ![以终为始](http://images.zzq8.cn/img/format,png-20230309231833871.png)
 
 
 
-## [学习金字塔和刻意训练](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html#三、学习金字塔和刻意训练)
+### [学习金字塔和刻意训练](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html#三、学习金字塔和刻意训练)
 
 **人与人之间的先天身体其实都差不多，但是后天身体素质和能力有差异，这些差异，很大程度是由后天对身体和大脑的训练质量、频度和强度所造成的。**
 
@@ -110,7 +110,7 @@
 
 
 
-# # 面试 Extra
+# 面试 Extra
 
 > 由于是社招了，主打一个项目经验！！！     把简历2个项目吃透！把用到的技术点融到项目里面
 
