@@ -11,15 +11,12 @@
     "docs:update-package": "npx vp-update"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.12",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.33",
-    "@vuepress/plugin-git": "2.0.0-rc.33",
+    "@vuepress/bundler-vite": "2.0.0-rc.13",
+    "@vuepress/plugin-docsearch": "^2.0.0-rc.33",
+    "@vuepress/plugin-git": "^2.0.0-rc.33",
+    "@vuepress/plugin-sitemap": "^2.0.0-rc.33",
     "vue": "^3.4.27",
-    "vuepress": "2.0.0-rc.12",
+    "vuepress": "2.0.0-rc.13",
     "vuepress-theme-hope": "2.0.0-rc.47"
-  },
-  "packageManager": "pnpm@8.15.6+sha1.8105075ad0aa306138be128c017e9c41e28ecffa",
-  "dependencies": {
-    "@vuepress/plugin-sitemap": "^2.0.0-rc.31"
   }
 }
