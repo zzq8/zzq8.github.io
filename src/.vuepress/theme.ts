@@ -52,6 +52,10 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
+    // 评论待定
+    commentPlugin: 
+
+    // 踩坑一下午：处理依赖冲突问题！
     sitemap: {
       devServer: true,
       devHostname: 'http://localhost:8080'
