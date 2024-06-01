@@ -52,6 +52,11 @@ export default hopeTheme({
 
   // 在这里配置主题提供的插件
   plugins: {
+    sitemap: {
+      devServer: true,
+      devHostname: 'http://localhost:8080'
+    },
+
     docsearch: {
       // XDD：用这个搜索踩坑两天，场景：有数据但是vuepress去搜不到，解决：爬虫指定 lang 这个配置硬是找不到
       // appId, apiKey 和 indexName 是必填的
