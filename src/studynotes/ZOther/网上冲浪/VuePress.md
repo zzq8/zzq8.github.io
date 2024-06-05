@@ -5,6 +5,8 @@
 > 之前我是用 Docify 做自己的 ==笔记 静态网站==
 >
 > 但是 1）没有笔记目录 2）而且 JavaGuide 逛多了 希望搞个一样的
+>
+> 后续：发现一个[大佬](https://newzone.top/web/docsify.html)
 
 ## Feature
 
