@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" data-theme="{{ themeMode }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="keywords" content="自我提升,效率提升,开源工具,学习笔记" />
+    <style>
+      html {
+        background: var(--bg-color, #fff);
+      }
+
+      html[data-theme="dark"] {
+        background: var(--bg-color, #252232);
+      }
+
+      body {
+        background: var(--bg-color);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+    <!--vuepress-ssr-head-->
+    <!--vuepress-ssr-styles-->
+    <!--vuepress-ssr-preload-->
+    <!--vuepress-ssr-prefetch-->
+    <!-- 统计代码区域-->
+  </head>
+  <body>
+    <div id="app"><!--vuepress-ssr-content--></div>
+    <!--vuepress-ssr-scripts-->
+    <!-- 看板娘区块 -->
+    <script src="/live2d-widget/autoload.js"></script>
+    <!-- End 看板娘区块 -->
+  </body>
+</html>
