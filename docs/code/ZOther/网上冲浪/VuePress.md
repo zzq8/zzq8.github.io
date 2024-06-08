@@ -11,6 +11,16 @@ article: false
 >
 > 后续：发现一个[大佬](https://newzone.top/web/docsify.html)
 
+## GitPage
+
+设置自己的域名：只需要 DNS 解析给 2 个 CNAME 记录就行（顶级域名）
+
+二级域名估计只要一个 CNAME 就行
+
+记录值： zzq8.github.io.
+
+虽然这个记录值是 404 没关系，DNS 设置到这就行！
+
 ## Feature
 
 * md 里面可以写 js+vue 语法 会渲染到页面   具体参考demo     【真牛】
