@@ -102,6 +102,20 @@ b *be* *be*e *be*er *be*ers
 
 
 
+> 场景二：可选项
+
+```
+colou?r
+```
+
+------
+
+```
+*color* *colour*
+```
+
+
+
 ## ==> positive lookahead / negative lookahead==
 
 > 匹配主表达式后面的组而不将其包含在结果中。 (?=ABC)

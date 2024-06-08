@@ -4,13 +4,13 @@
 >
 > 借鉴 [JavaGuide](https://javaguide.cn/high-performance/message-queue/rocketmq-intro.html)
 
-# 一、前言
+## 一、前言
 
-## 1.三大作用
+### 1.三大作用
 
 > 联想订票系统，订票业务和短信业务
 
-### 1.1 异步与解耦
+#### 1.1 异步与解耦
 
 主要就是为了 **异步** 用
 
@@ -28,7 +28,7 @@
 
 
 
-### 1.2 流量削峰
+#### 1.2 流量削峰
 
 场景：大量用户请求购票整个系统会变成什么样？
 
@@ -40,7 +40,7 @@
 
 ![image-20220712111100552](https://images.zzq8.cn/img/202207121111658.png)
 
-### 1.3 没有哪一门技术是“银弹”，消息队列也有它的副作用
+#### 1.3 没有哪一门技术是“银弹”，消息队列也有它的副作用
 
 比如，本来好好的两个系统之间的调用，我中间加了个消息队列，如果消息队列挂了怎么办呢？是不是 **降低了系统的可用性** ？
 
@@ -56,13 +56,13 @@
 
 
 
-## 2.两大概念
+### 2.两大概念
 
 > 消息服务中两个重要概念： 消息代理（message broker）、目的地（destination）
 >
 > 当消息发送者发送消息以后，将由消息代理接管，消息代理保证消息传递到指定目的地。
 
-### 2.1 两种消息模型（JMS提供为例）
+#### 2.1 两种消息模型（JMS提供为例）
 
 消息队列主要有两种形式的目的地：
 
@@ -74,7 +74,7 @@
 
 
 
-### 2.2 两大规范/协议
+#### 2.2 两大规范/协议
 
 > RabbitMQ是一个由erlang开发的AMQP(Advanved Message Queue Protocol)的开源实现
 
@@ -93,9 +93,9 @@ ps：RabbitMQ 有很多复杂概念，这个打通其它MQ不是问题 因为其
 
 
 
-### 2.3 Java 落地
+#### 2.3 Java 落地
 
-#### Spring支持
+##### Spring支持
 
 * spring-jms提供了对JMS的支持
 * spring-rabbit提供了对AMQP的支持
@@ -104,16 +104,16 @@ ps：RabbitMQ 有很多复杂概念，这个打通其它MQ不是问题 因为其
 * @JmsListener（JMS）、@RabbitListener（AMQP）注解在方法上监听消息代理发布的消息
 * @EnableJms、@EnableRabbit开启支持
 
-#### Spring Boot自动配置
+##### Spring Boot自动配置
 
 * JmsAutoConfiguration
 * RabbitAutoConfiguration
 
 
 
-## 2.核心概念
+### 2.核心概念
 
-### 1）==RabbitMQ==
+#### 1）==RabbitMQ==
 
 > 微服务如有一起用 Java、PHP 那么如果 Java 挂了可能就会影响 PHP 的服务，而 `虚拟主机` 每个一套环境的感觉
 
@@ -144,7 +144,7 @@ Channel、Message在Java中都有对应的类，可以直接用。例如通过Ch
 
 
 
-### 2）RocketMQ 时候笔记
+#### 2）RocketMQ 时候笔记
 
 NameServer：类似中介，跟eureka差不多服务的注册与发现
 
@@ -164,9 +164,9 @@ Broker：消息队列服务器
 
 
 
-# 二、使用
+## 二、使用
 
-## 1.安装 RabbitMQ
+### 1.安装 RabbitMQ
 
 ```shell
 #docker images 本地没有rabbitmq:management这个镜像执行这个命令会连网自动去下
@@ -189,9 +189,9 @@ https://www.rabbitmq.com/networking.html
 
 
 
-## 2.Spring Boot整合RabbitMQ
+### 2.Spring Boot整合RabbitMQ
 
-### 2.1 简介
+#### 2.1 简介
 
 在spring boot项目中只需要引入对应的amqp启动器依赖即可，方便的**使用RabbitTemplate发送消息，使用注解接收消息。**
 
@@ -213,7 +213,7 @@ application.yml文件配置RabbitMQ相关信息
 
 
 
-### 2.2 配置
+#### 2.2 配置
 
 1. pom.xml：
 
@@ -243,7 +243,7 @@ ps：AmqpAdmin 可以用来创造 Exchange、Queue和两者之间的Binding
 
 
 
-### 2.3 使用
+#### 2.3 使用
 
 > 上面配置完，下面使用按视频就是 
 >
@@ -263,7 +263,7 @@ ps：AmqpAdmin 可以用来创造 Exchange、Queue和两者之间的Binding
 >
 > 监听器拿消息写Services用两个注解，只要项目在运行就会实时监听消费！
 
-##### @RabbitListener:类+方法上（监听哪些队列即可）
+###### @RabbitListener:类+方法上（监听哪些队列即可）
 
 ```java
     /**
@@ -281,7 +281,7 @@ ps：AmqpAdmin 可以用来创造 Exchange、Queue和两者之间的Binding
     public void receiveMessage(Message message, OrderReturnReasonEntity content, Channel channel)
 ```
 
-##### @RabbitHandLer:标在方法上（重载区分不同类型的消息）
+###### @RabbitHandLer:标在方法上（重载区分不同类型的消息）
 
 * 单元测试发两个不同的实体对象
 * 两个注解搭配使用，相当于重载拿不同的实体对象
@@ -306,20 +306,20 @@ public class OrderItemServiceImpl{
 
 
 
-### ==2.4 消息确认机制-可靠抵达==
+#### ==2.4 消息确认机制-可靠抵达==
 
 > 可靠抵达：发送端确认+消费端确认
 
 ```properties
-# 开启发送端消息抵达Broker确认
+## 开启发送端消息抵达Broker确认
 spring.rabbitmq.publisher-confirms=true
 
-# 开启发送端消息抵达Queue确认
+## 开启发送端消息抵达Queue确认
 spring.rabbitmq.publisher-returns=true
-# 只要消息抵达Queue，就会异步发送优先回调returnfirm
+## 只要消息抵达Queue，就会异步发送优先回调returnfirm
 spring.rabbitmq.template.mandatory=true
 
-# 手动ack消息，不使用默认的消费端确认
+## 手动ack消息，不使用默认的消费端确认
 spring.rabbitmq.listener.simple.acknowledge-mode=manual
 ```
 
@@ -327,7 +327,7 @@ spring.rabbitmq.listener.simple.acknowledge-mode=manual
 
 <center style="color: red;">XD：面试点-成功回调、失败回调、手动ACK</center>
 
-#### 2.4.1 发送端确认
+##### 2.4.1 发送端确认
 
 > 弹幕：真实工作中根本不会这么用，都是让类去实现对应回调接口
 >
@@ -344,12 +344,12 @@ spring.rabbitmq.listener.simple.acknowledge-mode=manual
 1. ##### 打开确认模式
 
 ```properties
-# 1）Publisher/Producer -> Broker(Excange)
+## 1）Publisher/Producer -> Broker(Excange)
 spring.rabbitmq.publisher-confirms=true
 
-# 2）Exchange -> Quenen（一般下面这两个配置一起写）
+## 2）Exchange -> Quenen（一般下面这两个配置一起写）
 spring.rabbitmq.publisher-returns=true
-# 消息在没有被队列接收时是否强行退回
+## 消息在没有被队列接收时是否强行退回
 spring.rabbitmq.template.mandatory=true
 ```
 
@@ -393,7 +393,7 @@ spring.rabbitmq.template.mandatory=true
 
 
 
-#### 2.4.2 ==消费端确认&手动 ACK==
+##### 2.4.2 ==消费端确认&手动 ACK==
 
 > 场景：如果不定制化，默认情况下消息抵达客户端后自动确认，服务端消息自动删除  `默认的自动确认会有问题`
 > 	 问题：如一次5个消息到方法进行处理但只处理完1个就宕机。但web一看5个却都ack置为0了，实际上其它4个消息被默认ack但实际上还没处理！
@@ -426,7 +426,7 @@ channel.basicNack(deliveryTag, false, true);
 示例：
 
 ```properties
-# 手动ack消息，不使用默认的消费端确认
+## 手动ack消息，不使用默认的消费端确认
 spring.rabbitmq.listener.simple.acknowledge-mode=manual
 ```
 
@@ -446,11 +446,11 @@ try {
 
 
 
-## [3.RabbitMQ延时队列(实现定时任务)](../gulimall/消息队列流程.jpg)
+### [3.RabbitMQ延时队列(实现定时任务)](../gulimall/消息队列流程.jpg)
 
 > 为了高并发不用 Seata 控制，用MQ保证最终一致性
 
-### 3.1.为什么用延时队列不用定时任务
+#### 3.1.为什么用延时队列不用定时任务
 
 解锁表如果用定时任务很麻烦！这里用延时队列 延迟一段时间再给解锁库存的服务发消息补偿回来
 定时任务有时效性问题：一个30分钟过期的下单可能得59分钟后才被定时任务扫到
@@ -461,15 +461,15 @@ try {
 
 
 
-### 3.2.延时队列实现
+#### 3.2.延时队列实现
 
 > **TTL+死信  超过指定TTL还没被消费就称这个消息为死信  ->  死信会丢给死信交换机（DLX死信路由）  ->  死信交换机再丢给指定队列**
 
-#### 3.2.1.队列过期（推荐）
+##### 3.2.1.队列过期（推荐）
 
 ![image-20230131105835211](https://images.zzq8.cn/img/202301311058168.png)
 
-#### 3.2.2.消息过期
+##### 3.2.2.消息过期
 
 设置消息过期时间实现延时队列
 
@@ -479,7 +479,7 @@ try {
 
 
 
-### 3.3.MQ 架构
+#### 3.3.MQ 架构
 
 > 一个交换机即可，路由到不同的队列         **延时队列（TTL到了就放死信） & 死信队列（给消费者删，例如解锁库存）**
 
@@ -489,7 +489,7 @@ try {
 
 
 
-### 3.4.解锁库存
+#### 3.4.解锁库存
 
 很多解锁细节，看着有些繁琐，直接 CV ，没有去捋了     后面大致捋了下
 
@@ -553,7 +553,7 @@ stock module:
 
 
 
-### 3.5.可靠消息
+#### 3.5.可靠消息
 
 > 柔性事务-**可靠消息**+最终一致性方案（异步确保型，视频是这个）✔
 > 也是借助 MQ  总结一句：异步下单，提高并发，提升响应，提升购物体验。
@@ -564,7 +564,7 @@ stock module:
 
 看   [#2.4 消息确认机制-可靠抵达](#2.4 消息确认机制-可靠抵达)
 
-#### 3.5.1.消息丢失
+##### 3.5.1.消息丢失
 
 - 情况1：网络连接失败，消息未抵达Broker
   - 解决：发送消息时同时将消息持久化到MQ中并插入DB（DB消息状态为已抵达） 当出现异常时在catch处修改消息状态为错误抵达
@@ -589,7 +589,7 @@ try {
 
 
 
-#### 3.5.2.消息重复
+##### 3.5.2.消息重复
 
 - 情况1：业务逻辑已经执行，但是ack时宕机，消息由unack变为ready，消息重新入队
   - 解决：将接口设计成**幂等性**，例如库存解锁时判断工作单的状态，已解锁则无操作
@@ -597,7 +597,7 @@ try {
 
 
 
-#### 3.5.3.消息积压
+##### 3.5.3.消息积压
 
 - 情况1：生产者流量太大
   - 解决：减慢发送消息速率（验证码、防刷、重定向、削峰）

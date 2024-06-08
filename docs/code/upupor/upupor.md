@@ -6,12 +6,12 @@ https://eco.upupor.com/upupor/
 
 ![https://eco.upupor.com/assets/upupor-architecture.c16039e8.svg](https://eco.upupor.com/assets/upupor-architecture.c16039e8.svg)
 
-# 一、前置环境
+## 一、前置环境
 
 > 1. 过启动时候 log 看触发哪些配置项
 > 2. 一个个功能模块过
 
-## 1.flyway
+### 1.flyway
 
 作用：数据迁移
 
@@ -31,7 +31,7 @@ SQL脚本文件有固定命名规则
 
 
 
-## 2.环境变量
+### 2.环境变量
 
 > `XD：我觉得这是开源值得学习的一个点，所有隐私部分用${} 然后单独搞个 application.properties 不被版本控制就行！`
 >
@@ -45,9 +45,9 @@ SQL脚本文件有固定命名规则
 
 
 
-# 二、注册-邮件
+## 二、注册-邮件
 
-## 1.事件驱动-@EventListener
+### 1.事件驱动-@EventListener
 
 笔记：https://www.cnblogs.com/dafengdeai/articles/17073114.html
 
@@ -116,7 +116,7 @@ XD：
 
 
 
-# 三、UUID
+## 三、UUID
 
 > com.upupor.framework.utils.CcUtils#getUuId
 
@@ -124,7 +124,7 @@ XD：
 
 
 
-# 四、文章压缩
+## 四、文章压缩
 
 `com.upupor.framework.utils.DeflaterUtils`
 
@@ -146,7 +146,7 @@ XD：
 
 
 
-# 五、TODO-获取文章内容
+## 五、TODO-获取文章内容
 
 > 一开始我只想确认文章展示是不是需要 unzip 解压缩
 >
@@ -154,7 +154,7 @@ XD：
 
 
 
-# 六、响应时间
+## 六、响应时间
 
 > 在 Spring 框架中，`StopWatch` 是一个用于测量代码执行时间的工具类。它提供了一种简单的方式来跟踪代码块的执行时间，并可以用于性能分析、调优和监控。
 
@@ -167,7 +167,7 @@ XD：
 
 
 
-# 七、基于Redis滑动窗口实现用户限流
+## 七、基于Redis滑动窗口实现用户限流
 
 com.upupor.test.UpuporLimiterTest
 
@@ -183,7 +183,7 @@ RuoYi 也有，对比实现逻辑
 
 
 
-# 八、页面下版本时间信息
+## 八、页面下版本时间信息
 
 启动类给上静态变量！！！在 `@Around("controllerLog()")` 里调用 bz，也就是说有xhr就会触发
 
@@ -209,9 +209,9 @@ public class UpuporWebApplication implements CommandLineRunner {
 
 
 
-# Z、知识点
+## Z、知识点
 
-## 1.实现ApplicationContextAware接口的作用
+### 1.实现ApplicationContextAware接口的作用
 
 > 场景：发现工具类中 SpringContextUtils.getBean(TrueSend.class); 好奇为什么不@Autowaird
 
@@ -247,7 +247,7 @@ public class MyBean implements ApplicationContextAware {
 
 
 
-## 2.[Spring-静态资源启用版本控制](../JavaFramework/SpringBoot#9）Spring-静态资源启用版本控制)
+### 2.[Spring-静态资源启用版本控制](../JavaFramework/SpringBoot#9）Spring-静态资源启用版本控制)
 
 > 记到了 SpringBoot.md 中，具体 link title
 
@@ -257,7 +257,7 @@ public class MyBean implements ApplicationContextAware {
 
 
 
-## 3.Lucene
+### 3.Lucene
 
 Lucene和Elasticsearch之间存在密切的关联。实际上，Elasticsearch是建立在Lucene之上的分布式搜索和分析引擎，它提供了更高级的功能和易用性的接口，以便于构建和管理大规模的分布式搜索应用程序。
 
@@ -363,7 +363,7 @@ Minio
 
 
 
-# TODO
+## TODO
 
 * blog文章加密方式，为什么
 

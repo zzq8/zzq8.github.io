@@ -7,7 +7,7 @@
 > 楠哥的太浅了，粗略过了一遍
 > 现在在过 [王清江](https://www.bilibili.com/video/BV1zm4y1A7yQ?p=7&spm_id_from=pageDriver&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0) 的  约等于 26 h   26/3=9          哪些点想看就可以看他[公众号的讲义](https://mp.weixin.qq.com/mp/appmsgalbum?search_click_id=4558257005716448117-1704794396839-8017893460&__biz=Mzg5OTgxOTg0Ng==&action=getalbum&album_id=2441331662295973890#wechat_redirect)
 
-# 1.验证码
+## 1.验证码
 
 > 本来想重写 Controller 了解验证码 IO 流的形式的～
 
@@ -32,7 +32,7 @@ Producer 接口下就两个方法
 
 
 
-## 1.1.Redis 处理
+### 1.1.Redis 处理
 
 Redis 写入两个内容：
 
@@ -56,7 +56,7 @@ Redis 写入两个内容：
 
 
 
-## 1.2.前端
+### 1.2.前端
 
 > 一套流程都是从前端发起，不搞懂前端运转就会 **不明不白**
 >
@@ -95,7 +95,7 @@ getCode() {
 
 
 
-### 1.2.1.Vue baseURL
+#### 1.2.1.Vue baseURL
 
 > ```js
 > // 创建axios实例
@@ -111,7 +111,7 @@ getCode() {
 >
 > 导致所有请求都会带上 http://localhost**/dev-api**/captchaImage
 
-#### 问题一：.env.development
+##### 问题一：.env.development
 
 > Q: 为什么用的是   .env.development   文件的配置呢？
 
@@ -119,7 +119,7 @@ A: 您使用`npm run dev`命令启动开发服务器时，Vue.js会自动加载`
 
 
 
-#### 问题二：vue.config.js -> proxy
+##### 问题二：vue.config.js -> proxy
 
 标准的：配置反向代理服务器
 
@@ -187,7 +187,7 @@ XD: 应该是行的，只是不推荐
 
 
 
-# 2.登陆
+## 2.登陆
 
 后端逻辑三步：
 
@@ -214,7 +214,7 @@ XD: `ScheduledThreadPoolExecutor`
 
 
 
-## 日志
+### 日志
 
 AsyncFactory.class 发现使用 API 方式获取 Bean
 
@@ -234,14 +234,14 @@ SpringUtils.getBean(ISysLogininforService.class).insertLogininfor(logininfor);
 
 
 
-# 3.用户管理
+## 3.用户管理
 
 > 菜单栏的东西大体都一样的，分析了这一个其他都差不多
 > 这里system/user 有 list & tree 两个数据要获取
 >
 > http://localhost:1024/dev-api/system/user/list?pageNum=1&pageSize=10
 
-## 3.1.List-centerPanel
+### 3.1.List-centerPanel
 
 这里的 pageNum & pageSize 是通过工具类 ServletUtils 原生方式获取的：
 
@@ -256,7 +256,7 @@ pageDomain.setPageSize(Convert.toInt(ServletUtils.getParameter(PAGE_SIZE), 10));
 
 
 
-## 3.2.Tree-LeftPanel
+### 3.2.Tree-LeftPanel
 
 同路由菜单一样 recursionFn 递归
 
@@ -266,7 +266,7 @@ pageDomain.setPageSize(Convert.toInt(ServletUtils.getParameter(PAGE_SIZE), 10));
 
 
 
-## PS：PageHelper
+### PS：PageHelper
 
 分页数据使用的是：Mybatis + PageHelper
 
@@ -286,7 +286,7 @@ CURD-URD 略。。
 
 
 
-# 4.强退
+## 4.强退
 
 > 在 Boke 有些系统也有这个功能，这里也有感兴趣学一下
 
@@ -297,7 +297,7 @@ CURD-URD 略。。
 
 
 
-# [5.限流](https://mp.weixin.qq.com/s/g-aB24n31pZuGPSgqrsqCA)
+## [5.限流](https://mp.weixin.qq.com/s/g-aB24n31pZuGPSgqrsqCA)
 
 分为 全局限流 vs ip限流             
 
@@ -336,7 +336,7 @@ return stringBuffer.toString();
 
 
 
-# 5.定时任务
+## 5.定时任务
 
 主要迷惑前端页面配置好到数据库，后端quartz具体怎么执行的
 
@@ -347,15 +347,15 @@ return stringBuffer.toString();
 
 
 
-# 6.[防止重复提交过滤](https://mp.weixin.qq.com/s?__biz=Mzg5OTgxOTg0Ng==&mid=2247484003&idx=1&sn=0524c11d551a34866bb31148ff0d199a&chksm=c04c324af73bbb5c9861aa31289d5545fb3b5a1984932926b0010fa263c2ded7006b539e5972&scene=178&cur_album_id=2441331662295973890#rd)
+## 6.[防止重复提交过滤](https://mp.weixin.qq.com/s?__biz=Mzg5OTgxOTg0Ng==&mid=2247484003&idx=1&sn=0524c11d551a34866bb31148ff0d199a&chksm=c04c324af73bbb5c9861aa31289d5545fb3b5a1984932926b0010fa263c2ded7006b539e5972&scene=178&cur_album_id=2441331662295973890#rd)
 
-#### 前端：
+##### 前端：
 
 前端可以针对同一个按钮进行拦截，在 request.js 中有   **request拦截器**  （如果请求数据和请求URL和**最近一次**请求一致，并且请求间隔小于1000ms，就进行请求拦截，直接拒绝当前请求。）
 
 
 
-#### 后端：
+##### 后端：
 
 从我上面的描述，发现了一个bug，总有手快的人，喜欢点A按钮，然后立刻点B按钮，然后又立刻点A按钮。那么对于A按钮是重复提交了，但是又不满足前端判断重复请求的条件，于是重复请求进入了后端，这时候就需要后端再次校验，是不是重复请求。
 
@@ -365,7 +365,7 @@ return stringBuffer.toString();
 
 
 
-# [7.@Anonymous](https://mp.weixin.qq.com/s?__biz=Mzg5OTgxOTg0Ng==&mid=2247483889&idx=1&sn=d0b4e57c288e0bf0667bd5b2d05003e7&chksm=c04c31d8f73bb8ce03437c29224397393c2c19460f261a628b851970be2f92e16112a81ecadb&scene=178&cur_album_id=2441331662295973890#rd)
+## [7.@Anonymous](https://mp.weixin.qq.com/s?__biz=Mzg5OTgxOTg0Ng==&mid=2247483889&idx=1&sn=d0b4e57c288e0bf0667bd5b2d05003e7&chksm=c04c31d8f73bb8ce03437c29224397393c2c19460f261a628b851970be2f92e16112a81ecadb&scene=178&cur_album_id=2441331662295973890#rd)
 
 > 自定义注解，配合SpringSecurity实现注解地方放行访问     .antMatchers("/actuator/*").permitAll()   “?”里是注解过的地方
 
@@ -374,7 +374,7 @@ return stringBuffer.toString();
 
 
 
-## Tips:注解
+### Tips:注解
 
 我们一般知道，注解是给程序看的，给机器看的，当然也是给程序员看的。注解如果没有==注解解析器==（注解处理器，注解解释器），那么注解就没有什么作用。所以@Anonyous一定是在某个地方被干嘛干嘛了！
 
@@ -382,7 +382,7 @@ return stringBuffer.toString();
 
 
 
-# 8.Token过期问题
+## 8.Token过期问题
 
 > 杭州面试问到这个，全是针对项目的技术栈在问！！！
 

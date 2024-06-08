@@ -2,7 +2,7 @@
 
 > 把macos 笔记整合进来，然后把环境指南感觉可以删了
 
-## Shell CLI
+### Shell CLI
 
 > https://wangchujiang.com/linux-command/
 > 搜 Linux 命令解释好使！！！
@@ -56,7 +56,7 @@
 
 
 
-## Tips
+### Tips
 
 
 
@@ -79,7 +79,7 @@
 
 ![image-20230531110912384](https://images.zzq8.cn/img/202305311109374.png)
 
-### Linux是多用户操作系统
+#### Linux是多用户操作系统
 
 操作系统按用户数量可以分为单用户系统和多用户系统。比如Windows就是典型的单用户系统，Linux就是典型的多用户系统。
 
@@ -105,7 +105,7 @@
 
 
 
-## 权限
+### 权限
 
 [Linux 文件基本属性](https://www.runoob.com/linux/linux-file-attr-permission.html)：看完就知道文件属性了，重点看里面的两幅图！
 
@@ -135,7 +135,7 @@ chmod -R 770 /mydata/elasticsearch/
 常用：
 
 ```yaml
-# 批量改文件夹权限
+## 批量改文件夹权限
 chmod -R 777 /mydata/elasticsearch/
 ```
 
@@ -145,7 +145,7 @@ chmod -R 777 /mydata/elasticsearch/
 
 
 
-## Scene
+### Scene
 
 > 备份数据库：#介绍了有问题的原因
 

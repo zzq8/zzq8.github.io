@@ -1,6 +1,5 @@
-> 该文档得重新索引归类，不然太乱了。。。不好检索
-
 # MySQL索引
+> 该文档得重新索引归类，不然太乱了。。。不好检索
 
 > 索引(Index)是帮助MySQL高效获取数据的数据结构。 0.5s    0.000001s
 >
@@ -12,7 +11,7 @@
 
 要使用行级锁：查询或者更新条件必须是索引字段
 
-# 索引的分类
+## 索引的分类
 
 * 主键索引（PRIMERY KEY)
 * 唯一索引（UNIQUE KEY）
@@ -30,7 +29,7 @@
 
 注：索引在小数据量的时候用处不大，但是在大数据的时候，区别十分明显。
 
-# 索引原则
+## 索引原则
 
 * 索引不是越多越好
 * 不要对经常变动的数据加索引
@@ -45,7 +44,7 @@ Btree：InnoDB的默认数据结构
 
 
 
-#### 注意自连接
+##### 注意自连接
 
 交叉连接（CROSS JOIN）一般用来返回连接表的笛卡尔积。
 
@@ -83,9 +82,9 @@ cross join weather w2 on datediff(w1.recordDate,w2.recordDate) = 1
 
 
 
-# 做 LeetCode 汇总
+## 做 LeetCode 汇总
 
-#### 注意 update 没有 from
+##### 注意 update 没有 from
 
 ```mysql
 DELETE FROM 表名
@@ -120,7 +119,7 @@ SET t2.StorageNum = 1;
 
 
 
-#### 可以把 null 字段过滤成 0    或者用 if
+##### 可以把 null 字段过滤成 0    或者用 if
 
 ```mysql
 select e1.employee_id, IFNULL(e2.salary ,0) bonus
@@ -129,7 +128,7 @@ from employees e1 left join
 
 
 
-#### IF 表达式 IF( expr1 , expr2 , expr3 ) expr1 的值为 TRUE，则返回值为 expr2 expr1 的值为FALSE，则返回值为 expr3
+##### IF 表达式 IF( expr1 , expr2 , expr3 ) expr1 的值为 TRUE，则返回值为 expr2 expr1 的值为FALSE，则返回值为 expr3
 
 ```mysql
 update salary set sex = if(sex = 'm','f','m')
@@ -137,7 +136,7 @@ update salary set sex = if(sex = 'm','f','m')
 
 
 
-#### mysql 中调用下面的语句提示该错误
+##### mysql 中调用下面的语句提示该错误
 
 > In MySQL, you can’t modify the same table which you use in the SELECT part.
 
@@ -159,7 +158,7 @@ delete from Person where id in (
 
 
 
-#### 如果表名用了别名，要将别名放在delete和from之间
+##### 如果表名用了别名，要将别名放在delete和from之间
 
 ```mysql
 把重复的用Delete 删除就好了
@@ -171,7 +170,7 @@ where v.id < u.id and u.email = v.email
 
 
 
-#### ==用 Group by 删除后面id值大的重复的数据==
+##### ==用 Group by 删除后面id值大的重复的数据==
 
 ```mysql
 DELETE from Person 
@@ -187,11 +186,11 @@ Where Id not in (
 
 
 
-#### [学习自连接](https://zhuanlan.zhihu.com/p/141083771)：自连接：自己和自己做笛卡尔积
+##### [学习自连接](https://zhuanlan.zhihu.com/p/141083771)：自连接：自己和自己做笛卡尔积
 
 
 
-#### 名字首字母大写，后面小写
+##### 名字首字母大写，后面小写
 
 > JavaGuide 中都搜不到 upper lower 这两个函数
 
@@ -201,7 +200,7 @@ concat(upper(left(name,1)),lower(substring(name,2))) name # substr 好像也可�
 
 
 
-#### group_concat([distinct] 字段名 [order by 排序字段 asc/desc] [separator '分隔符'])
+##### group_concat([distinct] 字段名 [order by 排序字段 asc/desc] [separator '分隔符'])
 
 ```mysql
 group_concat 返回带有来自一个组的连接的非NULL值的字符串结果。组内字符串连接
@@ -211,7 +210,7 @@ group_concat(distinct product order by product separator ',') as products
 
 
 
-#### 列转行用union all：一开始我没那么理解
+##### 列转行用union all：一开始我没那么理解
 
 > XD再学习：同一个表不同列放一列
 
@@ -250,7 +249,7 @@ select product_id, 'store3' store, store3 price from products where store3 is no
 
 
 
-#### case的使用
+##### case的使用
 
 ```mysql
 case 
@@ -271,7 +270,7 @@ select 3 not in (null,2)
 
 
 
-#### [第二高的薪水](https://leetcode.cn/problems/second-highest-salary/)
+##### [第二高的薪水](https://leetcode.cn/problems/second-highest-salary/)
 
 ```mysql
 select (select distinct salary from Employee order by salary desc limit 1,1) as SecondHighestSalary
@@ -279,16 +278,16 @@ select (select distinct salary from Employee order by salary desc limit 1,1) as 
 
 
 
-#### DATEDIFF() 函数返回两个日期之间的天数。
+##### DATEDIFF() 函数返回两个日期之间的天数。
 
 &  [具体所有 Date 相关函数](https://www.w3school.com.cn/sql/sql_dates.asp) 建议看这个
 
-#### Date 时间格式的处理函数：取date类型字段为 2021年8月 的数据
+##### Date 时间格式的处理函数：取date类型字段为 2021年8月 的数据
 
 ```mysql
-# 1
+## 1
 SELECT DATEDIFF('2008-12-30','2008-12-29') AS DiffDate
-# -1
+## -1
 SELECT DATEDIFF('2008-12-29','2008-12-30') AS DiffDate
 
 
@@ -304,20 +303,20 @@ year(date); MONTH(date); day(date);
 
 
 
-#### 要创建1天间隔，请使用以下表达式：
+##### 要创建1天间隔，请使用以下表达式：
 
 ```mysql
 interval 1 day
-# 场景：查询近30天活跃用户数
+## 场景：查询近30天活跃用户数
 where activity_date > date_sub('2019-07-27', interval 30 day)
 DATE_ADD()
-# 其实有更简单的：注意会有负数要 and
+## 其实有更简单的：注意会有负数要 and
 where datediff('2019-07-27', activity_date) < 30 AND activity_date <= '2019-07-27'
 ```
 
 
 
-#### ==可以 group by 多个字段，且可以用 Select 查出的东西==
+##### ==可以 group by 多个字段，且可以用 Select 查出的东西==
 
 ```mysql
 GROUP BY Subject, Semester
@@ -327,7 +326,7 @@ select day(date) hhh from xx group by hhh
 
 
 
-#### year(time_stamp) = 2020
+##### year(time_stamp) = 2020
 
 ```mysql
 SELECT user_id, max(time_stamp) last_stamp
@@ -335,13 +334,13 @@ FROM Logins
 WHERE year(time_stamp) = 2020
 GROUP BY user_id
 
-# me
+## me
 where time_stamp >= '2020-01-01 00:00:00' and time_stamp <= '2020-12-31 23:59:59'
 ```
 
 
 
-#### [sum() 里面可以 case when then end](https://leetcode.cn/problems/capital-gainloss/comments)
+##### [sum() 里面可以 case when then end](https://leetcode.cn/problems/capital-gainloss/comments)
 
 ```mysql
 select stock_name,
@@ -355,7 +354,7 @@ group by stock_name
 
 
 
-#### [SQL中 select count(1) count中的1 到底是什么意思呢?和count(*)的区别](https://www.cnblogs.com/xiaoqiqistudy/p/11210716.html)
+##### [SQL中 select count(1) count中的1 到底是什么意思呢?和count(*)的区别](https://www.cnblogs.com/xiaoqiqistudy/p/11210716.html)
 
 如果表没有主键，那么count(1)比count(\*)快。 
 
@@ -373,18 +372,18 @@ group by stock_name
 
 
 
-#### between '2019-01-01' and '2019-03-31'
+##### between '2019-01-01' and '2019-03-31'
 
 
 
-#### 发现函数的下标都是从 1 开始的
+##### 发现函数的下标都是从 1 开始的
 
 
 
-#### 字符串匹配指定字串
+##### 字符串匹配指定字串
 
 ```mysql
-# 180cm,75kg,27,male
+## 180cm,75kg,27,male
 select substring_index(profile,',',-1) #SUBSTRING_INDEX(str  ,substr  ,n)：返回字符substr在str中第n次出现位置之前的字符串;
 select regexp_substr(profile,"male|female")
 ```
@@ -393,7 +392,7 @@ select regexp_substr(profile,"male|female")
 
 
 
-# Boke
+## Boke
 
 > left join
 >
@@ -742,7 +741,7 @@ ORDER BY
 
 
 
-# 面试
+## 面试
 
 > [1）Union 和 Union All  --> 具体看上面](#列转行用union all：一开始我没那么理解)
 
@@ -798,7 +797,7 @@ https://blog.csdn.net/qq_21993785/article/details/81017671
 
 分库分表实际上是分布式存储中一种数据分片的解决方案
 
-### 水平拆分实现
+#### 水平拆分实现
 
 分库分表的方法有很多种，其中常用的有：   可以看titile那篇文章！
 
@@ -846,7 +845,7 @@ ID 问题：了解 1 最简单的设置步长
 
 
 
-# 自我学习
+## 自我学习
 
 > 常翻的一张图，SQL JOINS 
 >
@@ -857,7 +856,7 @@ ID 问题：了解 1 最简单的设置步长
 
 
 
-## ACID
+### ACID
 
 * 原子性（Atomicity） ： 事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用；
 * 一致性（Consistency）： 执行事务前后，数据保持一致，例如转账业务中，无论事务是否成功，转账者和收款人的总额应该是不变的；
@@ -874,7 +873,7 @@ ID 问题：了解 1 最简单的设置步长
 
 
 
-#### [MySQL中字段类型与合理的选择字段类型；int(11)最大长度是多少？varchar最大长度是多少？](https://segmentfault.com/a/1190000010012140)
+##### [MySQL中字段类型与合理的选择字段类型；int(11)最大长度是多少？varchar最大长度是多少？](https://segmentfault.com/a/1190000010012140)
 
 对于VARCHAR类型，MySQL会根据存储的实际数据长度来动态分配存储空间，因此VARCHAR类型的存储空间是根据实际存储的数据长度来动态分配的，并不会浪费存储空间。
 
@@ -910,7 +909,7 @@ limit 100000,30;    ->     where id>10000 limit 30;
 
 
 
-#### 全连接是外连接吗
+##### 全连接是外连接吗
 
 是的，全连接是一种外连接（outer join），它包括左外连接（left outer join）和右外连接（right outer join）的结果。
 
@@ -924,7 +923,7 @@ FULL OUTER JOIN table2 ON table1.column = table2.column;
 
 
 
-#### mysql中创建表时候必须指定主键吗
+##### mysql中创建表时候必须指定主键吗
 
 在MySQL中，创建表时并不一定必须指定主键，但是建议为每个表指定一个主键。如果表中没有主键，那么它就是一个无主键表（unkeyed table），也称为堆表（heap table）。**在无主键表中，MySQL会为每一行隐式地分配一个ROWID**（或HEAPID），作为行的唯一标识符，但是这种行标识符并不是真正的主键。
 
@@ -932,11 +931,11 @@ FULL OUTER JOIN table2 ON table1.column = table2.column;
 
 
 
-#### mysql没有索引查行数据怎么查
+##### mysql没有索引查行数据怎么查
 
 如果MySQL表没有索引，可以使用全表扫描的方式来查找行数据。全表扫描是指MySQL会扫描整个表的每一行数据，然后逐行进行比较，找到符合条件的行数据。
 
-##### 全表扫码顺序有主键就根据主键扫，没有主键就是根据rowid来的是吗   Yes
+###### 全表扫码顺序有主键就根据主键扫，没有主键就是根据rowid来的是吗   Yes
 
 在MySQL中，如果表没有主键，那么MySQL会使用隐藏的ROWID（也称为物理地址或行指针）作为默认的聚簇索引，用于支持数据的物理存储和访问，因此在进行全表扫描时，MySQL会按照ROWID的顺序进行扫描。
 
@@ -948,9 +947,9 @@ FULL OUTER JOIN table2 ON table1.column = table2.column;
 
 
 
-## 高性能：有哪些常见的 SQL 优化手段？
+### 高性能：有哪些常见的 SQL 优化手段？
 
-### * 避免使用 SELECT *
+#### * 避免使用 SELECT *
 
 * SELECT * 会消耗更多的 CPU （数据传输量增加：SELECT * 会返回表中的所有列，包括不需要的列）
 * SELECT * 无用字段增加网络带宽资源消耗，增加数据传输时间，尤其是大字段（如 varchar、blob、text）。
@@ -958,7 +957,7 @@ FULL OUTER JOIN table2 ON table1.column = table2.column;
   * MySQL优化器覆盖索引是指查询可以直接使用索引来满足查询需求，而无需访问实际的数据行。也就是不需要“回表”操作了
 * SELECT <字段列表> 可减少表结构变更带来的影响
 
-### * 尽量避免多表做 join
+#### * 尽量避免多表做 join
 
 阿里巴巴《Java 开发手册》中有这样一段描述：
 
@@ -986,7 +985,7 @@ join 的效率比较低，主要原因是因为其使用嵌套循环（Nested Lo
 
 第一：单机数据库计算资源很贵，数据库同时要服务写和读，都需要消耗CPU，为了能让数据库的吞吐变得更高，而业务又不在乎那几百微妙到毫秒级的延时差距，业务会把更多计算放到service层做，毕竟计算资源很好水平扩展，数据库很难啊，所以大多数业务会把纯计算操作放到service层做，而将数据库当成一种带事务能力的kv系统来使用，这是一种重业务，轻DB的架构思路
 
-### 建议不要使用外键与级联
+#### 建议不要使用外键与级联
 
 阿里巴巴《Java 开发手册》中有这样一段描述：
 
@@ -1002,7 +1001,7 @@ join 的效率比较低，主要原因是因为其使用嵌套循环（Nested Lo
 
 
 
-### 尽量使用自增 id 作为主键。
+#### 尽量使用自增 id 作为主键。
 
 如果主键为自增 id 的话，每次都会将数据加在 B+树尾部（本质是双向链表），时间复杂度为 O(1)。在写满一个数据页的时候，直接申请另一个新数据页接着写就可以了。
 
@@ -1022,23 +1021,23 @@ join 的效率比较低，主要原因是因为其使用嵌套循环（Nested Lo
 
 
 
-### 批量操作 
+#### 批量操作 
 
 对于数据库中的数据更新，如果能使用批量操作就要尽量使用，减少请求数据库的次数，提高性能。
 
 ```sql
-# 反例
+## 反例
 INSERT INTO `cus_order` (`id`, `score`, `name`) VALUES (1, 426547, 'user1');
 INSERT INTO `cus_order` (`id`, `score`, `name`) VALUES (1, 33, 'user2');
 INSERT INTO `cus_order` (`id`, `score`, `name`) VALUES (1, 293854, 'user3');
 
-# 正例
+## 正例
 INSERT into `cus_order` (`id`, `score`, `name`) values(1, 426547, 'user1'),(1, 33, 'user2'),(1, 293854, 'user3');
 ```
 
 
 
-### 删除长期未使用的索引
+#### 删除长期未使用的索引
 
 删除长期未使用的索引，不用的索引的存在会造成不必要的性能损耗 MySQL 5.7 可以通过查询 sys 库的 schema_unused_indexes 视图来查询哪些索引从未被使用
 
@@ -1046,9 +1045,9 @@ INSERT into `cus_order` (`id`, `score`, `name`) values(1, 426547, 'user1'),(1, 3
 
 
 
-# 00 | 面试题
+## 00 | 面试题
 
-#### 面试题-百万级别以上的数据如何删除？ 
+##### 面试题-百万级别以上的数据如何删除？ 
 
 > 索引只对查询有好处？批量删大量数据不好
 
@@ -1060,7 +1059,7 @@ INSERT into `cus_order` (`id`, `score`, `name`) values(1, 426547, 'user1'),(1, 3
 2. **然后删除其中无用数据** 
 3. 删除完成后**重新创建索引创建索引也非常快**
 
-#### 面试题-百万千万级大表如何添加字段？
+##### 面试题-百万千万级大表如何添加字段？
 
 > 当线上的数据库数据量到达几百万、上千万的时候，加一个字段就没那么简单，因 为可能会==长时间锁表==
 
@@ -1076,7 +1075,7 @@ INSERT into `cus_order` (`id`, `score`, `name`) values(1, 426547, 'user1'),(1, 3
 
 ​	如果一张表数据量大且是热表（读写特别频繁），则可以考虑先在从库添加，再 进行主从切换，切换后再将其他几个节点上添加字段。
 
-#### 面试mai题-MySQL 数据库 cpu 飙升的话，要怎么处理呢？ 
+##### 面试mai题-MySQL 数据库 cpu 飙升的话，要怎么处理呢？ 
 
 排查过程： 
 
@@ -1098,7 +1097,7 @@ INSERT into `cus_order` (`id`, `score`, `name`) values(1, 426547, 'user1'),(1, 3
 
 
 
-#### 聚簇索引一个表为什么只能有一个？
+##### 聚簇索引一个表为什么只能有一个？
 
 由于聚簇索引是将索引和数据放在一起的，有多个的话会出现数据冗余。
 
@@ -1106,6 +1105,6 @@ INSERT into `cus_order` (`id`, `score`, `name`) values(1, 426547, 'user1'),(1, 3
 
 
 
-#### [MySQL 使用not in条件就一定不走索引吗？答案是不一定！](https://blog.csdn.net/weixin_38924697/article/details/119980350)
+##### [MySQL 使用not in条件就一定不走索引吗？答案是不一定！](https://blog.csdn.net/weixin_38924697/article/details/119980350)
 
 值列表太长可能不会走

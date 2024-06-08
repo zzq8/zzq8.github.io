@@ -7,15 +7,15 @@
 > zset: 排行榜应用实现，取Top N
 > Geospatial 地理位置
 
-# 一、基础篇
+## 一、基础篇
 
-## 1.课程内容
+### 1.课程内容
 
 > 实战篇性价比高，高级篇偏运维一点（高级、原理面试前整）
 
 ![image-20230304151001878](https://images.zzq8.cn/img/202303041510042.png)
 
-## 2.Redis的JAVA客户端
+### 2.Redis的JAVA客户端
 
 > 单单使用 Jedis 的话记得配 `JedisPool`
 > 使用Spring Data Redis的话默认实现的 lettuce，如想用 Jedis 需要单独引一下
@@ -26,7 +26,7 @@
 
 ![image-20230304152602369](https://images.zzq8.cn/img/202303041526511.png)
 
-### 2.1.RedisTemplate
+#### 2.1.RedisTemplate
 
 > RedisTemplate 记得设置一下序列化对象，直接看这个类源码有四个属性要设
 > 可以看这个四个属性的类型 `RedisSerializer` 接口有哪些实现类！**一般key用RedisSerializer.string、value用json对象**，==但有下面问题！==
@@ -37,15 +37,15 @@
 
 <img src="https://images.zzq8.cn/img/202303041658585.png" alt="image-20230304165847419" style="zoom:50%;" />
 
-### 2.2.反序列化问题-StringRedisTemplate
+#### 2.2.反序列化问题-StringRedisTemplate
 
 > 使用上述配置序列化时，反序列化有浪费内存的问题。
 
-#### 1）问题：
+##### 1）问题：
 
 ![image-20230304171121214](https://images.zzq8.cn/img/202303041711043.png)
 
-#### 2）解决
+##### 2）解决
 
 为了节省内存空间,我们并不会使用JSON序列化器来处理value,而是统一使用String序列化器,要求只能存储String类型的key和value.当需要存储java对象时,手动完成对象的序列化和反序列化.  **代码复杂了点多了两个手动序列化操作，但是空间省了**
 
@@ -53,13 +53,13 @@
 
 
 
-# 二、实战篇
+## 二、实战篇
 
 ![image-20230306095441886](https://images.zzq8.cn/img/202303060954783.png)
 
-# 1.短信登录
+## 1.短信登录
 
-## 1.1.这里使用Hash保存用户信息
+### 1.1.这里使用Hash保存用户信息
 
 > JSON串的格式，引号冒号还需保存，如果想加一个还得把整个串干掉
 >
@@ -81,7 +81,7 @@
 
 
 
-# 2.商户查询缓存
+## 2.商户查询缓存
 
 > 场景：想着自己使用spring cache技术整合Redis，用注解简化
 >
@@ -112,7 +112,7 @@ public <R,ID> R queryWithPassThrough(
 
 
 
-# 3.优惠券秒杀
+## 3.优惠券秒杀
 
 到这里我暂时中断了，因为我发现自己并没有那么想学！
 
@@ -212,7 +212,7 @@ public <R,ID> R queryWithPassThrough(
 
 
 
-# Hutools Utils
+## Hutools Utils
 
 1. 复制Bean的属性，好像同Spring有个工具类一样 `BeanUtil.copyProperties`
 

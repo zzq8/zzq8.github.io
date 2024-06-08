@@ -2,9 +2,9 @@
 
 > 以前碰过 Redis 没设密码被挖矿，现在设成简单密码依旧。。。
 
-# 1.基础环境
+## 1.基础环境
 
-## 1.1.[Docker](https://www.runoob.com/docker/centos-docker-install.html)
+### 1.1.[Docker](https://www.runoob.com/docker/centos-docker-install.html)
 
 > 实测用idea操作Docker比用 xshell 舒服太多了！！！
 
@@ -35,7 +35,7 @@ docker search jdk
 
 `systemctl restart docker`
 
-## 1.2.JAVA
+### 1.2.JAVA
 
 1. 拉取指定的版本 `docker pull java:8`
 
@@ -54,7 +54,7 @@ docker search jdk
 
 3. docker exec -it java bash
 
-## 1.3.MySQL
+### 1.3.MySQL
 
 1. `docker pull mysql:5.7`
 
@@ -71,7 +71,7 @@ docker search jdk
 
 
 
-#### 修改密码
+##### 修改密码
 
 修改默认密码 `ALTER USER 'root'@'localhost' IDENTIFIED BY 'new password';` 其中‘new password’替换成你要设置的密码，注意:密码设置必须要大小写字母数字和特殊符号（,/';:等）,不然不能配置成功
 
@@ -83,7 +83,7 @@ docker search jdk
 
 
 
-#### 开启mysql的远程访问-Navicat
+##### 开启mysql的远程访问-Navicat
 
 1. 执行以下命令开启远程访问限制（注意：下面命令开启的IP是 所有的，如要开启192.168.0.1，用IP代替%）：`grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;`
 2. 刷新权限表 `flush privileges; `
@@ -93,7 +93,7 @@ docker search jdk
 
 
 
-## 1.4.Redis
+### 1.4.Redis
 
 > 如果要通过配置文件启动 Redis 就需要先创好文件！
 
@@ -113,7 +113,7 @@ docker search jdk
 
 
 
-## 1.5.Nginx
+### 1.5.Nginx
 
 > 注意 `nginx.conf` 是个文件不是文件夹  `touch ~/nginx/conf/nginx.conf`
 >
@@ -147,7 +147,7 @@ docker search jdk
 
 4. html 也可以自己随便给个index.html文件 【非必须】
 
-## 1.6.MinIO
+### 1.6.MinIO
 
 > 9090是web网页后台，9000是url请求地址
 >
@@ -181,7 +181,7 @@ docker search jdk
 
 
 
-# 2.upupor
+## 2.upupor
 
 Navicat连接，新建空数据库
 
@@ -217,9 +217,9 @@ Navicat连接，新建空数据库
 
 
 
-# Git-备份
+## Git-备份
 
-## [1.前置配置](https://blog.csdn.net/weixin_42310154/article/details/118340458)
+### [1.前置配置](https://blog.csdn.net/weixin_42310154/article/details/118340458)
 
 > 云服务器的 Git 我捣鼓了好久~
 > 由于云服务器网络、地区CN   http协议去连 Github 有点抽风，固我第一次尝试了 ssh 协议！！！   好使
@@ -229,7 +229,7 @@ Navicat连接，新建空数据库
 3. 把 cat 到的公钥内容放入 Github SSH配置里
 4. 验证是否设置成功   `ssh -T git@github.com`
 
-### 通俗解释！！
+#### 通俗解释！！
 
 重点来了：**一定要知道ssh key的配置是针对每台主机的！**，比如我在某台主机上操作git和我的远程仓库，想要push时不输入账号密码，走ssh协议，就需要配置ssh key，放上去的key是**当前主机的ssh公钥**。那么如果我换了一台其他主机，想要实现无密登录，也就需要重新配置。
 
@@ -243,7 +243,7 @@ Navicat连接，新建空数据库
 
 
 
-## 2.备份 MinIO
+### 2.备份 MinIO
 
 > 场景：备份 MinIO 的文件到 Git
 >
@@ -269,11 +269,11 @@ git push
 
 
 
-## 3.备份 sql
+### 3.备份 sql
 
 ```bash
 d=`date +%Y%m%d%H%M`
-# 因为upupor的mysql数据库服务部署在docker容器中,所以`mysqldump`在容器中执行,然后将备份好的文件写到宿主主机地址      > 后的目录需要提前建好
+## 因为upupor的mysql数据库服务部署在docker容器中,所以`mysqldump`在容器中执行,然后将备份好的文件写到宿主主机地址      > 后的目录需要提前建好
 docker exec mysql mysqldump -uroot -pxxx --single-transaction --databases upupor > /home/minio/data/blog/SQLBackup/upupor${d}.sql
 gzip -c /home/minio/data/blog/SQLBackup/upupor${d}.sql > /home/minio/data/blog/SQLBackup/upupor${d}.sql.gz
 rm -rf /home/minio/data/blog/SQLBackup/upupor${d}.sql
@@ -293,7 +293,7 @@ rm -rf /home/minio/data/blog/SQLBackup/upupor${d}.sql
 
 
 
-# 
+## 
 
 
 
@@ -301,19 +301,19 @@ rm -rf /home/minio/data/blog/SQLBackup/upupor${d}.sql
 
 
 
-# 
+## 
 
-# 
-
-
+## 
 
 
 
 
 
-# ---下面是手工---
 
-# Linux环境部署(JRE、MySQL、Nginx)
+
+## ---下面是手工---
+
+## Linux环境部署(JRE、MySQL、Nginx)
 
 > 起因: 使用了一下云服务器的Redis开了6379端口写了点SpringBoot整合Redis的测试代码，结果用着用着突然连接断了，且腾讯云发来警告CPU和带宽被跑满。Redis没设密码结合百度发现中招了(可能被肉鸡了)，花了挺多时间不想再搞了就直接重装系统了，正好花点时间写一篇环境的部署的总结。
 
@@ -321,7 +321,7 @@ rm -rf /home/minio/data/blog/SQLBackup/upupor${d}.sql
 
 > 后话：今天学了用Docker，不过自己写的这篇很多东西还可以借鉴
 
-# 一、JRE
+## 一、JRE
 
 Oracle 下个JDK还需要登录，下载超慢... 所以用国内的镜像源。
 
@@ -349,9 +349,9 @@ export PATH=$PATH:$JRE_HOME/bin
 
 [linux source命令](https://www.cnblogs.com/xzpin/p/11072787.html)
 
-# 二、MySQL
+## 二、MySQL
 
-## 1. 安装
+### 1. 安装
 
 1. 下载并安装MySQL官方的 [Yum](https://so.csdn.net/so/search?q=Yum) Repository
 
@@ -365,7 +365,7 @@ export PATH=$PATH:$JRE_HOME/bin
 
    `yum -y install mysql-community-server`
 
-## 2. 设置
+### 2. 设置
 
 1.  首先启动MySQL `systemctl start  mysqld.service`，查看MySQL运行状态 `systemctl status mysqld.service`
 
@@ -412,13 +412,13 @@ export PATH=$PATH:$JRE_HOME/bin
 > > 2. `set global validate_password_length=6; ` 固定密码长度只要6位
 > > 3. `ALTER USER 'root'@'localhost' IDENTIFIED BY '123456'; ` 修改密码
 
-## 3. 开启mysql的远程访问
+### 3. 开启mysql的远程访问
 
 1. 执行以下命令开启远程访问限制（注意：下面命令开启的IP是 所有的，如要开启192.168.0.1，用IP代替%）：`grant all privileges on *.* to 'root'@'%' identified by 'password' with grant option;`
 2. 刷新权限表 `flush privileges; `
 3. 按Ctrl+D退出数据库后输入 `service mysqld restart` 重启mysql服务
 
-## 4. 为firewalld添加开放端口
+### 4. 为firewalld添加开放端口
 
 1. 预备知识
 
@@ -436,7 +436,7 @@ firewall-cmd --zone=public --add-port=8080/tcp --permanent
 firewall-cmd --reload #重新载入
 ```
 
-## 5. 更改mysql的语言
+### 5. 更改mysql的语言
 
 1. 首先重新登录mysql，然后输入status，可以看到，红色框框处不是utf-8
 
@@ -462,17 +462,17 @@ collation-server=utf8mb4_general_ci
 
 ps: 可以到Windows下用cmd命令启动mysql啦，个人喜欢用Navicat
 
-## 6. Linux-Mysql导入sql文件
+### 6. Linux-Mysql导入sql文件
 
 1. 创建空数据库 `create database xx`
 2. `use xx`
 3. 导入sql文件 `source /home/xx.sql;`  ==注意：在 Windows 下路径也要变成左斜杠==
 
-#### <font color=red>实测：运行 SQL 文件的时长，取决于外存的好坏。例如 C 盘是固体对比其他盘机械硬盘差距很大！</font>
+##### <font color=red>实测：运行 SQL 文件的时长，取决于外存的好坏。例如 C 盘是固体对比其他盘机械硬盘差距很大！</font>
 
 70分钟 vs 2分钟
 
-## 附录
+### 附录
 
 [wget 是一个下载文件的工具](https://www.cnblogs.com/ftl1012/p/9265699.html)
 
@@ -488,9 +488,9 @@ ps: 可以到Windows下用cmd命令启动mysql啦，个人喜欢用Navicat
 
 
 
-# 三、Nginx
+## 三、Nginx
 
-## 1. 前言
+### 1. 前言
 
 目的：使用NGINX反向代理，将80端口转发到8080端口，反向代理（Reverse Proxy）方式是指以代理服务器来接受internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。具体看图。
 
@@ -508,7 +508,7 @@ ps: 可以到Windows下用cmd命令启动mysql啦，个人喜欢用Navicat
 
 
 
-## 2. 具体操作
+### 2. 具体操作
 
 1. 下载安装Nginx `yum install nginx`
 2. 加入开机启动 `systemctl enable nginx`
@@ -530,7 +530,7 @@ server {
         proxy_set_header X-Real-Ip $remote_addr;
         proxy_set_header X-Forwarded-For $remote_addr;
     }
-#    access_log /logs/1024.zzq.com.access.log; #表示记录日志信息
+##    access_log /logs/1024.zzq.com.access.log; #表示记录日志信息
 }
 ```
 
@@ -538,7 +538,7 @@ server {
 
 
 
-# 四、其他附录
+## 四、其他附录
 
 [什么是YUM](https://blog.csdn.net/weixin_34055910/article/details/92964753)
 
