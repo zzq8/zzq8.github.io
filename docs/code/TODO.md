@@ -2,6 +2,13 @@
 article: false
 ---
 
+* SSL 自动续期
+
+  https://newzone.top/
+
+* [同时部署到 GitHub Page 和个人服务器](https://asurada.zone/post/Deploy-Hexoblog-To-Codingnet-And-GitHub/) vs CDN？
+
+
 
 https://newzone.top/
 

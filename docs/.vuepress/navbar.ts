@@ -32,7 +32,7 @@ export default navbar([
     text: "网站相关",
     icon: "id-card",
     children: [
-      { text: "关于作者", icon: "user", link: "/about-the-author/" },
+      { text: "关于作者", icon: "user", link: "intro" },
       {
         text: "更新历史",
         icon: "history",

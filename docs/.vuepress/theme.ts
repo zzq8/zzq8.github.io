@@ -63,7 +63,8 @@ export default hopeTheme({
   navbarLayout: {
     start: ["Brand"],
     center: ["Links"],
-    end: ["SocialLink", "Repo", "Outlook", "Search"],
+    // "SocialLink", "Repo",
+    end: ["SocialLink", "Outlook", "Search"],
   },
   // 是否在向下滚动时自动隐藏导航栏
   // navbarAutoHide: "always",
@@ -131,10 +132,10 @@ export default hopeTheme({
 
       // Giscus
       provider: "Giscus",
-      repo: "rockbenben/LearnData",
-      repoId: "R_kgDOHdfk6Q",
-      category: "Comments",
-      categoryId: "DIC_kwDOHdfk6c4CQYNn",
+      repo: "zzq8/zzq8",
+      repoId: "R_kgDOI6WnBg",
+      category: "General",
+      categoryId: "DIC_kwDOI6WnBs4Cf8ho",
     },
 
     // 组件库
