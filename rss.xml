@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://doc.zzq8.cn/rss.xsl"?>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://zzq8.cn/rss.xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <atom:link href="https://doc.zzq8.cn/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://zzq8.cn/rss.xml" rel="self" type="application/rss+xml"/>
     <title>Piglet</title>
-    <link>https://doc.zzq8.cn/</link>
+    <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 08 Jun 2024 09:10:19 GMT</pubDate>
-    <lastBuildDate>Sat, 08 Jun 2024 09:10:19 GMT</lastBuildDate>
+    <pubDate>Sat, 08 Jun 2024 09:14:58 GMT</pubDate>
+    <lastBuildDate>Sat, 08 Jun 2024 09:14:58 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>工具</category>
     <category>使用指南</category>
     <item>
       <title>博客文章样例2</title>
-      <link>https://doc.zzq8.cn/posts/2024-03-02-blog_example2.html</link>
-      <guid>https://doc.zzq8.cn/posts/2024-03-02-blog_example2.html</guid>
-      <source url="https://doc.zzq8.cn/rss.xml">博客文章样例2</source>
+      <link>https://zzq8.cn/posts/2024-03-02-blog_example2.html</link>
+      <guid>https://zzq8.cn/posts/2024-03-02-blog_example2.html</guid>
+      <source url="https://zzq8.cn/rss.xml">博客文章样例2</source>
       <description>博客文章内容，支持 Markdown 和 HTML 语言。</description>
       <category>工具</category>
       <pubDate>Sat, 02 Mar 2024 00:00:00 GMT</pubDate>
@@ -25,9 +25,9 @@
     </item>
     <item>
       <title>博客文章样例</title>
-      <link>https://doc.zzq8.cn/posts/2024-03-01-blog_example.html</link>
-      <guid>https://doc.zzq8.cn/posts/2024-03-01-blog_example.html</guid>
-      <source url="https://doc.zzq8.cn/rss.xml">博客文章样例</source>
+      <link>https://zzq8.cn/posts/2024-03-01-blog_example.html</link>
+      <guid>https://zzq8.cn/posts/2024-03-01-blog_example.html</guid>
+      <source url="https://zzq8.cn/rss.xml">博客文章样例</source>
       <description>博客文章内容，支持 Markdown 和 HTML 语言。</description>
       <category>使用指南</category>
       <pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate>
