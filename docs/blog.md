@@ -5,7 +5,7 @@ layout: BlogHome
 icon: fa-solid fa-house-crack
 title: Piglet
 #heroImage: /logo.svg
-heroText: 社畜猪
+heroText: Piglet
 tagline: 盛年不重来，一日难再晨
 bgImage: https://images.zzq8.cn/1024/bj.jpg
 heroFullScreen: false
