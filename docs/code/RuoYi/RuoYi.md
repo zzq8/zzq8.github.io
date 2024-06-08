@@ -1,3 +1,6 @@
+---
+article: false
+---
 # RuoYi-Vue
 
 > 该项目没用 MP，整完这个可以再整 [RuoYi-Cloud](https://doc.ruoyi.vip/ruoyi-cloud/)

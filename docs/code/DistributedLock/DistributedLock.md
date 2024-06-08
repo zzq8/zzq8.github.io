@@ -1,3 +1,6 @@
+---
+article: false
+---
 # DistributedLock
 
 > > 搞不懂事务和锁的概念-可以用@Transactional代替Redisson吗

@@ -1,3 +1,6 @@
+---
+article: false
+---
 # Kali 破解 WIFI
 
 > 经过实践可行 , 但成功与否取决于字典

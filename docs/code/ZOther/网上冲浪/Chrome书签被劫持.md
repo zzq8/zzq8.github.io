@@ -1,3 +1,6 @@
+---
+article: false
+---
 # Chrome书签被劫持
 
 # 缘由

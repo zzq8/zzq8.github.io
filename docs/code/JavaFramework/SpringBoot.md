@@ -1,3 +1,6 @@
+---
+article: false
+---
 # SpringBoot2
 
 > 三刷总算想起做点笔记，这点很重要   [语雀官方笔记](https://www.yuque.com/atguigu/springboot)   重点看源码讲解的视频、Web开发这一章

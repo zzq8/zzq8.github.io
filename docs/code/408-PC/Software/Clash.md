@@ -1,3 +1,6 @@
+---
+article: false
+---
 # Clash
 
 > Clash的 config.yml 配置文件也可以直接导入到 `Shadowrocket` !

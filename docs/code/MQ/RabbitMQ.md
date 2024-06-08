@@ -1,3 +1,6 @@
+---
+article: false
+---
 # RabbitMQ
 
 > MessageQueue，MQ

@@ -1,3 +1,6 @@
+---
+article: false
+---
 # VuePress Theme Hope
 
 > 一个具有强大功能的 vuepress 主题✨

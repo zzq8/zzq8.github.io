@@ -1,3 +1,6 @@
+---
+article: false
+---
 # JavaGuide
 
 > [《Java面试指北》](https://www.yuque.com/snailclimb/mf2z3k?key=cnk4)

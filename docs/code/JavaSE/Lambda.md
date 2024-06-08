@@ -1,3 +1,6 @@
+---
+article: false
+---
 # Lambda
 
 > 自己买了一本小书很不错  《Java 8函数式编程》

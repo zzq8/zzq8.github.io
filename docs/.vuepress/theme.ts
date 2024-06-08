@@ -8,11 +8,11 @@ export default hopeTheme({
   iconAssets: ["fontawesome", "fontawesome-with-brands"],
   author: {
     name: "Piglet",
-    url: "https://newzone.top",
+    url: "https://doc.zzq8.cn",
   },
 
   favicon: "/favicon.ico",
-  logo: "/logo.svg",
+  logo: "/logo.png",
 
     // 加密配置
   encrypt: {
@@ -81,7 +81,7 @@ export default hopeTheme({
     articleInfo: ["Date", "PageView", "Category", "Tag", "ReadingTime"],
     name: "Piglet",
     avatar: "/logo.png",
-    description: "热爱倒腾",
+    description: "Stay Hungry, Stay Foolish",
     intro: "/intro.html",
     medias: {
       Email: "mailto:547061946@qq.com"

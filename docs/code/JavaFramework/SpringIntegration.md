@@ -1,3 +1,6 @@
+---
+article: false
+---
 # SpringIntegration
 
 > [视频讲的特好](https://www.bilibili.com/video/BV1Ak4y1k7B6/?spm_id_from=333.337.search-card.all.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)

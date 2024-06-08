@@ -1,3 +1,6 @@
+---
+article: false
+---
 # Redis
 
 Redis的速度⾮常的快，单机的Redis就可以⽀撑每秒十几万的并发，相对于MySQL来 说，性能是MySQL的⼏⼗倍。

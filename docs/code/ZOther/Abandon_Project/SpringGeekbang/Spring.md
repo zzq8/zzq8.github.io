@@ -1,3 +1,6 @@
+---
+article: false
+---
 # [玩转 Spring 全家桶](https://time.geekbang.org/course/intro/100023501)
 
 > 进 title link 看课程目录、课程介绍

@@ -1,3 +1,6 @@
+---
+article: false
+---
 # MacOS
 
 > 由于第一次接触MacOS，花了三周的星期六（三天）来搭这台MacOS

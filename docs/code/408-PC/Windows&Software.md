@@ -1,3 +1,6 @@
+---
+article: false
+---
 # [Windows](https://www.zhihu.com/question/33635511/answer/57567053)
 
 C:\Windows   路径 exe 文件可以直接 cmd 调用

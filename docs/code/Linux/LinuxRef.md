@@ -1,3 +1,6 @@
+---
+article: false
+---
 # LinuxRef
 
 > 把macos 笔记整合进来，然后把环境指南感觉可以删了

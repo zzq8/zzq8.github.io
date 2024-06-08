@@ -1,3 +1,6 @@
+---
+article: false
+---
 # Nginx
 
 > [狂神Nginx学习笔记](https://www.kuangstudy.com/bbs/1377454518035292162)

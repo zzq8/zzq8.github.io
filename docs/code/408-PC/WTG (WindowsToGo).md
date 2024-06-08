@@ -1,3 +1,6 @@
+---
+article: false
+---
 # WTG
 
 ## 装机篇

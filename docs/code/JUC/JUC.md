@@ -1,3 +1,6 @@
+---
+article: false
+---
 # JUC & JVM +GC
 
 Links that usually browsed: 

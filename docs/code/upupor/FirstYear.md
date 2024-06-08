@@ -1,3 +1,6 @@
+---
+article: false
+---
 # 心态
 
 ## [東京大学入学式-上野千鹤子致辞-努力就会有回报吗？你们将面对的是一个不公、无解的世界](https://www.bilibili.com/video/BV1T7411f7xu/?spm_id_from=333.999.0.0&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)

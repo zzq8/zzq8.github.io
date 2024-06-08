@@ -1,3 +1,6 @@
+---
+article: false
+---
 # Maven
 
 > 鱼皮这篇讲的细：https://mp.weixin.qq.com/s/mOFjOVYrM_b9I2UlNgeGxg

@@ -1,3 +1,6 @@
+---
+article: false
+---
 # [GitHub Actions](https://docs.github.com/en/actions)
 
 > [100秒解释什么是DevOps CI/CD 中国DevOps社区](https://www.bilibili.com/video/BV1C34y1t79H/?spm_id_from=333.788.recommend_more_video.1&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)
