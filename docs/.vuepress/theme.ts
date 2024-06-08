@@ -81,7 +81,7 @@ export default hopeTheme({
   blog: {
     articleInfo: ["Date", "PageView", "Category", "Tag", "ReadingTime"],
     name: "Piglet",
-    avatar: "/logo.png",
+    avatar: "https://images.zzq8.cn/1024/me.jpg",
     description: "Stay Hungry, Stay Foolish",
     intro: "/intro.html",
     medias: {

@@ -3,11 +3,11 @@
 home: true
 layout: BlogHome
 icon: fa-solid fa-house-crack
-title: 互联网小白
+title: Piglet
 #heroImage: /logo.svg
-heroText: 互联网小白
+heroText: 社畜猪
 tagline: 盛年不重来，一日难再晨
-bgImage: https://img.newzone.top/home-bg-1.jpg
+bgImage: https://images.zzq8.cn/1024/bj.jpg
 heroFullScreen: false
 #projects:
 #  - icon: project
