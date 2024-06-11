@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://zzq8.cn/sitemap.xml
+Sitemap: https://doc.zzq8.cn/sitemap.xml

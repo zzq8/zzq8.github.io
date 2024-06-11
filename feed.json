@@ -1,15 +1,15 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "Piglet",
-  "home_page_url": "https://zzq8.cn/",
-  "feed_url": "https://zzq8.cn/feed.json",
+  "home_page_url": "https://doc.zzq8.cn/",
+  "feed_url": "https://doc.zzq8.cn/feed.json",
   "description": "自我提升笔记，记录并输出一切能让自己提升的知识。",
-  "favicon": "https://zzq8.cn/favicon.ico",
+  "favicon": "https://doc.zzq8.cn/favicon.ico",
   "items": [
     {
       "title": "博客文章样例2",
-      "url": "https://zzq8.cn/posts/2024-03-02-blog_example2.html",
-      "id": "https://zzq8.cn/posts/2024-03-02-blog_example2.html",
+      "url": "https://doc.zzq8.cn/posts/2024-03-02-blog_example2.html",
+      "id": "https://doc.zzq8.cn/posts/2024-03-02-blog_example2.html",
       "summary": "博客文章内容，支持 Markdown 和 HTML 语言。",
       "content_html": "<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>\n",
       "date_published": "2024-03-02T00:00:00.000Z",
@@ -21,8 +21,8 @@
     },
     {
       "title": "博客文章样例",
-      "url": "https://zzq8.cn/posts/2024-03-01-blog_example.html",
-      "id": "https://zzq8.cn/posts/2024-03-01-blog_example.html",
+      "url": "https://doc.zzq8.cn/posts/2024-03-01-blog_example.html",
+      "id": "https://doc.zzq8.cn/posts/2024-03-01-blog_example.html",
       "summary": "博客文章内容，支持 Markdown 和 HTML 语言。",
       "content_html": "<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>\n",
       "date_published": "2024-03-01T00:00:00.000Z",

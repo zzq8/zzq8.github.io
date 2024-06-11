@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://zzq8.cn/atom.xsl"?>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://doc.zzq8.cn/atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
-  <id>https://zzq8.cn/</id>
+  <id>https://doc.zzq8.cn/</id>
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
-  <icon>https://zzq8.cn/favicon.ico</icon>
-  <updated>2024-06-08T17:05:58.001Z</updated>
+  <icon>https://doc.zzq8.cn/favicon.ico</icon>
+  <updated>2024-06-11T14:51:33.530Z</updated>
   <generator>@vuepress/plugin-feed</generator>
-  <link rel="self" href="https://zzq8.cn/atom.xml"/>
-  <link rel="alternate" href="https://zzq8.cn/"/>
+  <link rel="self" href="https://doc.zzq8.cn/atom.xml"/>
+  <link rel="alternate" href="https://doc.zzq8.cn/"/>
   <category term="工具"/>
   <category term="使用指南"/>
   <entry>
     <title type="text">博客文章样例2</title>
-    <id>https://zzq8.cn/posts/2024-03-02-blog_example2.html</id>
-    <link href="https://zzq8.cn/posts/2024-03-02-blog_example2.html"/>
+    <id>https://doc.zzq8.cn/posts/2024-03-02-blog_example2.html</id>
+    <link href="https://doc.zzq8.cn/posts/2024-03-02-blog_example2.html"/>
     <updated>2024-06-05T16:30:15.000Z</updated>
     <summary type="html"><![CDATA[<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 ]]></summary>
@@ -24,8 +24,8 @@
   </entry>
   <entry>
     <title type="text">博客文章样例</title>
-    <id>https://zzq8.cn/posts/2024-03-01-blog_example.html</id>
-    <link href="https://zzq8.cn/posts/2024-03-01-blog_example.html"/>
+    <id>https://doc.zzq8.cn/posts/2024-03-01-blog_example.html</id>
+    <link href="https://doc.zzq8.cn/posts/2024-03-01-blog_example.html"/>
     <updated>2024-06-05T16:30:15.000Z</updated>
     <summary type="html"><![CDATA[<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 ]]></summary>
