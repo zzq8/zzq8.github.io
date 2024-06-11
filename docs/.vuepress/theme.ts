@@ -4,11 +4,11 @@ import sidebar from "./sidebar.js";
 
 export default hopeTheme({
   // 主题选项：https://theme-hope.vuejs.press/zh/config/theme/layout.html
-  hostname: "https://zzq8.cn",
+  hostname: "https://doc.zzq8.cn",
   iconAssets: ["fontawesome", "fontawesome-with-brands"],
   author: {
     name: "Piglet",
-    url: "https://zzq8.cn",
+    url: "https://doc.zzq8.cn",
   },
 
   favicon: "/favicon.ico",
