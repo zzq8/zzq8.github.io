@@ -11,6 +11,12 @@ article: false
 >
 > 后续：发现一个[大佬](https://newzone.top/web/docsify.html)
 
+## CDN
+
+algolia actions脚本报错：**514 frequency capped**
+
+需要 CDN 配置开启 HTTPS
+
 ## GitPage
 
 设置自己的域名：只需要 DNS 解析给 2 个 CNAME 记录就行（顶级域名）

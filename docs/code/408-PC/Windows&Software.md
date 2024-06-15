@@ -3,6 +3,14 @@ article: false
 ---
 # [Windows](https://www.zhihu.com/question/33635511/answer/57567053)
 
+win 上用linux CLI：
+
+2020年9月，==WSL== 2开始向Windows 10 Version 1903/1909和Windows 10 May 2020（20H1/Version 2004）的用户推送。WSL 2支持[GUI](https://zh.wikipedia.org/wiki/GUI)应用[[19\]](https://zh.wikipedia.org/zh-cn/适用于Linux的Windows子系统#cite_note-19)。
+
+
+
+
+
 C:\Windows   路径 exe 文件可以直接 cmd 调用
 * 将文件重命名为 jq.exe
 * cmd： jq --version
