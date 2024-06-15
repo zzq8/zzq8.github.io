@@ -1,10 +1,10 @@
 {
   "index_name": "zzq8",
   "start_urls": [
-    "https://doc.zzq8.cn/"
+    "https://zzq8.cn/"
   ],
   "sitemap_urls": [
-    "https://doc.zzq8.cn/sitemap.xml"
+    "https://zzq8.cn/sitemap.xml"
   ], 
   "stop_urls": [],
   "selectors": {
