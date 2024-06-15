@@ -364,7 +364,7 @@ JSON.parseObject(catalogJson, new TypeReference<Map<String, List<Catelog2Vo>>>()
 
 > 我测出的两种好一点的方法：
 
-```
+```java
 		ObjectMapper mapper = new ObjectMapper();
         JsonNode jsonNode = mapper.convertValue(res, JsonNode.class);
         JsonNode jsonNode1 = mapper.valueToTree(res);
@@ -903,7 +903,7 @@ public class MyCacheConfig {
 
 js 报错 search() 不是一个方法，前面加`javascript:`解决
 
-```
+```html
 <a href="javascript:search();" >
 ```
 
@@ -1361,7 +1361,7 @@ Gitee 有个开源Demo：`xxl-sso`
 
 开源项目，一个认证中心，其它客户端：1）配好配置文件、2）cmd maven打包
 
-```
+```bash
 mvn clean package -Dmaven.skip.test=true
 ```
 
