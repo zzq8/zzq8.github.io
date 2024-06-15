@@ -27,6 +27,8 @@ article: false
 > * git log --oneline (单行形式展示日志)
 > * git rm -r --cached xx (清除指定文件的 git 版本控制)
 > * git checkout <上一个版本的提交哈希值> -- <文件路径> （git 回滚指定文件到上一个版本）
+>   * 【实测】如果你想要抛弃工作区的修改，可以使用git checkout命令。git checkout -- .
+>
 >
 > 
 >
