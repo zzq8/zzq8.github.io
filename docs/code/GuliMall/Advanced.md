@@ -1489,7 +1489,9 @@ redis有5种不同数据结构，这里选择哪一种比较合适呢？`Map<Str
 
 场景：com.zzq.gulimall.cart.intercept.CartIntercept    **XD: SpringBoot的拦截器HandlerInterceptor + Threadlocal**
 
-  													判断用户登录状态，把购物车临时用户 / 登录用户放到 Threadlocal 里
+```java
+判断用户登录状态，把购物车临时用户 / 登录用户放到 Threadlocal 里
+```
 
 ***
 
