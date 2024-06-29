@@ -6,12 +6,36 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 29 Jun 2024 04:10:28 GMT</pubDate>
-    <lastBuildDate>Sat, 29 Jun 2024 04:10:28 GMT</lastBuildDate>
+    <pubDate>Sat, 29 Jun 2024 05:51:14 GMT</pubDate>
+    <lastBuildDate>Sat, 29 Jun 2024 05:51:14 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>工具</category>
     <category>使用指南</category>
+    <item>
+      <title>CDN</title>
+      <link>https://zzq8.cn/code/408-Network/CDN.html</link>
+      <guid>https://zzq8.cn/code/408-Network/CDN.html</guid>
+      <source url="https://zzq8.cn/rss.xml">CDN</source>
+      <description>CDN 感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！ 测速网站 还是得看官方文档，搞了一天端午加一周的晚上时间看别人二手文章描述又描述不清！！混淆我！！！！突然开窍看了眼官网描述，草 原来是这个意思： 回源 HOST 即回源域名，CDN 节点在回源时，能够指定访问的源站 IP 地址下具体的站点域名。当您的源站只有一个和加速域名一致的站点...</description>
+      <pubDate>Sat, 29 Jun 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！</p>
+<p><a href="https://www.17ce.com/site" target="_blank" rel="noopener noreferrer">测速网站</a></p>
+<p>还是得看官方文档，搞了一天端午加一周的晚上时间看别人二手文章描述又描述不清！！混淆我！！！！突然开窍看了眼官网描述，草  原来是这个意思：</p>
+<p>回源 HOST
+即回源域名，CDN 节点在回源时，能够指定访问的源站 IP 地址下具体的站点域名。当您的源站只有一个和加速域名一致的站点，默认为加速域名即可，若源站为 COS 源或第三方对象存储时，回源 HOST 不可修改，控制台默认为回源地址。</p>
+<p>说明：
+什么是 CDN 回源 HOST 配置?
+回源 HOST 是指加速域名在 CDN 节点回源过程指向源访问的站点域名，若您在源站服务器内同时部署了若干个 Web 站点，配置正确的回源 HOST 可以帮助您顺利访问指定的站点域名。</p>
+</blockquote>
+<h2>目前配置</h2>
+<h4>DNS 设置</h4>
+<p>| 类型  | 名称 | 值              |
+|</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>博客文章样例2</title>
       <link>https://zzq8.cn/posts/2024-03-02-blog_example2.html</link>
@@ -32,30 +56,6 @@
       <category>使用指南</category>
       <pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>CDN</title>
-      <link>https://zzq8.cn/code/408-Network/CDN.html</link>
-      <guid>https://zzq8.cn/code/408-Network/CDN.html</guid>
-      <source url="https://zzq8.cn/rss.xml">CDN</source>
-      <description>CDN 感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！ 测速网站 还是得看官方文档，搞了一天端午加一周的晚上时间看别人二手文章描述又描述不清！！混淆我！！！！突然开窍看了眼官网描述，草 原来是这个意思： 回源 HOST 即回源域名，CDN 节点在回源时，能够指定访问的源站 IP 地址下具体的站点域名。当您的源站只有一个和加速域名一致的站点...</description>
-      <pubDate>Sat, 29 Jun 2024 04:09:08 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！</p>
-<p><a href="https://www.17ce.com/site" target="_blank" rel="noopener noreferrer">测速网站</a></p>
-<p>还是得看官方文档，搞了一天端午加一周的晚上时间看别人二手文章描述又描述不清！！混淆我！！！！突然开窍看了眼官网描述，草  原来是这个意思：</p>
-<p>回源 HOST
-即回源域名，CDN 节点在回源时，能够指定访问的源站 IP 地址下具体的站点域名。当您的源站只有一个和加速域名一致的站点，默认为加速域名即可，若源站为 COS 源或第三方对象存储时，回源 HOST 不可修改，控制台默认为回源地址。</p>
-<p>说明：
-什么是 CDN 回源 HOST 配置?
-回源 HOST 是指加速域名在 CDN 节点回源过程指向源访问的站点域名，若您在源站服务器内同时部署了若干个 Web 站点，配置正确的回源 HOST 可以帮助您顺利访问指定的站点域名。</p>
-</blockquote>
-<h2>目前配置</h2>
-<h4>DNS 设置</h4>
-<p>| 类型  | 名称 | 值              |
-|</p>
 ]]></content:encoded>
     </item>
   </channel>
