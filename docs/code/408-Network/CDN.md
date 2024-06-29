@@ -1,3 +1,9 @@
+---
+article: true
+tags: Network
+date: 2024-06-29
+---
+
 # CDN
 
 > 感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！
@@ -23,6 +29,8 @@
 | ----- | ---- | --------------- |
 | CNAME | www  | zzq8.github.io. |
 | CNAME | @    | zzq8.github.io. |
+
+ps: 240629 @ CNAME 到CDN域名，能用！之前不知道为啥不行
 
 #### CDN 设置
 
