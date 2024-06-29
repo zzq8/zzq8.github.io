@@ -7,7 +7,17 @@ article: false
 
 # 一、日常问题
 
-## 1.匹配空行
+## 词边界
+
+\b 词边界。匹配一个单词边界，也就是指单词和空格间的位置。
+
+```java
+Edit the //匹配到单词最后的 t 字母
+```
+
+
+
+## 匹配空行
 
 > `^\s*$`                     （* 指空格出现 0 次或多次）->  \* 匹配0个或更多前面的标记。
 
@@ -17,7 +27,7 @@ article: false
 
 
 
-## 2.* / + 使用错误
+## * / + 使用错误
 
 > 做 LeetCode 发现
 
@@ -32,7 +42,7 @@ article: false
 
 
 
-## > 非集
+## 非集
 
 > 匹配不在集合中的任何字符。   
 >
@@ -40,7 +50,7 @@ article: false
 
 
 
-## > capturing group
+## ✨capturing group
 
 > 场景：sublime中 我个人频繁用到，替换东西时候又得带上原先的。。。$1..$n 可以复用 find 里被()包裹的组
 >
@@ -87,7 +97,7 @@ public static void main(String[] args) {
 
 
 
-## > lzay(?)
+## lzay(?)
 
 > 场景：[\s\S]*? World xxxxxWorld，这样只会匹配到前面
 >

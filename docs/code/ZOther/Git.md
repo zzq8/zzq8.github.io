@@ -1,9 +1,16 @@
 ---
-article: false
+article: true
+category: Code
 ---
-# Git-云服务器使用
+# Git
 
+## 基础学习
+
+> ✨[Git 学习游戏网站](https://oschina.gitee.io/learn-git-branching/)
+>
 > https://m.runoob.com/git/git-basic-operations.html
+>
+> 有时间再梳理这篇文章, 只保留有用的   不要繁琐,繁琐了不会看
 
 <img src="https://www.runoob.com/wp-content/uploads/2015/02/git-command.jpg" alt="img" style="zoom:150%;" />
 
@@ -14,31 +21,58 @@ article: false
 
 
 
-> > 有时间再梳理这篇文章, 只保留有用的   不要繁琐,繁琐了不会看
->
-> 日常自己仓库就三步:
->
-> * git status -sb (--short, --branch)   ==xd 不会了就 git status -help==
-> * git commit -av
-> * git push
->
-> 
->
-> * git log --oneline (单行形式展示日志)
-> * git rm -r --cached xx (清除指定文件的 git 版本控制)
-> * git checkout <上一个版本的提交哈希值> -- <文件路径> （git 回滚指定文件到上一个版本）
->   * 【实测】如果你想要抛弃工作区的修改，可以使用git checkout命令。git checkout -- .
->
->
-> 
->
-> 知识：
->
-> * 规定了[commit message](https://zhuanlan.zhihu.com/p/182553920)的格式（TODO，我个人觉得还蛮重要，看网站提到的背景）
->
-> * `--`在命令行中的作用是提供一个明确的分隔符，以确保命令的选项、参数或文件路径被正确解析。
->   * 例如，`git log -- -file.txt`中的`--`用于明确表示`-file.txt`是参数而不是选项
->   * 例如，`git checkout branch-name -- file.txt`中的`--`用于分隔`branch-name`和`file.txt`，以明确表示`file.txt`是文件路径而不是分支名称。
+## 日常使用
+
+日常自己仓库就三步:
+
+* git status -sb (--short, --branch)   ==xd 不会了就 git status -help==
+* git commit -av
+* git push
+
+
+
+其他常用:
+
+* git log --oneline (单行形式展示日志)
+* git rm -r --cached xx (清除指定文件的 git 版本控制)
+* git checkout <上一个版本的提交哈希值> -- <文件路径> （git 回滚指定文件到上一个版本）
+  * 【实测】如果你想要抛弃工作区的修改，可以使用git checkout命令。git checkout -- .
+
+
+
+扩展知识：
+
+* 规定了[commit message](https://zhuanlan.zhihu.com/p/182553920)的格式（TODO，我个人觉得还蛮重要，看网站提到的背景）
+
+* `--`在命令行中的作用是提供一个明确的分隔符，以确保命令的选项、参数或文件路径被正确解析。
+  * 例如，`git log -- -file.txt`中的`--`用于明确表示`-file.txt`是参数而不是选项
+  * 例如，`git checkout branch-name -- file.txt`中的`--`用于分隔`branch-name`和`file.txt`，以明确表示`file.txt`是文件路径而不是分支名称。
+
+#### IDEA 中 git Merge Select into Current 和 Pull into Current using merge有什么区别
+> - Merge Select into Current 适用于合并指定远程分支的更改到当前分支。
+> - Pull into Current using merge 适用于拉取远程分支的最新更改并合并到当前分支。
+
+- Merge Select into Current: **实测没有fetch，直接以现有的log记录去merge**
+   - git merge refs/remotes/origin/gptsh_dlx_b1
+
+- Pull into Current using merge: **实测先fetch再merge**
+   - git fetch origin --recurse-submodules=no --progress --prune
+      - 如有信息输出：remote: Total 10 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+      From gitlab.alipay-inc.com:cangxi.lj/gptsh
+      5e991b2..d7972bd  gptsh_dlx_b1 -> origin/gptsh_dlx_b1
+      - 如没信息就这一步完了就 return，提示 All filles are up to date
+   - git merge origin/gptsh_dlx_b1 --no-stat -v
+
+
+
+# -
+
+# -
+
+***
+
+# 繁琐的以前
+
 ## [1.前置配置](https://blog.csdn.net/weixin_42310154/article/details/118340458)
 
 > 云服务器的 Git 我捣鼓了好久~
@@ -99,9 +133,7 @@ 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
 
 
 
-# Git
 
-> [Git 学习游戏网站](https://oschina.gitee.io/learn-git-branching/)
 
 # 一、常规流程
 
@@ -296,58 +328,6 @@ git pull : 首先，基于本地的FETCH_HEAD记录，比对本地的FETCH_HEAD�
 
 
 区分：pull    拉取/获取
-
-
-
-# rebase 变基
-
-Git中的变基（rebase）和合并（merge）是两种不同的代码整合方式。
-
-合并（merge）是指将两个或多个不同的分支合并成一个新的分支，通常使用git merge命令。合并操作会创建一个新的提交，包括合并后的所有修改。
-
-变基（rebase）是一种将一个分支的修改应用到另一个分支上的操作，通常使用git rebase命令。变基操作会将一系列的提交按照顺序一个一个地应用到另一个分支上，使得目标分支中的提交线性排列，从而避免了合并产生的提交历史分支。
-
-两种方式的区别在于它们对代码历史记录的影响。合并会保留原来的分支历史记录，而变基会将原来的分支历史记录“重放”在目标分支上，因此会修改目标分支的提交历史记录。
-
-一般来说，合并适合于处理不同的功能或特性的分支，而变基适合于将一个分支的修改应用到另一个分支上，使得提交历史更加清晰和线性。但是，变基操作有可能会导致冲突，需要手动解决，因此使用时需要谨慎。
-
-
-
-
-
-
-
-Git的变基（Rebase）和合并（Merge）是两种常见的代码合并方式，它们之间的主要区别在于合并后代码库的提交历史记录以及合并冲突的处理方式。
-
-1. 合并（Merge）
-
-合并是将两个或多个分支的修改合并为一个新的提交。合并会将多个分支的修改合并为一个新的提交，该提交会有多个父提交。合并会在提交历史记录中保留每个分支的修改记录，所以可以看到每个分支的修改历史。合并通常适用于多人同时在同一个分支上进行开发的情况，或者需要在分支之间保留历史记录的情况。
-
-合并通常使用以下命令：
-
-```
-phpCopy code
-git merge <branch-name>
-```
-
-1. 变基（Rebase）
-
-变基是将当前分支的修改，以及指定分支的修改合并到一个新的基底分支上，然后将当前分支指向新的基底分支。变基会将当前分支的修改在提交历史记录中移动到指定分支的后面，并创建一个新的提交。变基的结果是，当前分支的修改历史记录与指定分支的修改历史记录合并为一个线性历史记录。
-
-变基通常使用以下命令：
-
-```
-phpCopy code
-git rebase <branch-name>
-```
-
-主要区别：
-
-- 合并会在提交历史记录中保留每个分支的修改记录，而变基会将修改历史记录移动到一个新的基底分支上，并创建一个新的提交，不保留原始分支的修改历史记录。
-- 合并通常用于合并多个分支的修改，而变基通常用于在一个分支上更新另一个分支的修改。
-- 合并通常会产生合并冲突，需要手动解决，而变基也可能会产生冲突，但是由于变基只改变当前分支的历史记录，因此解决冲突的方式也更加直观和简单。
-
-综上所述，变基和合并都是常见的代码合并方式，它们的选择取决于具体的需求和情况。在选择变基或合并时，需要考虑提交历史记录的重要性、合并冲突的处理复杂度以及其他因素。
 
 
 

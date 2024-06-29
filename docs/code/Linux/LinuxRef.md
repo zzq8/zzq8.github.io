@@ -10,6 +10,9 @@ article: false
 > https://wangchujiang.com/linux-command/
 > 搜 Linux 命令解释好使！！！
 
+* ls -l *jar
+  * *号可以匹配任意字符
+
 * 创建并写入内容   `echo "test" > file1.txt`
   * 实测多次运行就是追加的形式，追加行！
 

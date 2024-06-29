@@ -4,6 +4,8 @@ article: false
 # Maven
 
 > 鱼皮这篇讲的细：https://mp.weixin.qq.com/s/mOFjOVYrM_b9I2UlNgeGxg
+>
+> mvn clean package -Dmaven.test.skip
 
 ## TODO
 
@@ -105,6 +107,19 @@ https://blog.csdn.net/weixin_45433031/article/details/125284806 （还需理解�
 
 
 * #### dependency scope
+
+场景: 学Spring全家桶, 代码要用 h2 jar里的 API
+
+```xml
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+<!--            import org.h2.tools.Server;   如果这里不注释掉，开发时候导包不进-->
+<!--            <scope>runtime</scope>-->
+        </dependency>
+```
+
+***
 
 XD: 我理解很多module的项目，其中一个module引入了`mybatis-plus-boot-starter`。那么其他module就算用到了它也只要引入的时候`<scope>provided</scope>`一下。避免Maven打包臃肿？
 
@@ -224,3 +239,14 @@ POM File：
 另一方面，settings文件是Maven的全局配置文件，它位于Maven安装目录下的`conf`文件夹中，或者位于用户的`.m2`文件夹中。settings文件中的`<repository>`标签用于配置全局的仓库设置，这些设置将应用于所有Maven项目。通过设置文件中的`<repository>`标签，您可以配置Maven使用的默认仓库、镜像仓库、身份验证等。
 
 因此，虽然POM文件和settings文件中的`<repository>`标签都涉及仓库配置，但它们的作用范围和使用方式不同。POM文件中的`<repository>`标签用于项目级别的仓库配置，而settings文件中的`<repository>`标签用于全局级别的仓库配置。
+
+
+
+## 依赖冲突
+
+TODO
+
+* Maven 笔记  https://www.kuangstudy.com/bbs/1556855233068851202
+* 最短路径原则: 两级以上的不同级依赖, 选择路径最短
+  声明优先原则 : 两级以上的同级依赖,先声明的覆盖后声明的
+  同级依赖后加载覆盖先加载原则

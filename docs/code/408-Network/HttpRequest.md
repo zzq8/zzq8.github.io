@@ -22,13 +22,14 @@ article: false
   * 如果http请求经过代理服务器转发，用户的真实ip会丢失，为了避免这个情况，代理服务器通常会增加一个叫做x_forwarded_for的头信息，把连接它的客户端IP（即你的上网机器IP）加到这个头信息里，这样就能保证网站的web服务器能获取到真实IP
 
 * Referrer Policy: strict-origin-when-cross-origin（引用策略，有八种）
-  * Referer提供访问来源的信息，告诉服务器，用户在访问当前资源之前的位置，发生传场景包含：加载图片、样式文件、JS文件、请求。浏览器会将当前网址作为Referer字段，放在 HTTP 请求的头信息发送。
+  * Referer提供访问来源的信息，告诉服务器，用户在访问当前资源之前的位置，发生传场景包含：加载图片、样式文件、JS文件、请求。浏览器会将当前网址作为Referer字段，**放在 HTTP 请求的头信息发送**
 
 
 
 ## 二、Request Headers（请求头）
 
 * `Accept`: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8
+  
   * 请求头用来告知服务器 客户端可以处理的内容类型(用MIME类型来表示)，借助内容协商机制服务器从备选项中选择一项进行应用，并使用Content-Type应答头通知客户端它的选择。
   
 * Accept-Encoding: gzip, deflate, br 
@@ -59,6 +60,15 @@ article: false
   * 场景：Ngixn 转发会丢失这个，需配置的时候加个参数set上去
 
 * If-Modified-Since: Fri, 29 Apr 2022 02:20:32 GMT 
+
+* Referer: https://www.csdn.net/
+
+  * 一般是主域名地址
+
+  * 有些网站请求硬性要加不然 - Err: 请求有安全风险,阻断请求
+    * HTTP请求头中的Referer字段的作用主要是告知服务器请求的来源页面。具体来说，它包含了发出请求的网页的URL
+
+    * 防盗链、安全和权限控制
 
 * Sec-Fetch-Dest: document 
 

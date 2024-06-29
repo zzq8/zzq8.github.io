@@ -103,6 +103,8 @@ article: false
 
 * shell windows scroll     我的替代方案：用CMD+上下滚动，不用鼠标滚轮
 
+* Shell 操作历史的搜索， ctrl-r 快捷键
+
 * 开了2个chrome窗口 macos如何快捷键切换 (cmd+`)   【现在用的很频繁】
 
 

@@ -18,17 +18,22 @@ article: false
 
 ## TODO
 
-* SSL 自动续期
-
-  https://newzone.top/
-
-* [同时部署到 GitHub Page 和个人服务器](https://asurada.zone/post/Deploy-Hexoblog-To-Codingnet-And-GitHub/) vs CDN？
+* SSL 自动续期 https://newzone.top/
 
 
 
-* mac CLI git 如何更灵活的像 GUI
+### 费时间
 
-* mac siri控制spotify
+* Q: 为什么要用Threadlocal来包装stopwatch呢？
+  作者回复: 我在执行前后需要使用同一个StopWatch，所以需要有个地方暂存一下，而且**每次为请求计时都需要一个不同的StopWatch，不能共用一个，既然是一个线程在处理一个请求**，那比较简单的方法就是放在ThreadLocal里。
+  * 核实 upupor 是不是也是这样  geektime.spring.springbucks.waiter.controller.PerformanceInteceptor
+
+Redis
+
+* https://juejin.cn/post/7033646189845151757 （Redis 限流自己笔记用的 zadd 为什么）
+* 记一下zset常用命令，好理解 https://cloud.tencent.com/developer/article/2343216
+
+
 
 
 

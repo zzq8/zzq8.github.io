@@ -1,7 +1,7 @@
 ---
 article: false
 ---
-# Linux Docker
+# LinuxEnvDep
 
 > 以前碰过 Redis 没设密码被挖矿，现在设成简单密码依旧。。。
 

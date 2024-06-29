@@ -2159,7 +2159,11 @@ JDK 动态代理只能代理实现了接口的目标对象，并且只能代理�
 
 
 
+> 补充-本地事务注解
 
+在@Transactional注解中如果不配置rollbackFor属性,那么**事务只会在遇到RuntimeException的时候才会回滚**,加上rollbackFor=Exception.class,可以让事物在遇到非运行时异常时也回滚
+* https://www.cnblogs.com/clwydjgs/p/9317849.html (!!!!!!!!!!!!)
+* By default, a transaction will be rolling back on RuntimeException and Error but not on checked exceptions (business exceptions). See org.springframework.transaction.interceptor(看源码注释!!!)
 
 #### [4.3.分布式事务几种方案](./03、本地事务&分布式事务.pdf)
 
