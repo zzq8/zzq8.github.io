@@ -761,7 +761,7 @@ Q: 为什么要用Threadlocal来包装stopwatch呢？
 
 [Spring注解驱动](https://liayun.blog.csdn.net/article/details/115053350)
 
-* #### @EnableTransactionManagement // 开启注解事务管理，等价于xml配置方式的 <tx:annotation-driven />
+* #### `@EnableTransactionManagement // 开启注解事务管理，等价于xml配置方式的 <tx:annotation-driven />`
 
   * 	Spring提供了一个@EnableTransactionManagement 注解以在配置类上开启声明式事务的支持。添加该注解后，Spring容器会自动扫描被@Transactional注解的方法和类。
 

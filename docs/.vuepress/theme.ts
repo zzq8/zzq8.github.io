@@ -18,8 +18,8 @@ export default hopeTheme({
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
-      "/daily": ["zzq","zhuzhiquan","朱智权"],
-      "/code/StudyList.html": ["zzq","zhuzhiquan","朱智权","547061946"],
+      "/posts/personal/": ["zzq","zhuzhiquan","朱智权","123","123456"],
+      "/code/StudyList.html": ["zzq","zhuzhiquan","朱智权","123","123456"],
     },
   },
 

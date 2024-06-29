@@ -31,6 +31,7 @@ date: 2024-06-29
 | CNAME | @    | zzq8.github.io. |
 
 ps: 240629 @ CNAME 到CDN域名，能用！之前不知道为啥不行
+而且github DNS check successful 神奇。难道是配置了 www 的原因说不定
 
 #### CDN 设置
 

@@ -16,7 +16,23 @@ article: false
 >
 > 学习的重点之一是习惯的养成，很多在职程序员没有写博客、做总结的习惯，导致他们工作两三年后水平停滞不前，最终工资被倒挂，甚至无力跳槽，这其中有一个重要的原因就是他们在入门的时候没有养成良好的学习习惯，比如看书必须记笔记，有了感悟最好写博客记录一下，发现知识盲区一定要去搜索权威文档而不是听信二手知识等等。
 
-### 一、主线（连续空余时间进行，如周末）
+## TODO
+
+* SSL 自动续期
+
+  https://newzone.top/
+
+* [同时部署到 GitHub Page 和个人服务器](https://asurada.zone/post/Deploy-Hexoblog-To-Codingnet-And-GitHub/) vs CDN？
+
+
+
+* mac CLI git 如何更灵活的像 GUI
+
+* mac siri控制spotify
+
+
+
+## 一、主线（连续空余时间进行，如周末）
 
 > Regain your confidence!
 
@@ -28,7 +44,7 @@ article: false
 
 立长志？  多邻国，单词？   最迟转正后加入知识星球
 
-### 二、夯实（日常穿插进行，如每天早上）
+## 二、夯实（日常穿插进行，如每天早上）
 
 - [ ] 以求职为导向来学习 **八股文** ForExample-JavaGuide（到一定度可入下知识星球！）
 - [ ] LeetCode 热题 HOT && 精选 TOP
@@ -38,7 +54,7 @@ article: false
 
 
 
-### 三、项目经验（周末）
+## 三、项目经验（周末）
 
 > [鱼皮有 b站 的项目评测！看完再决定要不要做！！！](https://www.bilibili.com/video/BV1PG4y1s7io/?spm_id_from=333.788&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)
 > 通过项目学习还是很不错的：边做项目边学新东西学的更快，记得才能更深
@@ -49,7 +65,7 @@ article: false
 
 
 
-### 四、其它
+## 四、其它
 
 - [ ] JVM（康师傅视频 + 周志明Book + JavaGuide）
 - [ ] [Git 游戏](https://oschina.gitee.io/learn-git-branching/)
@@ -60,7 +76,7 @@ article: false
 
 
 
-### Finish：
+## Finish：
 
 > 8小时以内求生存，8小时以外求发展，做五休二
 >
@@ -94,6 +110,8 @@ article: false
 # 慢就是快
 
 > [程序员的技术成长战略](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html#_2-4-%E6%A1%88%E4%BE%8B%E5%B0%8F%E7%BB%93)：==以此为终生指导！==
+>
+> ==经验可以被动积累，但是思考需要主动执行！！！==
 
 ### 以终为始是牛人和普通人的一大区别。
 
