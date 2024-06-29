@@ -10,12 +10,12 @@ article: false
 
 > Apr. 12th 2024
 
-* Karabiner (win autohotkey)
-* Alfred (Lib & Everything)
+* ~~Karabiner (win autohotkey的键位映射)~~
+* ~~Alfred (Lib & Everything)~~【感觉自带的够用】
   * in 关键词（可以搜文件里面的内容！）
 * Stats
 * Clash
-* Easydict
+* ~~Easydict（Eudic 替代）~~
 * IINA
 * Omi
 * Lunar（两台电脑连一台显示器软件方式切信号源通过 CLI）
@@ -45,11 +45,11 @@ article: false
 
 * Typora
 
-  * 注意：在官网这里[键位映射表](https://support.typora.io/Shortcut-Keys/#change-shortcut-keys) 搜名字，要对应起来，Mac 设置到 App 快捷键
+  * 注意：在官网这里[键位映射表](https://support.typora.io/Shortcut-Keys/#change-shortcut-keys) 搜名字（应该也可打开软件直接看菜单栏！），要对应起来，Mac 设置到 App 快捷键
 
   <img src="http://images.zzq8.cn/img/image-20231215180744304.png" alt="image-20231215180744304" style="zoom: 25%;" />
 
-* SourceTree
+* ~~SourceTree~~
 
   * Q：M 系列芯片好多软件还不支持，TortoiseSVN、SQLServer这种。。头疼了很久
     后补充：
@@ -60,6 +60,8 @@ article: false
 
     XD: 240330, 发现一个不错的软件 看的从 0 到 Thor 图发现的，  SourceTree
     **注意 - sourceTree push 的时候如无法 auth 明明密码账号正确！解决 - 设置换 git 内核用 mac 本地的！！！**
+  
+  ==解决：直接用 vscode 就好！！！==
 
 
 
@@ -195,13 +197,11 @@ RESTORE DATABASE [ZS_SCM] FROM DISK='/home/ZC_SCM0426002.BAK'
 
 ***
 
-
-
-
-
-
+# 
 
 # 
+
+
 
 # ---------
 

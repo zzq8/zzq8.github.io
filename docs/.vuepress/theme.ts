@@ -19,7 +19,7 @@ export default hopeTheme({
     config: {
       "/demo/encrypt.html": ["1234"],
       "/daily": ["zzq","zhuzhiquan","朱智权"],
-      "/studynotes/ZOther/StudyList.html": ["547061946"],
+      "/code/StudyList.html": ["zzq","zhuzhiquan","朱智权","547061946"],
     },
   },
 
