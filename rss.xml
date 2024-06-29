@@ -6,12 +6,13 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 29 Jun 2024 08:15:59 GMT</pubDate>
-    <lastBuildDate>Sat, 29 Jun 2024 08:15:59 GMT</lastBuildDate>
+    <pubDate>Sat, 29 Jun 2024 10:29:19 GMT</pubDate>
+    <lastBuildDate>Sat, 29 Jun 2024 10:29:19 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>工具</category>
     <category>使用指南</category>
+    <category>Code</category>
     <item>
       <title>CDN</title>
       <link>https://zzq8.cn/code/408-Network/CDN.html</link>
@@ -57,6 +58,49 @@
       <pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>Software</title>
+      <link>https://zzq8.cn/code/408-PC/Software.html</link>
+      <guid>https://zzq8.cn/code/408-PC/Software.html</guid>
+      <source url="https://zzq8.cn/rss.xml">Software</source>
+      <description>Software Sublime ctrl+shift+f where处可以指定多个目录 / 排除指定目录下某个文件【高频使用】 shortcut： 1）快速定位到修改过的地方的快捷键-好用 2）书签快捷键 3）还有github中python的批量保存关闭快捷键 image-20240130182956675image-2024013018295667...</description>
+      <pubDate>Sat, 29 Jun 2024 10:27:54 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>Sublime</h2>
+<ul>
+<li>
+<h4><a class="header-anchor" href="#ctrl-shift-f-where处可以指定多个目录-排除指定目录下某个文件【高频使用】"><span></span></a><a href="https://www.cnblogs.com/daysme/p/6890979.html" target="_blank" rel="noopener noreferrer">ctrl+shift+f where处可以指定多个目录 / 排除指定目录下某个文件</a>【高频使用】</h4>
+</li>
+<li>
+<h4>shortcut： 1）快速定位到修改过的地方的快捷键-好用     2）书签快捷键    3）还有github中python的批量保存关闭快捷键</h4>
+<ul>
+<li><img src="http://images.zzq8.cn/img/image-20240130182956675.png" alt="image-20240130182956675" tabindex="0" loading="lazy"><figcaption>image-20240130182956675</figcaption></li>
+</ul>
+</li>
+<li>
+<h4>在 Sublime Text 4 中，当你尝试替换文本时，它默认会保持替换的文本与原始文本的大小写一致。这意味着，如果你选择替换为大写文本，但原始文本是小写的，替换后的文本也会保持小写。</h4>
+<ul>
+<li>踩坑，ctrl h左下角有个选项 preserve case</li>
+</ul>
+</li>
+<li>
+<h4>搜索可以用正则，正则中的表达式可以用()包到里面，替换的时候可以用 $1..n（代表第1..n个括号） 来复用匹配到的内容！！！真的好用</h4>
+<ul>
+<li><mark>正则组引用</mark></li>
+</ul>
+</li>
+<li>
+<h4><a class="header-anchor" href="#快速插入多行递增数字"><span></span></a><a href="https://blog.csdn.net/cxrsdn/article/details/82496800" target="_blank" rel="noopener noreferrer">快速插入多行递增数字</a></h4>
+<ul>
+<li>
+<h5>ctrl+shift+p</h5>
+</li>
+</ul>
+</li>
+</ul>
+]]></content:encoded>
+      <enclosure url="http://images.zzq8.cn/img/image-20240130182956675.png" type="image/png"/>
     </item>
     <item>
       <title>Seata&amp;XTS</title>
@@ -393,6 +437,158 @@ App1是整个事务的发起者，为了能够代表整个事务的状态，发�
 <figure><img src="http://images.zzq8.cn/img/331a77d65115a134117aff63e2c3ce75.png" alt="image.png" tabindex="0" loading="lazy"><figcaption>image.png</figcaption></figure>
 ]]></content:encoded>
       <enclosure url="https://images.zzq8.cn/img/202207081440609.png" type="image/png"/>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://zzq8.cn/code/ZOther/Git.html</link>
+      <guid>https://zzq8.cn/code/ZOther/Git.html</guid>
+      <source url="https://zzq8.cn/rss.xml">Git</source>
+      <description>Git 基础学习 ✨Git 学习游戏网站 https://m.runoob.com/git/git-basic-operations.html 有时间再梳理这篇文章, 只保留有用的 不要繁琐,繁琐了不会看 img workspace：工作区 staging area：暂存区/缓存区 local repository：版本库或本地仓库 remote re...</description>
+      <category>Code</category>
+      <pubDate>Sat, 13 Apr 2024 08:39:03 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>基础学习</h2>
+<blockquote>
+<p>✨<a href="https://oschina.gitee.io/learn-git-branching/" target="_blank" rel="noopener noreferrer">Git 学习游戏网站</a></p>
+<p>https://m.runoob.com/git/git-basic-operations.html</p>
+<p>有时间再梳理这篇文章, 只保留有用的   不要繁琐,繁琐了不会看</p>
+</blockquote>
+<img src="https://www.runoob.com/wp-content/uploads/2015/02/git-command.jpg" alt="img" style="zoom:150%;">
+<ul>
+<li>workspace：工作区</li>
+<li>staging area：暂存区/缓存区</li>
+<li>local repository：版本库或本地仓库</li>
+<li>remote repository：远程仓库</li>
+</ul>
+<h2>日常使用</h2>
+<p>日常自己仓库就三步:</p>
+<ul>
+<li>git status -sb (--short, --branch)   <mark>xd 不会了就 git status -help</mark></li>
+<li>git commit -av</li>
+<li>git push</li>
+</ul>
+<p>其他常用:</p>
+<ul>
+<li>git log --oneline (单行形式展示日志)</li>
+<li>git rm -r --cached xx (清除指定文件的 git 版本控制)</li>
+<li>git checkout &lt;上一个版本的提交哈希值&gt; -- &lt;文件路径&gt; （git 回滚指定文件到上一个版本）
+<ul>
+<li>【实测】如果你想要抛弃工作区的修改，可以使用git checkout命令。git checkout -- .</li>
+</ul>
+</li>
+</ul>
+<p>扩展知识：</p>
+<ul>
+<li>
+<p>规定了<a href="https://zhuanlan.zhihu.com/p/182553920" target="_blank" rel="noopener noreferrer">commit message</a>的格式（TODO，我个人觉得还蛮重要，看网站提到的背景）</p>
+</li>
+<li>
+<p><code>--</code>在命令行中的作用是提供一个明确的分隔符，以确保命令的选项、参数或文件路径被正确解析。</p>
+<ul>
+<li>例如，<code>git log -- -file.txt</code>中的<code>--</code>用于明确表示<code>-file.txt</code>是参数而不是选项</li>
+<li>例如，<code>git checkout branch-name -- file.txt</code>中的<code>--</code>用于分隔<code>branch-name</code>和<code>file.txt</code>，以明确表示<code>file.txt</code>是文件路径而不是分支名称。</li>
+</ul>
+</li>
+</ul>
+<h4>IDEA 中 git Merge Select into Current 和 Pull into Current using merge有什么区别</h4>
+<blockquote>
+<ul>
+<li>Merge Select into Current 适用于合并指定远程分支的更改到当前分支。</li>
+<li>Pull into Current using merge 适用于拉取远程分支的最新更改并合并到当前分支。</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>Merge Select into Current: <strong>实测没有fetch，直接以现有的log记录去merge</strong></p>
+<ul>
+<li>git merge refs/remotes/origin/gptsh_dlx_b1</li>
+</ul>
+</li>
+<li>
+<p>Pull into Current using merge: <strong>实测先fetch再merge</strong></p>
+<ul>
+<li>git fetch origin --recurse-submodules=no --progress --prune
+<ul>
+<li>如有信息输出：remote: Total 10 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+From gitlab.alipay-inc.com:cangxi.lj/gptsh
+5e991b2..d7972bd  gptsh_dlx_b1 -&gt; origin/gptsh_dlx_b1</li>
+<li>如没信息就这一步完了就 return，提示 All filles are up to date</li>
+</ul>
+</li>
+<li>git merge origin/gptsh_dlx_b1 --no-stat -v</li>
+</ul>
+</li>
+</ul>
+<h1>-</h1>
+<h1>-</h1>
+<hr>
+<h1>繁琐的以前</h1>
+<h2><a class="header-anchor" href="#_1-前置配置"><span></span></a><a href="https://blog.csdn.net/weixin_42310154/article/details/118340458" target="_blank" rel="noopener noreferrer">1.前置配置</a></h2>
+<blockquote>
+<p>云服务器的 Git 我捣鼓了好久~
+由于云服务器网络、地区CN   http协议去连 Github 有点抽风，固我第一次尝试了 ssh 协议！！！   好使</p>
+</blockquote>
+<ol>
+<li>生成ssh key  <code>ssh-keygen -t rsa -C "xxx@xxx.com"</code></li>
+<li>获取ssh key公钥内容（id_rsa.pub）   <code>cat ~/.ssh/id_rsa.pub</code></li>
+<li>把 cat 到的公钥内容放入 Github SSH配置里</li>
+<li>验证是否设置成功   <code>ssh -T git@github.com</code></li>
+</ol>
+<h3>通俗解释！！</h3>
+<p>重点来了：<strong>一定要知道ssh key的配置是针对每台主机的！</strong>，比如我在某台主机上操作git和我的远程仓库，想要push时不输入账号密码，走ssh协议，就需要配置ssh key，放上去的key是<strong>当前主机的ssh公钥</strong>。那么如果我换了一台其他主机，想要实现无密登录，也就需要重新配置。</p>
+<p>下面解释开头提出的问题：
+（1）为什么要配？
+配了才能实现push代码的时候不需要反复输入自己的github账号密码，更方便
+（2）每使用一台主机都要配？
+是的，每使用一台新主机进行git远程操作，想要实现无密，都需要配置。并不是说每个账号配一次就够了，而是每一台主机都需要配。
+（3）配了为啥就不用密码了？
+因为配置的时候是把当前主机的公钥放到了你的github账号下，相当于当前主机和你的账号做了一个关联，你在这台主机上已经登录了你的账号，此时此刻github认为是该账号主人在操作这台主机，在配置ssh后就信任该主机了。所以下次在使用git的时候即使没有登录github，也能直接从本地push代码到远程了。当然这里不要混淆了，你不能随意push你的代码到任何仓库，你只能push到你自己的仓库或者其他你有权限的仓库！</p>
+<h2>1.备份 MinIO</h2>
+<blockquote>
+<p>场景：备份 MinIO 的文件到 Git</p>
+<ol>
+<li>使用 <code>crontab -e</code></li>
+<li>一分钟执行一次  <code>* * * * * /home/minio/data/blog/test.sh  &gt;&gt; /home/minio/data/test.log 2&gt;&amp;1</code></li>
+</ol>
+<p>问题：我需要保证我的shell脚本的git命令 auth 这一步</p>
+<p>​	手动一行行命令的时候用 <code>http</code> 可以：<code>git remote set-url origin http://github.com/zzq8/MinIO-upupor.git</code></p>
+<p>​	但是shell中批量总是报错！！！auth问题，网上冲浪发现用ssh好使   1）需要云服务器加私钥 2）把公钥加到Git
+​	<code>git remote set-url origin git@github.com:zzq8/MinIO-upupor.git</code></p>
+</blockquote>
+<p>token   可以当密码auth的时候</p>
+<p>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</p>
+<h1>GitHub搜索技巧</h1>
+<blockquote>
+<p>不要小看这个，真的可以挖掘Github这个宝藏库</p>
+</blockquote>
+<ul>
+<li>
+<p>in关键字限制搜索范围 ',' 是或的意思  <code>xxx in:name,readme,description</code></p>
+</li>
+<li>
+<p>查找star大于1000，fork数在500到1000 <code>xxx stars:&gt;1000 forks:500..1000</code></p>
+</li>
+<li>
+<p>awesome系列，一般用来收集学习、工具、书籍类相关的项目 <code>awesome xxx</code></p>
+<ul>
+<li>【陌生】搜出来第一条会有副红色眼镜    言下之意，你要学什么东西就用这个命令试试。   至少我搜了下SpringBoot还是蛮不错的</li>
+</ul>
+</li>
+<li>
+<p>高亮显示某行代码 一行：代码地址后面紧跟 <code>#L10</code> 多行：<code>#Lx - #Ln</code></p>
+</li>
+<li>
+<p>项目内搜索 使用英文字母 <code>t</code> ,开启项目内搜索</p>
+</li>
+</ul>
+<h1>一、常规流程</h1>
+<blockquote>
+<p>命令行还是可以会一下，后面其实都可以用 TortoiseGit 图形化操作了...</p>
+</blockquote>
+<h2>前置设置</h2>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
+      <enclosure url="https://images.zzq8.cn/img/202206011611310.png" type="image/png"/>
     </item>
   </channel>
 </rss>
