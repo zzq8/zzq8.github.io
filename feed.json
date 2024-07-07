@@ -13,7 +13,7 @@
       "summary": "CDN 感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！ 测速网站 还是得看官方文档，搞了一天端午加一周的晚上时间看别人二手文章描述又描述不清！！混淆我！！！！突然开窍看了眼官网描述，草 原来是这个意思： 回源 HOST 即回源域名，CDN 节点在回源时，能够指定访问的源站 IP 地址下具体的站点域名。当您的源站只有一个和加速域名一致的站点...",
       "content_html": "\n<blockquote>\n<p>感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！</p>\n<p><a href=\"https://www.17ce.com/site\" target=\"_blank\" rel=\"noopener noreferrer\">测速网站</a></p>\n<p>还是得看官方文档，搞了一天端午加一周的晚上时间看别人二手文章描述又描述不清！！混淆我！！！！突然开窍看了眼官网描述，草  原来是这个意思：</p>\n<p>回源 HOST\n即回源域名，CDN 节点在回源时，能够指定访问的源站 IP 地址下具体的站点域名。当您的源站只有一个和加速域名一致的站点，默认为加速域名即可，若源站为 COS 源或第三方对象存储时，回源 HOST 不可修改，控制台默认为回源地址。</p>\n<p>说明：\n什么是 CDN 回源 HOST 配置?\n回源 HOST 是指加速域名在 CDN 节点回源过程指向源访问的站点域名，若您在源站服务器内同时部署了若干个 Web 站点，配置正确的回源 HOST 可以帮助您顺利访问指定的站点域名。</p>\n</blockquote>\n<h2>目前配置</h2>\n<h4>DNS 设置</h4>\n<p>| 类型  | 名称 | 值              |\n|</p>\n",
       "date_published": "2024-06-29T00:00:00.000Z",
-      "date_modified": "2024-06-29T08:14:25.000Z",
+      "date_modified": "2024-07-07T14:54:20.000Z",
       "authors": [],
       "tags": []
     },
@@ -42,6 +42,18 @@
       "tags": [
         "使用指南"
       ]
+    },
+    {
+      "title": "WebSocket",
+      "url": "https://zzq8.cn/code/408-Network/SSE_WS.html",
+      "id": "https://zzq8.cn/code/408-Network/SSE_WS.html",
+      "summary": "WebSocket 双向实时通信：填补HTTP在实时通讯的不足 适用低延迟实时通讯 即时消息传递、音视频通话、在线会议和实时数据传输等，可以实现即时的数据传输和交流，不需要用户主动请求或刷新来获取更新数据 协同编辑，想象语雀文档/腾讯文档 How 告诉服务器，我想从HTTP升级成WS ![image-20240706104311784](/Users/...",
+      "content_html": "\n<p>双向实时通信：填补HTTP在实时通讯的不足</p>\n<p>适用低延迟实时通讯</p>\n<p>即时消息传递、音视频通话、在线会议和实时数据传输等，可以实现即时的数据传输和交流，不需要用户主动请求或刷新来获取更新数据\n协同编辑，想象语雀文档/腾讯文档</p>\n<p>How</p>\n<p>告诉服务器，我想从HTTP升级成WS</p>\n<p>![image-20240706104311784](/Users/xd/Library/Application Support/typora-user-images/image-20240706104311784.png)</p>\n<p>为了保持 WebSocket 稳定的长连接，在连接建立之后，服务器和客户端之间通过心跳包来保持连接状态，以防止连接因为长时间没有数据传输而被切断。</p>\n<p>一种特殊的数据包不包含任何实际数据，仅用来维持连接状态一个空数据帧</p>\n<p>定期发送，确保链接仍然有效，避免长时间没有数据传输而被中断</p>\n<p>如果一段时间内没有收到对方的心跳包，就可以认为连接已经断开</p>\n<p>扫码原理：HTTP定时轮询（弊端多！）   -》 百度网盘：长轮询</p>\n<p>https://www.bilibili.com/video/BV1Rh4y167Uh?t=122.6 【视频挺好】\nhttps://www.bilibili.com/video/BV19N411474y?t=97.0</p>\n<p>到网站笔记整理</p>\n<p>https://golangguide.top/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%82%B9/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89HTTP%E5%8D%8F%E8%AE%AE%EF%BC%8C%E8%BF%98%E8%A6%81%E6%9C%89websocket%E5%8D%8F%E8%AE%AE.html</p>\n<p><strong>HTTP/1.1 是一种半双工协议，而不是全双工协议。</strong>(设计之初只考虑看看网页，没考虑网页游戏 )</p>\n<p><strong>相比之下，HTTP/2 是全双工协议。HTTP/2 允许同时在同一连接上双向传输多个消息（即多路复用），从而显著提高了传输效率和速度。这使得 HTTP/2 可以更有效地利用网络资源，减少延迟</strong></p>\n",
+      "image": "https://zzq8.cn/Users/xd/Library/Application Support/typora-user-images/image-20240706104311784.png",
+      "date_published": "2024-07-07T14:54:20.000Z",
+      "date_modified": "2024-07-07T14:54:20.000Z",
+      "authors": [],
+      "tags": []
     },
     {
       "title": "Software",
