@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://zzq8.cn/favicon.ico</icon>
-  <updated>2024-07-14T11:27:46.870Z</updated>
+  <updated>2024-07-14T11:45:04.814Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://zzq8.cn/atom.xml"/>
   <link rel="alternate" href="https://zzq8.cn/"/>
@@ -15,7 +15,7 @@
     <title type="text">CDN</title>
     <id>https://zzq8.cn/code/408-Network/CDN.html</id>
     <link href="https://zzq8.cn/code/408-Network/CDN.html"/>
-    <updated>2024-07-14T11:27:46.871Z</updated>
+    <updated>2024-07-14T11:45:04.815Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！</p>
@@ -49,7 +49,7 @@
     <title type="text">博客文章样例2</title>
     <id>https://zzq8.cn/posts/2024-03-02-blog_example2.html</id>
     <link href="https://zzq8.cn/posts/2024-03-02-blog_example2.html"/>
-    <updated>2024-07-14T11:27:46.877Z</updated>
+    <updated>2024-07-14T11:45:04.821Z</updated>
     <summary type="html"><![CDATA[<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 ]]></summary>
     <content type="html"><![CDATA[<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
@@ -61,7 +61,7 @@
     <title type="text">博客文章样例</title>
     <id>https://zzq8.cn/posts/2024-03-01-blog_example.html</id>
     <link href="https://zzq8.cn/posts/2024-03-01-blog_example.html"/>
-    <updated>2024-07-14T11:27:46.879Z</updated>
+    <updated>2024-07-14T11:45:04.823Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 </blockquote>
@@ -115,7 +115,7 @@
     <title type="text">WebSocket</title>
     <id>https://zzq8.cn/code/408-Network/SSE_WS.html</id>
     <link href="https://zzq8.cn/code/408-Network/SSE_WS.html"/>
-    <updated>2024-07-14T11:27:46.881Z</updated>
+    <updated>2024-07-14T11:45:04.825Z</updated>
     <summary type="html"><![CDATA[
 <p>双向实时通信：填补HTTP在实时通讯的不足</p>
 <p>适用低延迟实时通讯</p>
@@ -151,7 +151,7 @@ https://www.bilibili.com/video/BV19N411474y?t=97.0</p>
     <title type="text">Software</title>
     <id>https://zzq8.cn/code/408-PC/Software.html</id>
     <link href="https://zzq8.cn/code/408-PC/Software.html"/>
-    <updated>2024-07-14T11:27:46.883Z</updated>
+    <updated>2024-07-14T11:45:04.827Z</updated>
     <summary type="html"><![CDATA[
 <h2>Sublime</h2>
 <ul>
@@ -231,7 +231,7 @@ https://www.bilibili.com/video/BV19N411474y?t=97.0</p>
     <title type="text">Seata&amp;XTS</title>
     <id>https://zzq8.cn/code/DistributedLock/Seata_XTS.html</id>
     <link href="https://zzq8.cn/code/DistributedLock/Seata_XTS.html"/>
-    <updated>2024-07-14T11:27:46.889Z</updated>
+    <updated>2024-07-14T11:45:04.832Z</updated>
     <summary type="html"><![CDATA[
 <h2>vs</h2>
 <h3>对比与选择</h3>
@@ -588,7 +588,7 @@ App1是整个事务的发起者，为了能够代表整个事务的状态，发�
     <title type="text">Git</title>
     <id>https://zzq8.cn/code/ZOther/Git.html</id>
     <link href="https://zzq8.cn/code/ZOther/Git.html"/>
-    <updated>2024-07-14T11:27:46.906Z</updated>
+    <updated>2024-07-14T11:45:04.846Z</updated>
     <summary type="html"><![CDATA[
 <h2>基础学习</h2>
 <blockquote>
