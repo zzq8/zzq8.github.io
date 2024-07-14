@@ -6,8 +6,8 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 14 Jul 2024 10:30:09 GMT</pubDate>
-    <lastBuildDate>Sun, 14 Jul 2024 10:30:09 GMT</lastBuildDate>
+    <pubDate>Sun, 14 Jul 2024 11:27:46 GMT</pubDate>
+    <lastBuildDate>Sun, 14 Jul 2024 11:27:46 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>工具</category>
@@ -53,10 +53,38 @@
       <link>https://zzq8.cn/posts/2024-03-01-blog_example.html</link>
       <guid>https://zzq8.cn/posts/2024-03-01-blog_example.html</guid>
       <source url="https://zzq8.cn/rss.xml">博客文章样例</source>
-      <description>博客文章内容，支持 Markdown 和 HTML 语言。</description>
+      <description>博客文章内容，支持 Markdown 和 HTML 语言。 2 告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越asdf sdf asdf asdf asdf asd ffdsg fdfd adsf sd sdfsdfghdfgh 找工作，会拖夸自己。运动是一...</description>
       <category>使用指南</category>
       <pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
+      <content:encoded><![CDATA[<blockquote>
+<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
+</blockquote>
+<h2>2</h2>
+<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越asdf</p>
+<h1>sdf</h1>
+<h2>asdf</h2>
+<h3>asdf</h3>
+<h4>asdf</h4>
+<p>asd</p>
+<p>ffdsg</p>
+<p>fdfd</p>
+<p>adsf</p>
+<p>sd</p>
+<p>sdfsdfghdfgh</p>
+<p>找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
+<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
+<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
+<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>
+<p>回想起来 bg、lx 总能前瞻性的做一些事情</p>
+<p>毕业时候公众号投的一家，说你为什么临近毕业才投
+那个时候没什么认知  只知道被大浪推着走          现在很被动</p>
+<p>看xy毕业简历有感</p>
+<p>asdf</p>
+<p>asdf</p>
+<p>asdf</p>
+<h2>blibili Review</h2>
+<p>刚从亚信出来感觉纯纯在里面浪费时间，直都是二次开发，功能优化，SQL优化
+回复@满心满意-：别，我之前在低代码开发过一年，低代码培养的是<code>业务逻辑</code>，如果你还想干开发，那就只能自己空闲时间写代码不断进步。不然会落后的</p>
 ]]></content:encoded>
     </item>
     <item>
