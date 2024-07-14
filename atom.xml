@@ -4,18 +4,17 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://zzq8.cn/favicon.ico</icon>
-  <updated>2024-07-14T11:45:04.814Z</updated>
+  <updated>2024-07-14T11:48:38.459Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://zzq8.cn/atom.xml"/>
   <link rel="alternate" href="https://zzq8.cn/"/>
-  <category term="工具"/>
   <category term="使用指南"/>
   <category term="Code"/>
   <entry>
     <title type="text">CDN</title>
     <id>https://zzq8.cn/code/408-Network/CDN.html</id>
     <link href="https://zzq8.cn/code/408-Network/CDN.html"/>
-    <updated>2024-07-14T11:45:04.815Z</updated>
+    <updated>2024-07-14T11:48:38.460Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！</p>
@@ -46,67 +45,19 @@
     <published>2024-06-29T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">博客文章样例2</title>
-    <id>https://zzq8.cn/posts/2024-03-02-blog_example2.html</id>
-    <link href="https://zzq8.cn/posts/2024-03-02-blog_example2.html"/>
-    <updated>2024-07-14T11:45:04.821Z</updated>
-    <summary type="html"><![CDATA[<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
-]]></summary>
-    <content type="html"><![CDATA[<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
-]]></content>
-    <category term="工具"/>
-    <published>2024-03-02T00:00:00.000Z</published>
-  </entry>
-  <entry>
     <title type="text">博客文章样例</title>
     <id>https://zzq8.cn/posts/2024-03-01-blog_example.html</id>
     <link href="https://zzq8.cn/posts/2024-03-01-blog_example.html"/>
-    <updated>2024-07-14T11:45:04.823Z</updated>
+    <updated>2024-07-14T11:48:38.466Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 </blockquote>
-<h2>2</h2>
-<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越asdf</p>
-<h1>sdf</h1>
-<h2>asdf</h2>
-<h3>asdf</h3>
-<h4>asdf</h4>
-<p>asd</p>
-<p>ffdsg</p>
-<p>fdfd</p>
-<p>adsf</p>
-<p>sd</p>
-<p>sdfsdfghdfgh</p>
-<p>找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>]]></summary>
+<p>加油！内驱力～</p>
+]]></summary>
     <content type="html"><![CDATA[<blockquote>
 <p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 </blockquote>
-<h2>2</h2>
-<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越asdf</p>
-<h1>sdf</h1>
-<h2>asdf</h2>
-<h3>asdf</h3>
-<h4>asdf</h4>
-<p>asd</p>
-<p>ffdsg</p>
-<p>fdfd</p>
-<p>adsf</p>
-<p>sd</p>
-<p>sdfsdfghdfgh</p>
-<p>找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
-<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
-<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
-<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>
-<p>回想起来 bg、lx 总能前瞻性的做一些事情</p>
-<p>毕业时候公众号投的一家，说你为什么临近毕业才投
-那个时候没什么认知  只知道被大浪推着走          现在很被动</p>
-<p>看xy毕业简历有感</p>
-<p>asdf</p>
-<p>asdf</p>
-<p>asdf</p>
-<h2>blibili Review</h2>
-<p>刚从亚信出来感觉纯纯在里面浪费时间，直都是二次开发，功能优化，SQL优化
-回复@满心满意-：别，我之前在低代码开发过一年，低代码培养的是<code>业务逻辑</code>，如果你还想干开发，那就只能自己空闲时间写代码不断进步。不然会落后的</p>
+<p>加油！内驱力～</p>
 ]]></content>
     <category term="使用指南"/>
     <published>2024-03-01T00:00:00.000Z</published>
@@ -115,7 +66,7 @@
     <title type="text">WebSocket</title>
     <id>https://zzq8.cn/code/408-Network/SSE_WS.html</id>
     <link href="https://zzq8.cn/code/408-Network/SSE_WS.html"/>
-    <updated>2024-07-14T11:45:04.825Z</updated>
+    <updated>2024-07-14T11:48:38.468Z</updated>
     <summary type="html"><![CDATA[
 <p>双向实时通信：填补HTTP在实时通讯的不足</p>
 <p>适用低延迟实时通讯</p>
@@ -151,7 +102,7 @@ https://www.bilibili.com/video/BV19N411474y?t=97.0</p>
     <title type="text">Software</title>
     <id>https://zzq8.cn/code/408-PC/Software.html</id>
     <link href="https://zzq8.cn/code/408-PC/Software.html"/>
-    <updated>2024-07-14T11:45:04.827Z</updated>
+    <updated>2024-07-14T11:48:38.469Z</updated>
     <summary type="html"><![CDATA[
 <h2>Sublime</h2>
 <ul>
@@ -231,7 +182,7 @@ https://www.bilibili.com/video/BV19N411474y?t=97.0</p>
     <title type="text">Seata&amp;XTS</title>
     <id>https://zzq8.cn/code/DistributedLock/Seata_XTS.html</id>
     <link href="https://zzq8.cn/code/DistributedLock/Seata_XTS.html"/>
-    <updated>2024-07-14T11:45:04.832Z</updated>
+    <updated>2024-07-14T11:48:38.473Z</updated>
     <summary type="html"><![CDATA[
 <h2>vs</h2>
 <h3>对比与选择</h3>
@@ -588,7 +539,7 @@ App1是整个事务的发起者，为了能够代表整个事务的状态，发�
     <title type="text">Git</title>
     <id>https://zzq8.cn/code/ZOther/Git.html</id>
     <link href="https://zzq8.cn/code/ZOther/Git.html"/>
-    <updated>2024-07-14T11:45:04.846Z</updated>
+    <updated>2024-07-14T11:48:38.492Z</updated>
     <summary type="html"><![CDATA[
 <h2>基础学习</h2>
 <blockquote>
