@@ -95,7 +95,8 @@ export default hopeTheme({
     blog: {
       article: "/article/",
       // XD 学一下这个，想实现如下效果   捣鼓蛮久，不会构建这个 filter！！！
-      filter: page => page.filePathRelative?.startsWith('_posts/') && !page.frontmatter.home
+      filter: page => page.filePathRelative?.startsWith('_posts/') && !page.frontmatter.home,
+      excerptLength: 50
     },
 
     git : {
