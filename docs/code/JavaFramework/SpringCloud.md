@@ -545,6 +545,41 @@ name 我是小写才生效 ！！！
 
 ### 1. OpenFeign服务调用
 
+> 联想：RPC怎么处理幂等、重试的情况 【这就是你用没用过RPC的考量点】
+>
+> processRequest() 用 redis 的 setnx 保证幂等
+>
+> ```java
+> public class IdempotentRetryService {
+>     private final IdempotentService idempotentService = new IdempotentService();
+>     private static final int MAX_RETRIES = 5;
+>     private static final long INITIAL_INTERVAL = 1000L; // 1秒
+> 
+>     public Response processRequestWithRetry(String requestId, Request request) {
+>         int attempts = 0;
+>         long interval = INITIAL_INTERVAL;
+> 
+>         while (attempts < MAX_RETRIES) {
+>             try {
+>                 return idempotentService.processRequest(requestId, request);
+>             } catch (Exception e) {
+>                 attempts++;
+>                 if (attempts >= MAX_RETRIES) {
+>                     throw new RuntimeException("最大重试次数达到，操作失败", e);
+>                 }
+>                 try {
+>                     Thread.sleep(interval);
+>                 } catch (InterruptedException ie) {
+>                     Thread.currentThread().interrupt();
+>                 }
+>                 interval *= 2; // 指数退避
+>             }
+>         }
+>         throw new RuntimeException("操作失败");
+>     }
+> }
+> ```
+
 > **TODO：就算配了超时时间 第一次跑也老是超时，后面就不会了**
 > 这是由于在调用其他微服务接口前，会去请求该微服务的相关信息(地址、端口等)，并做一些初始化操作，由于默认的[懒加载](https://so.csdn.net/so/search?q=懒加载&spm=1001.2101.3001.7020)特性，导致了在第一次调用时，出现超时的情况    **解决：Ribbon配置饥饿加载（最佳）**
 >

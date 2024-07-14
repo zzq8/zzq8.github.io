@@ -1,6 +1,7 @@
 ---
 article: false
 ---
+
 # [ZStudyList](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html)
 
 > 知行合一 ！！！慢慢来比较快！自己写点属于自己的 MD 笔记。<font color=red>保持热爱，留有期待！</font>
@@ -19,6 +20,11 @@ article: false
 ## TODO
 
 * SSL 自动续期 https://newzone.top/
+
+
+
+* 梳理已有文档，新建一个个细化文档迁移。   就像 SOFABoot.md -> N*other.md
+  * 抽丝剥茧，要做到自己真正理解【**就很多道理，别人给你说你似乎听懂了，其实你没有内化是不懂的！**】
 
 
 
