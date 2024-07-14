@@ -92,7 +92,15 @@ export default hopeTheme({
   // 隐藏打印按钮
   // print: false,
   plugins: {
-    blog: true,
+    blog: {
+      article: "/article/",
+      // XD 学一下这个，想实现如下效果   捣鼓蛮久，不会构建这个 filter！！！
+      filter: page => page.filePathRelative?.startsWith('_posts/') && !page.frontmatter.home
+    },
+
+    git : {
+      updatedTime: false
+    },
 
     // 评论配置（仅做样例，记得更换）
     comment: {
