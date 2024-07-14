@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://zzq8.cn/favicon.ico</icon>
-  <updated>2024-07-14T10:29:32.844Z</updated>
+  <updated>2024-07-14T10:30:09.443Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://zzq8.cn/atom.xml"/>
   <link rel="alternate" href="https://zzq8.cn/"/>
@@ -546,7 +546,7 @@ App1是整个事务的发起者，为了能够代表整个事务的状态，发�
     <title type="text">Git</title>
     <id>https://zzq8.cn/code/ZOther/Git.html</id>
     <link href="https://zzq8.cn/code/ZOther/Git.html"/>
-    <updated>2024-06-29T10:27:54.000Z</updated>
+    <updated>2024-07-14T10:28:47.000Z</updated>
     <summary type="html"><![CDATA[
 <h2>基础学习</h2>
 <blockquote>
@@ -578,9 +578,20 @@ App1是整个事务的发起者，为了能够代表整个事务的状态，发�
 </ul>
 <p>其他常用:</p>
 <ul>
-<li>git log --oneline (单行形式展示日志)</li>
-<li>git rm -r --cached xx (清除指定文件的 git 版本控制)</li>
-<li>git checkout &lt;上一个版本的提交哈希值&gt; -- &lt;文件路径&gt; （git 回滚指定文件到上一个版本）
+<li>
+<p>git log --oneline (单行形式展示日志)</p>
+</li>
+<li>
+<p>使用 git checkout 命令回退指定的文件到上一个版本，<strong>多个文件用空格隔开</strong></p>
+<ul>
+<li>git checkout HEAD~1 -- package-lock.json package.json</li>
+</ul>
+</li>
+<li>
+<p>git rm -r --cached xx (清除指定文件的 git 版本控制)</p>
+</li>
+<li>
+<p>git checkout &lt;上一个版本的提交哈希值&gt; -- &lt;文件路径&gt; （git 回滚指定文件到上一个版本）</p>
 <ul>
 <li>【实测】如果你想要抛弃工作区的修改，可以使用git checkout命令。git checkout -- .</li>
 </ul>
