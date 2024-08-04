@@ -19,7 +19,7 @@ article: true
 
 ## TODO
 
-* SSL 自动续期 https://newzone.top/
+* SSL 自动续期 https://newzone.top/posts/2024-04-09-ssl-certbot.html
 
 
 
