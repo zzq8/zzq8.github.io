@@ -13,3 +13,6 @@ docs/_temp/
 
 # GoodSync
 _gsdata_/
+
+# OSX dir files
+.DS_Store

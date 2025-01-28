@@ -3,6 +3,139 @@ article: false
 ---
 # MacOS
 
+# Latest
+
+
+
+> ➜  ~ echo $SHELL
+> /bin/zsh
+
+
+
+
+
+> export PATH="/opt/homebrew/bin:$PATH"
+
+* export：将一个环境变量设置为全局变量，使它对当前终端会话和子进程可用。
+* PATH：一个系统环境变量，用来存储可执行程序的搜索路径。当你在终端输入命令时，系统会按顺序在 PATH 中定义的目录里查找对应的可执行文件。
+* /opt/homebrew/bin：这是 Homebrew 在 Apple Silicon（M1/M2 等）设备上的默认安装路径。
+* **:$PATH：将现有的 PATH 变量值追加到新路径的后面，避免覆盖原有的搜索路径。**
+
+
+
+echo $PATH  
+验证
+
+
+
+**临时生效**：直接运行 export PATH="/opt/homebrew/bin:$PATH"。
+
+**永久生效**：将该命令写入你的 Shell 配置文件（如 ~/.zshrc 或 ~/.bash_profile）。
+
+
+
+## Setting
+
+> 允许 “任何来源” 下载的 App 运行
+
+打开 “终端” 执行如下命令（根据提示输入您的密码即可）：
+
+```
+sudo spctl --master-disable
+```
+
+XD: 此时隐私安全性里就多了一项: `任何来源`
+
+
+
+## Software
+
+> 解压工具, 像zip可以系统自动解压但是rar不行要下
+
+the unarchiver
+
+
+
+
+
+
+
+> Sublime
+
+Setting
+
+```
+{
+// 设置Sans-serif（无衬线）等宽字体，以便阅读
+	"font_face": "YaHei Consolas Hybrid",
+	// 字体大小
+	"font_size": 19,
+	// 使光标闪动更加柔和
+	"caret_style": "phase",
+	// 高亮当前行
+	"highlight_line": true,
+	// 高亮有修改的标签
+	"highlight_modified_tabs": true,
+	// 主题设置
+	// "theme": "One Dark.sublime-theme",
+	// Sublime Merge
+	//"sublime_merge_path": "E:\\Sublime Text\\Sublime Merge\\sublime_merge.exe",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"color_scheme": "Mariana.sublime-color-scheme",
+	"theme": "Material-Theme.sublime-theme",
+	"update_check": false,
+	"open_files_in_new_window": "false",
+
+	//MacOS
+	"find_selected_text": true
+}
+
+```
+
+
+
+Keybinddings
+
+```
+[
+	//XXX 这里 MACOS super 代表 Command
+	{ "keys": ["super+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["super+down"], "command": "select_lines", "args": {"forward": true} },
+	{ "keys": ["super+alt+down"], "command": "duplicate_line" },
+	{ "keys": ["super+e"], "command": "find_under_expand" },
+	{ "keys": ["super+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	{ "keys": ["super+shift+l"], "command": "toggle_side_bar" },
+	{ "keys": ["alt+up"], "command": "swap_line_up" },
+	{ "keys": ["alt+down"], "command": "swap_line_down" },
+	{ "keys": ["super+1"], "command": "next_bookmark" },
+	{ "keys": ["super+2"], "command": "prev_bookmark" },
+	{ "keys": ["super+shift+f11"], "command": "toggle_bookmark" },
+	{ "keys": ["shift+f11"], "command": "clear_bookmarks" },
+	{ "keys": ["super+-"], "command": "fold" },
+	{ "keys": ["super+="], "command": "unfold" },
+	{ "keys": ["super+["], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["super+]"], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["super+alt+l"], "command": "reindent" },
+	//TODO Git下载。 这个快捷键虽然左边搜不到，但是确实有用！！！其它上方工具栏应该同理！
+	{ "keys": ["super+shift+w"], "command": "close_other_tabs" },
+	{ "keys": ["super+alt+shift+w"], "command": "close_other_windows" },
+	//End
+
+	{ "keys": ["super+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+]
+```
+
+
+
+
+
+***
+
+# Before
+
 > 由于第一次接触MacOS，花了三周的星期六（三天）来搭这台MacOS
 >
 
@@ -67,10 +200,18 @@ article: false
 
 ## ShortKey
 
+> 官方快捷键: https://support.apple.com/zh-cn/102650
+
+FInder
+
+* 复制文件夹路径: 选中文件 opt+cmd+c
 * cmd+opt+drag = ln - i 创建文件的快捷方式
 * cmd+shift+h 用户目录
 * command＋shift＋G 访达跳转路径，同 win 上面那个里
 * cmd+shift+. 显示隐藏文件
+
+
+
 * cmd+ctrl+f 全屏
 * cmd+opt+v 剪切
 * ⭐️ Command-I	显示简介
@@ -804,7 +945,7 @@ Capture Area 的快捷键是「F19 + 6」。
 
 3、Trackpad。Scroll direction：Natural 去掉。
 
-4、Keyboard。1）Keyboard 里把 Key Repeat 调到「Fast」，把 Delay Util Repeat 调到「Short」，需要一点时间适应，适应后会感受到光标快速移动带来的效率提升，2）Text 里 use `"` for double quotes，use `'` for single quotes，然后把其他都禁掉，不需要系统帮忙改，基本都是帮倒忙的，3）Shortcuts 里，Mission Control 用「⌥A」,Application windows 用「⌥S」，Show Desktop 用「⌥D」，Input Sources 的 Select Previous 用 「⌘Space」，Screenshots 里 Save picture of selected area as a file 用「F19 + 3」，Copy picture of selected area to the clipboard 用「F19 + 4」，4）输入法删除默认的拼音改用搜狗拼音，登录后可以在不同电脑之间同步词库，搜狗输入法的皮肤我用的[Matrix 矩阵](https://github.com/xiaochunjimmy/Sogou-Input-Skin)。
+4、Keyboard。1）**Keyboard 里把 Key Repeat 调到「Fast」，把 Delay Util Repeat 调到「Short」**，需要一点时间适应，适应后会感受到光标快速移动带来的效率提升，2）Text 里 use `"` for double quotes，use `'` for single quotes，然后把其他都禁掉，不需要系统帮忙改，基本都是帮倒忙的，3）Shortcuts 里，Mission Control 用「⌥A」,Application windows 用「⌥S」，Show Desktop 用「⌥D」，Input Sources 的 Select Previous 用 「⌘Space」，Screenshots 里 Save picture of selected area as a file 用「F19 + 3」，Copy picture of selected area to the clipboard 用「F19 + 4」，4）输入法删除默认的拼音改用搜狗拼音，登录后可以在不同电脑之间同步词库，搜狗输入法的皮肤我用的[Matrix 矩阵](https://github.com/xiaochunjimmy/Sogou-Input-Skin)。
 
 5、Spotlight。只开 Applications、Bookmarks & History、Documents、Folders、System Preferences。
 
@@ -818,7 +959,7 @@ Capture Area 的快捷键是「F19 + 6」。
 
 10、Touch ID and Password。开启用 Apple Watch 解锁。
 
-11、执行 `defaults write -g NSWindowShouldDragOnGesture -bool true`，然后就可以按住「⌘+⌃」然后鼠标点击任意地方拖动窗口了。来源 [Moving a macOS window by clicking anywhere on it (like on Linux) · mmazzarolo.com](https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/)，但是在 MacOS 13 下似乎失效了。
+11、**执行 `defaults write -g NSWindowShouldDragOnGesture -bool true`，然后就可以按住「⌘+⌃」然后鼠标点击任意地方拖动窗口了。来源 [Moving a macOS window by clicking anywhere on it (like on Linux) · mmazzarolo.com](https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/)，但是在 MacOS 13 下似乎失效了。**
 
 ## 参考
 
