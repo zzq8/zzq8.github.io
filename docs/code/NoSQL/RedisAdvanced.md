@@ -16,7 +16,7 @@ article: false
 
 > 实战篇性价比高，高级篇偏运维一点（高级、原理面试前整）
 
-![image-20230304151001878](https://images.zzq8.cn/img/202303041510042.png)
+![image-20230304151001878](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202303041510042.png)
 
 ### 2.Redis的JAVA客户端
 
@@ -27,7 +27,7 @@ article: false
 > 实测：还是需要引入commons-pool2，因为data-redis里面这个依赖是optional true
 > 总之，使用 `<optional>` 标签可以控制依赖的传递性，避免不必要的依赖冲突和版本冲突，但是需要注意，它的传递性也会被取消，需要手动处理相关的依赖。   **之所以有这个问题，是因为springboot版本低了的原因，导致有这个optional。后面高版本没有这个optional了！**
 
-![image-20230304152602369](https://images.zzq8.cn/img/202303041526511.png)
+![image-20230304152602369](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202303041526511.png)
 
 #### 2.1.RedisTemplate
 
@@ -38,7 +38,7 @@ article: false
 
 弊端：如下，占用额外内控空间去记录该反序列化的那个类的全路径类名
 
-<img src="https://images.zzq8.cn/img/202303041658585.png" alt="image-20230304165847419" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202303041658585.png" alt="image-20230304165847419" style="zoom:50%;" />
 
 #### 2.2.反序列化问题-StringRedisTemplate
 
@@ -46,7 +46,7 @@ article: false
 
 ##### 1）问题：
 
-![image-20230304171121214](https://images.zzq8.cn/img/202303041711043.png)
+![image-20230304171121214](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202303041711043.png)
 
 ##### 2）解决
 
@@ -58,7 +58,7 @@ article: false
 
 ## 二、实战篇
 
-![image-20230306095441886](https://images.zzq8.cn/img/202303060954783.png)
+![image-20230306095441886](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202303060954783.png)
 
 ## 1.短信登录
 
@@ -68,7 +68,7 @@ article: false
 >
 > 所以从优化的角度，推荐使用hash
 
-<img src="https://images.zzq8.cn/img/202303071617889.png" alt="image-20230307161347386" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202303071617889.png" alt="image-20230307161347386" style="zoom: 67%;" />
 
 > 注意 Hash 结构跟 String 结构区分，这里有Redis的一个 key 而 value（K、V）才是真正的 Hash 结构
 >
@@ -76,9 +76,9 @@ article: false
 >
 > Note：一般存 key 会加上业务前缀做区分
 
-![image-20230307161729539](https://images.zzq8.cn/img/202303071617089.png)
+![image-20230307161729539](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202303071617089.png)
 
-![image-20230307162022703](https://images.zzq8.cn/img/202303071620766.png)
+![image-20230307162022703](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202303071620766.png)
 
 
 

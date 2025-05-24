@@ -356,7 +356,7 @@ spring.mvc.pathmatch.matching-strategy=ant_path_matcher
 - 回车符 `\r`: 表示回车。
 - 制表符 `\t`: 表示水平制表符。
 
-![image-20231120173938571](http://images.zzq8.cn/img/image-20231120173938571.png)
+![image-20231120173938571](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20231120173938571.png)
 
 2）js如何给td标签设置值
 

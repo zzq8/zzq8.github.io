@@ -41,9 +41,9 @@ etc.
 
 ### ==**2. 架构图：**==
 
-![image-20220720220817554](https://images.zzq8.cn/img/202207202224096.png)
+![image-20220720220817554](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207202224096.png)
 
-![image-20220722154237978](https://images.zzq8.cn/img/202207221542079.png)
+![image-20220722154237978](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207221542079.png)
 
 ### 3. 分布式基础概念
 
@@ -57,7 +57,7 @@ etc.
 
 在分布式系统中，各个服务可能处于不同主机，但是服务之间不可避免的需要互相调用，我们称为远程调用。 SpringCloud 中使用 HTTP+JSON 的方式完成远程调用、
 
-![在这里插入图片描述](https://images.zzq8.cn/img/202207221518690.png)
+![在这里插入图片描述](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207221518690.png)
 
 ## 二、Docker 学习
 
@@ -122,7 +122,7 @@ docker exec -it 容器名称|容器id bin/bash
 docker exec -it mysql bin/bash
 ```
 
-![image-20220724160235682](https://images.zzq8.cn/img/202207241602886.png)
+![image-20220724160235682](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207241602886.png)
 
 
 
@@ -872,7 +872,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
 > @Mapper 接口时候方法签名中的形参的 @Param 可以用 MybatisX 插件生成
 >
-> ![image-20221019140152140](https://images.zzq8.cn/img/202210191401611.png)
+> ![image-20221019140152140](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202210191401611.png)
 
 
 
@@ -969,7 +969,7 @@ server.servlet.context-path:/renren-fast
 `//TODO: + 说明：`   在 idea 中这个注释会变成金色，且会在下面工具栏显示！类似快速备忘录功能
 如果代码中有该标识，说明在标识处有功能代码待编写，待实现的功能在说明中会简略说明。搞完了就删掉TODO
 
-![image-20220814161700939](https://images.zzq8.cn/img/202208141617036.png)
+![image-20220814161700939](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208141617036.png)
 
 // XXX 勉强可以工作，但是性能差等原因.
 
@@ -1044,7 +1044,7 @@ logging:
 
 **同源策略：是指==协议，域名，端口==都要相同，其中有一个不同都会产生跨域；**
 
-![image-20220813175848410](https://images.zzq8.cn/img/202208131758590.png)
+![image-20220813175848410](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208131758590.png)
 
 
 
@@ -1054,7 +1054,7 @@ logging:
 
 `Request Method: OPTIONS`
 
-![image-20220813180934578](https://images.zzq8.cn/img/202208131809687.png)
+![image-20220813180934578](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208131809687.png)
 
 **所以服务器不允许，就一个OPTIONS请求过去后。真实请求就没有发了！**
 
@@ -1064,11 +1064,11 @@ logging:
 
 （一）使用nginx部署为同一域          感觉：套了一层又一层
 
-![image-20220813182436081](https://images.zzq8.cn/img/202208131824168.png)
+![image-20220813182436081](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208131824168.png)
 
 （二）配置当次请求允许跨域
 
-![image-20220813185445762](https://images.zzq8.cn/img/202208131854872.png)
+![image-20220813185445762](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208131854872.png)
 
 一个个 Model 配太繁琐，因为所有 Model 的方法都会经过 Gateway 所以网关搞一个配置类
 
@@ -1089,7 +1089,7 @@ logging:
         corsConfiguration.setAllowCredentials(true);
 ```
 
-![image-20220813191254660](https://images.zzq8.cn/img/202208131912755.png)
+![image-20220813191254660](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208131912755.png)
 
 为了解决浏览器跨域问题，W3C 提出了跨源资源共享方案，即 `CORS`(Cross-Origin Resource Sharing)。它允许浏览器向跨源服务器，发出XMLHttpRequest请求。spring mvc 4.2版本增加了对cors的支持，通过spring boot可以非常简单的实现跨域访问。
 
@@ -1209,7 +1209,7 @@ Preparing: UPDATE pms_brand SET show_status=? WHERE ==show_status=1== AND (brand
 
 总结：服务器拿 Token 前端页面带上到 OSS
 
-![image-20220818222235756](https://images.zzq8.cn/img/202208182222062.png)
+![image-20220818222235756](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208182222062.png)
 
 我这里用的是七牛云所以没用到下面，自己捣鼓了很久。难的就是前端的 vue 文件是直接 copy 的，大部分东西不知道作用！
 
@@ -1290,7 +1290,7 @@ public R save(@Valid @RequestBody BrandEntity brand, BindingResult result){
 
 Exception 是没有这个方法的！
 
-![image-20220820145558332](https://images.zzq8.cn/img/202208201455426.png)
+![image-20220820145558332](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208201455426.png)
 
 ```java
 @ExceptionHandler(MethodArgumentNotValidException.class) //处理对应异常
@@ -1353,7 +1353,7 @@ return 的 R 错误码可以看尚硅谷的文档，一般可以是5位，业务
 
 需要导入，**直接修复的时候有选择导入依赖的,不用手动**
 
-![image-20220821105014376](https://images.zzq8.cn/img/202208211050573.png)
+![image-20220821105014376](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208211050573.png)
 
 ```
 <dependency>
@@ -1401,11 +1401,11 @@ return 的 R 错误码可以看尚硅谷的文档，一般可以是5位，业务
 
 
 
-<img src="https://images.zzq8.cn/img/202208221109447.png" alt="image-20220822110956653" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208221109447.png" alt="image-20220822110956653" style="zoom: 67%;" />
 
-<img src="https://images.zzq8.cn/img/202208221112300.png" alt="image-20220822111210105" style="zoom:67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208221112300.png" alt="image-20220822111210105" style="zoom:67%;" />
 
-<img src="https://images.zzq8.cn/img/202208221114306.png" alt="image-20220822111429154" style="zoom:67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208221114306.png" alt="image-20220822111429154" style="zoom:67%;" />
 
 勾中快速展示：就是把它展示到商品介绍上
 
@@ -1446,7 +1446,7 @@ spring:
 
 #### Element UI Cascader 级联选择器
 
-<img src="https://images.zzq8.cn/img/202208232052487.png" alt="image-20220823205206340" style="zoom:67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208232052487.png" alt="image-20220823205206340" style="zoom:67%;" />
 
 
 
@@ -1480,7 +1480,7 @@ save功能，前端没有传这两个字段，想办法加这两个就不用再�
 
 记住还需保证冗余字段的数据一致，cascade 级联值得学习
 
-![image-20220824161553329](https://images.zzq8.cn/img/202208241615461.png)
+![image-20220824161553329](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208241615461.png)
 
 
 
@@ -1591,7 +1591,7 @@ Controller 与 Service 关系：Controller应该只需三句话           1（�
 
 给每一个微服务设置：`-Xmx100m`  注意：**内存调大 JMeter 压测吞吐量也会上来**
 
-![image-20220828170939115](https://images.zzq8.cn/img/202208281709300.png)
+![image-20220828170939115](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208281709300.png)
 
 
 
@@ -1599,7 +1599,7 @@ Controller 与 Service 关系：Controller应该只需三句话           1（�
 
 #### 为了方便重启一部分服务可以用，Compound 包起来
 
-![image-20220828171101974](https://images.zzq8.cn/img/202208281711096.png)
+![image-20220828171101974](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208281711096.png)
 
 
 
@@ -1611,9 +1611,9 @@ Controller 与 Service 关系：Controller应该只需三句话           1（�
 
 这里**取巧**不想新建重复体力劳动，可以利用IDEA功能，直接拷贝**虚拟端口映射**
 
-![在这里插入图片描述](https://images.zzq8.cn/img/202208281717252.png)
+![在这里插入图片描述](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208281717252.png)
 
-![image-20220828171758542](https://images.zzq8.cn/img/202208281717694.png)
+![image-20220828171758542](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208281717694.png)
 
 或 Environment variables: --server.port=9002
 
@@ -1646,7 +1646,7 @@ stream() -> map() -> filter() -> collect()
 
 #### 采购
 
-<img src="https://images.zzq8.cn/img/202208282303184.png" alt="image-20220828224528971" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208282303184.png" alt="image-20220828224528971" style="zoom: 67%;" />
 
 
 

@@ -83,7 +83,7 @@ article: false
 
 * 运行文件，应当前面带上目录。。。不然就是从环境变量找了
 
-![image-20230531110912384](https://images.zzq8.cn/img/202305311109374.png)
+![image-20230531110912384](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202305311109374.png)
 
 #### Linux是多用户操作系统
 
@@ -115,7 +115,7 @@ article: false
 
 [Linux 文件基本属性](https://www.runoob.com/linux/linux-file-attr-permission.html)：看完就知道文件属性了，重点看里面的两幅图！
 
-![img](https://images.zzq8.cn/img/202209082225377.jpeg)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202209082225377.jpeg)
 
 文件的权限字符为： **-rwxrwxrwx** ， 这九个权限是三个三个一组的！
 

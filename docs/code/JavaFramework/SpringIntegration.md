@@ -16,7 +16,7 @@ article: false
 3. 共享公共数据库方式，同1的文件传输类似通过外部【WMS也用 -保存到Yigo2-】      \<JDBC-API>
 4. 通过Event到消息总线，相互发消息
 
-<img src="http://images.zzq8.cn/img/image-20240307102045296.png" alt="image-20240307102045296" style="zoom: 33%;" />
+<img src="http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20240307102045296.png" alt="image-20240307102045296" style="zoom: 33%;" />
 
 
 
@@ -34,7 +34,7 @@ Endpoint 可以是FTP从FTP服务器拿文件塞进Interation，也可以是HTTP
 
 Channel(消息通道) -> Filter(管道过滤器对传递消息处理，使符合接收方要求)还有些特别的Filter（Translator/Router）
 
-<img src="http://images.zzq8.cn/img/image-20240307104731864.png" alt="image-20240307104731864" style="zoom: 50%;" />
+<img src="http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20240307104731864.png" alt="image-20240307104731864" style="zoom: 50%;" />
 
 
 

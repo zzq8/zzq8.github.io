@@ -19,7 +19,7 @@ article: false
 
 <font color=red>SQL 语句在 MySQL 的各个功能模块中的执行过程：</font>
 
-![](https://images.zzq8.cn/img/202212021612352.png)
+![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212021612352.png)
 
 <center>MySQL 的逻辑架构图</center>
 
@@ -191,7 +191,7 @@ show variables like 'long_query_time' # Unit s
 
 补充：我们通过慢查询日志，可以定位到是哪一条语句查询比较慢，找到这条语句之后，如何去分析它慢的原因呢?最简单的方法，可以通过explain解析，执行命令：explain (sql语句)
 
-<img src="https://images.zzq8.cn/img/202212051532175.png" alt="image-20221205153205065" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212051532175.png" alt="image-20221205153205065" style="zoom:50%;" />
 
 <center>定位到慢查询可用 expalain 分析</center>
 
@@ -251,7 +251,7 @@ mysql> update T set c=c+1 where ID=2;
 
 前面我有跟你介绍过 SQL 语句基本的执行链路，这里我再把那张图拿过来，你也可以先简单看看这个图回顾下。首先，可以确定的说，查询语句的那一套流程，更新语句也是同样会走一遍。
 
-![](https://images.zzq8.cn/img/202212021612352.png) 
+![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212021612352.png) 
 
 <center>MySQL 的逻辑架构图</center>
 
@@ -300,7 +300,7 @@ mysql> update T set c=c+1 where ID=2;
 
 与此类似，InnoDB 的 redo log 是固定大小的，比如可以配置为一组 4 个文件，每个文件的大小是 1GB，那么这块“粉板”总共就可以记录 4GB 的操作。从头开始写，写到末尾就又回到开头循环写，如下面这个图所示。
 
-![](https://images.zzq8.cn/img/202212071028735.png)write pos 是当前记录的位置，一边写一边后移，写到第 3 号文件末尾后就回到 0 号文件开头。checkpoint 是当前要擦除的位置，也是往后推移并且循环的，擦除记录前要把记录更新到数据文件。
+![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212071028735.png)write pos 是当前记录的位置，一边写一边后移，写到第 3 号文件末尾后就回到 0 号文件开头。checkpoint 是当前要擦除的位置，也是往后推移并且循环的，擦除记录前要把记录更新到数据文件。
 
 write pos 和 checkpoint 之间的是“粉板”上还空着的部分，可以用来记录新的操作。如果 write pos 追上 checkpoint，表示“粉板”满了，这时候不能再执行新的更新，得停下来先擦掉一些记录，把 checkpoint 推进一下。
 
@@ -344,7 +344,7 @@ write pos 和 checkpoint 之间的是“粉板”上还空着的部分，可以�
 
 这里我给出这个 update 语句的执行流程图，图中浅色框表示是在 InnoDB 内部执行的，深色框表示是在执行器中执行的。
 
-![](https://images.zzq8.cn/img/202212071121771.png)
+![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212071121771.png)
 
 <center>update 语句执行流程</center>
 
@@ -473,7 +473,7 @@ mysql> create table T(c int) engine=InnoDB;
 insert into T(c) values(1);
 ```
 
-![](https://images.zzq8.cn/img/202212081721046.png)
+![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212081721046.png)
 
 
 我们来看看在不同的隔离级别下，事务 A 会有哪些不同的返回结果，也就是图里面 V1、V2、V3 的返回值分别是什么。
@@ -515,15 +515,15 @@ mysql> show variables like 'transaction_isolation';
 
 理解了事务的隔离级别，我们再来看看事务隔离具体是怎么实现的。这里我们展开说明“可重复读”。(MySQL default isolation level)
 
-<img src="https://images.zzq8.cn/img/202306031634681.png" alt="image-20230603163250059" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202306031634681.png" alt="image-20230603163250059" style="zoom:50%;" />
 
 在 MySQL 中，实际上==每条记录在更新的时候都会同时记录一条回滚操作==。记录上的最新值，通过回滚操作，都可以得到前一个状态的值。
 
 假设一个值从 1 被按顺序改成了 2、3、4，在`回滚日志 undo log` 里面就会有类似下面的记录。
 
-<img src="https://images.zzq8.cn/img/202212081753521.png" style="zoom:67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212081753521.png" style="zoom:67%;" />
 
-<img src="https://images.zzq8.cn/img/202306031640164.png" alt="image-20230603163923678" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202306031640164.png" alt="image-20230603163923678" style="zoom: 67%;" />
 
 当前值是 4，但是在查询这条记录的时候，**不同时刻启动的事务会有不同的 read-view**。如图中看到的，在视图 A、B、C 里面，这一个记录的值分别是 1、2、4，==同一条记录在系统中可以存在多个版本，就是数据库的多版本并发控制（MVCC)==。对于 read-view A，要得到 1，就必须将当前值依次执行图中所有的回滚操作得到。                 MVCC 可以看作是行级锁的一个升级，所以 MyISAM 不支持 MVCC，而 InnoDB 支持
 
@@ -695,7 +695,7 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 假设，你现在维护着一个身份证信息和姓名的表，需要根据身份证号查找对应的名字，这时对应的哈希索引的示意图如下所示：
 
-<img src="https://images.zzq8.cn/img/202212101020092.png" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212101020092.png" style="zoom:50%;" />
 
 <center>图 1 哈希表示意图</center>
 
@@ -711,7 +711,7 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 而**有序数组在等值查询（二分）和范围查询场景中的性能就都非常优秀**。还是上面这个根据身份证号查名字的例子，如果我们使用有序数组来实现的话，示意图如下所示：
 
-<img src="https://images.zzq8.cn/img/202212101020345.png" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212101020345.png" style="zoom:50%;" />
 
 <center>图 2 有序数组示意图</center>
 
@@ -727,7 +727,7 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 二叉搜索树也是课本里的经典数据结构了。还是上面根据身份证号查名字的例子，如果我们用二叉搜索树来实现的话，示意图如下所示：
 
-<img src="https://images.zzq8.cn/img/202212101021739.png" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212101021739.png" style="zoom:50%;" />
 
 <center>图 3 二叉搜索树示意图</center>
 
@@ -797,7 +797,7 @@ mysql> create table T(
 
 表中 R1~R5 的 (ID,k) 值分别为 (100,1)、(200,2)、(300,3)、(500,5) 和 (600,6)，两棵树的示例示意图如下。
 
-<img src="https://images.zzq8.cn/img/202212101040832.png" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212101040832.png" style="zoom:50%;" />
 
 <center>图 4 InnoDB 的索引组织结构</center>
 
@@ -929,7 +929,7 @@ mysql> create table T (
 insert into T values(100,1, 'aa'),(200,2,'bb'),(300,3,'cc'),(500,5,'ee'),(600,6,'ff'),(700,7,'gg');
 ```
 
-<img src="https://images.zzq8.cn/img/202212121140730.png" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212121140730.png" style="zoom:50%;" />
 
 <center>图 1 InnoDB 的索引组织结构</center>
 
@@ -1046,7 +1046,7 @@ XD: 联合索引给(a,b,c)添加，如果where a,c,b 索引会生效吗？（生
 
 为了直观地说明这个概念，我们用（name，age）这个联合索引来分析。
 
-<img src="https://images.zzq8.cn/img/202212121140664.jpeg" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212121140664.jpeg" style="zoom:50%;" />
 
 <center>图 2 （name，age)索引示意图</center>
 
@@ -1090,11 +1090,11 @@ mysql> select * from tuser where name like '张 %' and age=10 and ismale=1;
 
 图 3 和图 4，是这两个过程的执行流程图。
 
-<img src="https://images.zzq8.cn/img/202212121145257.jpeg" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212121145257.jpeg" style="zoom:50%;" />
 
 <center>图 3 无索引下推执行流程</center>
 
-<img src="https://images.zzq8.cn/img/202212121145015.jpeg" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212121145015.jpeg" style="zoom:50%;" />
 
 <center>图 4 索引下推执行流程</center>
 
@@ -1216,7 +1216,7 @@ mysql> select * from tuser where name like '张 %' and age=10 and ismale=1;
 
 如果时间顺序上是先备份账户余额表 (u_account)，然后用户购买，然后备份用户课程表 (u_course)，会怎么样呢？你可以看一下这个图：
 
-![](https://images.zzq8.cn/img/202212121837867.png)
+![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212121837867.png)
 
 <center>图 1 业务和备份状态图</center>
 
@@ -1270,7 +1270,7 @@ MySQL 里面表级别的锁有两种：一种是表锁，一种是元数据锁�
 
 > 备注：这里的实验环境是 MySQL 5.6。
 
-![](https://images.zzq8.cn/img/202212131454238.jpeg)
+![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212131454238.jpeg)
 
 我们可以看到 session A 先启动，这时候会对表 t 加一个 MDL 读锁。由于 session B 需要的也是 MDL 读锁，因此可以正常执行。
 
@@ -1374,7 +1374,7 @@ MySQL 的行锁是在引擎层由各个引擎自己实现的。但并不是所�
 
 > 需要锁多个行，就把最可能造成锁冲突放后面。这样执行完就立马 commit 了
 
-我先给你举个例子。在下面的操作序列中，事务 B 的 update 语句执行时会是什么现象呢？假设字段 id 是表 t 的主键。![](https://images.zzq8.cn/img/202212131523685.jpeg)这个问题的结论取决于事务 A 在执行完两条 update 语句后，持有哪些锁，以及在什么时候释放。你可以验证一下：实际上事务 B 的 update 语句会被阻塞，直到事务 A 执行 commit 之后，事务 B 才能继续执行。
+我先给你举个例子。在下面的操作序列中，事务 B 的 update 语句执行时会是什么现象呢？假设字段 id 是表 t 的主键。![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212131523685.jpeg)这个问题的结论取决于事务 A 在执行完两条 update 语句后，持有哪些锁，以及在什么时候释放。你可以验证一下：实际上事务 B 的 update 语句会被阻塞，直到事务 A 执行 commit 之后，事务 B 才能继续执行。
 
 知道了这个答案，你一定知道了事务 A 持有的两个记录的行锁，都是在 commit 的时候才释放的。
 
@@ -1419,7 +1419,7 @@ MySQL 的行锁是在引擎层由各个引擎自己实现的。但并不是所�
 
 当并发系统中不同线程出现循环资源依赖，涉及的线程都在等待别的线程释放资源时，就会导致这几个线程都进入无限等待的状态，称为死锁。这里我用数据库中的行锁举个例子。
 
-![](https://images.zzq8.cn/img/202212131532800.jpeg)这时候，事务 A 在等待事务 B 释放 id=2 的行锁，而事务 B 在等待事务 A 释放 id=1 的行锁。 事务 A 和事务 B 在互相等待对方的资源释放，就是进入了死锁状态。当出现死锁以后，有两种策略：（XD：两者可同时存在，不是二选一)
+![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212131532800.jpeg)这时候，事务 A 在等待事务 B 释放 id=2 的行锁，而事务 B 在等待事务 A 释放 id=1 的行锁。 事务 A 和事务 B 在互相等待对方的资源释放，就是进入了死锁状态。当出现死锁以后，有两种策略：（XD：两者可同时存在，不是二选一)
 
 - 一种策略是，直接进入等待，直到超时。这个超时时间可以通过参数 innodb_lock_wait_timeout 来设置。（默认值是`50`秒）
 - 另一种策略是，发起死锁检测，发现死锁后，主动回滚死锁链条中的某一个事务，让其他事务得以继续执行。将参数 innodb_deadlock_detect 设置为 on，表示开启这个逻辑。（默认值是`ON`）
@@ -1547,7 +1547,7 @@ mysql> CREATE TABLE `t` (
 insert into t(id, k) values(1,1),(2,2);
 ```
 
-![](https://images.zzq8.cn/img/202212141738821.png)
+![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212141738821.png)
 
 <center>图 1 事务 A、B、C 的执行流程</center>
 
@@ -1595,7 +1595,7 @@ InnoDB 里面每个事务有一个唯一的事务 ID，叫作 transaction id。�
 
 如图 2 所示，就是一个记录被多个事务连续更新后的状态。
 
-<img src="https://images.zzq8.cn/img/202302131727261.png" alt="image-20230213172729310" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202302131727261.png" alt="image-20230213172729310" style="zoom:50%;" />
 
 <center>图 2 行状态变更图</center>
 
@@ -1623,7 +1623,7 @@ InnoDB 里面每个事务有一个唯一的事务 ID，叫作 transaction id。�
 
 这个视图数组把所有的 row trx_id 分成了几种不同的情况。
 
-<img src="https://images.zzq8.cn/img/202302131728617.png" alt="image-20230213172858315" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202302131728617.png" alt="image-20230213172858315" style="zoom:50%;" />
 
 <center>图 3 数据版本可见性规则</center>
 

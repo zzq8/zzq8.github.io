@@ -17,7 +17,7 @@ springboot datasource自动装配mysql数据源。。h2为什么不用配数据�
 
 spring-boot-dependencies 放到 \<denpendencyManagement>
 
-<img src="https://images.zzq8.cn/img/202302231452941.png" alt="image-20230223145242628" style="zoom: 25%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202302231452941.png" alt="image-20230223145242628" style="zoom: 25%;" />
 
 
 
@@ -51,4 +51,4 @@ CommandLineRunner 接口是 Spring Boot 中的一个接口，用于在应用启�
 2. DataSource  通过上者的 API Create 数据源，大致就是initializeDataSourceBuilder方法通过 ClassLoader 拿 driverClassName 创建
 3. PlatformTransactionManager    每个数据库都要设好自己对应的事务管理器
 
-<img src="https://images.zzq8.cn/img/202302231721768.png" alt="image-20230223172146262" style="zoom: 25%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202302231721768.png" alt="image-20230223172146262" style="zoom: 25%;" />

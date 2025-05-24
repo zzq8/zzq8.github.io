@@ -613,7 +613,7 @@ FULL JOIN NotUsedTrays ON UsedTrays.trayType = NotUsedTrays.trayType;
 >
 > **工作的这处优化我猜测：可能是结果集太大了，不适合 not in 要 join 效率高**
 
-<img src="https://images.zzq8.cn/img/202307201700091.png" alt="image-20230720170008892" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202307201700091.png" alt="image-20230720170008892" style="zoom: 67%;" />
 
 
 
@@ -660,7 +660,7 @@ select case when 1=1 then 1 else 2 end
 
 > 工作中犯的错误   BigInt不要用 ‘’ 包起来 where / set
 
-<img src="https://images.zzq8.cn/img/202304251506846.png" alt="image-20230425150628798" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202304251506846.png" alt="image-20230425150628798" style="zoom: 67%;" />
 
 
 
@@ -855,7 +855,7 @@ ID 问题：了解 1 最简单的设置步长
 > `假如 T1(a,b)  T2(a,a)  两表 join / left join / right join 都会有两行，因为交集部分 a 有两个！` 因为按道理 on 的时候得是唯一键    但是此时(a,a)并不是唯一键
 > 2023-12-13 Record, Because i Don't understand
 
-![img](https://images.zzq8.cn/img/202309071713371.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309071713371.png)
 
 
 
@@ -868,7 +868,7 @@ ID 问题：了解 1 最简单的设置步长
 
 🌈 这里要额外补充一点：只有保证了事务的持久性、原子性、隔离性之后，一致性才能得到保障。也就是说 A、I、D 是手段，C 是目的！ 想必大家也和我一样，被 ACID 这个概念被误导了很久! 我也是看周志明老师的公开课[《周志明的软件架构课》](https://time.geekbang.org/opencourse/intro/100064201)才搞清楚的（多看好书！！！）。
 
-![image-20230907171603497](https://images.zzq8.cn/img/202309071716290.png)
+![image-20230907171603497](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309071716290.png)
 
 
 
@@ -966,7 +966,7 @@ FULL OUTER JOIN table2 ON table1.column = table2.column;
 
 > 【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致;多表关联查询时，保证被关联 的字段需要有索引。
 
-![image-20230908141221249](https://images.zzq8.cn/img/202309081412617.png)
+![image-20230908141221249](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309081412617.png)
 
 join 的效率比较低，主要原因是因为其使用嵌套循环（Nested Loop）来实现关联查询，三种不同的实现效率都不是很高：
 
@@ -994,7 +994,7 @@ join 的效率比较低，主要原因是因为其使用嵌套循环（Nested Lo
 
 不得使用外键与级联，一切外键概念必须在应用层解决。
 
-![image-20230908145317711](https://images.zzq8.cn/img/202309081453445.png)
+![image-20230908145317711](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309081453445.png)
 
 网络上已经有非常多分析外键与级联缺陷的文章了，个人认为不建议使用外键主要是因为对分库分表不友好，性能方面的影响其实是比较小的。
 

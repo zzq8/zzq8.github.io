@@ -71,7 +71,7 @@ BIO 属于同步阻塞 IO 模型
 
 同步阻塞 IO 模型中，应用程序发起 read 调用后，会一直阻塞，直到在内核把数据拷贝到用户空间。
 
-![image-20230905102522350](https://images.zzq8.cn/img/202309051025531.png)
+![image-20230905102522350](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309051025531.png)
 
 在客户端连接数量不高的情况下，是没问题的。但是，当面对十万甚至百万级连接的时候，传统的 BIO 模型是无能为力的。因此，我们需要 一种更高效的 I/O 处理模型来应对更高的并发量。
 
@@ -81,7 +81,7 @@ Java 中的 NIO 于 Java 1.4 中引入，对应 java.nio 包，提供了 Channel
 
 Java 中的 NIO 可以看作是 I/O 多路复用模型。也有很多人认为，Java 中的 NIO 属于同步非阻塞 IO 模型。 跟着我的思路往下看看，相信你会得到答案！ 我们先来看看 同步非阻塞 IO 模型。
 
-![image-20230905132212180](https://images.zzq8.cn/img/202309051322615.png)
+![image-20230905132212180](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309051322615.png)
 
 同步非阻塞 IO 模型中，应用程序会一直发起 read 调用，等待数据从内核空间拷贝到用户空间的这段时间里，线程依然是阻塞的，直到在内 核把数据拷贝到用户空间。
 
@@ -91,7 +91,7 @@ Java 中的 NIO 可以看作是 I/O 多路复用模型。也有很多人认为�
 
 （XD：感觉像CAS Unsafe自旋）
 
-![image-20230905132406455](https://images.zzq8.cn/img/202309051324373.png)
+![image-20230905132406455](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309051324373.png)
 
 IO 多路复用模型中，**线程首先发起 select 调用，询问内核数据是否准备就绪**，等内核把数据准备好了，用户线程再发起 read 调用。read 调 用的过程（数据从内核空间->用户空间）还是阻塞的。
 
@@ -105,7 +105,7 @@ IO 多路复用模型，通过减少无效的系统调用，减少了对 CPU 资
 
 Java 中的 NIO ，有一个非常重要的**选择器 ( Selector )** 的概念，也可以被称为 **多路复用器**。通过它，只需要一个线程便可以管理多个客户端 连接。当客户端数据到了之后，才会为其服务。
 
-![image-20230905132922223](https://images.zzq8.cn/img/202309051329784.png)
+![image-20230905132922223](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309051329784.png)
 
 > Java NIO（New I/O）在设计上综合了两种模型的特性：I/O 多路复用和同步非阻塞 I/O。
 >
@@ -125,13 +125,13 @@ AIO 也就是 NIO 2。Java 7 中引入了 NIO 的改进版 NIO 2,它是**异步*
 
 异步 IO 是基于事件和回调机制实现的，也就是应用操作之后会直接返回，不会堵塞在那里，当后台处理完成，操作系统会通知相应的线程进 行后续的操作。
 
-![image-20230905133105910](https://images.zzq8.cn/img/202309051331897.png)
+![image-20230905133105910](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309051331897.png)
 
 目前来说 AIO 的应用还不是很广泛。Netty 之前也尝试使用过 AIO，不过又放弃了。这是因为，Netty 使用了 AIO 之后，在 Linux 系统上的性能并没有多少提升。
 
 最后，来一张图，简单总结一下 Java 中的 BIO、NIO、AIO。
 
-![image-20230905133151070](https://images.zzq8.cn/img/202309051331853.png)
+![image-20230905133151070](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309051331853.png)
 
 > 补充：Netty
 >
@@ -349,7 +349,7 @@ public void print(String s) {
 
 再回头看上面这道题，s1和s2没有经过初始化所以都是空对象null，需要注意这里不是字符串的"null"，打印结果的产生我们可以看一下字节码文件：
 
-![image-20230906155942752](https://images.zzq8.cn/img/202309061559885.png)
+![image-20230906155942752](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309061559885.png)
 
 编译器会对String字符串相加的操作进行优化，会把这一过程转化为StringBuilder的append方法。那么，让我们再看看append方法的源码：
 
@@ -457,13 +457,13 @@ String s = new String("Hydra");
 
 可以用一张图来描述它们各自所处的位置：
 
-![image-20230906170526190](https://images.zzq8.cn/img/202309061705871.png)
+![image-20230906170526190](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309061705871.png)
 
 接下来，我们来细说一下**字符串常量池**的结构，其实在 Hotspot JVM 中，字符串常量池StringTable的本质是一张HashTable，那么当我们说将一个字符串放入字符串常量池的时候，实际上放进去的是什么呢？
 
 以字面量的方式创建 String 对象为例，字符串常量池以及堆栈的结构如下图所示（忽略了 jvm 中的各种OopDesc实例）：
 
-![image-20230906170643575](https://images.zzq8.cn/img/202309061706773.png)
+![image-20230906170643575](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309061706773.png)
 
 实际上字符串常量池 HashTable 采用的是**数组加链表**的结构，链表中的节点是一个个的 HashTableEntry，而 HashTableEntry 中的 value 则存储了堆上 String 对象的**引用**。
 XD: HashMap 和 Hashtable 在内部都使用了数组加链表（或红黑树）的形式来存储键值对【自己对hashtable太生疏了】
@@ -530,7 +530,7 @@ false
 true
 </details>
 
-![img](https://images.zzq8.cn/img/202309061735445.webp)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309061735445.webp)
 
 其实有了第三题的基础，了解这个结构已经很简单了：
 
@@ -586,15 +586,15 @@ true
 
 接下来，完成字符串的拼接操作，前面我们说过，实际上 jvm 会把拼接优化成StringBuilder的append方法，并最终调用toString方法返回一个 String 对象。在完成字符串的拼接后，字符串常量池中并没有驻留一个内容等于"Hydra"的字符串。
 
-<img src="http://images.zzq8.cn/img/image-20230906204748712.png" alt="image-20230906204748712" style="zoom:80%;" />
+<img src="http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20230906204748712.png" alt="image-20230906204748712" style="zoom:80%;" />
 
 所以，执行s1.intern()时，会在字符串常量池创建一个引用，指向前面StringBuilder创建的那个字符串，也就是变量s1所指向的字符串对象。在《深入理解 Java 虚拟机》这本书中，作者对这进行了解释，因为从 jdk7 开始，字符串常量池就已经移到了堆中，那么这里就只需要在字符串常量池中记录一下首次出现的实例引用即可。
 
-![image-20230906204837682](http://images.zzq8.cn/img/image-20230906204837682.png)
+![image-20230906204837682](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20230906204837682.png)
 
 最后，当执行String s2 = "Hydra"时，发现字符串常量池中已经驻留这个字符串，直接返回对象的引用，因此s1和s2指向的是相同的对象。
 
-![**image-20230906204951575**](http://images.zzq8.cn/img/image-20230906204951575.png)
+![**image-20230906204951575**](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20230906204951575.png)
 
 ### 第 5 题，还是创建了几个对象？
 
@@ -604,7 +604,7 @@ true
 
 先揭晓答案，只创建了一个对象！ 可以直观的对比一下源代码和反编译后的字节码文件：
 
-![image-20230906212720611](http://images.zzq8.cn/img/image-20230906212720611.png)
+![image-20230906212720611](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20230906212720611.png)
 
 如果使用前面提到过的 debug 小技巧，也可以直观的看到语句执行完后，只增加了一个 String 对象，以及一个 char 数组对象。并且这个字符串就是驻留在字符串常量池中的那一个，如果后面再使用字面量"abc"的方式声明一个字符串，指向的仍是这一个，堆中 String 对象的数量不会发生变化。
 
@@ -640,7 +640,7 @@ false
 
 代码中字符串h1和h2都使用常量赋值，区别在于是否使用了final进行修饰，对比编译后的代码，s1进行了折叠而s2没有，可以印证上面的理论，final修饰的字符串变量才有可能是编译期常量。
 
-![image-20230906213034838](http://images.zzq8.cn/img/image-20230906213034838.png)
+![image-20230906213034838](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20230906213034838.png)
 
 再看一段代码，执行下面的程序，结果会返回什么呢？
 
@@ -754,7 +754,7 @@ SpringBoot自动配置原理，我的理解是这样的：
 
 第三个，springboot拿到所有第三方jar包里面声明的配置类以后，再通过Spring提供的ImportSelector这样一个接口（@Import注解功能），来实现对这些配置类的动态加载，从而去完成自动装配的动作。
 
-![image-20230906220544568](http://images.zzq8.cn/img/image-20230906220544568.png)
+![image-20230906220544568](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20230906220544568.png)
 
 
 
@@ -780,7 +780,7 @@ ELK 是目前使用的比较多的一个开源的日志系统解决方案，背�
 
 下图是一个最简单的 ELK 日志系统架构 ：
 
-![image-20230907214851056](http://images.zzq8.cn/img/image-20230907214851056.png)
+![image-20230907214851056](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20230907214851056.png)
 
 我们分别来介绍一下这些开源项目以及它们在这个日志系统中起到的作用：
 

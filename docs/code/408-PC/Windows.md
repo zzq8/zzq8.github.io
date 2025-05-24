@@ -58,7 +58,7 @@ C:\Windows   路径 exe 文件可以直接 cmd 调用
 
 > ==快捷方式可以绑定快捷键！！！==
 
-<img src="https://images.zzq8.cn/img/202211181821108.png" alt="image-20221118182139346" style="zoom: 50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202211181821108.png" alt="image-20221118182139346" style="zoom: 50%;" />
 
 
 

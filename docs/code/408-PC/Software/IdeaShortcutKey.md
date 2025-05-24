@@ -59,7 +59,7 @@ ctrl+alt+left/right 跳上一个浏览过的文件
 
 ctrl+shift+a 输入maven就可用maven   idea右侧工具栏没有显示maven的时候，或者要加maven项目的时候用！！
 
-![image-20230223150958814](https://images.zzq8.cn/img/202302231509949.png)
+![image-20230223150958814](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202302231509949.png)
 
 
 

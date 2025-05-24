@@ -40,7 +40,7 @@ i = i++ => i=1
   6: istore_1
 ```
 
-![image-20230915223439680](http://images.zzq8.cn/img/image-20230915223439680.png)
+![image-20230915223439680](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20230915223439680.png)
 
 
 
@@ -239,4 +239,4 @@ my.a= 11
     </p>
 </details>
 
-![变量初始化 以及运算时 栈堆内存的变化](http://images.zzq8.cn/img/20201014104401137.png)
+![变量初始化 以及运算时 栈堆内存的变化](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/20201014104401137.png)

@@ -126,7 +126,7 @@ Redis
 
 ### 以终为始是牛人和普通人的一大区别。
 
-![以终为始](http://images.zzq8.cn/img/format,png-20230309231833871.png)
+![以终为始](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/format,png-20230309231833871.png)
 
 
 
@@ -136,7 +136,7 @@ Redis
 
 明白这个道理之后，心智成熟和自律的人就会对自己进行持续地 **刻意训练** 。
 
-![学习金字塔](http://images.zzq8.cn/img/format,png-20230309231836811.png)
+![学习金字塔](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/format,png-20230309231836811.png)
 
 
 

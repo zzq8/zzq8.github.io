@@ -569,7 +569,7 @@ Test：
 
 按需加载：
 
-![xxx](https://images.zzq8.cn/img/202201121637104.png)
+![xxx](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201121637104.png)
 
 #### 6.3. collection（一对多）
 
@@ -1147,7 +1147,7 @@ public void test04(){
 }
 ```
 
-![image-20220113092935272](https://images.zzq8.cn/img/202201130929856.png)
+![image-20220113092935272](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201130929856.png)
 
 #### 2.2. 一级缓存失效情况
 
@@ -1257,7 +1257,7 @@ public void test04(){
 
 ### 5. 缓存原理图
 
-![image-20220113172652692](https://images.zzq8.cn//img/202201131728029.png)
+![image-20220113172652692](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131728029.png)
 
 
 
@@ -1267,7 +1267,7 @@ public void test04(){
 
 但还得写实现挺麻烦的，可以去mybaits的项目地址，它都帮你考虑好了，与其他技术的整合都在这个顶级项目地址中，里面也有相关文档地址：其实就是导入相关适配包(整合包)，配置一些xml环境。
 
-![image-20220113112304859](https://images.zzq8.cn//img/202201131123930.png)
+![image-20220113112304859](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131123930.png)
 
 具体流程：
 
@@ -1315,11 +1315,11 @@ classpath路径是来引用文件的，在编译生成的项目下的bulid/class
 
 注意加上web模块，配上tomcat：
 
-![image-20220113160558639](https://images.zzq8.cn/img/202201131605840.png)
+![image-20220113160558639](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131605840.png)
 
 因为maven项目中的jar是保存在本地仓库中的，而不在你自己的项目中所以把jar包导进去，这样tomcat才跑得起：
 
-![image-20220113160927268](https://images.zzq8.cn/img/202201131609347.png)
+![image-20220113160927268](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131609347.png)
 
 #### 2.2. 代码
 
@@ -1664,7 +1664,7 @@ log4j.logger.java.sql.PreparedStatement=DEBUG
 
 #### 2.3. 项目结构
 
-![image-20220113161851133](https://images.zzq8.cn/img/202201131618205.png)
+![image-20220113161851133](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131618205.png)
 
 ps：其他的java类和测试就不贴了，就简单的测了一下。
 
@@ -1732,23 +1732,23 @@ ps：其他的java类和测试就不贴了，就简单的测了一下。
 
 
 
-![image-20220113172923721](https://images.zzq8.cn/img/202201131729864.png)
+![image-20220113172923721](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131729864.png)
 
 
 
 
 
-![image-20220113173017201](https://images.zzq8.cn/img/202201131730320.png)
+![image-20220113173017201](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131730320.png)
 
 
 
 
 
-![image-20220113173036443](https://images.zzq8.cn/img/202201131730556.png)
+![image-20220113173036443](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131730556.png)
 
 
 
-![image-20220113173101595](https://images.zzq8.cn/img/202201131731716.png)
+![image-20220113173101595](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131731716.png)
 
 
 
@@ -1788,19 +1788,19 @@ public Object pluginAll(Object target) {
 
 需要知道这四大对象的作用：
 
-![image-20220113173124592](https://images.zzq8.cn/img/202201131731701.png)
+![image-20220113173124592](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131731701.png)
 
 
 
 
 
-![image-20220113173140474](https://images.zzq8.cn/img/202201131731577.png)
+![image-20220113173140474](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131731577.png)
 
 
 
 
 
-![image-20220113173157681](https://images.zzq8.cn/img/202201131731779.png)
+![image-20220113173157681](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202201131731779.png)
 
 
 

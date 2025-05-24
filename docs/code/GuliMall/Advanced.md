@@ -60,7 +60,7 @@ article: false
 >
 > QAQ：视频中繁琐的，异常类中的各种常量Enum，各种封装的VO。封装API跨服务调用。返回值R  //这个叫分层思想，又不是写学生作业，什么都混一起，能用就行
 
-![image-20221207164702704](https://images.zzq8.cn/img/202212071647791.png)
+![image-20221207164702704](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212071647791.png)
 
 独立自治：不局限于 Java 也可以用 php..
 
@@ -72,7 +72,7 @@ article: false
 >
 > 注意点：Nginx 代理后会丢失很多东西，比如 host 就是。所以需要注意，看图片红色部分
 
-![image-20221224145341950](https://images.zzq8.cn/img/202212241453788.png)
+![image-20221224145341950](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212241453788.png)
 
 这两块流程具体看我的 Nginx 笔记
 
@@ -454,7 +454,7 @@ JMeter
 
 本地锁体现：因为只锁当前服务，所以下图每个服务都会走一遍数据库。而我们正常想要的是所有服务有一个走了数据库就行了其它用缓存
 
-<img src="https://images.zzq8.cn/img/202212261651183.png" alt="image-20221226165114071" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212261651183.png" alt="image-20221226165114071" style="zoom:50%;" />
 
 
 
@@ -486,7 +486,7 @@ JMeter
 1. xshell多开，通过撰写栏同时执行  `set K V NX` 【保证只有一个线程会拿到锁，独占排它 ==这是分布式锁的基本原理！==】
    * 前提，锁的key是一定的，value不重要。重点是排它  作为一把锁来用
    * 题外：Xshell多窗口同时输入命令  窗口 -> 撰写栏
-2. 代码初步写好，发现会有死锁问题！expire【防宕机没释放锁，导致死锁】  while好一点，这里递归太容易内存溢出![image-20221226183938038](https://images.zzq8.cn/img/202212261839248.png)
+2. 代码初步写好，发现会有死锁问题！expire【防宕机没释放锁，导致死锁】  while好一点，这里递归太容易内存溢出![image-20221226183938038](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212261839248.png)
    * 问题来了：设置锁和设置过期时间 java代码体现得有两行。没有原子性！ 换成一行的 API 是有的！
 
 ##### 解锁：
@@ -535,7 +535,7 @@ JMeter
 >
 > A: 单体项目也可以水平扩展，部署多个机器，构成负载均衡集群。此时如果需要加锁，可能就需要分布式锁了
 
-![image-20230304152602369](https://images.zzq8.cn/img/202303041526511.png)
+![image-20230304152602369](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202303041526511.png)
 
 pom start好处什么都配好了，只需要写两三个配置就行。而这里我们引入单纯的 Redisson 以学习为目的都自己搞一下
 
@@ -586,7 +586,7 @@ pom start好处什么都配好了，只需要写两三个配置就行。而这�
 > >
 > > `String lockKey = "DISTRIBUTE_LOCK:redissonLock:product_" + productId;`
 > >
-> > ![在这里插入图片描述](http://images.zzq8.cn/img/8813c6efcba2437dad736fe89b43ebc5.png)
+> > ![在这里插入图片描述](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/8813c6efcba2437dad736fe89b43ebc5.png)
 
 基于Redis的Redisson分布式可重入锁[`RLock`](http://static.javadoc.io/org.redisson/redisson/3.10.0/org/redisson/api/RLock.html) Java对象实现了`java.util.concurrent.locks.Lock`接口。
 也就是如果学过 Lock 就不用再花时间成本学了，都是一样的API。厉害的点是：一个本地锁一个分布式锁
@@ -632,13 +632,13 @@ lock.unlock();
 >
 > 缓存本来保证的就是 最终一致性，反正有 ttl 失效后重查放入缓存就又是最新数据了
 
-<img src="https://images.zzq8.cn/img/202308231025871.png" alt="image-20230314161335765" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202308231025871.png" alt="image-20230314161335765" style="zoom: 67%;" />
 
 #### 1）、双写模式：写数据库后，写缓存
 
 问题：脏数据（No.1写完数据库还没写缓存，此时 No.2也写完这两个了。这时No.1再写缓存就覆盖No.2的新数据了）
 
-<img src="https://images.zzq8.cn/img/202212271758645.png" alt="image-20221227175831418" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212271758645.png" alt="image-20221227175831418" style="zoom:50%;" />
 
 解决：加锁写数据和写缓存锁一起
 
@@ -648,7 +648,7 @@ lock.unlock();
 
 解决：可以 读写锁  但是如果不关心这些数据有点延迟也没关系那就不加锁没事。例如 iphone 11刚发布的商品介绍变了点参数我晚一点看也不影响
 
-<img src="https://images.zzq8.cn/img/202212271819194.png" alt="image-20221227181939118" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212271819194.png" alt="image-20221227181939118" style="zoom: 67%;" />
 
 
 
@@ -671,7 +671,7 @@ lock.unlock();
 好处：只需要关心数据库就好，不用管缓存（屏蔽了对整个缓存的操作）  缺点又加了个中间件
 canal 还可以做数据异构：jd 首页每个人的个性化推荐
 
-<img src="https://images.zzq8.cn/img/202212271822130.png" alt="image-20221227182220035" style="zoom: 80%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212271822130.png" alt="image-20221227182220035" style="zoom: 80%;" />
 
 
 
@@ -1154,7 +1154,7 @@ public void testBCryptPasswordEncoder(){
 
 OAuth（开放授权）是一个开放标准，允许用户授权第三方移动应用访问他们存储在另外的服务提供者上的信息，而不需要将用户名和密码提供给第三方移动应用或分享他们数据的所有内容，OAuth2.0是OAuth协议的延续版本，但不向后兼容OAuth 1.0即完全废止了OAuth1.0。
 
-![在这里插入图片描述](https://images.zzq8.cn/img/202301041827971.png)
+![在这里插入图片描述](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301041827971.png)
 
 > 微信：https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html
 >
@@ -1166,7 +1166,7 @@ OAuth（开放授权）是一个开放标准，允许用户授权第三方移动
 >
 > 资源服务器：拿着令牌访问资源服务器看令牌合法性
 
-![img](https://images.zzq8.cn/img/202301041828301.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301041828301.png)
 
 1、使用Code换取AccessToken，Code只能用一次
 2、同一个用户的accessToken一段时间是不会变化的，即使多次获取
@@ -1224,7 +1224,7 @@ String name = jsonObject.getString("name");
 场景：在 auth 模块存的session，只在它这个模块的登录页面有 session 而 product对应的主页模块没有 session
      jsessionid这个cookie默认是当前系统域名的（具体验证F12 Session有Domain限定，所以 auth.gulimall.com VS gulimall.com 不同域）
 
-![image-20230105171317820](https://images.zzq8.cn/img/202301051713942.png)
+![image-20230105171317820](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301051713942.png)
 
 问题 2：Session 是放服务器中，即使是单体应用（同域名）。但是它集群的话不同服务器也不能共享 Session
 
@@ -1240,9 +1240,9 @@ String name = jsonObject.getString("name");
 
 用户登录后得到session后，服务把session也复制到别的机器上，显然这种处理很不好
 
-![img](https://images.zzq8.cn/img/202301051653057.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301051653057.png)
 
-2）![](https://images.zzq8.cn/img/202301051702278.png)
+2）![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301051702278.png)
 
 
 
@@ -1254,13 +1254,13 @@ String name = jsonObject.getString("name");
 
 根据用户，到指定的机器上登录。但是远程调用还是不好解决
 
-![img](https://images.zzq8.cn/img/202301051653500.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301051653500.png)
 
 ###### 4) redis统一存储
 
 最终的选择方案，把session放到redis中
 
-![img](https://images.zzq8.cn/img/202301051701799.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301051701799.png)
 
 
 
@@ -1581,7 +1581,7 @@ ChatGPT：通俗来说过滤器和拦截器的区别：
 2. request对象。不够优雅
 3. ThreadLocal线程变量。推荐
 
-<img src="https://images.zzq8.cn/img/202301071601779.png" alt="image-20230107160059758" style="zoom:50%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301071601779.png" alt="image-20230107160059758" style="zoom:50%;" />
 
 ```java
 /**
@@ -1792,7 +1792,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 订单模块是电商系统的枢纽，在订单这个环节上需求获取多个模块的数据和信息，同时对这些信息进行加工处理后流向下个环节，这一系列就构成了订单的信息流通。
 
-<img src="https://images.zzq8.cn/img/202301141808024.png" alt="image-20230114180830391" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301141808024.png" alt="image-20230114180830391" style="zoom: 67%;" />
 
 
 
@@ -1805,7 +1805,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 > 场景：Feign 源码会自创 Request 导致丢失老Request Cookie，而自创的时候用到拦截器增强
 > 解决：即可DIY个拦截器把原Requset Cookie放新Request   解决重点：Spring类 `RequestContextHolder`
 
-<img src="https://images.zzq8.cn/img/202301161056022.png" alt="image-20230116105558996" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301161056022.png" alt="image-20230116105558996" style="zoom: 67%;" />
 
 
 
@@ -1818,7 +1818,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 >
 > 知道 Thread.class 属性有 ThreadLocalMap 这样就好理解了   具体看title link
 
-![image-20230116105631702](https://images.zzq8.cn/img/202301161056979.png)
+![image-20230116105631702](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301161056979.png)
 
 
 
@@ -1976,7 +1976,7 @@ id字段一定是主键或者唯一索引，不然可能造成锁表的结果，
 
 假失败：Feign Read Out time 但实际执行成功，可能就只是由于网络抖动造成没及时返回
 
-<img src="https://images.zzq8.cn/img/202301190948245.png" alt="image-20230119094829799" style="zoom:67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301190948245.png" alt="image-20230119094829799" style="zoom:67%;" />
 
 ps：都会导致 订单回滚但是下面Feign调用的不会回滚
 
@@ -2019,7 +2019,7 @@ purchase{
 
 ![](https://img-blog.csdnimg.cn/3a71d6de6f534303944a52c73a33335e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5ZWG5L-K5biF,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-<img src="https://images.zzq8.cn/img/202302231803673.png" alt="image-20230223180315464" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202302231803673.png" alt="image-20230223180315464" style="zoom: 67%;" />
 
 分析 Maven 依赖发现：可能知道会有本地事务失效的问题，搞个AOP给你去代理解决
 
@@ -2203,7 +2203,7 @@ JDK 动态代理只能代理实现了接口的目标对象，并且只能代理�
 
 分布式系统经常出现的异常 机器宕机、网络异常、消息丢失、消息乱序、数据错误、不可靠的 TCP、存储数据丢失...
 
-<img src="https://images.zzq8.cn/img/202301191503753.png" alt="image-20230119150306322" style="zoom: 67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301191503753.png" alt="image-20230119150306322" style="zoom: 67%;" />
 
 [CAP & BASE & Seata with My](../javaframework/springcloud#cap)   建议结合自己的这篇Seata笔记看，更了解 2PC
 
@@ -2266,11 +2266,11 @@ JDK 动态代理只能代理实现了接口的目标对象，并且只能代理�
 >
 > 正常情况下，会执行 try, confirm 方法。
 >
-> <img src="http://images.zzq8.cn/img/image-20230907213620218.png" alt="image-20230907213620218" style="zoom:50%;" />
+> <img src="http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20230907213620218.png" alt="image-20230907213620218" style="zoom:50%;" />
 >
 > 出现异常的话，会执行 try, cancel 方法。
 >
-> <img src="http://images.zzq8.cn/img/image-20230907213650656.png" alt="image-20230907213650656" style="zoom:50%;" />
+> <img src="http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20230907213650656.png" alt="image-20230907213650656" style="zoom:50%;" />
 >
 > Try 阶段出现问题的话，可以执行 Cancel。那如果 Confirm 或者 Cancel 阶段失败了怎么办呢？
 >
@@ -2284,7 +2284,7 @@ JDK 动态代理只能代理实现了接口的目标对象，并且只能代理�
 >
 > TCC 事务模型的思想类似 2PC，我简单花了一张图对比一下二者。
 >
-> <img src="http://images.zzq8.cn/img/image-20230907213858567.png" alt="image-20230907213858567" style="zoom:67%;" />
+> <img src="http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20230907213858567.png" alt="image-20230907213858567" style="zoom:67%;" />
 >
 > 
 
@@ -2316,7 +2316,7 @@ JDK 动态代理只能代理实现了接口的目标对象，并且只能代理�
 
 支付宝私钥是肯定不知道的
 
-![image-20230202110044964](https://images.zzq8.cn/img/202302021100433.png)
+![image-20230202110044964](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202302021100433.png)
 
 
 
@@ -2374,7 +2374,7 @@ pay时候可以根据官网给一个时间参数
 
 说白了就是用内网穿透服务商备案好了的提供给你用   主域名备案好了下面的二级三级就不需要了
 
-<img src="https://images.zzq8.cn/img/202302021058877.png" alt="image-20230202105845657" style="zoom:67%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202302021058877.png" alt="image-20230202105845657" style="zoom:67%;" />
 
 #### 8.2.适用场景
 
@@ -2436,9 +2436,9 @@ Remote Address: 192.168.0.1:7890
 
 07 保证服务的稳，其它有了快
 
-<img src="https://images.zzq8.cn/img/202308231025296.png" alt="image-20230316140448941" style="zoom: 33%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202308231025296.png" alt="image-20230316140448941" style="zoom: 33%;" />
 
-<img src="https://images.zzq8.cn/img/202308231025131.png" alt="image-20230316140459330" style="zoom:33%;" />
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202308231025131.png" alt="image-20230316140459330" style="zoom:33%;" />
 
 
 

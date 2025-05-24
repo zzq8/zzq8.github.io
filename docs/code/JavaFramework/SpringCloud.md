@@ -41,7 +41,7 @@ article: false
 
 每个服务运行在其独立的进程中，服务与服务间采用轻量级的通信机制相互写作（通常是基于HTTP协议的RESTful API）
 
-![image-20220523154541922](https://images.zzq8.cn/img/202205231606492.png)
+![image-20220523154541922](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205231606492.png)
 
 
 
@@ -51,7 +51,7 @@ article: false
 
 搂一眼京东的：
 
-![image-20220523161504577](https://images.zzq8.cn/img/202205231615718.png)
+![image-20220523161504577](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205231615718.png)
 
 
 
@@ -59,7 +59,7 @@ article: false
 
 需要学习：注意有一些会有变更，新的老的都学！
 
-![image-20220523162302969](https://images.zzq8.cn/img/202205231623078.png)
+![image-20220523162302969](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205231623078.png)
 
 
 
@@ -91,7 +91,7 @@ Spring Cloud 采用了**英国伦敦地铁站**的名称来命名，并由地铁
 
 具体版本选择可以看 Spring Cloud 官网 overview 下面有说明。Spring Cloud 对应的 Spring Boot 版本：
 
-![image-20220523170052524](https://images.zzq8.cn/img/202205231700591.png)
+![image-20220523170052524](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205231700591.png)
 
 
 
@@ -105,7 +105,7 @@ Spring Cloud 采用了**英国伦敦地铁站**的名称来命名，并由地铁
 >
 > 把图片放大看！
 
-![image-20220523172626378](https://images.zzq8.cn/img/202205231726500.png)
+![image-20220523172626378](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205231726500.png)
 
 ## 四、编码构建
 
@@ -169,7 +169,7 @@ idea的配置 + 父工程的配置, 具体看项目体现
 
 > ==节约时间==
 
-![image-20220523210748358](https://images.zzq8.cn/img/202205232107484.png)
+![image-20220523210748358](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205232107484.png)
 
 
 
@@ -201,13 +201,13 @@ https://www.jb51.net/article/197968.htm
 
 只会生成一个 .jar 文件
 
-![image-20220525204018181](https://images.zzq8.cn/img/202205252040293.png)
+![image-20220525204018181](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205252040293.png)
 
 在使用spring-boot-maven-plugin插件时，打包后的目录包括三个
 
 多一个 *.original 文件
 
-![image-20220525204651902](https://images.zzq8.cn/img/202205252046930.png)
+![image-20220525204651902](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205252046930.png)
 
 1. BOOT-INF
 2. META-INF
@@ -278,7 +278,7 @@ Eureka Server 互相指向对方 【有向图】
 >
 >看这个图 Eureka 和 Provider 都是多个集群，为了达到高可用
 
-![image-20220527162304318](https://images.zzq8.cn/img/202205271623284.png)
+![image-20220527162304318](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205271623284.png)
 
 解决办法：搭建 Eureka 注册中心集群，实现负载均衡 + 故障容错
 
@@ -394,7 +394,7 @@ zookeeper可以用，但是用的少。如果没有 alibaba 的 Nacos，那这�
 >
 > > 分布式系统中，多个节点之前的网络本来是连通的，但是因为某些故障（比如部分节点网络出了问题）某些节点之间不连通了，整个网络就分成了几块区域，这就叫网络分区。
 >
-> ![图片](https://images.zzq8.cn/img/202309071730848.png)
+> ![图片](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202309071730848.png)
 >
 > Question：既然网络都分区了为什么还能保持CP
 >
@@ -459,15 +459,15 @@ CAP理论的核心是：**一个分布式系统不可能同时很好的满足一
 
 因此，根据CAP原理将NoSQL数据库分成了满足CA原则、满足CP原则和满足AP原则三大类:
 
-![img](https://images.zzq8.cn/img/202205301552992.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205301552992.png)
 
 AP架构（Eureka）
 
-![img](https://images.zzq8.cn/img/202205301552994.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205301552994.png)
 
 CP架构（ZooKeeper/Consul）
 
-![img](https://images.zzq8.cn/img/202205301552734.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202205301552734.png)
 
 
 
@@ -899,7 +899,7 @@ Alibaba sentinel
 >
 >第二个需求：网关这一层可以权限校验，限流控制
 
-![img](https://images.zzq8.cn/img/202206291359675.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202206291359675.png)
 
 **三大核心概念**
 
@@ -973,7 +973,7 @@ eureka:
 
 **要经过三关才能过来：**这章其实就学这三个的配置 主yaml
 
-![image-20220630144816418](https://images.zzq8.cn/img/202206301448361.png)
+![image-20220630144816418](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202206301448361.png)
 
 * **路由** Route
 
@@ -1043,7 +1043,7 @@ filters:
 
 3355 可以通过 3344 拿到 Git 上的 yaml
 
-![image-20220701143051906](https://images.zzq8.cn/img/202207011430795.png)
+![image-20220701143051906](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207011430795.png)
 
 **怎么玩**
 
@@ -1081,7 +1081,7 @@ Bootstrap属性有高优先级，默认情况下，它们不会被本地配置�
 
 因为本地 application.yaml 没有，bootstrap.yaml -> 配置中心地址 -> Git 上有！config.info
 
-![image-20220701151424183](https://images.zzq8.cn/img/202207011514318.png)
+![image-20220701151424183](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207011514318.png)
 
 
 
@@ -1125,7 +1125,7 @@ Cloud Stream是什么？屏蔽底层消息中间件的差异，降低切换成�
 
 个人感觉：像一个适配器 JDBC 屏蔽了各不同数据库的差异
 
-![image-20220701165550123](https://images.zzq8.cn/img/202207011655575.png)
+![image-20220701165550123](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207011655575.png)
 
 **通过定义绑定器Binder作为中间层，实现了应用程序与消息中间件细节之间的隔离**。
 
@@ -1265,7 +1265,7 @@ startup.cmd -m standalone
 
 
 
-![image-20220706152115283](https://images.zzq8.cn/img/202207202219473.png)
+![image-20220706152115283](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207202219473.png)
 
 
 
@@ -1305,7 +1305,7 @@ curl -X PUT '$NACOS_SERVER:8848/nacos/v1/ns/operator/switches?entry=serverMode&v
 
 Nacos中的dataid（即网站配置文件的名字）需符合：
 
-![img](https://images.zzq8.cn/img/202207062139577.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207062139577.png)
 
 ```java
 ${prefix}-${spring-profile.active}.${file-extension}
@@ -1333,7 +1333,7 @@ ${spring.application.name)}-${spring.profiles.active}.${spring.cloud.nacos.confi
 
 醉了：写这个Data ID一定要加后缀。整了很久才发现这个问题
 
-![image-20230106154116757](https://images.zzq8.cn/img/202301061541889.png)
+![image-20230106154116757](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202301061541889.png)
 
 
 
@@ -1358,7 +1358,7 @@ application.yml 可以用来定义应用级别的。
 
 最终方案：每个微服务创建自己的命名空间，然后使用配置分组区分环境（dev/test/prod）
 
-![img](https://images.zzq8.cn/img/202207070955519.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207070955519.png)
 
 默认情况：Namespace=public，Group=DEFAULT_GROUP，默认Cluster是DEFAULT
 
@@ -1382,7 +1382,7 @@ application.yml 可以用来定义应用级别的。
 
 我们要把原来application.yml里的内容都分文件抽离出去。我们在nacos里创建好 后，在coupons里指定要导入的配置即可。
 
-![image-20220805173159065](https://images.zzq8.cn/img/202208051732942.png)
+![image-20220805173159065](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202208051732942.png)
 
  重点： **spring.cloud.nacos.config.ext-config[0]**
 
@@ -1421,11 +1421,11 @@ spring.cloud.nacos.config.ext-config[2].refresh=true
 
 VIP：不是 very important person，而是 **virtual** **IP**
 
-![img](https://images.zzq8.cn/img/202207071007185.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207071007185.png)
 
 上图官网翻译，真实情况
 
-![img](https://images.zzq8.cn/img/202207071008218.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207071008218.png)
 
 默认Nacos使用嵌入式数据库实现数据的存储。所以，如果启动多个默认配置下的Nacos节点，数据存储是存在一致性问题的。为了解决这个问题，**Nacos采用了集中式存储的方式来支持集群化部署，目前只支持MySQL的存储**。
 
@@ -1439,7 +1439,7 @@ VIP：不是 very important person，而是 **virtual** **IP**
 
 Linux 配置
 
-![img](https://images.zzq8.cn/img/202207071436995.png)
+![img](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207071436995.png)
 
 
 

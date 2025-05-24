@@ -180,7 +180,7 @@ Keybinddings
 
   * 注意：在官网这里[键位映射表](https://support.typora.io/Shortcut-Keys/#change-shortcut-keys) 搜名字（应该也可打开软件直接看菜单栏！），要对应起来，Mac 设置到 App 快捷键
 
-  <img src="http://images.zzq8.cn/img/image-20231215180744304.png" alt="image-20231215180744304" style="zoom: 25%;" />
+  <img src="http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20231215180744304.png" alt="image-20231215180744304" style="zoom: 25%;" />
 
 * ~~SourceTree~~
 
