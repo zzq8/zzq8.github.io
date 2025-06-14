@@ -146,8 +146,8 @@ Keybinddings
 * ~~Karabiner (win autohotkey的键位映射)~~
 * ~~Alfred (Lib & Everything)~~【感觉自带的够用】
   * in 关键词（可以搜文件里面的内容！）
-* Stats
-* Clash
+* ~~Stats~~ 
+* **Clash**
 * ~~Easydict（Eudic 替代）~~
 * IINA
 * Omi
@@ -157,12 +157,12 @@ Keybinddings
 * Dash
 * Espanso
 * Chrome
-* iTerm
+* iTerm2
 * Karabiner
 * Office
 * Parallels
 * QuickShade
-* Paste
+* ~~Paste~~ (ecopaste 免费)
 * SoundSource
 * Sublime
 * Lemon

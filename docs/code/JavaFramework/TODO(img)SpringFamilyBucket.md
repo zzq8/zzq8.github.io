@@ -148,8 +148,7 @@ connection=====conn3: url=jdbc:h2:mem:testdb user=SA
 
 
 
-Total：SpringBoot 帮我们配置了 <font style="color:#DF2A3F;">DataSource、DataSourceTransactionManager、JdbcTemplate  
-</font>都是由他们的 xx+AutoConfiguration 配置的，例如 DataSourceAutoConfiguration -> DataSource
+Total：SpringBoot 帮我们配置了 <font style="color:#DF2A3F;">DataSource、DataSourceTransactionManager、JdbcTemplate</font>都是由他们的 xx+AutoConfiguration 配置的，例如 DataSourceAutoConfiguration -> DataSource
 
 都是按需装配的，用户 DIY 的优先级在前
 
