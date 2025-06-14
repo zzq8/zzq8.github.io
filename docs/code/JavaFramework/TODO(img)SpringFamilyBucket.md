@@ -264,21 +264,21 @@ Druid  好处
 >
 > 常用: 命令行参数
 >
-> <font style="color:rgb(77, 77, 77);">通过</font><font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);">java -jar app.jar --name="Spring" --server.port=9090</font><font style="color:rgb(77, 77, 77);">方式来传递参数。</font>
+> 通过java -jar app.jar --name="Spring" --server.port=9090方式来传递参数。
 >
-> <font style="color:rgb(77, 77, 77);">参数用</font><font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);">--xxx=xxx</font><font style="color:rgb(77, 77, 77);">的形式传递。</font>
+> 参数用--xxx=xxx的形式传递。
 >
-> <font style="color:rgb(77, 77, 77);"></font>
+> 
 >
-> <font style="color:rgb(77, 77, 77);">其实还有 -D </font>
+> 其实还有 -D 
 >
-> <font style="color:rgb(77, 77, 77);">注意Java系统属性位置</font><font style="color:rgb(199, 37, 78);background-color:rgb(249, 242, 244);">java -Dname="isea533" -jar app.jar</font><font style="color:rgb(77, 77, 77);">，可以配置的属性都是一样的，优先级不同。  
+> 注意Java系统属性位置java -Dname="isea533" -jar app.jar，可以配置的属性都是一样的，优先级不同。  
 
-</font><font style="color:rgb(77, 77, 77);">两个网址: 很好</font>
+两个网址: 很好
 
->[<font style="color:rgb(77, 77, 77);">https://blog.csdn.net/isea533/article/details/50281151</font>](https://blog.csdn.net/isea533/article/details/50281151)
+>[https://blog.csdn.net/isea533/article/details/50281151](https://blog.csdn.net/isea533/article/details/50281151)
 >
->[<font style="color:rgb(77, 77, 77);">https://blog.51cto.com/u_16213381/7078734</font>](https://blog.51cto.com/u_16213381/7078734)
+>[https://blog.51cto.com/u_16213381/7078734](https://blog.51cto.com/u_16213381/7078734)
 
 ### 事务抽象
 
@@ -452,7 +452,7 @@ Q：老师，教程中介绍了Redis多种调用方式，RedisTemplate、RedisRe
     private void repositoryOps() {}
 ```
 
-ps: <font style="color:rgb(0, 0, 153);">execution </font><font style="color:rgb(25, 30, 30);">最常使用切入点指示符，还可以 </font><font style="color:rgb(36, 41, 46);background-color:rgb(246, 248, 250);">bean(idOrNameOfBean) 。具体看</font>[<font style="background-color:rgb(246, 248, 250);">官网</font>](https://docs.spring.io/spring-framework/reference/core/aop/ataspectj/pointcuts.html)
+ps: execution 最常使用切入点指示符，还可以 bean(idOrNameOfBean) 。具体看[<font style="background-color:rgb(246, 248, 250);">官网</font>](https://docs.spring.io/spring-framework/reference/core/aop/ataspectj/pointcuts.html)
 
 ### <font style="background-color:rgb(246, 248, 250);">stopwatch</font>
 
