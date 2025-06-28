@@ -69,7 +69,7 @@ Setting
 // 设置Sans-serif（无衬线）等宽字体，以便阅读
 	"font_face": "YaHei Consolas Hybrid",
 	// 字体大小
-	"font_size": 19,
+	"font_size": 14,
 	// 使光标闪动更加柔和
 	"caret_style": "phase",
 	// 高亮当前行
@@ -77,22 +77,18 @@ Setting
 	// 高亮有修改的标签
 	"highlight_modified_tabs": true,
 	// 主题设置
-	// "theme": "One Dark.sublime-theme",
-	// Sublime Merge
-	//"sublime_merge_path": "E:\\Sublime Text\\Sublime Merge\\sublime_merge.exe",
+	"theme": "Default Dark.sublime-theme",
 	"ignored_packages":
 	[
 		"Vintage",
 	],
 	"color_scheme": "Mariana.sublime-color-scheme",
-	"theme": "Material-Theme.sublime-theme",
 	"update_check": false,
 	"open_files_in_new_window": "false",
 
 	//MacOS
-	"find_selected_text": true
+	"find_selected_text": true,
 }
-
 ```
 
 
@@ -106,7 +102,7 @@ Keybinddings
 	{ "keys": ["super+down"], "command": "select_lines", "args": {"forward": true} },
 	{ "keys": ["super+alt+down"], "command": "duplicate_line" },
 	{ "keys": ["super+e"], "command": "find_under_expand" },
-	{ "keys": ["super+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	{ "keys": ["supre+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
 	{ "keys": ["super+shift+l"], "command": "toggle_side_bar" },
 	{ "keys": ["alt+up"], "command": "swap_line_up" },
 	{ "keys": ["alt+down"], "command": "swap_line_down" },
@@ -125,6 +121,11 @@ Keybinddings
 	//End
 
 	{ "keys": ["super+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+
+	// Mac new, 保持同idea一致
+	{ "keys": ["ctrl+option+shift+down"], "command": "next_modification" },
+	{ "keys": ["ctrl+option+shift+up"], "command": "prev_modification" },
+	{ "keys": ["super+d"], "command": "duplicate_line" },
 ]
 ```
 
