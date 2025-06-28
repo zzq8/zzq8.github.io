@@ -19,7 +19,10 @@ article: false
 * export：将一个环境变量设置为全局变量，使它对当前终端会话和子进程可用。
 * PATH：一个系统环境变量，用来存储可执行程序的搜索路径。当你在终端输入命令时，系统会按顺序在 PATH 中定义的目录里查找对应的可执行文件。
 * /opt/homebrew/bin：这是 Homebrew 在 Apple Silicon（M1/M2 等）设备上的默认安装路径。
-* **:$PATH：将现有的 PATH 变量值追加到新路径的后面，避免覆盖原有的搜索路径。**
+* **:$PATH -> 将现有的 PATH 变量值追加到新路径的后面，避免覆盖原有的搜索路径。**
+  * 其中`:`是个分隔符
+  * 示例: `export PATH=$PATH:/your/new/path`
+
 
 
 

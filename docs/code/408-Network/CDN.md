@@ -92,3 +92,37 @@ date: 2024-06-29
 
 
 参考：https://www.mcoder.cc/2019/12/27/use_cdn_in_github_pages/
+
+
+
+
+
+## Cloudflare 20250629
+
+> 打开代理那个小黄云, 就是默认帮你CDN了
+>
+> 在 Cloudflare 的 DNS 设置中，你会看到每个记录旁边有一个小云朵图标：
+>
+> - ☁️ **灰色云朵（仅 DNS）**：
+>
+>   - 表示该记录**没有经过 Cloudflare 代理**
+>   - **不启用 Cloudflare 的 CDN、WAF、防护等功能**
+>   - 相当于 Cloudflare 只是一个普通 DNS 提供商，解析后你服务器直接暴露在公网中
+>
+>   
+>
+> - 🌥️ **橙色云朵（代理中）**：
+>
+>   - 表示该记录**启用了 Cloudflare 的代理**
+>   - 启用 **CDN**、缓存、DDoS 防护、**SSL**、WAF 等 Cloudflare 功能
+>   - 用户访问的是 Cloudflare 的边缘节点，真实 IP 被隐藏
+
+
+
+Cloudflare默认启用的HTTP/3（使用QUIC）协议基于UDP，UDP协议在国内限速非常严重，导致连接虽快但访问速度却极其缓慢。
+
+![img](https://linux.do/uploads/default/optimized/4X/8/a/1/8a1e474b7aa6815b58fcbffd3f0f7f6fd179236e_2_268x500.jpeg)
+
+
+
+## 把它关了就行™
