@@ -185,10 +185,10 @@ export default hopeTheme({
     // Algolia 全文搜索：需要自己设置爬虫并生成下方配置，如不会自己设置，启用下方本地搜索
     docsearch: {
       // XDD：用这个搜索踩坑两天，场景：有数据但是vuepress去搜不到，解决：爬虫指定 lang 这个配置硬是找不到
-      // appId, apiKey 和 indexName 是必填的
+      // appId, apiKey [前这两个通用的, 随便换index都是] 和 indexName 是必填的
       appId: "ADSVTUJF43",
       apiKey: "ce680cd766327882764fa072b3b72216",
-      indexName: "zzq8",
+      indexName: "upor.xyz",
     },
 
     // 本地搜索，和上方二选一
