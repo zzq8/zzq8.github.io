@@ -1,5 +1,6 @@
 ---
-article: false
+article: true
+updated: 2025-08-23 15:11:18
 ---
 # WTG
 
