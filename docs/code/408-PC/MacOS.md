@@ -1,10 +1,16 @@
 ---
 article: false
-updated: 2025-08-23 15:20:23
+updated: 2025-08-29 20:56:23
 ---
 # MacOS
 
-# Latest
+## FAQ
+
+> 实现盒盖多久后自动关机   而不是一直睡眠耗电
+
+做不到
+
+
 
 
 
@@ -23,7 +29,6 @@ updated: 2025-08-23 15:20:23
 * **:$PATH -> 将现有的 PATH 变量值追加到新路径的后面，避免覆盖原有的搜索路径。**
   * 其中`:`是个分隔符
   * 示例: `export PATH=$PATH:/your/new/path`
-
 
 
 
@@ -256,6 +261,24 @@ FInder
 * Shell 操作历史的搜索， ctrl-r 快捷键
 
 * 开了2个chrome窗口 macos如何快捷键切换 (cmd+`)   【现在用的很频繁】
+
+
+
+> 语音
+
+macOS 自带了语音功能，可以用`say`命令让 Mac 开口说话：
+
+```
+say hello
+```
+
+可以和`&&`或者`;`配合使用来提示你某任务已经完成：
+
+```
+brew update && brew upgrade && brew cleanup ; say mission complete
+```
+
+
 
 
 
