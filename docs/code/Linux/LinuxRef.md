@@ -1,8 +1,132 @@
 ---
 article: false
-updated: 2025-08-27 23:50:17
+updated: 2025-09-02 23:59:33
 ---
 # LinuxRef
+
+> ssh 免密连接
+>
+> scenario:
+>
+> - ssh 免密连接 Vps 机器
+> - gitHub
+
+Client: 本机生成一对公钥私钥 `ssh-keygen -t ed25519 -C "1024zzq@gmail.com"`(当它问你 Enter passphrase 的时候，直接回车留空。然后把新的 .pub 上传到 VPS 的 ~/.ssh/authorized_keys，以后就不会再问密码了。)  
+
+生成的`ls -al ~/.ssh` 会在这个目录, .pub 就是公钥
+
+Server: 把公钥放到 vps 服务器的 `vim ~/.ssh/authorized_keys` 中就行 (没有就新建)
+
+
+
+VPS
+
+> swap和zram
+>
+> 挂探针  https://vps.huisu.moe/
+
+
+
+`bash <(wget -qO- -o- https://github.com/233boy/sing-box/raw/main/install.sh)`
+
+可以得到一个 vless
+
+https://233boy.com/sing-box/sing-box-script/
+
+
+
+订阅转换
+
+https://linuxdo.icmpmiao.cc/
+
+
+
+
+
+swap和zram
+
+```bash
+#!/bin/bash
+set -e
+
+# ==============================
+# 一键启用 ZRAM + Swapfile 脚本
+# 适配 Ubuntu/Debian/CentOS/RHEL
+# ==============================
+
+SWAPFILE="/swapfile"
+SWAPSIZE="2G"          # 磁盘 swap 大小
+ZRAM_PERCENT="100"      # zram 占用内存百分比
+ZRAM_ALGO="zstd"       # 压缩算法
+
+echo "[1/4] 检测系统类型..."
+if [ -f /etc/debian_version ]; then
+    DISTRO="debian"
+elif [ -f /etc/redhat-release ]; then
+    DISTRO="rhel"
+else
+    echo "❌ 不支持的系统，请手动安装 zram"
+    exit 1
+fi
+echo "✅ 检测到发行版: $DISTRO"
+
+# ------------------------------
+# 安装 zram 工具
+# ------------------------------
+echo "[2/4] 安装 zram 工具..."
+if [ "$DISTRO" = "debian" ]; then
+    sudo apt update
+    sudo apt install -y zram-tools
+    # 配置 zram
+    sudo tee /etc/default/zramswap >/dev/null <<EOF
+ALGO=$ZRAM_ALGO
+PERCENT=$ZRAM_PERCENT
+EOF
+    sudo systemctl restart zramswap
+
+elif [ "$DISTRO" = "rhel" ]; then
+    sudo yum install -y epel-release
+    sudo yum install -y zram-generator-defaults
+    sudo tee /etc/systemd/zram-generator.conf >/dev/null <<EOF
+[zram0]
+zram-size = ram / 2
+compression-algorithm = $ZRAM_ALGO
+EOF
+    sudo systemctl daemon-reexec
+    sudo systemctl start /dev/zram0
+    sudo swapon --priority 100 /dev/zram0
+fi
+
+# ------------------------------
+# 创建磁盘 swapfile
+# ------------------------------
+echo "[3/4] 创建 swapfile..."
+if [ ! -f "$SWAPFILE" ]; then
+    sudo fallocate -l $SWAPSIZE $SWAPFILE
+    sudo chmod 600 $SWAPFILE
+    sudo mkswap $SWAPFILE
+fi
+sudo swapon --priority 10 $SWAPFILE
+
+# 写入 fstab 确保持久化
+if ! grep -q "$SWAPFILE" /etc/fstab; then
+    echo "$SWAPFILE none swap sw,pri=10 0 0" | sudo tee -a /etc/fstab
+fi
+
+# ------------------------------
+# 验证
+# ------------------------------
+echo "[4/4] 验证配置..."
+swapon --show
+free -h
+echo "✅ zram + swapfile 已启用完成"
+```
+
+
+
+
+
+
 
 > - **Ubuntu Server**
 >
