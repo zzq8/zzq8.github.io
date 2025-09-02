@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://zzq8.cn/favicon.ico</icon>
-  <updated>2025-08-29T12:59:30.029Z</updated>
+  <updated>2025-09-02T16:02:29.005Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://zzq8.cn/atom.xml"/>
   <link rel="alternate" href="https://zzq8.cn/"/>
@@ -13,7 +13,7 @@
     <title type="text">博客文章样例</title>
     <id>https://zzq8.cn/posts/2024-03-01-blog_example.html</id>
     <link href="https://zzq8.cn/posts/2024-03-01-blog_example.html"/>
-    <updated>2025-08-29T12:59:30.031Z</updated>
+    <updated>2025-09-02T16:02:29.006Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 </blockquote>
@@ -31,7 +31,7 @@
     <title type="text">WTG</title>
     <id>https://zzq8.cn/posts/WTG.html</id>
     <link href="https://zzq8.cn/posts/WTG.html"/>
-    <updated>2025-08-29T12:59:30.033Z</updated>
+    <updated>2025-09-02T16:02:29.008Z</updated>
     <summary type="html"><![CDATA[
 <h2>装机篇</h2>
 <blockquote>
@@ -107,7 +107,7 @@
     <title type="text">让万物穿过自己</title>
     <id>https://zzq8.cn/posts/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</id>
     <link href="https://zzq8.cn/posts/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html"/>
-    <updated>2025-08-29T12:59:30.038Z</updated>
+    <updated>2025-09-02T16:02:29.015Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
@@ -128,7 +128,7 @@
     <title type="text">Prompt</title>
     <id>https://zzq8.cn/code/Z_Prompt.html</id>
     <link href="https://zzq8.cn/code/Z_Prompt.html"/>
-    <updated>2025-08-29T12:59:30.040Z</updated>
+    <updated>2025-09-02T16:02:29.017Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>https://linux.do/t/topic/405818</p>
@@ -217,7 +217,7 @@
     <title type="text">CDN</title>
     <id>https://zzq8.cn/code/408-Network/CDN.html</id>
     <link href="https://zzq8.cn/code/408-Network/CDN.html"/>
-    <updated>2025-08-29T12:59:30.067Z</updated>
+    <updated>2025-09-02T16:02:29.043Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！</p>
@@ -251,7 +251,7 @@
     <title type="text">WebSocket</title>
     <id>https://zzq8.cn/code/408-Network/SSE_WS.html</id>
     <link href="https://zzq8.cn/code/408-Network/SSE_WS.html"/>
-    <updated>2025-08-29T12:59:30.071Z</updated>
+    <updated>2025-09-02T16:02:29.046Z</updated>
     <summary type="html"><![CDATA[
 <h3>优势</h3>
 <p><strong>双向实时通信</strong>，特有的ws协议，可跨域
@@ -315,7 +315,7 @@ https://www.bilibili.com/video/BV19N411474y?t=97.0</p>
     <title type="text">Software</title>
     <id>https://zzq8.cn/code/408-PC/Software.html</id>
     <link href="https://zzq8.cn/code/408-PC/Software.html"/>
-    <updated>2025-08-29T12:59:30.074Z</updated>
+    <updated>2025-09-02T16:02:29.049Z</updated>
     <summary type="html"><![CDATA[
 <h2>Sublime</h2>
 <ul>
@@ -395,7 +395,7 @@ https://www.bilibili.com/video/BV19N411474y?t=97.0</p>
     <title type="text">Seata&amp;XTS</title>
     <id>https://zzq8.cn/code/DistributedLock/Seata_XTS.html</id>
     <link href="https://zzq8.cn/code/DistributedLock/Seata_XTS.html"/>
-    <updated>2025-08-29T12:59:30.078Z</updated>
+    <updated>2025-09-02T16:02:29.060Z</updated>
     <summary type="html"><![CDATA[
 <h2>vs</h2>
 <h3>对比与选择</h3>
@@ -752,7 +752,7 @@ App1是整个事务的发起者，为了能够代表整个事务的状态，发�
     <title type="text">TODO(img) Spring全家桶</title>
     <id>https://zzq8.cn/code/JavaFramework/TODO(img)SpringFamilyBucket.html</id>
     <link href="https://zzq8.cn/code/JavaFramework/TODO(img)SpringFamilyBucket.html"/>
-    <updated>2025-08-29T12:59:30.095Z</updated>
+    <updated>2025-09-02T16:02:29.074Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>TODO：笔记太松散了，比较少     可以筛选  拿营养部分</p>
@@ -823,7 +823,7 @@ App1是整个事务的发起者，为了能够代表整个事务的状态，发�
     <title type="text">代码CR规范总结</title>
     <id>https://zzq8.cn/code/ZOther/@Test.html</id>
     <link href="https://zzq8.cn/code/ZOther/@Test.html"/>
-    <updated>2025-08-29T12:59:30.123Z</updated>
+    <updated>2025-09-02T16:02:29.102Z</updated>
     <summary type="html"><![CDATA[
 <h1>风格问题</h1>
 <ol>
