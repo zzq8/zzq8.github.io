@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://zzq8.cn/favicon.ico</icon>
-  <updated>2025-09-02T16:02:29.005Z</updated>
+  <updated>2025-09-03T15:32:16.028Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://zzq8.cn/atom.xml"/>
   <link rel="alternate" href="https://zzq8.cn/"/>
@@ -13,7 +13,7 @@
     <title type="text">博客文章样例</title>
     <id>https://zzq8.cn/posts/2024-03-01-blog_example.html</id>
     <link href="https://zzq8.cn/posts/2024-03-01-blog_example.html"/>
-    <updated>2025-09-02T16:02:29.006Z</updated>
+    <updated>2025-09-03T15:32:16.030Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 </blockquote>
@@ -31,7 +31,7 @@
     <title type="text">WTG</title>
     <id>https://zzq8.cn/posts/WTG.html</id>
     <link href="https://zzq8.cn/posts/WTG.html"/>
-    <updated>2025-09-02T16:02:29.008Z</updated>
+    <updated>2025-09-03T15:32:16.031Z</updated>
     <summary type="html"><![CDATA[
 <h2>装机篇</h2>
 <blockquote>
@@ -107,7 +107,7 @@
     <title type="text">让万物穿过自己</title>
     <id>https://zzq8.cn/posts/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</id>
     <link href="https://zzq8.cn/posts/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html"/>
-    <updated>2025-09-02T16:02:29.015Z</updated>
+    <updated>2025-09-03T15:32:16.039Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
@@ -128,7 +128,7 @@
     <title type="text">Prompt</title>
     <id>https://zzq8.cn/code/Z_Prompt.html</id>
     <link href="https://zzq8.cn/code/Z_Prompt.html"/>
-    <updated>2025-09-02T16:02:29.017Z</updated>
+    <updated>2025-09-03T15:32:16.040Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>https://linux.do/t/topic/405818</p>
@@ -214,10 +214,102 @@
     <published>2025-08-23T07:38:23.000Z</published>
   </entry>
   <entry>
+    <title type="text">RSA</title>
+    <id>https://zzq8.cn/code/408-DSA/RSA.html</id>
+    <link href="https://zzq8.cn/code/408-DSA/RSA.html"/>
+    <updated>2025-09-03T15:32:16.066Z</updated>
+    <summary type="html"><![CDATA[
+<blockquote>
+<p>Scenario:</p>
+<ul>
+<li>公钥私钥就是非对称加密, 私钥可以解密公钥加密后的内容</li>
+<li>MD5</li>
+</ul>
+</blockquote>
+<p>以下是 Base64、MD5 和 SHA-256 的简要阐述及其在网站常用场景中的应用：</p>
+<h2>1. Base64【编码】</h2>
+<h3>介绍</h3>
+<blockquote>
+<p>Base64 <mark>编码</mark>通常用于在文本协议中传输二进制数据，如音频图像等，因为它将二进制数据转换为 ASCII 字符串，可以安全地在 JSON、XML 等格式中进行传输。**Base64 解决的是“数据传输兼容性”，不是“数据安全性”。</p>
+</blockquote>]]></summary>
+    <content type="html"><![CDATA[
+<blockquote>
+<p>Scenario:</p>
+<ul>
+<li>公钥私钥就是非对称加密, 私钥可以解密公钥加密后的内容</li>
+<li>MD5</li>
+</ul>
+</blockquote>
+<p>以下是 Base64、MD5 和 SHA-256 的简要阐述及其在网站常用场景中的应用：</p>
+<h2>1. Base64【编码】</h2>
+<h3>介绍</h3>
+<blockquote>
+<p>Base64 <mark>编码</mark>通常用于在文本协议中传输二进制数据，如音频图像等，因为它将二进制数据转换为 ASCII 字符串，可以安全地在 JSON、XML 等格式中进行传输。**Base64 解决的是“数据传输兼容性”，不是“数据安全性”。</p>
+</blockquote>
+<p><strong>应用场景</strong>：数据传输与存储</p>
+<p><strong>常用功能点</strong>：</p>
+<ul>
+<li><strong>文件上传</strong>：在 Web 应用中，图像或其他二进制文件可以被 Base64 编码后嵌入到 ****中。例如，网页中的图片可以直接用 data URI 形式嵌入，避免额外的 HTTP 请求，从而加快页面加载速度。</li>
+</ul>
+<div class="language-html line-numbers-mode" data-highlighter="shiki" data-ext="html" data-title="html" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">img</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D19A66"> src</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA..."</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">/&gt;</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
+<li><strong>REST API</strong>：在 RESTful API 中，<strong></strong> 或 XML 数据中传输二进制数据，例如将图像数据编码后嵌入到 API 响应中。</li>
+</ul>
+<p><strong>代码开发碰到的场景:</strong></p>
+<ol>
+<li>
+<p>Scenario-图像场景:</p>
+<ol>
+<li>fileManageService.uploadPicture(fileUploadRequest.getBase64Pic());</li>
+<li>base64转inputStream (Byte) // 把这个二进制上传到 OSS</li>
+</ol>
+</li>
+<li>
+<p>Scenario-语音 tts 接口的 Response 文本就是它:</p>
+<ol>
+<li>
+</li>
+</ol>
+</li>
+</ol>
+<h3>FAQ</h3>
+<h4>Base64 为什么是 64？</h4>
+<p>📌 原理解析</p>
+<ol>
+<li>
+<p><strong>二进制 → 文本</strong></p>
+<ul>
+<li>Base64 的核心思想是：把任意的二进制数据，转换成一组“只包含可打印字符”的文本。</li>
+</ul>
+</li>
+<li>
+<p><strong>3 字节 → 4 字符</strong></p>
+<ul>
+<li>每次取 <strong>3 个字节（3 × 8 = 24 位）</strong>，再把它切成 <strong>4 段（4 × 6 = 24 位）</strong>。</li>
+<li>也就是说，每个 Base64 字符只需要表示 <strong>6 位二进制</strong>。</li>
+</ul>
+</li>
+<li>
+<p><strong>6 位能表示多少种情况？</strong></p>
+<ul>
+<li>2⁶ = <strong>64 种</strong>。</li>
+<li>所以我们需要 64 个不同的符号来表示这 64 种可能。</li>
+</ul>
+</li>
+</ol>
+<p>Base64 标准选择了以下 64 个 <strong>可打印字符</strong>：</p>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span>A–Z  → 26 个</span></span>
+<span class="line"><span>a–z  → 26 个</span></span>
+<span class="line"><span>0–9  → 10 个</span></span>
+<span class="line"><span>+ /  → 2 个</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
+    <published>2025-09-03T15:30:33.000Z</published>
+  </entry>
+  <entry>
     <title type="text">CDN</title>
     <id>https://zzq8.cn/code/408-Network/CDN.html</id>
     <link href="https://zzq8.cn/code/408-Network/CDN.html"/>
-    <updated>2025-09-02T16:02:29.043Z</updated>
+    <updated>2025-09-03T15:32:16.080Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！</p>
@@ -251,7 +343,7 @@
     <title type="text">WebSocket</title>
     <id>https://zzq8.cn/code/408-Network/SSE_WS.html</id>
     <link href="https://zzq8.cn/code/408-Network/SSE_WS.html"/>
-    <updated>2025-09-02T16:02:29.046Z</updated>
+    <updated>2025-09-03T15:32:16.083Z</updated>
     <summary type="html"><![CDATA[
 <h3>优势</h3>
 <p><strong>双向实时通信</strong>，特有的ws协议，可跨域
@@ -315,7 +407,7 @@ https://www.bilibili.com/video/BV19N411474y?t=97.0</p>
     <title type="text">Software</title>
     <id>https://zzq8.cn/code/408-PC/Software.html</id>
     <link href="https://zzq8.cn/code/408-PC/Software.html"/>
-    <updated>2025-09-02T16:02:29.049Z</updated>
+    <updated>2025-09-03T15:32:16.091Z</updated>
     <summary type="html"><![CDATA[
 <h2>Sublime</h2>
 <ul>
@@ -395,7 +487,7 @@ https://www.bilibili.com/video/BV19N411474y?t=97.0</p>
     <title type="text">Seata&amp;XTS</title>
     <id>https://zzq8.cn/code/DistributedLock/Seata_XTS.html</id>
     <link href="https://zzq8.cn/code/DistributedLock/Seata_XTS.html"/>
-    <updated>2025-09-02T16:02:29.060Z</updated>
+    <updated>2025-09-03T15:32:16.095Z</updated>
     <summary type="html"><![CDATA[
 <h2>vs</h2>
 <h3>对比与选择</h3>
@@ -752,7 +844,7 @@ App1是整个事务的发起者，为了能够代表整个事务的状态，发�
     <title type="text">TODO(img) Spring全家桶</title>
     <id>https://zzq8.cn/code/JavaFramework/TODO(img)SpringFamilyBucket.html</id>
     <link href="https://zzq8.cn/code/JavaFramework/TODO(img)SpringFamilyBucket.html"/>
-    <updated>2025-09-02T16:02:29.074Z</updated>
+    <updated>2025-09-03T15:32:16.107Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>TODO：笔记太松散了，比较少     可以筛选  拿营养部分</p>
@@ -817,626 +909,6 @@ App1是整个事务的发起者，为了能够代表整个事务的状态，发�
 </ul>
 <div class="language-java line-numbers-mode" data-highlighter="shiki" data-ext="java" data-title="java" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66">2024</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2">-</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66">04</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2">-</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66">15</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66"> 16</span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66">50</span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66">32.481</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">  INFO </span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66">44526</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content>
-    <published>2025-05-24T15:52:39.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">代码CR规范总结</title>
-    <id>https://zzq8.cn/code/ZOther/@Test.html</id>
-    <link href="https://zzq8.cn/code/ZOther/@Test.html"/>
-    <updated>2025-09-02T16:02:29.102Z</updated>
-    <summary type="html"><![CDATA[
-<h1>风格问题</h1>
-<ol>
-<li>根据项目配置代码格式化风格，提交之前整体格式化代码。</li>
-<li>起名要做到清晰明了，有具体业务含义。</li>
-<li>方法起名规则  动词 + 名词。eg: queryOrderDetail, publishPrize。</li>
-<li>所有定义(接口，实现类，字段，方法，枚举等等)注释完备, 提高可读性。</li>
-<li>所有提供给外部的服务接口，保证注释明确，编写完整使用文档说明。</li>
-<li>静态变量建议使用统一的static在当前类或者公共类中维护，便于后续引用和重构维护。</li>
-<li>禁止魔法值逻辑。</li>
-<li>单个方法功能不宜太多，包含内容太多不容易复用，可读性变差。尽量按照简单的逻辑拆分。</li>
-<li>
-。</li>
-</ol>]]></summary>
-    <content type="html"><![CDATA[
-<h1>风格问题</h1>
-<ol>
-<li>根据项目配置代码格式化风格，提交之前整体格式化代码。</li>
-<li>起名要做到清晰明了，有具体业务含义。</li>
-<li>方法起名规则  动词 + 名词。eg: queryOrderDetail, publishPrize。</li>
-<li>所有定义(接口，实现类，字段，方法，枚举等等)注释完备, 提高可读性。</li>
-<li>所有提供给外部的服务接口，保证注释明确，编写完整使用文档说明。</li>
-<li>静态变量建议使用统一的static在当前类或者公共类中维护，便于后续引用和重构维护。</li>
-<li>禁止魔法值逻辑。</li>
-<li>单个方法功能不宜太多，包含内容太多不容易复用，可读性变差。尽量按照简单的逻辑拆分。</li>
-<li>
-。</li>
-</ol>
-<h1>防御性编程</h1>
-<ol>
-<li>提供给上游的共用方法对关键入参强校验正确性。所有的public方法的所有字段都需要校验。</li>
-</ol>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/fc0ae95cd9580e9b57cbc41166a41528.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/17185d5767e039db08cb7f5da39e9d2d.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="2">
-<li>字段校验不只是要校验是否为空，要根据业务规则进行校验。
-<ol>
-<li>字符串校验长度。</li>
-<li>数字校验上限和下限。</li>
-<li>枚举类型要校验是否是合法枚举值。</li>
-</ol>
-</li>
-</ol>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/67e5cf8038ef81dc2abdfab36e87f58d.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="3">
-<li>领域模型数据校验内聚于领域模型内部，对外只暴露实际校验方法供其他流程调用。</li>
-</ol>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/f69a595ed885f268dc0fe0a09e7f0411.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/650bc2ed90117930a0436d689a322ad7.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="4">
-<li>
-<ol>
-<li>
-</li>
-<li>
-</li>
-<li>
-</li>
-</ol>
-</li>
-<li>
-</li>
-</ol>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/d4bb83b197f685de9cd55e1be58ac7d4.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p><strong></strong></p>
-<h1>远程调用</h1>
-<ol>
-<li><strong>返回结果三态的检查不能忘</strong></li>
-</ol>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/fc88718b6adb9594afbecab47bd0cdf0.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/ab24eaa1ed6dc73b81d04138250e58a8.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="2">
-<li>明确下游API是否幂等，幂等号生成规则是什么和幂等的维度是租户维度, 商户维度，活动维度？</li>
-<li>异常处理（比如你调用别人接口异常了怎么处理，是重试还是直接失败），出现异常之后上下游数据是否一致。</li>
-<li>超时处理（超时后是直接断开保护本系统还是等待返回？），出现超时之后上下游数据是否一致。</li>
-<li>外部调用的API升级时是否和老版本接口兼容，接口返回结构层面的兼容逻辑，例如状态码、返回值、返回结构等。</li>
-</ol>
-<h1>并发处理</h1>
-<ol>
-<li>强制统一使用 SOFA 线程池，包含监控、超时堆栈、traceID（用于 RPC 自定义线程池）和动态配置的能力。SOFA 线程池 100% 兼容原生线程池。参见：<a href="https://yuque.antfin-inc.com/middleware/sofaboot/gdcd1p" target="_blank" rel="noopener noreferrer">SOFA 线程池的使用文档</a></li>
-</ol>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/3d21418087e7d749c0d6fccf51be2c7c.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/f3ad6616edcebef64902aa88e30f6bcc.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="2">
-<li>异步处理的任务使用TracerRunnable代替Runnable，TracerCallable代替Callable，防止trace丢失。</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/613b4c83c3c977e0223f25a22708f319.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/44470d05716cece189ac60179e99d302.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="3">
-<li>线程上下文一定要记得清除</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/03ee7ea885d1a0e9918c12d2f81b76be.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/97224edd3c1a88e311a97872edd6c466.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="4">
-<li>使用CountDownLatch进行异步转同步操作时，每个线程退出前必须调用countDown方法，线程执行代码注意catch异常，确保countDown方法可以执行，避免主线程无法执行至countDown方法，直到超时才返回结果。</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/aba1802d32263d241ef488da1c5a1cb5.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/a5fd46a19229e2ac165356769eeb6974.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<h1>数据库操作</h1>
-<ol>
-<li>insert，update, delete数据完成时强制校验行数是否符合预期</li>
-</ol>
-<p><strong>错误示例</strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/f9577d4d9ada91fe6a590dc98e0af8d2.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p><strong>正确示例</strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/1ef9a3d3d4350e9aff1318a250ecbe5b.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="2">
-<li>查询sql语句不允许查询*，而是显示列出需要查询的字段
-<ol>
-<li>
-</li>
-<li>
-</li>
-<li>
-</li>
-</ol>
-</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/69c8b820c273cba926fdb76664bf1a6a.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/65452a8d5db18efd3d4193734ed9a842.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="3">
-<li>不允许无脑 update</li>
-</ol>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/e8740d4e96c989c0e2d54b17f463fe6d.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/18292d8a5b4792ac0ecc559f8c60d6c5.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="4">
-<li>单条数据更新，使用id作为更新条件</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/e16f975276253ab71f2a8b13b191d928.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/16d04e197b803541da6bad4ad19a812f.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="5">
-<li>查询一定要考虑索引</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/d772a53bff165aee6170d0b33268c17e.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<ol start="6">
-<li>一锁二判三更新</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/4f160e595abe71951deba0eba474a5d9.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/8fdabc95b88db72335c9752fbfb0dafc.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/55ff09e21b33c07be7f63808233ae10a.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="7">
-<li>涉及多条数据循环调用sql插入时改成批量的，并且考虑每次批量插入的条数。</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/a6daa17e399a41b20aede682eeb1f273.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/1183d9be9d32aaef45c2e19541e27bea.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="8">
-<li>每次新增的查询语句是否能命中索引。</li>
-</ol>
-<p>错误示例<img src="https://img-blog.csdnimg.cn/img_convert/d460e7d5771108c7cf912fd7e670eca2.png" alt="" loading="lazy"></p>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/0f47421a4706d474f869a7b0e9b8507f.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="9">
-<li>
-</li>
-</ol>
-<p>正确示例
-<img src="https://i-blog.csdnimg.cn/direct/de59078cafdc4146b873caedf4fb24d3.png" alt="在这里插入图片描述" loading="lazy"></p>
-<ol start="10">
-<li>索引设计是否合理，是唯一索引还是普通索引，尽量避免在线进行索引增加，删除操作</li>
-</ol>
-<p><strong></strong></p>
-<p><a href="https://yuque.antfin-inc.com/fu9ehx/bixhha/neoo69kr1yri39wo" target="_blank" rel="noopener noreferrer">20240627-故障案例学习</a></p>
-<ol start="11">
-<li>分表场景单表局部热点风险</li>
-</ol>
-<p>错误示例</p>
-<p>分片的一个作用是提高可用性，降低单点带来的风险，但是如果分库分表位的选择不合理则无法发挥这个作用</p>
-<p>举例代码如下：</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/175bd775daf9b8cd71fec0dd5e97052e.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/6e49dfea401347499f916bc83251bc4a.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例: 动态获取用户ID来作为分库分表的信息，降低单点风险</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/e60ff9d43a636cdc3f79c1e440349953.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<h1>事务问题</h1>
-<ol>
-<li>根据使用的是逻辑库还是物理库选择正确的事务模板。</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/ec458e7f6f7c3480c94c7ae03e2c58ee.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/2abf1cd9480cb3aa080b4c917cc9a004.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="2">
-<li>跨数据连接，事务无效</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/b4d8869227907ffd821273780312e30d.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<div class="language-plain line-numbers-mode" data-highlighter="shiki" data-ext="plain" data-title="plain" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span>        sharingTransactionTemplate.execute(new TransactionCallbackWithoutResult() {</span></span>
-<span class="line"><span>            @Override</span></span>
-<span class="line"><span>            protected void doInTransactionWithoutResult(TransactionStatus status) {</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>                    // 保存外部订单，数据源1</span></span>
-<span class="line"><span>                    affiliateOutOrderRepository.insert(affiliateOutOrder);</span></span>
-<span class="line"><span>                        </span></span>
-<span class="line"><span>                    // 保存外部订单返佣</span></span>
-<span class="line"><span>                    outOrderCommission.setInnerOrderId(affiliateOutOrder.getId());</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>                    // 保存外部订单返佣</span></span>
-<span class="line"><span>                    affiliateOutOrderCommissionRepository.insert(outOrderCommission);</span></span>
-<span class="line"><span>                    orderUserBenefit.setInnerOrderId(affiliateOutOrder.getId());</span></span>
-<span class="line"><span>                    orderUserBenefit.setCommissionId(outOrderCommission.getId());</span></span>
-<span class="line"><span>                    affiliateOutOrderUserBenefitRepository.insert(orderUserBenefit);</span></span>
-<span class="line"><span>            }</span></span>
-<span class="line"><span>        });</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="3">
-<li>长事务问题，事务中有远程调用</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/99f391fe724d77b9349d92a5315323a7.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/ec07bcfd31d43c1f910978673ac55cf0.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="4">
-<li>合理设计索引，尽量缩小锁的范围
-<ol>
-<li>合理设计索引，可以尽量缩小锁的范围，从而减少锁竞争提高并发性能。</li>
-</ol>
-</li>
-<li><s>单条数据库操作不要开事务</s></li>
-</ol>
-<p><s>错误示例</s></p>
-<p><s>正确示例</s></p>
-<ol start="6">
-<li>事务性消息一定要再事务中发送</li>
-</ol>
-<p>错误示例</p>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/eabff4a780d3d5fd3d78c36b75137c33.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<h1>消息问题</h1>
-<ol>
-<li>重复、流失、乱序、限流</li>
-</ol>
-<p>错误示例</p>
-<p>正确示例</p>
-<ol start="2">
-<li>可重入问题</li>
-</ol>
-<p>错误示例</p>
-<p>正确示例</p>
-<ol start="3">
-<li>什么时候用事务性消息，更新DB和发消息在一个事务中，避免DB更新失败，机器故障或者重启导致消息未发送，产生不一致</li>
-</ol>
-<p>错误示例</p>
-<p>正确示例</p>
-<ol start="4">
-<li>事务型消息一定要有checker</li>
-</ol>
-<p><a href="https://yuque.antfin-inc.com/middleware/msgbroker/pubsub" target="_blank" rel="noopener noreferrer">事务型消息原理</a></p>
-<h1>缓存问题</h1>
-<ol>
-<li>缓存必须要使用common库</li>
-</ol>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/6d7480e4ad81279b4d30bb377c16f802.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/2cb298f6a61ae508beebb596fc7c9a45.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="2">
-<li>缓存key的设计需要仔细考虑
-<ol>
-<li>环境隔离</li>
-<li>压测隔离</li>
-<li>不兼容时的版本隔离</li>
-</ol>
-</li>
-</ol>
-<p><a href="https://yuque.antfin-inc.com/gc206i/cflnuu/pqu9da?" target="_blank" rel="noopener noreferrer">[P4]用户反馈零售通频道页商品不展示</a></p>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/43cacdc8ec80a23dbb8afc77318e02e3.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/6900c047c8a041c79175711e2ebb6bc2.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="3">
-<li>序列化的方式</li>
-</ol>
-<p>序列化方式统一规定使用JSON，不使用HESSIAN</p>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/7d9e92519ba98b28a1fb4ee465e4147d.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="4">
-<li>key的null存储</li>
-</ol>
-<p>错误示例
-<img src="https://i-blog.csdnimg.cn/direct/ca1a6ba3154c4f43bc68db0d4c906298.png" alt="在这里插入图片描述" loading="lazy"></p>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/cf5c84ad1d548938368b8f2bc9d64544.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="5">
-<li>key的过期时间</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/8b0189e2b1aeb0f73d46980bbfaf2c43.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/81381e2130be24ad39e9fe383fe99c6b.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="6">
-<li>key的击穿影响分析</li>
-</ol>
-<p><a href="https://yuque.antfin.com/sd/ufwbxo/puaiys2d4wikb4e1?singleDoc#" target="_blank" rel="noopener noreferrer">【P3】0531 LZD-支付咨询(分站点)下跌</a></p>
-<p>错误示例</p>
-<p>正确示例</p>
-<ol start="7">
-<li>key的更新策略
-<ol>
-<li>过期删除：当缓存过期时，主动失效，当击穿缓存时回源查询并更新缓存。</li>
-<li>主动刷新: 缓存中key不过期，在DB中数据变化时，主动构建新值并更新到缓存中</li>
-</ol>
-</li>
-<li>兼容性问题</li>
-</ol>
-<p>错误示例:</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/326d86847179b01a71cae3e372f57b2a.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/7e8792c093f0cce9098a0e5075d30411.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<h1>金额问题</h1>
-<ol>
-<li>必须使用multiMoney，MultiBigDecimalMoney类，要考虑精度和四舍五入算法。</li>
-</ol>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/231b5aba8c46ab47f9b6c16503f05c47.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="2">
-<li>金额计算使用统一封装工具类，严禁自行计算。</li>
-</ol>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/b88ec5a5bda1dd67009d581d80ef9ba4.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="3">
-<li>注意金额计算相同功能的不同实现差别，比如 add, addTo。divide, divideBy。</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://i-blog.csdnimg.cn/direct/cf7b880594554d169af197cac418be70.png" alt="在这里插入图片描述" tabindex="0" loading="lazy"><figcaption>在这里插入图片描述</figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/db55b87b343954696e5ffd426620877d.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="4">
-<li>增减金额平衡性校验</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/2db6e63c8aa9fa4ac74732b9553118a0.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/c1e82eca7c54cc46bbade2e2b375593c.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/4c59b5edfba77a67c38331ba21e1a645.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/c7ae065fe1e5c183e9dc72ef575f500c.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<h1>编码规约</h1>
-<ol>
-<li>使用诸如StringUtil, CollectionUtils等工具类操作，而不是直接采用原始类型，因为已经对null值进行了处理</li>
-</ol>
-<p>错误示例:下列代码没有判断lineMap是否为null，直接取size，有空指针风险，换成MapUtils.isEmpty更为可靠</p>
-<figure><img src="https://i-blog.csdnimg.cn/direct/9459e4b54d424276b96644d5a1466409.png" alt="在这里插入图片描述" tabindex="0" loading="lazy"><figcaption>在这里插入图片描述</figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/7b5d8e7962964bd7b470da7be0e48dd5.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="2">
-<li>不使用复杂的if else 条件，而是抽成判断是否满足if条件的方法。</li>
-</ol>
-<p>错误示例</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/8e7e28298bd004738c0ce9b52e8a03fb.png" alt="" loading="lazy"><img src="https://img-blog.csdnimg.cn/img_convert/2a789ec160915dc07d0cdb7b93507f7e.png" alt="" loading="lazy"></p>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/9301330a3b0e772587380d2ec8d5a83d.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="3">
-<li>杜绝使用BeanUtils.copyProperties，尤其是Entity、Model和VO之间。同一名字不同类型不能拷贝，导致字段值缺失。老老实实set&amp;get。</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://i-blog.csdnimg.cn/direct/ac4ef8ad35dc4f91b6778ec3671e2d3a.png" alt="在这里插入图片描述" tabindex="0" loading="lazy"><figcaption>在这里插入图片描述</figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/69d8f5db9cbf870f93ee2dbefe016b39.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="4">
-<li>POJO中的变量直接赋值，禁止夹杂额外逻辑。</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/2fa52cade3e76efc247072e3275cb4a4.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/ce2b9a93215f8aac1b36fb496c67ca92.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="5">
-<li>根据业务规则找准try-catch的范围，try-catch范围不准结果都不好。比如说是for循环里面try-catch还是整个循环try-catch 是两种不同的结果。允许失败跳过的情况内部处理。不允许失败的情况外部处理。</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/b000fdd2d035a5ab78c64d83f5bd57e8.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/802da43c14e1039c432cccc3aec17dd0.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="6">
-<li>避免使用多个级联get，容易造成数组越界，NPE，使用Optional操作的判空操作。</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/f2c4802ee82a9ae50ae3aff75365edbd.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>正确示例</p>
-<div class="language-plain line-numbers-mode" data-highlighter="shiki" data-ext="plain" data-title="plain" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span>        standardProductView.setOnSaleTimeStart(</span></span>
-<span class="line"><span>            Optional.ofNullable(product.getOnSaleBeginTime()).map(Date::getTime).orElse(null));</span></span>
-<span class="line"><span>        standardProductView.setOnSaleTimeEnd(</span></span>
-<span class="line"><span>            Optional.ofNullable(product.getOnSaleEndTime()).map(Date::getTime).orElse(null));</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="7">
-<li>对外部提供的服务接口定义查询和响应禁用枚举。</li>
-</ol>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/56b2071a645583eea12f548335cf5374.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/290a45dd7fd02830f0da0aa1496a8aa1.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<h1>日志打印</h1>
-<ol>
-<li>
-</li>
-</ol>
-<p>错误示例</p>
-<figure><img src="https://i-blog.csdnimg.cn/direct/9c9bed0ab21f4a9f822353c841540c33.png" alt="在这里插入图片描述" tabindex="0" loading="lazy"><figcaption>在这里插入图片描述</figcaption></figure>
-<p>正确示例：在ServiceTemplate模板类中会统一格式打印日志。</p>
-<figure><img src="https://i-blog.csdnimg.cn/direct/d8f1a7a7493d435683462e75053b8fec.png" alt="在这里插入图片描述" tabindex="0" loading="lazy"><figcaption>在这里插入图片描述</figcaption></figure>
-<ol start="2">
-<li>打印异常日志时一定包含堆栈信息，如果仅包含提示信息，异常堆栈被丢弃，问题排查困难。</li>
-</ol>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/dcdd1bd57a06f8e39a0658c2309dad42.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/1c33ad4f9105c999703a136a07c1c415.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p><strong></strong></p>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/c416d96104d0cbef627c50c248e79087.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="3">
-<li>日志打印保持格式清晰，关键字段齐备，做到监控可配置，排查问题快速定位。</li>
-</ol>
-<figure><img src="https://i-blog.csdnimg.cn/direct/9349a33b53944dad916d4f2e73ca40e0.png" alt="在这里插入图片描述" tabindex="0" loading="lazy"><figcaption>在这里插入图片描述</figcaption></figure>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/3604c7fd9f06e63be12fd0e187752154.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/dfefbc21688194b372ad6b166a9239fd.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<ol start="4">
-<li>
-</li>
-</ol>
-<figure><img src="https://img-blog.csdnimg.cn/img_convert/8465efefdb9ddcfdd80e960160fbcd58.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<h1>性能问题</h1>
-<ol>
-<li>所有接口必须要有性能监控的日志，放到模版日志里</li>
-<li>C端接口不需要经过压测才能上线</li>
-<li>C端要注意使用缓存</li>
-<li>非关键依赖，同步转异步</li>
-</ol>
-<h1>设计问题</h1>
-<ol>
-<li>领域模型要核对友好，上下游关键字段是否可核对。一层核对，二层核对，三层核对。</li>
-<li>考虑发布兼容性，发布中间态存在新逻辑，新数据，老逻辑，老数据。</li>
-<li>考虑隔离性
-<ol>
-<li>不同商户，用户，渠道数据如何隔离。</li>
-<li>不同商户，用户，渠道故障如何隔离。</li>
-</ol>
-</li>
-<li>清晰明了的切流灰度逻辑。
-<ol>
-<li>切流方法是是什么，参数中心，drm？</li>
-<li>切流维度是什么，商户，用户，活动？</li>
-<li>新老逻辑是否能回切？</li>
-</ol>
-</li>
-</ol>
-<h1>测试用例</h1>
-<ol>
-<li>每个迭代必须提供自测用例，可以规避很多不必要的线上问题。</li>
-<li>单元测试一个方法测试一个功能的各种情况，不要把所有的功能融合在一个方法中。</li>
-<li>单元测试用例的编写要考虑先写一种执行成功的情况，还要覆盖失败的case，并且要按照场景进行覆盖。</li>
-<li>清除数据，准备数据，执行用例，校验数据（返回结果的校验，db的校验）</li>
-</ol>
-<h1>测试用例-XD补充</h1>
-<blockquote>
-<p>自测-证明测了</p>
-<p><strong>单测-不被篡改、保护稳定运行的一种手段</strong></p>
-</blockquote>
-<h2>操作流程</h2>
-<p>xd: 犯以下错误:</p>
-<p>知识铺垫</p>
-    ********    <blockquote>
-</blockquote>
-<blockquote>
-    </blockquote>
-<h2></h2>
-<blockquote>
-</blockquote>
-<div class="language-java line-numbers-mode" data-highlighter="shiki" data-ext="java" data-title="java" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">// 在测试方法的最后，验证具体的调用</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">Mockito</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">verify</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(cacheManager).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">putObjectWithExpire</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">    "STOP_CHAT_CACHE_KEY_PREFIX_userId123_202409282011727514756414_202409282021727514756405"</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">    Boolean</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">FALSE</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66">    120</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
-<p>// 用到mock注解的得使用下面才能生效</p>
-<p>MockitoAnnotations.openMocks(this);</p>
-<p><strong></strong></p>
-</blockquote>
-<figure><img src="https://intranetproxy.alipay.com/skylark/lark/0/2024/png/135356742/1727346395904-e353b890-d2b9-4908-b3d3-d1552c7050ed.png" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
-<p>MockUtil.mockField(distributedLockService, "distributedLock", distributedLock);</p>
-<p><strong></strong></p>
-<blockquote>
-<p>chat 监听器回调mock   卡很久，发现有个API可以操作</p>
-</blockquote>
-<pre><code>   Mockito.doAnswer(new Answer() {
-
-        @Override
-
-        public Object answer(InvocationOnMock invocationOnMock) throws Throwable {
-
-            System.out.println(invocationOnMock.getArguments());
-
-            return invocationOnMock.getArguments();
-
-        }
-
-    }).when(botStreamChatFacade).streamChat(any(), any());
-</code></pre>
-<h2>✨ Mock 方式两种 - </h2>
-<h3>注解方式</h3>
-<div class="language-javascript line-numbers-mode" data-highlighter="shiki" data-ext="javascript" data-title="javascript" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">   /**</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">     * ilmmodelClient</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">     */</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">    @</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">Autowired</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">    @</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">InjectMocks</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">    private</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> IlmmodelClientImpl</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">     ilmmodelClientImpl</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">    /**</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">     * TtsFacade</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">     */</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">    @</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">Mock</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">    private</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> TtsFacade</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">              ttsFacade</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">MockitoAnnotations</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">openMocks</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#E5C07B">this</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>代码方式</h3>
-<div class="language-javascript line-numbers-mode" data-highlighter="shiki" data-ext="javascript" data-title="javascript" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">// 1</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">TtsFacade</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> ttsFacade</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B"> Mockito</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">mock</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">TtsFacade</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">class</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">// 并不是1,3就直接可以了    别忘记还有个该field注入到源class的操作.   需要通过反射解决</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">// 3</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">Mockito</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">when</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">ttsFacade</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">executeGenericTts</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">Mockito</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">any</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">())).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">thenReturn</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">mockResult</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>keypoint</strong></p>
-<hr>
-<p><strong>全盘逻辑</strong></p>
-<hr>
-<div class="language-javascript line-numbers-mode" data-highlighter="shiki" data-ext="javascript" data-title="javascript" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">private</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> static</span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD"> void</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF"> backupOriginalField</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">Object</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> target</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">String</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> fieldName</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">                                            Object</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> mock</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">) </span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">throws</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> IllegalAccessException</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">                                                         NoSuchFieldError</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">        // TODO: 2025/1/11 单侧为什么需要获取真实对象而非代理对象？</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">        // 获取真实对象而非代理对象</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">        target</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF"> getSingletonTarget</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">target</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">        Field</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> field</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF"> getField</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">target</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">fieldName</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">        Object</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> originFieldValue</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B"> field</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">get</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">target</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">        // 如果已经替换过了，抛出异常</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">        Object</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> replaced</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#E5C07B"> REPLACED_FIELDS</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">            .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">computeIfAbsent</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">target</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">, (</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">key</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2">-&gt;</span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD"> new</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> ConcurrentHashMap</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2">&lt;&gt;</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">()).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">get</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">fieldName</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">        if</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2">!</span><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">Objects</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">isNull</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">replaced</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">)) {</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">            // 不应该重复替换原成员</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">            throw</span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF"> IllegalStateException</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"非法覆盖"</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> target</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#032F62;--shiki-dark:#98C379"> "成员"</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> fieldName</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#032F62;--shiki-dark:#98C379"> "原始引用记录"</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">        }</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">        field</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">set</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">target</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">mock</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">        log</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">debug</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"已替换"</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> target</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#032F62;--shiki-dark:#98C379"> "对象的成员"</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> fieldName</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#032F62;--shiki-dark:#98C379"> "为"</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> +</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> mock</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">        if</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2">!</span><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">Objects</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">isNull</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">originFieldValue</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">)) {</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">            // ConcurrentHashMap不能put null对象，null成员也没有必要备份</span></span>
-<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#E5C07B">            REPLACED_FIELDS</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">computeIfAbsent</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">target</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">, (</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">key</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2">-&gt;</span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD"> new</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> ConcurrentHashMap</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2">&lt;&gt;</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">())</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">                .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">put</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">fieldName</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">originFieldValue</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">        }</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">    }</span></span>
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">private</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> static</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> Field</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF"> getField</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">Object</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> target</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">String</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> fieldName</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">) {</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">        Field</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> field</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">        Class</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2">&lt;</span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">?</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2">&gt;</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> type</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B"> target</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">getClass</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">();</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  // TODO 这里为什么while,  看catch逻辑会向父类找  所以while</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">        while</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">type</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> !=</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">) {</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">            try {</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">                field</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B"> type</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">getDeclaredField</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">fieldName</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">                break</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">            } catch (NoSuchFieldException e) {</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">                type = type.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">getSuperclass</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">();</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">            }</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">        }</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">        if</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">field</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> ==</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">) {</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">            throw new </span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">NoSuchFieldError</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">();</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">        }</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B">        field</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">setAccessible</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66">true</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">        return</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> field</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">    }</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>todo解释:</p>
-<ul>
-<li>
-``````</li>
-<li><strong></strong></li>
-<li>
-</li>
-</ul>
-<ul>
-<li>computeIfAbsent适用于两层嵌套的map   拿到/初始化里层map</li>
-</ul>
-<div class="language-javascript line-numbers-mode" data-highlighter="shiki" data-ext="javascript" data-title="javascript" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">// NoSuchFieldException</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">Field</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75"> field</span><span style="--shiki-light:#D73A49;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E5C07B"> clazz</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#61AFEF">getDeclaredField</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"ttsFacade"</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">// todo 如果我不加这一行的话，field 无法被获取到吗</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
     <published>2025-05-24T15:52:39.000Z</published>
   </entry>
 </feed>
