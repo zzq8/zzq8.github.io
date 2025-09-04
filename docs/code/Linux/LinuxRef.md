@@ -1,8 +1,58 @@
 ---
 article: false
-updated: 2025-09-02 23:59:33
+updated: 2025-09-04 23:59:25
 ---
 # LinuxRef
+
+> EOF 你问的 <<EOF 是 **Bash 的 Here Document（简称 Heredoc）语法**，作用是 **把多行文本重定向到命令或文件**。
+
+cat <<EOF > file.txt
+第一行内容
+第二行内容
+第三行内容
+EOF
+
+
+
+
+
+> mkdir 同时多个文件夹
+
+mkdir -p ~/nginx/{conf/conf.d,html,log,conf/ssl}
+
+
+
+
+
+> finder 看多个文件总大小
+
+⸻
+
+✅ 方法 1：用快捷键 Command + **Option** + I
+	•	选中多个文件/文件夹
+	•	按下 ⌘ + ⌥ + I（显示检查器）
+	•	会弹出一个“检查器”窗口，实时显示选中项的 总大小
+	•	优点：你继续选中/取消选择文件时，大小会 动态更新
+
+⸻
+
+❎ 方法 2：右键 → “显示简介”
+	•	选中多个文件
+	•	右键 → 显示简介 (Command + I)
+	•	会弹出多个窗口，每个文件一个 → 不会自动统计总和
+⚠️ 这个方法不方便统计总和
+
+
+
+
+
+> sudo和su
+
+- su: **switch user**  su - user1 # 切换到用户 user1，需要输入 user1 的密码
+
+
+
+
 
 > ssh 免密连接
 >

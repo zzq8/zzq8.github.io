@@ -1,5 +1,6 @@
 ---
 article: false
+updated: 2025-09-05 00:40:33
 ---
 # LinuxEnvDep
 
@@ -8,6 +9,62 @@ article: false
 ## 1.基础环境
 
 ### 1.1.[Docker](https://www.runoob.com/docker/centos-docker-install.html)
+
+> https://www.runoob.com/docker/ubuntu-docker-install.html
+>
+> 看这个装
+
+docker logs nginx
+
+看报错超有用, 比如起不来看下原因是config那个配置错了
+
+```
+/docker-entrypoint.sh: Configuration complete; ready for start up
+nginx: [emerg] host not found in upstream "host.docker.internal" in /etc/nginx/conf.d/default.conf:11
+```
+
+
+
+
+
+1. 查看 Docker 网桥默认网关（宿主机 IP）：
+
+   ip addr show docker0
+
+   一般是: 172.17.0.1
+
+==todo 研究 ip addr==
+
+
+
+> 为什么要用172.17.0.1指向宿主机
+>
+> 1️⃣ 背景：Docker 网络隔离
+
+- Docker 容器默认使用 **bridge 网络模式**（桥接网络）
+- 每个容器有自己的私有 IP（比如 172.17.0.2），容器之间和宿主机是通过网桥 docker0 通信
+- **容器无法直接通过 localhost 访问宿主机**，因为 localhost 对容器来说是容器自己
+
+
+
+> 172.17.0.1 是保留的指向宿主机的吗, 剩余的172.17.0.2~172.17.255.255 (/16 子网掩码) 是docker容器自己的私有ip吗
+
+```
+宿主机(docker0)   172.17.0.1
+    │
+    │ bridge 网络
+    │
+容器1   172.17.0.2
+容器2   172.17.0.3
+容器3   172.17.0.4
+...
+```
+
+172.17.0.1 不是保留 IP，只是 Docker 默认桥接网关 IP
+
+
+
+
 
 > 实测用idea操作Docker比用 xshell 舒服太多了！！！
 
@@ -37,6 +94,8 @@ docker search jdk
 修改保存后重启 Docker 以使配置生效。
 
 `systemctl restart docker`
+
+
 
 ### 1.2.JAVA
 
@@ -118,6 +177,141 @@ docker search jdk
 
 ### 1.5.Nginx
 
+
+
+#### compose 方式
+
+```
+👌 明白了，我给你一份 完整的推荐版 docker-compose.yml，并且附上新建目录、导出配置文件的命令，保证你一步一步跑起来没坑。
+
+⸻
+
+🔹 1. 新建目录结构
+
+在你的 VPS 上执行：
+
+mkdir -p ~/nginx/{conf/conf.d,html,log,conf/ssl}
+
+
+⸻
+
+🔹 2. 导出 Nginx 默认配置
+
+把容器里的默认配置拷贝到宿主机：
+
+# 导出主配置文件
+docker run --rm nginx cat /etc/nginx/nginx.conf > ~/nginx/conf/nginx.conf
+
+# 导出默认虚拟主机配置
+docker run --rm nginx cat /etc/nginx/conf.d/default.conf > ~/nginx/conf/conf.d/default.conf
+
+
+⸻
+
+🔹 3. 创建 docker-compose.yml
+
+在 ~/nginx 目录下执行：
+
+cat > ~/nginx/docker-compose.yml <<EOF
+version: '3.9'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # 主配置文件 (只读)
+      - ./conf/nginx.conf:/etc/nginx/nginx.conf:ro
+
+      # 虚拟主机配置目录 (只读)
+      - ./conf/conf.d:/etc/nginx/conf.d:ro
+
+      # 网站根目录 (只读)
+      - ./html:/usr/share/nginx/html:ro
+
+      # 日志目录 (可写)
+      - ./log:/var/log/nginx
+
+      # SSL 证书目录 (只读)
+      - ./conf/ssl:/etc/nginx/ssl:ro
+EOF
+
+
+⸻
+
+🔹 4. 启动 Nginx
+
+cd ~/nginx
+docker-compose up -d
+
+
+⸻
+
+🔹 5. 测试
+
+echo "<h1>Hello from Docker Nginx</h1>" > ~/nginx/html/index.html
+curl http://localhost
+
+浏览器访问 http://你的服务器IP，应该能看到 Hello from Docker Nginx。
+
+⸻
+
+⚡ 推荐习惯：
+	•	以后改配置只要编辑 ~/nginx/conf/conf.d/*.conf 就行，别直接改 nginx.conf。
+	•	SSL 证书放在 ~/nginx/conf/ssl/，然后在 conf.d 里写 server { listen 443 ssl; ... }。
+
+⸻
+
+要不要我顺便给你一个 带 HTTPS 的 default.conf 模板，你只要把证书文件放进去就能跑 HTTPS？
+```
+
+* 使用 Docker 自带的 Compose 插件
+  * docker compose up -d
+* cat <<EOF > file.txt
+  第一行内容
+  第二行内容
+  第三行内容
+  EOF
+
+
+
+
+
+
+
+```
+server {
+    listen 80;
+    server_name rich.233377.xyz;
+
+    # 访问日志和错误日志
+    access_log /var/log/nginx/rich.access.log;
+    error_log  /var/log/nginx/rich.error.log;
+
+    # 反向代理到本机 Python 服务
+    location / {
+        proxy_pass http://172.17.0.1:8001;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+- 如果不支持，你可以用 **宿主机 IP** 替代，比如 proxy_pass http://172.17.0.1:8001;
+  - 
+
+
+
+
+
+
+
 > 注意 `nginx.conf` 是个文件不是文件夹  `touch ~/nginx/conf/nginx.conf`
 >
 > 再把这个文件填上网上的内容了就可以了，但是挂载的这些其他目录还是空的改没东西还是没东西
@@ -144,8 +338,8 @@ docker search jdk
    -v ~/nginx/conf/conf.d:/etc/nginx/conf.d \
    -v ~/nginx/log:/var/log/nginx \
    -v ~/nginx/html:/usr/share/nginx/html \
-   -v ~/nginx/conf/ssl:/etc/nginx/ssl  \
-   -d nginx
+   -v ~/nginx/conf/ssl:/etc/nginx/ssl \
+   nginx
    ```
 
 4. html 也可以自己随便给个index.html文件 【非必须】
