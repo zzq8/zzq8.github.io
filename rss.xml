@@ -6,12 +6,13 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 13 Sep 2025 03:32:33 GMT</pubDate>
-    <lastBuildDate>Sat, 13 Sep 2025 03:32:33 GMT</lastBuildDate>
+    <pubDate>Sat, 13 Sep 2025 13:15:27 GMT</pubDate>
+    <lastBuildDate>Sat, 13 Sep 2025 13:15:27 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
     <category>Net</category>
+    <category>AI</category>
     <item>
       <title>博客文章样例</title>
       <link>https://zzq8.cn/posts/2024-03-01-blog_example.html</link>
@@ -134,6 +135,37 @@
 </blockquote>
 <p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
 <p>解决方案是: 关注?  不逃避   没太理解</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>https://zzq8.cn/code/Z_AI.html</link>
+      <guid>https://zzq8.cn/code/Z_AI.html</guid>
+      <source url="https://zzq8.cn/rss.xml">AI</source>
+      <description>AI 屈定: https://mrdear.cn/posts/llm_agent_analyze 编程是一件幸福的事情,不要让你的工作变得索然无味.</description>
+      <category>AI</category>
+      <pubDate>Sat, 13 Sep 2025 13:13:56 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>屈定: https://mrdear.cn/posts/llm_agent_analyze</p>
+<p>编程是一件幸福的事情,不要让你的工作变得索然无味.</p>
+</blockquote>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>BlogList</title>
+      <link>https://zzq8.cn/code/Z_BlogList.html</link>
+      <guid>https://zzq8.cn/code/Z_BlogList.html</guid>
+      <source url="https://zzq8.cn/rss.xml">BlogList</source>
+      <description>BlogList TODO 花时间搞一个 llm 订阅这些 blog / 或者收到 fllow 里 !!! 公认大佬 优秀个人 好玩的项目</description>
+      <pubDate>Sat, 13 Sep 2025 13:13:56 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>TODO 花时间搞一个 llm 订阅这些 blog   /  或者收到 fllow 里 !!!</p>
+</blockquote>
+<h2>公认大佬</h2>
+<p>| URL  | Who    | Note                  |
+|</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -329,105 +361,6 @@
 |</p>
 ]]></content:encoded>
       <enclosure url="https://linux.do/uploads/default/optimized/4X/8/a/1/8a1e474b7aa6815b58fcbffd3f0f7f6fd179236e_2_268x500.jpeg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>WebSocket</title>
-      <link>https://zzq8.cn/code/408-Network/SSE_WS.html</link>
-      <guid>https://zzq8.cn/code/408-Network/SSE_WS.html</guid>
-      <source url="https://zzq8.cn/rss.xml">WebSocket</source>
-      <description>WebSocket 优势 双向实时通信，特有的ws协议，可跨域 填补HTTP在实时通讯的不足 场景 适用低延迟实时通讯 即时消息传递、音视频通话、在线会议和实时数据传输等，可以实现即时的数据传输和交流，不需要用户主动请求或刷新来获取更新数据 协同编辑，想象语雀文档/腾讯文档 使用 如果这时候是想建立 websocket 连接，就会在 HTTP 请求里带...</description>
-      <pubDate>Sun, 07 Jul 2024 14:54:20 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h3>优势</h3>
-<p><strong>双向实时通信</strong>，特有的ws协议，可跨域
-填补HTTP在实时通讯的不足</p>
-<h3>场景</h3>
-<p>适用低延迟实时通讯</p>
-<p>即时消息传递、音视频通话、在线会议和实时数据传输等，可以实现即时的数据传输和交流，不需要用户主动请求或刷新来获取更新数据
-协同编辑，想象语雀文档/腾讯文档</p>
-<h3>使用</h3>
-<p>如果这时候是<strong>想建立 websocket 连接</strong>，就会在 HTTP 请求里带上一些<strong>特殊的 header 头</strong>     告诉服务器，我想从HTTP升级成WS</p>
-<div class="language-json line-numbers-mode" data-highlighter="shiki" data-ext="json" data-title="json" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">Connection: Upgrade</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">Upgrade: websocket</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">Sec-WebSocket-Key: T</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66">2</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">a</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66">6</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">wZlAwhgQNqruZ</span><span style="--shiki-light:#005CC5;--shiki-dark:#D19A66">2</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">YUyg==\r\n</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>
-<p>header 头的意思是，浏览器想<strong>升级协议（Connection: Upgrade）</strong>，并且<strong>想升级成 websocket 协议（Upgrade: websocket）</strong>。</p>
-</li>
-<li>
-<p>同时带上一段<strong>随机生成的 base64 码（Sec-WebSocket-Key）</strong>，发给服务器。
-如果服务器正好支持升级成 websocket 协议。就会走 websocket 握手流程，同时根据客户端生成的 base64 码，用某个<strong>公开的</strong>算法变成另一段字符串，放在 HTTP 响应的 <code>Sec-WebSocket-Accept</code> 头里，同时带上<code>101状态码</code>，发回给浏览器。</p>
-<blockquote>
-<p>http 状态码=200（正常响应）的情况，大家见得多了。101 确实不常见，它其实是指<strong>协议切换</strong>。</p>
-</blockquote>
-</li>
-<li></li>
-</ul>
-<p>![image-20240706104311784](/Users/xd/Library/Application Support/typora-user-images/image-20240706104311784.png)</p>
-<h3>心跳机制</h3>
-<p>为了保持 WebSocket 稳定的长连接，在连接建立之后，服务器和客户端之间通过心跳包来保持连接状态，以防止连接因为长时间没有数据传输而被切断。</p>
-<p>一种特殊的数据包不包含任何实际数据，仅用来维持连接状态一个空数据帧</p>
-<p>定期发送，确保链接仍然有效，避免长时间没有数据传输而被中断</p>
-<p>如果一段时间内没有收到对方的心跳包，就可以认为连接已经断开</p>
-<p>扫码原理：HTTP定时轮询（弊端多！）   -》 百度网盘：长轮询</p>
-<p>https://www.bilibili.com/video/BV1Rh4y167Uh?t=122.6 【视频挺好】
-https://www.bilibili.com/video/BV19N411474y?t=97.0</p>
-<p>到网站笔记整理</p>
-<p>https://golangguide.top/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%82%B9/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89HTTP%E5%8D%8F%E8%AE%AE%EF%BC%8C%E8%BF%98%E8%A6%81%E6%9C%89websocket%E5%8D%8F%E8%AE%AE.html</p>
-<h3>醍醐灌顶</h3>
-<p><strong>HTTP/1.1 是一种半双工协议，而不是全双工协议。</strong>(设计之初只考虑看看网页，没考虑网页游戏 )</p>
-<p><strong>相比之下，HTTP/2 是全双工协议。HTTP/2 允许同时在同一连接上双向传输多个消息（即多路复用），从而显著提高了传输效率和速度。这使得 HTTP/2 可以更有效地利用网络资源，减少延迟</strong></p>
-<h1>SSE</h1>
-<blockquote>
-<p>ALMP 大语言模型平台用到 - 用户给Bot发消息</p>
-</blockquote>
-<p>Web服务端推送技术</p>
-<p>单向通信，http GET实际还是它，不可跨域</p>
-]]></content:encoded>
-      <enclosure url="https://zzq8.cn/Users/xd/Library/Application Support/typora-user-images/image-20240706104311784.png" type="image/png"/>
-    </item>
-    <item>
-      <title>Software</title>
-      <link>https://zzq8.cn/code/408-PC/Software.html</link>
-      <guid>https://zzq8.cn/code/408-PC/Software.html</guid>
-      <source url="https://zzq8.cn/rss.xml">Software</source>
-      <description>Software Sublime ctrl+shift+f where处可以指定多个目录 / 排除指定目录下某个文件【高频使用】 shortcut： 1）快速定位到修改过的地方的快捷键-好用 2）书签快捷键 3）还有github中python的批量保存关闭快捷键 image-20240130182956675image-2024013018295667...</description>
-      <pubDate>Sat, 29 Jun 2024 10:27:54 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>Sublime</h2>
-<ul>
-<li>
-<h4><a class="header-anchor" href="#ctrl-shift-f-where处可以指定多个目录-排除指定目录下某个文件【高频使用】"><span></span></a><a href="https://www.cnblogs.com/daysme/p/6890979.html" target="_blank" rel="noopener noreferrer">ctrl+shift+f where处可以指定多个目录 / 排除指定目录下某个文件</a>【高频使用】</h4>
-</li>
-<li>
-<h4>shortcut： 1）快速定位到修改过的地方的快捷键-好用     2）书签快捷键    3）还有github中python的批量保存关闭快捷键</h4>
-<ul>
-<li><img src="http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20240130182956675.png" alt="image-20240130182956675" tabindex="0" loading="lazy"><figcaption>image-20240130182956675</figcaption></li>
-</ul>
-</li>
-<li>
-<h4>在 Sublime Text 4 中，当你尝试替换文本时，它默认会保持替换的文本与原始文本的大小写一致。这意味着，如果你选择替换为大写文本，但原始文本是小写的，替换后的文本也会保持小写。</h4>
-<ul>
-<li>踩坑，ctrl h左下角有个选项 preserve case</li>
-</ul>
-</li>
-<li>
-<h4>搜索可以用正则，正则中的表达式可以用()包到里面，替换的时候可以用 $1..n（代表第1..n个括号） 来复用匹配到的内容！！！真的好用</h4>
-<ul>
-<li><mark>正则组引用</mark></li>
-</ul>
-</li>
-<li>
-<h4><a class="header-anchor" href="#快速插入多行递增数字"><span></span></a><a href="https://blog.csdn.net/cxrsdn/article/details/82496800" target="_blank" rel="noopener noreferrer">快速插入多行递增数字</a></h4>
-<ul>
-<li>
-<h5>ctrl+shift+p</h5>
-</li>
-</ul>
-</li>
-</ul>
-]]></content:encoded>
-      <enclosure url="http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/image-20240130182956675.png" type="image/png"/>
     </item>
   </channel>
 </rss>
