@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://zzq8.cn/favicon.ico</icon>
-  <updated>2025-09-13T03:26:36.554Z</updated>
+  <updated>2025-09-13T03:32:33.902Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://zzq8.cn/atom.xml"/>
   <link rel="alternate" href="https://zzq8.cn/"/>
@@ -14,7 +14,7 @@
     <title type="text">博客文章样例</title>
     <id>https://zzq8.cn/posts/2024-03-01-blog_example.html</id>
     <link href="https://zzq8.cn/posts/2024-03-01-blog_example.html"/>
-    <updated>2025-09-13T03:26:36.576Z</updated>
+    <updated>2025-09-13T03:32:33.932Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 </blockquote>
@@ -32,7 +32,7 @@
     <title type="text">Merlin</title>
     <id>https://zzq8.cn/posts/Merlin.html</id>
     <link href="https://zzq8.cn/posts/Merlin.html"/>
-    <updated>2025-09-13T03:26:36.579Z</updated>
+    <updated>2025-09-13T03:32:33.934Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>新整了个 <strong>RT-AX88U</strong> 华硕路由器, 不能浪费</p>
@@ -79,7 +79,7 @@
     <title type="text">WTG</title>
     <id>https://zzq8.cn/posts/WTG.html</id>
     <link href="https://zzq8.cn/posts/WTG.html"/>
-    <updated>2025-09-13T03:26:36.584Z</updated>
+    <updated>2025-09-13T03:32:33.936Z</updated>
     <summary type="html"><![CDATA[
 <h2>装机篇</h2>
 <blockquote>
@@ -155,7 +155,7 @@
     <title type="text">让万物穿过自己</title>
     <id>https://zzq8.cn/posts/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</id>
     <link href="https://zzq8.cn/posts/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html"/>
-    <updated>2025-09-13T03:26:36.591Z</updated>
+    <updated>2025-09-13T03:32:33.941Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
@@ -176,7 +176,7 @@
     <title type="text">Prompt</title>
     <id>https://zzq8.cn/code/Z_Prompt.html</id>
     <link href="https://zzq8.cn/code/Z_Prompt.html"/>
-    <updated>2025-09-13T03:26:36.592Z</updated>
+    <updated>2025-09-13T03:32:33.943Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>https://linux.do/t/topic/405818</p>
@@ -265,7 +265,7 @@
     <title type="text">RSA</title>
     <id>https://zzq8.cn/code/408-DSA/RSA.html</id>
     <link href="https://zzq8.cn/code/408-DSA/RSA.html"/>
-    <updated>2025-09-13T03:26:36.619Z</updated>
+    <updated>2025-09-13T03:32:33.969Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>Scenario:</p>
@@ -357,7 +357,7 @@
     <title type="text"></title>
     <id>https://zzq8.cn/code/408-DSA/acwing.html</id>
     <link href="https://zzq8.cn/code/408-DSA/acwing.html"/>
-    <updated>2025-09-13T03:26:36.632Z</updated>
+    <updated>2025-09-13T03:32:33.984Z</updated>
     <summary type="html"><![CDATA[<p>学算法:</p>
 <p>acwing.com</p>
 <p>彬哥账号，我发现有两个订单特别有用：</p>
@@ -380,7 +380,7 @@
     <title type="text">CDN</title>
     <id>https://zzq8.cn/code/408-Network/CDN.html</id>
     <link href="https://zzq8.cn/code/408-Network/CDN.html"/>
-    <updated>2025-09-13T03:26:36.633Z</updated>
+    <updated>2025-09-13T03:32:33.985Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>感觉怪怪的还是没搞好，先就这么用着吧。好像网站貌似变快了？！</p>
@@ -414,7 +414,7 @@
     <title type="text">WebSocket</title>
     <id>https://zzq8.cn/code/408-Network/SSE_WS.html</id>
     <link href="https://zzq8.cn/code/408-Network/SSE_WS.html"/>
-    <updated>2025-09-13T03:26:36.636Z</updated>
+    <updated>2025-09-13T03:32:33.989Z</updated>
     <summary type="html"><![CDATA[
 <h3>优势</h3>
 <p><strong>双向实时通信</strong>，特有的ws协议，可跨域
@@ -478,7 +478,7 @@ https://www.bilibili.com/video/BV19N411474y?t=97.0</p>
     <title type="text">Software</title>
     <id>https://zzq8.cn/code/408-PC/Software.html</id>
     <link href="https://zzq8.cn/code/408-PC/Software.html"/>
-    <updated>2025-09-13T03:26:36.639Z</updated>
+    <updated>2025-09-13T03:32:33.993Z</updated>
     <summary type="html"><![CDATA[
 <h2>Sublime</h2>
 <ul>
