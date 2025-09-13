@@ -1,6 +1,6 @@
 ---
 article: false
-updated: 2025-09-13 10:15:59
+updated: 2025-09-13 11:20:31
 ---
 # LinuxRef
 
@@ -64,7 +64,7 @@ root    123381     1   1 Sep04 ?     03:08:55 python main.py --port 8001
 
 > EOF 你问的 <<EOF 是 **Bash 的 Here Document（简称 Heredoc）语法**，作用是 **把多行文本重定向到命令或文件**。
 
-cat <<EOF > file.txt
+`cat <<EOF > file.txt`
 第一行内容
 第二行内容
 第三行内容
