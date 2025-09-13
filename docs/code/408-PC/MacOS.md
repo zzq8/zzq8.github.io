@@ -1,6 +1,6 @@
 ---
 article: false
-updated: 2025-08-29 20:56:23
+updated: 2025-09-13 10:28:22
 ---
 # MacOS
 
@@ -242,6 +242,19 @@ FInder
   
 * 😭 TODO 软链？
   ln -s 表示软链，    XD：删掉本来目录的 base.yml ，把自己目录做好的 base.yml 软链到本来目录！
+
+使用场景: py 的.env我想存 iCloud,  项目地址的.env就软链过去
+
+1. ln -s [目标文件] [链接名]
+
+   - 第一个参数是 **实际存在的文件**（你要指向的 iCloud 里的 .env）。
+   - 第二个参数是 **你要生成的软链接路径**（GitRepo 里的 .env）。
+
+   ps: 如果 ~/Documents/GitRepo/GridBNB-USDT/.env 已经存在，需要先删除
+
+
+
+
 
 * 对某段文字 Click Double 会自动选取系统认为的词组      Click Three Times 就会 check 这一整行
 

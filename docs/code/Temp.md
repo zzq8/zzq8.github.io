@@ -3,9 +3,10 @@ article:
 category: 
 tag: 
 created: 2025-09-03 23:37:55
-updated: 2025-09-03 23:45:07
+updated: 2025-09-13 11:11:42
 ---
 
+````
 
 
 # 0611
@@ -37,10 +38,10 @@ list = new ArrayList<>(); // 不允许：试图改变 list 的引用
 
 
 # 索引
+
 > 搭配食用更香
 >
 > [https://javaguide.cn/database/mysql/mysql-query-execution-plan.html#possible-keys](https://javaguide.cn/database/mysql/mysql-query-execution-plan.html#possible-keys)
->
 
 ![](https://i-blog.csdnimg.cn/img_convert/7fd144ab7e7c7246d30dace900ce8822.png)
 
@@ -96,8 +97,8 @@ synchronized (this)   一把锁就行了横向
 <font style="color:#DF2A3F;background-color:#FBDE28;">---------  chushi CR</font>
 
 + 用id lock,   sql lock不用id lock会锁表吗
-    - id 不管用什么方法漏出来
-    - 锁问题,  改答案
+  - id 不管用什么方法漏出来
+  - 锁问题,  改答案
 + stopSession  是否可以复用
 
 
@@ -115,8 +116,8 @@ synchronized (this)   一把锁就行了横向
 
 
 + **<font style="color:#DF2A3F;">分布式锁 + 数据库锁    ---  周末</font>**
-    - 唯一区别锁超时时间
-    - 数据库锁也有时间
+  - 唯一区别锁超时时间
+  - 数据库锁也有时间
 
 
 
@@ -176,10 +177,10 @@ onNext 必定会查这个cacheFlag, 如果没有就是null
 
 
 # 记录📝
+
 ****
 
 > h2 数据库  schema.sql   	int / bigint ✔️      int(11) **✖️**
->
 
 ****
 
@@ -189,7 +190,6 @@ onNext 必定会查这个cacheFlag, 如果没有就是null
 
 
 > **调用方法里下面这一行有泛型擦除问题！！！**
->
 
 ```java
 return JSON.parseObject(result, new TypeReference<Result<T>>() {});
@@ -376,23 +376,22 @@ public final class DataKey<T> implements ValueKey<T> {
 
 
 + <font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">是的，枚举类可以使用 == 运算符进行比较。这是因为枚举类型在 Java 中有以下特性：  
-</font><font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">枚举常量是单例的：每个枚举常量在 JVM 中只有一个实例。</font>
+  </font><font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">枚举常量是单例的：每个枚举常量在 JVM 中只有一个实例。</font>
 + <font style="color:rgb(51, 51, 51);">一个select forupdate加一个update语句 这两句需要开事务包裹吗  XD：</font>**<font style="color:rgb(51, 51, 51);">需要</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">  
-</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">SELECT ... FOR UPDATE</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);"> 语句会在数据行上加锁，直到当前事务结束（提交或回滚）。如果你没有将它们包裹在一个事务中，锁将只在执行这个 </font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">SELECT</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);"> 语句的期间有效。可能在 </font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">SELECT</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);"> 完成后，其他线程或事务就已经可以对同一行进行修改，这使得在没有事务的情况下，它的锁定效果大打折扣。</font>
+  </font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">SELECT ... FOR UPDATE</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);"> 语句会在数据行上加锁，直到当前事务结束（提交或回滚）。如果你没有将它们包裹在一个事务中，锁将只在执行这个 </font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">SELECT</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);"> 语句的期间有效。可能在 </font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">SELECT</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);"> 完成后，其他线程或事务就已经可以对同一行进行修改，这使得在没有事务的情况下，它的锁定效果大打折扣。</font>
 + **初石：web层的入参 与 biz层 和领域层 还有vo 可能是一致的 但是也有可能随着迭代会有变化          最标准的写法就是 一层写一个**  
-这个可以看防腐层B站那个视频那个图  
-B站视频 [https://www.bilibili.com/video/BV1kw411h7tY/?spm_id_from=333.1387.favlist.content.click](https://www.bilibili.com/video/BV1kw411h7tY/?spm_id_from=333.1387.favlist.content.click)  
-<font style="color:rgb(0, 0, 0);">ddd很复杂的 我们现在的项目只是用了一点领域的思想</font>
+  这个可以看防腐层B站那个视频那个图  
+  B站视频 [https://www.bilibili.com/video/BV1kw411h7tY/?spm_id_from=333.1387.favlist.content.click](https://www.bilibili.com/video/BV1kw411h7tY/?spm_id_from=333.1387.favlist.content.click)  
+  <font style="color:rgb(0, 0, 0);">ddd很复杂的 我们现在的项目只是用了一点领域的思想</font>
 + 师兄写代码扩展性好
-    - <font style="color:rgb(0, 0, 0);">扩展性 - chat需要兼容下游响应, 例如 List 接 get(0)</font>
-    - <font style="color:rgb(0, 0, 0);">扩展性 - 写接口不要局限死, 例如修改扩展属性不要单一个入参key可以设计成Map多个入参</font>
+  - <font style="color:rgb(0, 0, 0);">扩展性 - chat需要兼容下游响应, 例如 List 接 get(0)</font>
+  - <font style="color:rgb(0, 0, 0);">扩展性 - 写接口不要局限死, 例如修改扩展属性不要单一个入参key可以设计成Map多个入参</font>
 
 <font style="color:rgb(0, 0, 0);"></font>
 
 <font style="color:rgb(0, 0, 0);"></font>
 
 > <font style="color:rgb(0, 0, 0);">间隙锁</font>
->
 
 <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">间隙锁（Gap Lock）是MySQL InnoDB存储引擎的一种锁机制</font>
 
@@ -419,7 +418,6 @@ INSERT INTO table (id) VALUES (6);
 <font style="color:rgb(0, 0, 0);"></font>
 
 > <font style="color:rgb(0, 0, 0);">灰度-监控-应急</font>
->
 
 <font style="color:rgb(0, 0, 0);">灰度：测试账号先去线上测 / 开一个商户或者用户  少量的</font>
 
@@ -439,7 +437,6 @@ INSERT INTO table (id) VALUES (6);
 <font style="color:rgb(51, 51, 51);"></font>
 
 > java 10 var 特性
->
 
 <font style="color:rgb(51, 51, 51);">java中以下写法： --- 		var req = new KnowledgeBaseCreateReq(); ---</font>
 
@@ -450,7 +447,6 @@ INSERT INTO table (id) VALUES (6);
 <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"></font>
 
 > spring 配置文件优先级
->
 
 <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">在 </font>`<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">--spring.profiles.active=test</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> 的情况下，加载顺序和生效情况如下：</font>
 
@@ -463,7 +459,6 @@ INSERT INTO table (id) VALUES (6);
 <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"></font>
 
 > for 和 forEach return效果不一样
->
 
 <font style="color:#DF2A3F;background-color:rgb(249, 250, 255);">在 Java 的 </font>`<font style="color:#DF2A3F;background-color:rgb(249, 250, 255);">forEach</font>`<font style="color:#DF2A3F;background-color:rgb(249, 250, 255);"> 循环中，如果在 Lambda 表达式内使用 </font>`<font style="color:#DF2A3F;background-color:rgb(249, 250, 255);">return</font>`<font style="color:#DF2A3F;background-color:rgb(249, 250, 255);"> 语句，它只会终止当前的迭代，而不会影响后续的迭代。换句话说，</font>`<font style="color:#DF2A3F;background-color:rgb(249, 250, 255);">return</font>`<font style="color:#DF2A3F;background-color:rgb(249, 250, 255);"> 只退出当前的 Lambda 表达式，不会中断整个 </font>`<font style="color:#DF2A3F;background-color:rgb(249, 250, 255);">forEach</font>`<font style="color:#DF2A3F;background-color:rgb(249, 250, 255);"> 循环。</font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"></font>
 
@@ -495,6 +490,7 @@ public class ForEachExample {
 
 
 # Git revert merge [XD]
+
 git revert 一次merge 不要远程分支commit记录, 它的parent 1是main分支, parent 2是远程分支
 我不想要远程分支的提交, 只想保留本地分支记录
 
@@ -504,13 +500,17 @@ note: 谨慎revert merge 会留记录, 别人的合不上来
 不要revert别人的, 容易出事     示例我干掉别人的留了记录合到master, 别人合不进来了就因为我的那个revert记录是最新的
 
 # -m 参数指定要保留的 parent 编号
+
 -m 是 mainline 的缩写。
 在 merge commit 中，mainline 表示要保留的主线路径。因为 merge commit 有两个父提交（parent commits），Git 需要知道应该以哪个 parent 作为主线来进行 revert。
+
 # Bean 注入, 多种
+
 ## 注入Bean三种方式
+
 ### 第一种：com.alipay.ibotservice.service.biz.adapter.ABTestAdapter
+
 > 适配器模式：  ABTestAdapter 实现了适配器模式，充当 A/B 测试规则与目标处理器的中介。适配器模式使得不同规则处理器可以使用统一接口，提供了更好的灵活性和可扩展性。
->
 
 // TODO: 2024/11/5 也有叫  工厂单词的，这里叫适配器单词
 
@@ -519,6 +519,7 @@ note: 谨慎revert merge 会留记录, 别人的合不上来
 关键就是 @PostConstruct 注解
 
 ### 适配器
+
 map
 
 ```java
@@ -569,12 +570,10 @@ public class ABTestFlowProportionRuleProcessor implements IABTestRuleProcessor {
 >
 > + **<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">使用</font>****<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);"> </font>**`**<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">@Autowired</font>**`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">：代码会更简洁，通常更容易理解，因为 Spring 会自动处理依赖。</font>
 > + **<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">使用 </font>**`**<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">ApplicationContextAware</font>**`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">：在某些高级场景中，这可能会更灵活，特别是在需要直接控制 </font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">ApplicationContext</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">、使用工厂方法或处理不同環境的 Bean 的情况下。</font>
->
 
 <font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">ApplicationContextAware</font>
 
 > <font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">实现 </font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">ApplicationContextAware</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);"> 的一个好处是能够直接在您的类中设置 </font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">ApplicationContext</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">，从而在整个 Bean 的生命周期内使用它。此外，通过实现这个接口，您不再需要通过依赖注入 (</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">@Autowired</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">) 来获取 </font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">ApplicationContext</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">。</font>
->
 
 ```java
 @Component
@@ -607,7 +606,6 @@ public class ABTestAdapter implements ApplicationContextAware {
 **<font style="color:rgb(51, 51, 51);background-color:rgb(249, 250, 255);">@Autowired</font>**
 
 > 不需要实现接口&重写方法了, 适用简单场景      上面那个是想用复杂场景 要更灵活 !!!
->
 
 ```java
 @Autowired
@@ -630,6 +628,7 @@ public class SharedTaskExecutor implements Executer {
      * jobprocessor map
      */
     private Map<String, SharedTaskProcessor> sharedProcessorMap = Maps.newHashMap();
+
 }
 
     <bean id="sharedTaskExecutor" class="com.alipay.ilmprod.service.scheduler.executor.SharedTaskExecutor">
@@ -650,14 +649,16 @@ public class SharedTaskExecutor implements Executer {
 
 
 # Date 1213
+
 md 的序号
+
 1. 使用句点作为分隔符（如 1.1.）：这是一种常见的学术或专业文档中的标题编号格式，清晰明确，可以很好地表达层次关系。
 
 spring 官网就是这种
 
 
 1. 不使用句点（如 1.1）：这种方式在一些文档中也被广泛使用，特别是在简单的 Markdown 文档或用于 GitHub 等地方，不带句点看起来稍微简洁一些。
-系分语雀就是
+   系分语雀就是
 
 
 
@@ -672,8 +673,9 @@ ilmservice：
 要深入细致捋代码，不要蒙头debug。   要找错误原因！！！像今天走Error错误   都不知道错误的触发点在哪     那个点为什么会走到 error！！！
 
 # Date 1101
+
 1. 网页视频倍速小技巧    补充第一点
-document.querySelector('video')   
+   document.querySelector('video')   
 
 * selector：一个字符串，表示要匹配的 CSS 选择器。这个字符串可以是简单的选择器（如类、ID、标签）或复杂的选择器（如组合选择器、伪类等）
 * document.querySelector("#myId");    document.querySelector(".myClass");   "div.myClass > p"  "ul li:first-child"
@@ -685,7 +687,9 @@ Chrome cmd+opt+left / cmd+shift+] 可以左右切换标签【好使！！！】
 
 
 # 工具类
+
 do2domain 工具类生成方法：
+
 ```
 package com.alipay.ilmprod.service.converter;
 
@@ -762,12 +766,14 @@ public class ConvertorBuilder {
 ```
 
 # Date 1030 事务思考 
+
 > 后再补充：看代码全是用本地事务Template代码模板，【事务在注入Bean的角度思考，是不是分布式/本地就以数据库角度去看！！！有无跨库    例如两套系统用的同一个数据源transactionTemplateForSharding.execute  那就是没跨库？？】
+
 ## 本地事务 vs 分布式事务思考
+
 > `<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">TransactionTemplate</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> 是 Spring 框架中的一部分，用于简化事务管理。它主要用于处理本地事务，而不是分布式事务。</font>
 >
 > **<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">分布式事务的处理</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">：如果您的应用需要处理分布式事务（即跨多个数据源或系统的事务）</font>
->
 
 <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"></font>
 
@@ -868,8 +874,8 @@ transactionTemplateForSharding.executeWithoutResult(status -> {});
 
 
 ### 思考
+
 > <font style="color:rgb(51, 51, 51);">直接用事务模板TransactionTemplate与使用@Trasaction注解，两者作用一样吗</font>
->
 
 `**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">TransactionTemplate</font>**`**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">: ALMP用的都是这种</font>**
 
@@ -900,44 +906,49 @@ return transactionTemplate.execute()
 
 
 + **<font style="background-color:rgb(247, 249, 253);">基本作用</font>**<font style="background-color:rgb(247, 249, 253);">:</font>
-    - <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">两者都可以实现事务的提交和回滚，确保在数据库操作时的一致性。</font>
+  - <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">两者都可以实现事务的提交和回滚，确保在数据库操作时的一致性。</font>
 + **<font style="background-color:rgb(247, 249, 253);">特性</font>**<font style="background-color:rgb(247, 249, 253);">:</font>
-    - `<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">@Transactional</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> </font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">更加方便，适合简单的业务流程，能够自动处理异常的回滚。</font>
-    - `<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">TransactionTemplate</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> 提供了更高的灵活性，可以用于复杂的事务控制、显式的事务管理和嵌套事务等。</font>
+  - `<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">@Transactional</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> </font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">更加方便，适合简单的业务流程，能够自动处理异常的回滚。</font>
+  - `<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">TransactionTemplate</font>`<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> 提供了更高的灵活性，可以用于复杂的事务控制、显式的事务管理和嵌套事务等。</font>
 
 ## 什么时候用分布式事务
+
 > 时刻谨记这个case，拿GuliMall想一下！  两套库
->
 
 <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">分布式事务通常用于需要</font>**<font style="color:#DF2A3F;background-color:rgb(247, 249, 253);">跨多个数据库</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">或微服务进行一致性操作的场景。以下是一个简单的示例来说明何时该使用分布式事务。</font>
 
 ### <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">示例场景：在线购物系统</font>
+
 <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">假设我们有一个在线购物平台，涉及以下两个服务：</font>
 
 1. **<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">订单服务</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">：负责创建和管理订单。</font>
 2. **<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">库存服务</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">：负责管理商品库存。</font>
 
 #### <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">业务流程</font>
+
 <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">用户下单时，系统需要执行以下步骤：</font>
 
 1. <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">在</font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> </font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">订单服务</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> </font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">中创建一个新订单。</font>
 2. <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">在</font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> </font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">库存服务</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> </font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">中减少对应商品的库存。</font>
 
 #### <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">问题场景</font>
+
 <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">考虑以下可能发生的情况：</font>
 
 1. **<font style="background-color:rgb(247, 249, 253);">成功创建订单但库存不足</font>**<font style="background-color:rgb(247, 249, 253);">：</font>
-    - <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">用户在下单时，订单成功创建，但是在调用库存服务时发现库存不足。此时，订单已经创建，但商品库存却未更新，导致数据不一致。</font>
+   - <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">用户在下单时，订单成功创建，但是在调用库存服务时发现库存不足。此时，订单已经创建，但商品库存却未更新，导致数据不一致。</font>
 2. **<font style="background-color:rgb(247, 249, 253);">库存更新成功但订单创建失败</font>**<font style="background-color:rgb(247, 249, 253);">：</font>
-    - <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">首先，库存服务成功减少了商品库存，但在订单服务中创建订单时发生了失败。此时，库存已被减少，但订单却未创建，同样造成数据不一致。</font>
+   - <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">首先，库存服务成功减少了商品库存，但在订单服务中创建订单时发生了失败。此时，库存已被减少，但订单却未创建，同样造成数据不一致。</font>
 
 #### <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">分布式事务的必要性</font>
+
 <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">在上述场景中，为了确保数据的一致性：</font>
 
 + **<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">需要使用分布式事务</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> </font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">来确保这两项操作要么同时成功，要么同时失败。</font>
 + <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">例如，可以采用</font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> </font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">两阶段提交（2PC）</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> </font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">协议，或者使用</font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> </font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">Saga 模式</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);"> </font><font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">进行事务管理。</font>
 
 ### <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">选择分布式事务的总结</font>
+
 + <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">当你的业务逻辑需要跨越多个数据库、微服务或外部系统，且这些操作之间存在强一致性要求时，应考虑使用分布式事务。</font>
 + <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">分布式事务可以有效地解决因网络延迟、服务故障等引起的数据不一致问题。</font>
 
@@ -945,14 +956,17 @@ return transactionTemplate.execute()
 
 
 # Date 1030
+
 在使用 Log4j 时，`org.apache.log4j.MDC` 是 "Mapped Diagnostic Context" 的缩写。它的作用是帮助你将相关数据（如诊断信息）与日志事件关联，尤其在多线程环境中，这样的上下文信息可以方便地在日志中打印。
 
 ### 主要作用
+
 1. **上下文信息**：MDC 允许你将一些上下文信息（如用户 ID、请求标识符、会话 ID 等）存储在日志消息中。这使得在查看日志时可以更轻松地关联和追踪特定的操作或事务。
 2. **多线程支持**：在多线程应用中，标准的静态变量可能会被多个线程共享，导致数据不一致。MDC 使用线程本地存储（Thread Local Storage），确保每个线程中的 MDC 数据是隔离的，因此你可以为每个线程设置不同的上下文信息，而不会相互影响。
 3. **增强可读性**：通过在日志条目中包含这些上下文信息，可以提高日志的可读性，便于排查问题。例如，包含 `traceId` 可以让开发者更容易地找到与特定请求相关的所有日志，尤其在分布式系统中。
 
 ### 具体代码示例
+
 ```java
 import org.apache.log4j.MDC;
 
@@ -973,6 +987,7 @@ MDC.remove("traceId");
 + `MDC.remove("traceId");` 用于在处理完成后清除 MDC 中的 `traceId`，以避免线程中的信息泄露。
 
 ### 日志输出
+
 如果你的日志配置文件（如 `log4j.properties` 或 `log4j.xml`）已经设置了输出格式，可能会看到类似的日志条目：
 
 ```plain
@@ -982,12 +997,15 @@ INFO [Thread-1] [traceId=abc123] Processing request...
 这样，你就可以很容易地查看该请求的处理线程和相关的 `traceId`。
 
 ### 总结
+
 使用 MDC 可以提高日志的组织和可追溯性，尤其在处理复杂的多线程或分布式应用程序时，能够有效地推动问题的诊断和跟踪。如果你需要进一步了解具体实现或有其他问题，请告诉我！
 
 
 
 # Date
+
 linux命令：师兄：grep 'traceId' * -r -n  
+
 * *: 表示当前目录下的所有文件。如果您在目录中运行该命令，它会搜索所有普通文件。
 * -n: 这个选项用于在输出中显示匹配行的行号。这对定位确切的位置非常有帮助。
 * -F 选项是 grep 命令的一个参数，用来告诉 grep 将要搜索的模式视为“固定字符串”。具体来说，使用 -F 选项时，grep 将不对搜索字符串进行正则表达式解析，而是按照字面意思直接匹配。
@@ -1012,9 +1030,11 @@ grep 0602197917302739263311898811136 * -nrC20
 
 
 ***
+
 # 0907 before
 
 macTips
+
 * idea 一个opt键拖动光标就是处理多行
 
 ```
@@ -1092,8 +1112,8 @@ FOR UPDATE 只能在事务（transaction）内使用。在 SQL 数据库中，FO
 
 
 ## java
+
 > StringBuilder 清空API
->
 
 ```java
 StringBuilder sb = new StringBuilder("Hello, World!");
@@ -1104,19 +1124,18 @@ System.out.println(sb);  // 这会打印一个空字符串
 
 
 > for update
->
 
 `<font style="color:#DF2A3F;background-color:rgb(247, 249, 253);">FOR UPDATE</font>`<font style="color:#DF2A3F;background-color:rgb(247, 249, 253);"> 只能在事务（transaction）内使用。在 SQL 数据库中，</font>`<font style="color:#DF2A3F;background-color:rgb(247, 249, 253);">FOR UPDATE</font>`<font style="color:#DF2A3F;background-color:rgb(247, 249, 253);"> 子句通常用于锁定所选的行，以便在事务完成之前其他事务无法对此行进行修改。它确保了当前事务对数据的修改是安全的、不受其他事务并发修改的影响。</font>
 
 
 
 ## 项目
+
 > 在类A引用类B的内部类，post方法参数报错
 >
 > `@PostMapping("/chat")
 >
->  public Object chat(@RequestBody ChatRequest request)` 
->
+> public Object chat(@RequestBody ChatRequest request)` 
 
 <font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">在Spring中处理JSON反序列化时，如果你的内部类不是静态的（非静态内部类），它会隐含地携带一个对外部类实例的引用。这可能会导致Jackson在反序列化时出现问题，因为它无法构造这个外部类的实例并且无法正确设置这个隐含的外部类引用。</font>
 
@@ -1127,14 +1146,12 @@ System.out.println(sb);  // 这会打印一个空字符串
 
 
 > chat 接口
->
 
 Subscriber【观察者模式】（onNext、onError、onComplete  -> call SseEmitter.class SendMethod）
 
 
 
 > **<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">观察者模式 vs 订阅模式</font>**
->
 
 + **<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">观察者模式</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">: 通常是直接的关系，观察者直接注册到主题上。主题知道所有的观察者，并且在状态变化时逐个通知。观察者需要知道主题，并</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">直接与其交互</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">。</font>
 + **<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">订阅模式</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">: 通常通过更为复杂的中介（例如消息队列或事件总线）实现。发布者与订阅者之间不直接知道对方，</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">而是通过中介进行通信</font>**<font style="color:rgb(51, 51, 51);background-color:rgb(247, 249, 253);">。这样，发布者不需要知道谁在订阅其消息。</font>
@@ -1142,6 +1159,7 @@ Subscriber【观察者模式】（onNext、onError、onComplete  -> call SseEmit
 
 
 ## 个人
+
 + <font style="color:rgb(0, 0, 0);">借着这个代码的机会说下，所有人写的代码，不管是在哪里，都要遵循规范，别被别人贴上"xxx写的代码贼丑/贼垃圾/不太行"的这些标签。@所有人   
   </font><font style="color:rgb(0, 0, 0);">xd 应该是有人看了我们的脚本说的</font>
     - <font style="color:rgb(0, 0, 0);">不用说 gptsh 我们的代码被人叼了</font>
@@ -1164,3 +1182,5 @@ StudyTips
 ● 持续学习
 开心boss第一次开会说到，自己实力可以躺  搞大模型经常加班很晚  为什么？
 因为爽，希望自己也能找到这个爽点
+````
+

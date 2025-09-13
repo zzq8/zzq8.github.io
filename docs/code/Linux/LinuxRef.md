@@ -1,8 +1,66 @@
 ---
 article: false
-updated: 2025-09-04 23:59:25
+updated: 2025-09-13 10:15:59
 ---
 # LinuxRef
+
+> ubuntu 的进程
+>
+> Q: 我启动了一个python脚本python main.py 为什么会有上述4个进程
+
+```
+你看到的 4 个进程虽然都和 python 有关，但它们来源不一样，不是都因为你启动了 python main.py 才存在的。逐个解释一下：
+
+root         581       1  0 Aug31 ?        00:00:33 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+
+👉 这是 系统服务，networkd-dispatcher 是 Ubuntu/Debian 系统里用来响应网络状态变化的守护进程，跟你运行的脚本无关。
+
+root         663       1  0 Aug31 ?        00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+
+👉 这是 自动更新相关的服务，unattended-upgrades 用来在关机时执行待处理的安全更新，也和你的脚本无关。
+
+root      123381       1  1 Sep04 ?        03:08:55 python main.py --port 8001
+
+👉 这个才是你手动启动的脚本进程。它的 父进程 PID=1，说明可能是你用 nohup、systemd、docker 等方式后台运行的，脱离了原本的 shell。
+
+root     1034192 1033590  0 02:07 pts/3    00:00:00 grep --color=auto python
+
+👉 这个是你刚刚执行的 ps aux | grep python 命令本身产生的临时进程。
+
+⸻
+
+🔑 总结：
+	•	前两个是 系统自带的 python 服务。
+	•	第三个是你运行的 main.py。
+	•	第四个是你自己查进程时产生的 grep。
+
+所以，你启动的 python main.py 并不会额外产生 4 个进程，只是你系统里本来就有另外两个 python 服务在运行。
+
+要确认哪些进程是你运行的，可以这样过滤：
+
+ps -ef | grep "python main.py"
+
+要我帮你看一下你的 python main.py 是否会再 fork 子进程吗？
+```
+
+123381    1 1 分别代表什么
+
+```
+UID        PID   PPID  C STIME TTY          TIME CMD
+root    123381     1   1 Sep04 ?     03:08:55 python main.py --port 8001
+```
+
+* Process ID
+* Parent Process ID
+  * 这里是 1，说明它的父进程是 systemd 或 init
+  * 这通常出现在你用 nohup、systemctl、docker 或者退出 shell 后后台进程被托管的情况
+* percent of CPU utilization (近似值)
+  * 表示该进程最近占用 CPU 的比例，范围一般是 0 ~ 99
+  * 这里显示 1，说明它大概占用了 1% 左右的 CPU
+
+
+
+
 
 > EOF 你问的 <<EOF 是 **Bash 的 Here Document（简称 Heredoc）语法**，作用是 **把多行文本重定向到命令或文件**。
 
@@ -106,10 +164,10 @@ set -e
 
 SWAPFILE="/swapfile"
 SWAPSIZE="2G"          # 磁盘 swap 大小
-ZRAM_PERCENT="100"      # zram 占用内存百分比
+ZRAM_PERCENT="50"      # zram 占用内存百分比
 ZRAM_ALGO="zstd"       # 压缩算法
 
-echo "[1/4] 检测系统类型..."
+echo "[1/5] 检测系统类型..."
 if [ -f /etc/debian_version ]; then
     DISTRO="debian"
 elif [ -f /etc/redhat-release ]; then
@@ -121,36 +179,53 @@ fi
 echo "✅ 检测到发行版: $DISTRO"
 
 # ------------------------------
-# 安装 zram 工具
+# 检查 zram 模块是否可用
 # ------------------------------
-echo "[2/4] 安装 zram 工具..."
-if [ "$DISTRO" = "debian" ]; then
-    sudo apt update
-    sudo apt install -y zram-tools
-    # 配置 zram
-    sudo tee /etc/default/zramswap >/dev/null <<EOF
+echo "[2/5] 检查 zram 支持..."
+if modprobe -n zram >/dev/null 2>&1; then
+    ZRAM_SUPPORTED=true
+    echo "✅ 内核支持 zram"
+else
+    ZRAM_SUPPORTED=false
+    echo "⚠️ 内核不支持 zram，将只启用 swapfile"
+fi
+
+# ------------------------------
+# 安装 zram 工具并启用 zram
+# ------------------------------
+if [ "$ZRAM_SUPPORTED" = true ]; then
+    echo "[3/5] 安装 zram 工具..."
+    if [ "$DISTRO" = "debian" ]; then
+        sudo apt update
+        sudo apt install -y zram-tools
+        sudo tee /etc/default/zramswap >/dev/null <<EOF
 ALGO=$ZRAM_ALGO
 PERCENT=$ZRAM_PERCENT
+ZRAM_NUM_DEVICES=1
 EOF
-    sudo systemctl restart zramswap
-
-elif [ "$DISTRO" = "rhel" ]; then
-    sudo yum install -y epel-release
-    sudo yum install -y zram-generator-defaults
-    sudo tee /etc/systemd/zram-generator.conf >/dev/null <<EOF
+        sudo systemctl daemon-reload
+        sudo systemctl restart zramswap || {
+            echo "❌ zramswap 启动失败，请查看日志：journalctl -xeu zramswap.service"
+            ZRAM_SUPPORTED=false
+        }
+    elif [ "$DISTRO" = "rhel" ]; then
+        sudo yum install -y epel-release
+        sudo yum install -y zram-generator-defaults
+        sudo tee /etc/systemd/zram-generator.conf >/dev/null <<EOF
 [zram0]
 zram-size = ram / 2
 compression-algorithm = $ZRAM_ALGO
 EOF
-    sudo systemctl daemon-reexec
-    sudo systemctl start /dev/zram0
-    sudo swapon --priority 100 /dev/zram0
+        sudo systemctl daemon-reexec
+        sudo systemctl start /dev/zram0
+        sudo swapon --priority 100 /dev/zram0
+    fi
 fi
 
 # ------------------------------
 # 创建磁盘 swapfile
 # ------------------------------
-echo "[3/4] 创建 swapfile..."
+echo "[4/5] 创建 swapfile..."
 if [ ! -f "$SWAPFILE" ]; then
     sudo fallocate -l $SWAPSIZE $SWAPFILE
     sudo chmod 600 $SWAPFILE
@@ -166,10 +241,15 @@ fi
 # ------------------------------
 # 验证
 # ------------------------------
-echo "[4/4] 验证配置..."
+echo "[5/5] 验证配置..."
 swapon --show
 free -h
-echo "✅ zram + swapfile 已启用完成"
+
+if [ "$ZRAM_SUPPORTED" = true ]; then
+    echo "✅ zram + swapfile 已启用完成"
+else
+    echo "✅ swapfile 已启用，zram 不可用"
+fi
 ```
 
 

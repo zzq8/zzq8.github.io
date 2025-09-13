@@ -1,6 +1,6 @@
 ---
 article: false
-updated: 2025-09-10 23:10:52
+updated: 2025-09-13 11:09:12
 ---
 # LinuxEnvDep
 
@@ -37,7 +37,7 @@ nginx: [emerg] host not found in upstream "host.docker.internal" in /etc/nginx/c
 
 
 
-> 为什么要用172.17.0.1指向宿主机
+> ==为什么要用172.17.0.1指向宿主机==           这是重点内容, 不然 nginx config 就会写错 (不能用 127.0.0.1 要用 172.17.0.1)
 >
 > 1️⃣ 背景：Docker 网络隔离
 
@@ -61,6 +61,10 @@ nginx: [emerg] host not found in upstream "host.docker.internal" in /etc/nginx/c
 ```
 
 172.17.0.1 不是保留 IP，只是 Docker 默认桥接网关 IP
+
+
+
+启动 docker 容器的时候映射端口,  然后就可以用  172.17.0.2(**宿主机 IP**):5244  访问了
 
 
 
