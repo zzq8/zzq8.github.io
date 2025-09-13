@@ -1,6 +1,6 @@
 ---
 article: false
-updated: 2025-09-13 11:20:31
+updated: 2025-09-13 16:12:17
 ---
 # LinuxRef
 
@@ -135,7 +135,9 @@ VPS
 
 
 
-`bash <(wget -qO- -o- https://github.com/233boy/sing-box/raw/main/install.sh)`
+
+
+> `bash <(wget -qO- -o- https://github.com/233boy/sing-box/raw/main/install.sh)`
 
 可以得到一个 vless
 
@@ -401,6 +403,8 @@ Vim 常用
 
 
 ### 权限
+
+https://www.runoob.com/linux/linux-comm-chmod.html
 
 [Linux 文件基本属性](https://www.runoob.com/linux/linux-file-attr-permission.html)：看完就知道文件属性了，重点看里面的两幅图！
 

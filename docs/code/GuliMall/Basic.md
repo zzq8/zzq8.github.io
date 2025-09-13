@@ -1,5 +1,6 @@
 ---
 article: false
+updated: 2025-09-13 17:17:33
 ---
 # Basic
 
@@ -279,7 +280,7 @@ ES6 & Vue 快速入门
 >        age: 21,
 >        language: ['java', 'js', 'css']
 >    }
->                                                                               
+>                                                                                  
 >    // var hello1 = (param) => console.log("hello," + param.name);
 >    // hello1(person);
 >    var hello2 = ({name}) => console.log("hello," + name);
@@ -1453,6 +1454,12 @@ spring:
 
 
 #### Issue
+
+> java中的强制类型转换只是针对单个object的，想要偷懒将整个数组转换成另外一种类型的数组是不行的，这和数组初始化时需要一个个来也是类似的。
+>
+> https://www.cnblogs.com/yangsanluo/p/14890111.html
+>
+> `(String[]) list.toArray();` // 会报错
 
 假设x是一个已知仅包含字符串的列表（List）。以下代码可用于将列表转储到新分配的String数组中：
 

@@ -1,5 +1,6 @@
 ---
 article: false
+updated: 2025-09-13 17:47:19
 ---
 # MySQL实战45讲
 
@@ -473,7 +474,7 @@ mysql> create table T(c int) engine=InnoDB;
 insert into T(c) values(1);
 ```
 
-![](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212081721046.png)
+<img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202212081721046.png" style="zoom: 33%;" />
 
 
 我们来看看在不同的隔离级别下，事务 A 会有哪些不同的返回结果，也就是图里面 V1、V2、V3 的返回值分别是什么。
@@ -542,6 +543,8 @@ mysql> show variables like 'transaction_isolation';
 > 悲观锁SQL落地：具体来说，`SELECT ... FOR UPDATE` 语句会对查询到的行加上排它锁（Exclusive Lock），这意味着其他事务不能同时对这些行进行修改。在多个事务同时查询同一组数据时，如果其中一个事务使用了 `FOR UPDATE`，则其他事务必须等待该事务释放锁之后才能进行修改操作。
 >
 > > 行级锁都是基于索引的，如果一条 SQL 语句用不到索引是不会使用行级锁的，而会使用表级锁把整张表锁住，这点需要咱们格外的注意
+> >
+> > > 在默认的隔离级别 RR 中以下成立,  好文推荐: https://juejin.cn/post/7189058800286957624#heading-22 直接看总结部分
 > >
 > > - 当 `SELECT... FOR UPDATE` 查询条件明确指定主键时，为**行锁**。
 > > - 当 `SELECT... FOR UPDATE` 查询条件明确指定索引时，为**行锁**，所有满足此条件的行都会被加锁。
