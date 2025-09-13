@@ -1,6 +1,6 @@
 ---
 article: false
-updated: 2025-09-13 11:09:12
+updated: 2025-09-13 11:24:47
 ---
 # LinuxEnvDep
 
@@ -275,7 +275,7 @@ curl http://localhost
 
 * 使用 Docker 自带的 Compose 插件
   * docker compose up -d
-* cat <<EOF > file.txt
+* `cat <<EOF > file.txt`
   第一行内容
   第二行内容
   第三行内容
