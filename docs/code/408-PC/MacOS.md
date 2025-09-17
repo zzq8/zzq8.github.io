@@ -1,6 +1,6 @@
 ---
 article: false
-updated: 2025-09-13 10:28:22
+updated: 2025-09-18 00:06:42
 ---
 # MacOS
 
@@ -107,34 +107,57 @@ Keybinddings
 ```
 [
 	//XXX 这里 MACOS super 代表 Command
-	{ "keys": ["super+up"], "command": "select_lines", "args": {"forward": false} },
-	{ "keys": ["super+down"], "command": "select_lines", "args": {"forward": true} },
-	{ "keys": ["super+alt+down"], "command": "duplicate_line" },
-	{ "keys": ["super+e"], "command": "find_under_expand" },
-	{ "keys": ["supre+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
-	{ "keys": ["super+shift+l"], "command": "toggle_side_bar" },
-	{ "keys": ["alt+up"], "command": "swap_line_up" },
-	{ "keys": ["alt+down"], "command": "swap_line_down" },
-	{ "keys": ["super+1"], "command": "next_bookmark" },
-	{ "keys": ["super+2"], "command": "prev_bookmark" },
-	{ "keys": ["super+shift+f11"], "command": "toggle_bookmark" },
+	// { "keys": ["super+up"], "command": "select_lines", "args": {"forward": false} },
+	// { "keys": ["super+down"], "command": "select_lines", "args": {"forward": true} },
+	// { "keys": ["super+alt+down"], "command": "duplicate_line" },
+	// { "keys": ["super+e"], "command": "find_under_expand" },
+	// { "keys": ["supre+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	// { "keys": ["super+shift+l"], "command": "toggle_side_bar" },
+	// { "keys": ["alt+up"], "command": "swap_line_up" },
+	// { "keys": ["alt+down"], "command": "swap_line_down" },
+	// { "keys": ["super+1"], "command": "next_bookmark" },
+	// { "keys": ["super+2"], "command": "prev_bookmark" },
+	// { "keys": ["super+shift+f11"], "command": "toggle_bookmark" },
 	{ "keys": ["shift+f11"], "command": "clear_bookmarks" },
-	{ "keys": ["super+-"], "command": "fold" },
-	{ "keys": ["super+="], "command": "unfold" },
-	{ "keys": ["super+["], "command": "move_to", "args": {"to": "brackets"} },
-	{ "keys": ["super+]"], "command": "move_to", "args": {"to": "brackets"} },
-	{ "keys": ["super+alt+l"], "command": "reindent" },
+
 	//TODO Git下载。 这个快捷键虽然左边搜不到，但是确实有用！！！其它上方工具栏应该同理！
 	{ "keys": ["super+shift+w"], "command": "close_other_tabs" },
 	{ "keys": ["super+alt+shift+w"], "command": "close_other_windows" },
 	//End
 
-	{ "keys": ["super+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
 
-	// Mac new, 保持同idea一致
+	// 20250917 --> Mac new, 保持同idea一致
 	{ "keys": ["ctrl+option+shift+down"], "command": "next_modification" },
 	{ "keys": ["ctrl+option+shift+up"], "command": "prev_modification" },
 	{ "keys": ["super+d"], "command": "duplicate_line" },
+	{ "keys": ["ctrl+g"], "command": "find_under_expand" },
+	{ "keys": ["super+1"], "command": "toggle_side_bar" },
+	{ "keys": ["super+shift+up"], "command": "swap_line_up" },
+	{ "keys": ["super+shift++down"], "command": "swap_line_down" },
+	{ "keys": ["ctrl+1"], "command": "next_bookmark" },
+	{ "keys": ["ctrl+2"], "command": "prev_bookmark" },
+	{ "keys": ["f3"], "command": "toggle_bookmark" },
+	{ "keys": ["super+-"], "command": "fold" },
+	{ "keys": ["super+="], "command": "unfold" },
+	{ "keys": ["super+option+["], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["super+option+]"], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["super+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+    { "keys": ["super+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} }, // 删除行
+	{ "keys": ["super+alt+l"], "command": "reindent" },
+	// Shift+Enter -> 新起一行（无论光标在行尾还是中间）
+	{ "keys": ["shift+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"}, "context":
+		[
+			{ "key": "overlay_has_focus", "operator": "equal", "operand": false },
+		]
+	},
+	// Cmd+[ -> 跳转回上一个位置 (IDEA: Back)
+	{ "keys": ["super+["], "command": "jump_back" },
+	// Cmd+] -> 跳转到下一个位置 (IDEA: Forward)
+	{ "keys": ["super+]"], "command": "jump_forward" }
+
+
+	// TODO 想到什么 idea 验证一下, 问 GPT 
+
 ]
 ```
 

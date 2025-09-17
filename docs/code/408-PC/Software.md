@@ -1,8 +1,12 @@
 ---
-updated: 2025-08-23 15:28:15
+updated: 2025-09-13 21:25:24
 ---
 
 # Software
+
+## idea
+
+idea插件 generateAllSetter  巨好用！！！
 
 ## Sublime
 
