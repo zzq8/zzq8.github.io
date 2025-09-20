@@ -1,8 +1,72 @@
 ---
 article: false
-updated: 2025-09-13 16:12:17
+updated: 2025-09-20 17:11:51
 ---
 # LinuxRef
+
+### linux
+
+> su (Switch User)   sudo (SuperUser DO)
+
+```
+# su:
+- 需要知道目标用户的密码,    root 是系统最高权限用户，可以无密码切换到任何用户
+- 完全切换到新用户
+- 适合长期使用另一个用户身份
+
+# sudo:
+- 需要知道当前用户的密码
+- 临时以其他用户身份执行命令
+- 需要在 sudoers 中配置权限
+- 可以详细控制允许执行的命令
+```
+
+
+```
+sudoers 是 sudo 权限的配置文件，让我详细解释：
+
+# /etc/sudoers 或 /etc/sudoers.d/* 文件中
+who     where=(as_whom)     what_commands
+
+# 例如
+admin   ALL=(browser_use_001)   NOPASSWD:ALL
+# 谁    在哪=(以谁的身份)      执行什么命令
+
+
+# 允许 admin 以 browser_use_001 身份执行所有命令，无需密码
+admin ALL=(browser_use_001) NOPASSWD:ALL
+
+```
+
+
+> dig whois
+
+dig 看“解析结果”；   ->  域名的 DNS 记录 !!!  这个还能多使使也好用
+
+whois 看“注册信息”。  -> 这个无所谓点不怎么用吧麻烦还得查两次, 直接在线网站工具看吧
+
+```
+# 1. 查顶层分配（IANA → ARIN）
+whois 104.21.64.1 | grep -i refer
+
+# 2. 查实际归属（ARIN → Cloudflare）
+whois -h whois.arin.net 104.21.64.1 | grep -i cloudflare
+```
+
+
+
+> dockerfile
+> 镜像仓库只是提供系统环境, 具体的【软件源】还是默认的走的外网官方的  是吗 ?  对的
+> 所以出现镜像是好的, 但是apt-get有网络问题
+
+
+FROM ubuntu:20.04  # 无论从哪个镜像仓库拉取,内部的软件源配置都是一样的
+
+
+
+
+
+
 
 > ubuntu 的进程
 >

@@ -1,6 +1,6 @@
 ---
 article: false
-updated: 2025-09-18 00:06:42
+updated: 2025-09-20 16:57:56
 ---
 # MacOS
 
@@ -150,16 +150,25 @@ Keybinddings
 			{ "key": "overlay_has_focus", "operator": "equal", "operand": false },
 		]
 	},
+
+	{"keys": ["super+alt+l"], "command": "pretty_json"},
+	{ "keys": ["ctrl+shift+1"], "command": "prev_bookmark" },
+	{ "keys": ["ctrl+2"], "command": "prev_bookmark" },
 	// Cmd+[ -> 跳转回上一个位置 (IDEA: Back)
 	{ "keys": ["super+["], "command": "jump_back" },
+	{ "keys": ["super+alt+left"], "command": "jump_back" },
 	// Cmd+] -> 跳转到下一个位置 (IDEA: Forward)
-	{ "keys": ["super+]"], "command": "jump_forward" }
-
+	{ "keys": ["super+]"], "command": "jump_forward" },
+	{ "keys": ["super+alt+right"], "command": "jump_forward" },
 
 	// TODO 想到什么 idea 验证一下, 问 GPT 
 
 ]
 ```
+
+
+
+
 
 
 
