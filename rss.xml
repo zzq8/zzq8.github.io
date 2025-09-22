@@ -6,8 +6,8 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 22 Sep 2025 15:11:58 GMT</pubDate>
-    <lastBuildDate>Mon, 22 Sep 2025 15:11:58 GMT</lastBuildDate>
+    <pubDate>Mon, 22 Sep 2025 16:00:28 GMT</pubDate>
+    <lastBuildDate>Mon, 22 Sep 2025 16:00:28 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -138,11 +138,11 @@
 ]]></content:encoded>
     </item>
     <item>
-      <title>AI</title>
+      <title>Z_AI</title>
       <link>https://zzq8.cn/code/Z_AI.html</link>
       <guid>https://zzq8.cn/code/Z_AI.html</guid>
-      <source url="https://zzq8.cn/rss.xml">AI</source>
-      <description>AI 屈定: https://mrdear.cn/posts/llm_agent_analyze 编程是一件幸福的事情,不要让你的工作变得索然无味.</description>
+      <source url="https://zzq8.cn/rss.xml">Z_AI</source>
+      <description>Z_AI 屈定: https://mrdear.cn/posts/llm_agent_analyze 编程是一件幸福的事情,不要让你的工作变得索然无味.</description>
       <category>AI</category>
       <pubDate>Sat, 13 Sep 2025 13:13:56 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -153,11 +153,11 @@
 ]]></content:encoded>
     </item>
     <item>
-      <title>BlogList</title>
+      <title>Z_BlogList</title>
       <link>https://zzq8.cn/code/Z_BlogList.html</link>
       <guid>https://zzq8.cn/code/Z_BlogList.html</guid>
-      <source url="https://zzq8.cn/rss.xml">BlogList</source>
-      <description>BlogList TODO 花时间搞一个 llm 订阅这些 blog / 或者收到 fllow 里 !!! 公认大佬 优秀个人 好玩的项目</description>
+      <source url="https://zzq8.cn/rss.xml">Z_BlogList</source>
+      <description>Z_BlogList TODO 花时间搞一个 llm 订阅这些 blog / 或者收到 fllow 里 !!! 公认大佬 优秀个人 好玩的项目</description>
       <pubDate>Sat, 13 Sep 2025 13:13:56 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>
@@ -169,11 +169,11 @@
 ]]></content:encoded>
     </item>
     <item>
-      <title>Prompt</title>
+      <title>Z_Prompt</title>
       <link>https://zzq8.cn/code/Z_Prompt.html</link>
       <guid>https://zzq8.cn/code/Z_Prompt.html</guid>
-      <source url="https://zzq8.cn/rss.xml">Prompt</source>
-      <description>Prompt https://linux.do/t/topic/405818 回答问题式学习 Meta Prompt 【角色】洞察人心的面试官与资深HRBP (v2.0)</description>
+      <source url="https://zzq8.cn/rss.xml">Z_Prompt</source>
+      <description>Z_Prompt https://linux.do/t/topic/405818 回答问题式学习 Meta Prompt The Dual Path Primer Facilitates Back-and-Forth (if needed): * Receives user input. * Directs Internal AI to re-run ...</description>
       <pubDate>Sat, 23 Aug 2025 07:38:23 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>
@@ -236,11 +236,11 @@
 <span class="line"><span>*The Dual Path Primer to User (Presenting Persona and Requesting Info via Table, only if readiness &lt; 100%):*</span></span>
 <span class="line"><span>    1.  "Hello! To best address your request regarding '[Briefly paraphrase user's request]', I will now embody the role of **[Persona Name]**, [Persona Role/Expertise Description]."</span></span>
 <span class="line"><span>    2.  "To ensure I can develop a truly comprehensive understanding and provide the most effective outcome, here's my current assessment of information that would be beneficial:"</span></span>
-<span class="line"><span>    3.  **(Display Readiness Report Table with Lettered Items - including elaboration points):**</span></span>
-<span class="line"><span>        ```</span></span>
-<span class="line"><span>        | Readiness Assessment      | Details                                                                  |</span></span>
-<span class="line"><span>        |</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+<span class="line"><span>    3.  **(Display Readiness Report Table with Lettered Items - including elaboration points):**</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><pre><code>    | Readiness Assessment      | Details                                                                  |
+    |
+</code></pre>
+]]></content:encoded>
     </item>
     <item>
       <title>RSA</title>
