@@ -1,16 +1,20 @@
 ---
 article: false
 icon: fa-solid fa-book-open-reader
-updated: 2025-09-03 23:37:00
+updated: 2025-11-08 11:13:04
 ---
 # Piglet 开源笔记
+> 编程是一件幸福的事情, 不要让你的工作变得索然无味.
+>
 > 用 "输入" 倒逼 "输出"
 
 [![](https://img.shields.io/discord/1248900118166638672?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge)](https://discord.gg/cWAzWeZhFh)
 
-**人与人之间的先天身体其实都差不多，但是后天身体素质和能力有差异，这些差异，很大程度是由后天对身体和大脑的训练质量、频度和强度所造成的。**
+怎样开始学习: 找到一个你真正想解决的问题
 
-明白这个道理之后，心智成熟和自律的人就会对自己进行持续地 **刻意训练** 。
+根深蒂固的低效学习模式: ~~先学习工具再解决问题 !!!~~ 工具不是目的只是手段
+
+正确做法: **get your hands dirty**，直奔主题
 
 ![学习金字塔](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/format,png-20230309231836811.png)
 

@@ -7,7 +7,7 @@ title: Piglet
 #heroImage: /logo.svg
 heroText: Piglet
 tagline: 盛年不重来，一日难再晨
-bgImage: https://images.zzq8.cn/1024/bj.jpg
+bgImage: https://image.233377.xyz/1024/bj.jpg
 heroFullScreen: false
 #projects:
 #  - icon: project
@@ -41,4 +41,5 @@ heroFullScreen: false
 #    link: https://你的自定义链接
 
 #footer: 自定义你的页脚文字
+updated: 2025-11-08 10:27:25
 ---
