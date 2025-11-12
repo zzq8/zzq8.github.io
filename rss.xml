@@ -6,8 +6,8 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 12 Nov 2025 15:29:22 GMT</pubDate>
-    <lastBuildDate>Wed, 12 Nov 2025 15:29:22 GMT</lastBuildDate>
+    <pubDate>Wed, 12 Nov 2025 16:04:51 GMT</pubDate>
+    <lastBuildDate>Wed, 12 Nov 2025 16:04:51 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -162,32 +162,35 @@
 <p>根深蒂固的低效学习模式: <s>先学习工具再解决问题 !!!</s> 工具不是目的只是手段</p>
 <p>正确做法: get your hands dirty，直奔主题</p>
 <p>btw: 不要放弃思考, 阮一峰很多摘录都提到这点</p>
+<p>todo claude code</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>Z_BlogList</title>
+      <title>Z_Share_List</title>
       <link>https://zzq8.cn/code/Z_BlogList.html</link>
       <guid>https://zzq8.cn/code/Z_BlogList.html</guid>
-      <source url="https://zzq8.cn/rss.xml">Z_BlogList</source>
-      <description>Z_BlogList TODO 花时间搞一个 llm 订阅这些 blog / 或者收到 fllow 里 !!! 公认大佬 优秀个人 好玩的项目</description>
+      <source url="https://zzq8.cn/rss.xml">Z_Share_List</source>
+      <description>Z_Share_List TODO 花时间搞一个 llm 订阅这些 blog / 或者收到 fllow 里 !!! 一、Blog 二、博主 三、书籍</description>
       <pubDate>Sat, 13 Sep 2025 13:13:56 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>
 <p>TODO 花时间搞一个 llm 订阅这些 blog   /  或者收到 fllow 里 !!!</p>
 </blockquote>
-<h2>公认大佬</h2>
-<p>| URL  | Who    | Note                  |
-|</p>
+<h2>一、Blog</h2>
+<p>|               Title               | Note                                                     | Todo                                                         |                                                              |
+| :</p>
 ]]></content:encoded>
+      <enclosure url="https://moatkon.com/share/youtuber/MoneyXYZ.jpg" type="image/jpeg"/>
     </item>
     <item>
       <title>Z_Prompt</title>
       <link>https://zzq8.cn/code/Z_Prompt.html</link>
       <guid>https://zzq8.cn/code/Z_Prompt.html</guid>
       <source url="https://zzq8.cn/rss.xml">Z_Prompt</source>
-      <description>Z_Prompt https://linux.do/t/topic/405818 回答问题式学习 Meta Prompt The Dual Path Primer Facilitates Back-and-Forth (if needed): * Receives user input. * Directs Internal AI to re-run ...</description>
+      <description>Z_Prompt 把所有用 espanso mapping 一下 !!! https://linux.do/t/topic/405818 回答问题式学习 Meta Prompt The Dual Path Primer Facilitates Back-and-Forth (if needed): * Receives user input. * Di...</description>
       <pubDate>Sat, 23 Aug 2025 07:38:23 GMT</pubDate>
       <content:encoded><![CDATA[
+<p>把所有用 espanso mapping 一下 !!!</p>
 <blockquote>
 <p>https://linux.do/t/topic/405818</p>
 </blockquote>

@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://zzq8.cn/favicon.ico</icon>
-  <updated>2025-11-12T15:29:22.667Z</updated>
+  <updated>2025-11-12T16:04:51.380Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://zzq8.cn/atom.xml"/>
   <link rel="alternate" href="https://zzq8.cn/"/>
@@ -17,7 +17,7 @@
     <title type="text">博客文章样例</title>
     <id>https://zzq8.cn/posts/2024-03-01-blog_example.html</id>
     <link href="https://zzq8.cn/posts/2024-03-01-blog_example.html"/>
-    <updated>2025-11-12T15:29:22.689Z</updated>
+    <updated>2025-11-12T16:04:51.408Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 </blockquote>
@@ -35,7 +35,7 @@
     <title type="text">Merlin</title>
     <id>https://zzq8.cn/posts/Merlin.html</id>
     <link href="https://zzq8.cn/posts/Merlin.html"/>
-    <updated>2025-11-12T15:29:22.692Z</updated>
+    <updated>2025-11-12T16:04:51.411Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>新整了个 <strong>RT-AX88U</strong> 华硕路由器, 不能浪费</p>
@@ -78,7 +78,7 @@
     <title type="text">WTG</title>
     <id>https://zzq8.cn/posts/WTG.html</id>
     <link href="https://zzq8.cn/posts/WTG.html"/>
-    <updated>2025-11-12T15:29:22.694Z</updated>
+    <updated>2025-11-12T16:04:51.416Z</updated>
     <summary type="html"><![CDATA[
 <h2>装机篇</h2>
 <blockquote>
@@ -154,7 +154,7 @@
     <title type="text">让万物穿过自己</title>
     <id>https://zzq8.cn/posts/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</id>
     <link href="https://zzq8.cn/posts/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html"/>
-    <updated>2025-11-12T15:29:22.699Z</updated>
+    <updated>2025-11-12T16:04:51.421Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
@@ -175,7 +175,7 @@
     <title type="text">Z_AI</title>
     <id>https://zzq8.cn/code/Z_AI.html</id>
     <link href="https://zzq8.cn/code/Z_AI.html"/>
-    <updated>2025-11-12T15:29:22.700Z</updated>
+    <updated>2025-11-12T16:04:51.423Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p><strong>ALL in AI</strong></p>
@@ -200,42 +200,71 @@
 <p>根深蒂固的低效学习模式: <s>先学习工具再解决问题 !!!</s> 工具不是目的只是手段</p>
 <p>正确做法: get your hands dirty，直奔主题</p>
 <p>btw: 不要放弃思考, 阮一峰很多摘录都提到这点</p>
+<p>todo claude code</p>
 ]]></content>
     <category term="AI"/>
     <published>2025-09-13T13:13:56.000Z</published>
   </entry>
   <entry>
-    <title type="text">Z_BlogList</title>
+    <title type="text">Z_Share_List</title>
     <id>https://zzq8.cn/code/Z_BlogList.html</id>
     <link href="https://zzq8.cn/code/Z_BlogList.html"/>
-    <updated>2025-11-12T15:29:22.715Z</updated>
+    <updated>2025-11-12T16:04:51.425Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>TODO 花时间搞一个 llm 订阅这些 blog   /  或者收到 fllow 里 !!!</p>
 </blockquote>
-<h2>公认大佬</h2>
+<h2>一、Blog</h2>
 <table>
 <thead>
 <tr>
-<th>URL</th>
-<th>Who</th>
+<th style="text-align:center">Title</th>
 <th>Note</th>
+<th style="text-align:left">Todo</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td>阮一峰</td>
-<td>周刊, 技术 (超高质量)</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
+<td style="text-align:center">阮一峰</td>
+<td>周刊, 技术 (超高质量), 每周必看</td>
+<td style="text-align:left"></td>
 <td></td>
 </tr>
 <tr>
+<td style="text-align:center"></td>
 <td></td>
+<td style="text-align:left"></td>
 <td></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://mrdear.cn/" target="_blank" rel="noopener noreferrer">屈定's Blog</a></td>
+<td>llm 相关, 我觉得是大佬<br>学习榜样, 要借鉴blog搞点沉淀</td>
+<td style="text-align:left">编程是一件幸福的事情,不要让你的工作变得索然无味.<br><br>- Ant 的大佬呀<br>- AI &amp; Java</td>
+<td>需要花时间总结看<br>- AI<br>- Java<br><br>https://mrdear.cn/posts/llm_agent_analyze</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">我现在抄的blog的大佬</td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">第一个 star blog</td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">那个新云月也有意思</td>
+<td></td>
+<td style="text-align:left"></td>
 <td></td>
 </tr>
 </tbody>
@@ -244,9 +273,9 @@
 <blockquote>
 <p>TODO 花时间搞一个 llm 订阅这些 blog   /  或者收到 fllow 里 !!!</p>
 </blockquote>
-<h2>公认大佬</h2>
-<p>| URL  | Who    | Note                  |
-|</p>
+<h2>一、Blog</h2>
+<p>|               Title               | Note                                                     | Todo                                                         |                                                              |
+| :</p>
 ]]></content>
     <published>2025-09-13T13:13:56.000Z</published>
   </entry>
@@ -254,8 +283,9 @@
     <title type="text">Z_Prompt</title>
     <id>https://zzq8.cn/code/Z_Prompt.html</id>
     <link href="https://zzq8.cn/code/Z_Prompt.html"/>
-    <updated>2025-11-12T15:29:22.718Z</updated>
+    <updated>2025-11-12T16:04:51.430Z</updated>
     <summary type="html"><![CDATA[
+<p>把所有用 espanso mapping 一下 !!!</p>
 <blockquote>
 <p>https://linux.do/t/topic/405818</p>
 </blockquote>
@@ -272,6 +302,7 @@
 <span class="line"><span>   d. 如果你认为我已经完全搞明白我最初提出的问题了，结束对话即可，如果没有，重复3</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
     <content type="html"><![CDATA[
+<p>把所有用 espanso mapping 一下 !!!</p>
 <blockquote>
 <p>https://linux.do/t/topic/405818</p>
 </blockquote>
@@ -343,7 +374,7 @@
     <title type="text">Agent Analyze</title>
     <id>https://zzq8.cn/posts/Technology/Agent_Analyze.html</id>
     <link href="https://zzq8.cn/posts/Technology/Agent_Analyze.html"/>
-    <updated>2025-11-12T15:29:22.739Z</updated>
+    <updated>2025-11-12T16:04:51.450Z</updated>
     <summary type="html"><![CDATA[
 <h2>WorkFlow和Agent</h2>
 <p>在大型语言模型（LLMs）的应用中，我们主要看到两种不同的系统架构：<strong>工作流（Workflows）</strong> 和 <strong>智能体（Agents）</strong>。</p>
@@ -602,7 +633,7 @@
     <title type="text">2023年终总结</title>
     <id>https://zzq8.cn/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</id>
     <link href="https://zzq8.cn/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html"/>
-    <updated>2025-11-12T15:29:22.752Z</updated>
+    <updated>2025-11-12T16:04:51.471Z</updated>
     <summary type="html"><![CDATA[
 <p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
 <p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
@@ -631,7 +662,7 @@
     <title type="text">👻 找工作</title>
     <id>https://zzq8.cn/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</id>
     <link href="https://zzq8.cn/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html"/>
-    <updated>2025-11-12T15:29:22.755Z</updated>
+    <updated>2025-11-12T16:04:51.474Z</updated>
     <summary type="html"><![CDATA[
 <h2>还在呼吸，未来可期</h2>
 <p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
