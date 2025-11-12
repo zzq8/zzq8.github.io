@@ -1,8 +1,10 @@
 ---
-updated: 2025-09-22 23:47:45
+updated: 2025-11-12 23:51:05
 ---
 
 # Z_Prompt
+
+把所有用 espanso mapping 一下 !!!
 
 > https://linux.do/t/topic/405818
 
