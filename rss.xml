@@ -6,8 +6,8 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 13 Nov 2025 16:07:11 GMT</pubDate>
-    <lastBuildDate>Thu, 13 Nov 2025 16:07:11 GMT</lastBuildDate>
+    <pubDate>Tue, 25 Nov 2025 15:54:23 GMT</pubDate>
+    <lastBuildDate>Tue, 25 Nov 2025 15:54:23 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -183,13 +183,14 @@
       <enclosure url="https://moatkon.com/share/youtuber/MoneyXYZ.jpg" type="image/jpeg"/>
     </item>
     <item>
-      <title></title>
+      <title>Z_Prompt</title>
       <link>https://zzq8.cn/code/Z_Prompt.html</link>
       <guid>https://zzq8.cn/code/Z_Prompt.html</guid>
-      <source url="https://zzq8.cn/rss.xml"></source>
-      <description>Espanso 常用 normal meta prompt Study 反问 简历修改</description>
+      <source url="https://zzq8.cn/rss.xml">Z_Prompt</source>
+      <description>Z_Prompt Espanso 常用 normal meta prompt Study 反问 The Dual Path Primer Facilitates Back-and-Forth (if needed): * Receives user input. * Directs Internal AI to re-run the Internal ...</description>
       <pubDate>Sat, 23 Aug 2025 07:38:23 GMT</pubDate>
-      <content:encoded><![CDATA[<h2>Espanso 常用</h2>
+      <content:encoded><![CDATA[
+<h2>Espanso 常用</h2>
 <ul>
 <li>normal</li>
 <li>meta prompt</li>

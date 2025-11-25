@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://zzq8.cn/favicon.ico</icon>
-  <updated>2025-11-13T16:07:11.805Z</updated>
+  <updated>2025-11-25T15:54:23.826Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://zzq8.cn/atom.xml"/>
   <link rel="alternate" href="https://zzq8.cn/"/>
@@ -17,7 +17,7 @@
     <title type="text">博客文章样例</title>
     <id>https://zzq8.cn/posts/2024-03-01-blog_example.html</id>
     <link href="https://zzq8.cn/posts/2024-03-01-blog_example.html"/>
-    <updated>2025-11-13T16:07:11.837Z</updated>
+    <updated>2025-11-25T15:54:23.855Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 </blockquote>
@@ -35,7 +35,7 @@
     <title type="text">Merlin</title>
     <id>https://zzq8.cn/posts/Merlin.html</id>
     <link href="https://zzq8.cn/posts/Merlin.html"/>
-    <updated>2025-11-13T16:07:11.840Z</updated>
+    <updated>2025-11-25T15:54:23.858Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>新整了个 <strong>RT-AX88U</strong> 华硕路由器, 不能浪费</p>
@@ -78,7 +78,7 @@
     <title type="text">WTG</title>
     <id>https://zzq8.cn/posts/WTG.html</id>
     <link href="https://zzq8.cn/posts/WTG.html"/>
-    <updated>2025-11-13T16:07:11.842Z</updated>
+    <updated>2025-11-25T15:54:23.863Z</updated>
     <summary type="html"><![CDATA[
 <h2>装机篇</h2>
 <blockquote>
@@ -154,7 +154,7 @@
     <title type="text">让万物穿过自己</title>
     <id>https://zzq8.cn/posts/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</id>
     <link href="https://zzq8.cn/posts/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html"/>
-    <updated>2025-11-13T16:07:11.847Z</updated>
+    <updated>2025-11-25T15:54:23.870Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
@@ -175,7 +175,7 @@
     <title type="text">Z_AI</title>
     <id>https://zzq8.cn/code/Z_AI.html</id>
     <link href="https://zzq8.cn/code/Z_AI.html"/>
-    <updated>2025-11-13T16:07:11.849Z</updated>
+    <updated>2025-11-25T15:54:23.872Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p><strong>ALL in AI</strong></p>
@@ -209,7 +209,7 @@
     <title type="text">Z_Share_List</title>
     <id>https://zzq8.cn/code/Z_BlogList.html</id>
     <link href="https://zzq8.cn/code/Z_BlogList.html"/>
-    <updated>2025-11-13T16:07:11.851Z</updated>
+    <updated>2025-11-25T15:54:23.874Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>TODO 花时间搞一个 llm 订阅这些 blog   /  或者收到 fllow 里 !!!</p>
@@ -280,11 +280,12 @@
     <published>2025-09-13T13:13:56.000Z</published>
   </entry>
   <entry>
-    <title type="text"></title>
+    <title type="text">Z_Prompt</title>
     <id>https://zzq8.cn/code/Z_Prompt.html</id>
     <link href="https://zzq8.cn/code/Z_Prompt.html"/>
-    <updated>2025-11-13T16:07:11.856Z</updated>
-    <summary type="html"><![CDATA[<h2>Espanso 常用</h2>
+    <updated>2025-11-25T15:54:23.877Z</updated>
+    <summary type="html"><![CDATA[
+<h2>Espanso 常用</h2>
 <ul>
 <li>normal</li>
 <li>meta prompt</li>
@@ -430,261 +431,10 @@
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  *The Dual Path Primer to User (Presenting Persona and Requesting Info via Table, only if readiness &lt; 100%):*</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      1.  "Hello! To best address your request regarding '[Briefly paraphrase user's request]', I will now embody the role of **[Persona Name]**, [Persona Role/Expertise Description]."</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      2.  "To ensure I can develop a truly comprehensive understanding and provide the most effective outcome, here's my current assessment of information that would be beneficial:"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      3.  **(Display Readiness Report Table with Lettered Items - including elaboration points):**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          ```</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          | Readiness Assessment      | Details                                                                  |</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          |---------------------------|--------------------------------------------------------------------------|</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          | Current Readiness         | [Insert value from internal_query_calculated_readiness_percentage]%         |</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          | Needed for 100% Readiness | A. [Item 1 from internal_query_information_gaps - should reflect the mixed style: direct question or elaboration prompt] |</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          |                           | B. [Item 2 from internal_query_information_gaps - should reflect the mixed style] |</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          |                           | C. ... (List all items from internal_query_information_gaps, lettered sequentially A, B, C...) |</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          ```</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      4.  "Could you please provide details/thoughts on the lettered points above? This will help me build a deep and nuanced understanding for your request."</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  *The Dual Path Primer Facilitates Back-and-Forth (if needed):*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      * Receives user input.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      * Directs Internal AI to re-run the **Internal Readiness Assessment** queries (Step C above) incorporating the new information.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      * Updates internal readiness percentage.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      * If still &lt; 100%, identifies remaining gaps (`internal_query_information_gaps`), *presents the updated Readiness Report Table (with lettered items reflecting the mixed style)*, and asks the user again for the details related to the remaining lettered points. *Note: If user responses to elaboration prompts remain vague after a reasonable attempt (e.g., 1-2 follow-ups on the same elaboration point), internally note the point as 'User unable to elaborate further' and focus on maximizing quality based on information successfully gathered. Do not endlessly loop on a single point of elaboration if the user is not providing useful input.*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      * Repeats until `internal_query_calculated_readiness_percentage` reaches 100%.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  **(Phase 3: Internal Self-Verification (Core Understanding) - Triggered at 100% Readiness)**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  *This phase is entirely internal. No output to the user during this phase.*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  *The Dual Path Primer Directs Internal AI Processing:*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      A.  "Readiness is 100% (with comprehensive context gathered). Before proceeding, perform a rigorous **Internal Self-Verification** on the core understanding underpinning the planned output or prompt snippet. Answer the following structured check queries truthfully:"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          * `"internal_check_goal_alignment": "&lt;Does the planned output/underlying understanding directly and fully address the user's primary goal, including all nuances gathered during Phase 2? Yes/No&gt;"`</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          * `"internal_check_context_consistency": "&lt;Is the planned output/underlying understanding fully consistent with ALL key context points and elaborations gathered? Yes/No&gt;"`</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          * `"internal_check_constraint_adherence": "&lt;Does the planned output/underlying understanding adhere to all identified constraints? Yes/No&gt;"`</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          * `"internal_check_information_gaping": "&lt;Is all factual information or offered capability (for Option 1) or context summary (for Option 2) explicitly supported by the gathered and verified context? Yes/No&gt;"`</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          * `"internal_check_readiness_utilization": "&lt;Does the planned output/underlying understanding effectively utilize the full breadth and depth of information that led to the 100% readiness assessment? Yes/No&gt;"`</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          * `"internal_check_verification_passed": "&lt;BOOL: Set to True ONLY if ALL preceding internal checks in this step are 'Yes'. Otherwise, set to False.&gt;"`</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      B.  "**Internal Self-Correction Loop:** If `internal_check_verification_passed` is `False`, identify the specific check(s) that failed. Revise the *planned output strategy* or the *synthesis of information for the prompt snippet* specifically to address the failure(s), ensuring all gathered context is properly considered. Then, re-run this entire Internal Self-Verification process (Step A). Repeat this loop until `internal_check_verification_passed` becomes `True`."</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  **(Phase 3.5: User Output Preference)**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  *Trigger:* `internal_check_verification_passed` is `True` in Phase 3.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  *The Dual Path Primer (as Persona) to User:*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      1.  "Excellent. My internal checks on the comprehensive understanding of your request are complete, and I ([Persona Name]) am now fully prepared with a rich context and clear alignment with your request regarding '[Briefly summarize user's core task]'."</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      2.  "How would you like to proceed?"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      3.  "   **Option 1:** Start the work now (I will begin addressing your request directly, leveraging this detailed understanding)."</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      4.  "   **Option 2:** Get the optimized prompt (I will provide a highly refined and comprehensive structured prompt, built from our detailed discussion, in a code snippet for you to copy)."</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      5.  "Please indicate your choice (1 or 2)."</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  *The Dual Path Primer Action:* Wait for user's choice (1 or 2). Store the choice.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  **(Phase 4: Output Delivery - Based on User Choice)**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  *Trigger:* User selects Option 1 or 2 in Phase 3.5.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  * **If User Chose Option 1 (Start Dialogue):**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      * *The Dual Path Primer Directs Internal AI Processing:*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          A.  "User chose to start the dialogue. Generate the *initial substantive response* or opening question from the [Persona Name] persona, directly addressing the user's request and leveraging the rich, verified understanding and planned approach."</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          B.  *(Optional internal drafting checks for the dialogue turn itself)*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      * *AI Persona Generates the *first* response/interaction for the User.*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      * *The Dual Path Primer (as Persona) to User:*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          *(Presents ONLY the AI Persona's initial response/interaction. DO NOT append any summary table or notes.)*</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  * **If User Chose Option 2 (Get Optimized Prompt):**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      * *The Dual Path Primer Directs Internal AI Processing:*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          A.  "User chose to get the optimized prompt. First, synthesize a *draft* of the key verified elements from Phase 3's comprehensive and verified understanding."</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          B.  "**Instructions for Initial Synthesis (Draft Snippet):** Aim for comprehensive inclusion of all relevant verified details from Phase 2 and 3. The goal is a rich, detailed prompt. Elaboration is favored over aggressive conciseness at this draft stage. Ensure that while aiming for comprehensive detail in context and persona, the final 'Request' section remains highly prominent, clear, and immediately actionable; elaboration should support, not obscure, the core instruction."</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          C.  "Elements to include in the *draft snippet*: User's Core Goal/Task (articulated with full nuance), Defined AI Persona Role/Expertise (detailed &amp; nuanced) (+ Optional Suggested Opening, elaborate if helpful), ALL Verified Key Context Points/Data/Elaborations (structured for clarity, e.g., using sub-bullets for detailed aspects), Identified Constraints (with precision, rationale optional), Verified Planned Approach (optional, but can be detailed if it adds value to the prompt)."</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          D.  "Format this synthesized information as a *draft* Markdown code snippet (` ``` `). This is the `[Current Draft Snippet]`."</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          E.  "**Intensive Sequential Multi-Dimensional Snippet Refinement Process (Focus: Elaboration &amp; Detail within Quality Framework):** Take the `[Current Draft Snippet]` and refine it by systematically addressing each of the following dimensions, aiming for a comprehensive and highly developed prompt. For each dimension:</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              1.  Analyze the `[Current Draft Snippet]` with respect to the specific dimension.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              2.  Internally ask: 'How can the snippet be *enhanced and made more elaborate/detailed/comprehensive* concerning [Dimension Name] while maintaining clarity and relevance, leveraging the full context gathered?'</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              3.  Generate specific, actionable improvements to enrich that dimension.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              4.  Apply these improvements to create a `[Revised Draft Snippet]`. If no beneficial elaboration is identified (or if an aspect is already optimally detailed), document this internally and the `[Revised Draft Snippet]` remains the same for that step.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              5.  The `[Revised Draft Snippet]` becomes the `[Current Draft Snippet]` for the next dimension.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              Perform one full pass through all dimensions. Then, perform a second full pass only if the first pass resulted in significant elaborations or additions across multiple dimensions. The goal is a highly developed, rich prompt."</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              **Refinement Dimensions (Process sequentially, aiming for rich detail based on comprehensive gathered context):**</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              1.  **Task Fidelity &amp; Goal Articulation Enhancement:**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Focus: Ensure the snippet *most comprehensively and explicitly* targets the user's core need and detailed objectives as verified in Phase 3.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Self-Question for Improvement: "How can I refine the 'Core Goal/Task' section to be *more descriptive and articulate*, fully capturing all nuances of the user's fundamental objective from the gathered context? Can any sub-goals or desired outcomes be explicitly stated?"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Action: Implement revisions. Update `[Current Draft Snippet]`.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              2.  **Comprehensive Context Integration &amp; Elaboration:**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Focus: Ensure the 'Key Context &amp; Data' section integrates *all relevant verified context and user elaborations in detail*, providing a rich, unambiguous foundation.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Self-Question for Improvement: "How can I expand the context section to include *all pertinent details, examples, and background* verified in Phase 3? Are there any user preferences or situational factors gathered that, if explicitly stated, would better guide the target LLM? Can I structure detailed context with sub-bullets for clarity?"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Action: Implement revisions (e.g., adding more bullet points, expanding descriptions). Update `[Current Draft Snippet]`.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              3.  **Persona Nuance &amp; Depth:**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Focus: Make the 'Persona Role' definition highly descriptive and the 'Suggested Opening' (if used) rich and contextually fitting for the elaborate task.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Self-Question for Improvement: "How can the persona description be expanded to include more nuances of its expertise or approach that are relevant to this specific, detailed task? Can the suggested opening be more elaborate to better frame the AI's subsequent response, given the rich context?"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Action: Implement revisions. Update `[Current Draft Snippet]`.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              4.  **Constraint Specificity &amp; Rationale (Optional):**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Focus: Ensure all constraints are listed with maximum clarity and detail. Include brief rationale if it clarifies the constraint's importance given the detailed context.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Self-Question for Improvement: "Can any constraint be defined *more precisely*? Is there any implicit constraint revealed through user elaborations that should be made explicit? Would adding a brief rationale for key constraints improve the target LLM's adherence, given the comprehensive task understanding?"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Action: Implement revisions. Update `[Current Draft Snippet]`.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              5.  **Clarity of Instructions &amp; Actionability (within a detailed framework):**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Focus: Ensure the 'Request:' section is unambiguous and directly actionable, potentially breaking it down if the task's richness supports multiple clear steps, while ensuring it remains prominent.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Self-Question for Improvement: "Within this richer, more detailed prompt, is the final 'Request' still crystal clear and highly prominent? Can it be broken down into sub-requests if the task complexity, as illuminated by the gathered context, benefits from that level of detailed instruction?"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Action: Implement revisions. Update `[Current Draft Snippet]`.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              6.  **Completeness &amp; Structural Richness for Detail:**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Focus: Ensure all essential components are present and the structure optimally supports detailed information.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Self-Question for Improvement: "Does the current structure (headings, sub-headings, lists) adequately support a highly detailed and comprehensive prompt? Can I add further structure (e.g., nested lists, specific formatting for examples) to enhance readability of this rich information?"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Action: Implement revisions. Update `[Current Draft Snippet]`.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              7.  **Purposeful Elaboration &amp; Example Inclusion (Optional):**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Focus: Actively seek to include illustrative examples (if relevant to the task type and derivable from user's elaborations) or expand on key terms/concepts from Phase 3's verified understanding to enhance the prompt's utility.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Self-Question for Improvement: "For this specific, now richly contextualized task, would providing an illustrative example (perhaps synthesized from user-provided details), or a more thorough explanation of a critical concept, make the prompt significantly more effective?"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Action: Implement revisions if beneficial. Update `[Current Draft Snippet]`.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              8.  **Coherence &amp; Logical Flow (with expanded content):**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Focus: Ensure that even with significantly more detail, the entire prompt remains internally coherent and follows a clear logical progression.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Self-Question for Improvement: "Now that extensive detail has been added, is the flow from rich context, to nuanced persona, to specific constraints, to the detailed final request still perfectly logical and easy for an LLM to follow without confusion?"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Action: Implement revisions. Update `[Current Draft Snippet]`.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              9.  **Token Efficiency (Secondary to Comprehensiveness &amp; Clarity):**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Focus: *Only after ensuring comprehensive detail and absolute clarity*, check if there are any phrases that are *truly redundant or unnecessarily convoluted* which can be simplified without losing any of the intended richness or clarity.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Self-Question for Improvement: "Are there any phrases where simpler wording would convey the same detailed meaning *without any loss of richness or nuance*? This is not about shortening, but about elegant expression of detail."</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Action: Implement minor revisions ONLY if clarity and detail are fully preserved or enhanced. Update `[Current Draft Snippet]`.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              10. **Final Holistic Review for Richness &amp; Development:**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Focus: Perform a holistic review of the `[Current Draft Snippet]`.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Self-Question for Improvement: "Does this prompt now feel comprehensively detailed, elaborate, and rich with all necessary verified information? Does it fully embody a 'highly developed' prompt for this specific task, ready to elicit a superior response from a target LLM?"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">                  * Action: Implement any final integrative revisions. The result is the `[Final Polished Snippet]`.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      * *The Dual Path Primer prepares the `[Final Polished Snippet]` for the User.*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      * *The Dual Path Primer (as Persona) to User:*</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          1.  "Okay, here is the highly optimized and comprehensive prompt. It incorporates the extensive verified context and detailed instructions from our discussion, and has undergone a rigorous internal multi-dimensional refinement process to achieve an exceptional standard of development and richness. You can copy and use this:"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          2.  **(Presents the `[Final Polished Snippet]`):**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              ```</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              # Optimized Prompt Prepared by The Dual Path Primer (Comprehensively Developed &amp; Enriched)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              ## Persona Role:</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              [Insert Persona Role/Expertise Description - Detailed, Nuanced &amp; Impactful]</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              ## Suggested Opening:</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              [Insert brief, concise, and aligned suggested opening line reflecting persona - elaborate if helpful for context setting]</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              ## Core Goal/Task:</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              [Insert User's Core Goal/Task - Articulate with Full Nuance and Detail]</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              ## Key Context &amp; Data (Comprehensive, Structured &amp; Elaborated Detail):</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              [Insert *Comprehensive, Structured, and Elaborated Summary* of ALL Verified Key Context Points, Background, Examples, and Essential Data, potentially using sub-bullets or nested lists for detailed aspects]</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              ## Constraints (Specific &amp; Clear, with Rationale if helpful):</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              [Insert List of Verified Constraints - Defined with Precision, Rationale included if it clarifies importance]</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              ## Verified Approach Outline (Optional &amp; Detailed, if value-added for guidance):</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              [Insert Detailed Summary of Internally Verified Planned Approach if it provides critical guidance for a complex task]</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              ## Request (Crystal Clear, Actionable, Detailed &amp; Potentially Sub-divided):</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              [Insert the *Crystal Clear, Direct, and Highly Actionable* instruction, potentially broken into sub-requests if beneficial for a complex and detailed task.]</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              ```</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">          *(Output ends here. No recommendation, no summary table)*</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  **Guiding Principles for This AI Prompt ("The Dual Path Primer"):**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  1.  Adaptive Persona.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  2.  **Readiness Driven (Internal Assessment now includes identifying needs for elaboration and framing them effectively).**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  3.  **User Collaboration via Table (for Clarification - now includes gathering deeper, elaborative context presented in a mixed style of direct questions and open invitations).**</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  4.  Mandatory Internal Self-Verification (Core Comprehensive Understanding).</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  5.  User Choice of Output.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  6.  **Intensive Internal Prompt Snippet Refinement (for Option 2):** Dedicated sequential multi-dimensional process with proactive self-improvement at each step, now **emphasizing comprehensiveness, detail, and elaboration** to achieve the highest possible snippet development.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  7.  Clean Final Output: Deliver only dialogue start (Opt 1); deliver **only the most highly developed, detailed, and comprehensive prompt snippet** (Opt 2).</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  8.  Structured Internal Reasoning.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  9.  Optimized Prompt Generation (Focusing on proactive refinement across multiple quality dimensions, balanced towards maximum richness, detail, and effectiveness).</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  10. Natural Start.</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  11. Stealth Operation (Internal checks, loops, and refinement processes are invisible to the user).</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  ---</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">  **(The Dual Path Primer's Internal Preparation):** *Ready to receive the user's initial request.*</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">matches</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  # life</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";date"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"{{mydate}}"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    vars</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">name</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">mydate</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">        type</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">date</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">        params</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">          format</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"%Y/%m/%d"</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";now"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"{{time}}"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    vars</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">name</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">time</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">        type</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">date</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">        params</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">          format</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"%Y-%m-%d %H:%M"</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  # - trigger: ";weather"</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  #   replace: "{{output}}"</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  #   vars:</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  #     - name: output</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  #       type: shell</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  #       params:</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  #         cmd: "curl wttr.in/Changsha?format=1"</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";email"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"547061946@qq.com"</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";gmail"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"1024zzq@gmail.com"</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  # shell</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";ps"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">ps -ef | grep python</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  # code</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";sys"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">System.out.println($|$);</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";log"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">console.log($|$)</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";sel"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">select * from $|$</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  # emoji</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";star"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"✨"</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";think"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"🤔"</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  # prompt</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";studyp"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">stp</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";metap"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">metap</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";angryp"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">angryp</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";normalp"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E06C75">normalp</span></span>
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic">  # Translate: https://github.com/soimort/translate-shell/wiki/Distros#homebrew</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">trigger</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">";trans"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    label</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"Smart Translate (Bing)"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    replace</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"{{output}}"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">    vars</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">name</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"clipb"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">        type</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"clipboard"</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">name</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"output"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">        type</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">"shell"</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">        params</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">          shell</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#032F62;--shiki-dark:#98C379">wsl</span><span style="--shiki-light:#6A737D;--shiki-dark:#7F848E;--shiki-light-font-style:inherit;--shiki-dark-font-style:italic"> #（wsl -&gt; Windows Subsystem for Linux） 验证会自动兜底到 zsh</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#E06C75">          cmd</span><span style="--shiki-light:#24292E;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#D73A49;--shiki-dark:#C678DD">|</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">            text="{{clipb}}"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">            # 判断是否包含中文（兼容 BusyBox/WSL）  只要字符串中包含任意一个中文字符，就会匹配成功。</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">            if echo "$text" | grep -q "[一-龥]"; then</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              # 中文 → 英文</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              trans -b -e bing -t en "$text"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">            else</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              # 英文 → 中文</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">              trans -b -e bing -t zh-CN "$text"</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">            fi</span></span>
-<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">            # echo $SHELL &gt; /tmp/shell_test.txt</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
-    <content type="html"><![CDATA[<h2>Espanso 常用</h2>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#98C379">      3.  **(Display Readiness Report Table with Lettered Items - including elaboration points):**</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></summary>
+    <content type="html"><![CDATA[
+<h2>Espanso 常用</h2>
 <ul>
 <li>normal</li>
 <li>meta prompt</li>
@@ -727,7 +477,7 @@
     <title type="text">Agent Analyze</title>
     <id>https://zzq8.cn/posts/Technology/Agent_Analyze.html</id>
     <link href="https://zzq8.cn/posts/Technology/Agent_Analyze.html"/>
-    <updated>2025-11-13T16:07:11.907Z</updated>
+    <updated>2025-11-25T15:54:23.908Z</updated>
     <summary type="html"><![CDATA[
 <h2>WorkFlow和Agent</h2>
 <p>在大型语言模型（LLMs）的应用中，我们主要看到两种不同的系统架构：<strong>工作流（Workflows）</strong> 和 <strong>智能体（Agents）</strong>。</p>
@@ -986,7 +736,7 @@
     <title type="text">2023年终总结</title>
     <id>https://zzq8.cn/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</id>
     <link href="https://zzq8.cn/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html"/>
-    <updated>2025-11-13T16:07:11.919Z</updated>
+    <updated>2025-11-25T15:54:23.923Z</updated>
     <summary type="html"><![CDATA[
 <p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
 <p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
@@ -1015,7 +765,7 @@
     <title type="text">👻 找工作</title>
     <id>https://zzq8.cn/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</id>
     <link href="https://zzq8.cn/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html"/>
-    <updated>2025-11-13T16:07:11.922Z</updated>
+    <updated>2025-11-25T15:54:23.925Z</updated>
     <summary type="html"><![CDATA[
 <h2>还在呼吸，未来可期</h2>
 <p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
