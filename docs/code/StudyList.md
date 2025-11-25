@@ -1,5 +1,6 @@
 ---
 article: true
+updated: 2025-11-25 23:52:25
 ---
 
 # [ZStudyList](https://javaguide.cn/high-quality-technical-articles/advanced-programmer/the-growth-strategy-of-the-technological-giant.html)
@@ -19,14 +20,12 @@ article: true
 
 ## TODO
 
-* SSL 自动续期 https://newzone.top/posts/2024-04-09-ssl-certbot.html
-
-
-
 * 梳理已有文档，新建一个个细化文档迁移。   就像 SOFABoot.md -> N*other.md
   * 抽丝剥茧，要做到自己真正理解【**就很多道理，别人给你说你似乎听懂了，其实你没有内化是不懂的！**】
 
+太多 tm 的费笔记了, 用大纲方式分类梳理   去掉原有的, 或者直接拉一个新分支 !!!
 
+太多垃圾了
 
 ### 费时间
 

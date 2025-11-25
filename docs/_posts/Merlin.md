@@ -3,7 +3,8 @@ article: true
 category: Net
 tag: Hardware
 created: 2025-09-09 23:07:53
-updated: 2025-11-08 11:37:55
+updated: 2025-11-25 23:46:31
+icon: fa-solid fa-desktop
 ---
 
 # Merlin

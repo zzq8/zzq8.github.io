@@ -18,8 +18,9 @@ export default hopeTheme({
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
-      "/posts/personal/": ["zzq","zhuzhiquan","朱智权","123","123456"],
-      "/code/StudyList.html": ["zzq","zhuzhiquan","朱智权","123","123456"],
+      "/posts/personal/": ["zzq","123","123456"],
+      "/code/StudyList.html": ["zzq","123","123456"],
+      "/code/A/": ["123"],
     },
   },
 

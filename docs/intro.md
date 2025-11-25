@@ -2,7 +2,7 @@
 article: false
 title: 个人介绍
 icon: fa-solid fa-circle-nodes
-updated: 2025-11-08 10:28:55
+updated: 2025-11-25 23:38:09
 ---
 
 ## 本笔记项目介绍
@@ -16,6 +16,10 @@ updated: 2025-11-08 10:28:55
 
 
 
+TODO 每个文档的 icon
+
+
+
 ## 个人介绍
 
-菜就多练
+努力努力再努力
