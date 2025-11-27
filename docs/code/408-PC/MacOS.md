@@ -1,6 +1,6 @@
 ---
 article: false
-updated: 2025-11-20 22:45:35
+updated: 2025-11-26 00:14:16
 ---
 # MacOS
 
@@ -75,7 +75,7 @@ Setting
 
 ```
 {
-// 设置Sans-serif（无衬线）等宽字体，以便阅读
+	// 设置Sans-serif（无衬线）等宽字体，以便阅读
 	"font_face": "YaHei Consolas Hybrid",
 	// 字体大小
 	"font_size": 14,
@@ -97,6 +97,10 @@ Setting
 
 	//MacOS
 	"find_selected_text": true,
+
+	
+	"index_files": true,
+	"update_check": false,
 }
 ```
 
