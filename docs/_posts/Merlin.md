@@ -3,7 +3,7 @@ article: true
 category: Net
 tag: Hardware
 created: 2025-09-09 23:07:53
-updated: 2025-11-25 23:46:31
+updated: 2025-12-11 00:08:27
 icon: fa-solid fa-desktop
 ---
 
@@ -23,6 +23,16 @@ icon: fa-solid fa-desktop
 Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file
 
 ## 经历
+
+> clash 开了, 但是还是科学上网不了
+
+这个卡点费劲
+
+因为 DNS 污染了, 我就用 dire-dns 普通的模式解决
+
+这个需要钻研
+
+
 
 > 不要急, 重启能解决 90% 的问题 不行就删了重装
 
