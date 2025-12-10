@@ -6,8 +6,8 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 27 Nov 2025 16:28:28 GMT</pubDate>
-    <lastBuildDate>Thu, 27 Nov 2025 16:28:28 GMT</lastBuildDate>
+    <pubDate>Wed, 10 Dec 2025 16:22:34 GMT</pubDate>
+    <lastBuildDate>Wed, 10 Dec 2025 16:22:34 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -34,7 +34,7 @@
       <link>https://zzq8.cn/posts/Merlin.html</link>
       <guid>https://zzq8.cn/posts/Merlin.html</guid>
       <source url="https://zzq8.cn/rss.xml">Merlin</source>
-      <description>Merlin 新整了个 RT-AX88U 华硕路由器, 不能浪费 梅林固件 Clash light NAS --&amp;gt; 需要 NTFS 格式, exFat 这个型号不支持 教程 Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file 经历 不要急, 重启能解决 90% 的问题 不行就删了重装...</description>
+      <description>Merlin 新整了个 RT-AX88U 华硕路由器, 不能浪费 梅林固件 Clash light NAS --&amp;gt; 需要 NTFS 格式, exFat 这个型号不支持 教程 Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file 经历 clash 开了, 但是还是科学上网不了 这个卡点费...</description>
       <category>Net</category>
       <pubDate>Wed, 10 Sep 2025 15:15:21 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -51,6 +51,12 @@
 <h2>教程</h2>
 <p>Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file</p>
 <h2>经历</h2>
+<blockquote>
+<p>clash 开了, 但是还是科学上网不了</p>
+</blockquote>
+<p>这个卡点费劲</p>
+<p>因为 DNS 污染了, 我就用 dire-dns 普通的模式解决</p>
+<p>这个需要钻研</p>
 <blockquote>
 <p>不要急, 重启能解决 90% 的问题 不行就删了重装</p>
 </blockquote>
@@ -138,6 +144,19 @@
 </blockquote>
 <p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
 <p>解决方案是: 关注?  不逃避   没太理解</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title></title>
+      <link>https://zzq8.cn/code/Python.html</link>
+      <guid>https://zzq8.cn/code/Python.html</guid>
+      <source url="https://zzq8.cn/rss.xml"></source>
+      <description>load_dotenv(dotenv_path=&amp;quot;config/.env&amp;quot;) 函数名解释: 任何以 . 开头的文件都叫 dotfile（点文件） 作用: 把 .env 文件中的 KEY=VALUE 加载进当前 Python 进程的环境变量中（os.environ） load_dotenv() 只对当前 Python 进程有效</description>
+      <pubDate>Wed, 10 Dec 2025 16:20:38 GMT</pubDate>
+      <content:encoded><![CDATA[<h4>load_dotenv(dotenv_path="config/.env")</h4>
+<p>函数名解释: 任何以 . 开头的文件都叫 dotfile（点文件）</p>
+<p>作用: 把 .env 文件中的 KEY=VALUE 加载进当前 Python 进程的环境变量中（os.environ）
+load_dotenv() 只对当前 Python 进程有效</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -495,30 +514,6 @@
 </blockquote>
 <p>只短暂呆了 7 天，充分再享受了一次北方的冬天 + 地暖，住在汾河边工作点在商场写字楼。</p>
 <p>只去了博物馆，其实山西应该还有很多好玩的没去玩属实浪费了　　现在回想也可能是自己初出社会的忐忑吧</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>👻 找工作</title>
-      <link>https://zzq8.cn/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</link>
-      <guid>https://zzq8.cn/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</guid>
-      <source url="https://zzq8.cn/rss.xml">👻 找工作</source>
-      <description>👻 找工作 还在呼吸，未来可期 告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！ 普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多 博科 现在最大的问...</description>
-      <category>打工日寄</category>
-      <pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>还在呼吸，未来可期</h2>
-<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
-<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
-<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
-<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>
-<h2>优秀的人都疯狂跑在前面</h2>
-<p>回想起来 bg、lx 总能前瞻性的做一些事情</p>
-<p>毕业时候公众号投的一家，说你为什么临近毕业才投
-那个时候没什么认知  只知道被大浪推着走          现在很被动</p>
-<p>看xy毕业简历有感</p>
-<h2>blibili Review</h2>
-<p>刚从亚信出来感觉纯纯在里面浪费时间，直都是二次开发，功能优化，SQL优化
-回复@满心满意-：别，我之前在低代码开发过一年，低代码培养的是<code>业务逻辑</code>，如果你还想干开发，那就只能自己空闲时间写代码不断进步。不然会落后的</p>
 ]]></content:encoded>
     </item>
   </channel>
