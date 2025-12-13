@@ -1,6 +1,0 @@
-#配置问及那的查找位置 2   classpath/config
-
-#创的是yaml的话没有叶子图标可能和classpath下默认的冲突了,没图标就没提示
-
-person:
-  name: 66

@@ -1,3 +1,0 @@
-# Auto Configure   别加载错了，我就是一开始加载错了，没搞透自动装配流程
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.zzq.hello.auto.HelloServiceAutoConfiguration

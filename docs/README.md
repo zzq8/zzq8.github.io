@@ -1,12 +1,18 @@
 ---
 article: false
 icon: fa-solid fa-book-open-reader
-updated: 2025-11-08 11:13:04
+updated: 2025-12-13 10:27:20
 ---
 # Piglet 开源笔记
 > 编程是一件幸福的事情, 不要让你的工作变得索然无味.
 >
 > 用 "输入" 倒逼 "输出"
+>
+> 知行合一 ！！！慢慢来比较快！自己写点属于自己的 MD 笔记。<font color=red>保持热爱，留有期待！</font>
+>
+> <font color=blue>以求职为导向来学习</font> 主次关系需要分清楚！
+>
+> `我更希望自己是在不断向上爬山，而不是重复劳动、绕山而行。`虽然后者更轻松，但我看不到山顶的风光，也没有成就感，曾经的热爱就慢慢消失了。
 
 [![](https://img.shields.io/discord/1248900118166638672?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge)](https://discord.gg/cWAzWeZhFh)
 

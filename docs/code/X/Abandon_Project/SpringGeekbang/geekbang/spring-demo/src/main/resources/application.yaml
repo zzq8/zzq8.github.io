@@ -1,6 +1,0 @@
-#\u624D\u770B\u5230 console \u8FB9\u4E0A\u5C31\u662F Actuator\uFF0Cidea\u5C31\u662F\u725B
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
