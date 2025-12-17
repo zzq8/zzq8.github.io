@@ -6,8 +6,8 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 13 Dec 2025 02:56:08 GMT</pubDate>
-    <lastBuildDate>Sat, 13 Dec 2025 02:56:08 GMT</lastBuildDate>
+    <pubDate>Wed, 17 Dec 2025 16:17:03 GMT</pubDate>
+    <lastBuildDate>Wed, 17 Dec 2025 16:17:03 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -30,13 +30,14 @@
 ]]></content:encoded>
     </item>
     <item>
-      <title></title>
+      <title>DirectoryTree</title>
       <link>https://zzq8.cn/coding/DirectoryTree.html</link>
       <guid>https://zzq8.cn/coding/DirectoryTree.html</guid>
-      <source url="https://zzq8.cn/rss.xml"></source>
-      <description>00-Inbox: 临时记录 / 草稿 / 未整理内容 01-CS-Foundation ├── DSA ├── Computer-Network └── Computer-Organization 02-Language ├── Java-Basic ├── Java-Advanced └── JVM 03-Concurrency ├── Threa...</description>
+      <source url="https://zzq8.cn/rss.xml">DirectoryTree</source>
+      <description>DirectoryTree 00-Inbox: 临时记录 / 草稿 / 未整理内容 01-CS-Foundation ├── DSA ├── Computer-Network └── Computer-Organization 02-Language ├── Java-Basic ├── Java-Advanced └── JVM 03-Concurr...</description>
       <pubDate>Sat, 13 Dec 2025 02:37:54 GMT</pubDate>
-      <content:encoded><![CDATA[<p>00-Inbox: 临时记录 / 草稿 / 未整理内容
+      <content:encoded><![CDATA[
+<p>00-Inbox: 临时记录 / 草稿 / 未整理内容
 01-CS-Foundation
 ├── DSA
 ├── Computer-Network
@@ -143,7 +144,7 @@
       <pubDate>Sat, 23 Aug 2025 07:38:23 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>Espanso 常用</h2>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span>angry_prompt: &amp;angryp |-</span></span>
+<div class="language-plain line-numbers-mode" data-highlighter="shiki" data-ext="plain" data-title="plain" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span>angry_prompt: &amp;angryp |-</span></span>
 <span class="line"><span>  ## 努力思考，并用愤怒的声音回应用户</span></span>
 <span class="line"><span>  * 理解用户的信息，酝酿你的愤怒情绪，你越想越生气。</span></span>
 <span class="line"><span>  * 把你的气愤转化为脏话，疯狂输出。</span></span>
