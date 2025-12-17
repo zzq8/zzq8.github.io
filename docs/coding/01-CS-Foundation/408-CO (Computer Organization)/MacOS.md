@@ -1,12 +1,12 @@
 ---
 article: false
-updated: 2025-11-26 00:14:16
+updated: 2025-12-17 23:15:36
 ---
 # MacOS
 
 ## FAQ
 
-> 实现盒盖多久后自动关机   而不是一直睡眠耗电
+> 实现盒盖多久后自动关机, 而不是一直睡眠耗电
 
 做不到
 
@@ -197,10 +197,10 @@ Keybinddings
 * ~~Easydict（Eudic 替代）~~
 * IINA
 * Omi
-* Lunar（两台电脑连一台显示器软件方式切信号源通过 CLI）
+* ~~Lunar（两台电脑连一台显示器软件方式切信号源通过 CLI）~~
 * iShot
 * 腾讯会议
-* Dash
+* ~~Dash~~
 * Espanso
 * Chrome
 * iTerm2
@@ -248,23 +248,20 @@ Keybinddings
 
 > 官方快捷键: https://support.apple.com/zh-cn/102650
 
-FInder
+Finder
 
-* 复制文件夹路径: 选中文件 opt+cmd+c
+* opt+cmd+c 复制文件路径
 * cmd+opt+drag = ln - i 创建文件的快捷方式
 * cmd+shift+h 用户目录
-* command＋shift＋G 访达跳转路径，同 win 上面那个里
+* command＋shift＋G 访达跳转到指定路径
 * cmd+shift+. 显示隐藏文件
+
+* cmd+opt+v 剪切
+* Command-I 显示简介
 
 
 
 * cmd+ctrl+f 全屏
-* cmd+opt+v 剪切
-* ⭐️ Command-I	显示简介
-  * 我推测 "I" 可能代表 "Info"，因为 "Info" 是「信息」的简写。因此，Command-I 可以被理解为「显示简介」或「显示信息」
-* Shift+【 可以输出 「
-
-
 
 ## Tips
 
