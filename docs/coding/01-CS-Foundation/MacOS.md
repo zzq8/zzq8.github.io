@@ -1,5 +1,5 @@
 ---
-updated: 2026-01-01 15:05:29
+updated: 2026-01-01 17:13:40
 ---
 
 # MacOS
@@ -14,7 +14,9 @@ updated: 2026-01-01 15:05:29
 
 ## 一、Software
 
-### 原大佬的笔记里有很多, 选了些我会用的
+### 0.直接用
+
+> 原大佬的笔记里有很多, 选了些我会用的
 
 安装 HomeBrew 并用他安装 App 和 Cli 工具。App 可以在 [homebrew-cask — Homebrew Formulae](https://formulae.brew.sh/cask/) 里找有没有，Cli 工具可以在 [homebrew-core — Homebrew Formulae](https://formulae.brew.sh/formula/) 找有没有。
 
@@ -52,7 +54,8 @@ brew install \
   fd \
   fzf \
   tree \
-  lazygit
+  lazygit \
+  translate-shell
 
   mkcert \
   ffmpeg \
@@ -69,9 +72,11 @@ brew install \
 * iTerm2 (brew)
 * Thor launcher (brew)
 * Espanso (brew)
+  * translate-shell (brew)
+
 * Typora (brew)
 * Eudic (brew[还没试过], App Store)
-* Logi Options+
+* Logi Options+ [鼠标滚动方向标准模式, 平滑滚动]
 * Ecopaste
 
 > 以下是我选择装的
@@ -92,6 +97,20 @@ brew install \
 
 
 ### 1.Sublime
+
+> 
+>
+> 常用命令
+>
+> - cmd+shift+p
+>   - search: install package (安装插件)
+>   - Search: key bindings
+>
+> 常用插件: 
+>
+> - Insert nums
+> - pretty json
+> - jsonPath
 
 #### Setting
 
@@ -126,9 +145,73 @@ brew install \
 }
 ```
 
-
-
 #### Keybinddings
+
+#### plungin
+
+> Json - 去除转义后格式化
+
+```python
+# 文件路径：
+#   Packages/User/json_unescape.py
+
+import sublime
+import sublime_plugin
+import codecs
+import json
+import re
+
+
+class JsonUnescapeCommand(sublime_plugin.TextCommand):
+    """
+    将所选文本从 \\uXXXX 反转义，并尝试：
+    1) 修复 latin-1/utf-8 编码错位
+    2) 把合法 JSON pretty-print
+    如果没有选区，则默认作用于整个文件。
+    """
+    def run(self, edit):
+        view = self.view
+        sels = view.sel()
+
+        # 如果没有任何选区，就把全文作为目标
+        if all(r.empty() for r in sels):
+            sels = [sublime.Region(0, view.size())]
+
+        # 反向遍历，避免替换导致后续 Region 位移
+        for region in reversed(sels):
+            raw = view.substr(region)
+
+            # 去掉首尾引号（如果整段都被同一种引号包裹）
+            if (raw.startswith('"') and raw.endswith('"')) or \
+               (raw.startswith("'") and raw.endswith("'")):
+                raw_inner = raw[1:-1]
+            else:
+                raw_inner = raw
+
+            # 1) unicode_escape 解码
+            try:
+                text = codecs.decode(raw_inner, 'unicode_escape')
+            except Exception:
+                text = raw_inner
+
+            # 2) 修复“乱码”（latin1→utf8 的常见错位）
+            try:
+                text = text.encode('latin1').decode('utf-8')
+            except Exception:
+                pass
+
+            # 3) 若是 JSON，再格式化
+            try:
+                obj = json.loads(text)
+                text = json.dumps(obj, ensure_ascii=False, indent=4)
+            except Exception:
+                pass
+
+            # 写回
+            view.replace(edit, region, text)
+```
+
+> 
 
 ```
 [
@@ -193,14 +276,25 @@ brew install \
 	// ⭐️ 看command key技巧, 控制台 -->   sublime.log_commands(True)
 	// StatusBarJsonPath package
 	{"keys": ["super+alt+shift+c"], "command": "copy_json_path" },
-	{ "keys": ["super+plus+q"], "command": "increase_font_size" },
+	{ "keys": ["super+plus+q+[+]+;+'"], "command": "increase_font_size" },
 
 ]
 ```
 
 ### 2.Espanso
 
+> match
+
 见: 提示词 [Z_Prompt.md](../Z_Prompt.md)
+
+
+
+> config
+
+```yaml
+search_shortcut: off
+show_icon: false
+```
 
 ### 3.Iterm2
 
@@ -515,7 +609,9 @@ CLOSE_WIN quit
 
 Finder
 
-* opt+cmd+c 复制文件路径
+* cmd+/ 可以看到当前文件夹多少个项目, 还剩多大空间 [实用]
+
+* opt+cmd+c 复制文件路径 [实用]
 
 * cmd+opt+drag = ln - i 创建文件的快捷方式
 

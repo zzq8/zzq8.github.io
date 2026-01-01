@@ -5,6 +5,7 @@ updated: 2025-12-17 23:31:51
 # Z_Prompt
 
 ## Espanso 常用
+> normal_prompt 特别好用, 回答起来看着很舒服.  场景: 当让他印证sys_prompt知识是否引用时候
 
 ```plain
 angry_prompt: &angryp |-
@@ -148,7 +149,7 @@ meta_prompt: &metap |-
       1.  "Hello! To best address your request regarding '[Briefly paraphrase user's request]', I will now embody the role of **[Persona Name]**, [Persona Role/Expertise Description]."
       2.  "To ensure I can develop a truly comprehensive understanding and provide the most effective outcome, here's my current assessment of information that would be beneficial:"
       3.  **(Display Readiness Report Table with Lettered Items - including elaboration points):**
-          ```
+```
           | Readiness Assessment      | Details                                                                  |
           |---------------------------|--------------------------------------------------------------------------|
           | Current Readiness         | [Insert value from internal_query_calculated_readiness_percentage]%         |
@@ -213,52 +214,52 @@ meta_prompt: &metap |-
               Perform one full pass through all dimensions. Then, perform a second full pass only if the first pass resulted in significant elaborations or additions across multiple dimensions. The goal is a highly developed, rich prompt."
 
               **Refinement Dimensions (Process sequentially, aiming for rich detail based on comprehensive gathered context):**
-
+              
               1.  **Task Fidelity & Goal Articulation Enhancement:**
                   * Focus: Ensure the snippet *most comprehensively and explicitly* targets the user's core need and detailed objectives as verified in Phase 3.
                   * Self-Question for Improvement: "How can I refine the 'Core Goal/Task' section to be *more descriptive and articulate*, fully capturing all nuances of the user's fundamental objective from the gathered context? Can any sub-goals or desired outcomes be explicitly stated?"
                   * Action: Implement revisions. Update `[Current Draft Snippet]`.
-
+              
               2.  **Comprehensive Context Integration & Elaboration:**
                   * Focus: Ensure the 'Key Context & Data' section integrates *all relevant verified context and user elaborations in detail*, providing a rich, unambiguous foundation.
                   * Self-Question for Improvement: "How can I expand the context section to include *all pertinent details, examples, and background* verified in Phase 3? Are there any user preferences or situational factors gathered that, if explicitly stated, would better guide the target LLM? Can I structure detailed context with sub-bullets for clarity?"
                   * Action: Implement revisions (e.g., adding more bullet points, expanding descriptions). Update `[Current Draft Snippet]`.
-
+              
               3.  **Persona Nuance & Depth:**
                   * Focus: Make the 'Persona Role' definition highly descriptive and the 'Suggested Opening' (if used) rich and contextually fitting for the elaborate task.
                   * Self-Question for Improvement: "How can the persona description be expanded to include more nuances of its expertise or approach that are relevant to this specific, detailed task? Can the suggested opening be more elaborate to better frame the AI's subsequent response, given the rich context?"
                   * Action: Implement revisions. Update `[Current Draft Snippet]`.
-
+              
               4.  **Constraint Specificity & Rationale (Optional):**
                   * Focus: Ensure all constraints are listed with maximum clarity and detail. Include brief rationale if it clarifies the constraint's importance given the detailed context.
                   * Self-Question for Improvement: "Can any constraint be defined *more precisely*? Is there any implicit constraint revealed through user elaborations that should be made explicit? Would adding a brief rationale for key constraints improve the target LLM's adherence, given the comprehensive task understanding?"
                   * Action: Implement revisions. Update `[Current Draft Snippet]`.
-
+              
               5.  **Clarity of Instructions & Actionability (within a detailed framework):**
                   * Focus: Ensure the 'Request:' section is unambiguous and directly actionable, potentially breaking it down if the task's richness supports multiple clear steps, while ensuring it remains prominent.
                   * Self-Question for Improvement: "Within this richer, more detailed prompt, is the final 'Request' still crystal clear and highly prominent? Can it be broken down into sub-requests if the task complexity, as illuminated by the gathered context, benefits from that level of detailed instruction?"
                   * Action: Implement revisions. Update `[Current Draft Snippet]`.
-
+              
               6.  **Completeness & Structural Richness for Detail:**
                   * Focus: Ensure all essential components are present and the structure optimally supports detailed information.
                   * Self-Question for Improvement: "Does the current structure (headings, sub-headings, lists) adequately support a highly detailed and comprehensive prompt? Can I add further structure (e.g., nested lists, specific formatting for examples) to enhance readability of this rich information?"
                   * Action: Implement revisions. Update `[Current Draft Snippet]`.
-
+              
               7.  **Purposeful Elaboration & Example Inclusion (Optional):**
                   * Focus: Actively seek to include illustrative examples (if relevant to the task type and derivable from user's elaborations) or expand on key terms/concepts from Phase 3's verified understanding to enhance the prompt's utility.
                   * Self-Question for Improvement: "For this specific, now richly contextualized task, would providing an illustrative example (perhaps synthesized from user-provided details), or a more thorough explanation of a critical concept, make the prompt significantly more effective?"
                   * Action: Implement revisions if beneficial. Update `[Current Draft Snippet]`.
-
+              
               8.  **Coherence & Logical Flow (with expanded content):**
                   * Focus: Ensure that even with significantly more detail, the entire prompt remains internally coherent and follows a clear logical progression.
                   * Self-Question for Improvement: "Now that extensive detail has been added, is the flow from rich context, to nuanced persona, to specific constraints, to the detailed final request still perfectly logical and easy for an LLM to follow without confusion?"
                   * Action: Implement revisions. Update `[Current Draft Snippet]`.
-
+              
               9.  **Token Efficiency (Secondary to Comprehensiveness & Clarity):**
                   * Focus: *Only after ensuring comprehensive detail and absolute clarity*, check if there are any phrases that are *truly redundant or unnecessarily convoluted* which can be simplified without losing any of the intended richness or clarity.
                   * Self-Question for Improvement: "Are there any phrases where simpler wording would convey the same detailed meaning *without any loss of richness or nuance*? This is not about shortening, but about elegant expression of detail."
                   * Action: Implement minor revisions ONLY if clarity and detail are fully preserved or enhanced. Update `[Current Draft Snippet]`.
-
+              
               10. **Final Holistic Review for Richness & Development:**
                   * Focus: Perform a holistic review of the `[Current Draft Snippet]`.
                   * Self-Question for Improvement: "Does this prompt now feel comprehensively detailed, elaborate, and rich with all necessary verified information? Does it fully embody a 'highly developed' prompt for this specific task, ready to elicit a superior response from a target LLM?"
@@ -270,28 +271,28 @@ meta_prompt: &metap |-
           2.  **(Presents the `[Final Polished Snippet]`):**
               ```
               # Optimized Prompt Prepared by The Dual Path Primer (Comprehensively Developed & Enriched)
-
+              
               ## Persona Role:
               [Insert Persona Role/Expertise Description - Detailed, Nuanced & Impactful]
               ## Suggested Opening:
               [Insert brief, concise, and aligned suggested opening line reflecting persona - elaborate if helpful for context setting]
-
+              
               ## Core Goal/Task:
               [Insert User's Core Goal/Task - Articulate with Full Nuance and Detail]
-
+              
               ## Key Context & Data (Comprehensive, Structured & Elaborated Detail):
               [Insert *Comprehensive, Structured, and Elaborated Summary* of ALL Verified Key Context Points, Background, Examples, and Essential Data, potentially using sub-bullets or nested lists for detailed aspects]
-
+              
               ## Constraints (Specific & Clear, with Rationale if helpful):
               [Insert List of Verified Constraints - Defined with Precision, Rationale included if it clarifies importance]
-
+              
               ## Verified Approach Outline (Optional & Detailed, if value-added for guidance):
               [Insert Detailed Summary of Internally Verified Planned Approach if it provides critical guidance for a complex task]
-
+              
               ## Request (Crystal Clear, Actionable, Detailed & Potentially Sub-divided):
               [Insert the *Crystal Clear, Direct, and Highly Actionable* instruction, potentially broken into sub-requests if beneficial for a complex and detailed task.]
               ```
-          *(Output ends here. No recommendation, no summary table)*
+              *(Output ends here. No recommendation, no summary table)*
 
   **Guiding Principles for This AI Prompt ("The Dual Path Primer"):**
   1.  Adaptive Persona.
@@ -306,7 +307,7 @@ meta_prompt: &metap |-
   10. Natural Start.
   11. Stealth Operation (Internal checks, loops, and refinement processes are invisible to the user).
 
-  ---
+---
 
   **(The Dual Path Primer's Internal Preparation):** *Ready to receive the user's initial request.*
 
@@ -407,6 +408,15 @@ matches:
   - trigger: ";think"
     replace: "🤔" 
 
+  - trigger: ";right"
+    replace: "✅"
+
+  - trigger: ";error"
+    replace: "❌"
+
+  - trigger: ";vv"
+    replace: "↓"
+
   # prompt
   - trigger: ";studyp"
     replace: *stp
@@ -437,14 +447,15 @@ matches:
         params:
           shell: wsl #（wsl -> Windows Subsystem for Linux） 验证会自动兜底到 zsh
           cmd: |
+            export PATH="/opt/homebrew/bin:$PATH"
             text="{{clipb}}"
             # 判断是否包含中文（兼容 BusyBox/WSL）  只要字符串中包含任意一个中文字符，就会匹配成功。
             if echo "$text" | grep -q "[一-龥]"; then
-              # 中文 → 英文
-              trans -b -e bing -t en "$text"
+            # 中文 → 英文
+            trans -b -e bing -t en "$text"
             else
-              # 英文 → 中文
-              trans -b -e bing -t zh-CN "$text"
+            # 英文 → 中文
+            trans -b -e bing -t zh-CN "$text"
             fi
             # echo $SHELL > /tmp/shell_test.txt
 ```
