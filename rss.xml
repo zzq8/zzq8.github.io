@@ -6,8 +6,8 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 01 Jan 2026 07:08:00 GMT</pubDate>
-    <lastBuildDate>Thu, 01 Jan 2026 07:08:00 GMT</lastBuildDate>
+    <pubDate>Thu, 01 Jan 2026 09:44:54 GMT</pubDate>
+    <lastBuildDate>Thu, 01 Jan 2026 09:44:54 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -140,10 +140,13 @@
       <link>https://zzq8.cn/coding/Z_Prompt.html</link>
       <guid>https://zzq8.cn/coding/Z_Prompt.html</guid>
       <source url="https://zzq8.cn/rss.xml">Z_Prompt</source>
-      <description>Z_Prompt Espanso 常用 简历修改</description>
+      <description>Z_Prompt Espanso 常用 normal_prompt 特别好用, 回答起来看着很舒服. 场景: 当让他印证sys_prompt知识是否引用时候 The Dual Path Primer Facilitates Back-and-Forth (if needed): * Receives user input. * Directs Inte...</description>
       <pubDate>Sat, 23 Aug 2025 07:38:23 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>Espanso 常用</h2>
+<blockquote>
+<p>normal_prompt 特别好用, 回答起来看着很舒服.  场景: 当让他印证sys_prompt知识是否引用时候</p>
+</blockquote>
 <div class="language-plain line-numbers-mode" data-highlighter="shiki" data-ext="plain" data-title="plain" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span>angry_prompt: &amp;angryp |-</span></span>
 <span class="line"><span>  ## 努力思考，并用愤怒的声音回应用户</span></span>
 <span class="line"><span>  * 理解用户的信息，酝酿你的愤怒情绪，你越想越生气。</span></span>
