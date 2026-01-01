@@ -1,5 +1,5 @@
 ---
-updated: 2025-12-18 00:13:37
+updated: 2026-01-01 15:05:29
 ---
 
 # MacOS
@@ -14,25 +14,7 @@ updated: 2025-12-18 00:13:37
 
 ## 一、Software
 
-* Chrome, idea, pycharm, postman, (Navicat, TinyRDM)
-* Sublime
-* iTerm2
-* Thor launcher (brew)
-* Eudic (App Store)
-* Ecopaste
-* Espanso
-* Typora 
-
-
-
-* Office
-* the unarchiver (zip可以系统自动解压, 但是rar不行要下)
-* Lemon
-* Omi (App Store)
-* iina
-* Aldente (保护电池)
-
-### todo 研究大佬这些软件哪些我能用
+### 原大佬的笔记里有很多, 选了些我会用的
 
 安装 HomeBrew 并用他安装 App 和 Cli 工具。App 可以在 [homebrew-cask — Homebrew Formulae](https://formulae.brew.sh/cask/) 里找有没有，Cli 工具可以在 [homebrew-core — Homebrew Formulae](https://formulae.brew.sh/formula/) 找有没有。
 
@@ -43,74 +25,69 @@ export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_pr
 # 安装 HomeBrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# 用 HomeBrew 安装 App，以下是我可以用 HomeBrew 安装的 App 列表（以字母排序，方便你查找）
+# XD 整理过的 cask
 brew install --cask \
-  115browser \
-  1password \
-  alfred \
-  battery-buddy \
-  coteditor \
-  docker \  
-  eagle \  
-  espanso \  
-  figma \  
-  google-chrome  \  
-  gas-mask \  
-  handbrake \  
-  iina \  
-  iterm2 \  
-  karabiner-elements \  
-  keepingyouawake \  
-  keycastr \  
-  licecap \  
-  microsoft-remote-desktop \  
-  obs \  
-  obsidian \  
-  qq \
-  setapp \  
-  shottr \  
-  sogouinput \  
-  sourcetree \  
-  telegram \  
-  thor \  
-  usr-sse2-rdm \  
-  videofusion \  
-  visual-studio-code \  
-  wechat \
-  webstorm \  
-  zerotier-one
+  shottr \
+  licecap \
+  gas-mask \
+  google-chrome  \
+  espanso \
+  iterm2 \
+  sogouinput \
+  telegram \
+  thor \
+  visual-studio-code \
+  postman \
+  typora \
+  eudic
 
-# 安装 Cli 工具，以下是我的（以字母排序，方便你查找）
-brew install \  
-  autojump \  
-  bat \  
-  cmatrix \  
-  commitzen \  
-  deno \  
-  diff-so-fancy \  
-  fd \  
-  ffmpeg \  
-  fzf \  
-  gh \  
-  git \  
-  httpie \  
-  hub \  
-  hyperfine \  
-  imagemagick \  
-  jq \  
-  lazygit \  
-  mkcert \  
-  nvm \  
-  pnpm \  
-  the_silver_searcher \  
-  tig \  
-  tldr \  
-  tree \  
-  ugit \  
-  wget
+  wechat \
+  iina \
+  obs \
+  docker \
+  qq \
+  obsidian \
+# XD 安装 Cli 工具，以下是我的（以字母排序，方便你查找）
+brew install \
+  fd \
+  fzf \
+  tree \
+  lazygit
+
+  mkcert \
+  ffmpeg \
 ```
 
 
+
+注意很多 brew 都可以装 (区分 Cli/Cask) !!!
+
+> 以下是我肯定要装的
+
+* Chrome (brew), idea, pycharm, postman (brew)~~, (Navicat, TinyRDM)~~
+* Sublime (brew)
+* iTerm2 (brew)
+* Thor launcher (brew)
+* Espanso (brew)
+* Typora (brew)
+* Eudic (brew[还没试过], App Store)
+* Logi Options+
+* Ecopaste
+
+> 以下是我选择装的
+
+* Office
+* the unarchiver (zip可以系统自动解压, 但是rar不行要下)
+* Lemon
+* Omi (App Store)
+* iina
+* Aldente (保护电池)
+
+> 其他
+
+* KeyCastr 屏幕显示你按的键
+* LICEcap 录 GIF 动图
+* [**VideoFusion**](chatgpt://generic-entity?number=25) 视频剪辑（偏轻量）
 
 
 
@@ -184,6 +161,7 @@ brew install \
 	{ "keys": ["super+shift+up"], "command": "swap_line_up" },
 	{ "keys": ["super+shift++down"], "command": "swap_line_down" },
 	{ "keys": ["ctrl+1"], "command": "next_bookmark" },
+	{ "keys": ["ctrl+shift+1"], "command": "prev_bookmark" },
 	{ "keys": ["ctrl+2"], "command": "prev_bookmark" },
 	{ "keys": ["f3"], "command": "toggle_bookmark" },
 	{ "keys": ["super+-"], "command": "fold" },
@@ -199,10 +177,6 @@ brew install \
 			{ "key": "overlay_has_focus", "operator": "equal", "operand": false },
 		]
 	},
-
-	{"keys": ["super+alt+l"], "command": "pretty_json"},
-	{ "keys": ["ctrl+shift+1"], "command": "prev_bookmark" },
-	{ "keys": ["ctrl+2"], "command": "prev_bookmark" },
 	// Cmd+[ -> 跳转回上一个位置 (IDEA: Back)
 	{ "keys": ["super+["], "command": "jump_back" },
 	{ "keys": ["super+alt+left"], "command": "jump_back" },
@@ -210,10 +184,16 @@ brew install \
 	{ "keys": ["super+]"], "command": "jump_forward" },
 	{ "keys": ["super+alt+right"], "command": "jump_forward" },
 
-	// 废掉这个指令
-	{ "keys": ["super+plus+q+a+'+]"], "command": "increase_font_size" },
-	// TODO 想到什么 idea 验证一下, 问 GPT 
+	// TODO 想到什么 idea 验证一下, 问 GPT
+	{"keys": ["super+alt+l"], "command": "pretty_json" },
 
+	// { "keys": ["super+alt+l"], "command": "json_unescape" }
+	{ "keys": ["super+alt+control+l"], "command": "json_unescape" },
+
+	// ⭐️ 看command key技巧, 控制台 -->   sublime.log_commands(True)
+	// StatusBarJsonPath package
+	{"keys": ["super+alt+shift+c"], "command": "copy_json_path" },
+	{ "keys": ["super+plus+q"], "command": "increase_font_size" },
 
 ]
 ```
@@ -564,7 +544,19 @@ Finder
 
 ## 四、Technique
 
-- **执行 `defaults write -g NSWindowShouldDragOnGesture -bool true`，然后就可以按住「⌘+⌃」然后鼠标点击任意地方拖动窗口了。来源 [Moving a macOS window by clicking anywhere on it (like on Linux) · mmazzarolo.com](https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/)，但是在 MacOS 13 下似乎失效了。**
+#### 1. 拖动软件
+
+**执行 `defaults write -g NSWindowShouldDragOnGesture -bool true`，然后就可以按住「⌘+⌃」然后鼠标点击任意地方拖动窗口了。来源 [Moving a macOS window by clicking anywhere on it (like on Linux) · mmazzarolo.com](https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/)，但是在 MacOS 13 下似乎失效了。**
+
+#### 2. dock 快速显示隐藏
+
+https://apple.stackexchange.com/questions/33600/how-can-i-make-auto-hide-show-for-the-dock-faster
+
+```sh
+defaults write com.apple.dock autohide-time-modifier -int 0; killall Dock
+```
+
+
 
 ## 四、FAQ
 
