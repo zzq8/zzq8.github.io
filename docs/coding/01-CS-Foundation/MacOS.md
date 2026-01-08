@@ -1,5 +1,5 @@
 ---
-updated: 2026-01-01 17:13:40
+updated: 2026-01-09 00:08:09
 ---
 
 # MacOS
@@ -111,10 +111,15 @@ brew install \
 > - Insert nums
 > - pretty json
 > - jsonPath
+>
+> 常用py:
+>
+> * json 去转义格式化
+> * ~~批量replace后, 批量保存+关闭~~  ==> 这个原生可解决
 
 #### Setting
 
-```
+```json
 {
 	// 设置Sans-serif（无衬线）等宽字体，以便阅读
 	"font_face": "YaHei Consolas Hybrid",
@@ -146,6 +151,84 @@ brew install \
 ```
 
 #### Keybinddings
+```json
+[
+	//XXX 这里 MACOS super 代表 Command
+	// { "keys": ["super+up"], "command": "select_lines", "args": {"forward": false} },
+	// { "keys": ["super+down"], "command": "select_lines", "args": {"forward": true} },
+	// { "keys": ["super+alt+down"], "command": "duplicate_line" },
+	// { "keys": ["super+e"], "command": "find_under_expand" },
+	// { "keys": ["supre+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	// { "keys": ["super+shift+l"], "command": "toggle_side_bar" },
+	// { "keys": ["alt+up"], "command": "swap_line_up" },
+	// { "keys": ["alt+down"], "command": "swap_line_down" },
+	// { "keys": ["super+1"], "command": "next_bookmark" },
+	// { "keys": ["super+2"], "command": "prev_bookmark" },
+	// { "keys": ["super+shift+f11"], "command": "toggle_bookmark" },
+	{ "keys": ["shift+f11"], "command": "clear_bookmarks" },
+	{ "keys": ["super+plus+q+[+]+;+'"], "command": "increase_font_size" },
+
+	// 这个虽然左边搜不着, 但是和右键的文案一直 command (尝试还真可以)
+
+	// 这两个命令一起, 就是保存全部 + 关闭全部
+	{ "keys": ["super+alt+s"], "command": "save_all" },
+	{
+        "keys": ["super+alt+w"],
+        "command": "close_other_tabs"
+    },
+	//End
+
+
+	// 20250917 --> Mac new, 保持同idea一致
+	{ "keys": ["ctrl+option+shift+down"], "command": "next_modification" },
+	{ "keys": ["ctrl+option+shift+up"], "command": "prev_modification" },
+	{ "keys": ["super+d"], "command": "duplicate_line" },
+	{ "keys": ["ctrl+g"], "command": "find_under_expand" },
+	{ "keys": ["super+1"], "command": "toggle_side_bar" },
+	{ "keys": ["super+shift+up"], "command": "swap_line_up" },
+	{ "keys": ["super+shift++down"], "command": "swap_line_down" },
+	{ "keys": ["ctrl+1"], "command": "next_bookmark" },
+	{ "keys": ["ctrl+shift+1"], "command": "prev_bookmark" },
+	{ "keys": ["ctrl+2"], "command": "prev_bookmark" },
+	{ "keys": ["f3"], "command": "toggle_bookmark" },
+	{ "keys": ["super+-"], "command": "fold" },
+	{ "keys": ["super+="], "command": "unfold" },
+	{ "keys": ["super+option+["], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["super+option+]"], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["super+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+    { "keys": ["super+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} }, // 删除行
+	{ "keys": ["super+alt+l"], "command": "reindent" },
+	// Shift+Enter -> 新起一行（无论光标在行尾还是中间）
+	{ "keys": ["shift+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"}, "context":
+		[
+			{ "key": "overlay_has_focus", "operator": "equal", "operand": false },
+		]
+	},
+	// Cmd+[ -> 跳转回上一个位置 (IDEA: Back)
+	{ "keys": ["super+["], "command": "jump_back" },
+	{ "keys": ["super+alt+left"], "command": "jump_back" },
+	// Cmd+] -> 跳转到下一个位置 (IDEA: Forward)
+	{ "keys": ["super+]"], "command": "jump_forward" },
+	{ "keys": ["super+alt+right"], "command": "jump_forward" },
+	{ "keys": ["super+alt+z"], "command": "revert_hunk" },
+
+
+
+
+	// TODO 想到什么 idea 验证一下, 问 GPT
+	// ⭐️ 看command key技巧, 控制台 -->   sublime.log_commands(True)
+
+	// plugin start -->
+	{"keys": ["super+alt+l"], "command": "pretty_json" },
+	{ "keys": ["super+alt+control+l"], "command": "json_unescape" },
+	// StatusBarJsonPath package
+	{"keys": ["super+alt+shift+c"], "command": "copy_json_path" },
+	// <-- plugin end
+
+	
+
+]
+```
 
 #### plungin
 
@@ -209,76 +292,6 @@ class JsonUnescapeCommand(sublime_plugin.TextCommand):
 
             # 写回
             view.replace(edit, region, text)
-```
-
-> 
-
-```
-[
-	//XXX 这里 MACOS super 代表 Command
-	// { "keys": ["super+up"], "command": "select_lines", "args": {"forward": false} },
-	// { "keys": ["super+down"], "command": "select_lines", "args": {"forward": true} },
-	// { "keys": ["super+alt+down"], "command": "duplicate_line" },
-	// { "keys": ["super+e"], "command": "find_under_expand" },
-	// { "keys": ["supre+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
-	// { "keys": ["super+shift+l"], "command": "toggle_side_bar" },
-	// { "keys": ["alt+up"], "command": "swap_line_up" },
-	// { "keys": ["alt+down"], "command": "swap_line_down" },
-	// { "keys": ["super+1"], "command": "next_bookmark" },
-	// { "keys": ["super+2"], "command": "prev_bookmark" },
-	// { "keys": ["super+shift+f11"], "command": "toggle_bookmark" },
-	{ "keys": ["shift+f11"], "command": "clear_bookmarks" },
-
-	//TODO Git下载。 这个快捷键虽然左边搜不到，但是确实有用！！！其它上方工具栏应该同理！
-	{ "keys": ["super+shift+w"], "command": "close_other_tabs" },
-	{ "keys": ["super+alt+shift+w"], "command": "close_other_windows" },
-	//End
-
-
-	// 20250917 --> Mac new, 保持同idea一致
-	{ "keys": ["ctrl+option+shift+down"], "command": "next_modification" },
-	{ "keys": ["ctrl+option+shift+up"], "command": "prev_modification" },
-	{ "keys": ["super+d"], "command": "duplicate_line" },
-	{ "keys": ["ctrl+g"], "command": "find_under_expand" },
-	{ "keys": ["super+1"], "command": "toggle_side_bar" },
-	{ "keys": ["super+shift+up"], "command": "swap_line_up" },
-	{ "keys": ["super+shift++down"], "command": "swap_line_down" },
-	{ "keys": ["ctrl+1"], "command": "next_bookmark" },
-	{ "keys": ["ctrl+shift+1"], "command": "prev_bookmark" },
-	{ "keys": ["ctrl+2"], "command": "prev_bookmark" },
-	{ "keys": ["f3"], "command": "toggle_bookmark" },
-	{ "keys": ["super+-"], "command": "fold" },
-	{ "keys": ["super+="], "command": "unfold" },
-	{ "keys": ["super+option+["], "command": "move_to", "args": {"to": "brackets"} },
-	{ "keys": ["super+option+]"], "command": "move_to", "args": {"to": "brackets"} },
-	{ "keys": ["super+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
-    { "keys": ["super+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} }, // 删除行
-	{ "keys": ["super+alt+l"], "command": "reindent" },
-	// Shift+Enter -> 新起一行（无论光标在行尾还是中间）
-	{ "keys": ["shift+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"}, "context":
-		[
-			{ "key": "overlay_has_focus", "operator": "equal", "operand": false },
-		]
-	},
-	// Cmd+[ -> 跳转回上一个位置 (IDEA: Back)
-	{ "keys": ["super+["], "command": "jump_back" },
-	{ "keys": ["super+alt+left"], "command": "jump_back" },
-	// Cmd+] -> 跳转到下一个位置 (IDEA: Forward)
-	{ "keys": ["super+]"], "command": "jump_forward" },
-	{ "keys": ["super+alt+right"], "command": "jump_forward" },
-
-	// TODO 想到什么 idea 验证一下, 问 GPT
-	{"keys": ["super+alt+l"], "command": "pretty_json" },
-
-	// { "keys": ["super+alt+l"], "command": "json_unescape" }
-	{ "keys": ["super+alt+control+l"], "command": "json_unescape" },
-
-	// ⭐️ 看command key技巧, 控制台 -->   sublime.log_commands(True)
-	// StatusBarJsonPath package
-	{"keys": ["super+alt+shift+c"], "command": "copy_json_path" },
-	{ "keys": ["super+plus+q+[+]+;+'"], "command": "increase_font_size" },
-
-]
 ```
 
 ### 2.Espanso
