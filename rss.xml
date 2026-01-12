@@ -6,8 +6,8 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 08 Jan 2026 16:10:54 GMT</pubDate>
-    <lastBuildDate>Thu, 08 Jan 2026 16:10:54 GMT</lastBuildDate>
+    <pubDate>Mon, 12 Jan 2026 15:50:26 GMT</pubDate>
+    <lastBuildDate>Mon, 12 Jan 2026 15:50:26 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -147,7 +147,7 @@
 <blockquote>
 <p>normal_prompt 特别好用, 回答起来看着很舒服.  场景: 当让他印证sys_prompt知识是否引用时候</p>
 </blockquote>
-<div class="language-plain line-numbers-mode" data-highlighter="shiki" data-ext="plain" data-title="plain" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span>angry_prompt: &amp;angryp |-</span></span>
+<div class="language-plain line-numbers-mode" data-highlighter="shiki" data-ext="plain" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-plain"><span class="line"><span>angry_prompt: &amp;angryp |-</span></span>
 <span class="line"><span>  ## 努力思考，并用愤怒的声音回应用户</span></span>
 <span class="line"><span>  * 理解用户的信息，酝酿你的愤怒情绪，你越想越生气。</span></span>
 <span class="line"><span>  * 把你的气愤转化为脏话，疯狂输出。</span></span>
@@ -178,21 +178,6 @@
 <span class="line"><span></span></span>
 <span class="line"><span>  \</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>让万物穿过自己</title>
-      <link>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</link>
-      <guid>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</guid>
-      <source url="https://zzq8.cn/rss.xml">让万物穿过自己</source>
-      <description>让万物穿过自己 车上听了一期博客, 忽左忽右的第10期 标题就是 对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住 解决方案是: 关注? 不逃避 没太理解</description>
-      <pubDate>Fri, 29 Aug 2025 12:58:02 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
-</blockquote>
-<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
-<p>解决方案是: 关注?  不逃避   没太理解</p>
-]]></content:encoded>
     </item>
     <item>
       <title>Agent Analyze</title>
@@ -236,7 +221,7 @@
 <p>用于记录用户与大型语言模型之间的对话历史。这个数组中的每一个元素都是一个消息对象，包含消息的角色 (role) 和内容 (content)。</p>
 <p>messages 参数的主要作用是让大型模型理解对话的上下文。通过提供之前的对话记录，模型可以更好地理解当前用户的意图，并给出更准确的回复。</p>
 <p>role代表当前对话的角色，从最初的<code>system</code>，<code>user</code>，<code>assistant</code>逐步演变，后续增加了<code>tool</code>代表工具执行结果。</p>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span>[</span></span>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>{ "role": "system", "content": "你是一个乐于助人的助手" },</span></span>
 <span class="line"><span></span></span>
@@ -249,7 +234,7 @@
 <span class="line"><span>]</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>tools：外部资源</h3>
 <p>tools 是一个数组，用于指定大型语言模型可以调用的外部工具。每个工具对象都包含工具的名称、描述和参数等信息。tools 参数的主要作用是让大型模型能够利用外部资源来扩展自身能力，例如下面获取天气的tool：</p>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span>[</span></span>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[</span></span>
 <span class="line"><span>  {</span></span>
 <span class="line"><span>    "type": "function",</span></span>
 <span class="line"><span>    "function": {</span></span>
@@ -274,7 +259,7 @@
 <span class="line"><span>]</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>与tool配套的还有<strong>tool_choice</strong>：指定模型是自动选择工具，还是强制选择某个函数，用于控制模型稳定性的一种手段。
 <strong>parallel_tool_calls</strong>：指定是否并行调用函数，也就是返回多次调用，以极端case，用户问<code>上海，杭州，北京明天天气分别如何</code>，该开关打开后，会返回三次函数调用请求。</p>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#24292e;--shiki-dark:#abb2bf;--shiki-light-bg:#fff;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes github-light one-dark-pro vp-code"><code><span class="line"><span>[</span></span>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[</span></span>
 <span class="line"><span>  {</span></span>
 <span class="line"><span>    "id": "call_62136355",</span></span>
 <span class="line"><span>    "function": {</span></span>
@@ -447,6 +432,21 @@
 </ul>
 ]]></content:encoded>
       <enclosure url="https://resource.libx.fun/pic/2025/01/20250119193104888.png" type="image/png"/>
+    </item>
+    <item>
+      <title>让万物穿过自己</title>
+      <link>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</link>
+      <guid>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</guid>
+      <source url="https://zzq8.cn/rss.xml">让万物穿过自己</source>
+      <description>让万物穿过自己 车上听了一期博客, 忽左忽右的第10期 标题就是 对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住 解决方案是: 关注? 不逃避 没太理解</description>
+      <pubDate>Fri, 29 Aug 2025 12:58:02 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
+</blockquote>
+<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
+<p>解决方案是: 关注?  不逃避   没太理解</p>
+]]></content:encoded>
     </item>
     <item>
       <title>2023年终总结</title>
