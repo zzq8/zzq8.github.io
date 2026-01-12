@@ -16,6 +16,7 @@ export default defineUserConfig({
   description: "自我提升笔记，记录并输出一切能让自己提升的知识。",
 
   theme,
+  
   // 是否开启页面预拉取，如果服务器宽带足够，可改为 true，会提升其他页面加载速度
   shouldPrefetch: false,
 

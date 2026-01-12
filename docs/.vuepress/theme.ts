@@ -5,7 +5,6 @@ import sidebar from "./sidebar.js";
 export default hopeTheme({
   // 主题选项：https://theme-hope.vuejs.press/zh/config/theme/layout.html
   hostname: "https://zzq8.cn",
-  iconAssets: ["fontawesome", "fontawesome-with-brands"],
   author: {
     name: "Piglet",
     url: "https://zzq8.cn",
@@ -14,18 +13,23 @@ export default hopeTheme({
   favicon: "/favicon.ico",
   logo: "/logo.png",
 
-    // 加密配置
+  // 加密配置
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
-      "/posts/personal/": ["zzq","123","123456"],
-      "/coding/StudyList.html": ["zzq","123","123456"],
+      "/posts/personal/": ["zzq", "123", "123456"],
+      "/coding/StudyList.html": ["zzq", "123", "123456"],
       "/coding/08-Coding-Practice/": ["123"],
     },
   },
 
   // 网站文章的版权声明
   license: "CC BY-NC-ND 4.0",
+
+  // icon: {
+  //   // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
+  //   assets: ["fontawesome", "fontawesome-with-brands"],
+  // },
 
   // copyright 默认为 Copyright © <作者>
   copyright: `
@@ -100,7 +104,7 @@ export default hopeTheme({
       excerptLength: 50
     },
 
-    git : {
+    git: {
       updatedTime: false
     },
 
@@ -153,29 +157,6 @@ export default hopeTheme({
       components: ["Badge", "BiliBili", "VidStack"],
     },
 
-    // 禁用不需要的配置
-    // https://plugin-md-enhance.vuejs.press/zh/guide/
-    mdEnhance: {
-      sub: true, // 上下角标
-      sup: true,
-      tasklist: true, // 任务列表
-      figure: true, // 启用 figure
-      imgLazyload: true, // 启用图片懒加载
-      // imgMark: true, // 启用图片标记
-      imgSize: true, // 启用图片大小
-      include: true, //导入文件
-      component: true, // 使用 component 代码块来在 Markdown 中添加组件
-      footnote: true,
-      // tabs: true, // 选项卡
-      alert: true, // GFM 警告
-      attrs: true, // 使用特殊标记为 Markdown 元素添加属性
-      hint: true, // 提示容器
-      mark: true, // 使用 == == 进行标记。请注意两边需要有空格。
-      align: true, // 启用自定义对齐
-      // codetabs: true, // 代码块分组
-      // demo: true, //代码演示
-    },
-
     // 站点数据，https://localhost/sitemap.xml
     // 踩坑一下午：处理依赖冲突问题！
     sitemap: {
@@ -193,7 +174,7 @@ export default hopeTheme({
     },
 
     // 本地搜索，和上方二选一
-    searchPro: {
+    slimsearch: {
       // 索引全部内容
       indexContent: true,
     },
@@ -209,4 +190,30 @@ export default hopeTheme({
 
   // 开发模式下是否启动热更新，显示所有更改并重新渲染
   hotReload: true,
+
+  // 禁用不需要的配置
+  // https://plugin-md-enhance.vuejs.press/zh/guide/
+  markdown: {
+    sub: true, // 上下角标
+    sup: true,
+    tasklist: true, // 任务列表
+    figure: true, // 启用 figure
+    imgLazyload: true, // 启用图片懒加载
+    // imgMark: true, // 启用图片标记
+    imgSize: true, // 启用图片大小
+    include: true, //导入文件
+    component: true, // 使用 component 代码块来在 Markdown 中添加组件
+    footnote: true,
+    // tabs: true, // 选项卡
+    alert: true, // GFM 警告
+    attrs: true, // 使用特殊标记为 Markdown 元素添加属性
+    hint: true, // 提示容器
+    mark: true, // 使用 == == 进行标记。请注意两边需要有空格。
+    align: true, // 启用自定义对齐
+    // codetabs: true, // 代码块分组
+    // demo: true, //代码演示
+
+    mermaid: true,
+  },
+
 });
