@@ -30,6 +30,7 @@
     "hls.js": "^1.6.15",
     "markdownlint-cli": "^0.41.0",
     "mathjax-full": "^3.2.2",
+    "mermaid": "^11.12.2",
     "prettier": "^3.7.4",
     "sass": "^1.97.2",
     "sass-loader": "^14.2.1",
