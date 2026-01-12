@@ -34,7 +34,7 @@ export default hopeTheme({
   // copyright 默认为 Copyright © <作者>
   copyright: `
   版权声明：自由转载 - 非商用 - 非衍生 - 保持署名<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">（创意共享 4.0 许可证）</a>|
-  Copyright © 2023-present Piglet</a>
+  Copyright © 2026-present Piglet</a>
   `,
   displayFooter: true,
   // 页脚，支持使用 HTMLString 以显示备案信息等
@@ -186,7 +186,11 @@ export default hopeTheme({
       count: 10,
       sorter: (a, b) => Number(b.frontmatter.date) - Number(a.frontmatter.date),
     },
+
+    
   },
+
+  changelog: true,
 
   // 开发模式下是否启动热更新，显示所有更改并重新渲染
   hotReload: true,
