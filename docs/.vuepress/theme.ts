@@ -26,11 +26,6 @@ export default hopeTheme({
   // 网站文章的版权声明
   license: "CC BY-NC-ND 4.0",
 
-  // icon: {
-  //   // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
-  //   assets: ["fontawesome", "fontawesome-with-brands"],
-  // },
-
   // copyright 默认为 Copyright © <作者>
   copyright: `
   版权声明：自由转载 - 非商用 - 非衍生 - 保持署名<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">（创意共享 4.0 许可证）</a>|
@@ -107,6 +102,12 @@ export default hopeTheme({
     git: {
       updatedTime: false
     },
+
+
+  icon: {
+    // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
+    assets: ["fontawesome", "iconify", "fontawesome-with-brands"],
+  },
 
     // 评论配置（仅做样例，记得更换）
     comment: {

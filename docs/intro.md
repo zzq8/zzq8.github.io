@@ -2,8 +2,10 @@
 article: false
 title: 个人介绍
 icon: fa-solid fa-circle-nodes
-updated: 2025-11-25 23:38:09
+updated: 2026-01-13 23:31:28
 ---
+
+<img src="https://ghchart.rshah.org/zzq8" alt="GitHub 提交热力图" style="zoom:200%;" />
 
 ## 本笔记项目介绍
 

@@ -3,8 +3,8 @@ article: true
 category: AI
 tag: AI
 created: 2025-09-13 17:54:43
-updated: 2026-01-13 00:19:51
-icon: fa-solid fa-robot
+updated: 2026-01-13 23:36:57
+icon: fa6-solid:robot
 ---
 
 # Z_AI 
