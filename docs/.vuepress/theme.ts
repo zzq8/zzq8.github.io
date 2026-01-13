@@ -146,7 +146,7 @@ export default hopeTheme({
 
       // Giscus
       provider: "Giscus",
-      repo: "zzq8/zzq8",
+      repo: "zzq8/zzq8.github.io",
       repoId: "R_kgDOI6WnBg",
       category: "General",
       categoryId: "DIC_kwDOI6WnBs4Cf8ho",
