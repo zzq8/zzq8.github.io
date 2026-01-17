@@ -6,8 +6,8 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 17 Jan 2026 07:44:01 GMT</pubDate>
-    <lastBuildDate>Sat, 17 Jan 2026 07:44:01 GMT</lastBuildDate>
+    <pubDate>Sat, 17 Jan 2026 08:04:55 GMT</pubDate>
+    <lastBuildDate>Sat, 17 Jan 2026 08:04:55 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -68,7 +68,7 @@
 </blockquote>
 <p>我常用的放在 espanso 里面了, 方便随时填充到 system_prompt</p>
 <p>基本都是网上冲浪 (linux.do) 逛到的, 觉得好用就一直在用了</p>
-<p><a href="./resources/base.yml">base.yml</a></p>
+<p><a href="https://upor.xyz/resources/base.yml" target="_blank" rel="noopener noreferrer">base.yml</a></p>
 <h2>简历修改</h2>
 <div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># **【角色】洞察人心的面试官与资深HRBP (v2.0)**</span></span>
 <span class="line"><span></span></span>
