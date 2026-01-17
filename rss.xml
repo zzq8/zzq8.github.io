@@ -6,8 +6,8 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 17 Jan 2026 08:04:55 GMT</pubDate>
-    <lastBuildDate>Sat, 17 Jan 2026 08:04:55 GMT</lastBuildDate>
+    <pubDate>Sat, 17 Jan 2026 08:20:20 GMT</pubDate>
+    <lastBuildDate>Sat, 17 Jan 2026 08:20:20 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -502,21 +502,6 @@
       <enclosure url="https://resource.libx.fun/pic/2025/01/20250119193104888.png" type="image/png"/>
     </item>
     <item>
-      <title>让万物穿过自己</title>
-      <link>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</link>
-      <guid>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</guid>
-      <source url="https://zzq8.cn/rss.xml">让万物穿过自己</source>
-      <description>让万物穿过自己 车上听了一期博客, 忽左忽右的第10期 标题就是 对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住 解决方案是: 关注? 不逃避 没太理解</description>
-      <pubDate>Fri, 29 Aug 2025 12:58:02 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
-</blockquote>
-<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
-<p>解决方案是: 关注?  不逃避   没太理解</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>2023年终总结</title>
       <link>https://zzq8.cn/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</link>
       <guid>https://zzq8.cn/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</guid>
@@ -558,6 +543,21 @@
 <h2>blibili Review</h2>
 <p>刚从亚信出来感觉纯纯在里面浪费时间，直都是二次开发，功能优化，SQL优化
 回复@满心满意-：别，我之前在低代码开发过一年，低代码培养的是<code>业务逻辑</code>，如果你还想干开发，那就只能自己空闲时间写代码不断进步。不然会落后的</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>让万物穿过自己</title>
+      <link>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</link>
+      <guid>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</guid>
+      <source url="https://zzq8.cn/rss.xml">让万物穿过自己</source>
+      <description>让万物穿过自己 车上听了一期博客, 忽左忽右的第10期 标题就是 对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住 解决方案是: 关注? 不逃避 没太理解</description>
+      <pubDate>Fri, 29 Aug 2025 12:58:02 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
+</blockquote>
+<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
+<p>解决方案是: 关注?  不逃避   没太理解</p>
 ]]></content:encoded>
     </item>
     <item>
