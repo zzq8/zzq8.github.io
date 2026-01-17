@@ -1,5 +1,6 @@
 ---
 updated: 2026-01-17 15:23:37
+icon: qlementine-icons:mac-24
 ---
 
 # MacOS

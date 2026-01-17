@@ -4,7 +4,7 @@ import { navbar } from "vuepress-theme-hope";
 // https://fontawesome.com/search?m=free&o=r
 // 专题话题的路径需在尾部添加 /，否则有可能出现链接错误。比如下方「生活」中的 baby/
 export default navbar([
-  { text: "浮生杂记", icon: "streamline-plump-color:fish", link: "/blog" },
+  { text: "浮生杂记", icon: "tabler:fish", link: "/blog" },
   { text: "代码笔记", icon: "tabler:code", link: "/" },
   {
     text: "资源宝库",
@@ -23,7 +23,8 @@ export default navbar([
         link: "/coding/Reading.html",
       }
     ],
-  },{
+  },
+  {
     text: "网站相关",
     icon: "material-symbols:person",
     children: [

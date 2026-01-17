@@ -7,16 +7,19 @@ export default sidebar({
   "": [
     // 指定显示页面
     {
-      text: "代码编程",
-      icon: "mdi:code",
+      text: "代码笔记",
+      icon: "fluent-color:code-20",
       prefix: "/coding/",
+      // collapsible: true,
+      link: "/coding/Catalog",
+      expanded: true,
       children: "structure",
     },
     {
       text: "博客文章",
       icon: "fa6-solid:feather-pointed",
       prefix: "/_posts/",
-      link: "/blog",
+      // link: "/blog",
       collapsible: true,
       children: "structure",
     },

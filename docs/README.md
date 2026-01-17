@@ -1,9 +1,9 @@
 ---
 article: false
-icon: fa-solid fa-book-open-reader
+icon: noto:pig
 updated: 2025-12-13 10:27:20
 ---
-# Piglet 开源笔记
+# Piglet 个人笔记
 > 编程是一件幸福的事情, 不要让你的工作变得索然无味.
 >
 > 用 "输入" 倒逼 "输出"
@@ -14,13 +14,13 @@ updated: 2025-12-13 10:27:20
 >
 > `我更希望自己是在不断向上爬山，而不是重复劳动、绕山而行。`虽然后者更轻松，但我看不到山顶的风光，也没有成就感，曾经的热爱就慢慢消失了。
 
-[![](https://img.shields.io/discord/1248900118166638672?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge)](https://discord.gg/cWAzWeZhFh)
+TODO: 很多文章凌乱没整理, 我会以兴趣为导向想整理一篇就搞一个 icon 代表我弄过
 
-怎样开始学习: 找到一个你真正想解决的问题
+## 🛠️ 方法论
+怎样开始学习: 找到一个你真正想解决的问题。
+正确做法: **<span style="color:red;">get your hands dirty</span>**，直奔主题
 
 根深蒂固的低效学习模式: ~~先学习工具再解决问题 !!!~~ 工具不是目的只是手段
-
-正确做法: **get your hands dirty**，直奔主题
 
 ![学习金字塔](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/format,png-20230309231836811.png)
 

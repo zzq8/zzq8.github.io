@@ -81,7 +81,7 @@ export default hopeTheme({
   blog: {
     articleInfo: ["Date", "PageView", "Category", "Tag", "ReadingTime"],
     name: "Piglet",
-    avatar: "https://images.zzq8.cn/1024/me.jpg",
+    avatar: "https://image.233377.xyz/1024/me.jpg",
     description: "Stay Hungry, Stay Foolish",
     intro: "/intro.html",
     medias: {
@@ -95,8 +95,10 @@ export default hopeTheme({
     blog: {
       article: "/article/",
       // XD 学一下这个，想实现如下效果   捣鼓蛮久，不会构建这个 filter！！！
+      // https://theme-hope.vuejs.press/zh/config/plugins/blog.html#plugins-blog-filter
       filter: page => page.filePathRelative?.startsWith('_posts/') && !page.frontmatter.home,
-      excerptLength: 50
+      excerpt: false,
+      excerptLength: 10,
     },
 
     git: {
