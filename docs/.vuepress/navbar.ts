@@ -30,7 +30,7 @@ export default navbar([
       { text: "关于作者", icon: "noto-v1:person-bowing", link: "intro" },
       {
         text: "更新历史",
-        icon: "history",
+        icon: "material-symbols:history",
         link: "/timeline/",
       },
     ],
