@@ -4,35 +4,30 @@ import { navbar } from "vuepress-theme-hope";
 // https://fontawesome.com/search?m=free&o=r
 // 专题话题的路径需在尾部添加 /，否则有可能出现链接错误。比如下方「生活」中的 baby/
 export default navbar([
-  { text: "浮生杂记", icon: "fa-solid fa-fish", link: "/blog" },
-  { text: "代码笔记", icon: "fa-solid fa-code", link: "/code/" },
-  // { text: "浮生杂记", icon: "fish-fins", link: "/daily/" },
+  { text: "浮生杂记", icon: "streamline-plump-color:fish", link: "/blog" },
+  { text: "代码笔记", icon: "tabler:code", link: "/" },
   {
     text: "资源宝库",
-    icon: "book",
-    prefix: "/resources/",
+    icon: "iconoir:book-solid",
+    // prefix: "/",
     children: [
       {
-        text: "书籍资源",
-        icon: "book-open",
-        link: "books/",
+        text: "alist",
+        icon: "ic:baseline-source",
+        target: "_blank",
+        link: "https://alist.233377.xyz/",
       },
       {
-        text: "影音资源",
-        icon: "play",
-        link: "videos/",
-      },
-      {
-        text: "Demo",
-        icon: "fa-solid fa-handshake",
-        link: "demo/",
-      },
+        text: "书籍影音",
+        icon: "mi:book",
+        link: "/coding/Z_BlogList.html",
+      }
     ],
   },{
     text: "网站相关",
-    icon: "id-card",
+    icon: "material-symbols:person",
     children: [
-      { text: "关于作者", icon: "user", link: "intro" },
+      { text: "关于作者", icon: "noto-v1:person-bowing", link: "intro" },
       {
         text: "更新历史",
         icon: "history",

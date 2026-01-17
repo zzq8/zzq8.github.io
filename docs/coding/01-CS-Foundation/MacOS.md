@@ -1,5 +1,5 @@
 ---
-updated: 2026-01-09 00:08:09
+updated: 2026-01-17 15:23:37
 ---
 
 # MacOS
@@ -103,13 +103,14 @@ brew install \
 > 常用命令
 >
 > - cmd+shift+p
->   - search: install package (安装插件)
+>   - Search: install package (安装插件)
 >   - Search: key bindings
+>   - Search: set json/xxx (换文件格式)
 >
 > 常用插件: 
 >
 > - Insert nums
-> - pretty json
+> - pretty json (虽然这里面有 jq, 但是还是可以单独再下个 jq 那个 filter finder 框会在当前页展开更方便)
 > - jsonPath
 >
 > 常用py:
@@ -601,6 +602,10 @@ CLOSE_WIN quit
 
 
 
+* fd base.yml -x open {}
+  - exec: 英文 execute 的缩写，意为"执行"。-x 可理解为"交叉执行"或"对每个结果执行"。
+  - {} 含义 文件路径占位符
+  
 * export PATH="/opt/homebrew/bin:$PATH"
   * 其中`:`是个分隔符
   * **临时生效**：直接运行 export PATH="/opt/homebrew/bin:$PATH"。

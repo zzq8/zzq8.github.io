@@ -104,10 +104,10 @@ export default hopeTheme({
     },
 
 
-  icon: {
-    // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
-    assets: ["fontawesome", "iconify", "fontawesome-with-brands"],
-  },
+    icon: {
+      // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
+      assets: ["fontawesome", "iconify", "fontawesome-with-brands"],
+    },
 
     // 评论配置（仅做样例，记得更换）
     comment: {

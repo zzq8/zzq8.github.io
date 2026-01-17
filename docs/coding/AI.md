@@ -1,17 +1,17 @@
 ---
 article: true
 category: AI
-tag: AI
+tag: 总结
 created: 2025-09-13 17:54:43
-updated: 2026-01-13 23:36:57
-icon: fa6-solid:robot
+updated: 2026-01-17 15:08:11
+icon: noto:robot
 ---
 
-# Z_AI 
+# AI 
 
 > **ALL in AI**
 >
-> **让 AI 取代所有那些耗费时间但缺乏创造力的工作, 把我的精力专注在真正有意义的事情上。**
+> **让 AI 取代所有那些耗费时间但缺乏创造力的工作, <span style="color:red;">把我的精力专注在真正有意义的事情上。</span>**
 
 MoneyXYZ 超级学习者  AI时代  Record
 

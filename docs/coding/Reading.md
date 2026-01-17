@@ -3,13 +3,15 @@ article:
 category: 
 tag: 
 created: 2025-09-13 17:56:11
-updated: 2026-01-07 23:35:58
-icon: fa6-solid:list
+updated: 2026-01-17 15:12:17
+icon: tdesign:book-filled
 ---
 
-# Z_Share_List
+# Reading
 
 > TODO 花时间搞一个 llm 订阅这些 blog   /  或者收到 fllow 里 !!!
+>
+> https://newzone.top/reading/#/
 
 ## 一、Blog
 
