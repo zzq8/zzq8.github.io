@@ -6,8 +6,8 @@
     <link>https://zzq8.cn/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 17 Jan 2026 10:57:24 GMT</pubDate>
-    <lastBuildDate>Sat, 17 Jan 2026 10:57:24 GMT</lastBuildDate>
+    <pubDate>Sat, 17 Jan 2026 11:14:11 GMT</pubDate>
+    <lastBuildDate>Sat, 17 Jan 2026 11:14:11 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -59,10 +59,10 @@
       <link>https://zzq8.cn/coding/Catalog.html</link>
       <guid>https://zzq8.cn/coding/Catalog.html</guid>
       <source url="https://zzq8.cn/rss.xml">Catalog</source>
-      <description>测试 加油 ~</description>
+      <description>做技术笔记还行, 但是做博客不太行 折腾很久想 _blank 打开博客文章做不到, 这样让博客主页像个摆设...</description>
       <pubDate>Sat, 17 Jan 2026 10:55:34 GMT</pubDate>
-      <content:encoded><![CDATA[<h2>测试</h2>
-<p>加油 ~</p>
+      <content:encoded><![CDATA[<p>做技术笔记还行, 但是做博客不太行
+折腾很久想 _blank 打开博客文章做不到, 这样让博客主页像个摆设...</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -257,6 +257,21 @@
 | :</p>
 ]]></content:encoded>
       <enclosure url="https://moatkon.com/share/youtuber/MoneyXYZ.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>让万物穿过自己</title>
+      <link>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</link>
+      <guid>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</guid>
+      <source url="https://zzq8.cn/rss.xml">让万物穿过自己</source>
+      <description>让万物穿过自己 车上听了一期博客, 忽左忽右的第10期 标题就是 对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住 解决方案是: 关注? 不逃避 没太理解</description>
+      <pubDate>Fri, 29 Aug 2025 12:58:02 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
+</blockquote>
+<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
+<p>解决方案是: 关注?  不逃避   没太理解</p>
+]]></content:encoded>
     </item>
     <item>
       <title>Agent Analyze</title>
@@ -511,21 +526,6 @@
 </ul>
 ]]></content:encoded>
       <enclosure url="https://resource.libx.fun/pic/2025/01/20250119193104888.png" type="image/png"/>
-    </item>
-    <item>
-      <title>让万物穿过自己</title>
-      <link>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</link>
-      <guid>https://zzq8.cn/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</guid>
-      <source url="https://zzq8.cn/rss.xml">让万物穿过自己</source>
-      <description>让万物穿过自己 车上听了一期博客, 忽左忽右的第10期 标题就是 对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住 解决方案是: 关注? 不逃避 没太理解</description>
-      <pubDate>Fri, 29 Aug 2025 12:58:02 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
-</blockquote>
-<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
-<p>解决方案是: 关注?  不逃避   没太理解</p>
-]]></content:encoded>
     </item>
     <item>
       <title>2023年终总结</title>
