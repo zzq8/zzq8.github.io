@@ -8,8 +8,8 @@ export default sidebar({
     // 指定显示页面
     {
       text: "代码编程",
-      icon: "code",
-      prefix: "/",
+      icon: "mdi:code",
+      prefix: "/coding/",
       children: "structure",
     },
     {

@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "@vuepress/plugin-docsearch": "2.0.0-rc.121",
-    "@vuepress/plugin-icon": "2.0.0-rc.121",
     "@waline/client": "3.2.0",
     "cpx2": "^7.0.2",
     "dashjs": "^4.7.4",

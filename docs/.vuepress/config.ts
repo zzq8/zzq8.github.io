@@ -1,6 +1,5 @@
 import { webpackBundler } from "@vuepress/bundler-webpack";
 import { defineUserConfig } from "vuepress";
-import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 
 import theme from "./theme.js";
 

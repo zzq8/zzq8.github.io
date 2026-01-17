@@ -1,5 +1,5 @@
 ---
-updated: 2026-01-17 15:32:38
+updated: 2026-01-17 15:54:14
 icon: fa6-solid:comments
 ---
 
@@ -12,7 +12,7 @@ icon: fa6-solid:comments
 
 基本都是网上冲浪 (linux.do) 逛到的, 觉得好用就一直在用了
 
-[base.yml](./resources/base.yml)
+[base.yml](https://upor.xyz/resources/base.yml)
 
 
 
