@@ -2,7 +2,7 @@
 article: false
 title: 个人介绍
 icon: fa-solid fa-circle-nodes
-updated: 2026-01-13 23:31:28
+updated: 2026-02-16 17:44:45
 ---
 
 <img src="https://ghchart.rshah.org/zzq8" alt="GitHub 提交热力图" style="zoom:200%;" />
@@ -22,6 +22,25 @@ TODO 每个文档的 icon
 
 
 
-## 个人介绍
+## 碎碎念
 
-努力努力再努力
+构建自己的护城河
+
+* 英语 (目标 不借助字幕听懂油管视频。。。雅思 6.5 ?)
+* Coding
+
+
+
+需要时时刻刻记住沉下心, 内心平静
+
+效率才能翻倍
+
+
+
+## 个人
+
+随心所欲不逾矩
+
+
+
+全性保真, 不以物累形 (保全本性, 但不害人)

@@ -220,6 +220,7 @@ export default hopeTheme({
     // demo: true, //代码演示
 
     mermaid: true,
+    // plantuml: true,  // 新版的 typora 还是不支持
   },
 
 });

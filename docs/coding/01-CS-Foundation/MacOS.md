@@ -1,5 +1,5 @@
 ---
-updated: 2026-01-17 15:23:37
+updated: 2026-02-01 22:56:52
 icon: qlementine-icons:mac-24
 ---
 
@@ -78,7 +78,7 @@ brew install \
 * Typora (brew)
 * Eudic (brew[还没试过], App Store)
 * Logi Options+ [鼠标滚动方向标准模式, 平滑滚动]
-* Ecopaste
+* ~~Ecopaste~~, [Deck](https://github.com/yuzeguitarist/Deck) (这个好还免费)
 
 > 以下是我选择装的
 

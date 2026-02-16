@@ -11,7 +11,7 @@ export default sidebar({
       icon: "fluent-color:code-20",
       prefix: "/coding/",
       // collapsible: true,
-      link: "/coding/Catalog",
+      link: "/coding/_README",
       expanded: true,
       children: "structure",
     },
