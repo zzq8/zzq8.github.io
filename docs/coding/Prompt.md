@@ -12,7 +12,7 @@ icon: fa6-solid:comments
 
 基本都是网上冲浪 (linux.do) 逛到的, 觉得好用就一直在用了
 
-[base.yml](https://upor.xyz/resources/base.yml)
+[base.yml](https://233377.xyz/resources/base.yml)
 
 
 

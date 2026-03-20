@@ -172,7 +172,7 @@ export default hopeTheme({
       // appId, apiKey [前这两个通用的, 随便换index都是] 和 indexName 是必填的
       appId: "ADSVTUJF43",
       apiKey: "ce680cd766327882764fa072b3b72216",
-      indexName: "upor.xyz",
+      indexName: "233377.xyz",
     },
 
     // 本地搜索，和上方二选一

@@ -1,10 +1,10 @@
 {
-  "index_name": "upor.xyz",
+  "index_name": "233377.xyz",
   "start_urls": [
-    "https://upor.xyz/"
+    "https://233377.xyz/"
   ],
   "sitemap_urls": [
-    "https://upor.xyz/sitemap.xml"
+    "https://233377.xyz/sitemap.xml"
   ], 
   "stop_urls": [],
   "selectors": {
