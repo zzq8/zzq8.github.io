@@ -4,10 +4,10 @@ import sidebar from "./sidebar.js";
 
 export default hopeTheme({
   // 主题选项：https://theme-hope.vuejs.press/zh/config/theme/layout.html
-  hostname: "https://zzq8.cn",
+  hostname: "https://233377.xyz",
   author: {
     name: "Piglet",
-    url: "https://zzq8.cn",
+    url: "https://233377.xyz",
   },
 
   favicon: "/favicon.ico",
