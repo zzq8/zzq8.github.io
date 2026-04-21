@@ -1,4 +1,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://zzq8.cn/sitemap.xml
+Sitemap: https://233377.xyz/sitemap.xml
