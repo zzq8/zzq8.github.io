@@ -1,5 +1,5 @@
 ---
-updated: 2026-02-01 22:56:52
+updated: 2026-04-22 23:56:52
 icon: qlementine-icons:mac-24
 ---
 
@@ -58,6 +58,7 @@ brew install \
   lazygit \
   translate-shell
 
+  sleepwatcher \
   mkcert \
   ffmpeg \
 ```
@@ -81,6 +82,35 @@ brew install \
 * ~~Ecopaste~~, [Deck](https://github.com/yuzeguitarist/Deck) (这个好还免费)
 
 > 以下是我选择装的
+
+* sleepwatcher
+
+  * brew services start sleepwatcher
+
+  * 约定大于配置, 新建以下两个 bash 命令文件:
+    ~/.sleep
+    ~/.wakeup
+
+  * ```bash
+    #!/bin/bash
+    
+    echo "sleep triggered at $(date)" >> /tmp/sleepwatcher.log
+    
+    ( sleep 7200 && sudo shutdown -h now ) &
+    echo $! > /tmp/sleepwatcher_shutdown.pid
+    ```
+
+  * ```bash
+    #!/bin/bash
+    
+    echo "wakeup triggered at $(date)" >> /tmp/sleepwatcher.log
+    
+    if [ -f /tmp/sleepwatcher_shutdown.pid ]; then
+        kill $(cat /tmp/sleepwatcher_shutdown.pid) 2>/dev/null
+        rm /tmp/sleepwatcher_shutdown.pid
+    fi
+    ```
+
 
 * Office
 * the unarchiver (zip可以系统自动解压, 但是rar不行要下)
