@@ -1,7 +1,7 @@
 ---
-article: 
-category: 
-tag: 
+article: AI useful
+category: AI
+tag: reship
 created: 2026-01-05 23:37:37
 updated: 2026-01-05 23:39:11
 转载: https://linux.do/t/topic/1321470

@@ -19,7 +19,10 @@ icon: qlementine-icons:mac-24
 
 > 原大佬的笔记里有很多, 选了些我会用的
 
-安装 HomeBrew 并用他安装 App 和 Cli 工具。App 可以在 [homebrew-cask — Homebrew Formulae](https://formulae.brew.sh/cask/) 里找有没有，Cli 工具可以在 [homebrew-core — Homebrew Formulae](https://formulae.brew.sh/formula/) 找有没有。
+安装 HomeBrew 并用他安装 App 和 Cli 工具。
+
+- App 可以在 [homebrew-cask — Homebrew Formulae](https://formulae.brew.sh/cask/) 里找有没有
+- Cli 工具可以在 [homebrew-core — Homebrew Formulae](https://formulae.brew.sh/formula/) 找有没有。
 
 ```
 # 先开代理，不然会很慢（依赖第一步）
@@ -28,29 +31,32 @@ export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_pr
 # 安装 HomeBrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+----------------------------------------
+
 # XD 整理过的 cask
 brew install --cask \
   shottr \
-  licecap \
-  gas-mask \
   google-chrome  \
   espanso \
   iterm2 \
   sogouinput \
-  telegram \
+  eudic \
   thor \
-  visual-studio-code \
-  postman \
+  gas-mask \
   typora \
-  eudic
-
+  
+  licecap \
+  postman \
+	visual-studio-code \
   wechat \
+  telegram \
   iina \
   obs \
   docker \
   qq \
   obsidian \
-# XD 安装 Cli 工具，以下是我的（以字母排序，方便你查找）
+  
+# XD 安装 Cli 工具
 brew install \
   fd \
   fzf \
@@ -61,6 +67,10 @@ brew install \
   sleepwatcher \
   mkcert \
   ffmpeg \
+  
+
+# 安装 brew 没有的部分, CLI 版本的 picgo
+npm install picgo -g
 ```
 
 
