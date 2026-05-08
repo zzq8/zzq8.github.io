@@ -1,13 +1,15 @@
 ---
-article: AI useful
+article: 0_How to use AI
 category: AI
 tag: reship
 created: 2026-01-05 23:37:37
-updated: 2026-01-05 23:39:11
+updated: 2026-05-04 12:58:17
 转载: https://linux.do/t/topic/1321470
 ---
 
-# AI 辅助开发提效实操指南
+# How to use AI
+
+AI 辅助开发提效实操指南
 
 这份文档的目的是解决一个核心痛点：**为什么你觉得 AI 写出来的代码总是不达标？**
 

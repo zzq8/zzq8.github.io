@@ -14,14 +14,9 @@ icon: simple-icons:mermaid  # material-icon-theme:mermaid
 > Mermaid 是 md 原生支持 (js)
 >
 > 结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了])
-
-## Flowchart (Graph)
-
-控制方向, 默认是上下 **TB**
-
-- Graph LR   [从左到右]
-- a --> b & c  [同时两条]
-- B{Is it?}  [相当于 alias 可后复用]
+>
+>
+> XD: 基本还是 plantUML 来吧, blog网站 & typora 可以加这个插件 (习惯它, 因为它更强大更适用 !!)
 
 
 

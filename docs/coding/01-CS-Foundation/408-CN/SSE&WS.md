@@ -31,7 +31,7 @@ Sec-WebSocket-Key: T2a6wZlAwhgQNqruZ2YUyg==\r\n
 
 * 
 
-![image-20240706104311784](/Users/xd/Library/Application Support/typora-user-images/image-20240706104311784.png)
+![image-20240706104311784](https://image.233377.xyz/2026/image-20240706104311784.png)
 
 ### 心跳机制
 

@@ -3,7 +3,7 @@ article: true
 category: AI
 tag: 总结
 created: 2025-09-13 17:54:43
-updated: 2026-02-16 17:29:29
+updated: 2026-05-04 11:51:09
 icon: noto:robot
 ---
 
@@ -18,18 +18,17 @@ graph LR
 	AI --> super_study & vibe_coding
 ```
 
+## 一、AI 时代的超级学习者
 
-
-
-
-## AI 时代的超级学习者
-
-> MoneyXYZ 超级学习者  AI时代
+> MoneyXYZ 超级学习者  AI时代. ideas are easy, execution is hard
+>
+> https://youtu.be/b8Bx2oNJWlI?list=PL1ta5B0mfuN0BDLaCpNJSsMPEE-PYMJqt
 
 人力资源 -> 资源说的就是我们
+
 我们 = 工具人&资产
 
-## Vibe Coding
+## 二、Vibe Coding
 
 > Vibe Coding: 与 AI 一起解决问题
 >
@@ -50,12 +49,6 @@ graph LR
 btw: 不要放弃思考, 阮一峰很多摘录都提到这点
 
 笔记记录，不用老想着第一时间就用llm帮忙写代码(初石帮看，一下就看出明明就是一个三元表达式就搞定，llm写一堆！！！)  联想ruanyifeng几篇周刊说用ai丧失思考能力！！！ 【XD它几篇的摘录都是这样】 找到，深思，放ai 我自己那个文章！
-
-
-
-
-
-todo claude code
 
 ## LLM
 

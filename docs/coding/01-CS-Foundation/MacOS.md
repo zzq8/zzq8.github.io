@@ -89,7 +89,17 @@ npm install picgo -g
 * Typora (brew)
 * Eudic (brew[还没试过], App Store)
 * Logi Options+ [鼠标滚动方向标准模式, 平滑滚动]
+  * 如果不是罗技数据, 则用 `mos` 软件兜底: ``brew install --cask mos` (记得把 高级->转换键 打开, 这样可以横向滚动)
+
 * ~~Ecopaste~~, [Deck](https://github.com/yuzeguitarist/Deck) (这个好还免费)
+
+* `fd | fzf` (搜索引擎 | 搜索结果 UI)
+  * fd 先找出所有文件
+    ↓
+    交给 fzf
+    ↓
+    你交互式筛选
+
 
 > 以下是我选择装的
 
@@ -106,7 +116,7 @@ npm install picgo -g
     
     echo "sleep triggered at $(date)" >> /tmp/sleepwatcher.log
     
-    ( sleep 7200 && sudo shutdown -h now ) &
+    ( sleep $((12 * 60 * 60)) && sudo shutdown -h now ) &
     echo $! > /tmp/sleepwatcher_shutdown.pid
     ```
 
@@ -631,8 +641,9 @@ CLOSE_WIN quit
 ## 二、Shell
 
 * networkquality 【⭐️ 自带测网速】
-* ln -s target link 软链 [目标文件] [链接名]
-  * 使用场景: py 的.env我想存 iCloud,  项目地址的.env就软链过去
+* caffeinate: mac 自带命令, 让 Mac 一直保持运行（就算你不操作）【适合不合盖需要跑任务，不想要电脑自动休眠】
+* ln -s target link 【创建软链, 快捷方式】(**cmd+opt+drag** = ln - i 创建文件的快捷方式)
+  * 使用场景: py 的 .env 我想存 iCloud,  项目地址的 .env 就软链过去
 
 * say hello (macOS 自带了语音功能，可以用`say`命令让 Mac 开口说话)
   * brew update && brew upgrade && brew cleanup ; say mission complete
@@ -643,7 +654,7 @@ CLOSE_WIN quit
 
 
 
-* fd base.yml -x open {}
+* **fd base.yml -x open {}**
   - exec: 英文 execute 的缩写，意为"执行"。-x 可理解为"交叉执行"或"对每个结果执行"。
   - {} 含义 文件路径占位符
   
@@ -736,7 +747,18 @@ Mac mini会输出其默认的分辨率（通常是显示器的原生分辨率）
 
 ### 实现盒盖多久后自动关机, 而不是一直睡眠耗电
 
-做不到
+一开始我以为做不到
+
+但是实际上有一个解决方案: `sleepwatcher` 相当于是系统的事件 hook+shell
+
+| **文件**    | **时机** |
+| ----------- | -------- |
+| .sleep      | 睡眠前   |
+| .wakeup     | 唤醒后   |
+| .poweron    | 开机     |
+| .shutdown   | 关机前   |
+| .displayoff | 熄屏     |
+| .displayon  | 亮屏     |
 
 ### 允许 “任何来源” 下载的 App 运行
 
