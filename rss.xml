@@ -6,8 +6,8 @@
     <link>https://233377.xyz/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 29 Apr 2026 15:29:58 GMT</pubDate>
-    <lastBuildDate>Wed, 29 Apr 2026 15:29:58 GMT</lastBuildDate>
+    <pubDate>Fri, 08 May 2026 15:55:23 GMT</pubDate>
+    <lastBuildDate>Fri, 08 May 2026 15:55:23 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -33,7 +33,7 @@
       <link>https://233377.xyz/coding/AI.html</link>
       <guid>https://233377.xyz/coding/AI.html</guid>
       <source url="https://233377.xyz/rss.xml">AI</source>
-      <description>AI ALL in AI 让 AI 取代所有那些耗费时间但缺乏创造力的工作, 把我的精力专注在真正有意义的事情上。 AI 时代的超级学习者 MoneyXYZ 超级学习者 AI时代 人力资源 -&amp;gt; 资源说的就是我们 我们 = 工具人&amp;资产 Vibe Coding Vibe Coding: 与 AI 一起解决问题 Vibe Coding 就是通过自然语言（...</description>
+      <description>AI ALL in AI 让 AI 取代所有那些耗费时间但缺乏创造力的工作, 把我的精力专注在真正有意义的事情上。 一、AI 时代的超级学习者 MoneyXYZ 超级学习者 AI时代. ideas are easy, execution is hard https://youtu.be/b8Bx2oNJWlI?list=PL1ta5B0mfuN0BDL...</description>
       <category>AI</category>
       <pubDate>Sat, 13 Sep 2025 13:13:56 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -41,13 +41,14 @@
 <p><strong>ALL in AI</strong></p>
 <p><strong>让 AI 取代所有那些耗费时间但缺乏创造力的工作, <span style="color:red;">把我的精力专注在真正有意义的事情上。</span></strong></p>
 </blockquote>
-<h2>AI 时代的超级学习者</h2>
+<h2>一、AI 时代的超级学习者</h2>
 <blockquote>
-<p>MoneyXYZ 超级学习者  AI时代</p>
+<p>MoneyXYZ 超级学习者  AI时代. ideas are easy, execution is hard</p>
+<p>https://youtu.be/b8Bx2oNJWlI?list=PL1ta5B0mfuN0BDLaCpNJSsMPEE-PYMJqt</p>
 </blockquote>
-<p>人力资源 -&gt; 资源说的就是我们
-我们 = 工具人&amp;资产</p>
-<h2>Vibe Coding</h2>
+<p>人力资源 -&gt; 资源说的就是我们</p>
+<p>我们 = 工具人&amp;资产</p>
+<h2>二、Vibe Coding</h2>
 <blockquote>
 <p>Vibe Coding: 与 AI 一起解决问题</p>
 <p>Vibe Coding 就是通过自然语言（在需要时结合代码），同 AI协作来解决实际问题的过程。</p>
@@ -57,7 +58,6 @@
 <p>正确做法: get your hands dirty，直奔主题</p>
 <p>btw: 不要放弃思考, 阮一峰很多摘录都提到这点</p>
 <p>笔记记录，不用老想着第一时间就用llm帮忙写代码(初石帮看，一下就看出明明就是一个三元表达式就搞定，llm写一堆！！！)  联想ruanyifeng几篇周刊说用ai丧失思考能力！！！ 【XD它几篇的摘录都是这样】 找到，深思，放ai 我自己那个文章！</p>
-<p>todo claude code</p>
 <h2>LLM</h2>
 <h4>token 计算</h4>
 <p>用 dify 有感:</p>
@@ -74,11 +74,28 @@
 ]]></content:encoded>
     </item>
     <item>
+      <title>English</title>
+      <link>https://233377.xyz/coding/English.html</link>
+      <guid>https://233377.xyz/coding/English.html</guid>
+      <source url="https://233377.xyz/rss.xml">English</source>
+      <description>English English is a moat 听说读写, 中国人环境, 我自己听读就够了, podcast 功利性 Goal: 雅思 6.5 实际性 Goal: 看懂英文 youtube, 能读 java 中间件官方英文文档</description>
+      <pubDate>Fri, 08 May 2026 15:53:35 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>English is a moat</p>
+</blockquote>
+<p>听说读写, 中国人环境,</p>
+<p>我自己听读就够了, podcast</p>
+<p>功利性 Goal: 雅思 6.5</p>
+<p>实际性 Goal: 看懂英文 youtube, 能读 java 中间件官方英文文档</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>Mermaid</title>
       <link>https://233377.xyz/coding/Mermaid.html</link>
       <guid>https://233377.xyz/coding/Mermaid.html</guid>
       <source url="https://233377.xyz/rss.xml">Mermaid</source>
-      <description>Mermaid 之前用的是 plantUML 但是它需要 java 环境支持 Mermaid 是 md 原生支持 (js) 结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了]) Flowchart (Graph) 控制方向, 默认是上下 TB Graph LR [从左到右] a ...</description>
+      <description>Mermaid 之前用的是 plantUML 但是它需要 java 环境支持 Mermaid 是 md 原生支持 (js) 结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了]) XD: 基本还是 plantUML 来吧, blog网站 &amp; typora 可以加这个插件 (习惯它,...</description>
       <category>MD</category>
       <pubDate>Mon, 16 Feb 2026 09:46:13 GMT</pubDate>
       <content:encoded><![CDATA[
@@ -86,14 +103,8 @@
 <p>之前用的是 plantUML 但是它需要 java 环境支持</p>
 <p>Mermaid 是 md 原生支持 (js)</p>
 <p>结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了])</p>
+<p>XD: 基本还是 plantUML 来吧, blog网站 &amp; typora 可以加这个插件 (习惯它, 因为它更强大更适用 !!)</p>
 </blockquote>
-<h2>Flowchart (Graph)</h2>
-<p>控制方向, 默认是上下 <strong>TB</strong></p>
-<ul>
-<li>Graph LR   [从左到右]</li>
-<li>a --&gt; b &amp; c  [同时两条]</li>
-<li>B{Is it?}  [相当于 alias 可后复用]</li>
-</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -298,21 +309,6 @@
       <pubDate>Mon, 16 Feb 2026 09:46:13 GMT</pubDate>
       <content:encoded><![CDATA[<p>做技术笔记还行, 但是做博客不太行
 折腾很久想 _blank 打开博客文章做不到, 这样让博客主页像个摆设...</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>让万物穿过自己</title>
-      <link>https://233377.xyz/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</link>
-      <guid>https://233377.xyz/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</guid>
-      <source url="https://233377.xyz/rss.xml">让万物穿过自己</source>
-      <description>让万物穿过自己 车上听了一期博客, 忽左忽右的第10期 标题就是 对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住 解决方案是: 关注? 不逃避 没太理解</description>
-      <pubDate>Fri, 29 Aug 2025 12:58:02 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
-</blockquote>
-<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
-<p>解决方案是: 关注?  不逃避   没太理解</p>
 ]]></content:encoded>
     </item>
     <item>
