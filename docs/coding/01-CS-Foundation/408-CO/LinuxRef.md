@@ -1,6 +1,6 @@
 ---
 article: false
-updated: 2025-09-20 17:11:51
+updated: 2026-05-13 23:45:02
 ---
 # LinuxRef
 
@@ -373,16 +373,37 @@ Vim 常用
 
 * ⭐️ grep "password" /var/log/mysqld.log (强大的文本搜索工具)
   * grep -rF xxx .命令作用  （Linux 查日志命令需要好好学习，MsgBroker 搜 id）
+  
   * cat access.log | grep 'payed'
+  
+  * ```json
+    xd                1041   0.0  0.0 435302064   1344 s000  S+   11:41下午   0:00.00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --exclude-dir=.idea --exclude-dir=.tox --exclude-dir=.venv --exclude-dir=venv .sleep
+    ---
+    这是什么
+    
+    ---
+    
+    这属于经典现象：grep 把自己也 grep 出来了。
+    且很多系统会默认：alias grep='grep --color=auto'
+    ```
+  
+    
+  
 * ⭐️ `echo "547061946" | sudo -S <command>`
   * 在这个命令中，`<command>` 是你要以超级用户身份运行的实际命令。
   * 将密码作为输入通过管道传递给 `sudo` 命令，并使用 `-S` 选项我猜是 Standard 读取密码。
+  
 * ⭐️ export -p 显示所有环境变量
+
 * ⭐️ $ 符号通常用于引用环境变量的值，echo $HOME 有一个HOME的环境变量
+
 * ⭐️ 在macOS终端中，可以使用以下命令来查看当前使用的shell：bash
+
 * ⭐️ linux 自带任务轮询  `crontab -e`
   * crond 是linux下用来周期性的执行某种任务或等待处理某些事件的一个守护进程，与windows下的计划任务类似
+  
 * ⭐️ pkill = 进程名    //pkill nginx  #杀死所有的nginx
+
 * ⭐️ lsof -i:8080   //查看8080端口占用
 
 

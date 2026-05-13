@@ -3,7 +3,7 @@ article:
 category: AI
 tag: prompt
 created: 2026-01-05 23:41:23
-updated: 2026-05-05 11:01:16
+updated: 2026-05-13 23:18:46
 ---
 
 我很常用的提示词 (收集放到 espanso 了, 方便随时用)
@@ -183,8 +183,6 @@ Put each issue in <issue> tags and put your final response in <response> tags.
 8. Precognition (thinking step by step)
 9. Output formatting
 10. Prefilling Claude's response (if any)
-
-
 
 ## SKILL
 

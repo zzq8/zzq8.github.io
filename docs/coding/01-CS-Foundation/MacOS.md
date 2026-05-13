@@ -1,11 +1,15 @@
 ---
-updated: 2026-04-22 23:56:52
+updated: 2026-05-13 23:37:38
 icon: qlementine-icons:mac-24
 ---
 
 # MacOS
 
 ## 零、inbox
+
+LinuxRef 文档移过来, 合并 !!!
+
+
 
 精读研究大佬的文档, 单独放一个文档 (转载)
 
@@ -116,20 +120,26 @@ npm install picgo -g
     
     echo "sleep triggered at $(date)" >> /tmp/sleepwatcher.log
     
-    ( sleep $((12 * 60 * 60)) && sudo shutdown -h now ) &
+    (
+        sleep $((12 * 60 * 60))
+        osascript -e 'tell application "System Events" to shut down'
+    ) &
+    
     echo $! > /tmp/sleepwatcher_shutdown.pid
     ```
-
+    
   * ```bash
     #!/bin/bash
     
     echo "wakeup triggered at $(date)" >> /tmp/sleepwatcher.log
     
     if [ -f /tmp/sleepwatcher_shutdown.pid ]; then
-        kill $(cat /tmp/sleepwatcher_shutdown.pid) 2>/dev/null
+        kill "$(cat /tmp/sleepwatcher_shutdown.pid)" 2>/dev/null
         rm /tmp/sleepwatcher_shutdown.pid
     fi
     ```
+    
+    * $! 是什么: 最近一次后台运行进程”的 PID
 
 
 * Office
