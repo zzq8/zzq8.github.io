@@ -1,9 +1,9 @@
 ---
 article: false
 category: AI
-tag: 总结
+tag: cc
 created: 2025-09-13 17:54:43
-updated: 2026-06-09 23:41:19
+updated: 2026-06-10 00:10:08
 icon: noto:robot
 ---
 
@@ -11,19 +11,27 @@ icon: noto:robot
 
 ## 一、Claude Code
 
-> 有人分析为什么用: https://onevcat.com/2025/08/claude-code/
+> 有人分析为什么用: [link](https://onevcat.com/2025/08/claude-code/)
 
 注意: cc 很好用一些指令多看看官方文档, skill 渐进式披露额
 
+```json
+CLAUDE.md = 永久系统提示词
+
+Skill = 按需加载的专业提示词
+
+Plugin = 打包多个 Skill/Agent/Hook 的安装包
+```
+
 ### CLAUDE.md
 
-> https://github.com/multica-ai/andrej-karpathy-skills/blob/main/README.zh.md
+> ref: [CodeBase](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/README.zh.md)
 
-**选项 A：Claude Code 插件（推荐）**
+直接放 cc 根目录就好:
 
-**选项 B：CLAUDE.md（按项目）**
+`curl -o ~/.claude/CLAUDE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md`
 
-手动 - 快速复制 XD:
+或手动复制 :
 
 ````json
 # CLAUDE.md
@@ -95,7 +103,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 
 
-## 二、SKILL & Plugin
+## 二、SKILL & Plugin & MCP
 
 > 
 >
