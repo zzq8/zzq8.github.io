@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://233377.xyz/favicon.ico</icon>
-  <updated>2026-06-09T15:50:57.536Z</updated>
+  <updated>2026-06-09T16:12:39.961Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://233377.xyz/atom.xml"/>
   <link rel="alternate" href="https://233377.xyz/"/>
@@ -15,7 +15,7 @@
     <title type="text">博客文章样例</title>
     <id>https://233377.xyz/posts/2024-03-01-blog_example.html</id>
     <link href="https://233377.xyz/posts/2024-03-01-blog_example.html"/>
-    <updated>2026-06-09T15:50:57.538Z</updated>
+    <updated>2026-06-09T16:12:39.962Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 </blockquote>
@@ -33,7 +33,7 @@
     <title type="text">English</title>
     <id>https://233377.xyz/coding/English.html</id>
     <link href="https://233377.xyz/coding/English.html"/>
-    <updated>2026-06-09T15:50:57.541Z</updated>
+    <updated>2026-06-09T16:12:39.965Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>English is a moat</p>
@@ -58,7 +58,7 @@
     <title type="text">Mermaid</title>
     <id>https://233377.xyz/coding/Mermaid.html</id>
     <link href="https://233377.xyz/coding/Mermaid.html"/>
-    <updated>2026-06-09T15:50:57.543Z</updated>
+    <updated>2026-06-09T16:12:39.967Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>之前用的是 plantUML 但是它需要 java 环境支持</p>
@@ -82,7 +82,7 @@
     <title type="text">Prompt</title>
     <id>https://233377.xyz/coding/Prompt.html</id>
     <link href="https://233377.xyz/coding/Prompt.html"/>
-    <updated>2026-06-09T15:50:57.544Z</updated>
+    <updated>2026-06-09T16:12:39.968Z</updated>
     <summary type="html"><![CDATA[
 <h2>Espanso 常用</h2>
 <blockquote>
@@ -264,7 +264,7 @@
     <title type="text">Reading</title>
     <id>https://233377.xyz/coding/Reading.html</id>
     <link href="https://233377.xyz/coding/Reading.html"/>
-    <updated>2026-06-09T15:50:57.566Z</updated>
+    <updated>2026-06-09T16:12:39.992Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>TODO 花时间搞一个 llm 订阅这些 blog   /  或者收到 fllow 里 !!!</p>
@@ -340,7 +340,7 @@
     <title type="text">Catalog</title>
     <id>https://233377.xyz/coding/README.html</id>
     <link href="https://233377.xyz/coding/README.html"/>
-    <updated>2026-06-09T15:50:57.572Z</updated>
+    <updated>2026-06-09T16:12:39.996Z</updated>
     <summary type="html"><![CDATA[<p>做技术笔记还行, 但是做博客不太行
 折腾很久想 _blank 打开博客文章做不到, 这样让博客主页像个摆设...</p>
 ]]></summary>
@@ -350,31 +350,10 @@
     <published>2026-02-16T09:46:13.000Z</published>
   </entry>
   <entry>
-    <title type="text">让万物穿过自己</title>
-    <id>https://233377.xyz/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</id>
-    <link href="https://233377.xyz/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html"/>
-    <updated>2026-06-09T15:50:57.581Z</updated>
-    <summary type="html"><![CDATA[
-<blockquote>
-<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
-</blockquote>
-<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
-<p>解决方案是: 关注?  不逃避   没太理解</p>
-]]></summary>
-    <content type="html"><![CDATA[
-<blockquote>
-<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
-</blockquote>
-<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
-<p>解决方案是: 关注?  不逃避   没太理解</p>
-]]></content>
-    <published>2025-08-29T12:58:02.000Z</published>
-  </entry>
-  <entry>
     <title type="text">2023年终总结</title>
     <id>https://233377.xyz/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</id>
     <link href="https://233377.xyz/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html"/>
-    <updated>2026-06-09T15:50:57.582Z</updated>
+    <updated>2026-06-09T16:12:40.007Z</updated>
     <summary type="html"><![CDATA[
 <p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
 <p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
@@ -403,7 +382,7 @@
     <title type="text">👻 找工作</title>
     <id>https://233377.xyz/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</id>
     <link href="https://233377.xyz/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html"/>
-    <updated>2026-06-09T15:50:57.584Z</updated>
+    <updated>2026-06-09T16:12:40.009Z</updated>
     <summary type="html"><![CDATA[
 <h2>还在呼吸，未来可期</h2>
 <p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
@@ -432,7 +411,7 @@
     <title type="text">2026年初规划</title>
     <id>https://233377.xyz/posts/Private/2026%E5%B9%B4%E5%88%9D%E8%A7%84%E5%88%92.html</id>
     <link href="https://233377.xyz/posts/Private/2026%E5%B9%B4%E5%88%9D%E8%A7%84%E5%88%92.html"/>
-    <updated>2026-06-09T15:50:57.592Z</updated>
+    <updated>2026-06-09T16:12:40.019Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>规划10年，不能只考虑当下欢快</p>
@@ -458,5 +437,26 @@
 <h2>30目标</h2>
 ]]></content>
     <published>2026-02-16T09:46:13.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">让万物穿过自己</title>
+    <id>https://233377.xyz/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</id>
+    <link href="https://233377.xyz/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html"/>
+    <updated>2026-06-09T16:12:40.021Z</updated>
+    <summary type="html"><![CDATA[
+<blockquote>
+<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
+</blockquote>
+<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
+<p>解决方案是: 关注?  不逃避   没太理解</p>
+]]></summary>
+    <content type="html"><![CDATA[
+<blockquote>
+<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
+</blockquote>
+<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
+<p>解决方案是: 关注?  不逃避   没太理解</p>
+]]></content>
+    <published>2025-08-29T12:58:02.000Z</published>
   </entry>
 </feed>
