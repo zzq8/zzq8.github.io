@@ -82,29 +82,6 @@
       "tags": []
     },
     {
-      "title": "Merlin",
-      "url": "https://233377.xyz/posts/Technology/Merlin.html",
-      "id": "https://233377.xyz/posts/Technology/Merlin.html",
-      "summary": "Merlin 新整了个 RT-AX88U 华硕路由器, 不能浪费 梅林固件 Clash light NAS --> 需要 NTFS 格式, exFat 这个型号不支持 教程 Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file 经历 clash 开了, 但是还是科学上网不了 这个卡点费...",
-      "content_html": "\n<blockquote>\n<p>新整了个 <strong>RT-AX88U</strong> 华硕路由器, 不能浪费</p>\n<ul>\n<li>梅林固件</li>\n<li>Clash</li>\n<li>light NAS --&gt; 需要 NTFS 格式, exFat 这个型号不支持</li>\n<li><s>memory swap</s></li>\n<li><s>docker</s></li>\n</ul>\n</blockquote>\n<h2>教程</h2>\n<p>Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file</p>\n<h2>经历</h2>\n<blockquote>\n<p>clash 开了, 但是还是科学上网不了</p>\n</blockquote>\n<p>这个卡点费劲</p>\n<p>因为 DNS 污染了, 我就用 dire-dns 普通的模式解决</p>\n<p>这个需要钻研</p>\n<blockquote>\n<p>不要急, 重启能解决 90% 的问题 不行就删了重装</p>\n</blockquote>\n<p>整完上面一套想换地区到 澳大利亚 听说速度会快 (功率大, 中国这方面懂的 因为人多都是大功率不好), 晚上一换结果 DNS 好像出问题了</p>\n<p>心急吃不了热豆腐, 拿手机不好搞</p>\n<p>第二天晚上电脑重启了 clash 就一切又都好了</p>\n<p>有一天又碰到 clash 死活启动不了 (报错也不好排查), 删了重装就可以了</p>\n",
-      "date_published": "2025-09-10T15:15:21.000Z",
-      "authors": [],
-      "tags": [
-        "Net"
-      ]
-    },
-    {
-      "title": "WTG",
-      "url": "https://233377.xyz/posts/Technology/WTG.html",
-      "id": "https://233377.xyz/posts/Technology/WTG.html",
-      "summary": "WTG 装机篇 自己折腾 WTG 我觉得需要记录的 隐藏系统磁盘 看萝卜头博客，我放在ali了 有批处理解决 U盘装两个系统-WTG&微PE 这个踩坑严重。记住WTG里面装WEPE看 ali 也有问题（进不去WEPE好像）装的时候可能得取消一个勾选 重装系统坑 场景：使用常规方法，装载装不上（Windows 安装程序：我们无法创建新的分区，也找不到现有...",
-      "content_html": "\n<h2>装机篇</h2>\n<blockquote>\n<p>自己折腾 WTG 我觉得需要记录的</p>\n</blockquote>\n<h3>隐藏系统磁盘</h3>\n<p>看萝卜头博客，我放在ali了  有批处理解决</p>\n<h3>U盘装两个系统-WTG&amp;微PE</h3>\n<blockquote>\n<p>这个踩坑严重。记住WTG里面装WEPE看 ali 也有问题（进不去WEPE好像）装的时候可能得取消一个勾选</p>\n</blockquote>\n<h3>重装系统坑</h3>\n<p>场景：使用常规方法，装载装不上（Windows 安装程序：<strong>我们无法创建新的分区，也找不到现有的分区。有关详细信息，请参阅安装日志文件。</strong>）</p>\n<p>解决：用WEPE自带安装器，在安装之前需要先分好区</p>\n<hr>\n<h2>学校篇</h2>\n<h3>一、前言</h3>\n<p>u盘买了很久了也不贵，感觉很物超所值。现在我就是在学校的实验楼写这篇文章，其实很早就想写了但一直没付出行动。我觉得自己U盘的使用频率还是蛮大的。真的会让我有一种很方便的感觉。</p>\n<p>因为自己是一个他律的人不想呆在寝室，需要借助学习氛围比较好的地方，去图书馆的话就还得背电脑很重，实验楼的话就离得近只要带上自己的U盘和耳机就行了。尤其是上个学期经常往学校的实验楼跑，实验楼电脑又比较好，但是由于电脑的使用习惯没到位就想到了Win To Go来弥补。事实证明我是对的。</p>\n<blockquote>\n<p>可以仔细看一下下面这张图，我的使用场景是三（随身携带工作环境）：</p>\n</blockquote>\n<figure><img src=\"https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207191647279.png\" alt=\"img\" tabindex=\"0\" loading=\"lazy\"><figcaption>img</figcaption></figure>\n<blockquote>\n<p>贴一张学校电脑的配置：</p>\n</blockquote>\n<figure><img src=\"https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207191647131.png\" alt=\"img\" tabindex=\"0\" loading=\"lazy\"><figcaption>img</figcaption></figure>\n<blockquote>\n<p>实验楼抢占计划：</p>\n</blockquote>\n<figure><img src=\"https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207191648287.png\" alt=\"img\" tabindex=\"0\" loading=\"lazy\"><figcaption>img</figcaption></figure>\n<blockquote>\n<p>贴一张U盘使用状况：</p>\n</blockquote>\n<figure><img src=\"https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207191648405.png\" alt=\"img\" tabindex=\"0\" loading=\"lazy\"><figcaption>img</figcaption></figure>\n<h3>二、详情介绍</h3>\n<p>具体操作看 <a href=\"https://bbs.luobotou.org/thread-761-1-1.html\" target=\"_blank\" rel=\"noopener noreferrer\">萝卜头IT论坛</a></p>\n<p>U 盘我个人觉得蛮好200出头，摸着也舒服金属质感有分量，而且颜值也高旋转盖帽，总之满意。</p>\n<p>需要注意的点：</p>\n<blockquote>\n<p>Q: 学校机房网络IP地址是固定的而自己坐的位置又不固定，总不能每次都要花时间手写网络IP吧?</p>\n<p>A:  我是用的52破解网里面一款名叫IP地址修改器的软件解决的</p>\n</blockquote>\n<figure><img src=\"https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207191648251.png\" alt=\"img\" tabindex=\"0\" loading=\"lazy\"><figcaption>img</figcaption></figure>\n<p>需要注意U盘冒白灯才是USB 3.2，个人使用感受就是爽。和正常用自己电脑没差，流畅的很！</p>\n<p>另外windows系统的一些好用的软件，例如禁止更新，激活等都在我的网盘里。把自己的一套使用环境搭起来也蛮快。</p>\n<p>欢迎下载：<a href=\"https://share.1024zzq.com/\" target=\"_blank\" rel=\"noopener noreferrer\">1024zzqの宝库</a></p>\n<blockquote>\n<p>Q：如果 BIOS 启动时候，发现不能 U 盘启动锁了，这时候其实也是有方法的！我在学校亲测成功！</p>\n<p>A：<a href=\"https://bios-pw.org/\" target=\"_blank\" rel=\"noopener noreferrer\">HP BIOS输入5次错误密码后会出提示码用提示码逆向算出密码 实测有效</a></p>\n</blockquote>\n<h3>三、其他</h3>\n<p>有了这技术其实去网吧都可以实现免费上网了，但肯定会被打而已hh~</p>\n<p>闲言：很多东西仔细去想并把他们连接起来其实是可以拓宽思路的。有很多有趣的东西等着我们去发现。</p>\n<p>补充：在公司用了2个月U盘的系统(因为嫌搭环境麻烦)，电脑从来没有关过机！质量真的没的说！</p>\n",
-      "image": "https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207191647279.png",
-      "date_published": "2024-04-13T08:39:03.000Z",
-      "authors": [],
-      "tags": []
-    },
-    {
       "title": "2023年终总结",
       "url": "https://233377.xyz/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html",
       "id": "https://233377.xyz/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html",
@@ -115,6 +92,28 @@
       "tags": [
         "打工日寄"
       ]
+    },
+    {
+      "title": "👻 找工作",
+      "url": "https://233377.xyz/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html",
+      "id": "https://233377.xyz/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html",
+      "summary": "👻 找工作 还在呼吸，未来可期 告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！ 普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多 博科 现在最大的问...",
+      "content_html": "\n<h2>还在呼吸，未来可期</h2>\n<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>\n<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>\n<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>\n<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>\n<h2>优秀的人都疯狂跑在前面</h2>\n<p>回想起来 bg、lx 总能前瞻性的做一些事情</p>\n<p>毕业时候公众号投的一家，说你为什么临近毕业才投\n那个时候没什么认知  只知道被大浪推着走          现在很被动</p>\n<p>看xy毕业简历有感</p>\n<h2>blibili Review</h2>\n<p>刚从亚信出来感觉纯纯在里面浪费时间，直都是二次开发，功能优化，SQL优化\n回复@满心满意-：别，我之前在低代码开发过一年，低代码培养的是<code>业务逻辑</code>，如果你还想干开发，那就只能自己空闲时间写代码不断进步。不然会落后的</p>\n",
+      "date_published": "2024-03-01T00:00:00.000Z",
+      "authors": [],
+      "tags": [
+        "打工日寄"
+      ]
+    },
+    {
+      "title": "2026年初规划",
+      "url": "https://233377.xyz/posts/Private/2026%E5%B9%B4%E5%88%9D%E8%A7%84%E5%88%92.html",
+      "id": "https://233377.xyz/posts/Private/2026%E5%B9%B4%E5%88%9D%E8%A7%84%E5%88%92.html",
+      "summary": "2026年初规划 规划10年，不能只考虑当下欢快 今年目标 10个结婚 3k 项链 看王校长视频目标3年15k，要适当的年龄拿到预期超预期薪资 杭州w3的统一16 w4以上的不要 w4的有25 w4的要求是带人了！至少带6个 14到16k 广州 30目标",
+      "content_html": "\n<blockquote>\n<p>规划10年，不能只考虑当下欢快</p>\n</blockquote>\n<h2>今年目标</h2>\n<p>10个结婚</p>\n<p>3k 项链</p>\n<p>看王校长视频目标3年15k，要适当的年龄拿到预期超预期薪资\n杭州w3的统一16  w4以上的不要  w4的有25  w4的要求是带人了！至少带6个\n14到16k  广州</p>\n<h2>30目标</h2>\n",
+      "date_published": "2026-02-16T09:46:13.000Z",
+      "authors": [],
+      "tags": []
     }
   ]
 }
