@@ -1,5 +1,5 @@
 ---
-updated: 2026-01-17 15:54:14
+updated: 2026-06-14 03:17:00
 icon: fa6-solid:comments
 ---
 
@@ -12,7 +12,9 @@ icon: fa6-solid:comments
 
 基本都是网上冲浪 (linux.do) 逛到的, 觉得好用就一直在用了
 
-[base.yml](https://233377.xyz/resources/base.yml)
+
+
+curl https://233377.xyz/resources/base.yaml
 
 
 
