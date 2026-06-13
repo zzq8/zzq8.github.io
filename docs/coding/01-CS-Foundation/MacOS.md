@@ -1,5 +1,5 @@
 ---
-updated: 2026-05-13 23:37:38
+updated: 2026-06-14 01:37:05
 icon: qlementine-icons:mac-24
 ---
 
@@ -49,6 +49,7 @@ brew install --cask \
   gas-mask \
   typora \
   
+  input0 \
   licecap \
   postman \
 	visual-studio-code \
@@ -106,6 +107,8 @@ npm install picgo -g
 
 
 > 以下是我选择装的
+
+* [input0](https://github.com/10xChengTu/input0) (用了一下也还好用, 用 **Paraformer 中英粤** 这样中英混着说)
 
 * sleepwatcher
 

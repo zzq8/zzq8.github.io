@@ -1,13 +1,13 @@
 ---
-article: Mermaid
+article: Uml
 category: MD
 tag: Graph
 created: 2026-02-01 23:11:48
-updated: 2026-02-16 15:50:34
+updated: 2026-06-14 01:39:31
 icon: simple-icons:mermaid  # material-icon-theme:mermaid
 ---
 
-# Mermaid
+# PlantUML & Mermaid
 
 > 之前用的是 plantUML 但是它需要 java 环境支持
 >
