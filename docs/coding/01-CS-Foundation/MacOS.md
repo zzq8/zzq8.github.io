@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-14 01:37:05
+updated: 2026-06-14 02:47:58
 icon: qlementine-icons:mac-24
 ---
 
@@ -157,6 +157,14 @@ npm install picgo -g
 * KeyCastr 屏幕显示你按的键
 * LICEcap 录 GIF 动图
 * [**VideoFusion**](chatgpt://generic-entity?number=25) 视频剪辑（偏轻量）
+
+
+
+Chrome Plugin
+
+[globalSpeed 配置](https:233377.xyz/resource/Global Speed - Sun Jun 14 2026.json)
+
+
 
 
 

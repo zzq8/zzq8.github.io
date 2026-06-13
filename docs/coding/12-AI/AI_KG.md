@@ -3,7 +3,7 @@ article: true
 category: AI
 tag: prompt
 created: 2026-01-05 23:41:23
-updated: 2026-06-09 22:53:29
+updated: 2026-06-14 01:50:43
 ---
 
 # AI_KG 
@@ -49,7 +49,9 @@ btw: 不要放弃思考, 阮一峰很多摘录都提到这点
 
 笔记记录，不用老想着第一时间就用llm帮忙写代码(初石帮看，一下就看出明明就是一个三元表达式就搞定，llm写一堆！！！)  联想ruanyifeng几篇周刊说用ai丧失思考能力！！！ 【XD它几篇的摘录都是这样】 找到，深思，放ai 我自己那个文章！
 
-## LLM
+## 三、LLM
+
+> [Linux 有帖子御三家的介绍](https://linux.do/t/topic/1403352)
 
 #### token 计算
 
@@ -65,12 +67,8 @@ btw: 不要放弃思考, 阮一峰很多摘录都提到这点
 
 
 
-
-
-
-
 ## FAQ
 
-manus用的哪个agent范式
+#### manus用的哪个agent范式
 
 增强版 react
