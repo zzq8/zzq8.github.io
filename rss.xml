@@ -6,8 +6,8 @@
     <link>https://233377.xyz/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 13 Jun 2026 19:18:15 GMT</pubDate>
-    <lastBuildDate>Sat, 13 Jun 2026 19:18:15 GMT</lastBuildDate>
+    <pubDate>Sat, 13 Jun 2026 19:20:25 GMT</pubDate>
+    <lastBuildDate>Sat, 13 Jun 2026 19:20:25 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>使用指南</category>
@@ -66,7 +66,7 @@
       <link>https://233377.xyz/coding/Prompt.html</link>
       <guid>https://233377.xyz/coding/Prompt.html</guid>
       <source url="https://233377.xyz/rss.xml">Prompt</source>
-      <description>Prompt Espanso 常用 normal_prompt 特别好用, 回答起来看着很舒服. 场景: 当让他印证sys_prompt知识是否引用时候 我常用的放在 espanso 里面了, 方便随时填充到 system_prompt 基本都是网上冲浪 (linux.do) 逛到的, 觉得好用就一直在用了 base.yml 简历修改</description>
+      <description>Prompt Espanso 常用 normal_prompt 特别好用, 回答起来看着很舒服. 场景: 当让他印证sys_prompt知识是否引用时候 我常用的放在 espanso 里面了, 方便随时填充到 system_prompt 基本都是网上冲浪 (linux.do) 逛到的, 觉得好用就一直在用了 curl https://233377.xy...</description>
       <pubDate>Sat, 17 Jan 2026 07:33:30 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>Espanso 常用</h2>
@@ -75,7 +75,7 @@
 </blockquote>
 <p>我常用的放在 espanso 里面了, 方便随时填充到 system_prompt</p>
 <p>基本都是网上冲浪 (linux.do) 逛到的, 觉得好用就一直在用了</p>
-<p><a href="https://233377.xyz/resources/base.yml" target="_blank" rel="noopener noreferrer">base.yml</a></p>
+<p>curl https://233377.xyz/resources/base.yaml</p>
 <h2>简历修改</h2>
 <div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># **【角色】洞察人心的面试官与资深HRBP (v2.0)**</span></span>
 <span class="line"><span></span></span>
