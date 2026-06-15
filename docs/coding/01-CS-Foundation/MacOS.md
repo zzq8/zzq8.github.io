@@ -164,6 +164,8 @@ Chrome Plugin
 
 [globalSpeed 配置](https:233377.xyz/resource/Global Speed - Sun Jun 14 2026.json)
 
+* 隐藏用法, 跳广告!!! 直接倍速广告有效!
+
 
 
 

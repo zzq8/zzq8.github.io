@@ -4,7 +4,7 @@ category: MD
 tag: Graph
 created: 2026-02-01 23:11:48
 updated: 2026-06-14 01:39:31
-icon: simple-icons:mermaid  # material-icon-theme:mermaid
+icon: material-icon-theme:uml
 ---
 
 # PlantUML & Mermaid
@@ -18,7 +18,9 @@ icon: simple-icons:mermaid  # material-icon-theme:mermaid
 >
 > XD: 基本还是 plantUML 来吧, blog网站 & typora 可以加这个插件 (习惯它, 因为它更强大更适用 !!)
 
+画图才是真正的**三思而后行**, 思考清楚比直接埋头苦干有效一万倍...
 
+==慢慢来比较快 ~==
 
 
 
