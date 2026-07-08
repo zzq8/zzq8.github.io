@@ -4,19 +4,18 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://233377.xyz/favicon.ico</icon>
-  <updated>2026-07-04T07:18:35.552Z</updated>
+  <updated>2026-07-08T13:11:00.224Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://233377.xyz/atom.xml"/>
   <link rel="alternate" href="https://233377.xyz/"/>
   <category term="使用指南"/>
   <category term="MD"/>
-  <category term="打工日寄"/>
   <category term="Net"/>
   <entry>
     <title type="text">博客文章样例</title>
     <id>https://233377.xyz/posts/2024-03-01-blog_example.html</id>
     <link href="https://233377.xyz/posts/2024-03-01-blog_example.html"/>
-    <updated>2026-07-04T07:18:35.553Z</updated>
+    <updated>2026-07-08T13:11:00.246Z</updated>
     <summary type="html"><![CDATA[<blockquote>
 <p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
 </blockquote>
@@ -34,7 +33,7 @@
     <title type="text">Personal-XD</title>
     <id>https://233377.xyz/coding/Personal.html</id>
     <link href="https://233377.xyz/coding/Personal.html"/>
-    <updated>2026-07-04T07:18:35.557Z</updated>
+    <updated>2026-07-08T13:11:00.258Z</updated>
     <summary type="html"><![CDATA[
 <h2>一、Daily</h2>
 <h3>1. 好的习惯学习</h3>
@@ -71,7 +70,7 @@
     <title type="text">PlantUML &amp; Mermaid</title>
     <id>https://233377.xyz/coding/UML.html</id>
     <link href="https://233377.xyz/coding/UML.html"/>
-    <updated>2026-07-04T07:18:35.569Z</updated>
+    <updated>2026-07-08T13:11:00.267Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>之前用的是 plantUML 但是它需要 java 环境支持</p>
@@ -97,7 +96,7 @@
     <title type="text">Catalog</title>
     <id>https://233377.xyz/coding/README.html</id>
     <link href="https://233377.xyz/coding/README.html"/>
-    <updated>2026-07-04T07:18:35.570Z</updated>
+    <updated>2026-07-08T13:11:00.268Z</updated>
     <summary type="html"><![CDATA[<p>做技术笔记还行, 但是做博客不太行
 折腾很久想 _blank 打开博客文章做不到, 这样让博客主页像个摆设...</p>
 ]]></summary>
@@ -107,99 +106,10 @@
     <published>2026-02-16T09:46:13.000Z</published>
   </entry>
   <entry>
-    <title type="text">2023年终总结</title>
-    <id>https://233377.xyz/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</id>
-    <link href="https://233377.xyz/posts/Private/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html"/>
-    <updated>2026-07-04T07:18:35.592Z</updated>
-    <summary type="html"><![CDATA[
-<p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
-<p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
-<h2>| 太原</h2>
-<blockquote>
-<p>第一次出差相当于常驻，后因住房冲突喜得优化回长。</p>
-<p><strong>心情如上第一次：忐忑 up+++     watch 会监测到心跳异常的那种</strong></p>
-</blockquote>
-<p>只短暂呆了 7 天，充分再享受了一次北方的冬天 + 地暖，住在汾河边工作点在商场写字楼。</p>
-<p>只去了博物馆，其实山西应该还有很多好玩的没去玩属实浪费了　　现在回想也可能是自己初出社会的忐忑吧</p>]]></summary>
-    <content type="html"><![CDATA[
-<p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
-<p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
-<h2>| 太原</h2>
-<blockquote>
-<p>第一次出差相当于常驻，后因住房冲突喜得优化回长。</p>
-<p><strong>心情如上第一次：忐忑 up+++     watch 会监测到心跳异常的那种</strong></p>
-</blockquote>
-<p>只短暂呆了 7 天，充分再享受了一次北方的冬天 + 地暖，住在汾河边工作点在商场写字楼。</p>
-<p>只去了博物馆，其实山西应该还有很多好玩的没去玩属实浪费了　　现在回想也可能是自己初出社会的忐忑吧</p>
-]]></content>
-    <category term="打工日寄"/>
-    <published>2024-06-29T08:14:25.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">👻 找工作</title>
-    <id>https://233377.xyz/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</id>
-    <link href="https://233377.xyz/posts/Private/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html"/>
-    <updated>2026-07-04T07:18:35.595Z</updated>
-    <summary type="html"><![CDATA[
-<h2>还在呼吸，未来可期</h2>
-<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
-<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
-<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
-<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>]]></summary>
-    <content type="html"><![CDATA[
-<h2>还在呼吸，未来可期</h2>
-<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
-<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
-<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
-<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>
-<h2>优秀的人都疯狂跑在前面</h2>
-<p>回想起来 bg、lx 总能前瞻性的做一些事情</p>
-<p>毕业时候公众号投的一家，说你为什么临近毕业才投
-那个时候没什么认知  只知道被大浪推着走          现在很被动</p>
-<p>看xy毕业简历有感</p>
-<h2>blibili Review</h2>
-<p>刚从亚信出来感觉纯纯在里面浪费时间，直都是二次开发，功能优化，SQL优化
-回复@满心满意-：别，我之前在低代码开发过一年，低代码培养的是<code>业务逻辑</code>，如果你还想干开发，那就只能自己空闲时间写代码不断进步。不然会落后的</p>
-]]></content>
-    <category term="打工日寄"/>
-    <published>2024-03-01T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">2026年初规划</title>
-    <id>https://233377.xyz/posts/Private/2026%E5%B9%B4%E5%88%9D%E8%A7%84%E5%88%92.html</id>
-    <link href="https://233377.xyz/posts/Private/2026%E5%B9%B4%E5%88%9D%E8%A7%84%E5%88%92.html"/>
-    <updated>2026-07-04T07:18:35.597Z</updated>
-    <summary type="html"><![CDATA[
-<blockquote>
-<p>规划10年，不能只考虑当下欢快</p>
-</blockquote>
-<h2>今年目标</h2>
-<p>10个结婚</p>
-<p>3k 项链</p>
-<p>看王校长视频目标3年15k，要适当的年龄拿到预期超预期薪资
-杭州w3的统一16  w4以上的不要  w4的有25  w4的要求是带人了！至少带6个
-14到16k  广州</p>
-<h2>30目标</h2>
-]]></summary>
-    <content type="html"><![CDATA[
-<blockquote>
-<p>规划10年，不能只考虑当下欢快</p>
-</blockquote>
-<h2>今年目标</h2>
-<p>10个结婚</p>
-<p>3k 项链</p>
-<p>看王校长视频目标3年15k，要适当的年龄拿到预期超预期薪资
-杭州w3的统一16  w4以上的不要  w4的有25  w4的要求是带人了！至少带6个
-14到16k  广州</p>
-<h2>30目标</h2>
-]]></content>
-    <published>2026-02-16T09:46:13.000Z</published>
-  </entry>
-  <entry>
     <title type="text">让万物穿过自己</title>
     <id>https://233377.xyz/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</id>
     <link href="https://233377.xyz/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html"/>
-    <updated>2026-07-04T07:18:35.598Z</updated>
+    <updated>2026-07-08T13:11:00.288Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
@@ -220,7 +130,7 @@
     <title type="text">Merlin</title>
     <id>https://233377.xyz/posts/Technology/Merlin.html</id>
     <link href="https://233377.xyz/posts/Technology/Merlin.html"/>
-    <updated>2026-07-04T07:18:35.599Z</updated>
+    <updated>2026-07-08T13:11:00.289Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>新整了个 <strong>RT-AX88U</strong> 华硕路由器, 不能浪费</p>
@@ -269,7 +179,7 @@
     <title type="text">WTG</title>
     <id>https://233377.xyz/posts/Technology/WTG.html</id>
     <link href="https://233377.xyz/posts/Technology/WTG.html"/>
-    <updated>2026-07-04T07:18:35.601Z</updated>
+    <updated>2026-07-08T13:11:00.291Z</updated>
     <summary type="html"><![CDATA[
 <h2>装机篇</h2>
 <blockquote>
@@ -340,5 +250,97 @@
 <p>补充：在公司用了2个月U盘的系统(因为嫌搭环境麻烦)，电脑从来没有关过机！质量真的没的说！</p>
 ]]></content>
     <published>2024-04-13T08:39:03.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">IOS 位置修改</title>
+    <id>https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html</id>
+    <link href="https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html"/>
+    <updated>2026-07-08T13:11:00.294Z</updated>
+    <summary type="html"><![CDATA[<h2>IOS 位置修改</h2>
+<blockquote>
+<p>Wireless Location（通常认为是 Wi-Fi / 基站网络定位）</p>
+</blockquote>
+<p>教程: https://github.com/Yu9191/wloc/issues/39</p>
+<p>额外补充: 注意也可用自己的配置这里导入模块就好</p>
+<p>总结: 导入模块, 配置好 HTTPS 解密 (1.里面配好两个域名  2.配置好证书), 可以使用了 !!</p>
+<ol>
+<li>模块:</li>
+</ol>
+<p><strong>Shadowrocket(小火箭):</strong> https://raw.githubusercontent.com/Yu9191/wloc/refs/heads/main/modules/wloc.module</p>]]></summary>
+    <content type="html"><![CDATA[<h2>IOS 位置修改</h2>
+<blockquote>
+<p>Wireless Location（通常认为是 Wi-Fi / 基站网络定位）</p>
+</blockquote>
+<p>教程: https://github.com/Yu9191/wloc/issues/39</p>
+<p>额外补充: 注意也可用自己的配置这里导入模块就好</p>
+<p>总结: 导入模块, 配置好 HTTPS 解密 (1.里面配好两个域名  2.配置好证书), 可以使用了 !!</p>
+<ol>
+<li>模块:</li>
+</ol>
+<p><strong>Shadowrocket(小火箭):</strong> https://raw.githubusercontent.com/Yu9191/wloc/refs/heads/main/modules/wloc.module</p>
+<ol start="2">
+<li>快捷指令:</li>
+</ol>
+<ul>
+<li><strong>wloc 设置地理位置</strong>：https://www.icloud.com/shortcuts/a82717d8fdad4e6280866fcf911173f7</li>
+<li><strong>wloc 清理恢复位置</strong>：https://www.icloud.com/shortcuts/f42632d406504f24a2cd163af4fe012f</li>
+</ul>
+<p>可有可无</p>
+<p>https://wloc-pages.pages.dev/</p>
+]]></content>
+    <published>2026-07-04T07:16:42.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">MacOS</title>
+    <id>https://233377.xyz/coding/01-CS-Foundation/MacOS.html</id>
+    <link href="https://233377.xyz/coding/01-CS-Foundation/MacOS.html"/>
+    <updated>2026-07-08T13:11:00.296Z</updated>
+    <summary type="html"><![CDATA[
+<h2>零、inbox</h2>
+<p>LinuxRef 文档移过来, 合并 !!!</p>
+<p>精读研究大佬的文档, 单独放一个文档 (转载)</p>
+<p>编程字体我用 <a href="https://www.monolisa.dev/" target="_blank" rel="noopener noreferrer">Monolisa</a> -&gt; 怎么薅免费</p>
+<p><strong>执行 <code>defaults write -g NSWindowShouldDragOnGesture -bool true</code>，然后就可以按住「⌘+⌃」然后鼠标点击任意地方拖动窗口了。来源 <a href="https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/" target="_blank" rel="noopener noreferrer">Moving a macOS window by clicking anywhere on it (like on Linux) · mmazzarolo.com</a>，但是在 MacOS 13 下似乎失效了。</strong></p>]]></summary>
+    <content type="html"><![CDATA[
+<h2>零、inbox</h2>
+<p>LinuxRef 文档移过来, 合并 !!!</p>
+<p>精读研究大佬的文档, 单独放一个文档 (转载)</p>
+<p>编程字体我用 <a href="https://www.monolisa.dev/" target="_blank" rel="noopener noreferrer">Monolisa</a> -&gt; 怎么薅免费</p>
+<p><strong>执行 <code>defaults write -g NSWindowShouldDragOnGesture -bool true</code>，然后就可以按住「⌘+⌃」然后鼠标点击任意地方拖动窗口了。来源 <a href="https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/" target="_blank" rel="noopener noreferrer">Moving a macOS window by clicking anywhere on it (like on Linux) · mmazzarolo.com</a>，但是在 MacOS 13 下似乎失效了。</strong></p>
+<h2>一、Software</h2>
+<h3>0.直接用</h3>
+<blockquote>
+<p>原大佬的笔记里有很多, 选了些我会用的</p>
+</blockquote>
+<p>安装 HomeBrew 并用他安装 App 和 Cli 工具。</p>
+<ul>
+<li>App 可以在 <a href="https://formulae.brew.sh/cask/" target="_blank" rel="noopener noreferrer">homebrew-cask — Homebrew Formulae</a> 里找有没有</li>
+<li>Cli 工具可以在 <a href="https://formulae.brew.sh/formula/" target="_blank" rel="noopener noreferrer">homebrew-core — Homebrew Formulae</a> 找有没有。</li>
+</ul>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 先开代理，不然会很慢（依赖第一步）</span></span>
+<span class="line"><span>export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 安装 HomeBrew</span></span>
+<span class="line"><span>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content>
+    <published>2025-12-17T16:15:30.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">01-CS-Foundation</title>
+    <id>https://233377.xyz/coding/01-CS-Foundation/</id>
+    <link href="https://233377.xyz/coding/01-CS-Foundation/"/>
+    <updated>2026-07-08T13:11:00.323Z</updated>
+    <summary type="html"><![CDATA[<ul>
+<li><a href="408-CN%EF%BC%88Computer%20Networks%EF%BC%89">408-CN（Computer Networks）</a></li>
+<li><a href="408-CO%20%28Computer%20Organization%29">408-CO (Computer Organization)</a></li>
+<li><a href="408-DSA%20%28Data%20Structures%20%26%20Algorithms%29">408-DSA (Data Structures &amp; Algorithms)</a></li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[<ul>
+<li><a href="408-CN%EF%BC%88Computer%20Networks%EF%BC%89">408-CN（Computer Networks）</a></li>
+<li><a href="408-CO%20%28Computer%20Organization%29">408-CO (Computer Organization)</a></li>
+<li><a href="408-DSA%20%28Data%20Structures%20%26%20Algorithms%29">408-DSA (Data Structures &amp; Algorithms)</a></li>
+</ul>
+]]></content>
+    <published>2026-01-17T10:55:34.000Z</published>
   </entry>
 </feed>
