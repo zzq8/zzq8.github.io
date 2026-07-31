@@ -221,6 +221,10 @@ export default hopeTheme({
 
     mermaid: true,
     // plantuml: true,  // 新版的 typora 还是不支持
+
+    highlighter: {
+      collapsedLines: 30,
+    },
   },
 
 });
