@@ -1,6 +1,11 @@
 ---
 title: IOS 位置修改
 icon: mdi:location
+category:
+  - Technique
+tag:
+  - IOS
+  - software
 ---
 
 ## IOS 位置修改

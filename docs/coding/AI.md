@@ -29,7 +29,7 @@ Plugin = 打包多个 Skill/Agent/Hook 的安装包
 
 直接放 cc 根目录就好:
 
-`curl -o ~/.claude/CLAUDE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md`
+`curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md -o ~/.claude/CLAUDE.md`
 
 或手动复制 :
 

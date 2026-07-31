@@ -20,7 +20,7 @@ export default navbar([
       {
         text: "书籍影音",
         icon: "mi:book",
-        link: "/coding/Reading.html",
+        link: "/coding/XD.html",
       }
     ],
   },
