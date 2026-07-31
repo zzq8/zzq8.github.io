@@ -223,7 +223,7 @@ export default hopeTheme({
     // plantuml: true,  // 新版的 typora 还是不支持
 
     highlighter: {
-      collapsedLines: 30,
+      collapsedLines: false, // 禁用代码块折叠，代码块始终完整展开
     },
   },
 

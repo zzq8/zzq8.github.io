@@ -10,10 +10,9 @@
   top: calc(var(--navbar-height) + 5rem);
 }
 
-// 代码块纵向滚动条（仅纵向，不横向）
-div[class*="language-"] pre {
+// 代码块纵向滚动条（加在容器上，行号一起滚动）
+div[class*="language-"] {
   overflow-y: auto !important;
-  overflow-x: hidden !important;
   max-height: 80vh;
 }
 
