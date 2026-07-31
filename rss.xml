@@ -6,31 +6,37 @@
     <link>https://233377.xyz/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 31 Jul 2026 16:20:45 GMT</pubDate>
-    <lastBuildDate>Fri, 31 Jul 2026 16:20:45 GMT</lastBuildDate>
+    <pubDate>Fri, 31 Jul 2026 17:28:36 GMT</pubDate>
+    <lastBuildDate>Fri, 31 Jul 2026 17:28:36 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>使用指南</category>
     <category>MD</category>
+    <category>打工日寄</category>
     <category>Net</category>
+    <category>Technique</category>
     <item>
-      <title>博客文章样例</title>
-      <link>https://233377.xyz/posts/2024-03-01-blog_example.html</link>
-      <guid>https://233377.xyz/posts/2024-03-01-blog_example.html</guid>
-      <source url="https://233377.xyz/rss.xml">博客文章样例</source>
-      <description>博客文章内容，支持 Markdown 和 HTML 语言。 加油！内驱力～</description>
-      <category>使用指南</category>
-      <pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>博客文章内容，支持 Markdown 和 HTML 语言。</p>
+      <title>PlantUML &amp; Mermaid</title>
+      <link>https://233377.xyz/coding/UML.html</link>
+      <guid>https://233377.xyz/coding/UML.html</guid>
+      <source url="https://233377.xyz/rss.xml">PlantUML &amp; Mermaid</source>
+      <description>PlantUML &amp; Mermaid 之前用的是 plantUML 但是它需要 java 环境支持 Mermaid 是 md 原生支持 (js) 结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了]) XD: 基本还是 plantUML 来吧, blog网站 &amp; typora 可以...</description>
+      <category>MD</category>
+      <pubDate>Mon, 16 Feb 2026 09:46:13 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>之前用的是 plantUML 但是它需要 java 环境支持</p>
+<p>Mermaid 是 md 原生支持 (js)</p>
+<p>结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了])</p>
+<p>XD: 基本还是 plantUML 来吧, blog网站 &amp; typora 可以加这个插件 (习惯它, 因为它更强大更适用 !!)</p>
 </blockquote>
-<p>加油！内驱力～</p>
+<p>画图才是真正的<strong>三思而后行</strong>, 思考清楚比直接埋头苦干有效一万倍...</p>
+<p><mark>慢慢来比较快 ~</mark></p>
 ]]></content:encoded>
     </item>
     <item>
       <title>Personal-XD</title>
-      <link>https://233377.xyz/coding/Personal.html</link>
-      <guid>https://233377.xyz/coding/Personal.html</guid>
+      <link>https://233377.xyz/coding/XD.html</link>
+      <guid>https://233377.xyz/coding/XD.html</guid>
       <source url="https://233377.xyz/rss.xml">Personal-XD</source>
       <description>Personal-XD 一、Daily 1. 好的习惯学习 大佬的日常习惯 2. 健身 万事俱备，只差开始 😃 二、Reading TODO 花时间搞一个 llm 订阅这些 blog / 或者收到 fllow 里 !!! https://newzone.top/reading/#/ 1. Blog 2. 博主 3. 书籍 剑来例子 todo 怎么把这...</description>
       <pubDate>Sat, 13 Sep 2025 13:13:56 GMT</pubDate>
@@ -54,25 +60,6 @@
       <enclosure url="https://moatkon.com/share/youtuber/MoneyXYZ.jpg" type="image/jpeg"/>
     </item>
     <item>
-      <title>PlantUML &amp; Mermaid</title>
-      <link>https://233377.xyz/coding/UML.html</link>
-      <guid>https://233377.xyz/coding/UML.html</guid>
-      <source url="https://233377.xyz/rss.xml">PlantUML &amp; Mermaid</source>
-      <description>PlantUML &amp; Mermaid 之前用的是 plantUML 但是它需要 java 环境支持 Mermaid 是 md 原生支持 (js) 结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了]) XD: 基本还是 plantUML 来吧, blog网站 &amp; typora 可以...</description>
-      <category>MD</category>
-      <pubDate>Mon, 16 Feb 2026 09:46:13 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>之前用的是 plantUML 但是它需要 java 环境支持</p>
-<p>Mermaid 是 md 原生支持 (js)</p>
-<p>结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了])</p>
-<p>XD: 基本还是 plantUML 来吧, blog网站 &amp; typora 可以加这个插件 (习惯它, 因为它更强大更适用 !!)</p>
-</blockquote>
-<p>画图才是真正的<strong>三思而后行</strong>, 思考清楚比直接埋头苦干有效一万倍...</p>
-<p><mark>慢慢来比较快 ~</mark></p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Catalog</title>
       <link>https://233377.xyz/coding/README.html</link>
       <guid>https://233377.xyz/coding/README.html</guid>
@@ -84,24 +71,53 @@
 ]]></content:encoded>
     </item>
     <item>
-      <title>让万物穿过自己</title>
-      <link>https://233377.xyz/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</link>
-      <guid>https://233377.xyz/posts/Chitchat/%E8%AE%A9%E4%B8%87%E7%89%A9%E7%A9%BF%E8%BF%87%E8%87%AA%E5%B7%B1.html</guid>
-      <source url="https://233377.xyz/rss.xml">让万物穿过自己</source>
-      <description>让万物穿过自己 车上听了一期博客, 忽左忽右的第10期 标题就是 对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住 解决方案是: 关注? 不逃避 没太理解</description>
-      <pubDate>Fri, 29 Aug 2025 12:58:02 GMT</pubDate>
+      <title>2023年终总结</title>
+      <link>https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</link>
+      <guid>https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</guid>
+      <source url="https://233377.xyz/rss.xml">2023年终总结</source>
+      <description>2023年终总结 去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。 一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。 | 太原 第一次出差相当于常驻，后因住房冲突喜得优化回长。 心情如上第一次：忐忑 up+++ watch 会监测到心跳异常的那种 只短暂呆了 7 天，充分再享受了一次北方的...</description>
+      <category>打工日寄</category>
+      <pubDate>Sat, 29 Jun 2024 08:14:25 GMT</pubDate>
       <content:encoded><![CDATA[
+<p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
+<p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
+<h2>| 太原</h2>
 <blockquote>
-<p>车上听了一期博客, 忽左忽右的第10期 标题就是</p>
+<p>第一次出差相当于常驻，后因住房冲突喜得优化回长。</p>
+<p><strong>心情如上第一次：忐忑 up+++     watch 会监测到心跳异常的那种</strong></p>
 </blockquote>
-<p>对于阻塞卡点观念比较认同, 如果没做好一个什么事情就会卡住</p>
-<p>解决方案是: 关注?  不逃避   没太理解</p>
+<p>只短暂呆了 7 天，充分再享受了一次北方的冬天 + 地暖，住在汾河边工作点在商场写字楼。</p>
+<p>只去了博物馆，其实山西应该还有很多好玩的没去玩属实浪费了　　现在回想也可能是自己初出社会的忐忑吧</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>找工作</title>
+      <link>https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</link>
+      <guid>https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</guid>
+      <source url="https://233377.xyz/rss.xml">找工作</source>
+      <description>找工作 还在呼吸，未来可期 告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！ 普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多 博科 现在最大的问题，回...</description>
+      <category>打工日寄</category>
+      <pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>还在呼吸，未来可期</h2>
+<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
+<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
+<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
+<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>
+<h2>优秀的人都疯狂跑在前面</h2>
+<p>回想起来 bg、lx 总能前瞻性的做一些事情</p>
+<p>毕业时候公众号投的一家，说你为什么临近毕业才投
+那个时候没什么认知  只知道被大浪推着走          现在很被动</p>
+<p>看xy毕业简历有感</p>
+<h2>blibili Review</h2>
+<p>刚从亚信出来感觉纯纯在里面浪费时间，直都是二次开发，功能优化，SQL优化
+回复@满心满意-：别，我之前在低代码开发过一年，低代码培养的是<code>业务逻辑</code>，如果你还想干开发，那就只能自己空闲时间写代码不断进步。不然会落后的</p>
 ]]></content:encoded>
     </item>
     <item>
       <title>Merlin</title>
-      <link>https://233377.xyz/posts/Technology/Merlin.html</link>
-      <guid>https://233377.xyz/posts/Technology/Merlin.html</guid>
+      <link>https://233377.xyz/posts/Chitchat/Merlin.html</link>
+      <guid>https://233377.xyz/posts/Chitchat/Merlin.html</guid>
       <source url="https://233377.xyz/rss.xml">Merlin</source>
       <description>Merlin 新整了个 RT-AX88U 华硕路由器, 不能浪费 梅林固件 Clash light NAS --&amp;gt; 需要 NTFS 格式, exFat 这个型号不支持 教程 Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file 经历 clash 开了, 但是还是科学上网不了 这个卡点费...</description>
       <category>Net</category>
@@ -136,12 +152,19 @@
 ]]></content:encoded>
     </item>
     <item>
+      <title>Chitchat</title>
+      <link>https://233377.xyz/posts/Chitchat/</link>
+      <guid>https://233377.xyz/posts/Chitchat/</guid>
+      <source url="https://233377.xyz/rss.xml">Chitchat</source>
+      <pubDate>Fri, 31 Jul 2026 17:26:43 GMT</pubDate>
+    </item>
+    <item>
       <title>WTG</title>
-      <link>https://233377.xyz/posts/Technology/WTG.html</link>
-      <guid>https://233377.xyz/posts/Technology/WTG.html</guid>
+      <link>https://233377.xyz/posts/Chitchat/WTG.html</link>
+      <guid>https://233377.xyz/posts/Chitchat/WTG.html</guid>
       <source url="https://233377.xyz/rss.xml">WTG</source>
       <description>WTG 装机篇 自己折腾 WTG 我觉得需要记录的 隐藏系统磁盘 看萝卜头博客，我放在ali了 有批处理解决 U盘装两个系统-WTG&amp;微PE 这个踩坑严重。记住WTG里面装WEPE看 ali 也有问题（进不去WEPE好像）装的时候可能得取消一个勾选 重装系统坑 场景：使用常规方法，装载装不上（Windows 安装程序：我们无法创建新的分区，也找不到现有...</description>
-      <pubDate>Sat, 13 Apr 2024 08:39:03 GMT</pubDate>
+      <pubDate>Fri, 25 Nov 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>装机篇</h2>
 <blockquote>
@@ -206,6 +229,7 @@
       <guid>https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html</guid>
       <source url="https://233377.xyz/rss.xml">IOS 位置修改</source>
       <description>IOS 位置修改 Wireless Location（通常认为是 Wi-Fi / 基站网络定位） 教程: https://github.com/Yu9191/wloc/issues/39 额外补充: 注意也可用自己的配置这里导入模块就好 总结: 导入模块, 配置好 HTTPS 解密 (1.里面配好两个域名 2.配置好证书), 可以使用了 !! 模块: ...</description>
+      <category>Technique</category>
       <pubDate>Sat, 04 Jul 2026 07:16:42 GMT</pubDate>
       <content:encoded><![CDATA[<h2>IOS 位置修改</h2>
 <blockquote>
@@ -230,48 +254,11 @@
 ]]></content:encoded>
     </item>
     <item>
-      <title>MacOS</title>
-      <link>https://233377.xyz/coding/01-CS-Foundation/MacOS.html</link>
-      <guid>https://233377.xyz/coding/01-CS-Foundation/MacOS.html</guid>
-      <source url="https://233377.xyz/rss.xml">MacOS</source>
-      <description>MacOS 零、inbox LinuxRef 文档移过来, 合并 !!! 精读研究大佬的文档, 单独放一个文档 (转载) 编程字体我用 Monolisa -&amp;gt; 怎么薅免费 执行 defaults write -g NSWindowShouldDragOnGesture -bool true，然后就可以按住「⌘+⌃」然后鼠标点击任意地方拖动窗口了。来源 ...</description>
-      <pubDate>Wed, 17 Dec 2025 16:15:30 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>零、inbox</h2>
-<p>LinuxRef 文档移过来, 合并 !!!</p>
-<p>精读研究大佬的文档, 单独放一个文档 (转载)</p>
-<p>编程字体我用 <a href="https://www.monolisa.dev/" target="_blank" rel="noopener noreferrer">Monolisa</a> -&gt; 怎么薅免费</p>
-<p><strong>执行 <code>defaults write -g NSWindowShouldDragOnGesture -bool true</code>，然后就可以按住「⌘+⌃」然后鼠标点击任意地方拖动窗口了。来源 <a href="https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/" target="_blank" rel="noopener noreferrer">Moving a macOS window by clicking anywhere on it (like on Linux) · mmazzarolo.com</a>，但是在 MacOS 13 下似乎失效了。</strong></p>
-<h2>一、Software</h2>
-<h3>0.直接用</h3>
-<blockquote>
-<p>原大佬的笔记里有很多, 选了些我会用的</p>
-</blockquote>
-<p>安装 HomeBrew 并用他安装 App 和 Cli 工具。</p>
-<ul>
-<li>App 可以在 <a href="https://formulae.brew.sh/cask/" target="_blank" rel="noopener noreferrer">homebrew-cask — Homebrew Formulae</a> 里找有没有</li>
-<li>Cli 工具可以在 <a href="https://formulae.brew.sh/formula/" target="_blank" rel="noopener noreferrer">homebrew-core — Homebrew Formulae</a> 找有没有。</li>
-</ul>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 先开代理，不然会很慢（依赖第一步）</span></span>
-<span class="line"><span>export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span># 安装 HomeBrew</span></span>
-<span class="line"><span>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>01-CS-Foundation</title>
-      <link>https://233377.xyz/coding/01-CS-Foundation/</link>
-      <guid>https://233377.xyz/coding/01-CS-Foundation/</guid>
-      <source url="https://233377.xyz/rss.xml">01-CS-Foundation</source>
-      <description>408-CN（Computer Networks） 408-CO (Computer Organization) 408-DSA (Data Structures &amp; Algorithms)</description>
-      <pubDate>Sat, 17 Jan 2026 10:55:34 GMT</pubDate>
-      <content:encoded><![CDATA[<ul>
-<li><a href="408-CN%EF%BC%88Computer%20Networks%EF%BC%89">408-CN（Computer Networks）</a></li>
-<li><a href="408-CO%20%28Computer%20Organization%29">408-CO (Computer Organization)</a></li>
-<li><a href="408-DSA%20%28Data%20Structures%20%26%20Algorithms%29">408-DSA (Data Structures &amp; Algorithms)</a></li>
-</ul>
-]]></content:encoded>
+      <title>XD</title>
+      <link>https://233377.xyz/posts/XD/</link>
+      <guid>https://233377.xyz/posts/XD/</guid>
+      <source url="https://233377.xyz/rss.xml">XD</source>
+      <pubDate>Fri, 31 Jul 2026 17:26:43 GMT</pubDate>
     </item>
   </channel>
 </rss>
