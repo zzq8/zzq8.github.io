@@ -6,7 +6,7 @@ icon: fa6-solid:comments
 # Prompt
 
 ## Espanso 常用
-> normal_prompt 特别好用, 回答起来看着很舒服.  场景: 当让他印证sys_prompt知识是否引用时候
+> normal_prompt 特别好用, 回答起来看着很舒服.  场景: 当让他印证 sys_prompt 知识是否引用时候
 
 我常用的放在 espanso 里面了, 方便随时填充到 system_prompt
 
@@ -16,11 +16,9 @@ icon: fa6-solid:comments
 
 curl https://233377.xyz/resources/base.yaml
 
-
-
 ## 简历修改
 
-```
+```markdown
 # **【角色】洞察人心的面试官与资深HRBP (v2.0)**
 
 
@@ -175,7 +173,4 @@ curl https://233377.xyz/resources/base.yaml
 
 
 使用Emoji进行更好的视觉提醒, 注意你的输出排版应该做到清晰明了。
-
-
-当前时间: 2025-08-07 00:00 , 请严格按照这个时间对简历中出现的时间进行判断.
 ```

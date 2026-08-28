@@ -71,4 +71,9 @@ btw: 不要放弃思考, 阮一峰很多摘录都提到这点
 
 #### manus用的哪个agent范式
 
-增强版 react
+增强版 react (PE)
+
+1. 先 plan 生成 task
+
+2. 每个 task 有很多 step
+3. 处理完一个 task 后 rePlan 【loop】

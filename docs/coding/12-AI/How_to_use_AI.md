@@ -1,13 +1,11 @@
 ---
-article: 0_How to use AI
+title: How to use AI
 category: AI
 tag: reship
 created: 2026-01-05 23:37:37
 updated: 2026-05-04 12:58:17
-转载: https://linux.do/t/topic/1321470
+reship: https://linux.do/t/topic/1321470
 ---
-
-# How to use AI
 
 AI 辅助开发提效实操指南
 
