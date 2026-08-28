@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://233377.xyz/favicon.ico</icon>
-  <updated>2026-08-28T11:18:20.434Z</updated>
+  <updated>2026-08-28T12:49:11.906Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://233377.xyz/atom.xml"/>
   <link rel="alternate" href="https://233377.xyz/"/>
@@ -16,7 +16,7 @@
     <title type="text">PlantUML &amp; Mermaid</title>
     <id>https://233377.xyz/coding/UML.html</id>
     <link href="https://233377.xyz/coding/UML.html"/>
-    <updated>2026-08-28T11:18:20.435Z</updated>
+    <updated>2026-08-28T12:49:11.908Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>之前用的是 plantUML 但是它需要 java 环境支持</p>
@@ -42,7 +42,7 @@
     <title type="text">Personal-XD</title>
     <id>https://233377.xyz/coding/XD.html</id>
     <link href="https://233377.xyz/coding/XD.html"/>
-    <updated>2026-08-28T11:18:20.439Z</updated>
+    <updated>2026-08-28T12:49:11.911Z</updated>
     <summary type="html"><![CDATA[
 <h2>一、Daily</h2>
 <h3>1. 好的习惯学习</h3>
@@ -79,7 +79,7 @@
     <title type="text">Catalog</title>
     <id>https://233377.xyz/coding/README.html</id>
     <link href="https://233377.xyz/coding/README.html"/>
-    <updated>2026-08-28T11:18:20.451Z</updated>
+    <updated>2026-08-28T12:49:11.925Z</updated>
     <summary type="html"><![CDATA[<p>做技术笔记还行, 但是做博客不太行
 折腾很久想 _blank 打开博客文章做不到, 这样让博客主页像个摆设...</p>
 ]]></summary>
@@ -92,7 +92,7 @@
     <title type="text">Merlin</title>
     <id>https://233377.xyz/posts/Chitchat/Merlin.html</id>
     <link href="https://233377.xyz/posts/Chitchat/Merlin.html"/>
-    <updated>2026-08-28T11:18:20.454Z</updated>
+    <updated>2026-08-28T12:49:11.934Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>新整了个 <strong>RT-AX88U</strong> 华硕路由器, 不能浪费</p>
@@ -141,14 +141,14 @@
     <title type="text">Chitchat</title>
     <id>https://233377.xyz/posts/Chitchat/</id>
     <link href="https://233377.xyz/posts/Chitchat/"/>
-    <updated>2026-08-28T11:18:20.456Z</updated>
+    <updated>2026-08-28T12:49:11.937Z</updated>
     <published>2026-07-31T17:26:43.000Z</published>
   </entry>
   <entry>
     <title type="text">WTG</title>
     <id>https://233377.xyz/posts/Chitchat/WTG.html</id>
     <link href="https://233377.xyz/posts/Chitchat/WTG.html"/>
-    <updated>2026-08-28T11:18:20.456Z</updated>
+    <updated>2026-08-28T12:49:11.938Z</updated>
     <summary type="html"><![CDATA[
 <h2>装机篇</h2>
 <blockquote>
@@ -224,7 +224,7 @@
     <title type="text">2023年终总结</title>
     <id>https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</id>
     <link href="https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html"/>
-    <updated>2026-08-28T11:18:20.472Z</updated>
+    <updated>2026-08-28T12:49:11.943Z</updated>
     <summary type="html"><![CDATA[
 <p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
 <p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
@@ -253,7 +253,7 @@
     <title type="text">找工作</title>
     <id>https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</id>
     <link href="https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html"/>
-    <updated>2026-08-28T11:18:20.474Z</updated>
+    <updated>2026-08-28T12:49:11.946Z</updated>
     <summary type="html"><![CDATA[
 <h2>还在呼吸，未来可期</h2>
 <p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
@@ -282,7 +282,7 @@
     <title type="text">IOS 位置修改</title>
     <id>https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html</id>
     <link href="https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html"/>
-    <updated>2026-08-28T11:18:20.476Z</updated>
+    <updated>2026-08-28T12:49:11.947Z</updated>
     <summary type="html"><![CDATA[<h2>IOS 位置修改</h2>
 <blockquote>
 <p>Wireless Location（通常认为是 Wi-Fi / 基站网络定位）</p>
@@ -322,7 +322,7 @@
     <title type="text">XD</title>
     <id>https://233377.xyz/posts/XD/</id>
     <link href="https://233377.xyz/posts/XD/"/>
-    <updated>2026-08-28T11:18:20.477Z</updated>
+    <updated>2026-08-28T12:49:11.949Z</updated>
     <published>2026-07-31T17:26:43.000Z</published>
   </entry>
 </feed>
