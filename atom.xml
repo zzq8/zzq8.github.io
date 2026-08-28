@@ -4,19 +4,19 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://233377.xyz/favicon.ico</icon>
-  <updated>2026-08-28T12:49:11.906Z</updated>
+  <updated>2026-08-28T13:29:18.779Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://233377.xyz/atom.xml"/>
   <link rel="alternate" href="https://233377.xyz/"/>
   <category term="MD"/>
-  <category term="Net"/>
   <category term="打工日寄"/>
+  <category term="Net"/>
   <category term="Technique"/>
   <entry>
     <title type="text">PlantUML &amp; Mermaid</title>
     <id>https://233377.xyz/coding/UML.html</id>
     <link href="https://233377.xyz/coding/UML.html"/>
-    <updated>2026-08-28T12:49:11.908Z</updated>
+    <updated>2026-08-28T13:29:18.780Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>之前用的是 plantUML 但是它需要 java 环境支持</p>
@@ -42,7 +42,7 @@
     <title type="text">Personal-XD</title>
     <id>https://233377.xyz/coding/XD.html</id>
     <link href="https://233377.xyz/coding/XD.html"/>
-    <updated>2026-08-28T12:49:11.911Z</updated>
+    <updated>2026-08-28T13:29:18.784Z</updated>
     <summary type="html"><![CDATA[
 <h2>一、Daily</h2>
 <h3>1. 好的习惯学习</h3>
@@ -79,7 +79,7 @@
     <title type="text">Catalog</title>
     <id>https://233377.xyz/coding/README.html</id>
     <link href="https://233377.xyz/coding/README.html"/>
-    <updated>2026-08-28T12:49:11.925Z</updated>
+    <updated>2026-08-28T13:29:18.799Z</updated>
     <summary type="html"><![CDATA[<p>做技术笔记还行, 但是做博客不太行
 折腾很久想 _blank 打开博客文章做不到, 这样让博客主页像个摆设...</p>
 ]]></summary>
@@ -89,10 +89,68 @@
     <published>2026-02-16T09:46:13.000Z</published>
   </entry>
   <entry>
+    <title type="text">2023年终总结</title>
+    <id>https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</id>
+    <link href="https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html"/>
+    <updated>2026-08-28T13:29:18.810Z</updated>
+    <summary type="html"><![CDATA[
+<p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
+<p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
+<h2>| 太原</h2>
+<blockquote>
+<p>第一次出差相当于常驻，后因住房冲突喜得优化回长。</p>
+<p><strong>心情如上第一次：忐忑 up+++     watch 会监测到心跳异常的那种</strong></p>
+</blockquote>
+<p>只短暂呆了 7 天，充分再享受了一次北方的冬天 + 地暖，住在汾河边工作点在商场写字楼。</p>
+<p>只去了博物馆，其实山西应该还有很多好玩的没去玩属实浪费了　　现在回想也可能是自己初出社会的忐忑吧</p>]]></summary>
+    <content type="html"><![CDATA[
+<p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
+<p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
+<h2>| 太原</h2>
+<blockquote>
+<p>第一次出差相当于常驻，后因住房冲突喜得优化回长。</p>
+<p><strong>心情如上第一次：忐忑 up+++     watch 会监测到心跳异常的那种</strong></p>
+</blockquote>
+<p>只短暂呆了 7 天，充分再享受了一次北方的冬天 + 地暖，住在汾河边工作点在商场写字楼。</p>
+<p>只去了博物馆，其实山西应该还有很多好玩的没去玩属实浪费了　　现在回想也可能是自己初出社会的忐忑吧</p>
+]]></content>
+    <category term="打工日寄"/>
+    <published>2024-06-29T08:14:25.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">找工作</title>
+    <id>https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</id>
+    <link href="https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html"/>
+    <updated>2026-08-28T13:29:18.813Z</updated>
+    <summary type="html"><![CDATA[
+<h2>还在呼吸，未来可期</h2>
+<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
+<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
+<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
+<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>]]></summary>
+    <content type="html"><![CDATA[
+<h2>还在呼吸，未来可期</h2>
+<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
+<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
+<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
+<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>
+<h2>优秀的人都疯狂跑在前面</h2>
+<p>回想起来 bg、lx 总能前瞻性的做一些事情</p>
+<p>毕业时候公众号投的一家，说你为什么临近毕业才投
+那个时候没什么认知  只知道被大浪推着走          现在很被动</p>
+<p>看xy毕业简历有感</p>
+<h2>blibili Review</h2>
+<p>刚从亚信出来感觉纯纯在里面浪费时间，直都是二次开发，功能优化，SQL优化
+回复@满心满意-：别，我之前在低代码开发过一年，低代码培养的是<code>业务逻辑</code>，如果你还想干开发，那就只能自己空闲时间写代码不断进步。不然会落后的</p>
+]]></content>
+    <category term="打工日寄"/>
+    <published>2024-03-01T00:00:00.000Z</published>
+  </entry>
+  <entry>
     <title type="text">Merlin</title>
     <id>https://233377.xyz/posts/Chitchat/Merlin.html</id>
     <link href="https://233377.xyz/posts/Chitchat/Merlin.html"/>
-    <updated>2026-08-28T12:49:11.934Z</updated>
+    <updated>2026-08-28T13:29:18.815Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>新整了个 <strong>RT-AX88U</strong> 华硕路由器, 不能浪费</p>
@@ -141,14 +199,14 @@
     <title type="text">Chitchat</title>
     <id>https://233377.xyz/posts/Chitchat/</id>
     <link href="https://233377.xyz/posts/Chitchat/"/>
-    <updated>2026-08-28T12:49:11.937Z</updated>
+    <updated>2026-08-28T13:29:18.818Z</updated>
     <published>2026-07-31T17:26:43.000Z</published>
   </entry>
   <entry>
     <title type="text">WTG</title>
     <id>https://233377.xyz/posts/Chitchat/WTG.html</id>
     <link href="https://233377.xyz/posts/Chitchat/WTG.html"/>
-    <updated>2026-08-28T12:49:11.938Z</updated>
+    <updated>2026-08-28T13:29:18.819Z</updated>
     <summary type="html"><![CDATA[
 <h2>装机篇</h2>
 <blockquote>
@@ -221,68 +279,10 @@
     <published>2022-11-25T00:00:00.000Z</published>
   </entry>
   <entry>
-    <title type="text">2023年终总结</title>
-    <id>https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</id>
-    <link href="https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html"/>
-    <updated>2026-08-28T12:49:11.943Z</updated>
-    <summary type="html"><![CDATA[
-<p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
-<p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
-<h2>| 太原</h2>
-<blockquote>
-<p>第一次出差相当于常驻，后因住房冲突喜得优化回长。</p>
-<p><strong>心情如上第一次：忐忑 up+++     watch 会监测到心跳异常的那种</strong></p>
-</blockquote>
-<p>只短暂呆了 7 天，充分再享受了一次北方的冬天 + 地暖，住在汾河边工作点在商场写字楼。</p>
-<p>只去了博物馆，其实山西应该还有很多好玩的没去玩属实浪费了　　现在回想也可能是自己初出社会的忐忑吧</p>]]></summary>
-    <content type="html"><![CDATA[
-<p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
-<p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
-<h2>| 太原</h2>
-<blockquote>
-<p>第一次出差相当于常驻，后因住房冲突喜得优化回长。</p>
-<p><strong>心情如上第一次：忐忑 up+++     watch 会监测到心跳异常的那种</strong></p>
-</blockquote>
-<p>只短暂呆了 7 天，充分再享受了一次北方的冬天 + 地暖，住在汾河边工作点在商场写字楼。</p>
-<p>只去了博物馆，其实山西应该还有很多好玩的没去玩属实浪费了　　现在回想也可能是自己初出社会的忐忑吧</p>
-]]></content>
-    <category term="打工日寄"/>
-    <published>2024-06-29T08:14:25.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">找工作</title>
-    <id>https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</id>
-    <link href="https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html"/>
-    <updated>2026-08-28T12:49:11.946Z</updated>
-    <summary type="html"><![CDATA[
-<h2>还在呼吸，未来可期</h2>
-<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
-<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
-<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
-<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>]]></summary>
-    <content type="html"><![CDATA[
-<h2>还在呼吸，未来可期</h2>
-<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
-<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
-<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
-<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>
-<h2>优秀的人都疯狂跑在前面</h2>
-<p>回想起来 bg、lx 总能前瞻性的做一些事情</p>
-<p>毕业时候公众号投的一家，说你为什么临近毕业才投
-那个时候没什么认知  只知道被大浪推着走          现在很被动</p>
-<p>看xy毕业简历有感</p>
-<h2>blibili Review</h2>
-<p>刚从亚信出来感觉纯纯在里面浪费时间，直都是二次开发，功能优化，SQL优化
-回复@满心满意-：别，我之前在低代码开发过一年，低代码培养的是<code>业务逻辑</code>，如果你还想干开发，那就只能自己空闲时间写代码不断进步。不然会落后的</p>
-]]></content>
-    <category term="打工日寄"/>
-    <published>2024-03-01T00:00:00.000Z</published>
-  </entry>
-  <entry>
     <title type="text">IOS 位置修改</title>
     <id>https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html</id>
     <link href="https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html"/>
-    <updated>2026-08-28T12:49:11.947Z</updated>
+    <updated>2026-08-28T13:29:18.822Z</updated>
     <summary type="html"><![CDATA[<h2>IOS 位置修改</h2>
 <blockquote>
 <p>Wireless Location（通常认为是 Wi-Fi / 基站网络定位）</p>
@@ -322,7 +322,7 @@
     <title type="text">XD</title>
     <id>https://233377.xyz/posts/XD/</id>
     <link href="https://233377.xyz/posts/XD/"/>
-    <updated>2026-08-28T12:49:11.949Z</updated>
+    <updated>2026-08-28T13:29:18.823Z</updated>
     <published>2026-07-31T17:26:43.000Z</published>
   </entry>
 </feed>
