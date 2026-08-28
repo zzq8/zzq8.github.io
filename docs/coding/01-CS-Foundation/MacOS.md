@@ -218,7 +218,6 @@ Chrome Plugin
 
 	//MacOS
 	"find_selected_text": true,
-
 	
 	"index_files": true,
 	"update_check": false,
@@ -226,88 +225,17 @@ Chrome Plugin
 ```
 
 #### Keybinddings
-```json
-[
-	//XXX 这里 MACOS super 代表 Command
-	// { "keys": ["super+up"], "command": "select_lines", "args": {"forward": false} },
-	// { "keys": ["super+down"], "command": "select_lines", "args": {"forward": true} },
-	// { "keys": ["super+alt+down"], "command": "duplicate_line" },
-	// { "keys": ["super+e"], "command": "find_under_expand" },
-	// { "keys": ["supre+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
-	// { "keys": ["super+shift+l"], "command": "toggle_side_bar" },
-	// { "keys": ["alt+up"], "command": "swap_line_up" },
-	// { "keys": ["alt+down"], "command": "swap_line_down" },
-	// { "keys": ["super+1"], "command": "next_bookmark" },
-	// { "keys": ["super+2"], "command": "prev_bookmark" },
-	// { "keys": ["super+shift+f11"], "command": "toggle_bookmark" },
-	{ "keys": ["shift+f11"], "command": "clear_bookmarks" },
-	{ "keys": ["super+plus+q+[+]+;+'"], "command": "increase_font_size" },
-
-	// 这个虽然左边搜不着, 但是和右键的文案一直 command (尝试还真可以)
-
-	// 这两个命令一起, 就是保存全部 + 关闭全部
-	{ "keys": ["super+alt+s"], "command": "save_all" },
-	{
-        "keys": ["super+alt+w"],
-        "command": "close_other_tabs"
-    },
-	//End
-
-
-	// 20250917 --> Mac new, 保持同idea一致
-	{ "keys": ["ctrl+option+shift+down"], "command": "next_modification" },
-	{ "keys": ["ctrl+option+shift+up"], "command": "prev_modification" },
-	{ "keys": ["super+d"], "command": "duplicate_line" },
-	{ "keys": ["ctrl+g"], "command": "find_under_expand" },
-	{ "keys": ["super+1"], "command": "toggle_side_bar" },
-	{ "keys": ["super+shift+up"], "command": "swap_line_up" },
-	{ "keys": ["super+shift++down"], "command": "swap_line_down" },
-	{ "keys": ["ctrl+1"], "command": "next_bookmark" },
-	{ "keys": ["ctrl+shift+1"], "command": "prev_bookmark" },
-	{ "keys": ["ctrl+2"], "command": "prev_bookmark" },
-	{ "keys": ["f3"], "command": "toggle_bookmark" },
-	{ "keys": ["super+-"], "command": "fold" },
-	{ "keys": ["super+="], "command": "unfold" },
-	{ "keys": ["super+option+["], "command": "move_to", "args": {"to": "brackets"} },
-	{ "keys": ["super+option+]"], "command": "move_to", "args": {"to": "brackets"} },
-	{ "keys": ["super+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
-    { "keys": ["super+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} }, // 删除行
-	{ "keys": ["super+alt+l"], "command": "reindent" },
-	// Shift+Enter -> 新起一行（无论光标在行尾还是中间）
-	{ "keys": ["shift+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"}, "context":
-		[
-			{ "key": "overlay_has_focus", "operator": "equal", "operand": false },
-		]
-	},
-	// Cmd+[ -> 跳转回上一个位置 (IDEA: Back)
-	{ "keys": ["super+["], "command": "jump_back" },
-	{ "keys": ["super+alt+left"], "command": "jump_back" },
-	// Cmd+] -> 跳转到下一个位置 (IDEA: Forward)
-	{ "keys": ["super+]"], "command": "jump_forward" },
-	{ "keys": ["super+alt+right"], "command": "jump_forward" },
-	{ "keys": ["super+alt+z"], "command": "revert_hunk" },
-
-
-
-
-	// TODO 想到什么 idea 验证一下, 问 GPT
-	// ⭐️ 看command key技巧, 控制台 -->   sublime.log_commands(True)
-
-	// plugin start -->
-	{"keys": ["super+alt+l"], "command": "pretty_json" },
-	{ "keys": ["super+alt+control+l"], "command": "json_unescape" },
-	// StatusBarJsonPath package
-	{"keys": ["super+alt+shift+c"], "command": "copy_json_path" },
-	// <-- plugin end
-
-	
-
-]
-```
+via [Default (OSX).sublime-keymap](/resources/Default%20(OSX).sublime-keymap)
 
 #### plungin
 
 > Json - 去除转义后格式化
+
+[CloseOtherTabs.py](/resources/sublime-plugins/CloseOtherTabs.py)
+
+[escape_string.py](/resources/sublime-plugins/escape_string.py)
+
+[json_unescape.py](/resources/sublime-plugins/json_unescape.py)
 
 ```python
 # 文件路径：
@@ -373,9 +301,7 @@ class JsonUnescapeCommand(sublime_plugin.TextCommand):
 
 > match
 
-见: 提示词 [Z_Prompt.md](../Z_Prompt.md)
-
-
+[base.yml](/resources/base.yml)
 
 > config
 
@@ -669,11 +595,105 @@ CLOSE_WIN quit
 - 代码块太长了, 不折叠
 - 标题不能折叠
 
+一键安装:
+
 ```json
 git clone https://github.com/bfyes/Typora-plugin-on-Mac.git
 cd Typora-plugin-on-Mac
 bash install.sh
 ```
+
+该插件以及弄过的用户配置:
+
+```
+[pie_menu]
+ENABLE = true
+
+[[action_buttons.BUTTONS]]
+enable = true
+coordinate = [ 4, 0 ]
+size = "16px"
+icon = "fa fa-gear"
+callback = "preferences.call"
+
+[[action_buttons.BUTTONS]]
+enable = true
+coordinate = [ 3, 0 ]
+size = "16px"
+icon = "fa fa-indent"
+callback = "md_padding.call"
+
+[[action_buttons.BUTTONS]]
+enable = true
+coordinate = [ 2, 0 ]
+size = "16px"
+icon = "fa fa-font"
+callback = "text_stylize.call"
+
+[[action_buttons.BUTTONS]]
+enable = true
+coordinate = [ 1, 0 ]
+size = "16px"
+icon = "fa fa-caret-up"
+evil = "() => this.utils.jumpToEdge(true)"
+
+[[action_buttons.BUTTONS]]
+enable = true
+coordinate = [ 0, 0 ]
+size = "16px"
+icon = "fa fa-caret-down"
+evil = "() => this.utils.jumpToEdge(false)"
+
+[[action_buttons.BUTTONS]]
+enable = true
+coordinate = [ 3, 1 ]
+size = "16px"
+icon = "fa fa-search"
+callback = "search_multi.call"
+
+[[action_buttons.BUTTONS]]
+enable = true
+coordinate = [ 2, 1 ]
+size = "16px"
+icon = "fa fa-th-list"
+callback = "right_outline.call"
+
+[[action_buttons.BUTTONS]]
+enable = true
+coordinate = [ 1, 1 ]
+size = "16px"
+icon = "fa fa-image"
+callback = "image_viewer.call"
+
+[[action_buttons.BUTTONS]]
+enable = true
+coordinate = [ 0, 1 ]
+size = "16px"
+icon = "fa fa-sitemap fa-rotate-270"
+callback = "markmap.onButtonClick"
+
+[global]
+LOCALE = "zh-CN"
+
+[collapse_paragraph]
+ENABLE = true
+
+[truncate_text]
+ENABLE = true
+
+[fence_enhance]
+AUTO_FOLD_LINES = 20
+FOLD_OVERFLOW = "hidden"
+DEFAULT_FOLD = true
+EXPAND_ON_FOCUS = true
+FOLD_ON_BLUR = true
+
+[right_outline]
+DEFAULT_SHOW_OUTLINE = true
+
+```
+
+
 
 ## 二、Shell
 
