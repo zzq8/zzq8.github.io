@@ -6,13 +6,13 @@
     <link>https://233377.xyz/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 31 Jul 2026 17:28:36 GMT</pubDate>
-    <lastBuildDate>Fri, 31 Jul 2026 17:28:36 GMT</lastBuildDate>
+    <pubDate>Fri, 28 Aug 2026 10:00:19 GMT</pubDate>
+    <lastBuildDate>Fri, 28 Aug 2026 10:00:19 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>MD</category>
-    <category>打工日寄</category>
     <category>Net</category>
+    <category>打工日寄</category>
     <category>Technique</category>
     <item>
       <title>PlantUML &amp; Mermaid</title>
@@ -68,50 +68,6 @@
       <pubDate>Mon, 16 Feb 2026 09:46:13 GMT</pubDate>
       <content:encoded><![CDATA[<p>做技术笔记还行, 但是做博客不太行
 折腾很久想 _blank 打开博客文章做不到, 这样让博客主页像个摆设...</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>2023年终总结</title>
-      <link>https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</link>
-      <guid>https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</guid>
-      <source url="https://233377.xyz/rss.xml">2023年终总结</source>
-      <description>2023年终总结 去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。 一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。 | 太原 第一次出差相当于常驻，后因住房冲突喜得优化回长。 心情如上第一次：忐忑 up+++ watch 会监测到心跳异常的那种 只短暂呆了 7 天，充分再享受了一次北方的...</description>
-      <category>打工日寄</category>
-      <pubDate>Sat, 29 Jun 2024 08:14:25 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
-<p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
-<h2>| 太原</h2>
-<blockquote>
-<p>第一次出差相当于常驻，后因住房冲突喜得优化回长。</p>
-<p><strong>心情如上第一次：忐忑 up+++     watch 会监测到心跳异常的那种</strong></p>
-</blockquote>
-<p>只短暂呆了 7 天，充分再享受了一次北方的冬天 + 地暖，住在汾河边工作点在商场写字楼。</p>
-<p>只去了博物馆，其实山西应该还有很多好玩的没去玩属实浪费了　　现在回想也可能是自己初出社会的忐忑吧</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>找工作</title>
-      <link>https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</link>
-      <guid>https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</guid>
-      <source url="https://233377.xyz/rss.xml">找工作</source>
-      <description>找工作 还在呼吸，未来可期 告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！ 普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多 博科 现在最大的问题，回...</description>
-      <category>打工日寄</category>
-      <pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>还在呼吸，未来可期</h2>
-<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
-<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
-<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
-<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>
-<h2>优秀的人都疯狂跑在前面</h2>
-<p>回想起来 bg、lx 总能前瞻性的做一些事情</p>
-<p>毕业时候公众号投的一家，说你为什么临近毕业才投
-那个时候没什么认知  只知道被大浪推着走          现在很被动</p>
-<p>看xy毕业简历有感</p>
-<h2>blibili Review</h2>
-<p>刚从亚信出来感觉纯纯在里面浪费时间，直都是二次开发，功能优化，SQL优化
-回复@满心满意-：别，我之前在低代码开发过一年，低代码培养的是<code>业务逻辑</code>，如果你还想干开发，那就只能自己空闲时间写代码不断进步。不然会落后的</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -224,11 +180,55 @@
       <enclosure url="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202207191647279.png" type="image/png"/>
     </item>
     <item>
+      <title>2023年终总结</title>
+      <link>https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</link>
+      <guid>https://233377.xyz/posts/Encrypt/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.html</guid>
+      <source url="https://233377.xyz/rss.xml">2023年终总结</source>
+      <description>2023年终总结 去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。 一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。 | 太原 第一次出差相当于常驻，后因住房冲突喜得优化回长。 心情如上第一次：忐忑 up+++ watch 会监测到心跳异常的那种 只短暂呆了 7 天，充分再享受了一次北方的...</description>
+      <category>打工日寄</category>
+      <pubDate>Sat, 29 Jun 2024 08:14:25 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>去了太原到了北京。其实公司也有很多闲的时候，但是确实看不到提升看不到希望。</p>
+<p>一方面也是自身驱动力还是太有限了，年少轻狂裸辞了一次。这个话题还可单独开一贴五味杂陈。</p>
+<h2>| 太原</h2>
+<blockquote>
+<p>第一次出差相当于常驻，后因住房冲突喜得优化回长。</p>
+<p><strong>心情如上第一次：忐忑 up+++     watch 会监测到心跳异常的那种</strong></p>
+</blockquote>
+<p>只短暂呆了 7 天，充分再享受了一次北方的冬天 + 地暖，住在汾河边工作点在商场写字楼。</p>
+<p>只去了博物馆，其实山西应该还有很多好玩的没去玩属实浪费了　　现在回想也可能是自己初出社会的忐忑吧</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>找工作</title>
+      <link>https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</link>
+      <guid>https://233377.xyz/posts/Encrypt/2024%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F.html</guid>
+      <source url="https://233377.xyz/rss.xml">找工作</source>
+      <description>找工作 还在呼吸，未来可期 告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！ 普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多 博科 现在最大的问题，回...</description>
+      <category>打工日寄</category>
+      <pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>还在呼吸，未来可期</h2>
+<p>告诫意志力不强的正在待业躺平的朋友，必须每天都动起来，抽时间学习相关知识，如果天天在屋子里刷视频上网打游戏久而久之你的精力会被大大磨损，越来越不想找工作，会拖夸自己。运动是一件好事，运动完人会有很强的正能量反馈，如果你意志消沉，那就去运动吧！</p>
+<p>普通人没有试错成本，你一段错了没脱离出来后一段肯定差不多   博科</p>
+<p>现在最大的问题，回想起来。。。两段工作都没有积到项目经验！！！  所以需要在一些地方补上经验！！！<strong>多做几个项目，像b站那个杭州面试视频做了7，8个项目的</strong></p>
+<p>也可能自己就是懒，很多面试点迷迷糊糊不学</p>
+<h2>优秀的人都疯狂跑在前面</h2>
+<p>回想起来 bg、lx 总能前瞻性的做一些事情</p>
+<p>毕业时候公众号投的一家，说你为什么临近毕业才投
+那个时候没什么认知  只知道被大浪推着走          现在很被动</p>
+<p>看xy毕业简历有感</p>
+<h2>blibili Review</h2>
+<p>刚从亚信出来感觉纯纯在里面浪费时间，直都是二次开发，功能优化，SQL优化
+回复@满心满意-：别，我之前在低代码开发过一年，低代码培养的是<code>业务逻辑</code>，如果你还想干开发，那就只能自己空闲时间写代码不断进步。不然会落后的</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>IOS 位置修改</title>
       <link>https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html</link>
       <guid>https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html</guid>
       <source url="https://233377.xyz/rss.xml">IOS 位置修改</source>
-      <description>IOS 位置修改 Wireless Location（通常认为是 Wi-Fi / 基站网络定位） 教程: https://github.com/Yu9191/wloc/issues/39 额外补充: 注意也可用自己的配置这里导入模块就好 总结: 导入模块, 配置好 HTTPS 解密 (1.里面配好两个域名 2.配置好证书), 可以使用了 !! 模块: ...</description>
+      <description>IOS 位置修改 Wireless Location（通常认为是 Wi-Fi / 基站网络定位） 教程: https://github.com/Yu9191/wloc/issues/39 额外补充: 注意也可用自己的配置这里导入模块就好 ✨ 自己第一次捣鼓很久, 发现问题是漏了: 设置 → 通用 → 关于本机 → 证书信任设置，打开刚生成证书的完全信任...</description>
       <category>Technique</category>
       <pubDate>Sat, 04 Jul 2026 07:16:42 GMT</pubDate>
       <content:encoded><![CDATA[<h2>IOS 位置修改</h2>
@@ -237,6 +237,8 @@
 </blockquote>
 <p>教程: https://github.com/Yu9191/wloc/issues/39</p>
 <p>额外补充: 注意也可用自己的配置这里导入模块就好</p>
+<p>✨ 自己第一次捣鼓很久, 发现问题是漏了:
+<code> 设置 → 通用 → 关于本机 → 证书信任设置，打开刚生成证书的完全信任</code></p>
 <p>总结: 导入模块, 配置好 HTTPS 解密 (1.里面配好两个域名  2.配置好证书), 可以使用了 !!</p>
 <ol>
 <li>模块:</li>
