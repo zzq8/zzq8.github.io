@@ -191,7 +191,7 @@ Server: 把公钥放到 vps 服务器的 `vim ~/.ssh/authorized_keys` 中就行 
 
 
 
-VPS
+### VPS
 
 > swap和zram
 >

@@ -7,8 +7,6 @@ updated: 2026-06-10 00:10:08
 icon: noto:robot
 ---
 
-# AI
-
 ## 一、Claude Code
 
 > 有人分析为什么用: [link](https://onevcat.com/2025/08/claude-code/)

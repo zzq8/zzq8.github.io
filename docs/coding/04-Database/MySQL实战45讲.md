@@ -351,7 +351,10 @@ write pos 和 checkpoint 之间的是“粉板”上还空着的部分，可以�
 
 <center>update 语句执行流程</center>
 
+### 4.undolog
 
+用于事务回滚的日志, 回滚到事务启动的那一刻
+mvcc, trasactionId
 
 ### XD
 

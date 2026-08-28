@@ -1,9 +1,9 @@
 ---
 updated: 2026-06-14 02:47:58
 icon: qlementine-icons:mac-24
+title: MacOS
+description: 从0到1构建mac
 ---
-
-# MacOS
 
 ## 零、inbox
 
@@ -14,8 +14,6 @@ LinuxRef 文档移过来, 合并 !!!
 精读研究大佬的文档, 单独放一个文档 (转载)
 
 编程字体我用 [Monolisa](https://www.monolisa.dev/) -> 怎么薅免费
-
-**执行 `defaults write -g NSWindowShouldDragOnGesture -bool true`，然后就可以按住「⌘+⌃」然后鼠标点击任意地方拖动窗口了。来源 [Moving a macOS window by clicking anywhere on it (like on Linux) · mmazzarolo.com](https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/)，但是在 MacOS 13 下似乎失效了。**
 
 ## 一、Software
 
@@ -65,6 +63,8 @@ brew install --cask \
 brew install \
   fd \
   fzf \
+  mole \
+  
   tree \
   lazygit \
   translate-shell
@@ -147,7 +147,7 @@ npm install picgo -g
 
 * Office
 * the unarchiver (zip可以系统自动解压, 但是rar不行要下)
-* Lemon
+* ~~Lemon~~ (发现一个 **[Mole](https://github.com/tw93/Mole)**)
 * Omi (App Store)
 * iina
 * Aldente (保护电池)
@@ -735,7 +735,18 @@ Finder
 
 #### 1. 拖动软件
 
+> 我设置后鼠标到下面的 dock 出现的很慢, 用以下方式解决
+
+```
+defaults write com.apple.dock autohide-delay -float 0
+killall Dock
+```
+
+other via 参考:
+
 **执行 `defaults write -g NSWindowShouldDragOnGesture -bool true`，然后就可以按住「⌘+⌃」然后鼠标点击任意地方拖动窗口了。来源 [Moving a macOS window by clicking anywhere on it (like on Linux) · mmazzarolo.com](https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/)，但是在 MacOS 13 下似乎失效了。**
+
+关闭: defaults delete -g NSWindowShouldDragOnGesture
 
 #### 2. dock 快速显示隐藏
 

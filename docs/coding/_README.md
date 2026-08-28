@@ -20,7 +20,11 @@ updated: 2026-04-22 00:27:38
 
 ## typora
 
-下个插件
+> 纠结过它和 obsidian, 因为 Typora 太 simple 了
+>
+> > 但是感觉纠纯粹用 Typora 就好了
+
+加个插件事半功倍: https://github.com/obgnail/typora_plugin
 
 - front matter配置好
 
@@ -62,7 +66,7 @@ updated: 2025-11-08 10:08:36
 
 ### TODO
 
-- TODO blog 点完链接需要打开新标签页面 !!!
+- TODO blog 点完链接需要打开新标签页面 !!! (到时候交给 CC 做这块)
 - ~~看官网有个代码折叠, 挺好~~
 
 
