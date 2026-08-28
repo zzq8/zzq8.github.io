@@ -24,7 +24,7 @@ updated: 2026-04-22 00:27:38
 >
 > > 但是感觉纠纯粹用 Typora 就好了
 
-加个插件事半功倍: https://github.com/obgnail/typora_plugin
+加个插件事半功倍: https://github.com/obgnail/typora_plugin/issues/1208
 
 - front matter配置好
 

@@ -164,15 +164,13 @@ Chrome Plugin
 
 [globalSpeed 配置](https:233377.xyz/resource/Global Speed - Sun Jun 14 2026.json)
 
-* 隐藏用法, 跳广告!!! 直接倍速广告有效!
-
-
+* ✨ TODO 隐藏用法, 跳广告!!! 直接倍速广告有效!
 
 
 
 ### 1.Sublime
 
-> 
+> 注册到 subl 命令到 CLI
 >
 > 常用命令
 >
@@ -185,6 +183,7 @@ Chrome Plugin
 >
 > - Insert nums
 > - pretty json (虽然这里面有 jq, 但是还是可以单独再下个 jq 那个 filter finder 框会在当前页展开更方便)
+> - CoolBase64
 > - jsonPath
 >
 > 常用 py:
@@ -586,8 +585,12 @@ MUTE cycle mute
 CLOSE_WIN quit
 ```
 
-### 5.Typora
+### Typora
 
+#### Plugins
+
+> issue via https://github.com/obgnail/typora_plugin/issues/1208
+>
 > plugin repo via https://github.com/bfyes/Typora-plugin-on-Mac
 
 现存问题:
@@ -693,9 +696,28 @@ DEFAULT_SHOW_OUTLINE = true
 
 ```
 
+#### picgo core
 
+> flarecloud R2 oss 需要装插件用命令: 
+> https://docs.picgo.app/zh/core/guide/commands#install-add
+>
+> https://docs.picgo.app/zh/core/guide/commands#upload-u
+>
+> Doc Reference: https://www.shejibiji.com/archives/9420
+
+`npm install picgo -g`
+
+`picgo add s3`
+
+`subl /Users/xd/.picgo/config.json`
+
+Typora 配置 `picgo upload`
 
 ## 二、Shell
+
+✨ [.zshrc](/resources/.zshrc)
+
+
 
 * networkquality 【⭐️ 自带测网速】
 * caffeinate: mac 自带命令, 让 Mac 一直保持运行（就算你不操作）【适合不合盖需要跑任务，不想要电脑自动休眠】
