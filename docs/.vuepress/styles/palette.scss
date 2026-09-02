@@ -1,43 +1,89 @@
 /*
-参考样式：
-https://moonvy.com/blog/post/2022/diffusion-accelerates-diffusion/#%E7%BB%98%E7%94%BB%E8%BE%85%E5%8A%A9%E5%B7%A5%E5%85%B7
+配色与字体令牌抄自 LearnData（同一套 theme-hope 主题）的「极简东方」设计：
+- 亮模式：宣纸暖白底 + 墨黑文字
+- 暗模式：暖墨黑底（不是冷蓝紫）+ 米色文字
+- 全站唯一品牌主色：朱砂红 #a72b2a（亮模式）/ #de8177（暗模式提亮保证可读）
 代码来源：https://theme-hope.vuejs.press/zh/config/style.html
+注意：旧版的 $bg-color / $text-color 等变量名当前主题（rc.102）已不再读取，
+换成本主题实际消费的 $vp-c-* 命名。
 */
 
-$text-color: (
-  light: #2c3e50,
-  dark: #b0aeb7,
+/*
+字体令牌：主题自身的组件（博客卡片标题、blog hero、博主信息、时间轴、
+feature 卡片）走 --vp-font / --vp-font-heading，不继承 body。
+不在这里赋值的话它们会全部回落到主题默认的 Inter，中文再跌到系统黑体，
+于是「思源宋体 + 思源黑体」只在正文生效。index.scss 里的 --font-* 是同一套值。
+webfont 由 templateBuild.html 的 fonts.googleapis.cn（Google 中国镜像）加载。
+*/
+$vp-font: '"Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif';
+$vp-font-heading: '"Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "Cambria", serif';
+$vp-font-mono: '"JetBrains Mono", "Fira Code", "Menlo", "Consolas", monospace';
+
+/*
+强调色（正文链接、导航选中、页脚链接、按钮）。
+主题从 $theme-color 自动推导暗色版，推出来是 #d14948——暗色模式下
+正文链接、导航选中项都不到 4.5:1。朱砂本身够深，直接提亮到正文可读的档位；
+亮色版保持朱砂本色。
+*/
+$vp-c-accent: (
+  light: #a72b2a,
+  dark: #de8177,
+);
+$vp-c-accent-hover: (
+  light: #8f2422,
+  dark: #ea968c,
+);
+$vp-c-accent-bg: (
+  light: #a72b2a,
+  dark: #c9564f,
 );
 
-// content
-$bg-color: (
-  light: #fff,
-  dark: #252232,
+// background
+$vp-c-bg: (
+  light: #faf6ef,
+  dark: #1c1814,
+);
+$vp-c-bg-alt: (
+  light: #f3eee5,
+  dark: #26211c,
+);
+$vp-c-bg-elv: (
+  light: #ffffff,
+  dark: #2d2823,
 );
 
-$bg-color-secondary: (
-  light: #f8f8f8,
-  dark: #2c293d,
+// text
+$vp-c-text: (
+  light: #1c1917,
+  dark: rgb(240 232 216 / 92%),
 );
 
-$bg-color-tertiary: (
-  light: #efeef4,
-  dark: #3a3755,
+// border
+$vp-c-border: (
+  light: #dcd5c8,
+  dark: #3d3631,
 );
-
-// 边框
-$border-color: (
-  light: #eaecef,
-  dark: #302d28,
+$vp-c-divider: (
+  light: #e8e2d5,
+  dark: #332e29,
 );
 
 // shadow
-$box-shadow: (
-  light: #f0f1f2,
-  dark: #282a32,
+$vp-c-shadow: (
+  light: rgb(28 25 23 / 8%),
+  dark: rgb(0 0 0 / 40%),
 );
 
-$card-shadow: (
-  light: rgb(0 0 0 / 15%),
-  dark: rgb(0 0 0 / 30%),
+// control
+$vp-c-control: (
+  light: rgb(120 110 95 / 8%),
+  dark: rgb(220 210 190 / 8%),
+);
+$vp-c-control-hover: (
+  light: rgb(120 110 95 / 14%),
+  dark: rgb(220 210 190 / 14%),
+);
+$vp-c-control-disabled: (
+  light: #ebe6dc,
+  dark: #3a342f,
 );

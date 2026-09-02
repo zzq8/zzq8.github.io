@@ -101,9 +101,8 @@ export default hopeTheme({
       excerptLength: 10,
     },
 
-    git: {
-      updatedTime: false
-    },
+    // git 插件不加配置，让主题默认记录 updatedTime，
+    // 页面底部才能显示「最近更新: <日期>」（配合去掉 changelog）
 
     // icon: {
     //   // 关键词: "iconify", "fontawesome", "fontawesome-with-brands"
@@ -192,7 +191,8 @@ export default hopeTheme({
     
   },
 
-  changelog: true,
+  // changelog 默认关闭：文章底部的「更新日志」区块去掉，
+  // PageMeta 会自动渲染「最近更新: <日期>」（plugin-git 的 latestUpdateAt 文案）
 
   // 开发模式下是否启动热更新，显示所有更改并重新渲染
   hotReload: true,

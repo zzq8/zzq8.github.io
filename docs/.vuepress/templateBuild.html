@@ -4,17 +4,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="keywords" content="自我提升,效率提升,开源工具,学习笔记" />
+    <!-- 移动端浏览器外壳着色：宣纸（亮）/ 暖墨黑（暗），与 --vp-c-bg 保持一致 -->
+    <meta
+      name="theme-color"
+      content="#faf6ef"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1c1814"
+      media="(prefers-color-scheme: dark)"
+    />
+    <!-- 思源宋体/黑体 + JetBrains Mono，走 Google 中国镜像（见 styles/palette.scss） -->
+    <link rel="preconnect" href="https://fonts.googleapis.cn" />
+    <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+    <link
+      href="https://fonts.googleapis.cn/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      html {
-        background: var(--bg-color, #fff);
+      /* 首屏绘制前的底色预涂，避免白屏闪烁 */
+      :root {
+        --vp-c-bg: #faf6ef;
       }
 
-      html[data-theme="dark"] {
-        background: var(--bg-color, #252232);
+      [data-theme="dark"] {
+        --vp-c-bg: #1c1814;
       }
 
+      html,
       body {
-        background: var(--bg-color);
+        background: var(--vp-c-bg);
       }
     </style>
     <script>

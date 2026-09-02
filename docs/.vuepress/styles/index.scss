@@ -5,6 +5,71 @@
 @import "vidstack/player/styles/default/layouts/audio.css";
 @import "vidstack/player/styles/default/layouts/video.css";
 
+/*
+字体系统抄自 LearnData「极简东方」：思源宋体（标题/引言）+ 思源黑体（正文）
++ JetBrains Mono（代码），webfont 由 templateBuild.html 加载。
+sass 侧的同名令牌见 palette.scss 的 $vp-font*。
+*/
+:root {
+  --font-sans: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+  --font-serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "Cambria", serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Menlo", "Consolas", monospace;
+
+  // 暗模式下标题减一档，缓解浅色文字在深色底上的视觉压力
+  --heading-weight: 600;
+
+  // 围栏代码块由 @vuepress/highlighter-helper 的 --code-font-family 控制，
+  // 默认是 consolas/monaco，优先级高于下面的 `code, pre` 规则。
+  // 不覆盖的话行内代码是 JetBrains Mono、代码块是 Consolas，同页两种等宽字体。
+  --code-font-family: var(--font-mono);
+
+  // 主题默认中性灰 #8e96aa（冷蓝灰）会压在行内代码底、标签底上，
+  // 和宣纸暖底打架，换成暖石灰
+  --vp-c-grey-text: #6b6255;
+  --vp-c-grey-hover: #e6dfd2;
+  --vp-c-grey-bg: #eee8dd;
+  --vp-c-grey-soft: #8a7d6a24;
+}
+
+[data-theme="dark"] {
+  --heading-weight: 500;
+
+  --vp-c-grey-text: #9c9184;
+  --vp-c-grey-hover: #443d35;
+  --vp-c-grey-bg: #37312a;
+  --vp-c-grey-soft: #8a7d6a2e;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6,
+.vp-page-title,
+.vp-blog-hero-title {
+  font-family: var(--font-serif);
+  font-weight: var(--heading-weight);
+  letter-spacing: -0.005em;
+}
+
+// 暗模式下 strong/b 减一档到 600，缓解浅色文字在深色底上的视觉膨胀
+[data-theme="dark"] strong,
+[data-theme="dark"] b {
+  font-weight: 600;
+}
+
+code, pre, kbd, .vp-code {
+  font-family: var(--font-mono);
+}
+
+// 引言用宋体；不加 italic——中文没有真斜体，伪斜体会把笔画打乱
+blockquote {
+  font-family: var(--font-serif);
+}
+
 .toc-place-holder {
   // 从原本距离导航栏 2rem 改为 5rem
   top: calc(var(--navbar-height) + 5rem);
