@@ -31,6 +31,26 @@ export default defineUserConfig({
         }
       },
     },
+    // 无一级标题的页面（page.title 为空，如 h1 写在代码围栏里）用文件名兜底：
+    // 否则标题为空会走 resolveLinkInfo 的 `meta.title || path` 回落，侧边栏等
+    // 处把路由路径（如 /coding/00-Inbox/Temp.html）直接当名字显示。
+    // title 是基本类型，data.title / routeMeta.title 在页面创建时已按空值定下
+    // （PageTitle 渲染 data.title，侧边栏标签走 routeMeta），需逐个覆盖；
+    // README/index 是目录索引页，文件名无意义，跳过。
+    // 主题的 extendsPage 先注册先执行，这里在其后覆盖 routeMeta 生效
+    {
+      name: "vuepress-plugin-fallback-title",
+      extendsPage: (page) => {
+        if (page.title || !page.filePathRelative) return;
+        const filename =
+          page.filePathRelative.split("/").pop()?.replace(/\.md$/i, "") ?? "";
+        if (!filename || /^(readme|index)$/i.test(filename)) return;
+        page.title = filename;
+        page.data.title = filename;
+        page.frontmatter.title = filename;
+        page.routeMeta.title = filename;
+      },
+    },
   ],
 
   // 是否开启页面预拉取，如果服务器宽带足够，可改为 true，会提升其他页面加载速度
