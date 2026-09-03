@@ -8,6 +8,10 @@ updated: 2026-06-10 00:10:08
 icon: noto:robot
 ---
 
+都挪到文件里 merge
+
+这里只写一些自己的理解, 比如 阮一峰说的 brain rot 不要丧失思考能力, 总是把这部分外包出去 !
+
 ## 一、Claude Code
 
 > 有人分析为什么用: [link](https://onevcat.com/2025/08/claude-code/)

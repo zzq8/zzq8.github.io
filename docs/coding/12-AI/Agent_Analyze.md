@@ -1,7 +1,7 @@
 ---
 article: true
-category: ai
-tag: reship
+category: AI
+tag: Repost
 created: 2025-11-08 10:08:59
 updated: 2026-05-04 12:58:09
 ---

@@ -83,11 +83,19 @@ const hashPassword = (password: string): string => {
   return hash;
 };
 
+// encrypt 键合法值：true（密码 123）/ 非空字符串 / 数字（如 encrypt: 234 → "234"）
+const isEncryptValue = (value: unknown): boolean =>
+  value === true ||
+  (typeof value === "string" && value.length > 0) ||
+  typeof value === "number";
+
+const encryptPasswordOf = (value: unknown): string =>
+  value === true ? "123" : String(value);
+
 const patchFrontmatterEncrypt = async (app: App): Promise<void> => {
-  const pages = app.pages.filter((page) => {
-    const value = page.frontmatter.encrypt;
-    return value === true || (typeof value === "string" && value.length > 0);
-  });
+  const pages = app.pages.filter((page) =>
+    isEncryptValue(page.frontmatter.encrypt),
+  );
   if (pages.length === 0) return;
   const file = app.dir.temp("internal/themeData.js");
   if (!fs.existsSync(file)) return;
@@ -98,11 +106,10 @@ const patchFrontmatterEncrypt = async (app: App): Promise<void> => {
   const encrypt = (themeData.encrypt ??= {});
   encrypt.config ??= {};
   for (const page of pages) {
-    const value = page.frontmatter.encrypt;
     // 主题客户端匹配用 decodeURI 后的路径（usePathEncrypt 的
     // startsWith(decodeURI(path), key)），page.path 是编码形式，须转回解码
     encrypt.config[decodeURI(page.path)] = {
-      tokens: [hashPassword(value === true ? "123" : String(value))],
+      tokens: [hashPassword(encryptPasswordOf(page.frontmatter.encrypt))],
     };
   }
   // replace 的替换串必须用函数形式：bcrypt 哈希里的 $ 是 replace 特殊符号
@@ -205,9 +212,7 @@ export default defineUserConfig({
     {
       name: "vuepress-plugin-frontmatter-encrypt",
       extendsPage: (page) => {
-        const value = page.frontmatter.encrypt;
-        if (value !== true && !(typeof value === "string" && value.length > 0))
-          return;
+        if (!isEncryptValue(page.frontmatter.encrypt)) return;
         page.frontmatter.feed = false;
         page.frontmatter.seo = false;
         page.frontmatter.sitemap = false;

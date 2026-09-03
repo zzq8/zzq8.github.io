@@ -1,19 +1,26 @@
 ---
-title: Prompt
+title: 1_Prompt
+article: true
+category: AI
 updated: 2026-06-14 03:17:00
 icon: fa6-solid:comments
 ---
 
+TODO 把 [AI Doc](../AI.md) 挪过来 merge
+
+# CLAUDE.md
+
+# SKILL
+
+# 用于 chat 聊天对话式用
+
 ## Espanso 常用
-> normal_prompt 特别好用, 回答起来看着很舒服.  场景: 当让他印证 sys_prompt 知识是否引用时候
 
 我常用的放在 espanso 里面了, 方便随时填充到 system_prompt
 
 基本都是网上冲浪 (linux.do) 逛到的, 觉得好用就一直在用了
 
-
-
-curl https://233377.xyz/resources/base.yaml
+via [base.yaml](https://233377.xyz/resources/base.yml)
 
 ## 简历修改
 
@@ -174,8 +181,9 @@ curl https://233377.xyz/resources/base.yaml
 使用Emoji进行更好的视觉提醒, 注意你的输出排版应该做到清晰明了。
 ```
 
-## MetaPrompt
+## ✨ MetaPrompt
 
 > https://linux.do/t/topic/653977/11
 
 本地放了一份 via [meta_prompt.txt](/resources/meta_prompt.txt)
+

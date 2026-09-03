@@ -1,11 +1,22 @@
 ---
 title: How to use AI
 category: AI
-tag: reship
+tag: repost
 created: 2026-01-05 23:37:37
 updated: 2026-05-04 12:58:17
-reship: https://linux.do/t/topic/1321470
+repost: https://linux.do/t/topic/1321470
 ---
+
+```json
+XD
+1.要告诉AICoding你要做什么，而不是教他怎么做，要相信Al。
+2.问题要能说清楚：讲清楚最后的目标，讲清楚明确的约束。
+•从O到1的项目：最好先生成设计文档，进行沟通确认后再去生成代码，前端界面相关的可以直接给最终的图片。
+•从1到N的项目：比如采用xx技术方案，重点考虑什么，参考哪个类来实现
+3.同时打开多个Client，并行开发，进一步放大研发效率
+```
+
+
 
 AI 辅助开发提效实操指南
 

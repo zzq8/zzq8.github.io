@@ -1,6 +1,6 @@
 ---
 article: true
-category: Net
+category: Network
 tag: Hardware
 date: 2025-09-09 23:07:53
 updated: 2025-12-11 00:08:27
