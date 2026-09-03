@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://233377.xyz/favicon.ico</icon>
-  <updated>2026-09-03T03:59:29.107Z</updated>
+  <updated>2026-09-03T07:41:38.694Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://233377.xyz/atom.xml"/>
   <link rel="alternate" href="https://233377.xyz/"/>
@@ -129,6 +129,13 @@
 ]]></content>
     <category term="Technique"/>
     <published>2026-07-04T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">XD</title>
+    <id>https://233377.xyz/posts/XD/</id>
+    <link href="https://233377.xyz/posts/XD/"/>
+    <updated>2026-07-31T17:26:43.000Z</updated>
+    <published>2026-07-31T17:26:43.000Z</published>
   </entry>
   <entry>
     <title type="text">Merlin</title>
@@ -567,12 +574,5 @@
 <p>部分字典和教程: https://github.com/conwnet/wpa-dictionary</p>
 ]]></content>
     <published>2024-04-13T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">Chitchat</title>
-    <id>https://233377.xyz/posts/Chitchat/</id>
-    <link href="https://233377.xyz/posts/Chitchat/"/>
-    <updated>2026-07-31T17:26:43.000Z</updated>
-    <published>2026-07-31T17:26:43.000Z</published>
   </entry>
 </feed>

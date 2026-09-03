@@ -6,8 +6,8 @@
     <link>https://233377.xyz/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 03 Sep 2026 03:59:29 GMT</pubDate>
-    <lastBuildDate>Thu, 03 Sep 2026 03:59:29 GMT</lastBuildDate>
+    <pubDate>Thu, 03 Sep 2026 07:41:38 GMT</pubDate>
+    <lastBuildDate>Thu, 03 Sep 2026 07:41:38 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>MD</category>
@@ -108,6 +108,13 @@
 <p>可有可无</p>
 <p>https://wloc-pages.pages.dev/</p>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>XD</title>
+      <link>https://233377.xyz/posts/XD/</link>
+      <guid>https://233377.xyz/posts/XD/</guid>
+      <source url="https://233377.xyz/rss.xml">XD</source>
+      <pubDate>Fri, 31 Jul 2026 17:26:43 GMT</pubDate>
     </item>
     <item>
       <title>Merlin</title>
@@ -498,13 +505,6 @@
 <p>部分字典和教程: https://github.com/conwnet/wpa-dictionary</p>
 ]]></content:encoded>
       <enclosure url="https://image.233377.xyz/2026/IMG_2708%2820220402-193141%29.jpeg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Chitchat</title>
-      <link>https://233377.xyz/posts/Chitchat/</link>
-      <guid>https://233377.xyz/posts/Chitchat/</guid>
-      <source url="https://233377.xyz/rss.xml">Chitchat</source>
-      <pubDate>Fri, 31 Jul 2026 17:26:43 GMT</pubDate>
     </item>
   </channel>
 </rss>
