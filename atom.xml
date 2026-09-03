@@ -4,13 +4,24 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://233377.xyz/favicon.ico</icon>
-  <updated>2026-09-03T07:41:38.694Z</updated>
+  <updated>2026-09-03T13:45:37.014Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://233377.xyz/atom.xml"/>
   <link rel="alternate" href="https://233377.xyz/"/>
   <category term="MD"/>
   <category term="Technique"/>
   <category term="Net"/>
+  <entry>
+    <title type="text">资源文件</title>
+    <id>https://233377.xyz/resources.html</id>
+    <link href="https://233377.xyz/resources.html"/>
+    <updated>2026-09-03T09:25:13.000Z</updated>
+    <summary type="html"><![CDATA[<p>这里汇总了站点 <code>public/resources</code> 目录下的静态资源（课件、手册、配置、脚本等），列表由构建自动生成，无需手工维护。点击文件名在新标签页打开或下载。</p>
+]]></summary>
+    <content type="html"><![CDATA[<p>这里汇总了站点 <code>public/resources</code> 目录下的静态资源（课件、手册、配置、脚本等），列表由构建自动生成，无需手工维护。点击文件名在新标签页打开或下载。</p>
+]]></content>
+    <published>2026-09-03T09:25:13.000Z</published>
+  </entry>
   <entry>
     <title type="text">PlantUML &amp; Mermaid</title>
     <id>https://233377.xyz/coding/UML.html</id>
@@ -41,7 +52,7 @@
     <title type="text">Personal-XD</title>
     <id>https://233377.xyz/coding/XD.html</id>
     <link href="https://233377.xyz/coding/XD.html"/>
-    <updated>2026-09-03T01:14:52.000Z</updated>
+    <updated>2026-09-03T13:37:55.000Z</updated>
     <summary type="html"><![CDATA[
 <h2>一、Daily</h2>
 <p>每周日常:</p>
@@ -91,6 +102,59 @@
     <published>2026-02-16T09:46:13.000Z</published>
   </entry>
   <entry>
+    <title type="text">个人视角的三种股票投资方向</title>
+    <id>https://233377.xyz/posts/Repost/v2ex-1239075-%E4%B8%89%E7%A7%8D%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E6%96%B9%E5%90%91.html</id>
+    <link href="https://233377.xyz/posts/Repost/v2ex-1239075-%E4%B8%89%E7%A7%8D%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E6%96%B9%E5%90%91.html"/>
+    <updated>2026-09-03T13:37:55.000Z</updated>
+    <summary type="html"><![CDATA[
+<blockquote>
+<p>V2EX · 节点：投资 · 作者：<a href="https://www.v2ex.com/member/NewMoorj" target="_blank" rel="noopener noreferrer">NewMoorj</a> · 124 条回复 · 6859+ 次浏览</p>
+</blockquote>
+<h2>主楼核心观点</h2>
+<p>作者将股票投资归纳为三种方向：</p>
+<h3>第一种：短线交易（追热点）</h3>
+<ul>
+<li>从新闻、板块热度、信息圈、微博/X 上找龙头。</li>
+<li>示例：新闻提到军事行动 → 立刻用 5% 仓位（如 10 万本金买 5000 元）杀入军工板块最热股。</li>
+<li>设置 5% 止损、10% 止盈，第二天不管盈亏直接走人。</li>
+<li>本质是"追新闻热点、追资金热点"，与币圈"打狗"同一套打法。</li>
+<li>关键：清晰知道自己在赌博，"不要格局"，完全机械化操作。</li>
+</ul>]]></summary>
+    <content type="html"><![CDATA[
+<blockquote>
+<p>V2EX · 节点：投资 · 作者：<a href="https://www.v2ex.com/member/NewMoorj" target="_blank" rel="noopener noreferrer">NewMoorj</a> · 124 条回复 · 6859+ 次浏览</p>
+</blockquote>
+<h2>主楼核心观点</h2>
+<p>作者将股票投资归纳为三种方向：</p>
+<h3>第一种：短线交易（追热点）</h3>
+<ul>
+<li>从新闻、板块热度、信息圈、微博/X 上找龙头。</li>
+<li>示例：新闻提到军事行动 → 立刻用 5% 仓位（如 10 万本金买 5000 元）杀入军工板块最热股。</li>
+<li>设置 5% 止损、10% 止盈，第二天不管盈亏直接走人。</li>
+<li>本质是"追新闻热点、追资金热点"，与币圈"打狗"同一套打法。</li>
+<li>关键：清晰知道自己在赌博，"不要格局"，完全机械化操作。</li>
+</ul>
+<h3>第二种：价值投资（个人玩不了）</h3>
+<ul>
+<li>很多人自以为在做价值投资，但作者认为普通人根本不具备条件。</li>
+<li>真正的价值投资起码需要一个不低于 5 人的分析团队每周提供报告。</li>
+<li>机构调研手段远超个人（曾调卫星去数停车场的新车库存）。</li>
+<li>"普通人不要有任何幻想。"</li>
+</ul>
+<h3>第三种：大资金保值需求（作者提倡）</h3>
+<ul>
+<li>各国社保、养老、国家资金不求高收益，只求跑赢通胀、不贬值。</li>
+<li>绝大多数资金挂钩美元；乱世配黄金；标普和纳斯达克是各国必选项。</li>
+<li><strong>美股永恒牛市的底层逻辑</strong>：源源不断的全球资金入场，"大资金无处可去"。</li>
+<li>也是"无脑定投美股不需要技术"的原因。</li>
+</ul>
+<h3>三种"错位"认知（主楼金句）</h3>
+<p>| 你买的 | 你以为 | 实际上 |
+|</p>
+]]></content>
+    <published>2026-09-03T13:37:55.000Z</published>
+  </entry>
+  <entry>
     <title type="text">IOS 位置修改</title>
     <id>https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html</id>
     <link href="https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html"/>
@@ -129,13 +193,6 @@
 ]]></content>
     <category term="Technique"/>
     <published>2026-07-04T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">XD</title>
-    <id>https://233377.xyz/posts/XD/</id>
-    <link href="https://233377.xyz/posts/XD/"/>
-    <updated>2026-07-31T17:26:43.000Z</updated>
-    <published>2026-07-31T17:26:43.000Z</published>
   </entry>
   <entry>
     <title type="text">Merlin</title>
@@ -549,29 +606,6 @@
 <li>这是唯一，这才是对早起时间最合理最实际的解释，没有空话，没有鸡汤，没有那些自以为是的说教。感谢您的付出。我的手机上终于有了一个属于自己的闹钟了</li>
 <li>妙啊，实在太妙了！与其把黄金时间留给公司，不如把黄金时间留给自己。博主一语道破早起真相，实在感谢分享！</li>
 </ul>
-]]></content>
-    <published>2024-04-13T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <title type="text">Kali 破解 WIFI</title>
-    <id>https://233377.xyz/posts/Chitchat/Kali%20%E7%A0%B4%E8%A7%A3%20WIFI.html</id>
-    <link href="https://233377.xyz/posts/Chitchat/Kali%20%E7%A0%B4%E8%A7%A3%20WIFI.html"/>
-    <updated>2026-09-03T01:14:52.000Z</updated>
-    <summary type="html"><![CDATA[
-<blockquote>
-<p>经过实践可行 , 但成功与否取决于字典</p>
-<p>需要虚拟机+指定外接网卡(淘宝)</p>
-</blockquote>
-<figure><img src="https://image.233377.xyz/2026/IMG_2708(20220402-193141).jpeg" alt="IMG_2708(20220402-193141)" tabindex="0" loading="lazy"><figcaption>IMG_2708(20220402-193141)</figcaption></figure>
-<p>Kali镜像:  http://old.kali.org/kali-images/</p>]]></summary>
-    <content type="html"><![CDATA[
-<blockquote>
-<p>经过实践可行 , 但成功与否取决于字典</p>
-<p>需要虚拟机+指定外接网卡(淘宝)</p>
-</blockquote>
-<figure><img src="https://image.233377.xyz/2026/IMG_2708(20220402-193141).jpeg" alt="IMG_2708(20220402-193141)" tabindex="0" loading="lazy"><figcaption>IMG_2708(20220402-193141)</figcaption></figure>
-<p>Kali镜像:  http://old.kali.org/kali-images/</p>
-<p>部分字典和教程: https://github.com/conwnet/wpa-dictionary</p>
 ]]></content>
     <published>2024-04-13T00:00:00.000Z</published>
   </entry>
