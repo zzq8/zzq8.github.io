@@ -6,13 +6,12 @@
     <link>https://233377.xyz/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 03 Sep 2026 13:45:37 GMT</pubDate>
-    <lastBuildDate>Thu, 03 Sep 2026 13:45:37 GMT</lastBuildDate>
+    <pubDate>Thu, 03 Sep 2026 15:36:23 GMT</pubDate>
+    <lastBuildDate>Thu, 03 Sep 2026 15:36:23 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>MD</category>
     <category>Technique</category>
-    <category>Net</category>
+    <category>Network</category>
     <item>
       <title>资源文件</title>
       <link>https://233377.xyz/resources.html</link>
@@ -24,12 +23,11 @@
 ]]></content:encoded>
     </item>
     <item>
-      <title>PlantUML &amp; Mermaid</title>
+      <title>UML</title>
       <link>https://233377.xyz/coding/UML.html</link>
       <guid>https://233377.xyz/coding/UML.html</guid>
-      <source url="https://233377.xyz/rss.xml">PlantUML &amp; Mermaid</source>
-      <description>PlantUML &amp; Mermaid 之前用的是 plantUML 但是它需要 java 环境支持 Mermaid 是 md 原生支持 (js) 结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了]) XD: 基本还是 plantUML 来吧, blog网站 &amp; typora 可以...</description>
-      <category>MD</category>
+      <source url="https://233377.xyz/rss.xml">UML</source>
+      <description>UML 之前用的是 plantUML 但是它需要 java 环境支持 Mermaid 是 md 原生支持 (js) 结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了]) XD: 基本还是 plantUML 来吧, blog网站 &amp; typora 可以加这个插件 (习惯它, 因为它...</description>
       <pubDate>Mon, 16 Feb 2026 09:46:13 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>
@@ -165,7 +163,7 @@
       <guid>https://233377.xyz/posts/Chitchat/Merlin.html</guid>
       <source url="https://233377.xyz/rss.xml">Merlin</source>
       <description>Merlin 新整了个 RT-AX88U 华硕路由器, 不能浪费 梅林固件 Clash light NAS --&amp;gt; 需要 NTFS 格式, exFat 这个型号不支持 教程 Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file 经历 clash 开了, 但是还是科学上网不了 这个卡点费...</description>
-      <category>Net</category>
+      <category>Network</category>
       <pubDate>Tue, 09 Sep 2025 23:07:53 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>

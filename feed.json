@@ -18,17 +18,15 @@
       "tags": []
     },
     {
-      "title": "PlantUML & Mermaid",
+      "title": "UML",
       "url": "https://233377.xyz/coding/UML.html",
       "id": "https://233377.xyz/coding/UML.html",
-      "summary": "PlantUML & Mermaid 之前用的是 plantUML 但是它需要 java 环境支持 Mermaid 是 md 原生支持 (js) 结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了]) XD: 基本还是 plantUML 来吧, blog网站 & typora 可以...",
+      "summary": "UML 之前用的是 plantUML 但是它需要 java 环境支持 Mermaid 是 md 原生支持 (js) 结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了]) XD: 基本还是 plantUML 来吧, blog网站 & typora 可以加这个插件 (习惯它, 因为它...",
       "content_html": "\n<blockquote>\n<p>之前用的是 plantUML 但是它需要 java 环境支持</p>\n<p>Mermaid 是 md 原生支持 (js)</p>\n<p>结论: 两者还是搭配使用吧 (简单的 mermaid, 复杂的就plantUML [尝试typora加上它, 不行没支持了])</p>\n<p>XD: 基本还是 plantUML 来吧, blog网站 &amp; typora 可以加这个插件 (习惯它, 因为它更强大更适用 !!)</p>\n</blockquote>\n<p>画图才是真正的<strong>三思而后行</strong>, 思考清楚比直接埋头苦干有效一万倍...</p>\n<p><mark>慢慢来比较快 ~</mark></p>\n",
       "date_published": "2026-02-16T09:46:13.000Z",
-      "date_modified": "2026-06-15T14:54:17.000Z",
+      "date_modified": "2026-09-03T15:34:19.000Z",
       "authors": [],
-      "tags": [
-        "MD"
-      ]
+      "tags": []
     },
     {
       "title": "Personal-XD",
@@ -84,10 +82,10 @@
       "summary": "Merlin 新整了个 RT-AX88U 华硕路由器, 不能浪费 梅林固件 Clash light NAS --> 需要 NTFS 格式, exFat 这个型号不支持 教程 Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file 经历 clash 开了, 但是还是科学上网不了 这个卡点费...",
       "content_html": "\n<blockquote>\n<p>新整了个 <strong>RT-AX88U</strong> 华硕路由器, 不能浪费</p>\n<ul>\n<li>梅林固件</li>\n<li>Clash</li>\n<li>light NAS --&gt; 需要 NTFS 格式, exFat 这个型号不支持</li>\n<li><s>memory swap</s></li>\n<li><s>docker</s></li>\n</ul>\n</blockquote>\n<h2>教程</h2>\n<p>Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file</p>\n<h2>经历</h2>\n<blockquote>\n<p>clash 开了, 但是还是科学上网不了</p>\n</blockquote>\n<p>这个卡点费劲</p>\n<p>因为 DNS 污染了, 我就用 dire-dns 普通的模式解决</p>\n<p>这个需要钻研</p>\n<blockquote>\n<p>不要急, 重启能解决 90% 的问题 不行就删了重装</p>\n</blockquote>\n<p>整完上面一套想换地区到 澳大利亚 听说速度会快 (功率大, 中国这方面懂的 因为人多都是大功率不好), 晚上一换结果 DNS 好像出问题了</p>\n<p>心急吃不了热豆腐, 拿手机不好搞</p>\n<p>第二天晚上电脑重启了 clash 就一切又都好了</p>\n<p>有一天又碰到 clash 死活启动不了 (报错也不好排查), 删了重装就可以了</p>\n",
       "date_published": "2025-09-09T23:07:53.000Z",
-      "date_modified": "2026-09-03T01:14:52.000Z",
+      "date_modified": "2026-09-03T15:34:19.000Z",
       "authors": [],
       "tags": [
-        "Net"
+        "Network"
       ]
     },
     {

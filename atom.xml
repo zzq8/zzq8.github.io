@@ -4,13 +4,12 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://233377.xyz/favicon.ico</icon>
-  <updated>2026-09-03T13:45:37.014Z</updated>
+  <updated>2026-09-03T15:36:23.032Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://233377.xyz/atom.xml"/>
   <link rel="alternate" href="https://233377.xyz/"/>
-  <category term="MD"/>
   <category term="Technique"/>
-  <category term="Net"/>
+  <category term="Network"/>
   <entry>
     <title type="text">资源文件</title>
     <id>https://233377.xyz/resources.html</id>
@@ -23,10 +22,10 @@
     <published>2026-09-03T09:25:13.000Z</published>
   </entry>
   <entry>
-    <title type="text">PlantUML &amp; Mermaid</title>
+    <title type="text">UML</title>
     <id>https://233377.xyz/coding/UML.html</id>
     <link href="https://233377.xyz/coding/UML.html"/>
-    <updated>2026-06-15T14:54:17.000Z</updated>
+    <updated>2026-09-03T15:34:19.000Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>之前用的是 plantUML 但是它需要 java 环境支持</p>
@@ -45,7 +44,6 @@
 <p>画图才是真正的<strong>三思而后行</strong>, 思考清楚比直接埋头苦干有效一万倍...</p>
 <p><mark>慢慢来比较快 ~</mark></p>
 ]]></content>
-    <category term="MD"/>
     <published>2026-02-16T09:46:13.000Z</published>
   </entry>
   <entry>
@@ -198,7 +196,7 @@
     <title type="text">Merlin</title>
     <id>https://233377.xyz/posts/Chitchat/Merlin.html</id>
     <link href="https://233377.xyz/posts/Chitchat/Merlin.html"/>
-    <updated>2026-09-03T01:14:52.000Z</updated>
+    <updated>2026-09-03T15:34:19.000Z</updated>
     <summary type="html"><![CDATA[
 <blockquote>
 <p>新整了个 <strong>RT-AX88U</strong> 华硕路由器, 不能浪费</p>
@@ -240,7 +238,7 @@
 <p>第二天晚上电脑重启了 clash 就一切又都好了</p>
 <p>有一天又碰到 clash 死活启动不了 (报错也不好排查), 删了重装就可以了</p>
 ]]></content>
-    <category term="Net"/>
+    <category term="Network"/>
     <published>2025-09-09T23:07:53.000Z</published>
   </entry>
   <entry>
