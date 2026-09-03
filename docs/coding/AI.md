@@ -1,4 +1,5 @@
 ---
+title: AI
 article: false
 category: AI
 tag: cc

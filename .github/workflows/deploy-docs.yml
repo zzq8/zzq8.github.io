@@ -33,12 +33,11 @@ jobs:
           node-version: 20
           cache: pnpm
 
-      # 复制读书笔记到静态页面路径，并构建页面
+      # 构建页面
       - name: Build Docs
         env:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |-
-          pnpm cpx "docs/reading/**" docs/.vuepress/public/reading
           pnpm run docs:build
           > docs/.vuepress/dist/.nojekyll
 

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import { webpackBundler } from "@vuepress/bundler-webpack";
 import { defineUserConfig } from "vuepress";
 
@@ -15,7 +16,7 @@ export default defineUserConfig({
   description: "自我提升笔记，记录并输出一切能让自己提升的知识。",
 
   theme,
-  
+
   // 是否开启页面预拉取，如果服务器宽带足够，可改为 true，会提升其他页面加载速度
   shouldPrefetch: false,
 
@@ -24,17 +25,22 @@ export default defineUserConfig({
   templateBuild: "./docs/.vuepress/templateBuild.html",
 
   // 禁止文件夹生成静态文件，参考 [VuePress 文档]（https://v2.vuepress.vuejs.org/zh/guide/page.html#routing）
-  pagePatterns: ["**/*.md", "!_temp", "!reading", "!.vuepress", "!node_modules"],
+  pagePatterns: ["**/*.md", "!.vuepress", "!node_modules"],
 
-  // plugins: [
-  //   // 谷歌分析
-  //   googleAnalyticsPlugin({
-  //     // 设置你的 Analytics ID
-  //     id: "G-RWKZTY2P9R",
-  //   }),
-  // ],
   bundler: webpackBundler({
-    postcss: {},
-    vue: {},
+    configureWebpack: (config): void => {
+      config.resolve ??= {};
+      config.resolve.alias ??= {};
+      // 把主题的博客文章列表组件换成自己的实现（年份分组 + 文章新标签打开），
+      // $ 表示精确匹配，不影响其他 @theme-hope 子路径。
+      // 必须插到对象最前：主题已注册前缀 alias "@theme-hope"，webpack 按
+      // 插入顺序匹配且首个命中即短路，后加的精确 key 永远轮不到
+      config.resolve.alias = {
+        "@theme-hope/components/blog/ArticleList$": fileURLToPath(
+          new URL("./components/ArticleListByYear.ts", import.meta.url),
+        ),
+        ...config.resolve.alias,
+      };
+    },
   }),
 });

@@ -1,6 +1,6 @@
 ---
 article: true
-tags: Network
+tag: Network
 date: 2024-06-29
 ---
 

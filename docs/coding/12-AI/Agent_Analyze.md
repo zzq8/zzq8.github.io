@@ -1,15 +1,18 @@
 ---
-article: 0_Agent Analyze
-category: AI
+article: true
+category: ai
 tag: reship
 created: 2025-11-08 10:08:59
 updated: 2026-05-04 12:58:09
-Repost_url: https://mrdear.cn/posts/llm_agent_analyze
 ---
 
 # Agent Analyze
 
-> 设计模式补充: https://image.233377.xyz/2026/33db71e17d554c58e17275ec8db78a9c-20260110151925268.jpeg
+> Via: https://mrdear.cn/posts/llm_agent_analyze
+>
+> XD 设计模式补充: 
+>
+> [React 范式图](https://image.233377.xyz/2026/33db71e17d554c58e17275ec8db78a9c-20260110151925268.jpeg)
 
 ## WorkFlow和Agent
 

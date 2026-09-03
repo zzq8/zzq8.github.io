@@ -1,5 +1,5 @@
 ---
-article: false
+date: 2024-06-01
 updated: 2025-11-25 23:14:04
 ---
 # VuePress Theme Hope

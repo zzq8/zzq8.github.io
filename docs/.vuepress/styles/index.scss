@@ -1,3 +1,5 @@
+@use "sass:list";
+
 // toc.scss, navbar.scss, sidebar.scss
 
 // 使用 CSS 的 @import 语法
@@ -26,7 +28,6 @@ sass 侧的同名令牌见 palette.scss 的 $vp-font*。
   // 主题默认中性灰 #8e96aa（冷蓝灰）会压在行内代码底、标签底上，
   // 和宣纸暖底打架，换成暖石灰
   --vp-c-grey-text: #6b6255;
-  --vp-c-grey-hover: #e6dfd2;
   --vp-c-grey-bg: #eee8dd;
   --vp-c-grey-soft: #8a7d6a24;
 }
@@ -35,7 +36,6 @@ sass 侧的同名令牌见 palette.scss 的 $vp-font*。
   --heading-weight: 500;
 
   --vp-c-grey-text: #9c9184;
-  --vp-c-grey-hover: #443d35;
   --vp-c-grey-bg: #37312a;
   --vp-c-grey-soft: #8a7d6a2e;
 }
@@ -70,8 +70,268 @@ blockquote {
   font-family: var(--font-serif);
 }
 
-.toc-place-holder {
-  // 从原本距离导航栏 2rem 改为 5rem
+/*
+提示框标题（::: tip / ::: info）浅色下对比度不足（info 约 3.34:1、tip 约 4.43:1）。
+两个坑：
+1. 要改 --vp-c-*-text 这一层，md-enhance 的 `:root` 里写的是
+   `--tip-c-text: var(--vp-c-green-text)`，直接覆盖 --tip-c-text 会被它盖掉。
+2. 必须限定浅色：主题的深色值写在 `[data-theme="dark"]`，和裸 `:root` 同权重，
+   而本文件加载在后——直接写 `:root` 会连深色一起改掉。用 :not() 提一级权重并排除深色。
+*/
+:root:not([data-theme="dark"]) {
+  --vp-c-green-text: #146a45;
+  --vp-c-blue-text: #1c6d88;
+}
+
+/*
+分类 / 标签色片：统一接管（抄自 LearnData）。
+
+主题把 $colors 喂给 4 个组件，各用一套自己的明暗公式（都假定基色是亮色），
+config.scss 换成传统颜料后没有一套还成立。与其拧基色迁就 4 套公式，
+直接给定最终值：颜料只走文字，底色统一成一层安静的暖面。
+*/
+$chip-inks: (
+  // 传统颜料      浅色（宣纸底）  深色（墨底）
+  "0": (#892120, #e69790),  // 朱砂
+  "1": (#6b3a25, #d0a184),  // 赭石
+  "2": (#5c460f, #cbb46a),  // 藤黄
+  "3": (#2c3f23, #a8c095),  // 苔绿
+  "4": (#1f4a40, #8ac4b4),  // 石绿
+  "5": (#34576b, #96bcd2),  // 黛蓝
+  "6": (#3f4a7a, #a9b1e0),  // 靛青
+  "7": (#6b4a6b, #c4a3c4),  // 紫檀
+  "8": (#91415c, #dfa0b3),  // 胭脂
+);
+
+:root {
+  --chip-surface: #{rgba(#8a7d6a, 0.16)};
+  --chip-surface-hover: #{rgba(#8a7d6a, 0.28)};
+}
+
+[data-theme="dark"] {
+  --chip-surface: #{rgba(#d8c9b0, 0.12)};
+  --chip-surface-hover: #{rgba(#d8c9b0, 0.2)};
+}
+
+@each $i, $pair in $chip-inks {
+  .page-tag-item.color#{$i},
+  .page-category-item.color#{$i},
+  .vp-category.color#{$i},
+  .vp-tag.color#{$i} {
+    --chip-ink: #{list.nth($pair, 1)};
+  }
+
+  [data-theme="dark"] {
+    .page-tag-item.color#{$i},
+    .page-category-item.color#{$i},
+    .vp-category.color#{$i},
+    .vp-tag.color#{$i} {
+      --chip-ink: #{list.nth($pair, 2)};
+    }
+  }
+}
+
+/*
+下面用 !important 是有意的：主题为每个 colorN 单独生成规则，且各组件选择器
+权重不一致、部分样式还是路由分块后加载。这里只覆盖 background / color
+两个属性，范围是明确的。注意 .vp-tag-item / .vp-category-item 只是外层 <li>，
+上色的是里面的 <a>。
+*/
+
+// 实心底三个：文章分类色片、分类列表、标签云
+.page-category-item[class*="color"],
+.vp-category[class*="color"],
+.vp-tag[class*="color"] {
+  background: var(--chip-surface) !important;
+  color: var(--chip-ink) !important;
+
+  &:hover {
+    background: var(--chip-surface-hover) !important;
+  }
+}
+
+// 文章信息栏的标签：主题用两道 linear-gradient 切出左右缺角，覆盖时照样重画；
+// 顺带把 10px 拉齐到 12px（中文小字号辨识下限，且与同行分类色片一致）
+.page-tag-item[class*="color"] {
+  font-size: 12px !important;
+
+  background:
+    linear-gradient(135deg, transparent 0.75em, var(--chip-surface) 0) top,
+    linear-gradient(45deg, transparent 0.75em, var(--chip-surface) 0) bottom !important;
+  color: var(--chip-ink) !important;
+
+  &:hover {
+    background:
+      linear-gradient(135deg, transparent 0.75em, var(--chip-surface-hover) 0) top,
+      linear-gradient(45deg, transparent 0.75em, var(--chip-surface-hover) 0) bottom !important;
+  }
+}
+
+// 选中态：全站唯一保留实心颜料的色片，承担「当前筛选」的强调
+.vp-category[class*="color"].active {
+  background: var(--chip-ink) !important;
+  color: var(--vp-c-bg) !important;
+
+  &:hover {
+    background: var(--chip-ink) !important;
+  }
+}
+
+// 分类计数徽章：「颜料作底 + 页面底色作字」，深浅两套主题都成立
+.vp-category[class*="color"] .vp-category-count {
+  background: var(--chip-ink) !important;
+  color: var(--vp-c-bg) !important;
+}
+
+// 选中态整块已是实心颜料，徽章反过来用页面底色打底
+.vp-category[class*="color"].active .vp-category-count {
+  background: var(--vp-c-bg) !important;
+  color: var(--chip-ink) !important;
+}
+
+// 博客列表的年份分组标题（配合 components/ArticleListByYear.ts）
+.vp-article-year {
+  margin: 3rem 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+  font-family: var(--font-serif);
+  font-weight: var(--heading-weight);
+  font-size: 1.4rem;
+  letter-spacing: -0.005em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+/*
+博客列表卡片的摘要：摘要从正文截取，会把段落/小标题/引用的整套块级结构带进
+卡片，列表没法扫读。摊平成一段连续的次级文字并收敛到三行。
+*/.vp-article-excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+
+  color: var(--vp-c-text-mute);
+  font-size: 15px;
+  line-height: 1.7;
+
+  > * {
+    display: inline;
+    margin: 0 !important;
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+  }
+
+  blockquote {
+    padding: 0 !important;
+    border: 0 !important;
+  }
+}
+
+/*
+正文列宽随窗口增长：主题只有 780px / 980px（后者还要 ≥1920px）两档，
+1440–1919 这一大段窗口宽度里正文恒定 764px。
+上限卡在目录（≥1440 时绝对定位在正文右沿，连边距占 294px），
+676 按「目录右沿留 20px」反推；封顶 1200px：16px 中文约 75 字/行，再宽串行。
+*/
+@media (min-width: 1440px) {
+  :root {
+    --content-width: min(1200px, max(780px, calc(100vw - 676px)));
+  }
+}
+
+/*
+带图片的段落取消两端对齐：「一句说明 + 紧跟一张截图」不空行时图片留在同一 <p>
+里且是 inline，它上面那行不再是段落末行，被 justify 拉伸——中文没有词间空格，
+空隙全摊到字间。只关掉带图段落的两端对齐，纯文字段落保持原样。
+前缀照抄主题选择器形状，否则权重压不过主题的 1,2,1。
+*/
+[vp-content]:not(.custom) #markdown-content p:has(img) {
+  text-align: start;
+}
+
+/*
+移动端导航栏的触控目标：375px 下汉堡键/图标键不足 44×44 且边界相接。
+统一提到 44×44（WCAG 2.5.5）。断点跟主题一致用 959px（$tablet），
+写 719px 会漏掉 720–959 的平板宽度。
+*/
+@media (max-width: 959px) {
+  .vp-navbar {
+    // 汉堡键三条横线由伪元素+ .icon 画在 content-box 上，加 padding 撑到 44：
+    // 16px 图标 + 14×2
+    .vp-toggle-sidebar-button {
+      padding: 0.875rem;
+    }
+
+    // 本来就是 flex 居中，直接给最小尺寸
+    .vp-toggle-navbar-button {
+      min-width: 44px;
+      min-height: 44px;
+    }
+
+    // inline-block + padding: 6px 包着 20px 图标，加到 12px 即 44
+    .vp-action-link {
+      padding: 12px;
+    }
+  }
+}
+
+/*
+Algolia DocSearch（@docsearch/css@4）。
+v4 新加的两个变量 @vuepress/plugin-docsearch 的 vars.css 没给值，
+回落到自带的浅色硬编码：搜索按钮纯白、subtle 冷蓝灰描边。补上映射。
+*/
+:root {
+  --docsearch-search-button-background: var(--vp-c-grey-soft);
+  --docsearch-subtle-color: var(--vp-c-border);
+}
+
+/*
+移动端搜索按钮：DocSearch 的 css 在 ≤768px 写 `border-radius: 50%`，
+假定按钮是正方形；v4 按钮是长方形，50% 画出来是椭圆。
+≤719px（占位文字已隐藏、只剩放大镜）直接对齐旁边几个导航图标：
+去底色描边，按 44×44 给触控目标，此时 50% 才是正圆。
+*/
+@media (max-width: 768px) {
+  .vp-navbar .DocSearch-Button {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 719px) {
+  .vp-navbar .DocSearch-Button {
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+  }
+}
+
+/*
+移动端搜索弹层：≤768px 时弹层整屏（100dvh），底色走 --vp-c-bg-elv（白色），
+「浮起的白卡片」隐喻不成立。整屏状态改用页面底色；
+没有输入时 DocSearch 不渲染 dropdown，页脚紧贴搜索栏——Modal 是 flex column，
+把页脚推到底即可。
+*/
+@media (max-width: 768px) {
+  .DocSearch-Modal {
+    background: var(--vp-c-bg);
+  }
+
+  .DocSearch-Footer {
+    margin-top: auto;
+  }
+}
+
+// toc 占位块下移：从原距导航栏 2rem 改为 5rem
+// （注意 rc.102 的实际类名是 .vp-toc-placeholder，旧写法 .toc-place-holder 不存在、规则从未生效）
+.vp-toc-placeholder {
   top: calc(var(--navbar-height) + 5rem);
 }
 
@@ -79,14 +339,4 @@ blockquote {
 div[class*="language-"] {
   overflow-y: auto !important;
   max-height: 80vh;
-}
-
-#toc {
-  // 增加 toc 与内容区的距离
-  // left: calc(100% + 2rem);
-
-  // 隐藏目录文字「此页内容」
-  // .toc-header {
-  //   visibility: hidden;
-  // }
 }

@@ -2,7 +2,6 @@
 article: true
 date: 2022-11-25
 updated: 2025-11-25 23:46:39
-icon:
 ---
 # WTG
 

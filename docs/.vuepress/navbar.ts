@@ -28,7 +28,7 @@ export default navbar([
     text: "网站相关",
     icon: "material-symbols:person",
     children: [
-      { text: "关于作者", icon: "noto-v1:person-bowing", link: "intro" },
+      { text: "关于作者", icon: "noto-v1:person-bowing", link: "/intro.html" },
       {
         text: "更新历史",
         icon: "material-symbols:history",

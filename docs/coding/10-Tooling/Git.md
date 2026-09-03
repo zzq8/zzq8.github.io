@@ -25,6 +25,12 @@ icon: tabler:git-merge
 
 ## 二、日常使用
 
+AI 场景下
+
+git tree via: https://blog.miniasp.com/post/2023/10/29/git-worktree-manage-multiple-working-directories
+
+
+
 #### 配置 /SKILL 技能
 
 [SKILL -> git-commit-helper](https://skillsmp.com/skills/davila7-claude-code-templates-cli-tool-components-skills-development-git-commit-helper-skill-md)

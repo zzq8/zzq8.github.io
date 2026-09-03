@@ -147,7 +147,7 @@ npm install picgo -g
 
 * Office
 * the unarchiver (zip 可以系统自动解压, 但是 rar 不行要下)
-* ~~Lemon~~ (发现一个 **[Mole](https://github.com/tw93/Mole)**)
+* ~~Lemon~~ (发现一个 **[Mole](https://github.com/tw93/Mole)** CLI 方式清理推的多)
 * Omi (App Store)
 * iina
 * Aldente (保护电池)

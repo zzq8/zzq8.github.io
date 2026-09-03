@@ -1,5 +1,5 @@
 ---
-article: false
+date: 2024-04-13
 ---
 # Kali 破解 WIFI
 
@@ -7,7 +7,7 @@ article: false
 >
 > 需要虚拟机+指定外接网卡(淘宝)
 
-![IMG_2708(20220402-193141)](https://gitee.com/codezzq/blogImage/raw/master/img/IMG_2708(20220402-193141).JPG)
+![IMG_2708(20220402-193141)](https://image.233377.xyz/2026/IMG_2708%2820220402-193141%29.jpeg)
 
 Kali镜像:  http://old.kali.org/kali-images/
 
