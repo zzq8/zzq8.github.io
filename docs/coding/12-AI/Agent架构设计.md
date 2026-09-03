@@ -1,4 +1,5 @@
 ---
+encrypt: true
 updated: 2026-01-10 15:34:34
 created: 2025-02-24
 ---
