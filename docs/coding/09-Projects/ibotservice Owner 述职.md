@@ -1,3 +1,7 @@
+---
+encrypt: true
+---
+
 # ✨ ALMP
 
 > 参考 coze, 但是 ALMP 是 toB 的

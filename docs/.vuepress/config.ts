@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { webpackBundler } from "@vuepress/bundler-webpack";
@@ -54,6 +55,65 @@ const writeResourcesIndex = async (app: App): Promise<void> => {
   );
 };
 
+// ---------- 文档级加密：frontmatter 写 `encrypt: true`（密码默认 123）----------
+// 或 `encrypt: "自定义密码"`。主题加密按「路径前缀 + bcrypt token」工作
+// （客户端 usePathEncrypt 匹配 themeData.encrypt.config，LocalEncrypt 弹
+// 密码框，SSR 不输出正文），而 themeData 由主题内部插件在 onPrepared 写入
+// 临时文件、此时页面均已创建——本插件在其后运行（用户插件注册晚于主题），
+// 读取该临时 JSON，把加密页的 route path 补进 encrypt.config 后重写，
+// 完全复用主题现成的密码弹窗与会话/本地记忆逻辑。
+
+// 密码 → bcrypt 哈希（带缓存；bcrypt-ts 由 vuepress-theme-hope 依赖携带，
+// pnpm 隔离下须经其真实路径解析）
+const passwordHashes = new Map<string, string>();
+const hashPassword = (password: string): string => {
+  const cached = passwordHashes.get(password);
+  if (cached) return cached;
+  const themePkg = fileURLToPath(
+    new URL(
+      "../../node_modules/vuepress-theme-hope/package.json",
+      import.meta.url,
+    ),
+  );
+  const { hashSync } = createRequire(fs.realpathSync(themePkg))(
+    "bcrypt-ts/node",
+  );
+  const hash: string = hashSync(password);
+  passwordHashes.set(password, hash);
+  return hash;
+};
+
+const patchFrontmatterEncrypt = async (app: App): Promise<void> => {
+  const pages = app.pages.filter((page) => {
+    const value = page.frontmatter.encrypt;
+    return value === true || (typeof value === "string" && value.length > 0);
+  });
+  if (pages.length === 0) return;
+  const file = app.dir.temp("internal/themeData.js");
+  if (!fs.existsSync(file)) return;
+  const content = await fs.promises.readFile(file, "utf8");
+  const matched = content.match(/JSON\.parse\(("(?:[^"\\]|\\.)*")\)/);
+  if (!matched) return;
+  const themeData = JSON.parse(JSON.parse(matched[1]));
+  const encrypt = (themeData.encrypt ??= {});
+  encrypt.config ??= {};
+  for (const page of pages) {
+    const value = page.frontmatter.encrypt;
+    // 主题客户端匹配用 decodeURI 后的路径（usePathEncrypt 的
+    // startsWith(decodeURI(path), key)），page.path 是编码形式，须转回解码
+    encrypt.config[decodeURI(page.path)] = {
+      tokens: [hashPassword(value === true ? "123" : String(value))],
+    };
+  }
+  // replace 的替换串必须用函数形式：bcrypt 哈希里的 $ 是 replace 特殊符号
+  await app.writeTemp(
+    "internal/themeData.js",
+    content.replace(matched[1], () =>
+      JSON.stringify(JSON.stringify(themeData)),
+    ),
+  );
+};
+
 export default defineUserConfig({
   // 网站路径默认为主域名。如果网站部署在子路径下，比如 xxx.com/yyy，那么 base 应该被设置为 "/yyy/"
   base: "/",
@@ -79,6 +139,25 @@ export default defineUserConfig({
         if (page.filePathRelative?.startsWith("_posts/")) {
           page.frontmatter.sidebar = false;
         }
+      },
+    },
+    // 博客文章（_posts/）未在 frontmatter 写 date 时，取 git「最近更新」时间
+    // 兜底（与页面底部「最近更新」同源：plugin-git 的 updatedTime）——主题 blog
+    // 插件默认回落的是首次提交时间（createdTime）。用户插件注册晚于主题且
+    // extendsPage 按注册顺序执行，此时 git 数据与主题写入的 routeMeta.date 均已
+    // 定稿，故需自行补写两处：routeMeta.date（文章列表/时间轴的展示与排序）、
+    // frontmatter.date（feed 排序与发布时间）
+    {
+      name: "vuepress-plugin-posts-updated-date",
+      extendsPage: (page) => {
+        if (!page.filePathRelative?.startsWith("_posts/")) return;
+        if (page.frontmatter.date) return;
+        const updatedTime = (
+          page.data.git as { updatedTime?: number } | undefined
+        )?.updatedTime;
+        if (!updatedTime) return;
+        page.frontmatter.date = new Date(updatedTime);
+        page.routeMeta.date = updatedTime;
       },
     },
     // 无一级标题的页面（page.title 为空，如 h1 写在代码围栏里）用文件名兜底：
@@ -118,6 +197,26 @@ export default defineUserConfig({
         });
         watchers.push(watcher as (typeof watchers)[number]);
       },
+    },
+    // frontmatter 加密：加密页与主题路径加密页行为对齐（不进 feed/seo/sitemap，
+    // 且不生成摘要——主题靠 excerptFilter 排除路径加密页，这里手动对齐，否则
+    // meta description / 博客列表卡片摘要会泄漏正文片段），路径 → 密码条目在
+    // onPrepared 末尾注入 themeData（见上方说明）
+    {
+      name: "vuepress-plugin-frontmatter-encrypt",
+      extendsPage: (page) => {
+        const value = page.frontmatter.encrypt;
+        if (value !== true && !(typeof value === "string" && value.length > 0))
+          return;
+        page.frontmatter.feed = false;
+        page.frontmatter.seo = false;
+        page.frontmatter.sitemap = false;
+        page.frontmatter.excerpt = false;
+        delete page.frontmatter.description;
+        delete page.data.excerpt;
+        delete page.routeMeta.excerpt;
+      },
+      onPrepared: (app) => patchFrontmatterEncrypt(app),
     },
   ],
 

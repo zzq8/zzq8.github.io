@@ -223,6 +223,8 @@ A一直欺负B。
 
 ## 三、English
 
+> [35 岁即将失业，英语差，想去报班，去面试要求全英面试的企业，是不是一条出路](https://www.v2ex.com/t/1239092#reply64)
+
 ### Goal
 
 > English is a moat
