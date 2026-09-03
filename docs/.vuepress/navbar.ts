@@ -18,10 +18,15 @@ export default navbar([
         link: "https://alist.233377.xyz/",
       },
       {
+        text: "资源文件",
+        icon: "tabler:folders",
+        link: "/resources.html",
+      },
+      {
         text: "书籍影音",
         icon: "mi:book",
         link: "/coding/XD.html",
-      }
+      },
     ],
   },
   {

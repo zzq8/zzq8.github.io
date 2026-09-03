@@ -258,12 +258,7 @@ public class UserServiceTest {
 ```
 
 ```java
-/*
-
- * Ant Group
- * Copyright (c) 2004-2024 All Rights Reserved.
-   */
-   package com.alipay.ibotservice;
+package com.alipay.ibotservice;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;

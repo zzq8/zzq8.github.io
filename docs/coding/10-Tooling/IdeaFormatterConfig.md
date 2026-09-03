@@ -1,7 +1,8 @@
-# Adapter for Eclipse Code Formatter
+# IDEA 格式化配置
 
-> 插件需要最新版本
+> 插件需要最新版本: Adapter for Eclipse Code Formatter
 >
+> 此为蚂蚁的格式化要求
 
 ## formatter_export.xml
 ```xml

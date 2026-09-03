@@ -1,8 +1,58 @@
+import fs from "node:fs";
+import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { webpackBundler } from "@vuepress/bundler-webpack";
 import { defineUserConfig } from "vuepress";
+import type { App } from "vuepress";
 
 import theme from "./theme.js";
+
+// public/resources 资源索引：public 目录只做静态拷贝、不会生成页面，
+// 「资源列表」页（/resources.html）的数据只能构建期扫描目录生成，
+// 写成临时模块供 ResourceList 组件静态 import（与主题 sidebarData 同套路）
+interface ResourceItem {
+  path: string;
+  name: string;
+  dir: string;
+  ext: string;
+  size: number;
+  mtime: number;
+}
+
+const writeResourcesIndex = async (app: App): Promise<void> => {
+  const root = app.dir.source(".vuepress/public/resources");
+  const items: ResourceItem[] = [];
+  const walk = (dir: string): void => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      // .DS_Store 是 macOS 垃圾文件；.zshrc 等其它点文件是分享内容，保留
+      if (entry.name === ".DS_Store") continue;
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(full);
+        continue;
+      }
+      const rel = path.relative(root, full).split(path.sep).join("/");
+      const { size, mtimeMs } = fs.statSync(full);
+      const dirname = path.dirname(rel);
+      items.push({
+        path: `/resources/${rel}`,
+        name: entry.name,
+        dir: dirname === "." ? "" : dirname,
+        ext: path.extname(entry.name).replace(/^\./, "").toLowerCase(),
+        size,
+        mtime: mtimeMs,
+      });
+    }
+  };
+  if (fs.existsSync(root)) walk(root);
+  items.sort((a, b) =>
+    a.path.localeCompare(b.path, "zh-Hans-CN", { numeric: true }),
+  );
+  await app.writeTemp(
+    "resources/list.js",
+    `export const resources = ${JSON.stringify(items)};\n`,
+  );
+};
 
 export default defineUserConfig({
   // 网站路径默认为主域名。如果网站部署在子路径下，比如 xxx.com/yyy，那么 base 应该被设置为 "/yyy/"
@@ -49,6 +99,24 @@ export default defineUserConfig({
         page.data.title = filename;
         page.frontmatter.title = filename;
         page.routeMeta.title = filename;
+      },
+    },
+    // 资源索引页数据源：构建/启动时扫一次；dev 期间监听目录变动重建索引
+    // （dev server 对 public 有静态 watch，webpack 对 temp 模块有编译 watch，
+    // 索引重写后页面会自动更新）。chokidar 未被项目直接依赖，用原生 fs.watch
+    {
+      name: "vuepress-plugin-resources-index",
+      onPrepared: (app) => writeResourcesIndex(app),
+      onWatched: (app, watchers) => {
+        const root = app.dir.source(".vuepress/public/resources");
+        if (!fs.existsSync(root)) return;
+        let timer: ReturnType<typeof setTimeout> | undefined;
+        const watcher = fs.watch(root, { recursive: true }, () => {
+          clearTimeout(timer);
+          // 批量拷贝文件会连发一堆事件，防抖后重扫
+          timer = setTimeout(() => void writeResourcesIndex(app), 300);
+        });
+        watchers.push(watcher as (typeof watchers)[number]);
       },
     },
   ],

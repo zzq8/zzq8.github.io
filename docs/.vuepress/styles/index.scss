@@ -352,3 +352,61 @@ div[class*="language-"] {
   overflow-y: auto !important;
   max-height: 80vh;
 }
+
+/*
+「资源文件」列表页（/resources.html，components/ResourceList.ts）：
+搜索框 + 按目录分组的文件清单，元信息（格式 · 大小 · 日期）用次级文字弱化。
+*/
+.resources-search {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text);
+  font-size: 0.95rem;
+
+  &:focus {
+    outline: none;
+    border-color: var(--vp-c-accent);
+  }
+}
+
+.resources-count {
+  margin: 0;
+  color: var(--vp-c-grey-text);
+  font-size: 0.85rem;
+}
+
+.resources-dir {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.resources-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0.35rem 0;
+    border-bottom: 1px dashed var(--vp-c-border);
+
+    a {
+      font-weight: 500;
+      word-break: break-all;
+    }
+  }
+}
+
+.resources-meta {
+  flex-shrink: 0;
+  color: var(--vp-c-grey-text);
+  font-size: 0.85rem;
+}
