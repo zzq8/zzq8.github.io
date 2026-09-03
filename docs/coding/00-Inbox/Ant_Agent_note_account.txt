@@ -1,0 +1,540 @@
+---
+updated: 2026-01-08 00:03:59
+---
+
+Agent 是什么: [https://en.libx.fun/posts/2025/work_agent_analyze#ant-agentuniverse](https://en.libx.fun/posts/2025/work_agent_analyze#ant-agentuniverse)
+
+
+
+TODO [https://aliyuque.antfin.com/gd/dit/qsavxb4hagogcoip#0UJbd](https://aliyuque.antfin.com/gd/dit/qsavxb4hagogcoip#0UJbd)
+
+
+
+[【45分钟系统学习】ChatGPT Prompt提示词工程 基础>少样本>思维链>联网>认知搜索>ReAct实现ChatGPT插件_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1jP411d7or/?spm_id_from=333.337.search-card.all.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)
+
+
+
+[https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e](https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e)
+
+[PromptingGuide](https://www.promptingguide.ai/zh/research/llm-agents) 【很全文档】
+
+[大模型应用--RAG、Agent及其背后的Prompt Engineering技巧概览_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Di4y1879d/?spm_id_from=333.337.search-card.all.click&vd_source=0f3bf62c50d57c4a7d85b89b4d2633e0)  
+[大模型应用技术原理 - 幕布](https://mubu.com/doc/2yVWogEso5i#m) 【很全脑图】
+
+
+
+
+
+
+
+> 虽然遇到了点坎坷最后做事不是朝着这个文档预期方向前进，但这个过程中让我们学到的东西真的是非常多，而且我相信这个文档绝对会给很多人带来价值。
+>
+> 
+>
+> 下一步，我们的目标主要是2个：
+>
+> 1.**<font style="color:#DF2A3F;">Ilmservice</font>**的代码搞明白，开始在现有平台实现一个Agent，我晚上就去详细的看Ilmservice的实现，马上做一个agent节点出来。
+>
+> 2.**<font style="color:#DF2A3F;">开源技术框架</font>**继续深入学习，把源码细节吃透，成为agent领域专家。
+>
+
+# 前言科普
+### 概述
+**文字接龙**
+
+GPT 就是预测词，这些词站在技术的视角称为 Token。以下火锅就是 Token
+
+我爱吃 XXX（火「80%」锅「95%」）
+
+
+
+记忆模块：GPT可能预设的5轮的信息
+
+### 不能做什么：
++ 只是的局限性和幻觉
+    - 不能联网, 不了解实时新闻
+    - 对毫无关联的事情产生幻觉 - e.g. 中医修火箭
++ 难以应对复杂数学计算推理
+    - 不能计算：基于**语料库的上下文推断**的，没有实际意义数学计算   数学题会算错
+    - 不能执行代码 (能执行代码也就解决上面的了)
++ 没有行动能力   e.g. LLM无法帮我买咖啡
+
+
+
+**<font style="color:#DF2A3F;">=======>  引出 Agent</font>**
+
+****
+
+### 公网：通过第三方API工具，先API拿结果再给到GPT总结
+> SearchAPI 具有联网能力
+>
+
+![](https://i-blog.csdnimg.cn/img_convert/6baee26dd4c724e2c4e31d568e844cbb.png)
+
+
+
+# ✨ Embedding (RAG)
+> 问题向量坐标 match 切分后的答案坐标, 得到相似分
+>
+> 常用模型: openAi的 text-embedding-**<font style="color:#DF2A3F;">ada</font>**-002
+>
+
+内网：Embedding模型，企业内部私有数据
+
+> [让GPT联网 + 基于Embedding的语义搜索（ChatPDF效果）_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1jP411d7or?t=98.5&p=3)
+>
+> 视频也是顶端titile的视频，讲的很好
+>
+
+
+
+**Embedding模型原理：**
+
+1. 比如左边的输入是Skiing
+2. via Embedding模型
+3. 1536位的向量  
+这1536个数字的平方和是1（大学线性代数-向量所有的值的平方加起来等于1，就代表的是这个向量的长度是1）
+
+![](https://i-blog.csdnimg.cn/img_convert/1153f5633340e1bf7551ef47c155f90a.png)
+
+![](https://i-blog.csdnimg.cn/img_convert/af8876d520d3493448d67a9884d29fd0.png)
+
+
+
+
+
+**具体实现：**
+
+1. 把100页的PDF按照某种规则切片  
+需小于GPT Token 4000个字的限制切片
+2. 通过embedding模型转成向量
+3. action：向量数据库计算距离，找到问题和语料最相关的几个片段
+
+![](https://i-blog.csdnimg.cn/img_convert/348b085f6aed93d62297564db3f0c875.png)
+
+
+
+**总结**
+
+![](https://i-blog.csdnimg.cn/img_convert/94d61d2df0398b6b6341a4c8f7abcb66.png)
+
+
+
+# <font style="color:rgb(0, 0, 0);">Agent（智能体）</font>
+> [https://github.com/antgroup/agentUniverse](https://github.com/antgroup/agentUniverse)  
+> [https://github.com/crewAIInc/crewAI](https://github.com/crewAIInc/crewAI)  
+> <font style="color:rgb(0, 0, 0);">这两个Agent框架有兴趣的可以看看</font>
+>
+
+## <font style="color:#DF2A3F;">LLM为什么需要 Agent 化？</font>
+> quding:  Agent 是什么: [https://en.libx.fun/posts/2025/work_agent_analyze#ant-agentuniverse](https://en.libx.fun/posts/2025/work_agent_analyze#ant-agentuniverse)
+>
+> Agent: 基于大预言模型驱动的自主代理         用于补齐和增强模型不具备的能力
+>
+
+相比LLM为什么需要它
+
+LLM的局限: 
+
++ 只是的局限性和幻觉 【解决 - Memory 短期记忆： 模型输入信息ICL / 长期机器： RAG】
+    - 不能联网, 不了解实时新闻
+    - 对毫无关联的事情产生幻觉 - e.g. 中医修火箭
++ 难以应对复杂数学计算推理
+    - 不能计算：基于**语料库的上下文推断**的，没有实际意义数学计算   数学题会算错
+    - 不能执行代码 (能执行代码也就解决上面的了)
++ 没有行动能力   e.g. LLM无法帮我买咖啡
+
+
+
+1. 数据时效性
+2. 缺乏垂直领域知识
+3. 上下文长度限制
+
+
+
+Agnet 输出任务的解决方案
+
+1. 具备规划和决策能力
+2. 具备记忆能力
+3. 具备调用工具能力
+
+
+
+
+
+**<font style="color:#DF2A3F;">=======>  引出 Agent</font>**
+
+
+
+![](https://i-blog.csdnimg.cn/img_convert/4e4d2f8e3ee7047619b71ff56c6429e2.png)
+
+<font style="color:rgb(0, 0, 0);"></font>
+
+> **<font style="color:#DF2A3F;">Agent vs Workflow</font>**
+>
+> <font style="color:rgb(51, 51, 51);background-color:rgb(244, 240, 255);">LLM中agent和工作流有什么区别</font>
+>
+
++ **<font style="color:rgb(51, 51, 51);">自主性</font>**<font style="color:rgb(51, 51, 51);">: Agent通常具有更高的自主性，而工作流往往是预设的、相对固定的流程。</font>
++ **<font style="color:rgb(51, 51, 51);">智能性</font>**<font style="color:rgb(51, 51, 51);">: Agent可以具备一定的智能，能够学习和适应，而工作流通常更关注于任务的顺序和执行。</font>
++ **<font style="color:rgb(51, 51, 51);">应用场景</font>**<font style="color:rgb(51, 51, 51);">: Agent可以应用于需要动态决策的场合，比如智能客服；而工作流更多用于规范化和标准化的业务流程，如审批流程。</font>
+
+<font style="color:rgb(0, 0, 0);"></font>
+
+<font style="color:rgb(0, 0, 0);">未来我们认为Agent一定是按组织结构和领域划分的，</font>**<font style="color:rgb(0, 0, 0);">每个Agent都是一个领域专家</font>**<font style="color:rgb(0, 0, 0);">，具备自己的领域知识，独立维护，独立演进，然后产品层有个前置master负责分发和调度</font>
+
+![](https://i-blog.csdnimg.cn/img_convert/18e2f4afadb94082ef4912dcacec0233.png)
+
+<font style="color:rgb(0, 0, 0);">这个是Antom Copilot的规划哈，后面会有多个Agent协作，包括分发到客服GBSS，负责整个商户的全生命周期</font>
+
+<font style="color:rgb(0, 0, 0);"></font>
+
+**理论学习**
+
+qidian: [视频 - LLM Agent 的整体概述](https://grow.alibaba-inc.com/course/4800016494424007/section/1800016502840507)
+
+
+
+> 语言模型（LLM）仅限于它们所训练的知识，并且这些知识很快就会过时。且LLM具备以下缺点：
+>
+> + 会产生幻觉
+> + 结果并不总是真实的
+> + 对时事的了解有限或一无所知
+> + 很难应对复杂的计算
+>
+> **Al Agent 可以利用外部工具来克服这些限制**
+>
+> **<font style="background-color:#FBDE28;">Agent = LLM +记忆＋感知＋规划技能＋使用工具（LLM作为Agent的“大脑"）</font>**
+>
+> ![](https://i-blog.csdnimg.cn/img_convert/553a2ee54aa270f84776bab27f043036.png)
+>
+>
+> XD 给大模型武装上很多工具，在需要的时候可以调用  
+> 独特的独立思考和行动的实体（可以想象一下那个很火的像素游戏虚拟小镇，每个NPC都是一个Agent）自我驱动不断发展和适应，这不仅仅是自动化的事了。这是人工智能主导的自动化！
+>
+> Agent思路比较符合人在处理复杂问题的处理思路：我想知道杭州天气我不知道，但我知道需要调用杭州天气的门户网站就能得到我想要的答案
+>
+
+###  时代背景
+目前发力点 L4
+
+普通人和openAi在同一起跑线甚至更有优势（行业经验）靠LLM做出来什么样的东西！
+
+![](https://i-blog.csdnimg.cn/img_convert/04515596864d45f22fc0525936584019.png)
+
+### 当前热门的开源Agent框架
+> [一图带你了解 LangChain 的功能模块](https://www.bilibili.com/read/cv25333824/)
+>
+
+![](https://i-blog.csdnimg.cn/img_convert/1dc928fd882c45aa05a0610e19c533c2.png)
+
+## 单Agent框架：ReAct 范式
+### 是什么
+是经典的 Agent 范式
+
+ReAct介绍:[ReAct 框架 – Nextra](https://www.promptingguide.ai/zh/techniques/react.zh)
+
++ ReAct (Reasoning and Acting) 是一种 Agent 的提示方法，主要特点是结合了思维链（Chain of Thought）和行动执行。  
+ReAct 是 LangChain 中最常用的 Agent 范式之一。
+
+```javascript
+不完全相同。虽然它们都是提示方法（Prompting Methods），但有明显区别：
+
+Chain of Thought (CoT):
+- 专注于思维推理过程
+- 通过中间步骤展示推理链
+- 主要用于解决推理类问题
+- 输出形式：思维过程 -> 最终答案
+
+ReAct:
+- 结合了推理和行动
+- 包含工具使用和环境交互
+- 能执行实际操作并获取反馈
+- 输出形式：思考 -> 行动 -> 观察 -> 新思考 -> ...
+
+举例说明：
+
+CoT示例（数学问题）：
+```
+问题：如果苹果3个5元，买12个苹果需要多少钱？
+思考：
+1. 3个苹果是5元
+2. 12个苹果是3个的4倍
+3. 所以价格也是5元的4倍
+答案：20元
+```
+
+ReAct示例（查询任务）：
+```
+问题：查询今天北京的天气并建议是否带伞
+思考：需要查询北京天气信息
+行动：调用天气API查询北京天气
+观察：北京今天多云，降水概率60%
+思考：降水概率较高
+行动：生成建议
+回答：建议带伞，因为今天降水概率较高
+```
+
+从你之前分享的表格也可以看出，它们是被分开列举的不同方法，而且组合使用（如 CoT-SC → ReAct）能获得更好的性能。
+```
+
+
+
+> 好处：**经过一些微调后表现会非常明显地提升**
+>
+
+ReAct模板 与其他prompt模板的对比：
+
+![](https://i-blog.csdnimg.cn/img_convert/02a121f7c624aa02852c3290efc7814b.png)
+
+1. 1a 问题-答案，LLM没有做任何prompt设计
+2. 1b (Reason) 一步步思考怎么完成这个任务（Reason Only框架）
+3. 1c (Act) 拿工具获取一些结果，**注意没有thought的步骤的不会去推理**
+4. <font style="background-color:#FBDE28;">1d-Reason+Act</font> act可以是调工具/API，拿到结果进一步思考**<font style="color:#DF2A3F;">不断迭代</font>**
+
+![](https://i-blog.csdnimg.cn/img_convert/3c54f15c865de7f17225434ac9d6b34b.png)
+
+![](https://i-blog.csdnimg.cn/img_convert/d41c4fbdce30294914bd87ce18ff31f6.png)
+
+
+
+## [多Agent框架：AutoGen（微软开发）](https://microsoft.github.io/autogen/docs/Getting-Started/)
+> <font style="color:rgb(34, 34, 34);">Multi-Agent , 更偏向于圆桌讨论.</font>  
+> <font style="color:rgb(34, 34, 34);">定义一群职业专属的AI角色, 针对1个主题进行讨论.</font>  
+> <font style="color:rgb(34, 34, 34);">Multi-Agent 你可以根据需要设置退出状态, 比如说总讨论10轮, or 每个角色最大发言数20次, or 有个监听的角色进行主动结束讨论(它主责监听是否达到预定的结果).</font>
+>
+
+### AutoGen 多agent工作流程示例：
+![](https://i-blog.csdnimg.cn/img_convert/b24c610d20829a95b3c58fde5936e052.png)
+
+两个核心角色：
+
++ 绿色小人（AssistantAgent）
+    - 更多是跟大模型侧做交互
+    - 拆解拿到上一步这个Agent的一些任务（**生成执行代码、总结性知识给到蓝色小人执行拿结果**）
++ 蓝色小人（UserProxyAgent）
+    - 集成一些工具Python、数学相关
+
+### 执行过程
+> 不停迭代拿结果
+>
+> 里面其实也是通过 Prompt 驱动
+>
+
+![](https://i-blog.csdnimg.cn/img_convert/7fc441ec4cedd959ac13790b336c6884.png)
+
+
+
+LLM Agent 局限性
+
++ 依赖于LLM：Agent的所有的衍生技术都严重依赖于LLM的能力，所以一个Agents的好坏，也要看这个LLM优化的是否到位。
++ RT&资源：一般Agent作为一个Controller，需要多次运行和与外界进行交互，本身LLM的模型消耗资源就很大，因此一般Agents的系统运行效率都不会太高，输出Token数过多的情况，RT会比较高
++ Token Lengths长度限制：另一个通用的问题就是LLM的输入会有长度限制，一般是2048，4096等等，总之都是有限的，我们在做Agent的轮次就不会太长，这会限制Agents来解决更复杂问题的能力。
++ 不稳定性：总体上，LLM的输出还是不可控的，会在有时候不遵循instruction，然后开始胡说八道的情况，这会导致Agents的运行出现异常。
+
+---
+
+## coze使用体感
+[扣子 - 文档中心（多 Agent 模式）](https://www.coze.cn/docs/guides/multiagent)
+
+> <font style="color:rgb(0, 0, 0);">xd 分治，父 Agent 分发，</font>**<font style="color:#DF2A3F;">扁平化</font>**
+>
+> <font style="color:rgb(51, 51, 51);">单agent/多agent下，用户一句话输入后，大致的运行原理序列图请用plantUML语言描述清楚</font>
+>
+
+![](https://i-blog.csdnimg.cn/img_convert/56b610df3da2900be6a02447f953a2ca.png)
+
+1. **<font style="color:rgb(34, 34, 34);">单Agent系统：在这种设置中，只有</font>****<font style="color:#DF2A3F;">一个智能体负责处理所有的对话和任务</font>****<font style="color:rgb(34, 34, 34);">。用户的所有交互都是通过这个单一的智能体来进行的。单Agent系统相对简单，易于管理和开发，但可能在处理复杂任务或需要多方面专业知识的情况下受限。</font>**
+2. **<font style="color:rgb(34, 34, 34);">多Agent系统：在多Agent系统中，存在多个智能体，</font>****<font style="color:#DF2A3F;">每个智能体可能负责不同的任务或领域</font>****<font style="color:rgb(34, 34, 34);">。这些智能体可以相互协作，共同完成复杂的任务。例如，一个Agent可能专门处理用户查询，而另一个Agent可能负责执行任务或提供特定的服务。多Agent系统可以提供更高的灵活性和扩展性，但同时也增加了系统的复杂性。</font>**
+
+
+
+# ✨ RAG:增强检索生成
+> [https://waytoagi.feishu.cn/wiki/WiAwwqSfYiT8sKkYU33c7FMpnvh](https://waytoagi.feishu.cn/wiki/WiAwwqSfYiT8sKkYU33c7FMpnvh)
+>
+
+
+
+> <font style="color:rgb(51, 65, 85);">简单来说，系统根据用户的输入查询相关文档，然后将这些文档和一个提示语结合起来，交给模型生成最终的回答</font>
+>
+
+
+
+> ✨ [素材归档](https://aliyuque.antfin.com/gd/dit/qsavxb4hagogcoip#0UJbd)  --->  <font style="background-color:#FBDE28;">知识库系分</font>
+>
+> <font style="color:rgb(6, 6, 7);">RAG，即Retrieval-Augmented Generation，是一种结合了检索（Retrieval）和生成（Generation）的机器学习模型。在RAG模型中，"知识库"通常指的是一个预先构建好的数据集合，这个集合包含了大量的信息或数据，可以是文本、图像或其他形式的数据。知识库在RAG模型中的作用是提供相关信息，以增强模型的生成能力。</font>
+>
+> **<font style="color:rgb(6, 6, 7);">具体来说，在RAG模型中，当模型接收到一个输入（如问题或指令）时，它会首先使用检索机制从知识库中检索出与输入相关的信息。然后，这些检索到的信息会被用作上下文，与原始输入一起输入到生成模型中，以生成更加准确和丰富的输出。</font>**
+>
+> <font style="color:rgb(6, 6, 7);">知识库可以是静态的，也可以是动态更新的，这取决于具体的应用场景和需求。知识库的选择和构建对于RAG模型的性能有很大的影响，因为它直接影响到检索阶段的效果。一个高质量的知识库可以提供更准确、更全面的信息，从而提高生成模型的输出质量。</font>
+>
+
+![](https://i-blog.csdnimg.cn/img_convert/aad0a347b1cc0edb1cbeac8b02bec035.png)
+
+<font style="color:rgb(6, 6, 7);"></font>
+
+
+
+> RAG 2020年Facebook提出来的，解决模型训练中需要依赖外部支持的问题
+>
+> **检索**增强**生成**（Retrieval-Augmented Generation,RAG）指的是在LLM回答问题之前从外部知识库中检索相关信息，**<font style="color:#DF2A3F;">RAG有效地将LLM的参数化知识与非参数化的外部知识库结合起来</font>**，使其成为实现大型语言模型的最重要方法之一
+>
+> 结合起来看 -> 本文档的 #内网：Embedding模型，企业内部私有数据
+>
+
+![](https://i-blog.csdnimg.cn/img_convert/a984705baed9f8f63d9e79714581461f.png)
+
+文档 - 向量化：转化为计算机能够理解的语言
+
+
+
+最直观的感受，我们不需要把我们的文档内容转成一种固定的格式（预处理）
+
+用了RAG后我直接把文档丢给它，它好像就能理解了
+
+![](https://i-blog.csdnimg.cn/img_convert/2a87186608d8f1b4674e3b17f1721aec.png)
+
+
+
+---
+
+<font style="color:rgb(0, 0, 0);">excel -> 平台 -> QA -> DB -via 定时任务拿纯文本-> </font>
+
+<font style="color:rgb(0, 0, 0);">知识库 -》 </font><font style="color:rgb(0, 0, 0);background-color:#FBDE28;">向量库</font><font style="color:rgb(0, 0, 0);">（数学，很多维度   匹配：</font><font style="color:rgb(0, 0, 0);background-color:#FBDE28;">余xuan</font><font style="color:rgb(0, 0, 0);"> 相似度算法匹配）</font>
+
+<font style="color:rgb(0, 0, 0);background-color:#FBDE28;">langchain</font><font style="color:rgb(0, 0, 0);">  开源软件</font>
+
+<font style="color:rgb(0, 0, 0);">模型 learderboard 排行榜</font>
+
+
+
+
+
+> QQ 和 QA 匹配
+>
+
+让我通过具体例子解释在向量知识库中 QA 和 QQ 召回的区别：
+
+QA召回例子：
+
+```plain
+用户问题：
+"如何配置企业微信支付？"
+
+向量知识库中存储的QA对：
+Q: "如何配置企业微信支付？"
+A: "1. 登录企业微信管理后台
+    2. 进入支付管理页面
+    3. 填写商户号和API密钥
+    4. 配置回调地址
+    5. 测试支付功能"
+
+匹配过程：
+系统直接匹配问题向量，返回对应的完整答案内容
+```
+
+QQ召回例子：
+
+```plain
+用户问题：
+"如何配置企业微信支付？"
+
+向量知识库中的相似问题：
+- "怎么设置企业微信商户支付？"
+- "企业微信支付配置流程是什么？"
+- "微信支付商户号怎么配置到企业微信？"
+- "企业微信支付密钥在哪里设置？"
+
+匹配过程：
+系统返回相似问题列表，用户可以选择最接近自己意图的问题
+```
+
+主要区别：
+
+1. **<font style="color:#DF2A3F;">QA直接给出答案，QQ 提供相似问题</font>**
+2. QA 适合精确匹配场景，QQ 适合模糊查询
+3. QA 强调答案的准确性，QQ 强调问题的相关性
+
+在实际应用中，两种方式经常结合使用：
+
+1. 先用 QQ 找到最相似的问题
+2. 再用 QA 返回对应的标准答案
+
+这样可以提高系统的召回率和准确率。
+
+
+
+# PromptEngineer
+> Prompt “提示词” 描述 需求＆背景＆解决思路
+>
+> + coze 有个功能可以优化 prompt 好用！  
+> + [https://promptport.ai/](https://promptport.ai/)
+>
+
+## Prompt初阶技巧
++ Instruction（指令词）：清晰、明确、避免模糊的词语
++ 输入格式：用符号例如```将指令和待处理的内容分开
+
+![](https://i-blog.csdnimg.cn/img_convert/702251589b7c6c8c577290dd9f67e1bb.png)
+
++ 指定输出格式
++ 角色扮演（**专业 / 非专业   role好处缩写检索范围提升答案预期）**
+
+
+
+## 高阶技巧
+> [Few-Shot 少样本提示 + CoT思维链_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1jP411d7or?t=186.4&p=2)
+>
+> 样本技巧，激发模型的潜能
+>
+
++ Few-Shot / One-Shot  少样本提示**【常见且有效】**
+
+视频中是一个计算题GPT明显错误且会**复用之前的错误结论**，加一些例子给到GPT会明显改善  
+![](https://i-blog.csdnimg.cn/img_convert/897a6b24e7a81b5005bf2340342678d5.png)
+
+
+
++ Chain-of -Thought(**CoT**) Prompting（给例子时候把思考过程也加入）【**同样常用**】  
+Zero-Shot + CoT（咒语：Let's think step by step 就不需要例子模型自己做推理）  
+![](https://i-blog.csdnimg.cn/img_convert/b4665ff7b9a11a2a32b326a5386ea3ef.png)
+
+
+
+
+
+
+
+## ✨ Agent架构设计
+### Agent设计模式
+Agent的几种设计模式：
+
+![画板](https://i-blog.csdnimg.cn/img_convert/d03eef831d9cf5ade6ec7a46b99e301f.jpeg)
+
+1. ReAct（Reasoning-Acting）：思考-行动-观察
+2. REWOO(Reason WithOut Observation)：加入Plan。计划-循环执行Task-总结
+3. PE（Plan & Execute）：加入RePlan。计划-执行Task-RePlan
+4. LLM Compiler：加入并行执行。计划-并行执行Task-RePlan
+5. PEER：Plan-Execute-Express-Review
+6. Basic Reflection：生成器-评估器模型，生成器生成结果，评估器评估结果反馈生成器
+7. Self-Discover：边推理边思考。
+    1. 论文：[https://arxiv.org/pdf/2402.03620](https://arxiv.org/pdf/2402.03620)
+8. Reflection：加入强化学习模型。
+9. LATS（Language Agent Tree Search）加入搜索树与PE思想。
+
+
+
+### Agent协作方式
+
+
+#### 协作方式
+![画板](https://i-blog.csdnimg.cn/img_convert/b5b847d58a66c09e19754b9b6ac6bfb1.jpeg)
+
+
+
+总结下来Agent的协作方式有：
+
+1. **Sequential**：这是一种多个Agent串行的方式，这种方式预计会成为主流配置的方式之一。
+2. **Async**：这是一种Agent能够异步执行的方式，这种方式通常用来处理异步任务，同时这种方式难以监控，比较消耗性能资源，技术上一定要有防止资源耗尽的手段。
+3. **Supervisor**：这是一种层级结构的协作方式，同时这也可以成为中心化架构配置的一种方式，这种方式预计也会成为主流配置的方式之一。
+4. **Chat Group**：这是一种去中心化的方式，后续也会演变出比较多的变体，比如：去中心化共同协作完成任务、任务抢答、消息通知等等。

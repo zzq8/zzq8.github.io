@@ -17,6 +17,22 @@ export default defineUserConfig({
 
   theme,
 
+  // 博客文章详情页（_posts/，路由经 sanitizeFileName 变为 /posts/）整体关掉侧边栏：
+  // theme 选项 locales 里的自定义 key（如 "/posts/"）在单语言站点不生效——主题
+  // locale 数据只按站点配置 locales 的 key 生成，自定义 key 会被静默丢弃。
+  // 这里在页面数据序列化前注入 frontmatter.sidebar = false，items 为空时
+  // MainLayout 会连布局一起去掉侧栏（新文章自动生效）
+  plugins: [
+    {
+      name: "vuepress-plugin-posts-no-sidebar",
+      extendsPage: (page) => {
+        if (page.filePathRelative?.startsWith("_posts/")) {
+          page.frontmatter.sidebar = false;
+        }
+      },
+    },
+  ],
+
   // 是否开启页面预拉取，如果服务器宽带足够，可改为 true，会提升其他页面加载速度
   shouldPrefetch: false,
 

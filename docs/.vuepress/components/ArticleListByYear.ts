@@ -1,7 +1,9 @@
 /**
  * 覆盖主题的 ArticleList（经 config.ts 的 webpack alias 精确注入，原版见
  * vuepress-theme-hope/lib/client/components/blog/ArticleList.js）：
- * 1. 列表按年份分组，年份变化处插入「XXXX 年」标题（items 本身按时间倒序）
+ * 1. 列表按年份分组，年份变化处插入「XXXX 年」标题。上游 useBlogType 的顺序
+ *    不保证全局时间倒序（多目录文章会交错乱序），组件内先显式按日期倒序
+ *    排序，否则同一年会出现多个重复的年份标题
  * 2. 点击文章标题 / 封面在新标签页打开
  * 分页、滚动定位、浏览量统计逻辑照抄原版。
  */
@@ -52,8 +54,16 @@ export default defineComponent({
     const articlePerPage = computed(
       () => blogOptions.value.articlePerPage ?? 10,
     );
+
+    // 年份分组要求严格的时间序，而上游顺序不可靠（主题内置 article type 的
+    // sorter 受页面发现顺序影响，posts 与 coding 文章会交错）。这里按日期
+    // 倒序显式排一份（无日期的视为最旧排最后），分页切片与分组都基于它
+    const sortedItems = computed(() =>
+      [...props.items].sort((a, b) => (b.info.date ?? 0) - (a.info.date ?? 0)),
+    );
+
     const currentArticles = computed(() =>
-      props.items.slice(
+      sortedItems.value.slice(
         (currentPage.value - 1) * articlePerPage.value,
         currentPage.value * articlePerPage.value,
       ),
@@ -117,7 +127,6 @@ export default defineComponent({
         anchor.setAttribute("rel", "noopener noreferrer");
       }
     };
-
 
     // todo 跳新标签的版本
     // 「点击文章 → 新标签页打开」。主题的 ArticleItem 把整张卡片做成了
@@ -186,7 +195,7 @@ export default defineComponent({
               h(Pagination, {
                 current: currentPage.value,
                 perPage: articlePerPage.value,
-                total: props.items.length,
+                total: sortedItems.value.length,
                 onUpdateCurrentPage: updatePage,
               }),
             ]

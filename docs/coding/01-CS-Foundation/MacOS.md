@@ -46,6 +46,7 @@ brew install --cask \
   thor \
   gas-mask \
   typora \
+  caffeine \
   
   input0 \
   licecap \
@@ -104,6 +105,7 @@ npm install picgo -g
     交给 fzf
     ↓
     你交互式筛选
+* caffeine 这种 GUI 还是比 `caffeinate` CLI 命令更方便一点
 
 
 > 以下是我选择装的

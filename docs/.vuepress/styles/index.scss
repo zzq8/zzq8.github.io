@@ -244,6 +244,18 @@ $chip-inks: (
 }
 
 /*
+文章详情页（无侧边栏 + 有目录，no-sidebar has-toc）在 ≥1440 时，主题只给
+右侧目录预留 padding-inline-end: 16rem，左边缘从 0 起排，正文列（视觉主体）
+整体偏在视口中线左边。这里给左侧补上对称的 16rem，让正文对齐视口中线；
+右侧目录继续浮在右预留区（15rem 上限 + 1rem 间距恰好用满 16rem）。
+*/
+@media (min-width: 1440px) {
+  .theme-container.no-sidebar.has-toc .vp-page {
+    padding-inline-start: 16rem;
+  }
+}
+
+/*
 带图片的段落取消两端对齐：「一句说明 + 紧跟一张截图」不空行时图片留在同一 <p>
 里且是 inline，它上面那行不再是段落末行，被 justify 拉伸——中文没有词间空格，
 空隙全摊到字间。只关掉带图段落的两端对齐，纯文字段落保持原样。

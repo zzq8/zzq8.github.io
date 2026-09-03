@@ -61,11 +61,9 @@ export default hopeTheme(
           home: "回到首页",
         },
       },
-      // 博客文章详情页不显示侧边栏（sidebar.ts 里对应 key 已删）：
-      // items 为空时 MainLayout 会连布局一起去掉侧栏
-      "/posts/": {
-        sidebar: false,
-      },
+      // 注意：不要在这里用自定义 locale key（如 "/posts/"）覆盖单语言站点的布局配置——
+      // 主题 locale 数据只按站点配置 locales 的 key 生成，自定义 key 会被静默丢弃。
+      // 文章详情页去侧边栏由 config.ts 的 posts-no-sidebar 插件接管。
     } as never,
 
     // 深色模式：toggle（默认浅色 + 一键切深色），不用 switch 的三态 auto——
@@ -122,9 +120,14 @@ export default hopeTheme(
         article: "/article/",
         // XD 学一下这个，想实现如下效果   捣鼓蛮久，不会构建这个 filter！！！
         // https://theme-hope.vuejs.press/zh/config/plugins/blog.html#plugins-blog-filter
+        // 自定义 filter 会整体替换主题默认规则（article ?? (!home && 有文件路径)），
+        // 故 article 字段需在此显式参与：article: true 任意目录入选，_posts/ 默认
+        // 收录（article: false 可排除），首页除外
         filter: (page) =>
-          page.filePathRelative?.startsWith("_posts/") &&
-          !page.frontmatter.home,
+          page.frontmatter.article === true ||
+          (page.filePathRelative?.startsWith("_posts/") &&
+            page.frontmatter.article !== false &&
+            !page.frontmatter.home),
         // excerpt 默认开启：列表卡片显示正文截取的摘要（观感由 index.scss 的
         // .vp-article-excerpt 摊平 + 三行截断接管）；excerptLength 用默认 300 字符
       },
