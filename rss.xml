@@ -6,12 +6,10 @@
     <link>https://233377.xyz/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 03 Sep 2026 15:36:23 GMT</pubDate>
-    <lastBuildDate>Thu, 03 Sep 2026 15:36:23 GMT</lastBuildDate>
+    <pubDate>Fri, 04 Sep 2026 14:31:12 GMT</pubDate>
+    <lastBuildDate>Fri, 04 Sep 2026 14:31:12 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>Technique</category>
-    <category>Network</category>
     <item>
       <title>资源文件</title>
       <link>https://233377.xyz/resources.html</link>
@@ -86,447 +84,536 @@
 ]]></content:encoded>
     </item>
     <item>
-      <title>个人视角的三种股票投资方向</title>
-      <link>https://233377.xyz/posts/Repost/v2ex-1239075-%E4%B8%89%E7%A7%8D%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E6%96%B9%E5%90%91.html</link>
-      <guid>https://233377.xyz/posts/Repost/v2ex-1239075-%E4%B8%89%E7%A7%8D%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E6%96%B9%E5%90%91.html</guid>
-      <source url="https://233377.xyz/rss.xml">个人视角的三种股票投资方向</source>
-      <description>个人视角的三种股票投资方向 V2EX · 节点：投资 · 作者：NewMoorj · 124 条回复 · 6859+ 次浏览 主楼核心观点 作者将股票投资归纳为三种方向： 第一种：短线交易（追热点） 从新闻、板块热度、信息圈、微博/X 上找龙头。 示例：新闻提到军事行动 → 立刻用 5% 仓位（如 10 万本金买 5000 元）杀入军工板块最热股。 设...</description>
-      <pubDate>Thu, 03 Sep 2026 13:37:55 GMT</pubDate>
+      <title>《Java面试指北》</title>
+      <link>https://233377.xyz/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/</link>
+      <guid>https://233377.xyz/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/</guid>
+      <source url="https://233377.xyz/rss.xml">《Java面试指北》</source>
+      <description>《Java面试指北》 项目开发基础 Java 数据库&amp;缓存 常见框架 分布式&amp;微服务 服务器 必看 大厂 中小厂 外企 大厂内包</description>
+      <pubDate>Fri, 04 Sep 2026 14:27:43 GMT</pubDate>
       <content:encoded><![CDATA[
-<blockquote>
-<p>V2EX · 节点：投资 · 作者：<a href="https://www.v2ex.com/member/NewMoorj" target="_blank" rel="noopener noreferrer">NewMoorj</a> · 124 条回复 · 6859+ 次浏览</p>
-</blockquote>
-<h2>主楼核心观点</h2>
-<p>作者将股票投资归纳为三种方向：</p>
-<h3>第一种：短线交易（追热点）</h3>
+<h2><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E4%BB%8B%E7%BB%8D.html" target="_blank">介绍</a></h2>
+<h2><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E2%AD%90%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html" target="_blank">⭐更新记录</a></h2>
+<h2><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/" target="_blank">面试准备篇（必看）</a></h2>
 <ul>
-<li>从新闻、板块热度、信息圈、微博/X 上找龙头。</li>
-<li>示例：新闻提到军事行动 → 立刻用 5% 仓位（如 10 万本金买 5000 元）杀入军工板块最热股。</li>
-<li>设置 5% 止损、10% 止盈，第二天不管盈亏直接走人。</li>
-<li>本质是"追新闻热点、追资金热点"，与币圈"打狗"同一套打法。</li>
-<li>关键：清晰知道自己在赌博，"不要格局"，完全机械化操作。</li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E2%AD%90%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%87%86%E5%A4%87Java%E9%9D%A2%E8%AF%95%EF%BC%9F.html" target="_blank">⭐如何高效准备Java 面试？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E2%AD%90%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E5%B8%B8%E8%A7%81%E8%AF%8D%E6%B1%87%E6%89%AB%E7%9B%B2%EF%BC%88%E9%9D%A2%E8%AF%95%E5%BF%85%E7%9F%A5%EF%BC%89.html" target="_blank">⭐程序员面试常见词汇扫盲（面试必知）</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E2%AD%90%E7%A8%8B%E5%BA%8F%E5%91%98%E7%AE%80%E5%8E%86%E5%88%B0%E5%BA%95%E8%AF%A5%E6%80%8E%E4%B9%88%E5%86%99%EF%BC%9F.html" target="_blank">⭐程序员简历到底该怎么写？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E2%AD%90%E5%A4%8D%E4%B9%A0%E6%8A%93%E4%B8%8D%E5%88%B0%E9%87%8D%E7%82%B9%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F%E5%A6%82%E4%BD%95%E6%9B%B4%E9%AB%98%E6%95%88%E5%9C%B0%E5%87%86%E5%A4%87%E5%85%AB%E8%82%A1%E6%96%87%EF%BC%9F.html" target="_blank">⭐复习抓不到重点怎么办？如何更高效地准备八股文？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0%E6%BA%90%E7%A0%81%EF%BC%9F%E6%BA%90%E7%A0%81%E8%BF%99%E5%9D%97%E9%9D%A2%E8%AF%95%E4%BC%9A%E6%80%8E%E4%B9%88%E9%97%AE%E5%91%A2%EF%BC%9F%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E6%BA%90%E7%A0%81%EF%BC%9F.html" target="_blank">为什么要学习源码？源码这块面试会怎么问呢？如何阅读源码？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%87%86%E5%A4%87%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%EF%BC%9F.html" target="_blank">如何高效准备算法面试？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87%E5%9B%BD%E4%BC%81%E5%92%8C%E9%93%B6%E8%A1%8C%E7%9A%84%E9%9D%A2%E8%AF%95%EF%BC%9F.html" target="_blank">如何准备国企和银行的面试？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E2%AD%90Java%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89.html" target="_blank">⭐Java面试准备常见问题解答（补充）</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E6%B2%A1%E6%9C%89%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.html" target="_blank">没有项目经验怎么办？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%98%AF%E9%9D%A2%E8%AF%95%E5%AE%98%E8%AE%A4%E4%B8%BA%E6%9C%89%E4%BB%B7%E5%80%BC%E7%9A%84%EF%BC%9F.html" target="_blank">什么样的项目是面试官认为有价值的？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E9%AB%98%E5%B9%B6%E5%8F%91%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%EF%BC%9F.html" target="_blank">如何获得高并发的项目经验？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E4%BC%98%E8%B4%A8Java%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90.html" target="_blank">优质Java 实战项目推荐</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E5%A6%82%E4%BD%95%E4%BB%8B%E7%BB%8D%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86%E6%9B%B4%E5%AE%B9%E6%98%93%E8%8E%B7%E5%BE%97%E9%9D%A2%E8%AF%95%E5%AE%98%E7%9A%84%E9%9D%92%E7%9D%90%EF%BC%9F.html" target="_blank">如何介绍项目经历更容易获得面试官的青睐？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E2%AD%90%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89.html" target="_blank">⭐项目经验常见问题解答（补充）</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E5%8E%BB%E5%A4%96%E5%8C%85%E5%AF%B9%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AE%80%E5%8E%86%E6%9C%89%E5%BD%B1%E5%93%8D%E4%B9%88%EF%BC%9F.html" target="_blank">去外包对自己的简历有影响么？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/Java%E4%BC%98%E8%B4%A8%E9%9D%A2%E8%AF%95%E8%A7%86%E9%A2%91%E6%8E%A8%E8%8D%90.html" target="_blank">Java优质面试视频推荐</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E7%AF%87%EF%BC%88%E5%BF%85%E7%9C%8B%EF%BC%89/%E5%A6%82%E6%9E%9C%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE%E2%80%9C%E4%BD%A0%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%E9%97%AE%E6%88%91%E5%90%97%EF%BC%9F%E2%80%9D%EF%BC%8C%E8%AF%A5%E5%A6%82%E4%BD%95%E5%9B%9E%E7%AD%94%EF%BC%9F.html" target="_blank">如果面试官问“你有什么问题问我吗？”，该如何回答？</a></li>
 </ul>
-<h3>第二种：价值投资（个人玩不了）</h3>
+<h2><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/" target="_blank">技术面试题篇</a></h2>
+<h3>项目开发基础</h3>
 <ul>
-<li>很多人自以为在做价值投资，但作者认为普通人根本不具备条件。</li>
-<li>真正的价值投资起码需要一个不低于 5 人的分析团队每周提供报告。</li>
-<li>机构调研手段远超个人（曾调卫星去数停车场的新车库存）。</li>
-<li>"普通人不要有任何幻想。"</li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E6%96%B9%E6%A1%88%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.html" target="_blank">日志记录方案有哪些？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/%E4%BD%A0%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%8D%95%E6%B5%8B%E6%98%AF%E5%A6%82%E4%BD%95%E5%81%9A%E7%9A%84%EF%BC%9F.html" target="_blank">你的项目单测是如何做的？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/%E4%BD%A0%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%94%A8%E5%88%B0%E4%BA%86Jenkins%EF%BC%8C%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%9F.html" target="_blank">你的项目用到了Jenkins，有什么用？</a></li>
 </ul>
-<h3>第三种：大资金保值需求（作者提倡）</h3>
+<h3><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98/" target="_blank">系统设计&amp;场景题</a></h3>
 <ul>
-<li>各国社保、养老、国家资金不求高收益，只求跑赢通胀、不贬值。</li>
-<li>绝大多数资金挂钩美元；乱世配黄金；标普和纳斯达克是各国必选项。</li>
-<li><strong>美股永恒牛市的底层逻辑</strong>：源源不断的全球资金入场，"大资金无处可去"。</li>
-<li>也是"无脑定投美股不需要技术"的原因。</li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E9%9D%A2%E8%AF%95%EF%BC%9F.html" target="_blank">如何准备系统设计面试？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%EF%BC%9F.html" target="_blank">如何设计一个秒杀系统？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%9F%AD%E9%93%BE%E7%B3%BB%E7%BB%9F%EF%BC%9F.html" target="_blank">如何设计一个短链系统？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%AB%99%E5%86%85%E6%B6%88%E6%81%AF%E7%B3%BB%E7%BB%9F%EF%BC%9F.html" target="_blank">如何设计一个站内消息系统？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AARPC%E6%A1%86%E6%9E%B6%EF%BC%9F.html" target="_blank">如何自己实现一个RPC 框架？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%87%A0%E7%A7%8D%E5%85%B8%E5%9E%8B%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A1%88%E4%BE%8B%EF%BC%88%E6%95%B4%E7%90%86%E8%A1%A5%E5%85%85%EF%BC%89.html" target="_blank">几种典型的系统设计案例（整理补充）</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E6%8E%92%E8%A1%8C%E6%A6%9C%EF%BC%9F.html" target="_blank">如何设计一个排行榜？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98%EF%BC%9F.html" target="_blank">如何解决大文件上传问题？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E7%BB%9F%E8%AE%A1%E7%BD%91%E7%AB%99UV%EF%BC%9F.html" target="_blank">如何统计网站UV？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E5%BE%AE%E5%8D%9AFeed%E6%B5%81_%E4%BF%A1%E6%81%AF%E6%B5%81%E7%B3%BB%E7%BB%9F%EF%BC%9F.html" target="_blank">如何设计微博Feed 流_信息流系统？</a></li>
 </ul>
-<h3>三种"错位"认知（主楼金句）</h3>
-<p>| 你买的 | 你以为 | 实际上 |
+<h3>Java</h3>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/Java/JavaIO%E6%A8%A1%E5%9E%8B%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.html" target="_blank">JavaIO 模型常见面试题总结</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/Java/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.html" target="_blank">Java数据类型常见面试题总结</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/Java/%E6%B3%9B%E5%9E%8B&amp;%E9%80%9A%E9%85%8D%E7%AC%A6%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.html" target="_blank">泛型&amp;通配符常见面试题总结</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/Java/String%E7%B1%BB%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.html" target="_blank">String类常见面试题总结</a></li>
+</ul>
+<h3>数据库&amp;缓存</h3>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%95%B0%E6%8D%AE%E5%BA%93&amp;%E7%BC%93%E5%AD%98/MySQL%E6%97%A5%E5%BF%97%EF%BC%9A%E5%B8%B8%E8%A7%81%E7%9A%84%E6%97%A5%E5%BF%97%E9%83%BD%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%9F.html" target="_blank">MySQL日志：常见的日志都有什么用？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%95%B0%E6%8D%AE%E5%BA%93&amp;%E7%BC%93%E5%AD%98/MySQL%E7%B4%A2%E5%BC%95%EF%BC%9A%E7%B4%A2%E5%BC%95%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8B+%E6%A0%91%EF%BC%9F.html" target="_blank">MySQL索引：索引为什么使用 B+树？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%95%B0%E6%8D%AE%E5%BA%93&amp;%E7%BC%93%E5%AD%98/Caffeine%EF%BC%9ACaffeine%E7%9A%84%E6%80%A7%E8%83%BD%E4%B8%BA%E4%BD%95%E5%A6%82%E6%AD%A4%E4%BC%98%E7%A7%80%EF%BC%9F.html" target="_blank">Caffeine：Caffeine的性能为何如此优秀？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%95%B0%E6%8D%AE%E5%BA%93&amp;%E7%BC%93%E5%AD%98/Redis%E5%9F%BA%E7%A1%80%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98%EF%BC%9F.html" target="_blank">Redis基础：为什么要用分布式缓存？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%95%B0%E6%8D%AE%E5%BA%93&amp;%E7%BC%93%E5%AD%98/Redis%E5%9F%BA%E7%A1%80%EF%BC%9A%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BC%93%E5%AD%98%E6%9B%B4%E6%96%B0%E7%AD%96%E7%95%A5%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D_.html" target="_blank">Redis基础：常见的缓存更新策略有哪几种_</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%95%B0%E6%8D%AE%E5%BA%93&amp;%E7%BC%93%E5%AD%98/Redis%E7%94%9F%E4%BA%A7%E9%97%AE%E9%A2%98%EF%BC%9A%E5%86%85%E5%AD%98%E6%BB%A1%E4%BA%86%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%EF%BC%9F.html" target="_blank">Redis生产问题：内存满了怎么解决？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%95%B0%E6%8D%AE%E5%BA%93&amp;%E7%BC%93%E5%AD%98/Redis%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%EF%BC%9A%E4%B8%BB%E4%BB%8E%E8%8A%82%E7%82%B9%E4%B9%8B%E9%97%B4%E5%A6%82%E4%BD%95%E5%90%8C%E6%AD%A5%E6%95%B0%E6%8D%AE%EF%BC%9F.html" target="_blank">Redis主从复制：主从节点之间如何同步数据？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%95%B0%E6%8D%AE%E5%BA%93&amp;%E7%BC%93%E5%AD%98/RedisSentinel%EF%BC%9A%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%9C%B0%E6%95%85%E9%9A%9C%E8%BD%AC%E7%A7%BB%EF%BC%9F.html" target="_blank">RedisSentinel：如何实现自动化地故障转移？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%95%B0%E6%8D%AE%E5%BA%93&amp;%E7%BC%93%E5%AD%98/RedisCluster%EF%BC%9A%E7%BC%93%E5%AD%98%E7%9A%84%E6%95%B0%E6%8D%AE%E9%87%8F%E5%A4%AA%E5%A4%A7%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F.html" target="_blank">RedisCluster：缓存的数据量太大怎么办？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%95%B0%E6%8D%AE%E5%BA%93&amp;%E7%BC%93%E5%AD%98/Elasticsearch%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.html" target="_blank">Elasticsearch常见面试题总结</a></li>
+</ul>
+<h3>常见框架</h3>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E5%B8%B8%E8%A7%81%E6%A1%86%E6%9E%B6/SpringBoot%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.html" target="_blank">SpringBoot常见面试题总结</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E5%B8%B8%E8%A7%81%E6%A1%86%E6%9E%B6/Netty%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.html" target="_blank">Netty常见面试题总结</a></li>
+</ul>
+<h3>分布式&amp;微服务</h3>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E5%88%86%E5%B8%83%E5%BC%8F&amp;%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0%EF%BC%9F.html" target="_blank">服务治理：为什么需要服务注册与发现？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E5%88%86%E5%B8%83%E5%BC%8F&amp;%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86%EF%BC%9A%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%8B%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86%EF%BC%9F.html" target="_blank">服务治理：分布式下如何进行配置管理？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E5%88%86%E5%B8%83%E5%BC%8F&amp;%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86%EF%BC%9A%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%81%9A%EF%BC%9F.html" target="_blank">服务治理：监控系统如何做？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E5%88%86%E5%B8%83%E5%BC%8F&amp;%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86%EF%BC%9A%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%8B%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86%EF%BC%9F.html" target="_blank">服务治理：分布式下如何进行日志管理？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E5%88%86%E5%B8%83%E5%BC%8F&amp;%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%9F%BA%E7%A1%80%EF%BC%9ASpringCloudAlibaba%E7%BB%84%E4%BB%B6%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.html" target="_blank">微服务基础：SpringCloud Alibaba 组件有哪些？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E5%88%86%E5%B8%83%E5%BC%8F&amp;%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86%EF%BC%9A%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.html" target="_blank">服务治理：分布式事务解决方案有哪些？</a></li>
+</ul>
+<h3><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%AB%98%E5%B9%B6%E5%8F%91/" target="_blank">高并发</a></h3>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%AB%98%E5%B9%B6%E5%8F%91/%E9%AB%98%E5%8F%AF%E7%94%A8%EF%BC%9A%E9%98%B2%E6%AD%A2%E6%8E%A5%E5%8F%A3%E8%A2%AB%E7%9B%97%E5%88%B7_%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%89%E5%85%A8%EF%BC%9F.html" target="_blank">高可用：防止接口被盗刷_如何保证接口的安全？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%AB%98%E5%B9%B6%E5%8F%91/%E9%AB%98%E5%8F%AF%E7%94%A8%EF%BC%9A%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%8E%A5%E5%8F%A3%E5%B9%82%E7%AD%89%E6%80%A7%EF%BC%9F.html" target="_blank">高可用：如何保证接口幂等性？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%AB%98%E5%B9%B6%E5%8F%91/%E9%AB%98%E5%8F%AF%E7%94%A8%EF%BC%9A%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E9%AB%98%E5%8F%AF%E7%94%A8%E7%B3%BB%E7%BB%9F%EF%BC%9F.html" target="_blank">高可用：如何设计一个高可用系统？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%AB%98%E5%B9%B6%E5%8F%91/%E9%AB%98%E6%80%A7%E8%83%BD%EF%BC%9A%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%9A%84%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.html" target="_blank">高性能：负载均衡的常见算法有哪些？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%AB%98%E5%B9%B6%E5%8F%91/%E9%AB%98%E6%80%A7%E8%83%BD%EF%BC%9A%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF.html" target="_blank">高性能：池化技术的应用场景</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%AB%98%E5%B9%B6%E5%8F%91/%E9%AB%98%E6%80%A7%E8%83%BD%EF%BC%9A%E9%9B%B6%E6%8B%B7%E8%B4%9D%E4%B8%BA%E4%BB%80%E4%B9%88%E8%83%BD%E6%8F%90%E5%8D%87%E6%80%A7%E8%83%BD%EF%BC%9F.html" target="_blank">高性能：零拷贝为什么能提升性能？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%AB%98%E5%B9%B6%E5%8F%91/%E9%AB%98%E6%80%A7%E8%83%BD%EF%BC%9A%E6%9C%89%E5%93%AA%E4%BA%9B%E5%B8%B8%E8%A7%81%E7%9A%84SQL%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5%EF%BC%9F.html" target="_blank">高性能：有哪些常见的SQL 优化手段？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%AB%98%E5%B9%B6%E5%8F%91/%E9%AB%98%E5%8F%AF%E7%94%A8%EF%BC%9A%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%B8%AD%E7%9A%84%E9%9B%AA%E5%B4%A9%E9%97%AE%E9%A2%98%EF%BC%9F.html" target="_blank">高可用：如何避免微服务中的雪崩问题？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%AB%98%E5%B9%B6%E5%8F%91/%E9%AB%98%E5%8F%AF%E7%94%A8%EF%BC%9A%E9%99%8D%E7%BA%A7%E5%92%8C%E7%86%94%E6%96%AD%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.html" target="_blank">高可用：降级和熔断有什么区别？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E9%AB%98%E5%B9%B6%E5%8F%91/%E9%AB%98%E5%8F%AF%E7%94%A8%EF%BC%9A%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83%E5%92%8C%E5%9B%9E%E6%BB%9A%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%9F.html" target="_blank">高可用：灰度发布和回滚有什么用？</a></li>
+</ul>
+<h3>服务器</h3>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%9C%8D%E5%8A%A1%E5%99%A8/Nginx%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.html" target="_blank">Nginx常见面试题总结</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AF%87/%E6%9C%8D%E5%8A%A1%E5%99%A8/Tomcat%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93.html" target="_blank">Tomcat常见面试题总结</a></li>
+</ul>
+<h2><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B%E7%AF%87/" target="_blank">技术面试题自测篇</a></h2>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B%E7%AF%87/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B.html" target="_blank">计算机网络常见面试题自测</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B%E7%AF%87/Java%E5%9F%BA%E7%A1%80%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B.html" target="_blank">Java基础常见面试题自测</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B%E7%AF%87/Java%E9%9B%86%E5%90%88%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B.html" target="_blank">Java集合常见面试题自测</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B%E7%AF%87/Java%E5%B9%B6%E5%8F%91%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B.html" target="_blank">Java并发常见面试题自测</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B%E7%AF%87/JVM%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B.html" target="_blank">JVM常见面试题自测</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B%E7%AF%87/MySQL%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B.html" target="_blank">MySQL常见面试题自测</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B%E7%AF%87/Redis%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B.html" target="_blank">Redis常见面试题自测</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B%E7%AF%87/Spring&amp;SpringBoot%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E8%87%AA%E6%B5%8B.html" target="_blank">Spring&amp;SpringBoot常见面试题自测</a></li>
+</ul>
+<h2><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/" target="_blank">面经篇</a></h2>
+<h3>必看</h3>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%BF%85%E7%9C%8B/%E5%A4%A7%E5%8E%82%E5%9B%9B%E5%B9%B4%EF%BC%8C2024%E9%98%BF%E9%87%8C%E3%80%81%E5%AD%97%E8%8A%82%E3%80%81%E8%9A%82%E8%9A%81%E3%80%81%E5%B0%8F%E7%BA%A2%E4%B9%A6%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86%E5%88%86%E4%BA%AB.html" target="_blank">大厂四年，2024阿里、字节、蚂蚁、小红书面试经历分享</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%BF%85%E7%9C%8B/%E5%9B%9B%E5%B9%B4%E5%8D%8A%E7%BB%8F%E9%AA%8C%E7%A4%BE%E6%8B%9B%EF%BC%8C%E8%85%BE%E8%AE%AF%E3%80%81%E6%BB%B4%E6%BB%B4%E3%80%81%E5%AD%97%E8%8A%82%E3%80%81%E4%BA%AC%E4%B8%9C%E3%80%81%E5%BF%AB%E6%89%8B%E3%80%81%E7%BE%8E%E5%9B%A2%E3%80%81%E8%9A%82%E8%9A%81%E7%AD%89%E5%A4%A7%E4%B8%AD%E5%8E%82%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html" target="_blank">四年半经验社招，腾讯、滴滴、字节、京东、快手、美团、蚂蚁等大中厂面试总结</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%BF%85%E7%9C%8B/%E6%8B%BF%E5%88%B0%E8%85%BE%E8%AE%AF%E3%80%81%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E7%AD%89%E5%A4%A7%E5%8E%82%E5%90%8E%E7%AB%AF%E5%AE%9E%E4%B9%A0offer%E4%BA%86%EF%BC%81.html" target="_blank">拿到腾讯、字节跳动等大厂后端实习offer了！</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%BF%85%E7%9C%8B/%E5%8F%8C%E9%9D%9E%E6%9C%AC%E7%A7%91%E3%80%810%E5%AE%9E%E4%B9%A0%E3%80%810%E6%AF%94%E8%B5%9B%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86%E3%80%823%E4%B8%AA%E6%9C%88%E4%B8%8A%E5%B2%B8%E7%99%BE%E5%BA%A6.html" target="_blank">双非本科、0实习、0比赛项目经历。3个月上岸百度</a></li>
+</ul>
+<h3>大厂</h3>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%9B%9B%E5%B9%B4%E7%BB%8F%E9%AA%8C%E7%A4%BE%E6%8B%9B%E9%9D%A2%E8%AF%95%EF%BC%8C%E8%BF%87%E4%BA%86%EF%BC%81.html" target="_blank">小红书四年经验社招面试，过了！</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E2%AD%90%EF%B8%8F%E5%BF%AB%E6%89%8B%E6%A0%A1%E6%8B%9B%E9%9D%A2%E8%AF%95%EF%BC%8C%E9%9A%BE%E5%BA%A6%E4%B8%8D%E5%A4%A7%EF%BC%8C%E4%BD%86%E4%BD%93%E9%AA%8C%E6%84%9F%E5%BE%88%E5%B7%AE%EF%BC%81.html" target="_blank">⭐️快手校招面试，难度不大，但体验感很差！</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E2%AD%90%EF%B8%8F%E5%AD%97%E8%8A%82%E6%8A%96%E9%9F%B3%E7%94%B5%E5%95%86%E4%B8%80%E9%9D%A2%EF%BC%8C%E8%A2%AB%E8%99%90%E7%9A%84%E5%BE%88%E6%83%A8%EF%BC%81.html" target="_blank">⭐️字节抖音电商一面，被虐的很惨！</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E2%AD%90%EF%B8%8F%E7%BE%8E%E5%9B%A2%E9%9D%A2%E8%AF%95%EF%BC%8C%E6%8B%B7%E6%89%93%E4%BA%86%E4%B8%A4%E4%B8%AA%E5%A4%9A%E5%B0%8F%E6%97%B6.html" target="_blank">⭐️美团面试，拷打了两个多小时</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E4%BA%AC%E4%B8%9C%E4%B8%A4%E5%B9%B4%E7%BB%8F%E9%AA%8C%E7%A4%BE%E6%8B%9B%E9%9D%A2%E7%BB%8F.html" target="_blank">京东两年经验社招面经</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E7%A1%952%EF%BC%8C2024%E6%B7%98%E5%A4%A9%E3%80%81%E5%AD%97%E8%8A%82%E3%80%81%E5%BF%AB%E6%89%8B%E3%80%81%E6%BB%B4%E6%BB%B4%E9%9D%A2%E7%BB%8F%E5%88%86%E4%BA%AB.html" target="_blank">硕2，2024淘天、字节、快手、滴滴面经分享</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E4%B8%8A%E6%B5%B7%E4%B8%89%E5%B9%B4%E5%8D%8A%E7%A4%BE%E6%8B%9B%EF%BC%8CPDD%E3%80%81%E5%AD%97%E8%8A%82%E5%8F%8A%E8%AF%81%E5%88%B8%E9%9D%A2%E7%BB%8F.html" target="_blank">上海三年半社招，PDD、字节及证券面经</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/2%E5%B9%B4%E7%BB%8F%E9%AA%8C%E5%A4%A7%E5%8E%82%EF%BC%88%E7%BD%91%E6%98%93%E3%80%81%E5%AD%97%E8%8A%82%E3%80%81B%E7%AB%99%E3%80%81%E9%98%BF%E9%87%8C...%EF%BC%89%E9%9D%A2%E7%BB%8F%E5%88%86%E4%BA%AB.html" target="_blank">2年经验大厂（网易、字节、B站、阿里...）面经分享</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/Java%E5%90%8E%E7%AB%AF%E7%A4%BE%E6%8B%9B%E4%B8%A4%E5%B9%B4%E5%8D%8A%EF%BC%8C%E6%8B%BF%E4%BA%8610%E5%A4%9A%E4%B8%AAoffer%EF%BC%81.html" target="_blank">Java后端社招两年半，拿了 10 多个 offer！</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/NLP%E8%BD%AC%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%EF%BC%8C%E9%A1%BA%E5%88%A9%E6%8B%BF%E5%88%B0%E5%AD%97%E8%8A%82%E5%AE%9E%E4%B9%A0offer%EF%BC%81%EF%BC%81.html" target="_blank">NLP转后端开发，顺利拿到字节实习 offer！！</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8Java%E5%90%8E%E7%AB%AF%E5%AE%9E%E4%B9%A0%E9%9D%A2%E7%BB%8F%EF%BC%88%E9%99%84%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88%EF%BC%89.html" target="_blank">字节跳动Java 后端实习面经（附参考答案）</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E7%BE%8E%E5%9B%A2%E3%80%81%E5%8D%8E%E4%B8%BA%E3%80%81%E5%AD%97%E8%8A%82%EF%BC%88%E5%B7%B2%E8%8E%B7offer%EF%BC%89%E6%98%A5%E6%8B%9B%E9%9D%A2%E7%BB%8F%EF%BC%88%E9%99%84%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88%EF%BC%89.html" target="_blank">美团、华为、字节（已获offer）春招面经（附参考答案）</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E4%BA%94%E9%9D%A2%E9%98%BF%E9%87%8C%EF%BC%8C%E7%BB%88%E8%8E%B7offer.html" target="_blank">五面阿里，终获offer!</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E4%BB%8E%E8%80%83%E7%A0%94%E5%A4%B1%E8%B4%A5%E5%88%B0%E6%94%B6%E8%8E%B7%E5%88%B0%E8%87%AA%E5%B7%B1%E6%BB%A1%E6%84%8F%E7%9A%84Offer.html" target="_blank">从考研失败到收获到自己满意的Offer</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E5%8D%8E%E4%B8%BA_%E5%AD%97%E8%8A%82_%E8%85%BE%E8%AE%AF_%E4%BA%AC%E4%B8%9C_%E7%BD%91%E6%98%93_%E6%BB%B4%E6%BB%B4%E9%9D%A2%E7%BB%8F%E5%88%86%E4%BA%AB%EF%BC%886%E4%B8%AAoffer%EF%BC%89.html" target="_blank">华为<em>字节</em>腾讯<em>京东</em>网易_滴滴面经分享（6个offer）</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E8%99%BE%E7%9A%AE%EF%BC%8C%E7%BD%91%E6%98%93%E4%BA%91%EF%BC%8C%E4%BA%AC%E4%B8%9C%EF%BC%8C%E9%98%BF%E9%87%8C%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F%EF%BC%81%E9%99%84%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88.html" target="_blank">虾皮，网易云，京东，阿里校招面经！附参考答案</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/2%E5%B9%B4%E7%BB%8F%E9%AA%8C%EF%BC%8C2021%E9%98%BF%E9%87%8C%E3%80%81%E5%A4%B4%E6%9D%A1%E3%80%81%E7%BE%8E%E5%9B%A2%EF%BC%8C%E6%BB%B4%E6%BB%B4%EF%BC%8C%E4%BA%AC%E4%B8%9C%E9%9D%A2%E7%BB%8F.html" target="_blank">2年经验，2021阿里、头条、美团，滴滴，京东面经</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82/%E2%AD%90%EF%B8%8F%E5%B0%8F%E7%BA%A2%E4%B9%A6%E6%A0%A1%E6%8B%9B%E9%9D%A2%E8%AF%95%EF%BC%8C%E6%9C%89%E7%82%B9%E9%9A%BE%E5%BA%A6%EF%BC%81.html" target="_blank">⭐️小红书校招面试，有点难度！</a></li>
+</ul>
+<h3>中小厂</h3>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E4%B8%AD%E5%B0%8F%E5%8E%82/%E2%AD%90%EF%B8%8F%E7%A6%BE%E8%B5%9B%E7%A7%91%E6%8A%80%E6%A0%A1%E6%8B%9B%E9%9D%A2%E8%AF%95%EF%BC%8C%E5%B0%8F%E8%80%8C%E7%BE%8E%E7%9A%84%E4%B8%AD%E5%B0%8F%E5%8E%82%EF%BC%81.html" target="_blank">⭐️禾赛科技校招面试，小而美的中小厂！</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E4%B8%AD%E5%B0%8F%E5%8E%82/%E2%AD%90%EF%B8%8F%E5%B0%8F%E7%B1%B3Java%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F%EF%BC%8C%E5%B7%B2OC.html" target="_blank">⭐️小米Java 校招面经，已OC</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E4%B8%AD%E5%B0%8F%E5%8E%82/%E2%AD%90%EF%B8%8Fvivo%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F%EF%BC%8C%E5%BE%88%E7%AE%80%E5%8D%95.html" target="_blank">⭐️vivo校招面经，很简单</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E4%B8%AD%E5%B0%8F%E5%8E%82/%E4%B8%9C%E6%96%B9%E8%B4%A2%E5%AF%8C%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E9%9D%A2%E7%BB%8F%EF%BC%8C%E6%9C%89%E7%82%B9%E9%9A%BE%E5%91%80%EF%BC%81.html" target="_blank">东方财富暑期实习面经，有点难呀！</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E4%B8%AD%E5%B0%8F%E5%8E%82/%E7%93%9C%E5%AD%90%E4%BA%8C%E6%89%8B%E8%BD%A6%E3%80%81%E4%BA%94%E5%85%AB%E5%90%8C%E5%9F%8E%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F.html" target="_blank">瓜子二手车、五八同城校招面经</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E4%B8%AD%E5%B0%8F%E5%8E%82/%E7%A7%8B%E6%8B%9B%E6%8B%BF%E4%B8%8B%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9ESSP%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB.html" target="_blank">秋招拿下科大讯飞SSP 经验分享</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E4%B8%AD%E5%B0%8F%E5%8E%82/%E6%90%BA%E7%A8%8B%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F%EF%BC%88%E9%99%84%E7%AD%94%E6%A1%88%EF%BC%89%EF%BC%8C%E5%B7%B2%E8%8E%B7offer.html" target="_blank">携程校招面经（附答案），已获offer!</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E4%B8%AD%E5%B0%8F%E5%8E%82/%E5%8F%8C%E9%9D%9E%E6%9C%AC%E7%A7%8B%E6%8B%9B%E6%80%BB%E7%BB%93%E4%B8%8E%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B%EF%BC%8C%E4%B8%8A%E5%B2%B8OPPO.html" target="_blank">双非本秋招总结与心路历程，上岸OPPO</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E4%B8%AD%E5%B0%8F%E5%8E%82/%E6%AD%A5%E6%AD%A5%E9%AB%98Java%E5%90%8E%E7%AB%AF%E6%A0%A1%E6%8B%9B%E5%9B%9B%E9%9D%A2.html" target="_blank">步步高Java 后端校招四面</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E4%B8%AD%E5%B0%8F%E5%8E%82/%E9%87%91%E8%9D%B6Java%E5%90%8E%E7%AB%AF%E6%A0%A1%E6%8B%9B%E4%B8%89%E9%9D%A2%E9%9D%A2%E7%BB%8F%EF%BC%88%E5%B7%B2OC%EF%BC%8C%E9%99%84%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88%EF%BC%89.html" target="_blank">金蝶Java 后端校招三面面经（已OC，附参考答案）</a></li>
+</ul>
+<h3>外企</h3>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%96%E4%BC%81/%E2%AD%90%EF%B8%8FZOOM%E6%A0%A1%E6%8B%9B%E9%9D%A2%E8%AF%95%EF%BC%8C%E8%A2%AB%E6%8B%B7%E6%89%93%E4%BA%86%EF%BC%81.html" target="_blank">⭐️ZOOM校招面试，被拷打了！</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%96%E4%BC%81/%E8%99%BE%E7%9A%AE%E6%A0%A1%E6%8B%9B%E9%9D%A2%E8%AF%95%EF%BC%8C%E9%80%9F%E9%80%9A%EF%BC%81.html" target="_blank">虾皮校招面试，速通！</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%96%E4%BC%81/%E5%BE%AE%E7%AD%96%E7%95%A5%E6%A0%A1%E6%8B%9B%E9%9D%A2%E8%AF%95%EF%BC%8C%E9%A1%B9%E7%9B%AE%E6%8B%B7%E6%89%93%E7%94%A8%E8%8B%B1%E6%96%87.html" target="_blank">微策略校招面试，项目拷打用英文</a></li>
+</ul>
+<h3>大厂内包</h3>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82%E5%86%85%E5%8C%85/%E5%8D%8E%E4%B8%BAOD%E6%A0%A1%E6%8B%9B%E9%9D%A2%E7%BB%8F%EF%BC%8C%E9%97%AE%E4%BA%86%E8%B4%BC%E5%A4%9A%EF%BC%81.html" target="_blank">华为OD 校招面经，问了贼多！</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82%E5%86%85%E5%8C%85/%E6%95%B0%E5%AD%97%E9%A9%AC%E5%8A%9B%EF%BC%88%E8%9A%82%E8%9A%81%E5%86%85%E5%8C%85%EF%BC%89Java%E9%9D%A2%E7%BB%8F%EF%BC%8C%E5%90%AB%E7%AD%94%E6%A1%88%E5%A4%8D%E7%9B%98.html" target="_blank">数字马力（蚂蚁内包）Java面经，含答案复盘</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E9%9D%A2%E7%BB%8F%E7%AF%87/%E5%A4%A7%E5%8E%82%E5%86%85%E5%8C%85/%E8%85%BE%E8%AE%AF%E4%BA%91%E6%99%BA%EF%BC%88%E6%AD%A6%E6%B1%89%EF%BC%89%E9%9D%A2%E7%BB%8F%EF%BC%88%E9%99%84%E7%AD%94%E6%A1%88%EF%BC%89%EF%BC%8C%E5%B7%B2%E8%8E%B7offer.html" target="_blank">腾讯云智（武汉）面经（附答案），已获offer!</a></li>
+</ul>
+<h2><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5%E7%AF%87/" target="_blank">练级攻略篇</a></h2>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5%E7%AF%87/%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%90%88%E6%A0%BC%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%EF%BC%9F.html" target="_blank">如何成为一个合格的程序员？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5%E7%AF%87/%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B%EF%BC%9F.html" target="_blank">如何提高编程能力？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5%E7%AF%87/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%E4%B8%80%E4%B8%AA%E6%96%B0%E9%A1%B9%E7%9B%AE%EF%BC%9F.html" target="_blank">如何快速上手一个新项目？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5%E7%AF%87/%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E5%9C%B0%E6%8F%90%E9%AB%98%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87%EF%BC%9F.html" target="_blank">如何有效地提高工作效率？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5%E7%AF%87/%E5%A6%82%E4%BD%95%E6%9B%B4%E9%AB%98%E6%95%88%E5%9C%B0%E8%87%AA%E5%AD%A6%E7%BC%96%E7%A8%8B%EF%BC%9F.html" target="_blank">如何更高效地自学编程？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5%E7%AF%87/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E6%96%B0%E6%8A%80%E6%9C%AF%EF%BC%9F.html" target="_blank">如何快速学习新技术？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5%E7%AF%87/%E5%A4%A7%E5%8E%82%E6%8B%9B%E8%81%98%E6%9B%B4%E7%9C%8B%E9%87%8D%E4%BB%80%E4%B9%88%E8%83%BD%E5%8A%9B%EF%BC%9F.html" target="_blank">大厂招聘更看重什么能力？</a></li>
+</ul>
+<h2><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E5%B7%A5%E4%BD%9C%E7%AF%87/" target="_blank">工作篇</a></h2>
+<ul>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E5%B7%A5%E4%BD%9C%E7%AF%87/%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E8%81%8C%E4%B8%9A%E6%96%B9%E5%90%91%EF%BC%9F.html" target="_blank">如何选择职业方向？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E5%B7%A5%E4%BD%9C%E7%AF%87/%E6%96%B0%E5%85%A5%E8%81%8C%E4%B8%80%E5%AE%B6%E5%85%AC%E5%8F%B8%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E5%B7%A5%E4%BD%9C%E7%8A%B6%E6%80%81%EF%BC%9F.html" target="_blank">新入职一家公司如何快速进入工作状态？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E5%B7%A5%E4%BD%9C%E7%AF%87/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BB%A9%E6%95%88%E8%80%83%E6%A0%B8%E4%B8%AD%E8%84%B1%E9%A2%96%E8%80%8C%E5%87%BA%EF%BC%9F.html" target="_blank">如何在绩效考核中脱颖而出？</a></li>
+<li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E5%B7%A5%E4%BD%9C%E7%AF%87/%E5%85%AC%E5%8F%B8%E8%83%8C%E8%B0%83%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E4%BB%80%E4%B9%88%EF%BC%9F.html" target="_blank">公司背调需要注意什么？</a></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>⭐更新记录</title>
+      <link>https://233377.xyz/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E2%AD%90%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html</link>
+      <guid>https://233377.xyz/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E2%AD%90%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html</guid>
+      <source url="https://233377.xyz/rss.xml">⭐更新记录</source>
+      <description>⭐更新记录 下面这个表格整理了《Java面试指北》近期新增/重新完善的部分较为重要的文章（每一篇都强烈推荐阅读！！）： 更新: 2025-12-24 15:31:19 原文: https://www.yuque.com/snailclimb/mf2z3k/hvh25b8qac9umuh8</description>
+      <pubDate>Fri, 04 Sep 2026 14:27:43 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>下面这个表格整理了《Java面试指北》近期新增/重新完善的部分较为重要的文章（每一篇都强烈推荐阅读！！）：</p>
+<p>| 文章传送门 | 新增/完善日期 |
 |</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>IOS 位置修改</title>
-      <link>https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html</link>
-      <guid>https://233377.xyz/posts/XD/IOS_%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9.html</guid>
-      <source url="https://233377.xyz/rss.xml">IOS 位置修改</source>
-      <description>IOS 位置修改 Wireless Location（通常认为是 Wi-Fi / 基站网络定位） 教程: https://github.com/Yu9191/wloc/issues/39 额外补充: 注意也可用自己的配置这里导入模块就好 ✨ 自己第一次捣鼓很久, 发现问题是漏了: 设置 → 通用 → 关于本机 → 证书信任设置，打开刚生成证书的完全信任...</description>
-      <category>Technique</category>
-      <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2>IOS 位置修改</h2>
-<blockquote>
-<p>Wireless Location（通常认为是 Wi-Fi / 基站网络定位）</p>
-</blockquote>
-<p>教程: https://github.com/Yu9191/wloc/issues/39</p>
-<p>额外补充: 注意也可用自己的配置这里导入模块就好</p>
-<p>✨ 自己第一次捣鼓很久, 发现问题是漏了:
-<code> 设置 → 通用 → 关于本机 → 证书信任设置，打开刚生成证书的完全信任</code></p>
-<p>总结: 导入模块, 配置好 HTTPS 解密 (1.里面配好两个域名  2.配置好证书), 可以使用了 !!</p>
-<ol>
-<li>模块:</li>
-</ol>
-<p><strong>Shadowrocket(小火箭):</strong> https://raw.githubusercontent.com/Yu9191/wloc/refs/heads/main/modules/wloc.module</p>
-<ol start="2">
-<li>快捷指令:</li>
-</ol>
+      <title>介绍</title>
+      <link>https://233377.xyz/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E4%BB%8B%E7%BB%8D.html</link>
+      <guid>https://233377.xyz/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E4%BB%8B%E7%BB%8D.html</guid>
+      <source url="https://233377.xyz/rss.xml">介绍</source>
+      <description>介绍 《Java 面试指北》 是我的知识星球的一个内部小册，和 JavaGuide 开源版的内容互补。相比于开源版本来说，《Java 面试指北》添加了下面这些内容（不仅仅是这些内容）： 17+ 篇文章手把手教你如何准备面试，50+ 准备面试过程中的常见问题详细解读，让你更高效地准备 Java 面试。 更全面的八股文面试题（系统设计、场景题、常见框架、分...</description>
+      <pubDate>Fri, 04 Sep 2026 14:27:43 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p><strong>《Java 面试指北》</strong> 是我的<a href="https://javaguide.cn/about-the-author/zhishixingqiu-two-years.html" target="_blank" rel="noopener noreferrer">知识星球</a>的一个内部小册，和 <a href="https://javaguide.cn/" target="_blank" rel="noopener noreferrer">JavaGuide 开源版</a>的内容互补。相比于开源版本来说，《Java 面试指北》添加了下面这些内容（不仅仅是这些内容）：</p>
 <ul>
-<li><strong>wloc 设置地理位置</strong>：https://www.icloud.com/shortcuts/a82717d8fdad4e6280866fcf911173f7</li>
-<li><strong>wloc 清理恢复位置</strong>：https://www.icloud.com/shortcuts/f42632d406504f24a2cd163af4fe012f</li>
+<li>17+ 篇文章手把手教你如何准备面试，50+ 准备面试过程中的常见问题详细解读，让你更高效地准备 Java 面试。</li>
+<li>更全面的八股文面试题（系统设计、场景题、常见框架、分布式&amp;微服务、高并发 ……）。</li>
+<li>优质面经精选（相比于牛客网或者其他网站的面经，《Java 面试指北》中整理的面经质量更高，并且，我会提供优质的参考资料）。</li>
+<li>技术面试题自测（高效准备技术八股文的技巧之一在于多多自测，查漏补缺）。</li>
+<li>练级攻略（有助于个人成长的经验分享）。</li>
 </ul>
-<p>可有可无</p>
-<p>https://wloc-pages.pages.dev/</p>
+<p>《Java 面试指北》 会根据每一年的面试情况对内容进行更新完善，保证内容质量的时效性。并且，只需要加入<a href="https://javaguide.cn/about-the-author/zhishixingqiu-two-years.html" target="_blank" rel="noopener noreferrer">知识星球</a>一次，即可永久获取《Java 面试指北》的访问权限，持续同步更新完善。</p>
+<h2>内容概览</h2>
+<figure><figcaption>1721032987434-f5c2b707-57f8-4f85-8e23-04dccddabbb3.png</figcaption></figure>
+<h3>面试准备篇</h3>
+****<figure><figcaption>1721032987634-fe610ef4-3cf8-4cec-9421-7094f90880d3.png</figcaption></figure>
+<figure><figcaption>1721032987236-231dfbd1-eb29-4e77-982c-4c200f827bd8.png</figcaption></figure>
+<h3>技术面试题篇</h3>
+<p><strong></strong></p>
+<figure><figcaption>1721032987356-b0281c82-cd47-4daa-8284-ec7244745a44.png</figcaption></figure>
+<h3>面经篇</h3>
+****<p><strong></strong></p>
+<figure><figcaption>1721032987695-731e5f42-2e3c-4edb-afe1-94c1bdc0c9d6.png</figcaption></figure>
+[](https://javaguide.cn/about-the-author/zhishixingqiu-two-years.html)<figure><figcaption>1721032988124-57d5abc1-0a44-413c-a35c-14d398b0aa1b.png</figcaption></figure>
+<h3>技术面试题自测篇</h3>
+****<figure><figcaption>1721032988399-22ecf259-be7f-4fba-9f3e-47133633354e.png</figcaption></figure>
+<h3>练级攻略篇</h3>
+<p><strong></strong></p>
+<figure><figcaption>1721032988234-ccd9c9c6-82e9-4ab0-9ff2-03e54153b47d.png</figcaption></figure>
+<h3>工作篇</h3>
+<p><strong></strong></p>
+<figure><figcaption>1721032988627-87a0cad2-5fcb-4742-a8ca-15509db68c3e.png</figcaption></figure>
+<blockquote>
+<p>更新: 2024-07-15 16:46:18<br>
+原文: <a href="https://www.yuque.com/snailclimb/mf2z3k/rq5rzo" target="_blank" rel="noopener noreferrer">https://www.yuque.com/snailclimb/mf2z3k/rq5rzo</a></p>
+</blockquote>
 ]]></content:encoded>
     </item>
     <item>
-      <title>Merlin</title>
-      <link>https://233377.xyz/posts/Chitchat/Merlin.html</link>
-      <guid>https://233377.xyz/posts/Chitchat/Merlin.html</guid>
-      <source url="https://233377.xyz/rss.xml">Merlin</source>
-      <description>Merlin 新整了个 RT-AX88U 华硕路由器, 不能浪费 梅林固件 Clash light NAS --&amp;gt; 需要 NTFS 格式, exFat 这个型号不支持 教程 Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file 经历 clash 开了, 但是还是科学上网不了 这个卡点费...</description>
-      <category>Network</category>
-      <pubDate>Tue, 09 Sep 2025 23:07:53 GMT</pubDate>
+      <title>《后端面试高频系统设计&amp;场景题》</title>
+      <link>https://233377.xyz/《后端面试高频系统设计&amp;场景题》/</link>
+      <guid>https://233377.xyz/《后端面试高频系统设计&amp;场景题》/</guid>
+      <source url="https://233377.xyz/rss.xml">《后端面试高频系统设计&amp;场景题》</source>
+      <description>《后端面试高频系统设计&amp;场景题》 经典系统设计案例 高频场景题 认证安全与风控 大数据量 并发控制与分布式一致性</description>
+      <pubDate>Fri, 04 Sep 2026 14:27:43 GMT</pubDate>
       <content:encoded><![CDATA[
-<blockquote>
-<p>新整了个 <strong>RT-AX88U</strong> 华硕路由器, 不能浪费</p>
+<h2><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E4%BB%8B%E7%BB%8D.html" target="_blank">介绍</a></h2>
+<h2><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95%E2%AD%90.html" target="_blank">更新记录⭐</a></h2>
+<h2>经典系统设计案例</h2>
 <ul>
-<li>梅林固件</li>
-<li>Clash</li>
-<li>light NAS --&gt; 需要 NTFS 格式, exFat 这个型号不支持</li>
-<li><s>memory swap</s></li>
-<li><s>docker</s></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E7%BB%8F%E5%85%B8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A1%88%E4%BE%8B/%E2%AD%90%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%9F%AD%E9%93%BE%E7%B3%BB%E7%BB%9F%EF%BC%9F.html" target="_blank">⭐如何设计一个短链系统？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E7%BB%8F%E5%85%B8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A1%88%E4%BE%8B/%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AARPC%E6%A1%86%E6%9E%B6%EF%BC%9F.html" target="_blank">如何自己实现一个RPC 框架？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E7%BB%8F%E5%85%B8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A1%88%E4%BE%8B/%E2%AD%90%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%8A%A8%E6%80%81%E7%BA%BF%E7%A8%8B%E6%B1%A0%EF%BC%9F.html" target="_blank">⭐如何设计一个动态线程池？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E7%BB%8F%E5%85%B8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A1%88%E4%BE%8B/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%AB%99%E5%86%85%E6%B6%88%E6%81%AF%E7%B3%BB%E7%BB%9F%EF%BC%9F.html" target="_blank">如何设计一个站内消息系统？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E7%BB%8F%E5%85%B8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A1%88%E4%BE%8B/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E5%BE%AE%E5%8D%9AFeed%E6%B5%81_%E4%BF%A1%E6%81%AF%E6%B5%81%E7%B3%BB%E7%BB%9F%EF%BC%9F.html" target="_blank">如何设计微博Feed 流_信息流系统？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E7%BB%8F%E5%85%B8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A1%88%E4%BE%8B/%E5%87%A0%E7%A7%8D%E5%85%B8%E5%9E%8B%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A1%88%E4%BE%8B%EF%BC%88%E6%95%B4%E7%90%86%E8%A1%A5%E5%85%85%EF%BC%89.html" target="_blank">几种典型的系统设计案例（整理补充）</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E7%BB%8F%E5%85%B8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A1%88%E4%BE%8B/%E2%AD%90%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F%EF%BC%9F.html" target="_blank">⭐如何设计一个秒杀系统？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E7%BB%8F%E5%85%B8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A1%88%E4%BE%8B/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E6%8E%92%E8%A1%8C%E6%A6%9C%EF%BC%9F.html" target="_blank">如何设计一个排行榜？</a></li>
 </ul>
-</blockquote>
-<h2>教程</h2>
-<p>Guide aircle: https://github.com/kjfx/lyq?tab=readme-ov-file</p>
-<h2>经历</h2>
-<blockquote>
-<p>clash 开了, 但是还是科学上网不了</p>
-</blockquote>
-<p>这个卡点费劲</p>
-<p>因为 DNS 污染了, 我就用 dire-dns 普通的模式解决</p>
-<p>这个需要钻研</p>
-<blockquote>
-<p>不要急, 重启能解决 90% 的问题 不行就删了重装</p>
-</blockquote>
-<p>整完上面一套想换地区到 澳大利亚 听说速度会快 (功率大, 中国这方面懂的 因为人多都是大功率不好), 晚上一换结果 DNS 好像出问题了</p>
-<p>心急吃不了热豆腐, 拿手机不好搞</p>
-<p>第二天晚上电脑重启了 clash 就一切又都好了</p>
-<p>有一天又碰到 clash 死活启动不了 (报错也不好排查), 删了重装就可以了</p>
+<h2>高频场景题</h2>
+<ul>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E9%AB%98%E9%A2%91%E5%9C%BA%E6%99%AF%E9%A2%98/%E2%AD%90%E8%AE%A2%E5%8D%95%E8%B6%85%E6%97%B6%E8%87%AA%E5%8A%A8%E5%8F%96%E6%B6%88%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%EF%BC%9F.html" target="_blank">⭐订单超时自动取消如何实现？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E9%AB%98%E9%A2%91%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E5%9F%BA%E4%BA%8ERedis%E5%AE%9E%E7%8E%B0%E5%BB%B6%E6%97%B6%E4%BB%BB%E5%8A%A1%EF%BC%9F.html" target="_blank">如何基于Redis 实现延时任务？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E9%AB%98%E9%A2%91%E5%9C%BA%E6%99%AF%E9%A2%98/%E2%AD%90%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98%EF%BC%9F.html" target="_blank">⭐如何解决大文件上传问题？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E9%AB%98%E9%A2%91%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0IP%E5%BD%92%E5%B1%9E%E5%9C%B0%E5%8A%9F%E8%83%BD%EF%BC%9F.html" target="_blank">如何实现IP归属地功能？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E9%AB%98%E9%A2%91%E5%9C%BA%E6%99%AF%E9%A2%98/%E5%A6%82%E4%BD%95%E7%BB%9F%E8%AE%A1%E7%BD%91%E7%AB%99UV%EF%BC%9F.html" target="_blank">如何统计网站UV？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E9%AB%98%E9%A2%91%E5%9C%BA%E6%99%AF%E9%A2%98/%E2%AD%90%E5%87%A0%E7%A7%8D%E5%85%B8%E5%9E%8B%E7%9A%84%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%9C%BA%E6%99%AF%E9%A2%98%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89.html" target="_blank">⭐几种典型的后端面试场景题（补充）</a></li>
+</ul>
+<h2>认证安全与风控</h2>
+<ul>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E8%AE%A4%E8%AF%81%E5%AE%89%E5%85%A8%E4%B8%8E%E9%A3%8E%E6%8E%A7/%E2%AD%90%E4%BD%A0%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%95%8F%E6%84%9F%E8%AF%8D%E8%84%B1%E6%95%8F%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%9F.html" target="_blank">⭐你的项目敏感词脱敏是如何实现的？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E8%AE%A4%E8%AF%81%E5%AE%89%E5%85%A8%E4%B8%8E%E9%A3%8E%E6%8E%A7/%E2%AD%90%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E4%BC%A0%E8%BE%93%E5%92%8C%E5%AD%98%E5%82%A8%E5%AF%86%E7%A0%81%EF%BC%9F.html" target="_blank">⭐如何安全传输和存储密码？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E8%AE%A4%E8%AF%81%E5%AE%89%E5%85%A8%E4%B8%8E%E9%A3%8E%E6%8E%A7/%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95%E5%9C%BA%E6%99%AF%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1%EF%BC%9F.html" target="_blank">验证码登录场景怎么设计？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E8%AE%A4%E8%AF%81%E5%AE%89%E5%85%A8%E4%B8%8E%E9%A3%8E%E6%8E%A7/%E5%A4%9A%E6%AC%A1%E8%BE%93%E9%94%99%E5%AF%86%E7%A0%81%E4%B9%8B%E5%90%8E%E5%A6%82%E4%BD%95%E9%99%90%E5%88%B6%E7%94%A8%E6%88%B7%E8%A7%84%E5%AE%9A%E6%97%B6%E9%97%B4%E5%86%85%E7%A6%81%E6%AD%A2%E5%86%8D%E6%AC%A1%E7%99%BB%E5%BD%95%EF%BC%9F.html" target="_blank">多次输错密码之后如何限制用户规定时间内禁止再次登录？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E8%AE%A4%E8%AF%81%E5%AE%89%E5%85%A8%E4%B8%8E%E9%A3%8E%E6%8E%A7/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95%EF%BC%9F.html" target="_blank">如何实现第三方授权登录？</a></li>
+</ul>
+<h2>大数据量</h2>
+<ul>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%8F/%E2%AD%9040%E4%BA%BF%E4%B8%AAQQ%E5%8F%B7%EF%BC%8C%E9%99%90%E5%88%B61G%E5%86%85%E5%AD%98%EF%BC%8C%E5%A6%82%E4%BD%95%E5%8E%BB%E9%87%8D%EF%BC%9F.html" target="_blank">⭐40亿个QQ号，限制1G内存，如何去重？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%8F/%E2%AD%90%E6%97%A5%E6%B4%BB%E4%B8%8A%E4%BA%BF%EF%BC%8C%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E7%BB%99%E7%94%A8%E6%88%B7%E6%8E%A8%E8%8D%90%E8%A7%86%E9%A2%91%E4%B8%8D%E6%98%AF%E9%87%8D%E5%A4%8D%E7%9A%84%EF%BC%9F.html" target="_blank">⭐日活上亿，如何保证给用户推荐视频不是重复的？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%8F/%E2%AD%90%E5%A4%A7%E6%95%B0%E6%8D%AETopK%E9%97%AE%E9%A2%98.html" target="_blank">⭐大数据Top K 问题</a></li>
+</ul>
+<h2>并发控制与分布式一致性</h2>
+<ul>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7/%E5%A4%9A%E4%BD%8D%E9%AA%91%E6%89%8B%E6%8A%A2%E4%B8%80%E4%B8%AA%E5%A4%96%E5%8D%96%E8%AE%A2%E5%8D%95%EF%BC%8C%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E9%AA%91%E6%89%8B%E5%8F%AF%E4%BB%A5%E6%8E%A5%E5%88%B0%E5%8D%95%E5%AD%90%EF%BC%9F.html" target="_blank">多位骑手抢一个外卖订单，如何保证只有一个骑手可以接到单子？</a></li>
+<li><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E4%B8%80%E8%87%B4%E6%80%A7/%E5%8F%91%E7%94%9F%E6%8F%90%E7%8E%B0%E5%A4%B1%E8%B4%A5%EF%BC%88%E9%80%80%E5%8D%95%EF%BC%89%E6%97%B6%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%EF%BC%9F.html" target="_blank">发生提现失败（退单）时怎么处理？</a></li>
+</ul>
+<h2><a href="/%E3%80%8A%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1&amp;%E5%9C%BA%E6%99%AF%E9%A2%98%E3%80%8B/%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E9%9D%A2%E8%AF%95%EF%BC%9F.html" target="_blank">如何准备系统设计面试？</a></h2>
 ]]></content:encoded>
     </item>
     <item>
-      <title>VuePress Theme Hope</title>
-      <link>https://233377.xyz/posts/Chitchat/VuePress.html</link>
-      <guid>https://233377.xyz/posts/Chitchat/VuePress.html</guid>
-      <source url="https://233377.xyz/rss.xml">VuePress Theme Hope</source>
-      <description>VuePress Theme Hope 一个具有强大功能的 vuepress 主题✨ 之前我是用 Docify 做自己的 笔记 静态网站 但是 1）没有笔记目录 2）而且 JavaGuide 逛多了 希望搞个一样的 后续：发现一个大佬 CDN algolia actions脚本报错：514 frequency capped 需要 CDN 配置开启 HT...</description>
-      <pubDate>Sat, 01 Jun 2024 00:00:00 GMT</pubDate>
+      <title>介绍</title>
+      <link>https://233377.xyz/《后端面试高频系统设计&amp;场景题》/介绍.html</link>
+      <guid>https://233377.xyz/《后端面试高频系统设计&amp;场景题》/介绍.html</guid>
+      <source url="https://233377.xyz/rss.xml">介绍</source>
+      <description>介绍 最近两年，越来越多的公司开始在面试中考察系统设计和场景问题的解决。相对于常规的八股文来说，系统设计和场景问题更能全面地考察求职者的技术能力。 不过，也不用太担心。面试官一般会在面试中穿插一两个系统设计和场景题来考察你，全是场景题的情况还是极少的。 1694840667216-999daccf-9fd7-488e-a247-b39843a18372...</description>
+      <pubDate>Fri, 04 Sep 2026 14:27:43 GMT</pubDate>
       <content:encoded><![CDATA[
-<blockquote>
-<p>一个具有强大功能的 vuepress 主题✨</p>
-<p>之前我是用 Docify 做自己的 <mark>笔记 静态网站</mark></p>
-<p>但是 1）没有笔记目录 2）而且 JavaGuide 逛多了 希望搞个一样的</p>
-<p>后续：发现一个<a href="https://newzone.top/web/docsify.html" target="_blank" rel="noopener noreferrer">大佬</a></p>
-</blockquote>
-<h2>CDN</h2>
-<p>algolia actions脚本报错：<strong>514 frequency capped</strong></p>
-<p>需要 CDN 配置开启 HTTPS</p>
-<h2>GitPage</h2>
-<p>设置自己的域名：只需要 DNS 解析给 2 个 CNAME 记录就行（顶级域名）</p>
-<p>二级域名估计只要一个 CNAME 就行</p>
-<p>记录值： zzq8.github.io.</p>
-<p>虽然这个记录值是 404 没关系，DNS 设置到这就行！</p>
-<h2>Feature</h2>
-<ul>
-<li>md 里面可以写 js+vue 语法 会渲染到页面   具体参考demo     【真牛】</li>
-<li>md 加 frontmatter 设置各种参数 icon、title</li>
+<p>最近两年，越来越多的公司开始在面试中考察系统设计和场景问题的解决。相对于常规的八股文来说，系统设计和场景问题更能全面地考察求职者的技术能力。</p>
+<p>不过，也不用太担心。面试官一般会在面试中穿插一两个系统设计和场景题来考察你，全是场景题的情况还是极少的。</p>
+<figure><figcaption>1694840667216-999daccf-9fd7-488e-a247-b39843a18372.png</figcaption></figure>
+<p>于是，我总结了这份《后端面试高频系统设计&amp;场景题》，包含了常见的系统设计案例比如短链系统、秒杀系统、Feed流系统以及高频的场景题比如订单延时取消、海量数据去重、第三方授权登录、排行榜、IP归属地、多次输错密码后限制用户。</p>
+<p>即使不是准备面试，我也强烈推荐你认真阅读这一系列文章，这对于提升自己系统设计思维和解决实际问题的能力还是非常有帮助的。并且，涉及到的很多案例都可以用到自己的项目上比如抽奖系统设计、第三方授权登录、Redis实现延时任务的正确方式。</p>
+<p><strong>内容概览</strong>：</p>
+<ul class="task-list-container">
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-0" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-0"> <a href="https://www.yuque.com/snailclimb/tangw3/vkuy43dm5dkwomwc" target="_blank" rel="noopener noreferrer">如何准备系统设计面试？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-1" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-1"> <a href="https://www.yuque.com/snailclimb/tangw3/fbg3437sebnnphyg" target="_blank" rel="noopener noreferrer">⭐如何设计一个秒杀系统？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-2" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-2"> <a href="https://www.yuque.com/snailclimb/tangw3/avp597scie2oltqy" target="_blank" rel="noopener noreferrer">如何设计微博 Feed 流/信息流系统？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-3" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-3"> <a href="https://www.yuque.com/snailclimb/tangw3/pdgwuq7o87tp1xgb" target="_blank" rel="noopener noreferrer">⭐如何设计一个短链系统？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-4" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-4"> <a href="https://www.yuque.com/snailclimb/tangw3/hxgr1wqsg7grt8k5" target="_blank" rel="noopener noreferrer">如何设计一个站内消息系统？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-5" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-5"> <a href="https://www.yuque.com/snailclimb/tangw3/gh6t0eytthqxa5a2" target="_blank" rel="noopener noreferrer">如何自己实现一个 RPC 框架？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-6" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-6"> <a href="https://www.yuque.com/snailclimb/tangw3/neiydtd79u8pgple" target="_blank" rel="noopener noreferrer">⭐如何设计一个动态线程池？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-7" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-7"> <a href="https://www.yuque.com/snailclimb/tangw3/mnnsr8xty6u5nsl6" target="_blank" rel="noopener noreferrer">几种典型的系统设计案例（整理补充）</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-8" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-8"> <a href="https://www.yuque.com/snailclimb/tangw3/kp5ug75dku4yu2q5" target="_blank" rel="noopener noreferrer">如何实现第三方授权登录？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-9" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-9"> <a href="https://www.yuque.com/snailclimb/tangw3/dmi5t01gacg3wa5u" target="_blank" rel="noopener noreferrer">多位骑手抢一个外卖订单，如何保证只有一个骑手可以接到单子？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-10" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-10"> <a href="https://www.yuque.com/snailclimb/tangw3/sgageiesw7cqi1o7" target="_blank" rel="noopener noreferrer">订单超时自动取消如何实现？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-11" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-11"> <a href="https://www.yuque.com/snailclimb/tangw3/dq6dco1estpldhv7" target="_blank" rel="noopener noreferrer">如何基于 Redis 实现延时任务？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-12" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-12"> <a href="https://www.yuque.com/snailclimb/tangw3/at9ogbghb5090sh0" target="_blank" rel="noopener noreferrer">如何设计一个排行榜？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-13" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-13"> <a href="https://www.yuque.com/snailclimb/tangw3/hnkifck1z5erisgc" target="_blank" rel="noopener noreferrer">⭐如何解决大文件上传问题？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-14" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-14"> <a href="https://www.yuque.com/snailclimb/tangw3/ylfks98yh4cd48rr" target="_blank" rel="noopener noreferrer">如何统计网站UV？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-15" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-15"> <a href="https://www.yuque.com/snailclimb/tangw3/eimghlwfbeifz53b" target="_blank" rel="noopener noreferrer">如何实现IP归属地功能？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-16" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-16"> <strong>大数据量</strong>：</label>
+<ul class="task-list-container">
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-17" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-17"> <a href="https://www.yuque.com/snailclimb/tangw3/ma15vethu5rp3fc7" target="_blank" rel="noopener noreferrer">⭐40亿个QQ号，限制1G内存，如何去重？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-18" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-18"> <a href="https://www.yuque.com/snailclimb/tangw3/rytwm8uriyitkp8y" target="_blank" rel="noopener noreferrer">⭐日活上亿，如何保证给用户推荐视频不是重复的？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-19" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-19"> <a href="https://www.yuque.com/snailclimb/tangw3/eqvz9cgiwa75m38o" target="_blank" rel="noopener noreferrer">⭐大数据 Top K 问题</a></label></li>
 </ul>
-<h2>search plug</h2>
-<blockquote>
-<p>引入algolia并自定义crawler爬虫</p>
-<p>XDDD 终于两天时间，配置这里"lang"解决问题！！！</p>
-</blockquote>
-<p><strong>处理了两天的问题</strong>：已用 actions 爬虫 上传站点信息的 records 到 Algolia 平台，但是 vuepress 集成的这个插件去搜怎么都搜不到，其他测试平台地方一下就可以搜：https://codesandbox.io/p/sandbox/suspicious-nash-xfpsjv?file=%2Fsrc%2Findex.js%3A11%2C1</p>
-<p>后来发现 vuepress 搜的时候会多带一个参数 lang：https://juejin.cn/post/7160948190375018504</p>
-<p>最后的最后解决是处理修改上传的爬虫配置，让 records 带上 lang 信息即可，这一点我搜 GPT 帮我带错了很多次。还是在一个网站多试了别人的才成功：https://hub.nstudy.org/p2024/12/Vuepress/148a1e.html</p>
-<h2>sitemap plug</h2>
-<blockquote>
-<p>搞了一下午，卡在版本的问题    结果我就在npm一个个试所有的version   直到不报错！！！   <mark>肯定有其他方法</mark></p>
-<p>第二次搞：</p>
-<blockquote>
-<ul>
-<li>
-<p>npm install 没报错</p>
 </li>
-<li>
-<p>测试时候先测 <code>npm run docs:build</code> 后测 <code>npm run docs:dev</code> 两个都没问题就行</p>
-</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-20" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-20"> <a href="https://www.yuque.com/snailclimb/tangw3/boag1pp6rurr5mxa" target="_blank" rel="noopener noreferrer">⭐你的项目敏感词脱敏是如何实现的？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-21" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-21"> <a href="https://www.yuque.com/snailclimb/tangw3/pt0w151wtcal7oaf" target="_blank" rel="noopener noreferrer">⭐如何安全传输和存储密码？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-22" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-22"> <a href="https://www.yuque.com/snailclimb/tangw3/bkag5r9o4frnoee3" target="_blank" rel="noopener noreferrer">多次输错密码之后如何限制用户规定时间内禁止再次登录？</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-23" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-23"> <a href="https://www.yuque.com/snailclimb/tangw3/dq1bxf73l9xo1xdk" target="_blank" rel="noopener noreferrer">几种典型的后端面试场景题（补充）</a></label></li>
 </ul>
-</blockquote>
-<ol>
-<li>先所有都整成最新版 <code>npm install --legacy-peer-deps</code></li>
-<li>后再试试 npm install 哪些依赖冲突（npm ci）
-<ul>
-<li>我这里是 vuepress、vuepress-theme-hope 统一降一个版本就又好了</li>
-</ul>
-</li>
-</ol>
-</blockquote>
-<p>http://localhost:8080/sitemap.xml</p>
-<p>这个插件 npm install 完后不需要配什么东西，可以直接访问试下就拿到数据了！！！</p>
-<h2>碰到的问题</h2>
+<p>最后，真心希望这一系列文章能够对你真正有帮助！如果有问题的话，欢迎在评论区与我交流。如果有帮助的话，也不要忘记点赞鼓励！</p>
 <blockquote>
-<p>md 笔记该怎么记：因为自己的一篇 md 会有很多 h1</p>
+<p>更新: 2025-12-17 21:40:18<br>
+原文: <a href="https://www.yuque.com/snailclimb/tangw3/vqzs6pygh5l1z5l4" target="_blank" rel="noopener noreferrer">https://www.yuque.com/snailclimb/tangw3/vqzs6pygh5l1z5l4</a></p>
 </blockquote>
-<p>看了 雪峰的 git 仓有一些规范，</p>
-<blockquote>
-<p>构建 md 解析错误</p>
-</blockquote>
-<p><code>{brandId,showStatus}</code></p>
-<p>这种 vuepress 解析会有错误，，最好``包一下</p>
-<p>😭 为什么，上面一开始我没加导致又报错，又犯了一次错误</p>
-<p>​	1.	<strong>Vue 模板语法冲突</strong>：VuePress 使用 Vue 作为底层框架，Vue 模板语法中的大括号 {} 会被识别为 Vue 模板中的插值表达式。如果你的 Markdown 文件中包含 {}，Vue 可能会尝试解析它们，这会导致渲染问题。</p>
-<p>​	2.	<strong>未转义的大括号</strong>：如果你的 Markdown 文件中包含原始的大括号 {}，这些字符可能需要转义，避免被 Vue 模板引擎解析。</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>2020 程序员找工作指南</title>
-      <link>https://233377.xyz/posts/Chitchat/2020%20%E7%A8%8B%E5%BA%8F%E5%91%98%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%8C%87%E5%8D%97.html</link>
-      <guid>https://233377.xyz/posts/Chitchat/2020%20%E7%A8%8B%E5%BA%8F%E5%91%98%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%8C%87%E5%8D%97.html</guid>
-      <source url="https://233377.xyz/rss.xml">2020 程序员找工作指南</source>
-      <description>2020 程序员找工作指南 术语科普 hc，headcount，人头数，表示计划招聘的人员的个数，例句 今年的 hc 很充足。 jd，job description，工作描述，例句 发个 jd 给我看看吧。 offer，录取意向，offer 分为口头 offer 和书面 offer，一般书面 offer 才算是正式 offer，例句 他今年拿 offe...</description>
-      <pubDate>Sat, 13 Apr 2024 00:00:00 GMT</pubDate>
+      <title>如何准备系统设计面试？</title>
+      <link>https://233377.xyz/《后端面试高频系统设计&amp;场景题》/如何准备系统设计面试？.html</link>
+      <guid>https://233377.xyz/《后端面试高频系统设计&amp;场景题》/如何准备系统设计面试？.html</guid>
+      <source url="https://233377.xyz/rss.xml">如何准备系统设计面试？</source>
+      <description>如何准备系统设计面试？ 系统设计在面试中一定是最让面试者头疼的事情之一。 因为系统设计相关的问题通常是开放式的，所以没有标准答案。你在和面试官思想的交流碰撞中会慢慢优化自己的系统设计方案。理论上来说，系统设计面试也是和面试官一起一步一步改进原有系统设计方案的过程。 系统设计题往往也非常能考察出面试者的综合能力，回答好的话，很容易就能在面试中脱颖而出。不...</description>
+      <pubDate>Fri, 04 Sep 2026 14:27:43 GMT</pubDate>
       <content:encoded><![CDATA[
-<h2>术语科普</h2>
-<p>hc，headcount，人头数，表示计划招聘的人员的个数，例句</p>
-<blockquote>
-<p>今年的 hc 很充足。</p>
-</blockquote>
-<p>jd，job description，工作描述，例句</p>
-<blockquote>
-<p>发个 jd 给我看看吧。</p>
-</blockquote>
-<p>offer，录取意向，offer 分为口头 offer 和书面 offer，一般书面 offer 才算是正式 offer，例句</p>
-<blockquote>
-<p>他今年拿 offer 拿到手软。</p>
-</blockquote>
-<p>package，总包，可以认为是税前年薪总数，一般包括年薪 + 奖金 + 股票，技术大佬才会用到的词汇，例句</p>
-<blockquote>
-<p>package 100 万，你对这份工作有兴趣没</p>
-</blockquote>
-<h2>话术解读</h2>
-<ul>
-<li>「工资 6k 到 40k」——那工资就是 6k</li>
-<li>「工资上不封顶」——就是说说而已，没人会给程序员一个月一百万月薪的</li>
-<li>「美女如云」——我司没有福利，你们员工自己互相给福利吧</li>
-<li>「大牛云集」——有两个稍微有点经验的程序员</li>
-<li>「需要你有一定抗压能力」——需要你自愿加班</li>
-<li>「不强制加班」——需要你自愿加班</li>
-<li>「我们目前处于创业阶段」——一周上六天班</li>
-<li>「弹性工作时间」——上班不弹，下班弹，而且只往后半夜弹</li>
-<li>「有竞争力的薪酬」——我们给的工资跟其他公司差不多</li>
-<li>「工资面议」——不好意思写出来</li>
-<li>「期权激励拿到手软」——希望能弥补你看到基本工资后的脚软</li>
-<li>「有活力的技术团队」——团队平均工作经验小于1年</li>
-<li>「千亿市场的探索者」——目前尚没看清具体市场在哪</li>
-<li>「扁平化管理」——公司还没招到HR</li>
-<li>「典型欧美创业工作环境」——办公室现处于毛坯房状态</li>
-<li>「新技术+新方向+新团队」——嗯，目前这三样都没有</li>
-<li>「直进核心团队」——公司尚未设置非核心团队岗</li>
-<li>「全方位成长机会」——你有很大机会成为外卖超人</li>
-<li>「提供各种福利」——每样细说咱就伤感情了</li>
-<li>「提供住宿、班车及两餐」——每周提供数小时时间与家人团聚</li>
-<li>「加入我们，给你足够大的发展空间！」——目前公司规模小于10人</li>
-<li>「公司计划短期内上市」——您也知道计划一般赶不上变化</li>
-</ul>
-<h2>找工作到底该看什么？</h2>
+<p><strong>系统设计在面试中一定是最让面试者头疼的事情之一。</strong> 因为系统设计相关的问题通常是开放式的，所以没有标准答案。你在和面试官思想的交流碰撞中会慢慢优化自己的系统设计方案。理论上来说，系统设计面试也是和面试官一起一步一步改进原有系统设计方案的过程。</p>
+<p>系统设计题往往也非常能考察出面试者的综合能力，回答好的话，很容易就能在面试中脱颖而出。不论是对于参加社招还是校招的小伙伴，都很有必要重视起来。</p>
+<p>接下来，我会带着小伙伴们从我的角度出发来谈谈：<strong>如何准备面试中的系统设计部分</strong>。</p>
+<p>由于文章篇幅有限，就不列举实际例子了，可能会在后面的文章中单独提一些具体的例子。</p>
+<p><em>个人能力有限。如果文章有任何需要改善和完善的地方，欢迎在评论区指出，共同进步！</em></p>
+<h2>系统设计面试一般怎么问？</h2>
+<p>我简单总结了一下系统设计面试相关问题的问法：</p>
 <ol>
-<li>地区</li>
-<li>月薪</li>
-<li>工资构成</li>
-<li>团队</li>
-<li>项目</li>
-<li>技术</li>
-<li>成长</li>
-<li>加班</li>
-<li>行业</li>
+<li>设计一个某某系统比如秒杀系统、微博系统、抢红包系统、短网址系统。</li>
+<li>设计某某系统中的一个功能比如哔哩哔哩的点赞功能。</li>
+<li>设计一个框架比如 RPC 框架、消息队列、缓存框架、分布式文件系统等等。</li>
+<li>某某系统的技术选型比如缓存用<code>Redis</code> 还是 <code>Memcached</code>、网关用 <code>Spring Cloud Gateway</code> 还是<code>Netflix Zuul2</code> 。</li>
 </ol>
-<h3>地区</h3>
-<p>第一梯队：北、杭、上、广、深</p>
-<p>第二梯队：成都、武汉、南京、西安、重庆等</p>
-<p>第三梯队：苏州、厦门、天津、合肥、郑州等</p>
-<p>以上排序是以互联网岗位数量大略排序的，不代表城市综合实力。</p>
+<h2>系统设计怎么做？</h2>
+<p>我们将步骤总结成了以下 4 步。</p>
+<h3>Step1:问清楚系统具体要求</h3>
+<p><strong>当面试官给出了系统设计题目之后，一定不要立即开始设计解决方案。</strong> 你需要先理解系统设计的需求：功能性需求和非功能性需求。</p>
+<p>为了避免自己曲解题目所想要解决的问题，你可以先简要地给面试官说说自己的理解，</p>
+<p><strong>为啥要询问清楚系统的功能性需求也就是说系统包含哪些功能呢？</strong></p>
+<p>毕竟，如果面试官冷不丁地直接让你设计一个微博系统，你不可能把微博系统涵盖的功能比如推荐信息流、会员机制等一个一个都列举出来，然后再去设计吧！你需要筛选出系统所提供的核心功能（<strong>缩小边界范围</strong>）！</p>
+<p><strong>为啥要询问清楚系统的非功能性需求或者说约束条件比如系统需要达到多少QPS呢？</strong></p>
+<p>让你设计一个1w人用的微博系统和100w人用的微博系统能一样么？不同的约束系统对应的系统设计方案肯定是不一样的。</p>
+<h3>Step2:对系统进行抽象设计</h3>
+<p>我们需要在一个 High Level 的层面对系统进行设计。</p>
+<p>你可以画出系统的抽象架构图，这个抽象架构图中包含了系统的一些组件以及这些组件之间的连接。</p>
+<figure><figcaption>1*lcomA7YV5En0NricVxy0rQ.png</figcaption></figure>
+<h3>Step3:考虑系统目前需要优化的点</h3>
+<p>对系统进行抽象设计之后，你需要思考当前抽象的系统设计有哪些需要优化的点，比如说：</p>
 <ol>
-<li>先去第一梯队积累两年，然后回第二三梯队当主程</li>
-<li>去第一梯队一直待着，赚钱买房</li>
+<li>当前系统部署在一台机器够吗？是否需要部署在多台机器然后进行负载均衡呢？</li>
+<li>数据库处理速度能否支撑业务需求？是否需要给指定字段加索引？是否需要读写分离？是否需要缓存？</li>
+<li>数据量是否大到需要分库分表？</li>
+<li>是否存在安全隐患？</li>
+<li>系统是否需要分布式文件系统？</li>
+<li>......</li>
 </ol>
-<p>程序员的顶级地区应该是美国湾区，当然还有一种取巧的办法是拿美国的工资，在中国生活，例如远程开发。</p>
-<h3>月薪</h3>
-<p>以国内前端、后端程序员为例</p>
-<p>第一梯队城市：初级 8 到 10k，中级 10 到 20k，高级 15 到 35k</p>
-<p>第二梯队城市：x 80%</p>
-<p>第三梯队城市：x 60%</p>
-<p>换句话说，如果一个公司工资给到 8k，那么它只能找到一个初级前端工程师</p>
-<h3>工资构成</h3>
-<p>工资在大部分时候是你找工作首要参考依据，但你需要对工资的构成有一个全面的了解。</p>
+<h3>Step4:优化你的系统抽象设计</h3>
+<p>根据 Step 3 中的“系统需要优化的点” 对系统的抽象设计做进一步完善。</p>
+<h2>系统设计该如何准备？</h2>
+<h3>知识储备</h3>
+<p>系统设计面试非常考察你的知识储备，系统设计能力的提高需要大量的理论知识储备。比如说你要知道大型网站架构设计必备的三板斧：</p>
+<ol>
+<li><strong>高性能架构设计</strong>： 熟悉系统常见性能优化手段比如引入 <strong>读写分离</strong>、<strong>缓存</strong>、负载均衡、<strong>异步</strong> 等等。</li>
+<li><strong>高可用架构设计</strong> ：CAP理论和BASE理论、通过集群来提高系统整体稳定性、超时和重试机制、应对接口级故障：<strong>降级</strong>、<strong>熔断</strong>、<strong>限流</strong>、排队。</li>
+<li><strong>高扩展架构设计</strong> ：说白了就是懂得如何拆分系统。你按照不同的思路来拆分软件系统，就会得到不同的架构。</li>
+</ol>
+<h3>实战</h3>
+<p>虽然懂得了理论，但是自己没有进行实践的话，很多东西是无法体会到的！</p>
+<p>因此，你还要 <strong>不断通过实战项目锻炼自己的系统设计能力。</strong></p>
+<h3>保持好奇心</h3>
+<p>多思考自己经常浏览的网站是怎么做的。比如：</p>
+<ol>
+<li>你刷微博的时候可以思考一下微博是如何记录点赞数量的？</li>
+<li>你看哔哩哔哩的时候可以思考一下消息提醒系统是如何做的？</li>
+<li>你使用短链系统的时候可以考虑一下短链系统是如何做的？</li>
+<li>......</li>
+</ol>
+<h3>技术选型</h3>
+<p>实现同样的功能，一般会有多种技术选择方案，比如缓存用<code>Redis</code> 还是 <code>Memcached</code>、网关用 <code>Spring Cloud Gateway</code> 还是<code>Netflix Zuul2</code> 。 很多时候，面试官在系统设计面过程中会具体到技术的选型，因而，你需要区分不同技术的优缺点。</p>
+<h2>系统设计面试必知</h2>
 <blockquote>
-<p>一年的工资 = 税前工资 - 税 - 五险 - 公积金 + 补贴 + 奖金 + 其他福利</p>
+<p>系统设计的时候必然离不开描述性能相关的指标比如 QPS。</p>
 </blockquote>
-<p>程序员可能有的补贴有餐补、房补、交通补贴、设备补贴、异地入职补贴、出差补贴等，其中有些补贴是一次性的，有些补贴则是每个月都有。</p>
-<p>奖金，每个公司不同，一般会有年终奖、项目奖等。</p>
-<p>其他福利有通勤班车、生日庆祝、团队旅游等。</p>
-<h3>团队</h3>
-<p>在你团队你，你最应该关注的是同事和直接上级。至于 AT 大牛，大部分时候你是接触不到的。</p>
-<ol>
-<li>大公司里的成熟团队</li>
-<li>小公司里生存了多年、稳定的团队</li>
-<li>离职率很高的团队</li>
-<li>新组建不久的团队</li>
-<li>一人团队（就你一个前端/后端）</li>
-</ol>
-<h3>项目</h3>
+<h3>性能相关的指标</h3>
+<h4>响应时间</h4>
+<p><strong>响应时间RT(Response-time)就是用户发出请求到用户收到系统处理结果所需要的时间。</strong></p>
+<p>RT是一个非常重要且直观的指标，RT数值大小直接反应了系统处理用户请求速度的快慢。</p>
+<h4>并发数</h4>
+<p><strong>并发数可以简单理解为系统能够同时供多少人访问使用也就是说系统同时能处理的请求数量。</strong></p>
+<p>并发数反应了系统的负载能力。</p>
+<h4>QPS 和 TPS</h4>
 <ul>
-<li>是自有项目还是外包项目，为什么不推荐去外包企业？去可以，但是不能待超过两年。</li>
-<li>十年以上的项目？五年？三年？今年？</li>
+<li><strong>QPS（Query Per Second）</strong> ：服务器每秒可以执行的查询次数；</li>
+<li><strong>TPS（Transaction Per Second）</strong> ：服务器每秒处理的事务数（这里的一个事务可以理解为客户发出请求到收到服务器的过程）；</li>
 </ul>
-<h3>技术</h3>
-<ul>
-<li>不一定用新技术就是好的，但用新技术有利于你下一次跳槽（面向简历编程）</li>
-<li>一个存在多年的公司，往往同时具有老技术和新技术，两个都有可能被分配给你</li>
-</ul>
-<p>我的态度是，不用追求一定要去用新技术的团队，靠别人不如靠自己，比如自己动手把老技术升级为新技术。</p>
-<h3>成长</h3>
-<p>大公司的成长体系比小公司健全很多，如阿里有 P5 到 P8，腾讯有 T1 到 T3，这意味着</p>
-<ol>
-<li>学习空间大</li>
-<li>涨薪空间大</li>
-<li>可以待很多年</li>
-</ol>
-<h3>加班</h3>
-<p>996 并不像传闻中那么普遍（至少我去过的团队都没有长期 996 过）。</p>
-<p>那些宣称自己 996 或者大小周的公司，只适合当跳板，不宜久留。</p>
-<h3>行业</h3>
-<p>虽然都是程序员，但是不同行业的程序员待遇和前途是不同的。常见的有</p>
-<ol>
-<li>互联网行业，工资高加班多提升空间大，技术发展快</li>
-<li>软件行业，工资略低，技术发展慢</li>
-<li>银行，技术求稳，Java 居多，程序员工资较低，但加班少</li>
-<li>传统行业，技术只是辅助，没什么上升空间</li>
-</ol>
-<h2>为防止受骗，要看什么</h2>
-<ol>
-<li>公司工商信息</li>
-<li>坊间传闻</li>
-</ol>
-<p>主要是为了防止自己去了一家面临倒闭或者拖欠工资的公司。</p>
-<h3>公司工商信息</h3>
-<p>天眼查、企查查都可以查看工商信息，比如我在企查查上找到乐视网的工商信息</p>
-<p>你可以看到该公司陷入了哪些官司、有哪些风险。不过这些信息仅供参考，实际情况可能只有当事人清楚。</p>
-<h3>坊间传闻</h3>
-<p>可以在知乎上搜索一下，但这种信息一般都是个例，存在以偏概全的地方，不可全信。</p>
-<p>你主要从这些传闻里看看加班强度、工资是否拖欠等信息即可。</p>
-<h2>确定想要离职吗</h2>
-<p>工资低？是行业性问题还是个人水平问题？</p>
-<p>对工作不感兴趣？是否到了厌恶的程度？</p>
-<p>加班太累？是行业性问题还是个人水平问题？</p>
-<p>没有提升空间？</p>
-<p>如果你确定了，就可以计划离职了。</p>
-<h3>原则一：骑驴找马</h3>
-<p>一般来说，不要先离职再找工作。找工作过程中你会频繁请假，其实就相当于告诉主管你要离职了，他如果不理你，就说明他默认你可以走。他如果找你谈话，你也不用承认你想离职（虽然他已经知道了）。</p>
-<p>有下家之后再提出离职。</p>
-<h3>原则二：不要相信挽留</h3>
-<p>就算给你加薪，也不要留下，这是经验之谈。</p>
-<h3>原则三：离职原因一定要不可打回</h3>
-<p>不能说：工资低、加班多、工作内容枯燥等真实原因。</p>
-<p>可以说：</p>
-<ul>
-<li>打算换城市（跟随男/女朋友）</li>
-<li>打算回老家结婚</li>
-</ul>
-<p>这类与公司无关的原因是最无法被公司打回的，公司总不可能给你安排新的结婚对象吧。</p>
-<h2>离职时间</h2>
-<p>最好是在拿到年终奖之后，但如果年终奖发得太晚，就算了吧。</p>
-<p>正式提出离职后，最多一个月你就可以离开公司了（这是法律规定）。</p>
-<h2>面试官问离职原因</h2>
-<p>一定不要说前公司不好，因为相同位置的人会自我带入。</p>
-<p>比较安全的离职原因是搬迁、健康、爱情、转行等。</p>
-<h2>简历注意事项</h2>
-<h3>原则</h3>
-<p>站在 HR 和面试官角度撰写简历</p>
-<ul>
-<li>简明扼要，重要内容放在醒目位置，废话不要留在简历里</li>
-<li>内容详尽，工作经历、项目详情要描述清楚</li>
-<li>方便阅读，重点、关键词要用醒目样式</li>
-</ul>
-<h3>格式</h3>
-<p>文件名：方方-前端工程师-北京-2019.pdf</p>
-<p>文件格式：PDF 最佳，Word 勉强，Markdown 和在线链接不推荐，前端工程师最好用 PDF + 在线网页两种格式</p>
-<p>页数：两页为宜</p>
-<p>留白：越少越好</p>
-<h3>内容</h3>
-<p>必不可少的内容：个人信息、学历、项目、工作经历、技能描述</p>
-<p>不需要的内容：自我评价（不如他人评价，如获奖）、对公司的喜爱（过于谄媚）</p>
-<p>工程师可以加的内容：开源项目、看过的书、博客</p>
-<p>推荐案例：https://github.com/kylewh/Resume，他已进入今日头条工作。</p>
-<h3>投递平台</h3>
-<p>不用考虑这些途径：51job、智联招聘、大街网</p>
-<p>可以考虑这些途径：Boss 直聘、拉勾网、<a href="https://v2ex.com/?tab=jobs" target="_blank" rel="noopener noreferrer">V2ex 招聘板块</a>、<a href="https://ruby-china.org/jobs" target="_blank" rel="noopener noreferrer">Ruby China 招聘板块</a>、<a href="https://cnodejs.org/?tab=job" target="_blank" rel="noopener noreferrer">CNode 招聘板块</a>、知乎私信、微博私信等</p>
-<h3>投递时间</h3>
-<p>金三银四，金九银十，年底最差。</p>
-<p>一般找到一份工作需要 2 到 4 周的时间，前 1 周简历石沉大海是很正常的。</p>
-<h2>HR 要工资条怎么办</h2>
-<p>你以为 HR 报给你的工资没有虚报吗？所有工资都是有浮动范围的。</p>
-<ul>
-<li>12 个月工资和 16 个月工资能一样吗？</li>
-<li>有年终奖和没有年终奖能一样吗？</li>
-<li>5% 公积金和 12% 公积金能一样吗？</li>
-<li>有些福利并不是以金钱形式发放的，比如工作电脑</li>
-<li>有些福利并不是每个月发放的，比如项目奖金、搬迁补贴</li>
-</ul>
-<p>所以，工资条不能反映工资。</p>
-<p>要工资条你如果愿意给就给，工资条上的数字跟你报的数字差 5k 你都不用虚，原因在上面说过了。</p>
-<p>而且 HR 要工资条是侵犯个人隐私的，是双标的。HR 一方面要求本公司员工不要透露工资，另一方面又要你透露目前工资？这很双标。</p>
-<p>记住一些原则</p>
-<p>原则一：有些公司的 HR 会想尽办法压低工资，挑你的毛病只是为了压价，如工资条、经验、学历（这种公司一般都很穷）</p>
-<p>原则二：如果你通过了面试，你就对得起这个工资</p>
-<p>原则三：只要有一家公司给你开 8k，就会有第二家、第三家、第四家也愿意给你开这个工资</p>
-<h3>HR 说只能按上一份工资涨薪 30%</h3>
-<p>HR 说只能按上一份工资涨薪 30%，并说这是公司规定</p>
-<p>首先，并没有这样的公司规定。这只是原则一的借口而已。</p>
-<p>对于这种说法你要做的就是死咬自己的底价不放，如果你值这个价，她会想办法「向上面申请」的。</p>
-<h3>HR 说你不值这个价</h3>
-<p>记住原则二，你通过了面试，就值这个价。如果觉得我能力不行，可以再面一轮，或者指出我能力哪里有欠缺。</p>
-<p>不然面试的意义是什么？面试的意义不就是看这个人能不能胜任工作吗？而且不是还有试用期吗？</p>
-<p>HR 没有质疑你能力的资格，顶多质疑你的人品和价值观，所以只要你不说错话，HR 就没有资格否定你。（除了一些 HR 拥有一票否决权的公司，比如阿里巴巴）</p>
-<h2>面试遇到不会的，心态如何把握</h2>
-<h3>你需要尽量引导话题</h3>
-<p>把面试官往你的项目、你会用的技术上面引导。</p>
+<p>书中是这样描述 QPS 和 TPS 的区别的。</p>
 <blockquote>
-<p>面试官：你用过 VueRouter 没有？ 回答A：用过。 回答B：用过，我在我的项目 C 中用到了这个技术。</p>
+<p>QPS vs TPS：QPS 基本类似于 TPS，但是不同的是，对于一个页面的一次访问，形成一个TPS；但一次页面请求，可能产生多次对服务器的请求，服务器对这些请求，就可计入“QPS”之中。如，访问一个页面会请求服务器2次，一次访问，产生一个“T”，产生2个“Q”。</p>
 </blockquote>
-<p>回答A相当于你把方向交给了面试官，面试官就会按他的思路问你，很可能问到他熟但是你不熟的细节。</p>
-<p>回答B则会把面试官往你的项目上引导，面试官的下个问题很可能是你在项目C里是怎样用的；当然面试官可能依然按自己的思路问你，但你的引导依然是有必要的。</p>
-<h3>如果遇到不会的，要大方承认，但是</h3>
-<ol>
-<li>承认不会，程序员最讨厌不懂装懂。如果这个问题很基础，但是你不会，那就是你学艺不佳；如果这个问题比较细节，但是你不会，问题不大。</li>
-<li>请求面试官细化问题。一般面试官都会举例说明，或者将问题简化一下，当然也有耿直的面试官直接下一题。</li>
-<li>如果细化的问题你还是不会，就直接下一题，不要浪费时间，这里的分失去了，就在下一题中补回来。没有人要求你必须得满分，你只要比其他人答得好就行。</li>
-</ol>
-<p><a href="https://www.yuque.com/u29422/dg5uy8/fyqwl9" target="_blank" rel="noopener noreferrer">阅读原文</a></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>5-AM</title>
-      <link>https://233377.xyz/posts/Chitchat/5am-Project.html</link>
-      <guid>https://233377.xyz/posts/Chitchat/5am-Project.html</guid>
-      <source url="https://233377.xyz/rss.xml">5-AM</source>
-      <description>5-AM https://www.youtube.com/watch?v=4zXTyc2ZjXM xd: 5.起床适用于有工作的人，没工作的好像并无必要 早起与成功 意志力不行❌ 长立志、立长志☑️ 一、早起奥义1 关注的点在早起要做的事，而非早起本身 二、奥义2:早起是和时间进行“田忌赛马” 1.每天的生活像抱着一个空罐子赛跑，而每天都要冲刺一百米，...</description>
-      <pubDate>Sat, 13 Apr 2024 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>https://www.youtube.com/watch?v=4zXTyc2ZjXM</h2>
-<blockquote>
-<p>xd: 5.起床适用于有工作的人，没工作的好像并无必要</p>
-</blockquote>
-<p>早起与成功</p>
-<p>意志力不行❌ 长立志、立长志☑️</p>
-<p>一、早起奥义1</p>
-<p>关注的点在早起要做的事，而非早起本身</p>
-<p>二、奥义2:早起是和时间进行“田忌赛马”</p>
-<p>1.每天的生活像抱着一个空罐子赛跑，而每天都要冲刺一百米，那么从早晨的空罐子到晚上的空罐子，渐渐装满，然后从第二天又重新开始。其实下班后的时间都是垃圾时间，因为已经消耗人的精力了，现代人会无限延长垃圾时间。</p>
-<p>2.如果执行空罐子，那么就可以把我们个人不被打扰的时间从早上5～8点都属于自己的时间，会更高效，然后随着时间的推移我们的时间就会被自己以外的人所占据。</p>
-<p>3.如何执行5am：晚上9点到10点睡觉，因为本来下班到睡觉的时间都是被别人占据的时间。（垃圾时间）所以我们要结合部分垃圾时间用来睡觉，跟时间进行田忌赛马。</p>
-<p>三、3种5am 项目</p>
-<p>1️⃣你特别需要做的事情（迫切需要解决的事情）</p>
-<p>2️⃣你特别想要做的事情（看书、感兴趣的事情）</p>
-<p>3️⃣可以是一件特别不同的事情（从来没有想过要做的事情，例如做与工作不相关的事情）</p>
-<p>四、执行一段时间后，可以停一段时间，不必要强迫自己要5am项目。</p>
-<p>五、早起小妙招：设置手环闹钟。</p>
-<p>午睡不要超过一小时，或者早入睡提早半小时，逐渐调整到整点为止。</p>
-<p>摘自评论：</p>
+<h4>吞吐量</h4>
+<p><strong>吞吐量指的是系统单位时间内系统处理的请求数量。</strong></p>
+<p>一个系统的吞吐量与请求对系统的资源消耗等紧密关联。请求对系统资源消耗越多，系统吞吐能力越低，反之则越高。</p>
+<p>TPS、QPS都是吞吐量的常用量化指标。</p>
 <ul>
-<li>这是唯一，这才是对早起时间最合理最实际的解释，没有空话，没有鸡汤，没有那些自以为是的说教。感谢您的付出。我的手机上终于有了一个属于自己的闹钟了</li>
-<li>妙啊，实在太妙了！与其把黄金时间留给公司，不如把黄金时间留给自己。博主一语道破早起真相，实在感谢分享！</li>
+<li><strong>QPS（TPS）</strong> = 并发数/平均响应时间(RT)</li>
+<li><strong>并发数</strong> = QPS * 平均响应时间(RT)</li>
 </ul>
+<h3>系统活跃度</h3>
+<p>介绍几个描述系统活跃度的常见名词，建议牢牢记住。你不光会在回答系统设计面试题的时候碰到，日常工作中你也会经常碰到这些名词。</p>
+<h4>PV(Page View)</h4>
+<p>访问量, 即页面浏览量或点击量，衡量网站用户访问的网页数量；在一定统计周期内用户每打开或刷新一个页面就记录1次，多次打开或刷新同一页面则浏览量累计。UV 从网页打开的数量/刷新的次数的角度来统计的。</p>
+<h4>UV(Unique Visitor)</h4>
+<p>独立访客，统计1天内访问某站点的用户数。1天内相同访客多次访问网站，只计算为1个独立访客。UV 是从用户个体的角度来统计的。</p>
+<h4>DAU(Daily Active User)</h4>
+<p>日活跃用户数量。</p>
+<h4>MAU(monthly active users)</h4>
+<p>月活跃用户人数。</p>
+<p>举例：某网站 DAU为 1200w， 用户日均使用时长 1 小时，RT为0.5s，求并发量和QPS。</p>
+<p>假设每个用户每小时平均发出 <strong>N</strong> 个请求：</p>
+<ul>
+<li><strong>计算总请求数：</strong> 总请求数 = DAU * 每用户每小时请求数 * 使用时长 = 1200w * N * 1 小时 = 1200w * N</li>
+<li><strong>计算平均 QPS：</strong> 平均 QPS = 总请求数 / 一天的秒数 = (1200w * N) / (24 * 3600) = (12000000 * N) / 86400 ≈ 138.89 * N</li>
+<li><strong>估算峰值 QPS：</strong> 通常情况下，峰值 QPS 会高于平均 QPS。这里我们假设峰值 QPS 是平均 QPS 的 <strong>2 倍</strong> (这是一个常见的假设，实际情况可能需要根据具体业务进行调整)。 峰值 QPS = 平均 QPS * 2 ≈ 277.78 * N</li>
+<li><strong>计算并发用户数：</strong> 使用 Little's Law: 并发用户数 = 平均请求响应时间 (RT) * QPS</li>
+<li><strong>平均并发用户数:</strong> 0.5s * (138.89 * N) ≈ 69.45 * N</li>
+<li><strong>峰值并发用户数:</strong> 0.5s * (277.78 * N) ≈ 138.89 * N</li>
+</ul>
+<h3>常用性能测试工具</h3>
+<h4>后端常用</h4>
+<p>既然系统设计涉及到系统性能方面的问题，那在面试的时候，面试官就很可能会问：<strong>你是如何进行性能测试的？</strong></p>
+<p>推荐 4 个比较常用的性能测试工具：</p>
+<ol>
+<li><strong>Jmeter</strong> ：Apache JMeter 是 JAVA 开发的性能测试工具。</li>
+<li><strong>LoadRunner</strong>：一款商业的性能测试工具。</li>
+<li><strong>Galtling</strong> ：一款基于Scala 开发的高性能服务器性能测试工具。</li>
+<li><strong>ab</strong> ：全称为 Apache Bench 。Apache 旗下的一款测试工具，非常实用。</li>
+</ol>
+<p>没记错的话，除了 <strong>LoadRunner</strong> 其他几款性能测试工具都是开源免费的。</p>
+<h4>前端常用</h4>
+<ol>
+<li><strong>Fiddler</strong>：抓包工具，它可以修改请求的数据，甚至可以修改服务器返回的数据，功能非常强大，是Web 调试的利器。</li>
+<li><strong>HttpWatch</strong>: 可用于录制HTTP请求信息的工具。</li>
+</ol>
+<h3>常见软件的QPS</h3>
+<p>这里给出的 QPS 仅供参考，实际项目需要进行压测来计算。</p>
+<ul>
+<li><strong>Nginx</strong> ：一般情况下，系统的性能瓶颈基本不会是 Nginx。单机 Nginx 可以达到 30w +。</li>
+<li><strong>Redis</strong>: &nbsp;Redis 官方的性能测试报告：<a href="https://redis.io/topics/benchmarks" target="_blank" rel="noopener noreferrer">https://redis.io/topics/benchmarks</a> &nbsp;。从报告中，我们可以得出 Redis 的单机 QPS 可以达到 8w+（CPU性能有关系，也和执行的命令也有关系比如执行 SET 命令甚至可以达到10w+QPS）。</li>
+<li><strong>MySQL</strong>: &nbsp;MySQL 单机的 QPS 为 大概在 4k 左右。</li>
+<li><strong>Tomcat</strong> ：单机 Tomcat 的QPS 在 2w左右。这个和你的 Tomcat 配置有很大关系，举个例子Tomcat 支持的连接器有 <strong>NIO</strong>、<strong>NIO.2</strong> 和 <strong>APR</strong>。 <code>AprEndpoint</code> 是通过 JNI 调用 APR 本地库而实现非阻塞 I/O 的，性能更好，Tomcat 配置 APR 为 连接器的话，QPS 可以达到 3w左右。更多相关内容可以自行搜索 Tomcat 性能优化。</li>
+</ul>
+<h3>系统设计原则</h3>
+<p><strong>合适优于先进 &gt; 演化优于一步到位 &gt; 简单优于复杂</strong></p>
+<h3>常见的性能优化策略</h3>
+<p>性能优化之前我们需要对请求经历的各个环节进行分析，排查出可能出现性能瓶颈的地方，定位问题。</p>
+<p>下面是一些性能优化时，我经常拿来自问的一些问题：</p>
+<ol>
+<li>当前系统的SQL语句是否存在问题？</li>
+<li>当前系统是否需要升级硬件？</li>
+<li>系统是否需要缓存？</li>
+<li>系统架构本身是不是就有问题？</li>
+<li>系统是否存在死锁的地方？</li>
+<li>数据库索引使用是否合理？</li>
+<li>系统是否存在内存泄漏？（Java 的自动回收内存虽然很方便，但是，有时候代码写的不好真的会造成内存泄漏）</li>
+<li>系统的耗时操作进行了异步处理？</li>
+<li>……</li>
+</ol>
+<h3>性能优化必知法则</h3>
+<p><strong>SQL优化，JVM、DB，Tomcat参数调优 &gt; 硬件性能优化（内存升级、CPU核心数增加、机械硬盘—&gt;固态硬盘等等）&gt; 业务逻辑优化/缓存 &gt; 读写分离、集群等 &gt; 分库分表</strong></p>
+<h2>系统设计面试的注意事项</h2>
+<h3>想好再说</h3>
+<p>没必要面试官刚问了问题之后，你没准备好就开始回答。这样不会给面试官带来好印象的！系统设计本就需要面试者结合自己的以往的经验进行思考，这个过程是需要花费一些时间的。</p>
+<h3>没有绝对的答案</h3>
+<p>系统设计没有标准答案。重要的是你和面试官一起交流的过程。</p>
+<p>一般情况下，你会在和面试官的交流过程中，一步一步完成系统设计。这个过程中，你会在面试官的引导下不断完善自己的系统设计方案。</p>
+<p>因此，你不必要在系统设计面试之前找很多题目，然后只是单纯记住他们的答案。</p>
+<h3>勿要绝对</h3>
+<p>系统设计没有最好的设计方案，只有最合适的设计方案。这就类比架构设计了：<strong>软件开发没有银弹，架构设计的目的就是选择合适的解决方案。</strong> <strong>何为银弹？</strong> 狼人传说中，只有银弹(银质子弹)才能制服这些猛兽。对应到软件开发活动中，银弹特指开发者们寻求的一种克服软件开发这个难缠的猛兽的“万能钥匙🔑”。</p>
+<h3>权衡利弊</h3>
+<p>知道使用某个技术可能会为系统带来的利弊。比如使用消息队列的好处是解耦和削峰，但是，同样也让系统可用性降低、复杂性提高，同时还会存在一致性问题（消息丢失或者消息未被消费咋办）。</p>
+<h3>慢慢优化</h3>
+<p>刚开始设计的系统不需要太完美，可以慢慢优化。</p>
+<h3>不追新技术</h3>
+<p>使用稳定的、适合业务的技术，不必要过于追求新技术。</p>
+<h3>追简避杂</h3>
+<p>系统设计应当追求简单避免复杂。KISS（ Keep It Simple, Stupid）原则——保持简单，易于理解。</p>
+<h2>总结</h2>
+<p>这篇文章简单带着小伙伴们分析了一下系统设计面试。如果你还想要深入学习的话，可以参考： <a href="https://github.com/donnemartin/system-design-primer" target="_blank" rel="noopener noreferrer">https://github.com/donnemartin/system-design-primer</a> &nbsp;。</p>
+<figure><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/2020-11/image-20201104084854121.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_101%2Ctext_572R56uZ77yaamF2YWd1aWRlLmNu%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="" tabindex="0" loading="lazy"><figcaption></figcaption></figure>
+<h2>参考</h2>
+<ol>
+<li><a href="https://github.com/donnemartin/system-design-primer" target="_blank" rel="noopener noreferrer">https://github.com/donnemartin/system-design-primer</a></li>
+<li><a href="https://www.acecodeinterview.com/intro/" target="_blank" rel="noopener noreferrer">https://www.acecodeinterview.com/intro/</a></li>
+<li><a href="https://gist.github.com/vasanthk/485d1c25737e8e72759f" target="_blank" rel="noopener noreferrer">https://gist.github.com/vasanthk/485d1c25737e8e72759f</a></li>
+</ol>
+<blockquote>
+<p>更新: 2026-03-13 12:21:54<br>
+原文: <a href="https://www.yuque.com/snailclimb/tangw3/vkuy43dm5dkwomwc" target="_blank" rel="noopener noreferrer">https://www.yuque.com/snailclimb/tangw3/vkuy43dm5dkwomwc</a></p>
+</blockquote>
 ]]></content:encoded>
     </item>
   </channel>

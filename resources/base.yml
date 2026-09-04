@@ -85,6 +85,9 @@ matches:
   - trigger: ";nope"
     replace: "❌"
 
+  - trigger: ";warn"
+    replace: "⚠️"
+
   # prompt
   - trigger: ";studyp"
     replace: *stp
