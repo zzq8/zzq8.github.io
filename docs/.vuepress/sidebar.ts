@@ -34,13 +34,21 @@ export default sidebar({
       children: "structure",
     },
   ],
-  "/《后端面试高频系统设计&场景题》/": [
+  // 书籍侧边栏：key 必须用「运行时路由形式」——主题按 decodeURI(routePath) 前缀
+  // 匹配 key，而路由是 sanitize+encode 后的（& → _）。构建期收集结构则按原始
+  // filePathRelative（含 &）。《后端面试高频系统设计&场景题》两者不一致，故：
+  //   1. 用净化后的 _ key 做运行时匹配，group.prefix 指向原始 & 路径取结构；
+  //   2. 额外注册原始 & key（仅构建期生效）让主题按原始目录收集全书结构；
+  //   3. 书内 TOC/侧边栏里的原始 & 链接由 VuePress redirects 自动跳转到净化路径
+  "/《后端面试高频系统设计_场景题》/": [
     {
       text: "《后端面试高频系统设计&场景题》",
       icon: "tabler:sitemap",
-      link: "/《后端面试高频系统设计&场景题》/",
+      link: "/《后端面试高频系统设计_场景题》/",
+      prefix: "/《后端面试高频系统设计&场景题》/",
       expanded: true,
       children: "structure",
     },
   ],
+  "/《后端面试高频系统设计&场景题》/": "structure",
 });

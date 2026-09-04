@@ -140,34 +140,6 @@ export default defineUserConfig({
   // 这里在页面数据序列化前注入 frontmatter.sidebar = false，items 为空时
   // MainLayout 会连布局一起去掉侧栏（新文章自动生效）
   plugins: [
-    // 《后端面试高频系统设计&场景题》路径还原：VuePress 创建页面时对每段路径
-    // 做 sanitizeFileName（& → _）再 encodeURI，而该书的侧边栏 key 与书内互链
-    // 都是原始 & 路径（主题运行时用 decodeURI(routePath) 前缀匹配 sidebar key），
-    // 两边对不上侧边栏就匹配不到。这里把该书页面的 path 改回由 filePathRelative
-    // 直接推导的原始 pathInferred（未经净化），路由与侧边栏、markdown 互链保持
-    // 一致；html 产物路径同步重算，否则 build 出来的静态文件对不上路由。组件/
-    // 分包的 temp 文件名保留创建时的形式即可，仅作内部模块 key、不影响对外路径
-    {
-      name: "vuepress-plugin-book-ampersand-path",
-      extendsPage: (page, app) => {
-        if (
-          !page.filePathRelative?.startsWith("《后端面试高频系统设计&场景题》/")
-        )
-          return;
-        if (!page.pathInferred || page.path === page.pathInferred) return;
-        page.path = page.pathInferred;
-        // data.path 必须与 routes key（即 page.path）一致：客户端 HMR 的
-        // updatePageData 按 data.path 查 routes.value，不一致会 undefined.loader
-        page.data.path = page.path;
-        const htmlRelative = page.pathInferred.endsWith("/")
-          ? `${page.pathInferred}index.html`
-          : page.pathInferred.endsWith(".html")
-            ? page.pathInferred
-            : `${page.pathInferred}.html`;
-        page.htmlFilePathRelative = htmlRelative.replace(/^\//, "");
-        page.htmlFilePath = app.dir.dest(page.htmlFilePathRelative);
-      },
-    },
     {
       name: "vuepress-plugin-posts-no-sidebar",
       extendsPage: (page) => {
@@ -268,12 +240,16 @@ export default defineUserConfig({
       config.resolve ??= {};
       config.resolve.alias ??= {};
       // 把主题的博客文章列表组件换成自己的实现（年份分组 + 文章新标签打开），
+      // 以及把导航下拉组件换成支持「点击父级跳转第一个子项」的实现。
       // $ 表示精确匹配，不影响其他 @theme-hope 子路径。
       // 必须插到对象最前：主题已注册前缀 alias "@theme-hope"，webpack 按
       // 插入顺序匹配且首个命中即短路，后加的精确 key 永远轮不到
       config.resolve.alias = {
         "@theme-hope/components/blog/ArticleList$": fileURLToPath(
           new URL("./components/ArticleListByYear.ts", import.meta.url),
+        ),
+        "@theme-hope/components/navbar/NavbarDropdown$": fileURLToPath(
+          new URL("./components/NavbarDropdown.ts", import.meta.url),
         ),
         ...config.resolve.alias,
       };

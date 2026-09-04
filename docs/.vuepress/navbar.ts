@@ -18,7 +18,7 @@ export default navbar([
       {
         text: "系统设计&场景题",
         icon: "tabler:sitemap",
-        link: "/《后端面试高频系统设计&场景题》/",
+        link: "/《后端面试高频系统设计_场景题》/",
       },
     ],
   },
@@ -28,15 +28,15 @@ export default navbar([
     // prefix: "/",
     children: [
       {
+        text: "资源文件",
+        icon: "tabler:folders",
+        link: "/resources.html",
+      },
+      {
         text: "alist",
         icon: "ic:baseline-source",
         target: "_blank",
         link: "https://alist.233377.xyz/",
-      },
-      {
-        text: "资源文件",
-        icon: "tabler:folders",
-        link: "/resources.html",
       },
       {
         text: "书籍影音",
