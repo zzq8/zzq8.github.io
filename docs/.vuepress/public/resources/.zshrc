@@ -15,6 +15,10 @@ plugins=(
 
 # Alias
 alias python='python3'
+alias cc='claude'
+alias repo='cd /Users/xd/Documents/GitRepo'
+alias upor='cd /Users/xd/Library/Mobile\ Documents/com\~apple\~CloudDocs/upor'
+alias resume='cd /Users/xd/Library/Mobile\ Documents/com\~apple\~CloudDocs/Resume'
 # alias ,ms="%PATH/TO/MY/SCRIPT%"
 # alias ,ip="ipconfig getifaddr en0"
 # alias ,sshconfig="vim ~/.ssh/config"
@@ -42,7 +46,7 @@ alias python='python3'
 # alias ....='cd ../../../'
 # alias ~="cd ~"
 # alias -- -="cd -"
-# alias ll='ls -alhG'
+alias ll='ls -alhG'
 # alias ls='ls -G'
 # # git
 # alias git=hub

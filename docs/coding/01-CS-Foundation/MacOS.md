@@ -112,6 +112,18 @@ npm install picgo -g
 
 * [input0](https://github.com/10xChengTu/input0) (用了一下也还好用, 用 **Paraformer 中英粤** 这样中英混着说)
 
+* Office
+
+* the unarchiver (zip 可以系统自动解压, 但是 rar 不行要下)
+
+* ~~Lemon~~ (发现一个 **[Mole](https://github.com/tw93/Mole)** CLI 方式清理推的多)
+
+* Omi (App Store)
+
+* iina
+
+* ~~Aldente (保护电池)~~ [macOS 26.4 更新了电池充电上限](https://v2ex.com/t/1201068)
+
 * sleepwatcher
 
   * brew services start sleepwatcher
@@ -145,14 +157,6 @@ npm install picgo -g
     ```
     
     * $! 是什么: 最近一次后台运行进程”的 PID
-
-
-* Office
-* the unarchiver (zip 可以系统自动解压, 但是 rar 不行要下)
-* ~~Lemon~~ (发现一个 **[Mole](https://github.com/tw93/Mole)** CLI 方式清理推的多)
-* Omi (App Store)
-* iina
-* ~~Aldente (保护电池)~~ [macOS 26.4 更新了电池充电上限](https://v2ex.com/t/1201068)
 
 > 其他
 
