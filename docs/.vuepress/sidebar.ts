@@ -9,6 +9,9 @@ import { sidebar } from "vuepress-theme-hope";
 // 注意：item 的 prefix 与兜底 key 的拼配——主题会把「key + item.prefix」
 // 无脑拼成 sidebarData 的数据 key（"" + "/coding/" → "/coding/" ✓），
 // 而运行时对以 / 开头的 prefix 原样引用，两边要对得上，拼错了就是 undefined.map
+// 书籍两个 key 必须写文件夹原始名（含 &）——构建期按原始 filePathRelative
+// 收结构、运行时用 decodeURI(routePath) 前缀匹配 key；& 书的路由被 config.ts
+// 的 book-ampersand-path 插件还原成原始路径，两边才对得上
 export default sidebar({
   "": [
     // 指定显示页面
@@ -18,6 +21,24 @@ export default sidebar({
       prefix: "/coding/",
       // collapsible: true,
       link: "/coding/_README",
+      expanded: true,
+      children: "structure",
+    },
+  ],
+  "/《Java面试指北》/": [
+    {
+      text: "《Java面试指北》",
+      icon: "tabler:brand-java",
+      link: "/《Java面试指北》/",
+      expanded: true,
+      children: "structure",
+    },
+  ],
+  "/《后端面试高频系统设计&场景题》/": [
+    {
+      text: "《后端面试高频系统设计&场景题》",
+      icon: "tabler:sitemap",
+      link: "/《后端面试高频系统设计&场景题》/",
       expanded: true,
       children: "structure",
     },

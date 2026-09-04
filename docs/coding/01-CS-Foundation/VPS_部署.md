@@ -30,6 +30,20 @@ Q: 帮我以 linux.do 该论坛为主, 调研 vps 买哪个, 主要科学上网�
 
 
 
+==**!important: 有点垃圾这个美国的, 还没有之前日本的那个好使**==
+
+不知道为啥节点经常 timeout
+
+
+
+买过的 vps:
+
+- https://digvps.com/review/bytevirt#vps-jp-kvm-dc1
+
+- https://digvps.com/review/racknerd
+
+
+
 ## 一、流程
 
 ✨✨ [写给小白的自建科学上网教程：从技术原理到实践操作](https://linux.do/t/topic/520757)

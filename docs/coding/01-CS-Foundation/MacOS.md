@@ -152,7 +152,7 @@ npm install picgo -g
 * ~~Lemon~~ (发现一个 **[Mole](https://github.com/tw93/Mole)** CLI 方式清理推的多)
 * Omi (App Store)
 * iina
-* Aldente (保护电池)
+* ~~Aldente (保护电池)~~ [macOS 26.4 更新了电池充电上限](https://v2ex.com/t/1201068)
 
 > 其他
 

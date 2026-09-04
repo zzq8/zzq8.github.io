@@ -7,6 +7,22 @@ export default navbar([
   { text: "浮生杂记", icon: "tabler:fish", link: "/blog" },
   { text: "代码笔记", icon: "tabler:code", link: "/" },
   {
+    text: "JavaGuide",
+    icon: "logos:java",
+    children: [
+      {
+        text: "Java面试指北",
+        icon: "tabler:book",
+        link: "/《Java面试指北》/",
+      },
+      {
+        text: "系统设计&场景题",
+        icon: "tabler:sitemap",
+        link: "/《后端面试高频系统设计&场景题》/",
+      },
+    ],
+  },
+  {
     text: "资源宝库",
     icon: "iconoir:book-solid",
     // prefix: "/",
