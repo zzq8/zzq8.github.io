@@ -20,6 +20,11 @@ export default navbar([
         icon: "tabler:sitemap",
         link: "/《后端面试高频系统设计_场景题》/",
       },
+      {
+        text: "SpringAI 面试平台",
+        icon: "tabler:robot",
+        link: "/SpringAI智能面试平台_RAG知识库/",
+      },
     ],
   },
   {

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 550" width="1050" height="550">
+  <defs>
+    <style>
+      text { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+      .title-main { font-size: 24px; font-weight: bold; fill: #2D3748; }
+      .card-header { font-size: 18px; font-weight: bold; fill: #FFFFFF; }
+      .prop-title { font-size: 14px; font-weight: bold; fill: #2D3748; }
+      .prop-val { font-size: 13px; fill: #64748B; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="6" stdDeviation="8" flood-color="#005D7B" flood-opacity="0.08"/>
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#E2E8F0" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1050" height="550" fill="#F8FAFC"/>
+  <rect width="1050" height="550" fill="url(#grid)"/>
+
+  <text x="40" y="50" class="title-main">场景驱动隔离：LlmProviderRegistry 的三种 ChatClient 策略</text>
+
+  <g transform="translate(850, 500) rotate(-5)">
+    <text x="0" y="0" font-size="14" fill="#94A3B8">公众号：<tspan fill="#005D7B" font-weight="bold">JavaGuide</tspan></text>
+    <text x="0" y="20" font-size="14" fill="#94A3B8">网站：<tspan fill="#005D7B" font-weight="bold">javaguide.cn</tspan></text>
+  </g>
+
+  <g transform="translate(50, 120)">
+    <rect x="0" y="0" width="300" height="330" rx="12" fill="#FFFFFF" filter="url(#shadow)"/>
+    <path d="M 0 12 Q 0 0 12 0 L 288 0 Q 300 0 300 12 L 300 50 L 0 50 Z" fill="#005D7B"/>
+    <text x="20" y="32" class="card-header">ChatClientOrDefault</text>
+    
+    <text x="20" y="80" class="prop-title">适用场景</text>
+    <text x="20" y="100" class="prop-val">文字面试方向题、JD 智能解析</text>
+    <line x1="20" y1="115" x2="280" y2="115" stroke="#E2E8F0"/>
+
+    <text x="20" y="140" class="prop-title">注入 Tools</text>
+    <text x="20" y="160" class="prop-val" font-weight="bold" fill="#005D7B">SkillsTool (开启)</text>
+    <line x1="20" y1="175" x2="280" y2="175" stroke="#E2E8F0"/>
+
+    <text x="20" y="200" class="prop-title">注入 Advisors</text>
+    <text x="20" y="220" class="prop-val">• ToolCallAdvisor (默认配置)</text>
+    <text x="20" y="240" class="prop-val">• MessageChatMemoryAdvisor</text>
+    <text x="20" y="260" class="prop-val">• SimpleLoggerAdvisor</text>
+    <line x1="20" y1="275" x2="280" y2="275" stroke="#E2E8F0"/>
+
+    <text x="20" y="300" class="prop-title">核心特征</text>
+    <text x="20" y="320" class="prop-val">标准 ReAct 阻塞调用的全家桶配置</text>
+  </g>
+
+  <g transform="translate(370, 120)">
+    <rect x="0" y="0" width="300" height="330" rx="12" fill="#FFFFFF" filter="url(#shadow)"/>
+    <path d="M 0 12 Q 0 0 12 0 L 288 0 Q 300 0 300 12 L 300 50 L 0 50 Z" fill="#E99151"/>
+    <text x="20" y="32" class="card-header">PlainChatClient</text>
+    
+    <text x="20" y="80" class="prop-title">适用场景</text>
+    <text x="20" y="100" class="prop-val">文字面试简历题</text>
+    <line x1="20" y1="115" x2="280" y2="115" stroke="#E2E8F0"/>
+
+    <text x="20" y="140" class="prop-title">注入 Tools</text>
+    <text x="20" y="160" class="prop-val" fill="#C05621">无 (隔离防止干扰 Prompt)</text>
+    <line x1="20" y1="175" x2="280" y2="175" stroke="#E2E8F0"/>
+
+    <text x="20" y="200" class="prop-title">注入 Advisors</text>
+    <text x="20" y="220" class="prop-val" fill="#C05621">无</text>
+    <line x1="20" y1="275" x2="280" y2="275" stroke="#E2E8F0"/>
+
+    <text x="20" y="300" class="prop-title">核心特征</text>
+    <text x="20" y="320" class="prop-val">纯净输出环境，仅依靠文本 Prompt 指导</text>
+  </g>
+
+  <g transform="translate(690, 120)">
+    <rect x="0" y="0" width="300" height="330" rx="12" fill="#FFFFFF" filter="url(#shadow)"/>
+    <path d="M 0 12 Q 0 0 12 0 L 288 0 Q 300 0 300 12 L 300 50 L 0 50 Z" fill="#4CA497"/>
+    <text x="20" y="32" class="card-header">VoiceChatClient</text>
+    
+    <text x="20" y="80" class="prop-title">适用场景</text>
+    <text x="20" y="100" class="prop-val">实时语音面试 (流式打字机输出)</text>
+    <line x1="20" y1="115" x2="280" y2="115" stroke="#E2E8F0"/>
+
+    <text x="20" y="140" class="prop-title">注入 Tools</text>
+    <text x="20" y="160" class="prop-val" font-weight="bold" fill="#005D7B">SkillsTool (开启)</text>
+    <line x1="20" y1="175" x2="280" y2="175" stroke="#E2E8F0"/>
+
+    <text x="20" y="200" class="prop-title">注入 Advisors</text>
+    <text x="20" y="220" class="prop-val">• ToolCallAdvisor</text>
+    <text x="20" y="240" class="prop-val" font-weight="bold" fill="#C05621"> (streamToolCallResponses=true)</text>
+    <text x="20" y="260" class="prop-val">• 无 Memory (WebSocket手动管理)</text>
+    <line x1="20" y1="275" x2="280" y2="275" stroke="#E2E8F0"/>
+
+    <text x="20" y="300" class="prop-title">核心特征</text>
+    <text x="20" y="320" class="prop-val">专为流式响应优化，延迟极低</text>
+  </g>
+</svg>

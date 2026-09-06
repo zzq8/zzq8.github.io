@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500">
+  <defs>
+    <style>
+      text { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+      .title-main { font-size: 24px; font-weight: bold; fill: #2D3748; }
+      .node-text { font-size: 14px; font-weight: bold; fill: #2D3748; text-anchor: middle; }
+      .desc-text { font-size: 12px; fill: #64748B; text-anchor: middle; }
+      .arrow-label { font-size: 12px; font-weight: bold; fill: #4CA497; text-anchor: middle; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="6" stdDeviation="8" flood-color="#005D7B" flood-opacity="0.08"/>
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#E2E8F0" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="500" fill="#F8FAFC"/>
+  <rect width="1000" height="500" fill="url(#grid)"/>
+
+  <text x="40" y="50" class="title-main">运行时动态能力构建：基于招聘 JD 的 Custom Skill 解析流程</text>
+
+  <g transform="translate(800, 460) rotate(-5)">
+    <text x="0" y="0" font-size="14" fill="#94A3B8">公众号：<tspan fill="#005D7B" font-weight="bold">JavaGuide</tspan></text>
+    <text x="0" y="20" font-size="14" fill="#94A3B8">网站：<tspan fill="#005D7B" font-weight="bold">javaguide.cn</tspan></text>
+  </g>
+
+  <g id="arrows">
+    <line x1="200" y1="200" x2="280" y2="200" stroke="#4CA497" stroke-width="2"/>
+    <polygon points="280,200 272,195 272,205" fill="#4CA497"/>
+    <text x="240" y="190" class="arrow-label">发送给</text>
+
+    <line x1="440" y1="200" x2="520" y2="200" stroke="#4CA497" stroke-width="2"/>
+    <polygon points="520,200 512,195 512,205" fill="#4CA497"/>
+    <text x="480" y="190" class="arrow-label">结构化输出</text>
+
+    <line x1="680" y1="200" x2="760" y2="200" stroke="#4CA497" stroke-width="2"/>
+    <polygon points="760,200 752,195 752,205" fill="#4CA497"/>
+    <text x="720" y="190" class="arrow-label">代码级干预</text>
+    
+    <path d="M 600 230 V 270 H 840 V 238" fill="none" stroke="#E99151" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <polygon points="840,230 835,238 845,238" fill="#E99151"/>
+    <text x="720" y="285" class="arrow-label" fill="#E99151">基于本地全局 categoryRefIndex</text>
+  </g>
+
+  <g transform="translate(40, 170)">
+    <rect x="0" y="0" width="160" height="60" rx="8" fill="#FFFFFF" filter="url(#shadow)" stroke="#64748B" stroke-width="1"/>
+    <rect x="0" y="0" width="6" height="60" rx="3" fill="#64748B"/>
+    <text x="80" y="25" class="node-text">用户粘贴 JD 文本</text>
+    <text x="80" y="45" class="desc-text">非结构化、自然语言</text>
+  </g>
+
+  <g transform="translate(280, 160)">
+    <rect x="0" y="0" width="160" height="80" rx="8" fill="#FFFFFF" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="6" height="80" rx="3" fill="#4CA497"/>
+    <text x="80" y="25" class="node-text">LLM 信息提取</text>
+    <text x="80" y="45" class="desc-text">Prompt 携带</text>
+    <text x="80" y="65" class="desc-text">可用 Reference 列表</text>
+  </g>
+
+  <g transform="translate(520, 170)">
+    <rect x="0" y="0" width="160" height="60" rx="8" fill="#FFF8F1" filter="url(#shadow)" stroke="#E99151" stroke-width="1"/>
+    <rect x="0" y="0" width="6" height="60" rx="3" fill="#E99151"/>
+    <text x="80" y="25" class="node-text" fill="#C05621">CategoryListDTO</text>
+    <text x="80" y="45" class="desc-text">包含潜在的幻觉 Ref</text>
+  </g>
+
+  <g transform="translate(760, 160)">
+    <rect x="0" y="0" width="160" height="80" rx="8" fill="#F0F9FF" filter="url(#shadow)" stroke="#005D7B" stroke-width="1"/>
+    <rect x="0" y="0" width="6" height="80" rx="3" fill="#005D7B"/>
+    <text x="80" y="25" class="node-text">本地安全纠正</text>
+    <text x="80" y="45" class="desc-text">覆写 LLM 猜测的 ref</text>
+    <text x="80" y="65" class="desc-text">组装运行时临时 Skill</text>
+  </g>
+</svg>
