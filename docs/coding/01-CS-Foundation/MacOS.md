@@ -111,51 +111,18 @@ npm install picgo -g
 > 以下是我选择装的
 
 * [input0](https://github.com/10xChengTu/input0) (用了一下也还好用, 用 **Paraformer 中英粤** 这样中英混着说)
-
 * Office
-
 * the unarchiver (zip 可以系统自动解压, 但是 rar 不行要下)
-
 * ~~Lemon~~ (发现一个 **[Mole](https://github.com/tw93/Mole)** CLI 方式清理推的多)
-
 * Omi (App Store)
-
 * iina
-
 * ~~Aldente (保护电池)~~ [macOS 26.4 更新了电池充电上限](https://v2ex.com/t/1201068)
-
 * sleepwatcher
 
   * brew services start sleepwatcher
-
   * 约定大于配置, 新建以下两个 bash 命令文件:
-    ~/.sleep
-    ~/.wakeup
-
-  * ```bash
-    #!/bin/bash
-    
-    echo "sleep triggered at $(date)" >> /tmp/sleepwatcher.log
-    
-    (
-        sleep $((12 * 60 * 60))
-        osascript -e 'tell application "System Events" to shut down'
-    ) &
-    
-    echo $! > /tmp/sleepwatcher_shutdown.pid
-    ```
-    
-  * ```bash
-    #!/bin/bash
-    
-    echo "wakeup triggered at $(date)" >> /tmp/sleepwatcher.log
-    
-    if [ -f /tmp/sleepwatcher_shutdown.pid ]; then
-        kill "$(cat /tmp/sleepwatcher_shutdown.pid)" 2>/dev/null
-        rm /tmp/sleepwatcher_shutdown.pid
-    fi
-    ```
-    
+    [~/.sleep](/resources/shell/.sleep)
+    [~/.wakeup](/resources/shell/.wakeup)
     * $! 是什么: 最近一次后台运行进程”的 PID
 
 > 其他

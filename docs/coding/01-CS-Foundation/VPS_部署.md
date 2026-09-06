@@ -75,6 +75,8 @@ bash <(curl -Ls IP.Check.Place)
 
 `bash <(curl -fsSL ssh_tool.eooce.com)`
 
+**快捷键已设置为k,下次运行输入k可快速启动此脚本**
+
 #### 方法2
 
 > `bash <(wget -qO- -o- https://github.com/233boy/sing-box/raw/main/install.sh)`
