@@ -1,0 +1,32 @@
+#!/bin/bash
+
+LOG=/tmp/sleepwatcher.log
+PIDFILE=/tmp/sleepwatcher_shutdown.pid
+TIMEOUT=$((12 * 60 * 60))
+
+if [ -f "$PIDFILE" ]; then
+    old_pid=$(cat "$PIDFILE" 2>/dev/null)
+    if [ -n "$old_pid" ]; then
+        pkill -P "$old_pid" 2>/dev/null
+        kill "$old_pid" 2>/dev/null
+    fi
+    rm -f "$PIDFILE"
+fi
+
+echo "sleep triggered at $(date)" >> "$LOG"
+
+start=$(date +%s)
+(
+    while :; do
+        sleep 60
+        now=$(date +%s)
+        if (( now - start >= TIMEOUT )); then
+            echo "auto shutdown after ${TIMEOUT}s at $(date)" >> "$LOG"
+            rm -f "$PIDFILE"
+            osascript -e 'tell application "System Events" to shut down'
+            break
+        fi
+    done
+) &
+
+echo "$!" > "$PIDFILE"

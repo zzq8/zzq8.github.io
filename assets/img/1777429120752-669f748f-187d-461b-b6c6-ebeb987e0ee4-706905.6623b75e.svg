@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="1000" height="650">
+  <defs>
+    <style>
+      text { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+      .title-main { font-size: 24px; font-weight: bold; fill: #2D3748; }
+      .group-title { font-size: 15px; font-weight: bold; }
+      .card-title { font-size: 16px; font-weight: bold; fill: #2D3748; }
+      .card-desc { font-size: 13px; fill: #64748B; }
+      .arrow-label { font-size: 12px; font-weight: bold; fill: #005D7B; }
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="6" stdDeviation="8" flood-color="#005D7B" flood-opacity="0.08"/>
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#E2E8F0" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="650" fill="#F8FAFC"/>
+  <rect width="1000" height="650" fill="url(#grid)"/>
+
+  <text x="40" y="50" class="title-main">配置拆分解耦：物理目录与消费端映射关系</text>
+
+  <g transform="translate(800, 610) rotate(-5)">
+    <text x="0" y="0" font-size="14" fill="#94A3B8">公众号：<tspan fill="#005D7B" font-weight="bold">JavaGuide</tspan></text>
+    <text x="0" y="20" font-size="14" fill="#94A3B8">网站：<tspan fill="#005D7B" font-weight="bold">javaguide.cn</tspan></text>
+  </g>
+
+  <rect x="60" y="120" width="340" height="460" rx="12" fill="#FFFFFF" fill-opacity="0.5" stroke="#64748B" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="80" y="145" class="group-title" fill="#64748B">文件系统 (resources/skills/)</text>
+
+  <g transform="translate(100, 170)">
+    <rect x="0" y="0" width="260" height="60" rx="8" fill="#FFFFFF" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="6" height="60" rx="3" fill="#E99151"/>
+    <text x="20" y="25" class="card-title">SKILL.md</text>
+    <text x="20" y="45" class="card-desc">元数据 (YAML) + 指令 (Markdown)</text>
+  </g>
+
+  <g transform="translate(100, 270)">
+    <rect x="0" y="0" width="260" height="60" rx="8" fill="#FFFFFF" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="6" height="60" rx="3" fill="#4CA497"/>
+    <text x="20" y="25" class="card-title">skill.meta.yml</text>
+    <text x="20" y="45" class="card-desc">UI 展示配置与出题 Category 权重</text>
+  </g>
+
+  <g transform="translate(100, 420)">
+    <rect x="0" y="0" width="260" height="80" rx="8" fill="#FFFFFF" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="6" height="80" rx="3" fill="#005D7B"/>
+    <text x="20" y="25" class="card-title">_shared/references/</text>
+    <text x="20" y="45" class="card-desc">共享公共题库 (mysql.md 等)</text>
+    <text x="20" y="65" class="card-desc" font-size="11">通过 shared: true 跨 Skill 复用</text>
+  </g>
+
+  <rect x="580" y="120" width="340" height="460" rx="12" fill="#FFFFFF" fill-opacity="0.5" stroke="#005D7B" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="600" y="145" class="group-title" fill="#005D7B">运行时消费端 (Consumers)</text>
+
+  <g transform="translate(620, 170)">
+    <rect x="0" y="0" width="260" height="60" rx="8" fill="#FFF8F1" stroke="#E99151" stroke-width="1"/>
+    <rect x="0" y="0" width="6" height="60" rx="3" fill="#E99151"/>
+    <text x="20" y="25" class="card-title">LLM Context (AI 视图)</text>
+    <text x="20" y="45" class="card-desc">加载 Persona，保持 Token 纯粹</text>
+  </g>
+
+  <g transform="translate(620, 270)">
+    <rect x="0" y="0" width="260" height="60" rx="8" fill="#F0FDF4" stroke="#4CA497" stroke-width="1"/>
+    <rect x="0" y="0" width="6" height="60" rx="3" fill="#4CA497"/>
+    <text x="20" y="25" class="card-title">Backend UI &amp; Core Logic</text>
+    <text x="20" y="45" class="card-desc">渲染图标颜色，计算分配算法</text>
+  </g>
+
+  <g transform="translate(620, 420)">
+    <rect x="0" y="0" width="260" height="80" rx="8" fill="#F0F9FF" stroke="#005D7B" stroke-width="1"/>
+    <rect x="0" y="0" width="6" height="80" rx="3" fill="#005D7B"/>
+    <text x="20" y="25" class="card-title">Prompt Injection (Java 代码)</text>
+    <text x="20" y="45" class="card-desc">启动时缓存，出题前批量拼入 Prompt</text>
+    <text x="20" y="65" class="card-desc" font-size="11">跳过 FileSystemTools 按需读取以提速</text>
+  </g>
+
+  <g id="arrows">
+    <line x1="360" y1="200" x2="610" y2="200" stroke="#E99151" stroke-width="2"/>
+    <polygon points="610,200 602,195 602,205" fill="#E99151"/>
+    <text x="485" y="190" class="arrow-label" fill="#E99151" text-anchor="middle">SkillsTool 加载</text>
+
+    <line x1="360" y1="300" x2="610" y2="300" stroke="#4CA497" stroke-width="2"/>
+    <polygon points="610,300 602,295 602,305" fill="#4CA497"/>
+    <text x="485" y="290" class="arrow-label" fill="#4CA497" text-anchor="middle">Spring Boot 启动解析</text>
+
+    <line x1="360" y1="460" x2="610" y2="460" stroke="#005D7B" stroke-width="2"/>
+    <polygon points="610,460 602,455 602,465" fill="#005D7B"/>
+    <text x="485" y="450" class="arrow-label" fill="#005D7B" text-anchor="middle">Category ref 映射读取</text>
+  </g>
+</svg>
