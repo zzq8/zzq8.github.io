@@ -2690,3 +2690,17 @@ AgentToolRecord【工具使用记录】
 附：
 
 Building effective agents：[https://www.anthropic.com/research/building-effective-agents](https://www.anthropic.com/research/building-effective-agents)
+
+
+
+
+
+==调研后师兄说==
+
+虽然遇到了点坎坷最后做事不是朝着这个文档预期方向前进，但这个过程中让我们学到的东西真的是非常多，而且我相信这个文档绝对会给很多人带来价值。
+
+下一步，我们的目标主要是 2 个：
+
+1.**<font style="color:#DF2A3F;"> Ilmservice </font>** 的代码搞明白，开始在现有平台实现一个 Agent，我晚上就去详细的看 Ilmservice 的实现，马上做一个 agent 节点出来。
+
+2.**<font style="color:#DF2A3F;"> 开源技术框架 </font>** 继续深入学习，把源码细节吃透，成为 agent 领域专家。

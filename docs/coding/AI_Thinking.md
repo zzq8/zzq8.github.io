@@ -1,12 +1,12 @@
 ---
 article: true
 category: AI
-tag: prompt
+tag: Think
 created: 2026-01-05 23:41:23
 updated: 2026-06-14 01:50:43
 ---
 
-# AI_KG
+# 关于 AI 的一些思考
 
 > **ALL in AI**
 >
