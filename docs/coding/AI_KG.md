@@ -6,7 +6,7 @@ created: 2026-01-05 23:41:23
 updated: 2026-06-14 01:50:43
 ---
 
-# AI_KG 
+# AI_KG
 
 > **ALL in AI**
 >
@@ -27,6 +27,15 @@ graph LR
 
 我们 = 工具人&资产
 
+
+
+我想到的场景
+
+- ChatGpt Voice
+- 面试助手 + Rag
+
+
+
 ## 二、Vibe Coding
 
 > Vibe Coding: 与 AI 一起解决问题
@@ -43,37 +52,6 @@ graph LR
 
 
 
-
-
 btw: 不要放弃思考, 阮一峰很多摘录都提到这点
 
 笔记记录，不用老想着第一时间就用llm帮忙写代码(初石帮看，一下就看出明明就是一个三元表达式就搞定，llm写一堆！！！)  联想ruanyifeng几篇周刊说用ai丧失思考能力！！！ 【XD它几篇的摘录都是这样】 找到，深思，放ai 我自己那个文章！
-
-## 三、LLM
-
-> [Linux 有帖子御三家的介绍](https://linux.do/t/topic/1403352)
-
-#### token 计算
-
-用 dify 有感:
-
-一次请求里，**凡是发给模型看的内容，全都算 token**：
-
-- ✅ system_prompt
-- ✅ user_prompt
-- ✅ assistant 的历史上下文（如果你带了）
-- ✅ 工具调用产生的内容
-- ❌ 只有 **没发给模型的内容** 才不算
-
-
-
-## FAQ
-
-#### manus用的哪个agent范式
-
-增强版 react (PE)
-
-1. 先 plan 生成 task
-
-2. 每个 task 有很多 step
-3. 处理完一个 task 后 rePlan 【loop】

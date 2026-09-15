@@ -122,7 +122,7 @@ autoload -U compinit && compinit
 # source /opt/homebrew/opt/nvm/nvm.sh
 
 # autojump
-# source /opt/homebrew/etc/profile.d/autojump.sh
+source /opt/homebrew/etc/profile.d/autojump.sh
 
 # 必须在 plugins 之后
 source $ZSH/oh-my-zsh.sh
@@ -161,3 +161,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # customize
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+#  Test link 2-3
+export PATH="/Users/xd/.local/bin:$PATH"  # Added by Deck.app

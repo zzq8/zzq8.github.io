@@ -47,6 +47,7 @@ brew install --cask \
   gas-mask \
   typora \
   caffeine \
+  open-island \
   
   input0 \
   licecap \
@@ -65,6 +66,7 @@ brew install \
   fd \
   fzf \
   mole \
+  autojump \
   
   tree \
   lazygit \
@@ -144,6 +146,8 @@ Chrome Plugin
 ### 1.Sublime
 
 > 注册到 subl 命令到 CLI
+>
+> `sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl`
 >
 > 常用命令
 >
@@ -267,6 +271,19 @@ class JsonUnescapeCommand(sublime_plugin.TextCommand):
 
             # 写回
             view.replace(edit, region, text)
+```
+
+#### 替换默认文本编辑器
+
+```bash
+brew install duti
+# 先确认 Sublime 的 bundle id
+mdls -name kMDItemCFBundleIdentifier /Applications/Sublime\ Text.app
+# 通常是 com.sublimetext.4,然后按类型设置:
+duti -s com.sublimetext.4 public.plain-text all      # 纯文本
+# duti -s com.sublimetext.4 net.daringfireball.markdown all  # Markdown
+duti -s com.sublimetext.4 public.unix-executable all # 无扩展名脚本
+duti -s com.sublimetext.4 public.data all            # 兜底:未识别类型
 ```
 
 ### 2.Espanso

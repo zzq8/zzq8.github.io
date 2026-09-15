@@ -1,5 +1,5 @@
 ---
-title: How to use AI
+title: 怎么使用 AI
 category: AI
 tag: repost
 created: 2026-01-05 23:37:37

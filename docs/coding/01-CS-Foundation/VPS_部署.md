@@ -92,3 +92,19 @@ https://233boy.com/sing-box/sing-box-script/
 
 
 
+## ✨ FAQ
+
+### !! 搞的我要死 - 节点一直 timeout, 跟 gpt 排查都是没问题
+
+现状: 
+
+在家网络环境: 
+
+- 路由器是华硕, 刷了 merlin 系统, 用的 merlin 的 clash 科学上网了
+- 网络是移动的
+
+然后发现 vps 节点一直 timeout, 通过日志等排查都没有问题 (inbound, outbound都有日志) 搞了巨久
+
+
+
+结果今天换了一个网络环境, 到图书馆发现节点又可用了 ??
