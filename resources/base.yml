@@ -71,6 +71,12 @@ matches:
 
   - trigger: ";red"
     replace: <span style="color:red">$|$</span>
+  
+  - trigger: ";detail"
+    replace: |-
+            <details>
+            <summary>$|$</summary>
+            </details>
 
   # emoji
   - trigger: ";star"
@@ -87,6 +93,10 @@ matches:
 
   - trigger: ";warn"
     replace: "⚠️"
+
+  # other
+  - trigger: ";xd"
+    replace: "【XD$|$】"
 
   # prompt
   - trigger: ";studyp"

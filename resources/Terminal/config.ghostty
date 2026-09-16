@@ -1,0 +1,47 @@
+# 字体
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 14
+font-thicken = true
+font-thicken-strength = 80
+font-codepoint-map = U+2E80-U+9FFF,U+F900-U+FAFF,U+FF00-U+FFEF=PingFang SC
+
+# 主题
+theme = Catppuccin Mocha
+
+# 窗口
+window-padding-x = 12
+window-padding-y = 10
+window-save-state = always
+background-opacity = 0.95
+background-blur = 20
+
+# 光标和滚动
+cursor-style = bar
+cursor-style-blink = true
+scrollback-limit = 10000000
+scrollbar = never
+
+# Shell Integration
+shell-integration = detect
+shell-integration-features = cursor,sudo,title
+
+# macOS
+macos-option-as-alt = left
+macos-titlebar-style = transparent
+macos-titlebar-proxy-icon = hidden
+
+# 分屏
+split-divider-color = #45475a
+unfocused-split-opacity = 0.92
+
+# 剪贴板
+copy-on-select = false
+clipboard-paste-protection = true
+clipboard-paste-bracketed-safe = true
+
+# 快捷键
+keybind = shift+up=scroll_page_lines:-1
+keybind = shift+down=scroll_page_lines:1
+
+# Other
+bell-features = system
