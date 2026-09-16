@@ -318,7 +318,7 @@ MasterAgent:
 ### API架构设计 (serviceTemplate)
 
 com.alipay.ilmprod.utils.template.HttpServiceTemplate#execute
-public static <REQUEST extends BaseRequest, RESPONSE extends BaseResponse> Result<RESPONSE> execute(ServiceContext<REQUEST, RESPONSE> context, ServiceCallback<REQUEST, RESPONSE> callback)
+`public static <REQUEST extends BaseRequest, RESPONSE extends BaseResponse> Result<RESPONSE> execute(ServiceContext<REQUEST, RESPONSE> context, ServiceCallback<REQUEST, RESPONSE> callback)`
 --> 重点就是 callback 重写三个方法
 
 1. 日志进来
@@ -741,7 +741,7 @@ AI 出现以后，程序员的发展方向彻底变了。
 验证  确保 .class 文件安全、有效   文件格式、元数据、字节码、符号引用验证
 准备  为静态变量分配内存   设置静态变量的“零值”（0, false, null）
 解析  将符号引用转为直接引用 将类、方法、字段等符号引用替换为内存地址指针
-初始化 执行类构造器 <clinit>()   执行静态变量赋值和静态代码块
+初始化 执行类构造器 `<clinit>()`   执行静态变量赋值和静态代码块
 
 ---
 

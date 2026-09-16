@@ -11,7 +11,7 @@ icon: tdesign:book-filled
 
 ## 一、Daily
 
-每周日常:
+每周日常 Chrome Tag:
 
 https://github.com/trending?since=weekly
 
@@ -35,8 +35,6 @@ https://waytoagi.feishu.cn/wiki/FjiOwWp2giA7hRk6jjfcPioCnAc
 
 
 
-
-
 ### 1. 好的习惯学习
 
 >  [大佬的日常习惯](https://newzone.top/DailyRoutine.html#gtd-%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86)
@@ -44,6 +42,8 @@ https://waytoagi.feishu.cn/wiki/FjiOwWp2giA7hRk6jjfcPioCnAc
 ### 2. 健身
 
 万事俱备，只差开始 :)
+
+健身凳, 轻量 NAS 上两套健身视频
 
 
 
