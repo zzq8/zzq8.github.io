@@ -164,3 +164,4 @@ export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 #  Test link 2-3
 export PATH="/Users/xd/.local/bin:$PATH"  # Added by Deck.app
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"

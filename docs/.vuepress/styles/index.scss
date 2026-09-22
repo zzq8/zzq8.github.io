@@ -343,8 +343,12 @@ v4 新加的两个变量 @vuepress/plugin-docsearch 的 vars.css 没给值，
 
 // toc 占位块下移：从原距导航栏 2rem 改为 5rem
 // （注意 rc.102 的实际类名是 .vp-toc-placeholder，旧写法 .toc-place-holder 不存在、规则从未生效）
-.vp-toc-placeholder {
-  top: calc(var(--navbar-height) + 5rem);
+// 只作用于桌面（$pc = 1440px）：原来无断点覆盖，移动端也被推到 5rem，
+// 滚动时导航栏隐藏/出现会让它从 0.5rem 滑到 5rem 处遮挡正文。
+@media (min-width: 1440px) {
+  .vp-toc-placeholder {
+    top: calc(var(--navbar-height) + 5rem);
+  }
 }
 
 // 代码块纵向滚动条（加在容器上，行号一起滚动）

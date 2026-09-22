@@ -48,7 +48,10 @@ brew install --cask \
   typora \
   caffeine \
   open-island \
+  ghostty \
+  mos \
   
+  docker-desktop \
   input0 \
   licecap \
   postman \
@@ -68,6 +71,7 @@ brew install \
   mole \
   autojump \
   
+  mysql-client \
   tree \
   lazygit \
   translate-shell

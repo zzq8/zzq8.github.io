@@ -5,7 +5,7 @@ article: false
 
 > 建议再优化目录，把自己总结的 / 康师傅的 分起
 
-TOC--MD内容表
+TOC--MD 内容表
 
 Table Of Contents (目录)
 
@@ -13,13 +13,13 @@ Java 集合框架概览
 
 ![Java 集合框架概览](http://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/java-collection-hierarchy.png)
 
-ArrayDeque 双端队列是后出的API，LeetCode常用当模拟栈、队列
+ArrayDeque 双端队列是后出的 API，LeetCode 常用当模拟栈、队列
 
 
 
-#### * for (int j = 0; j < 100_0000; j++) 其中100_0000是什么
+#### * for (int j = 0; j < 100_0000; j++) 其中 100_0000 是什么
 
-`for (int j = 0; j < 100_0000; j++)` 可以等同于 `for (int j = 0; j < 1000000; j++)`，都表示循环从0到999999的范围。
+`for (int j = 0; j < 100_0000; j++)` 可以等同于 `for (int j = 0; j < 1000000; j++)`，都表示循环从 0 到 999999 的范围。
 
 ==下划线的存在只是为了提高代码的可读性，使数字更易于理解和识别。==
 
@@ -33,19 +33,36 @@ iload iadd istore
 
 
 
-#### * HashMap 重写了tostring     
+#### * HashMap 重写了 tostring     
 
 System.out.println(map);   return key + "=" + value; 
 
 
 
-#### * ⭐️ ArrayList可以在循环时删除里面的数据吗😡TODO
+#### * ⭐️ ArrayList 可以在循环时删除里面的数据吗 😡TODO
 
-for删会有问题，要用迭代器删  为什么？？？
+for 删会有问题，要用迭代器删  为什么？？？
 
 在使用 `ArrayList` 进行循环时，如果尝试在循环过程中直接删除其中的元素，可能会导致出现问题。
 
 当你使用 `ArrayList` 的 `remove()` 方法删除元素时，会改变列表的大小。这会影响到后续的循环迭代，可能导致一些元素被跳过或重复处理。这是因为在删除元素后，后续元素的索引会向前移动，但循环变量可能不会相应地更新。
+
+
+
+Q: arrayList 为什么不能遍历去删除某一个元素
+
+
+
+后面的元素前移了，但你的下标 `i` 还在 `++` 继续往前走，等于"下标没动、数据动了”，两者错位，导致跳过一个元素。
+
+```json
+i=0: [a, a, b]  get(0)=a，删掉，数组内部变成 [a, b]
+i=1: [a, b]     get(1)=b ← 第二个 a 被跳过了（它现在在 i=0 的位置）
+```
+
+倒序遍历就没这个问题：`i` 从后往前走，删除导致的前移只影响**后面**（已遍历过的）部分，不会碰还没遍历的。
+
+
 
 
 
@@ -71,7 +88,7 @@ map2Platform.putAll(toAdd);
 
 * 
 
-#### ==* 基础知识：unexpected token==
+#### ==* 基础知识：unexpected token ==
 
 才发现成员变量不能 Ait + Enter 生成（必须从左到右写好），局部变量可以。
 
@@ -79,7 +96,7 @@ map2Platform.putAll(toAdd);
 
 原因：
 
-Unexpected token的问题在于，在Java中的class下**只能进行<font color=red>定义</font>方法，以及变量**等
+Unexpected token 的问题在于，在 Java 中的 class 下 **只能进行 <font color=red> 定义 </font> 方法，以及变量** 等
 
 1.定义方法
 
@@ -89,7 +106,7 @@ Unexpected token的问题在于，在Java中的class下**只能进行<font color
 
 注意：
 
-class下**不能进行逻辑语句的书写，也==不能对已经定义的变量进行赋值==操作**
+class 下 **不能进行逻辑语句的书写，也 ==不能对已经定义的变量进行赋值== 操作**
 
 ```java
 public class People {
@@ -107,7 +124,7 @@ public class People {
 
 如果 == 比较就必须要是  -128 到 127 才相等，有个 `private static class LongCache ` 内部类，其它包装类型也一样
 
-`Byte`,`Short`,`Integer`,`Long` 这 4 种包装类默认创建了数值 **[-128，127]** 的相应类型的缓存数据，`Character` 创建了数值在 **[0,127]** 范围的缓存数据，`Boolean` 直接返回 `True` or `False`。
+`Byte`, `Short`, `Integer`, `Long` 这 4 种包装类默认创建了数值 **[-128，127]** 的相应类型的缓存数据，`Character` 创建了数值在 **[0,127]** 范围的缓存数据，`Boolean` 直接返回 `True` or `False`。
 
 ```java
 Long a = 153434L, b =153434L;
@@ -116,20 +133,20 @@ System.out.println(a==b);   //false
 
 
 
-#### ==* 在计算机系统中，数值一律用**补码**来表示（存储）==
+#### == * 在计算机系统中，数值一律用* *补码**来表示（存储）==
 
 1）在计算机系统中，**数值一律用补码来表示和存储**。原因在于，使用补码，可以将符号位和数值域统一处理；同时，加法和减法也可以统一处理。此外，补码与原码相互转换，其运算过程是相同的，不需要额外的硬件电路。
 
 * 反码解决 减法
   * `1 - 1 = 1 + (-1) = [0000 0001]原 + [1000 0001]原= [0000 0001]反 + [1111 1110]反 = [1111 1111]反 = [1000 0000]原 = -0`
 
-* 补码解决 +-0  【0用[0000 0000]表示，-0即[1000 0000]表示-128】
+* 补码解决 +-0  【0 用 [0000 0000] 表示，-0 即 [1000 0000] 表示-128】
   * `1-1 = 1 + (-1) = [0000 0001]原 + [1000 0001]原 = [0000 0001]补 + [1111 1111]补 = [0000 0000]补=[0000 0000]原`
 
 
 
 2）对于两个 int 类型的数相加，如果它们的和超过了 int 类型的最大值，则会发生精度溢出。**如果最后的结果还要 /2 可以使用无符号右移解决**
-我的理解：想象一下两个二进制位相加，溢出也是顶多溢出最高位符号位一位bit。此时 >>> 刚好能解决！ 【XD： 妙啊！数学的思想】
+我的理解：想象一下两个二进制位相加，溢出也是顶多溢出最高位符号位一位 bit。此时 >>> 刚好能解决！ 【XD： 妙啊！数学的思想】
 
 * int mid = (left + right) / 2;（精度溢出）
 * int mid = left + (right - left) / 2;（✔）
@@ -137,25 +154,25 @@ System.out.println(a==b);   //false
 
 
 
-3）一个字节129存不下的，底层是有符号的二进制数来存储的，它是一个环，所以129前面应该是-128，-128前面是，-127。所以答案就是-127。或者算出补码也可得到解
+3）一个字节 129 存不下的，底层是有符号的二进制数来存储的，它是一个环，所以 129 前面应该是-128，-128 前面是，-127。所以答案就是-127。或者算出补码也可得到解
 
-==！！！呼应题目，除了0特殊外。关注负数为补码形式!!!==
+==！！！呼应题目，除了 0 特殊外。关注负数为补码形式!!!==
 
 ```java
 byte b = (byte)129;  //-127
 //byte range：-128 ~ 127
 //127：0111 1111
 //128：1000 0000 （-128）
-//129：1000 0001 =》（即二进制的10000001在补码表示中解释为-127） 
+//129：1000 0001 =》（即二进制的 10000001 在补码表示中解释为-127） 
 ```
 
 
 
 #### * return 碰上 finally
 
-一旦在finally块中使用了return或throw语句，将会导致try块，catch块中的return，throw语句失效
+一旦在 finally 块中使用了 return 或 throw 语句，将会导致 try 块，catch 块中的 return，throw 语句失效
 
-摘自《疯狂Java 讲义》（第三版）P366
+摘自《疯狂 Java 讲义》（第三版）P366
 
 
 
@@ -164,7 +181,7 @@ byte b = (byte)129;  //-127
 在 Java 中，`yield()` 方法不会显式释放锁资源。它只会让当前线程从运行状态转变为就绪状态，并让出 CPU 时间片给其他线程。但是，线程在就绪状态时仍然持有其所拥有的锁资源。
 
 `join()` 方法也不会显式释放锁资源。它只会让当前线程等待被调用的线程执行完毕，但是不会释放当前线程持有的锁资源。
-**thread.Join把指定的线程加入到当前线程，可以将两个交替执行的线程合并为顺序执行的线程。比如在线程B中调用了线程A的Join()方法，直到线程A执行完毕后，才会继续执行线程B。**
+**thread.Join 把指定的线程加入到当前线程，可以将两个交替执行的线程合并为顺序执行的线程。比如在线程 B 中调用了线程 A 的 Join()方法，直到线程 A 执行完毕后，才会继续执行线程 B。**
 
 ```java
 public static void main(String[] args) throws InterruptedException {
@@ -187,19 +204,19 @@ public static void main(String[] args) throws InterruptedException {
 
 
 
-#### * Map接口和Collection接口是同一等级的
+#### * Map 接口和 Collection 接口是同一等级的
 
 
 
 #### * 重载只看参数列表
 
-重载是在同一个类中，有多个方法名相同，参数列表不同(参数个数不同，参数类型不同),**与方法的返回值无关，与权限修饰符无关**
+重载是在同一个类中，有多个方法名相同，参数列表不同(参数个数不同，参数类型不同), **与方法的返回值无关，与权限修饰符无关**
 
 
 
 #### * 赋值运算有返回值
 
-Java跟C的区别，C中赋值后会与0进行比较，如果大于0，就认为是true；而Java不会与0比较，而是直接把赋值后的结果放入括号。
+Java 跟 C 的区别，C 中赋值后会与 0 进行比较，如果大于 0，就认为是 true；而 Java 不会与 0 比较，而是直接把赋值后的结果放入括号。
 
 ```
 int a;
@@ -210,15 +227,15 @@ System.out.println(a=1); //1
 
 ##### **Is-a：**
 
-**是a：A Is B：A是B（继承关系，继承）。**假设你确定两件对象之间是is-a的关系，那么此时你应该使用继承。比方菱形、圆形和方形都是形状的一种。那么他们都应该从形状类继承。
+**是 a：A Is B：A 是 B（继承关系，继承）。** 假设你确定两件对象之间是 is-a 的关系，那么此时你应该使用继承。比方菱形、圆形和方形都是形状的一种。那么他们都应该从形状类继承。
 
 ##### **has-a：**
 
-**有a：A has B：A有B（从属关系，聚合）。**假设你确定两件对象之间是has-a的关系，那么此时你应该使用聚合。比方电脑是由显示器、CPU、硬盘等组成的。那么你应该把显示器、CPU、硬盘这些类聚合成电脑类。
+**有 a：A has B：A 有 B（从属关系，聚合）。** 假设你确定两件对象之间是 has-a 的关系，那么此时你应该使用聚合。比方电脑是由显示器、CPU、硬盘等组成的。那么你应该把显示器、CPU、硬盘这些类聚合成电脑类。
 
 ##### **like-a：**
 
-**像a：A like B：A像B（组合关系，接口）。**假设你确定两件对象之间是like-a的关系，那么此时你应该使用组合。比方空调继承于制冷机，但它同一时候有加热功能。那么你应该把让空调继承制冷机类，并实现加热接
+**像 a：A like B：A 像 B（组合关系，接口）。** 假设你确定两件对象之间是 like-a 的关系，那么此时你应该使用组合。比方空调继承于制冷机，但它同一时候有加热功能。那么你应该把让空调继承制冷机类，并实现加热接
 
 ***
 
@@ -228,13 +245,13 @@ System.out.println(a=1); //1
 
 接口与其实现类是一种“like-a”关系，即接口与实现类的关系只是实现了定义的行为，并无本质上的联系（契约关系，很淡漠的利益关系）。
 
-举个例子：比如说一个动物抽象类，定义了跑的方法、叫的方法，但如果一个汽车类可以实现跑、可以实现叫，它就可以继承动物抽象类吗？！这太不合理了，汽车不是动物呀！而如果通过接口定义跑的方法、叫的方法，汽车类作为实现类实现跑和叫，完全OK很合理，就因为没有继承关系的约束。
+举个例子：比如说一个动物抽象类，定义了跑的方法、叫的方法，但如果一个汽车类可以实现跑、可以实现叫，它就可以继承动物抽象类吗？！这太不合理了，汽车不是动物呀！而如果通过接口定义跑的方法、叫的方法，汽车类作为实现类实现跑和叫，完全 OK 很合理，就因为没有继承关系的约束。
 
 
 
 
 
-#### * ==static 初始化== & **类的加载顺序**
+#### * ==static 初始化== & * *类的加载顺序**
 
 ```java
 public class B
@@ -255,19 +272,19 @@ public class B
 }
 ```
 
-之前我一直有一个误区!就是认为静态块一定是最先初始化的!但是,阿里爸爸今天又用一记重拳猛击我的脸,额,好疼....当时的情况是这样的:
+之前我一直有一个误区! 就是认为静态块一定是最先初始化的! 但是, 阿里爸爸今天又用一记重拳猛击我的脸, 额, 好疼....当时的情况是这样的:
 
-我在牛客网找虐中,碰到了这样的一道题,心中充满了鄙夷,心想"这tm还用看吗,肯定先是静态块,再接着三个构造块,弱鸡题",但是 = = ,答案却是"构造块 构造块 静态块 构造块".
+我在牛客网找虐中, 碰到了这样的一道题, 心中充满了鄙夷, 心想 "这 tm 还用看吗, 肯定先是静态块, 再接着三个构造块, 弱鸡题", 但是 = = , 答案却是 "构造块 构造块 静态块 构造块".
 
 ......[黑线|||||||||]
 
-于是总结了一下,以警后世 - -
+于是总结了一下, 以警后世 - -
 
 **正确的理解是这样的:**
 
-并不是静态**块**最先初始化,而是静态**域**.(BM：啊!多么痛的领悟!)
+并不是静态 **块** 最先初始化, 而是静态 **域**.(BM：啊! 多么痛的领悟!)
 
-==而静态域中包含静态变量、静态块和静态方法==,其中需要初始化的是静态变量和静态块.而他们两个的初始化顺序是靠他们俩的位置决定的!
+==而静态域中包含静态变量、静态块和静态方法==, 其中需要初始化的是静态变量和静态块.而他们两个的初始化顺序是靠他们俩的位置决定的!
 
 **So！**
 
@@ -305,7 +322,7 @@ blockAblockBblockA
 
 (2) 子类静态对象和静态代码块
 
-(3) 父类非静态对象和非静态代码块  【例如下面的Father.class先（3）再（2）】
+(3) 父类非静态对象和非静态代码块  【例如下面的 Father.class 先（3）再（2）】
 
 (4) 父类构造函数（声明肯定都先于构造器，XD：才能拿变量名赋值）
 
@@ -322,15 +339,15 @@ blockAblockBblockA
 
 终结版练习：
 
-> 字节码 \<clinit>    \<init> 方法
+> 字节码 \< clinit >    \< init > 方法
 > CL 代表 class
-> 有几个构造器就有几个\<init>方法
+> 有几个构造器就有几个 \< init > 方法
 >
 > super 写或者不写都有   （注：代码块里的变量、形参都是局部变量）
 
 ```java
 /**
- * 父类初始化<clinit>
+ * 父类初始化 <clinit>
  * 1、j = method()
  * 2、 父类的静态代码块
  *
@@ -341,11 +358,11 @@ blockAblockBblockA
  * 4、子类的无参构造（最后）(2)
  *
  *
- * 非静态方法前面其实有一个默认的对象this
- * this在构造器或<init> 他表示的是正在创建的对象，因为咱们这里是正在创建Son对象，所以
+ * 非静态方法前面其实有一个默认的对象 this
+ * this 在构造器或 <init> 他表示的是正在创建的对象，因为咱们这里是正在创建 Son 对象，所以
  * test()执行的就是子类重写的代码(面向对象多态)
  *
- * 这里i=test() 执行的就是子类重写的test()方法
+ * 这里 i = test() 执行的就是子类重写的 test()方法
  */
 public class Father {
     private int i = test();
@@ -372,7 +389,7 @@ public class Father {
 
 -----------------------------------------
 /**
- * 子类的初始化<clinit>
+ * 子类的初始化 <clinit>
  * 1、j = method()
  * 2、子类的静态代码块
  *
@@ -416,7 +433,7 @@ public class Son extends Father {
 ```
 
 <details>
-    <summary>答案：</summary>
+    <summary> 答案：</summary>
 	<p>
         (5)
 (1)
@@ -444,7 +461,7 @@ public class Son extends Father {
 
 #### * 接口与其实现类
 
-实际上这道题考查的是**两同两小一大**原则：
+实际上这道题考查的是 **两同两小一大** 原则：
 
 方法名相同，参数类型相同
 
@@ -465,21 +482,21 @@ public class Son extends Father {
 
 >发现这道题完全没头绪，就去查了一下，感觉说的比较清楚了。
 
-JDK1.2 之前，一个对象只有“已被引用”和"未被引用"两种状态，这将无法描述某些特殊情况下的对象，比如，当内存充足时需要保留，而内存紧张时才需要被抛弃的一类对象。
+JDK1.2 之前，一个对象只有“已被引用”和 "未被引用" 两种状态，这将无法描述某些特殊情况下的对象，比如，当内存充足时需要保留，而内存紧张时才需要被抛弃的一类对象。
 
 所以在 JDK.1.2 之后，Java 对引用的概念进行了扩充，将引用分为了：强引用（Strong Reference）、软引用（Soft Reference）、弱引用（Weak Reference）、虚引用（Phantom Reference）4 种，这 4 种引用的强度依次减弱。
 
 **一，强引用**
 
-Object obj = new Object(); //只要obj还指向Object对象，Object对象就不会被回收 obj = null; //手动置null
+Object obj = new Object(); //只要 obj 还指向 Object 对象，Object 对象就不会被回收 obj = null; //手动置 null
 
-只要强引用存在，垃圾回收器将永远不会回收被引用的对象，哪怕内存不足时，JVM也会直接抛出OutOfMemoryError，不会去回收。如果想中断强引用与对象之间的联系，可以显示的将强引用赋值为null，这样一来，JVM就可以适时的回收对象了
+只要强引用存在，垃圾回收器将永远不会回收被引用的对象，哪怕内存不足时，JVM 也会直接抛出 OutOfMemoryError，不会去回收。如果想中断强引用与对象之间的联系，可以显示的将强引用赋值为 null，这样一来，JVM 就可以适时的回收对象了
 
 **二，软引用**
 
 软引用是用来描述一些非必需但仍有用的对象。**在内存足够的时候，软引用对象不会被回收，只有在内存不足时，系统则会回收软引用对象，如果回收了软引用对象之后仍然没有足够的内存，才会抛出内存溢出异常**。这种特性常常被用来实现缓存技术，比如网页缓存，图片缓存等。
 
-在 JDK1.2 之后，用java.lang.ref.SoftReference类来表示软引用。
+在 JDK1.2 之后，用 java.lang.ref.SoftReference 类来表示软引用。
 
 **三，弱引用**
 
@@ -487,7 +504,7 @@ Object obj = new Object(); //只要obj还指向Object对象，Object对象就不
 
 **四，虚引用**
 
-虚引用是最弱的一种引用关系，如果一个对象仅持有虚引用，那么它就和没有任何引用一样，它随时可能会被回收，在 JDK1.2 之后，用 PhantomReference 类来表示，通过查看这个类的源码，发现它只有一个构造函数和一个 get() 方法，而且它的 get() 方法仅仅是返回一个null，也就是说将永远无法通过虚引用来获取对象，虚引用必须要和 ReferenceQueue 引用队列一起使用。
+虚引用是最弱的一种引用关系，如果一个对象仅持有虚引用，那么它就和没有任何引用一样，它随时可能会被回收，在 JDK1.2 之后，用 PhantomReference 类来表示，通过查看这个类的源码，发现它只有一个构造函数和一个 get() 方法，而且它的 get() 方法仅仅是返回一个 null，也就是说将永远无法通过虚引用来获取对象，虚引用必须要和 ReferenceQueue 引用队列一起使用。
 
 
 
@@ -505,22 +522,22 @@ public class MyClass {
 
 #### * final 变量
 
-被final修饰的变量是常量，这里的b6=b4+b5可以看成是b6=10；在编译时就已经变为b6=10了
+被 final 修饰的变量是常量，这里的 b6 = b4+b5 可以看成是 b6 = 10；在编译时就已经变为 b6 = 10 了
 
 ```java
 final byte b4=4,b5=6; 
-b6=b4+b5; //在编译时就已经变为b6=10了，编译通过
+b6=b4+b5; //在编译时就已经变为 b6 = 10 了，编译通过
 ```
 
-==D选项，final修饰的变量，变量的引用（地址）是不可变得，但是引用的内容是可变的==  梅开二度！
+==D 选项，final 修饰的变量，变量的引用（地址）是不可变得，但是引用的内容是可变的==  梅开二度！
 
 ```java
 链接：https://www.nowcoder.com/questionTerminal/47ffaf4670384e34a925e294fcd686c0
 来源：牛客网
 
-final Student t = new Student();      t.setStuName("11");      t.setStuNo(1);    //不报错 因此final修饰的可以改变属性
+final Student t = new Student();      t.setStuName("11");      t.setStuNo(1);    //不报错 因此 final 修饰的可以改变属性
 再看我们把Teacher类继承Student:
-final Student t = new Student();      t = new Teacher();   //t编译错误,因此不可以再指向其他对象
+final Student t = new Student();      t = new Teacher();   //t 编译错误, 因此不可以再指向其他对象
 ```
 
 
@@ -529,9 +546,9 @@ final Student t = new Student();      t = new Teacher();   //t编译错误,因�
 
 
 
-#### * pc寄存器 就是 程序计数器
+#### * pc 寄存器 就是 程序计数器
 
-程序计数器是**计算机 处理器 中的 寄存器** ，它包含当前正在执行的指令的地址（位置）。
+程序计数器是 **计算机 处理器 中的 寄存器** ，它包含当前正在执行的指令的地址（位置）。
 
 **中文名:** 程序计数器
 
@@ -545,9 +562,9 @@ final Student t = new Student();      t = new Teacher();   //t编译错误,因�
 
 **导包只可以导到当前层，不可以再导入包里面的包中的类**
 
-[java.awt](https://www.baidu.com/s?wd=java.awt&tn=44039180_cpr&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3uWD1mhRYn19BnjwWnWPb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnHRYnHnknWD3P1b3PHDkn10zPs).*是导入java\awt包下所有的类，并不包括其子包下的类。
+[java.awt](https://www.baidu.com/s?wd=java.awt&tn=44039180_cpr&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3uWD1mhRYn19BnjwWnWPb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnHRYnHnknWD3P1b3PHDkn10zPs).*是导入 java\awt 包下所有的类，并不包括其子包下的类。
 
-**[java.awt](https://www.baidu.com/s?wd=java.awt&tn=44039180_cpr&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3uWD1mhRYn19BnjwWnWPb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnHRYnHnknWD3P1b3PHDkn10zPs).event.\*才能导入java\awt\event包下的类。**
+**[java.awt](https://www.baidu.com/s?wd=java.awt&tn=44039180_cpr&fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y3uWD1mhRYn19BnjwWnWPb0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EnHRYnHnknWD3P1b3PHDkn10zPs).event.\*才能导入 java\awt\event 包下的类。**
 
 
 
@@ -559,7 +576,7 @@ final Student t = new Student();      t = new Teacher();   //t编译错误,因�
 
 ![img](https://uploadfiles.nowcoder.com/images/20220406/348199299_1649228081529/4A47A0DB6E60853DEDFCFDF08A5CA249)
 
-注意： float []f[] = new float\[6][6]; //这个变量声明方式是对的！
+注意： float [] f [] = new float\[6][6]; //这个变量声明方式是对的！
 
 
 
@@ -567,32 +584,32 @@ final Student t = new Student();      t = new Teacher();   //t编译错误,因�
 
 #### * 实例对象也可以调用静态方法。(可以通过编译，但是不建议这样用)
 
-static表示类方法，在类加载的时候就完成了，而那时对象还没创建完成，就不能用this
+static 表示类方法，在类加载的时候就完成了，而那时对象还没创建完成，就不能用 this
 
 
 
 #### * 类指外部类的访问修饰符
 
-* 修饰符有public(表示该类在项目所有类中可以被导入）
-* default(该类只能在同一个package中使用）
+* 修饰符有 public(表示该类在项目所有类中可以被导入）
+* default(该类只能在同一个 package 中使用）
 * abstract
 * final
 
 总结：
 
-**外部类：public 默认**               [Java外部类不能用private和protected修饰](https://blog.csdn.net/weixin_42414244/article/details/116455725)
+**外部类：public 默认**               [Java 外部类不能用 private 和 protected 修饰](https://blog.csdn.net/weixin_42414244/article/details/116455725)
 
-成员内部类：内部类理解成类的成员，成员有4种访问权限吧，内部类也是
+成员内部类：内部类理解成类的成员，成员有 4 种访问权限吧，内部类也是
 
 
 
 #### * interface 修饰符
 
-写酱紫的源代码![img](https://uploadfiles.nowcoder.com/images/20190909/571493834_1567991517942_FEA0BC99924C005C4D343BB1FBF44C63) ，使用反编译软件可以看到这个源代码编译之后的结果![img](https://uploadfiles.nowcoder.com/images/20190909/571493834_1567991575719_0F538A76F4479FCF84589A6913F46892)，我们知道，我们不写的修饰符，都会在编译阶段被加上，所以 **default 和 abstract 可以修饰接口**
+写酱紫的源代码 ![img](https://uploadfiles.nowcoder.com/images/20190909/571493834_1567991517942_FEA0BC99924C005C4D343BB1FBF44C63) ，使用反编译软件可以看到这个源代码编译之后的结果 ![img](https://uploadfiles.nowcoder.com/images/20190909/571493834_1567991575719_0F538A76F4479FCF84589A6913F46892)，我们知道，我们不写的修饰符，都会在编译阶段被加上，所以 **default 和 abstract 可以修饰接口**
 
 
 
-#### * 值传递 i= i ++;
+#### * 值传递 i = i ++;
 
 ```java
 int i = 0;
@@ -607,7 +624,7 @@ System.out.println(i); //0
 
 
 
-1. for循环外面count=0,循环里面的count=count++;(count的值都等于count值，而后面count自加不影响count结果，因此这个式子无意义);循环count都为0（**因count++是先返回count的本身值再自加1的**）！而加1的这个temp又没有赋值给别人所以没用上！        
+1. for 循环外面 count = 0, 循环里面的 count = count++;(count 的值都等于 count 值，而后面 count 自加不影响 count 结果，因此这个式子无意义); 循环 count 都为 0（**因 count++是先返回 count 的本身值再自加 1 的**）！而加 1 的这个 temp 又没有赋值给别人所以没用上！        
 
    * ```java
      count0=count1++的执行步骤：
@@ -616,33 +633,33 @@ System.out.println(i); //0
      count0=tmp；
      ```
 
-2. 若是改为count=++count;（先自加，再返回自加后的值），结果就是5050*101=510050了！*
+2. 若是改为 count =++count;（先自加，再返回自加后的值），结果就是 5050 *101 = 510050 了！*
 
-3. 改为count++;结果就是5050*101=510050了！
+3. 改为 count++; 结果就是 5050*101 = 510050 了！
 
 
 
-#### * switch语句中的参数
+#### * switch 语句中的参数
 
 链接：https://www.nowcoder.com/questionTerminal/70bab9b529ec42ebafd850cd5877dcdd
 来源：牛客网
 
-以java8为准，switch支持10种类型  
+以 java8 为准，switch 支持 10 种类型  
 
 基本类型：byte char short int  
 
-对于包装类 ：Byte,Short,Character,Integer  String  enum      
+对于包装类 ：Byte, Short, Character, Integer  String  enum      
 
-2、实际只支持int类型  Java实际只能支持int类型的switch语句，那其他的类型时如何支持的  
+2、实际只支持 int 类型  Java 实际只能支持 int 类型的 switch 语句，那其他的类型时如何支持的  
 
-* a、基本类型byte char short       
-  * 原因：这些基本数字类型可自动向上转为int, 实际还是用的int。 
-*  b、基本类型包装类Byte,Short,Character,Integer        
-  * 原因：java的自动拆箱机制 可看这些对象自动转为基本类型  
+* a、基本类型 byte char short       
+  * 原因：这些基本数字类型可自动向上转为 int, 实际还是用的 int。 
+*  b、基本类型包装类 Byte, Short, Character, Integer        
+  * 原因：java 的自动拆箱机制 可看这些对象自动转为基本类型  
 * c、String 类型       
-  * 原因：实际switch比较的string.hashCode值，它是一个int类型       如何实现的，网上例子很多。此处不表。   
-* d、enum类型       
-  * 原因 ：实际比较的是enum的ordinal值（表示枚举值的顺序），它也是一个int类型     所以也可以说 switch语句只支持int类型
+  * 原因：实际 switch 比较的 string.hashCode 值，它是一个 int 类型       如何实现的，网上例子很多。此处不表。   
+* d、enum 类型       
+  * 原因 ：实际比较的是 enum 的 ordinal 值（表示枚举值的顺序），它也是一个 int 类型     所以也可以说 switch 语句只支持 int 类型
 
 
 
@@ -660,9 +677,9 @@ Java 中的 Arrays 类提供了一个 binarySearch 方法，用于在已排序�
 
 #### * ConcurrentHashMap 1.7 vs 1.8
 
-jdk1.7 `数组+链表`，`分段锁`==内部类== class Segment<K,V> extends ReentrantLock
+jdk1.7 `数组+链表`，`分段锁` ==内部类== class Segment <K,V> extends ReentrantLock
 
-* 锁粒度包含多个节点 Hash`Entry`
+* 锁粒度包含多个节点 Hash `Entry`
 
 jdk1.8 `数组+链表+红黑树`，CAS+Synchronized
 
@@ -698,12 +715,12 @@ jdk1.8 `数组+链表+红黑树`，CAS+Synchronized
 
 
 
-#### * [Java集合](https://javaguide.cn/java/collection/java-collection-questions-01.html#%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0)
+#### * [Java 集合](https://javaguide.cn/java/collection/java-collection-questions-01.html#%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0)
 
-> java中ArrayDeque和Stack类哪个用来实现栈方便一些
+> java 中 ArrayDeque 和 Stack 类哪个用来实现栈方便一些
 >
-> `ArrayDeque`更加方便实现栈，它具有更好的性能、更多的功能和更好的代码风格。因此，在实际开发中，推荐使用`ArrayDeque`来实现栈的功能。
-> `Stack`是较早版本的类
+> `ArrayDeque` 更加方便实现栈，它具有更好的性能、更多的功能和更好的代码风格。因此，在实际开发中，推荐使用 `ArrayDeque` 来实现栈的功能。
+> `Stack` 是较早版本的类
 
 ![https://oss.javaguide.cn/github/javaguide/java/collection/java-collection-hierarchy.png](https://oss.javaguide.cn/github/javaguide/java/collection/java-collection-hierarchy.png)
 
@@ -711,11 +728,11 @@ jdk1.8 `数组+链表+红黑树`，CAS+Synchronized
 
 #### * 谈一谈你对面向对象的理解
 
-面向过程让计算机`有步骤地顺序做一件事`，是过程化思维，使用面向过程语言开发大型项目，`软件复用和维护存在很大问题`，模块之间耦合严重。
+面向过程让计算机 `有步骤地顺序做一件事`，是过程化思维，使用面向过程语言开发大型项目，`软件复用和维护存在很大问题`，模块之间耦合严重。
 
 `面向对象相对面向过程更适合解决规模较大的问题`，可以拆解问题复杂度，对现实事物进行抽象并映射为开发对象，`更接近人的思维。`
 
-例如开门这个动作，面向过程是 open（Door door），动宾结构，door 作为操作对象的参数传入方法，方法内定义开门的具体步骤。面向对象的方式首先会定义一个类 Door，抽象出门的属性（如尺寸、颜色）和行为（如open 和 close），主谓结构。
+例如开门这个动作，面向过程是 open（Door door），动宾结构，door 作为操作对象的参数传入方法，方法内定义开门的具体步骤。面向对象的方式首先会定义一个类 Door，抽象出门的属性（如尺寸、颜色）和行为（如 open 和 close），主谓结构。
 
 面向过程代码松散，强调流程化解决问题。面向对象代码强调高内聚、低耦合，先抽象模型定义共性行为，再解决实际问题
 
@@ -725,18 +742,18 @@ jdk1.8 `数组+链表+红黑树`，CAS+Synchronized
 
 #### * 类加载具体过程？
 
-类加载是Java虚拟机（JVM）将类的字节码加载到内存中并转换为可执行的Java类的过程。类加载过程包括以下几个步骤：
+类加载是 Java 虚拟机（JVM）将类的字节码加载到内存中并转换为可执行的 Java 类的过程。类加载过程包括以下几个步骤：
 
 1. 加载（Loading）：通过类的全限定名（Fully Qualified Name），获取类的字节码数据。字节码可以来自文件、网络、数据库等各种来源。
-2. 验证（Verification）：对字节码进行验证，确保其符合Java虚拟机规范。验证过程包括文件格式验证、元数据验证、字节码验证、符号引用验证等。
+2. 验证（Verification）：对字节码进行验证，确保其符合 Java 虚拟机规范。验证过程包括文件格式验证、元数据验证、字节码验证、符号引用验证等。
 3. 准备（Preparation）：为类的静态变量分配内存空间，并设置默认初始值。不包括实例变量，实例变量的准备是在对象实例化时进行的。
 4. 解析（Resolution）：将类、接口、字段和方法的符号引用转换为直接引用。符号引用包括类或接口的全限定名、字段或方法的名称和描述符等。
    * 换句话说，符号引用是一种符号化的表示方式，用于描述类、接口、字段或方法的名称和类型等信息，而直接引用是一种具体的内存地址，用于直接访问类、接口、字段或方法在内存中的实际数据。
-   * 将字节码文件转换为机器码是在Java虚拟机执行类加载过程中的解析和执行阶段进行的。具体来说，这一步骤是在解析阶段进行的
+   * 将字节码文件转换为机器码是在 Java 虚拟机执行类加载过程中的解析和执行阶段进行的。具体来说，这一步骤是在解析阶段进行的
 5. 初始化（Initialization）：执行类的初始化代码，包括静态变量的赋值和静态代码块的执行。在这个阶段，会执行类中的静态初始化器（Static Initializer）。
 6. 使用（Usage）：类加载完成后，可以通过创建对象、调用方法等方式使用该类。
 
-需要注意的是，类的加载是按需进行的，即在使用到类时才会进行加载。另外，类加载过程是由Java虚拟机的类加载器（ClassLoader）负责执行的。Java虚拟机提供了三种内建的类加载器：启动类加载器（Bootstrap Class Loader）、扩展类加载器（Extension Class Loader）和应用程序类加载器（Application Class Loader）
+需要注意的是，类的加载是按需进行的，即在使用到类时才会进行加载。另外，类加载过程是由 Java 虚拟机的类加载器（ClassLoader）负责执行的。Java 虚拟机提供了三种内建的类加载器：启动类加载器（Bootstrap Class Loader）、扩展类加载器（Extension Class Loader）和应用程序类加载器（Application Class Loader）
 
 类加载器具体看 [JVM.md](../JVM/JVM.md)
 
@@ -764,29 +781,29 @@ jdk1.8 `数组+链表+红黑树`，CAS+Synchronized
 
 **已下这两个不构成重载：**
 
-public void getSum(int i,int j)
+public void getSum(int i, int j)
 
-public int getSum(int i,int j)
+public int getSum(int i, int j)
 
 
 
 #### #讲一下 HashMap 的哈希函数怎么实现
 
-`（h = key.hashCode()）^ (h >>> 16)`，首先调用 hashCode() 方法对 key 求 hash值，然后将hash值的低 16 位bit和高 16 位 bit 做异或运算获得 新的 hash 值，然后  `(n - 1) & hash` 获得下标 （n 指数组的长度）
+`（h = key.hashCode()）^ (h >>> 16)`，首先调用 hashCode() 方法对 key 求 hash 值，然后将 hash 值的低 16 位 bit 和高 16 位 bit 做异或运算获得 新的 hash 值，然后  `(n - 1) & hash` 获得下标 （n 指数组的长度）
 
-**为什么要和高16位进行 ^ 运算？**
+**为什么要和高 16 位进行 ^ 运算？**
 
-- 哈希桶的选择是通过对哈希码进行进一步的运算转换得到的。HashMap使用哈希码的高位和低位进行异或运算，**以获得一个更均匀的分布**。
+- 哈希桶的选择是通过对哈希码进行进一步的运算转换得到的。HashMap 使用哈希码的高位和低位进行异或运算，**以获得一个更均匀的分布**。
 - 运算的目的是将哈希码的高位和低位的信息结合起来，使得哈希码的分布更加均匀，减少哈希冲突的概率，并提高查找的效率。
 
 **为什么 & 位必须是（length - 1）？**
 
-长度是2的幂次，length -1 的所有二进制都是1，相当于 取余数，但是比 % 运算更快， table[i = （n -1）& hash];   
-XD: 这个可以看Chrome书签 因为 2^n 满足 & 条件   
+长度是 2 的幂次，length -1 的所有二进制都是 1，相当于 取余数，但是比 % 运算更快， table [i = （n -1）& hash];   
+XD: 这个可以看 Chrome 书签 因为 2^n 满足 & 条件   
 
 **为什么用 ^ 而不是用 & 或 |**
 
-因为 & 和 | 都会使结果偏向 0 或者 1,并不是均匀的概念，所以用 ^
+因为 & 和 | 都会使结果偏向 0 或者 1, 并不是均匀的概念，所以用 ^
 
 
 
@@ -794,14 +811,14 @@ XD: 这个可以看Chrome书签 因为 2^n 满足 & 条件
 
 * 多个线程同时 put ， 当 put 的 key 一样造成一个线程 put 的数据被覆盖
 
-* 多个线程同时检测到元素个数超过数组大小 * loadFactor, 同时对Node 数组 进行扩容，都重新计算元素位置和复制数据，最终只有一个线程扩容后的数据会复制成功，其他线程丢失，并且 put 的数据也丢失。
+* 多个线程同时检测到元素个数超过数组大小 * loadFactor, 同时对 Node 数组 进行扩容，都重新计算元素位置和复制数据，最终只有一个线程扩容后的数据会复制成功，其他线程丢失，并且 put 的数据也丢失。
 * 链表和红黑树转换的时候会抛出类型转化异常：两个线程同时将红黑树转换成链表，一个线程转换成功，红黑树变成链表了，另一个线程开始转换就会发现红黑树变成了链表，就会抛出类型转化异常。
 
 
 
 
 
-#### #说一下java对象中的对象拷贝？
+#### #说一下 java 对象中的对象拷贝？
 
 浅拷贝：拷贝对象时，对基本数据类型进行拷贝，而引用数据类型只进行了引用地址的传递，**没有创建新对象**
 
@@ -815,8 +832,8 @@ ps: clone() 是浅拷贝
 
 方法一：
 
-1. 对应的引用类型class也实现了cloneable接口
-2. 对当前对象 clone（），对其内部的`引用类型`再一次clone（）
+1. 对应的引用类型 class 也实现了 cloneable 接口
+2. 对当前对象 clone（），对其内部的 `引用类型` 再一次 clone（）
 
 ```java
 public class User implements Cloneable {
@@ -830,7 +847,7 @@ public class User implements Cloneable {
         return user;
     }
 }
-//name 不可变性所以没关系，original的改变不会影响deepCopy
+//name 不可变性所以没关系，original 的改变不会影响 deepCopy
 ```
 
 
@@ -841,7 +858,7 @@ public class User implements Cloneable {
 
 
 
-### Java基本语法
+### Java 基本语法
 
 #### 一、基础类型
 
@@ -860,17 +877,17 @@ byte、short、char、< int < long < float < double
 
 
 
-String可以和boolean拼接
+String 可以和 boolean 拼接
 
-注意：char对应一个ASCII码两个char相加就是ASCII码相加
+注意：char 对应一个 ASCII 码两个 char 相加就是 ASCII 码相加
 
 `short s = 5;  s = s-2;//不能通过编译，因为2是int，所以要用int接收`
 
 **计算机底层都以补码的方式来存储数据，运算的（关注负数就行，因为正数补码是本身）！**
 
-**原码才可以对应为正常的整数，补码只有转换为原码才能被正常人类识别。**（~...<font color=red>这些运算是以补码为基础！</font>）
+**原码才可以对应为正常的整数，补码只有转换为原码才能被正常人类识别。**（~...<font color=red> 这些运算是以补码为基础！</font>）
 
-[公式-n=~n+1可推出~n=-n-1](https://www.it610.com/article/1305615574268678144.htm)
+[公式-n =~n+1 可推出~n =-n-1](https://www.it610.com/article/1305615574268678144.htm)
 
 ```java
 		int a = 12,b = 5;
@@ -884,28 +901,28 @@ String可以和boolean拼接
 
 ```java
 		short s1 = 10;
-        s1 ++;//自增1不会改变本身变量的数据类型
+        s1 ++;//自增 1 不会改变本身变量的数据类型
 ```
 
 &|这两个符号既可以是逻辑运算符又可以是位运算符，取决于它的运算类型
 
 
 
-**【面试题】** 你能否写出最高效的2 * 8的实现方式？
-答案： 2<<3或8<<1
+**【面试题】** 你能否写出最高效的 2 * 8 的实现方式？
+答案： 2 << 3 或 8 << 1
 
 注意：位运算符操作的都是整型的数据
 
-强转要带括号：(char)(ans01-10+'A')    前面这个char要用括号包起来
+强转要带括号：(char)(ans01-10+'A')    前面这个 char 要用括号包起来
 
 
 
 ```java
 	题目: 如何求一个0-255范围内的整数的十六进制值，例如60
-        //要求手动实现   十六进制表示形式3C.
+        //要求手动实现   十六进制表示形式 3C.
 
-        //分析：0-255 8位所以只关注后面8位就行，且按规则每4位组一个数
-        //15的二进制数是1111 所以取这个数的后四位就是&15 这是关键*****  【每个十六进制位对应4个二进制位】
+        //分析：0-255 8 位所以只关注后面 8 位就行，且按规则每 4 位组一个数
+        //15 的二进制数是 1111 所以取这个数的后四位就是&15 这是关键 *****  【每个十六进制位对应 4 个二进制位】
         int n = 60;
         int ans01 = n & 15;
         String s1 = ans01 > 9 ? (char)(ans01-10+'A')+"" : ans01+"";
@@ -1008,12 +1025,12 @@ String可以和boolean拼接
     接口默认为public abstract，所以接口的修饰符可以为abstract
         
     
-    //XD 2023/12/13 接口中可以有static default方法
+    //XD 2023/12/13 接口中可以有 static default 方法
     jdk8接口除了可以定义全局常量和抽象方法外，还可以定义静态方法和默认方法（这两个有方法体），如下：
     注意默认还是public！！！
     static void a() {
-        //接口中的静态方法只能接口来调，实现类是掉不了这个a方法的。    【不要想复杂了，就和平时一样静态方法属于类    这里属于接口】
-        //有点像工具类靠，换句话说接口越来越像类了例如Collection
+        //接口中的静态方法只能接口来调，实现类是掉不了这个 a 方法的。    【不要想复杂了，就和平时一样静态方法属于类    这里属于接口】
+        //有点像工具类靠，换句话说接口越来越像类了例如 Collection
     }
     
     default void b() {
@@ -1033,11 +1050,11 @@ String可以和boolean拼接
     
 ```
 
-> - jdk1.8，接口是否可以实现default的方法
+> - jdk1.8，接口是否可以实现 default 的方法
 >   - 这块只记得可以，然后面试官讲了一下为什么可以，主要是为了在后续的开发中如果扩展接口的功能，同时还可以兼容以前的实现类。
 >
 >
-> XD 2023/12/26 补充：接口的default方法作用：
+> XD 2023/12/26 补充：接口的 default 方法作用：
 
 在 Java 8 之前，一旦一个接口被定义并被实现类实现，就无法在接口中添加新的方法，因为这将导致所有实现类都需要修改以实现新的方法。这对于已经发布并广泛使用的接口来说是一个严重的限制，因为它违背了面向对象设计中的开闭原则（Open-Closed Principle），即对扩展开放，对修改关闭。
 
@@ -1102,7 +1119,7 @@ String可以和boolean拼接
     }
     ------------------------以上error-------------------------
     
-    //下面才是正确的写法，注意super！！！（super是指向父类的引用）
+    //下面才是正确的写法，注意 super！！！（super 是指向父类的引用）
     interface A {
          int x = 0;
     }
@@ -1141,7 +1158,7 @@ class Solution extends B implements A {
 **异常：**
 
 补充：IOException 是 Java 中的一个受检异常（checked exception），这意味着在编译时编译器会强制要求对其进行处理或声明。
-	XD: 后来补充-SQLException也是（checked exception）
+	XD: 后来补充-SQLException 也是（checked exception）
 
 搞清楚 checked exception 是必须要 try-catch 的不然报错不准运行！
 
@@ -1166,7 +1183,7 @@ class Solution extends B implements A {
 
 
 
-//代码1
+//代码 1
 public static void test() throws Exception  {
 
     throw new Exception("参数越界"); 
@@ -1174,7 +1191,7 @@ public static void test() throws Exception  {
 }
 
 
-//代码2
+//代码 2
 try{
     throw new Exception("参数越界"); 
 }catch(Exception e) {
@@ -1183,7 +1200,7 @@ try{
 System.out.println("异常后");//可以执行
 
 
-//代码3
+//代码 3
 if(true) {
     throw new Exception("参数越界"); 
 }
@@ -1207,7 +1224,7 @@ System.out.println("异常后"); //抛出异常，不会执行
 
 ***
 ***
-### Java高级部分
+### Java 高级部分
 
 **多线程**
 
@@ -1276,13 +1293,13 @@ System.out.println("异常后"); //抛出异常，不会执行
 ```
 
 ***
-ps:多线程只是草率的过了一遍，大概了解了里面的东西，但是没有跟着敲代码，对多线程的很多点理解的并不深刻。
+ps: 多线程只是草率的过了一遍，大概了解了里面的东西，但是没有跟着敲代码，对多线程的很多点理解的并不深刻。
 
 ***
 
 
 
-**java常用类**
+**java 常用类**
 
 ```java 
     String 1. final,不可被继承，不可变性！（这个在值传递问题考的多！）
@@ -1305,7 +1322,7 @@ ps:多线程只是草率的过了一遍，大概了解了里面的东西，但�
 ```java
     String对象的创建：
         String s1 = new String();
-        //本质上   this.value = new char[0];
+        //本质上   this.value = new char [0];
         
     
     1. 常量和常量拼接结果在常量池，且常量池不会存在相同内容的常量。
@@ -1329,10 +1346,10 @@ ps:多线程只是草率的过了一遍，大概了解了里面的东西，但�
     
     
     
-    //通过字面量定义的方式：此时的s1和s2的数据javaEE声明在方法区中的字符串常量池中。
+    //通过字面量定义的方式：此时的 s1 和 s2 的数据 javaEE 声明在方法区中的字符串常量池中。
     String s1 = "javaEE";
     String s2 = "javaEE";
-    //通过new + 构造器的方式:此时的s3和s4保存的地址值，是数据在堆空间中开辟空间以后对应的地址值。
+    //通过 new + 构造器的方式: 此时的 s3 和 s4 保存的地址值，是数据在堆空间中开辟空间以后对应的地址值。
     String s3 = new String("javaEE");
     String s4 = new String("javaEE");
     
@@ -1343,7 +1360,7 @@ ps:多线程只是草率的过了一遍，大概了解了里面的东西，但�
     
     
     
-    //一道面试题  ------> String的不可变性
+    //一道面试题  ------> String 的不可变性
     public class StringTest {
 
     String str = new String("good");
@@ -1363,7 +1380,7 @@ ps:多线程只是草率的过了一遍，大概了解了里面的东西，但�
     
 ```
 
-**日期类型自己看api学，枚举注解也自己看博客学**
+**日期类型自己看 api 学，枚举注解也自己看博客学**
 
 
 
@@ -1371,11 +1388,11 @@ ps:多线程只是草率的过了一遍，大概了解了里面的东西，但�
 
 > 学 RuoYi 补充
 
-我们一般知道，注解是给程序看的，给机器看的，当然也是给程序员看的。注解如果没有注解解析器（注解处理器，注解解释器），那么注解就没有什么作用。所以@Anonyous一定是在某个地方被干嘛干嘛了！
+我们一般知道，注解是给程序看的，给机器看的，当然也是给程序员看的。注解如果没有注解解析器（注解处理器，注解解释器），那么注解就没有什么作用。所以@Anonyous 一定是在某个地方被干嘛干嘛了！
 
 RuoYi 中注解一般头上加了 `@Retention(RetentionPolicy.RUNTIME)` 方便反射动态拿，然后再做一系列逻辑！
 
-比如：@Log   @Anonymous  @RateLimiter  都是RuoYi自己写的然后再Services层再反射拿做一系列相应业务
+比如：@Log   @Anonymous  @RateLimiter  都是 RuoYi 自己写的然后再 Services 层再反射拿做一系列相应业务
 
 
 
@@ -1461,7 +1478,7 @@ RuoYi 中注解一般头上加了 `@Retention(RetentionPolicy.RUNTIME)` 方便�
 
 补充：         
 
-* LinkedHashMap:需要记录访问顺序或插入顺序 
+* LinkedHashMap: 需要记录访问顺序或插入顺序 
 * TreeMap：需要自定义排序
 
 
@@ -1474,27 +1491,27 @@ RuoYi 中注解一般头上加了 `@Retention(RetentionPolicy.RUNTIME)` 方便�
 
 **泛型**
 
-泛型的 \<T> 必须是对象吗，基本数据类型可以吗
+泛型的 \< T > 必须是对象吗，基本数据类型可以吗
 
-在Java中，泛型类型参数\<T>必须是一个引用类型，而不是基本数据类型。也就是说，泛型类型参数必须是一个类或接口类型，或者是一个数组类型。
+在 Java 中，泛型类型参数 \< T > 必须是一个引用类型，而不是基本数据类型。也就是说，泛型类型参数必须是一个类或接口类型，或者是一个数组类型。
 
 ```java
 
     泛型常见的表示可以是<E> <T> <K,V>  也可以是自给随便给<E1,E2,E3,A,B,C>都行
     
         
-    T[] arr = new T[10]; // 编译不通过  因为T只是类型，不是类！
+    T[] arr = new T[10]; // 编译不通过  因为 T 只是类型，不是类！
     T[] arr = (T[]) new Object[10]; //编译通过
     
     
     泛型方法：在方法中出现了泛型结构，泛型参数与类的泛型参数没有任何关系比如类是<E>  泛型方法是<T>    换句话说，泛型方法所属的类是不是泛型类都没有关系
     
     
-    public <E> List<E> copyFromArrayToList(E[] arr)  //注意public后面的<E> 不加会编译报错，会看成是不是有个类叫E。。。。。所以要表示一下前面加<E>
+    public <E> List<E> copyFromArrayToList(E[] arr)  //注意 public 后面的 <E> 不加会编译报错，会看成是不是有个类叫 E。。。。。所以要表示一下前面加 <E>
     
     通配符：
     List<String> a 不能赋值给  List<Object> b
-    解决途径：通配符 ？    List<?> c      c = a; //ok  c = b //ok    但对于c就不能向里添加数据了，除了添加null之外（因为所有类类型都可以赋值为null）
+    解决途径：通配符 ？    List<?> c      c = a; //ok  c = b //ok    但对于 c 就不能向里添加数据了，除了添加 null 之外（因为所有类类型都可以赋值为 null）
     总结：类A是类B的父类，G<A>和G<B>是没有任何关系的，二者共同的父类是：G<?>
     
     
@@ -1507,13 +1524,13 @@ RuoYi 中注解一般头上加了 `@Retention(RetentionPolicy.RUNTIME)` 方便�
         
         可以这样理解：?（-∞，+∞） extends ---> （-∞，A]
                                   super ---> [A，+∞）
-        写数据时注意，对于l1来说，不能把add(new Student) //因为不清楚是不是还有比Student小的类，拿上面数学的方式理解，因为负无穷大，假如有比Student小的子类，我不能把Student赋给这个子类。（向下强转，向上自然转）
+        写数据时注意，对于l1来说，不能把add(new Student) //因为不清楚是不是还有比 Student 小的类，拿上面数学的方式理解，因为负无穷大，假如有比 Student 小的子类，我不能把 Student 赋给这个子类。（向下强转，向上自然转）
 ```
 
 
 
 
-**IO流**
+**IO 流**
 
 ```java
 
@@ -1611,14 +1628,14 @@ RuoYi 中注解一般头上加了 `@Retention(RetentionPolicy.RUNTIME)` 方便�
 
 
 
-**java反射机制**
+**java 反射机制**
 
 ps: 有难度，但又比较重要。要求代码先要会写，反射机制被视为动态语言的关键。
 
 动态语言：在运行时代码可以根据某些条件改变自身结构。
-java不是动态语言，但java可以称为准动态语言
+java 不是动态语言，但 java 可以称为准动态语言
 
-重点：1.获取Class实例
+重点：1.获取 Class 实例
       2.创造运行时类对象（newInstance()）
       3.调用运行时类的指定结构（指定结构中重中之重是方法）
 ```java
@@ -1650,36 +1667,36 @@ java不是动态语言，但java可以称为准动态语言
         1）获取Class实例：
         
         //方式一：调用运行时类的属性：.class  编译时就写死了，没有体现动态性
-        //通过 类名.class 获取到字节码文件对象（任意数据类型都具备一个class静态属性）
+        //通过 类名.class 获取到字节码文件对象（任意数据类型都具备一个 class 静态属性）
         Class clazz1 = Person.class;
-        //Class clazz = hello.class;  //如果我没创hello会报这样的错：hello 无法解析为类型(hello不是类、接口、枚举、注解、数组、基本数据类型、void)
+        //Class clazz = hello.class;  //如果我没创 hello 会报这样的错：hello 无法解析为类型(hello 不是类、接口、枚举、注解、数组、基本数据类型、void)
         System.out.println(clazz1);
         
-        //方式二：通过运行时类的对象,调用getClass()
+        //方式二：通过运行时类的对象, 调用 getClass()
         Person p1 = new Person();
         Class clazz2 = p1.getClass();
         System.out.println(clazz2);
 
-        //方式三：调用Class的静态方法：forName(String classPath)   
-        //用的最多，也更好体现运行时的动态性，像第一种定死了，这种里面是个String只有运行时才会去判断有没有错找不不找得到
+        //方式三：调用 Class 的静态方法：forName(String classPath)   
+        //用的最多，也更好体现运行时的动态性，像第一种定死了，这种里面是个 String 只有运行时才会去判断有没有错找不不找得到
         Class clazz3 = Class.forName("com.atguigu.java.Person");
 //        clazz3 = Class.forName("java.lang.String");
         System.out.println(clazz3);
         
-        //方式四:ClassLoader 了解    类加载器的作用就是把类(cllas)装载进内存中   具体到JVM学类加载器，有三个
+        //方式四: ClassLoader 了解    类加载器的作用就是把类(cllas)装载进内存中   具体到 JVM 学类加载器，有三个
         
 
 
 		2）创建对象（基于上一步）
-            //方式一：直接Class对象API newInstance()
-      	    // 获取Class对象
+            //方式一：直接 Class 对象 API newInstance()
+      	    // 获取 Class 对象
             Class<?> clazz = MyClass.class;
             // 创建对象
             Object obj = clazz.newInstance();
             
 
-			//方式二：通过Class对象获取构造对象，调用构造对象同名方法 newInstance()
-			// 获取Class对象
+			//方式二：通过 Class 对象获取构造对象，调用构造对象同名方法 newInstance()
+			// 获取 Class 对象
             Class<?> clazz = MyClass.class;
             // 获取构造函数
             Constructor<?> constructor = clazz.getConstructor(String.class, int.class);
@@ -1689,7 +1706,7 @@ java不是动态语言，但java可以称为准动态语言
         
         需要学习JVM
         
-        // m = 0  m = 300  finally:m = 100
+        // m = 0  m = 300  finally: m = 100
         class A {
             static {
                 m = 300;
@@ -1765,17 +1782,17 @@ java不是动态语言，但java可以称为准动态语言
     main() {
         MyThread t = new MyThread();
         Thread thread = new Thread(t);
-        thread.start(); //启动线程，调用线程的run()
+        thread.start(); //启动线程，调用线程的 run()
     }
     
 
 ```
 
-java bin jjs.exe可以执行js文件，也就是说可以在jvm上运行js
+java bin jjs.exe 可以执行 js 文件，也就是说可以在 jvm 上运行 js
 
-**Lambda表达式**
+**Lambda 表达式**
 
-ps: 具体看Lambda表达式.md文件
+ps: 具体看 Lambda 表达式.md 文件
 ```java
 
     * java内置的4大核心函数式接口
@@ -1797,13 +1814,13 @@ ps: 具体看Lambda表达式.md文件
 
 **Stream API**
 
-ps: java8两个重要的改变，一个是Lambda另一个就是Stream API
+ps: java8 两个重要的改变，一个是 Lambda 另一个就是 Stream API
 
-> #### stream流和for的区别？
+> #### stream 流和 for 的区别？
 >
-> stream流可以看作是for循环的一个语法糖；
+> stream 流可以看作是 for 循环的一个语法糖；
 >
-> stream有并发流，在超过百万级数据量时，使用stream流效率更高；
+> stream 有并发流，在超过百万级数据量时，使用 stream 流效率更高；
 
 ```java
 
@@ -1828,13 +1845,13 @@ ps: java8两个重要的改变，一个是Lambda另一个就是Stream API
     
     方式四：创建无限流（了解）
         //迭代
-//      public static<T> Stream<T> iterate(final T seed, final UnaryOperator<T> f)
-        //遍历前10个偶数
+//      public static <T> Stream <T> iterate(final T seed, final UnaryOperator <T> f)
+        //遍历前 10 个偶数
         Stream.iterate(0, t -> t + 2).limit(10).forEach(System.out::println);
 
 
         //生成
-//      public static<T> Stream<T> generate(Supplier<T> s)
+//      public static <T> Stream <T> generate(Supplier <T> s)
         Stream.generate(Math::random).limit(10).forEach(System.out::println);
         
         
@@ -1850,9 +1867,9 @@ ps: java8两个重要的改变，一个是Lambda另一个就是Stream API
 ```
 
 
-Junit是自动化的测试，手动的输出会导致一直阻塞，也就是说junit不支持手动输入，否则会导致当前线程一直阻塞，转圈圈，所以test类不要用scanner那种控制台手动输入数据的方式，把数据直接写成形参，测试的时候直接写成参数测试吧；
+Junit 是自动化的测试，手动的输出会导致一直阻塞，也就是说 junit 不支持手动输入，否则会导致当前线程一直阻塞，转圈圈，所以 test 类不要用 scanner 那种控制台手动输入数据的方式，把数据直接写成形参，测试的时候直接写成参数测试吧；
 
-==JUnit总是为每个@Test方法创建一个测试类实例，所以必须要声明成public，也就是公共的，才能让junit给你创建，否则权限不够的.==
+==JUnit 总是为每个@Test 方法创建一个测试类实例，所以必须要声明成 public，也就是公共的，才能让 junit 给你创建，否则权限不够的.==
 
 
 
@@ -1862,15 +1879,15 @@ Junit是自动化的测试，手动的输出会导致一直阻塞，也就是说
 
 > 在 Java 中，重写 `equals()` 和 `hashCode()` 方法是因为它们在使用集合类（如 `HashMap`、`HashSet`、`Hashtable` 等）进行元素比较和存储时起着重要的作用。
 
-#### 集合Set添加某元素时，先调用hashCode()方法，定位到此元素实际存储位置，如果这个位置没有元素，说明是第一次存储；若此位置有对象存在，调用equals()进行比较，相等就舍弃此元素不存，不等则散列到其他地址。
+#### 集合 Set 添加某元素时，先调用 hashCode()方法，定位到此元素实际存储位置，如果这个位置没有元素，说明是第一次存储；若此位置有对象存在，调用 equals()进行比较，相等就舍弃此元素不存，不等则散列到其他地址。
 
-上面的示例也说明了为什么equals()相等，则hashCode()必须相等，进而当重写了equals方法，也要对hashCode()方法进行重写。
+上面的示例也说明了为什么 equals()相等，则 hashCode()必须相等，进而当重写了 equals 方法，也要对 hashCode()方法进行重写。
 https://blog.csdn.net/wo541075754/article/details/114994906
 
 
 
 
-java从1.5开始改名5.0
+java 从 1.5 开始改名 5.0
 
 
 
@@ -1907,7 +1924,7 @@ public class StudyTest extends People {
 
 ```
 
-**我这里char会搞错**
+**我这里 char 会搞错**
 ```java
 
 package com.example.spring_boot;
@@ -1930,7 +1947,7 @@ public class Example {
         System.out.println(ex.ch);
 
         ex.change2();
-        System.out.println(ex.a + "  " + ex.b); //2,b
+        System.out.println(ex.a + "  " + ex.b); //2, b
     }
 
     private void change2() {
@@ -1941,7 +1958,7 @@ public class Example {
     private void change(String str, char[] ch) {
         str = "test ok";
         ch = new char[]{'g'};
-//        ch[0] = 'g';
+//        ch [0] = 'g';
     }
 }
 
@@ -1968,33 +1985,33 @@ public static void main(String[] args) {
 
 ### 进阶：源码
 
-#### 一、JDK7的HashMap头插法循环的问题
+#### 一、JDK7 的 HashMap 头插法循环的问题
 
 > 问题出现在：==多线程情况下的扩容==，单线程是没有问题的
 
 >自己能理解的：：：：：：)  模拟出错：两个线程，A 要扩容的时候阻塞了，等 B 扩完后。A 醒了要扩的那个状态还保留在没扩之前的状态
 >
->XD：插入一个元素分两步  1）放值  newTable[i]=e;  2）改指针  e=next; 【看下图，先放头部再迁移改指针】
+>XD：插入一个元素分两步  1）放值  newTable [i] = e;  2）改指针  e = next; 【看下图，先放头部再迁移改指针】
 >
->**B（线程1 插入 B阻塞）**
->**A -> B（线程1 插入 A）**
->**B（线程2插入 B 后醒来继续改指针，此时发现head指针在 A 前面 B -> A -> B）**
+>**B（线程 1 插入 B 阻塞）**
+>**A -> B（线程 1 插入 A）**
+>**B（线程 2 插入 B 后醒来继续改指针，此时发现 head 指针在 A 前面 B -> A -> B）**
 
 ![image-20230605154613437](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202306051546511.png)
 
-#### 一、[jdk1.7 HashMap头插法在多线程环境下链表成环的场景怎么形成](https://www.bilibili.com/video/BV1n541177Ea/?spm_id_from=333.999.0.0)
+#### 一、[jdk1.7 HashMap 头插法在多线程环境下链表成环的场景怎么形成](https://www.bilibili.com/video/BV1n541177Ea/?spm_id_from=333.999.0.0)
 
 > 2024 再回顾彻底搞清：
 >
-> 核心：扩容完顺序会逆过来，一直没get到这个核心点。导致迷迷糊糊怎么也搞不明白
+> 核心：扩容完顺序会逆过来，一直没 get 到这个核心点。导致迷迷糊糊怎么也搞不明白
 >
-> `两个线程扩容传递的是两个新的table，原来是ABC，t扩容完成变成了CBA`，此时t2接着迁移对象遍历原来ABC，遍历到C的时候发现C的next节点是B，这样一直循环，这才叫死循环
+> `两个线程扩容传递的是两个新的table，原来是ABC，t扩容完成变成了CBA`，此时 t2 接着迁移对象遍历原来 ABC，遍历到 C 的时候发现 C 的 next 节点是 B，这样一直循环，这才叫死循环
 >
-> 头插法的锅，因为头插法打乱了链表的顺序，导致两个线程的数据结构不一致导致了bug。如果使用尾插法就没有这个bug。
+> 头插法的锅，因为头插法打乱了链表的顺序，导致两个线程的数据结构不一致导致了 bug。如果使用尾插法就没有这个 bug。
 >
 > <img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/6C0599EE-D613-40D3-9C0D-BDEE167E13C1_1_201_a.jpeg" alt="6C0599EE-D613-40D3-9C0D-BDEE167E13C1_1_201_a"  />
 >
-> PS：JDK提供的HashMap从来就不是给多线程用的，现在非要内卷到研究把一个线程不安全的类放在多线程下会有什么问题，就好比ArrayList也是线程不安全的，我非要问你在多线程下使用ArrayList（没有别的同步保障）会有什么问题。如果是从研究源码的角度来说勉强说得过去，如果要说 ArrayList有问题，那是不是撑得？而且1.8的HashMap也是线程不安全的，所以才推荐用 ConcurrentHashMap。
+> PS：JDK 提供的 HashMap 从来就不是给多线程用的，现在非要内卷到研究把一个线程不安全的类放在多线程下会有什么问题，就好比 ArrayList 也是线程不安全的，我非要问你在多线程下使用 ArrayList（没有别的同步保障）会有什么问题。如果是从研究源码的角度来说勉强说得过去，如果要说 ArrayList 有问题，那是不是撑得？而且 1.8 的 HashMap 也是线程不安全的，所以才推荐用 ConcurrentHashMap。
 
 
 
@@ -2008,7 +2025,7 @@ public static void main(String[] args) {
 
 这种情况可能会导致链表的遍历进入死循环，从而导致程序出现异常或崩溃。因此，在多线程环境下，对链表的操作一定要进行同步处理，避免出现数据竞争的问题。
 
-> 但是更新链表头指针时，由于它不知道链表头指针已经被线程A更新了，所以它会将链表头指针指向X节点，而不是新元素
+> 但是更新链表头指针时，由于它不知道链表头指针已经被线程 A 更新了，所以它会将链表头指针指向 X 节点，而不是新元素
 
 XD：线程 A 没有感知到 B，所以 A 把 head 指向了自己的 1 号元素，此时 B 继续做 add 操作
 
@@ -2052,12 +2069,12 @@ XD：线程 A 没有感知到 B，所以 A 把 head 指向了自己的 1 号元�
                +---+
 ```
 
-> 看着一段终于明白了：1）重点多线程没同步  2）head指针的覆盖！！！
+> 看着一段终于明白了：1）重点多线程没同步  2）head 指针的覆盖！！！
 >
-> 因为线程 B 在线程 A 之后向链表头部插入了元素 B，所以链表中的第一个元素是 B，它的下一个指针指向元素 A，即 B->A。而线程 A 在链表头部插入元素 A 时，因为链表头部指针 head 被线程 B 覆盖了，所以它并不知道链表头部已经有一个元素 B 存在。因此，线程 A 会将它自己插入的元素 A 的下一个指针指向原来的第一个元素 X，即 A->X，而元素 X 的下一个指针又指向元素 B，即 X->B。这样，就形成了一个链表 A->X->B->A，其中元素 A 的下一个指针指向了元素 B，使得链表成环。
+> 因为线程 B 在线程 A 之后向链表头部插入了元素 B，所以链表中的第一个元素是 B，它的下一个指针指向元素 A，即 B-> A。而线程 A 在链表头部插入元素 A 时，因为链表头部指针 head 被线程 B 覆盖了，所以它并不知道链表头部已经有一个元素 B 存在。因此，线程 A 会将它自己插入的元素 A 的下一个指针指向原来的第一个元素 X，即 A-> X，而元素 X 的下一个指针又指向元素 B，即 X-> B。这样，就形成了一个链表 A-> X-> B-> A，其中元素 A 的下一个指针指向了元素 B，使得链表成环。
 
-> 在线程 B 向链表头部插入元素 B 之后，元素 B 成为了链表中的第一个元素，它的下一个指针指向元素 A，即 B->A。
-> 而此时链表头部指针 head 已经被线程 B 修改为指向元素 B，所以线程 A 在插入元素 A 时，会将它的下一个指针指向原来的第一个元素 X，即 A->X。而元素 X 在此时就是链表中的第二个元素，它的下一个指针指向元素 B，即 X->B。因此，链表变为了 A->X->B。而由于元素 B 的下一个指针指向元素 A，而元素 A 的下一个指针又指向元素 X，最终形成了一个闭环的链表 A->X->B->A。
+> 在线程 B 向链表头部插入元素 B 之后，元素 B 成为了链表中的第一个元素，它的下一个指针指向元素 A，即 B-> A。
+> 而此时链表头部指针 head 已经被线程 B 修改为指向元素 B，所以线程 A 在插入元素 A 时，会将它的下一个指针指向原来的第一个元素 X，即 A-> X。而元素 X 在此时就是链表中的第二个元素，它的下一个指针指向元素 B，即 X-> B。因此，链表变为了 A-> X-> B。而由于元素 B 的下一个指针指向元素 A，而元素 A 的下一个指针又指向元素 X，最终形成了一个闭环的链表 A-> X-> B-> A。
 
 
 
@@ -2069,10 +2086,10 @@ XD：线程 A 没有感知到 B，所以 A 把 head 指向了自己的 1 号元�
 
 # eDiary
 
-#### 《JVM规范》
+#### 《JVM 规范》
 
 虚拟机栈，即为平时提到的栈结构。我们将局部变量存储在栈结构中
-堆，我们将new出来的结构（比如：数组、对象）加载在对空间中。补充：对象的属性（非static的）加载在堆空间中。
+堆，我们将 new 出来的结构（比如：数组、对象）加载在对空间中。补充：对象的属性（非 static 的）加载在堆空间中。
 方法区：类的加载信息、常量池、静态域
 
 ![image-20230317095440667](https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202303170954784.png)
@@ -2088,14 +2105,14 @@ XD：线程 A 没有感知到 B，所以 A 把 head 指向了自己的 1 号元�
  * ① 默认初始化
  * ② 显式初始化 / **代码块**
  * ③ 构造器中初始化
-* **********************
- * ④ 通过"对象.方法" 或 "对象.属性"的方式，赋值
+* **** **** **** **** ******
+ * ④ 通过 "对象.方法" 或 "对象.属性" 的方式，赋值
  * 
  * 以上操作的先后顺序：① - ② - ③ - ④  
 
 
 
-成员变量（static为界的实例变量和静态变量【**类变量**】）如果没有显式指定初始值，则会进行默认赋值；
+成员变量（static 为界的实例变量和静态变量【**类变量**】）如果没有显式指定初始值，则会进行默认赋值；
 也就是 static 的成员变量也会被默认赋值
 
 
@@ -2115,11 +2132,11 @@ XD：线程 A 没有感知到 B，所以 A 把 head 指向了自己的 1 号元�
 (4) 父类构造函数
 (5) 子类非静态代码块 ( 包括非静态初始化块，非静态属性 )
 (6) 子类构造函数
-其中：类中静态块按照声明顺序执行，并且(1)和(2)不需要调用new类实例的时候就执行了(意思就是在类加载到方法区的时候执行的)
+其中：类中静态块按照声明顺序执行，并且(1)和(2)不需要调用 new 类实例的时候就执行了(意思就是在类加载到方法区的时候执行的)
 2.其次，需要理解子类覆盖父类方法的问题，也就是方法重写实现多态问题。
-Base b = new Sub();它为多态的一种表现形式，声明是Base,实现是Sub类， 理解为 b 编译时表现为Base类特性，运行时表现为Sub类特性。
-当子类覆盖了父类的方法后，意思是父类的方法已经被重写，题中 父类初始化调用的方法为子类实现的方法，子类实现的方法中调用的baseName为子类中的私有属性。
-由1.可知，此时只执行到步骤4.,子类非静态代码块和初始化步骤还没有到，子类中的baseName还没有被初始化。所以此时 baseName为空。 所以为null。
+Base b = new Sub(); 它为多态的一种表现形式，声明是 Base, 实现是 Sub 类， 理解为 b 编译时表现为 Base 类特性，运行时表现为 Sub 类特性。
+当子类覆盖了父类的方法后，意思是父类的方法已经被重写，题中 父类初始化调用的方法为子类实现的方法，子类实现的方法中调用的 baseName 为子类中的私有属性。
+由 1.可知，此时只执行到步骤 4., 子类非静态代码块和初始化步骤还没有到，子类中的 baseName 还没有被初始化。所以此时 baseName 为空。 所以为 null。
 
 
 
@@ -2127,8 +2144,8 @@ Base b = new Sub();它为多态的一种表现形式，声明是Base,实现是Su
 
 #### 不会初始化子类的几种
 
-1. 调用的是父类的static方法或者字段
-2. 调用的是父类的final方法或者字段
+1. 调用的是父类的 static 方法或者字段
+2. 调用的是父类的 final 方法或者字段
 3. 通过数组来引用
 
 
@@ -2143,8 +2160,8 @@ Base b = new Sub();它为多态的一种表现形式，声明是Base,实现是Su
 
 #### 重点懒汉式和饿汉式手写！！！
 
-自己的区分：饿汉式 一上来就给你new好， instance = new xxx();
-		  懒汉式 是你想要我再给你new，判断当前有没有没有就new，所以有线程安全问题
+自己的区分：饿汉式 一上来就给你 new 好， instance = new xxx();
+		  懒汉式 是你想要我再给你 new，判断当前有没有没有就 new，所以有线程安全问题
 
 我们都知道，饿汉式单例是线程安全的，也就是不会初始化的时候创建出两个对象来，但是为什么呢？
 首先定义一个饿汉式单例如下：
@@ -2153,26 +2170,26 @@ Base b = new Sub();它为多态的一种表现形式，声明是Base,实现是Su
     // 私有化构造方法，以防止外界使用该构造方法创建新的实例
     private Singleton(){}
      
-    // 默认是public，访问可以直接通过Singleton.instance来访问
+    // 默认是 public，访问可以直接通过 Singleton.instance 来访问
     static Singleton instance = new Singleton();
-**之所以是线程安全的，是因为JVM在类加载的过程，保证了不会初始化多个static对象。**
+**之所以是线程安全的，是因为 JVM 在类加载的过程，保证了不会初始化多个 static 对象。**
 
 
 
 
 
-#### 一个Java应用程序java.exe，其实至少三个线程：main()主线程，gc()垃圾回收线程，异常处理线程。当然如果发生异常，会影响主线程。
+#### 一个 Java 应用程序 java.exe，其实至少三个线程：main()主线程，gc()垃圾回收线程，异常处理线程。当然如果发生异常，会影响主线程。
 
 
 
 
 
-#### 自动类型转换(只涉及7种基本数据类型）
+#### 自动类型转换(只涉及 7 种基本数据类型）
 
 结论：当容量小的数据类型的变量与容量大的数据类型的变量做运算时，结果自动提升为容量大的数据类型。
 	byte 、char 、short --> int --> long --> float --> double 
-	特别的：当byte、char、short三种类型的变量做运算时，结果为int型
-说明：此时的容量大小指的是，表示数的范围的大和小。比如：float容量要大于long的容量
+	特别的：当 byte、char、short 三种类型的变量做运算时，结果为 int 型
+说明：此时的容量大小指的是，表示数的范围的大和小。比如：float 容量要大于 long 的容量
 
 
 
@@ -2180,17 +2197,17 @@ Base b = new Sub();它为多态的一种表现形式，声明是Base,实现是Su
 
 #### HashMap
 
-当数组的某一个索引位置上的元素以链表形式存在的数据个数 >= 8 且当前数组的长度 > 64时，此时此索引位置上的所数据改为使用红黑树存储。当红黑树的节点小于或等于 6 个以后，又会恢复为链表形态。
+当数组的某一个索引位置上的元素以链表形式存在的数据个数 >= 8 且当前数组的长度 > 64 时，此时此索引位置上的所数据改为使用红黑树存储。当红黑树的节点小于或等于 6 个以后，又会恢复为链表形态。
 
-DEFAULT_INITIAL_CAPACITY : HashMap的默认容量，16
-DEFAULT_LOAD_FACTOR：HashMap的默认加载因子：0.75
-threshold：扩容的临界值，=容量*填充因子：16 * 0.75 => 12
-TREEIFY_THRESHOLD：Bucket中链表长度大于该默认值，转化为红黑树:8
-MIN_TREEIFY_CAPACITY：桶中的Node被树化时最小的hash表容量:64
+DEFAULT_INITIAL_CAPACITY : HashMap 的默认容量，16
+DEFAULT_LOAD_FACTOR：HashMap 的默认加载因子：0.75
+threshold：扩容的临界值，= 容量 *填充因子：16 * 0.75 => 12
+TREEIFY_THRESHOLD：Bucket 中链表长度大于该默认值，转化为红黑树: 8
+MIN_TREEIFY_CAPACITY：桶中的 Node 被树化时最小的 hash 表容量: 64
 
-注：自己的理解，上面的0.75可能是通过统计学的泊松分布算出来的0.7-0.75  然后选的0.75
+注：自己的理解，上面的 0.75 可能是通过统计学的泊松分布算出来的 0.7-0.75  然后选的 0.75
 
-在put()时初始化Node[]数组，长度为16，当数组中放了12个元素(扩容的临界值)了就要考虑扩容。放第13个的时候先看要放的位置是不是空的能不能放进去，能的话就放，不能的话就考虑扩容。
+在 put()时初始化 Node [] 数组，长度为 16，当数组中放了 12 个元素(扩容的临界值)了就要考虑扩容。放第 13 个的时候先看要放的位置是不是空的能不能放进去，能的话就放，不能的话就考虑扩容。
 
 
 
@@ -2209,11 +2226,11 @@ MIN_TREEIFY_CAPACITY：桶中的Node被树化时最小的hash表容量:64
 
 #### 检查异常（编译器要求必须处置的异常）
 
-除了Error，RuntimeException及其子类以外，其他的Exception类及其子类都属于可查异常。这种异常的特点是Java编译器会检查它，也就是说，当程序中可能出现这类异常，要么用try-catch语句捕获它，要么用throws子句声明抛出它，否则编译不会通过。
+除了 Error，RuntimeException 及其子类以外，其他的 Exception 类及其子类都属于可查异常。这种异常的特点是 Java 编译器会检查它，也就是说，当程序中可能出现这类异常，要么用 try-catch 语句捕获它，要么用 throws 子句声明抛出它，否则编译不会通过。
 
-非运行时异常 总是在我们写的时候就会出错 提醒我们try catch  或throw  (一般是 File、SQL 相关)
+非运行时异常 总是在我们写的时候就会出错 提醒我们 try catch  或 throw  (一般是 File、SQL 相关)
 
-但是运行时异常检查不出来，只有运行时才会出错，所以也不需try catch  (注意 ClassCastException)
+但是运行时异常检查不出来，只有运行时才会出错，所以也不需 try catch  (注意 ClassCastException)
 
 
 
@@ -2225,35 +2242,35 @@ MIN_TREEIFY_CAPACITY：桶中的Node被树化时最小的hash表容量:64
 
 # Tomcat
 
-#### * 本地访问 / Tomcat访问
+#### * 本地访问 / Tomcat 访问
 
-> Tomcat 包裹http+css+js静态包里面的其他文件  解决跨域问题不能访问
+> Tomcat 包裹 http+css+js 静态包里面的其他文件  解决跨域问题不能访问
 >
 > 一个是 HTTP 协议，一个是 file 文件协议 【http://     file:///】
 
-> * 场景：为什么本地访问.js / .css文件却可以，唯独.json文件会报错
+> * 场景：为什么本地访问.js / .css 文件却可以，唯独.json 文件会报错
 >
-> 在本地访问`.js`和`.css`文件而不报错的原因是因为这些文件通常被浏览器解释为纯文本文件或脚本文件，并且不需要通过特定的解析器来处理。
+> 在本地访问 `.js` 和 `.css` 文件而不报错的原因是因为这些文件通常被浏览器解释为纯文本文件或脚本文件，并且不需要通过特定的解析器来处理。
 >
-> 而`.json`文件是一种特殊的文件类型，被解释为 JSON（JavaScript Object Notation）格式的数据。JSON 是一种用于存储和交换数据的文本格式，它具有特定的语法和结构。当浏览器遇到`.json`文件时，会尝试将其解析为有效的 JSON 数据。
+> 而 `.json` 文件是一种特殊的文件类型，被解释为 JSON（JavaScript Object Notation）格式的数据。JSON 是一种用于存储和交换数据的文本格式，它具有特定的语法和结构。当浏览器遇到 `.json` 文件时，会尝试将其解析为有效的 JSON 数据。
 >
 > **由于安全和隐私的考虑，现代浏览器不允许直接从本地文件系统加载 JSON 文件，即使该文件位于你的计算机上。这是浏览器的安全策略之一，旨在防止网站通过访问本地文件系统来获取敏感信息。**
 >
-> 当你通过 HTTP 协议从服务器加载`.json`文件时，浏览器会遵循同源策略，并允许从同一个源加载该资源。这是因为浏览器认为服务器上的资源是安全的，且不会对用户的本地文件系统造成潜在的风险。
+> 当你通过 HTTP 协议从服务器加载 `.json` 文件时，浏览器会遵循同源策略，并允许从同一个源加载该资源。这是因为浏览器认为服务器上的资源是安全的，且不会对用户的本地文件系统造成潜在的风险。
 >
-> 为了在本地访问`.json`文件而不报错，你可以将文件部署到一个本地服务器上，并通过 HTTP 协议进行访问，就像我之前提到的在本地运行时使用 Python 简单的 HTTP 服务器一样。这样可以避免浏览器的安全限制，并正常加载和解析 JSON 数据。
+> 为了在本地访问 `.json` 文件而不报错，你可以将文件部署到一个本地服务器上，并通过 HTTP 协议进行访问，就像我之前提到的在本地运行时使用 Python 简单的 HTTP 服务器一样。这样可以避免浏览器的安全限制，并正常加载和解析 JSON 数据。
 >
 > 请注意，在实际的生产环境中，你应该将 JSON 文件部署到一个正式的 Web 服务器上，并通过合适的 URL 来访问，而不是依赖本地文件系统路径。
 >
 > 
 >
-> * 换句话说本地只支持html+css+js，其他文件类型都访问不到吗
+> * 换句话说本地只支持 html+css+js，其他文件类型都访问不到吗
 >
-> 在本地环境中，浏览器通常支持加载和渲染多种文件类型，包括 HTML、CSS、JavaScript、图像文件（如JPEG、PNG）、字体文件（如TTF、WOFF）、音频文件（如MP3、WAV）、视频文件（如MP4、WebM）等。
+> 在本地环境中，浏览器通常支持加载和渲染多种文件类型，包括 HTML、CSS、JavaScript、图像文件（如 JPEG、PNG）、字体文件（如 TTF、WOFF）、音频文件（如 MP3、WAV）、视频文件（如 MP4、WebM）等。
 >
 > 对于大多数文件类型，浏览器在本地运行时都可以正常加载和呈现，无论是直接通过文件路径访问还是通过本地服务器进行访问。
 >
-> 然而，对于某些文件类型，浏览器在本地环境中可能会施加一些安全限制。例如，对于包含敏感数据的`.json`文件，浏览器会限制直接从本地文件系统加载，以防止潜在的安全风险。
+> 然而，对于某些文件类型，浏览器在本地环境中可能会施加一些安全限制。例如，对于包含敏感数据的 `.json` 文件，浏览器会限制直接从本地文件系统加载，以防止潜在的安全风险。
 >
 > 这些安全限制在本地环境中是为了保护用户的安全和隐私而存在的。当你需要在本地加载特定文件类型时，可以考虑使用本地服务器来提供这些文件，或者调整浏览器的安全设置以允许加载特定文件类型。
 >
@@ -2261,7 +2278,7 @@ MIN_TREEIFY_CAPACITY：桶中的Node被树化时最小的hash表容量:64
 >
 > 
 >
-> * .txt支持吗
+> * .txt 支持吗
 >
 > 是的，大多数浏览器在本地环境中支持加载和显示文本文件（.txt）。文本文件是一种纯文本格式，可以包含普通文本、代码、配置信息等。
 
@@ -2314,18 +2331,18 @@ PS: 这样也可以显示地图，但是一般不这样写
 
 # 位运算
 
-**^ 相同为0，不同为1** 
+**^ 相同为 0，不同为 1** 
 
 **异或是无进位加法！**
 
-1. 任何数异或0都等于它本身
-2. 任何数异或本身都为0
-3. 1异或任何数都为任何数取反
+1. 任何数异或 0 都等于它本身
+2. 任何数异或本身都为 0
+3. 1 异或任何数都为任何数取反
 
 
 
 &
 
-&运算代替%，例如a&15  15后四位二进制为1前面全为0，得出来的数不会超过15
+&运算代替%，例如 a&15  15 后四位二进制为 1 前面全为 0，得出来的数不会超过 15
 
-1. 0&1=0   1&1=1 通常拿最后一个数&1取这一位的数
+1. 0&1 = 0   1&1 = 1 通常拿最后一个数&1 取这一位的数

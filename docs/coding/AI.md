@@ -25,11 +25,13 @@ icon: boxicons:robot
 
 **Claude Code plugin**
 
-* https://github.com/jarrodwatts/claude-hud
+* https://github.com/jarrodwatts/claude-hud1234111111122222443
 
 
 
 ## 一、什么是 Agent
+
+![image-20260921112227857](https://image.233377.xyz/2026/image-20260921112227857.png)
 
 ![image 1](https://image.233377.xyz/2026/36b47077f8819590f62da92dff7407d1663ea678-20260915111835850.png)
 
@@ -42,7 +44,8 @@ Harness Engineering 我的理解是：**为 Agent 搭建运行空间，设计它
 我觉得大模型应用开发最重要的是这三个东西：Agent Loop、Context Engineering、Harness Engineering
 
 - Agent Loop 是运行的核心，是一切的基础，用户输入任务，LLM 输出指令，工具执行并返回结果，不断的循环直到结束
-- Context Engineering 在静态系统提示词结构不断稳固之后，发现 Agent Loop 在运行中是需要大量的 **动态信息** 的，并且常见有效的动态信息是
+- Context Engineering (上下文组成 (含 Rag) + 上下文管理)
+  在静态系统提示词结构不断稳固之后，发现 Agent Loop 在运行中是需要大量的 **动态信息** 的，并且常见有效的动态信息是
   **系统提示词、用户记忆、会话历史记录、用户输入、工具定义等**，
   那么这个时候就有了 Context Engineering 这个概念，上下文是 Agent Loop 有效的关键，在 Agent 长程运行中，上下文不断积累，会出现各种各样的问题，漂移、污染、干扰、冲突等，所以我们需要上下文管理的方法，需要渐进式加载的概念
 - Harness Engineering 是 Agent 稳定运行的关键，它为 Agent 搭建运行空间，**设计 Agent 的能力结构、协作机制和反馈闭环**，其不能仅仅从约束的角度去理解，更应该是在创造 Agent 的运行环境，让 LLM 可以做到原本无法做到的事情

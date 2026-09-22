@@ -135,6 +135,45 @@ a–z  → 26 个
 
 
 
+**byte 是由 8 个 bit（位）组成的，每个 bit 只能是 0 或 1**
+
+```
+原始 byte[32]: 44 -14 77 -70 95 -80 -93 14 38 -24 59 42 -59 -71 -30 -98
+               27 22 30 92 31 -89 66 94 115 4 51 98 -109 -117 -104 36
+
+十六进制: 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+长度: 64 字符（32 字节 × 2）
+```
+
+
+
+#### HMAC-SHA256
+
+> 和普通 sha256 比多了一个密钥参与运算
+
+HMAC (Hash-based Message Authentication Code)  结合散列函数和**密钥**, 使用密钥对消息进行哈希 运算, 生成固定长度的哈希值
+
+- OpenAPI SDK 做法：ak/sk 中 sk 不传输，请求头传 `ak + requestSign = HMAC-SHA256(stringToSign, SK)`，其中 `stringToSign = METHOD + "\n" + URI + "\n" + AK + "\n" + Timestamp + "\n" + WorkspaceId`。
+- 服务端本地缓存 sk + 权限列表，避免每次查库/解密：
+
+```java
+LoadingCache<String, OpenApiAK> akInfoCache = Caffeine.newBuilder()
+    .refreshAfterWrite(10, TimeUnit.MINUTES) // 10 分钟后请求，立即返回旧值，同时后台异步刷新
+    .expireAfterWrite(1, TimeUnit.HOURS)     // key 被移除
+    .maximumSize(50000)                      // 本地缓存设上限防 OOM（一个 ak 对象约几百字节~1KB，5万大概几 MB）
+    .build(this::queryAndDecryptedSk);
+```
+
+- 落库：db 存的 sk 不是 rawSecretKey，而是经 KMS 加密后的密文。术语勘误：若只是直接调 KMS Encrypt 存密文，严格说是"KMS 托管加密"；**信封加密**专指"数据用 DEK 加密，DEK 再用 KMS 主密钥加密"的两层结构，被追问时别说混。
+
+| SHA-256                          | HMAC-SHA256            |                             |
+| -------------------------------- | ---------------------- | --------------------------- |
+| 防篡改（校验完整性）             | ✅                      | ✅                           |
+| 防伪造（验证来自持有密钥的一方） | ❌                      | ✅                           |
+| 典型场景                         | 摘要、去重、密码存哈希 | API 签名、JWT、webhook 验签 |
+
+
+
 ## 3. 加密算法
 
 | **项目**     | **对称加密（Symmetric Encryption）** | **非对称加密（Asymmetric Encryption）** |

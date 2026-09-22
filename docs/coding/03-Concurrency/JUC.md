@@ -1287,6 +1287,34 @@ public class SyncAndReentrantLockDemo {
 
 
 
+XD 后续补充:
+
+
+
+### XD - AQS
+
+AbstractQueuedSynchronizer 父类
+
+重要两个东西: 
+
+1. `volatile Int state` 充当通行证
+   1. 并不固定为 0/1, Reentrantlock, CountdownLatch 子类都可以拿它计数
+2. 一个 Node 的双向链表队列, 充当线程等待的候客厅
+
+
+
+开放一些方法给子类实现:
+
+tryAcquired()
+
+tryRelease()
+
+tryAcquireShared()
+
+
+
+
+
 # [五、异步&线程池](../gulimall/07、异步&线程池.pdf)
 
 > 主要是 GUlimall Movies + 部分 JUC Movies
