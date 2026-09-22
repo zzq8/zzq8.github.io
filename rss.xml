@@ -6,8 +6,8 @@
     <link>https://233377.xyz/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 22 Sep 2026 09:54:47 GMT</pubDate>
-    <lastBuildDate>Tue, 22 Sep 2026 09:54:47 GMT</lastBuildDate>
+    <pubDate>Tue, 22 Sep 2026 10:09:34 GMT</pubDate>
+    <lastBuildDate>Tue, 22 Sep 2026 10:09:34 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>AI</category>
@@ -285,26 +285,6 @@
 ]]></content:encoded>
     </item>
     <item>
-      <title>JavaGuide</title>
-      <link>https://233377.xyz/coding/JavaGuide.html</link>
-      <guid>https://233377.xyz/coding/JavaGuide.html</guid>
-      <source url="https://233377.xyz/rss.xml">JavaGuide</source>
-      <description>encrypt: true JavaGuide JavaGuide 大佬 (启蒙老师) !!! 三个大专栏 【cnk4】《Java面试指北》https://www.yuque.com/snailclimb/mf2z3k 【bonl】《后端面试高频系统设计&amp;场景题》https://www.yuque.com/snailclimb/tangw3 【wx81...</description>
-      <pubDate>Tue, 15 Sep 2026 09:20:42 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>encrypt: true</p>
-</blockquote>
-<h2>JavaGuide</h2>
-<blockquote>
-<p>JavaGuide 大佬 (启蒙老师) !!!</p>
-<p>三个大专栏</p>
-</blockquote>
-<p>【cnk4】《Java面试指北》https://www.yuque.com/snailclimb/mf2z3k</p>
-<p>【bonl】《后端面试高频系统设计&amp;场景题》https://www.yuque.com/snailclimb/tangw3</p>
-<p>【wx81】《SpringAI 智能面试平台+RAG知识库》https://www.yuque.com/snailclimb/itdq8h</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>UML</title>
       <link>https://233377.xyz/coding/UML.html</link>
       <guid>https://233377.xyz/coding/UML.html</guid>
@@ -558,6 +538,19 @@
 <li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E5%B7%A5%E4%BD%9C%E7%AF%87/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BB%A9%E6%95%88%E8%80%83%E6%A0%B8%E4%B8%AD%E8%84%B1%E9%A2%96%E8%80%8C%E5%87%BA%EF%BC%9F.html" target="_blank">如何在绩效考核中脱颖而出？</a></li>
 <li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E5%B7%A5%E4%BD%9C%E7%AF%87/%E5%85%AC%E5%8F%B8%E8%83%8C%E8%B0%83%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E4%BB%80%E4%B9%88%EF%BC%9F.html" target="_blank">公司背调需要注意什么？</a></li>
 </ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>⭐更新记录</title>
+      <link>https://233377.xyz/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E2%AD%90%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html</link>
+      <guid>https://233377.xyz/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E2%AD%90%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html</guid>
+      <source url="https://233377.xyz/rss.xml">⭐更新记录</source>
+      <description>⭐更新记录 下面这个表格整理了《Java面试指北》近期新增/重新完善的部分较为重要的文章（每一篇都强烈推荐阅读！！）： 更新: 2025-12-24 15:31:19 原文: https://www.yuque.com/snailclimb/mf2z3k/hvh25b8qac9umuh8</description>
+      <pubDate>Fri, 04 Sep 2026 14:27:43 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>下面这个表格整理了《Java面试指北》近期新增/重新完善的部分较为重要的文章（每一篇都强烈推荐阅读！！）：</p>
+<p>| 文章传送门 | 新增/完善日期 |
+|</p>
 ]]></content:encoded>
     </item>
   </channel>

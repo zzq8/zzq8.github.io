@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://233377.xyz/favicon.ico</icon>
-  <updated>2026-09-22T09:54:47.820Z</updated>
+  <updated>2026-09-22T10:09:34.568Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://233377.xyz/atom.xml"/>
   <link rel="alternate" href="https://233377.xyz/"/>
@@ -321,36 +321,6 @@
     <published>2025-09-13T13:13:56.000Z</published>
   </entry>
   <entry>
-    <title type="text">JavaGuide</title>
-    <id>https://233377.xyz/coding/JavaGuide.html</id>
-    <link href="https://233377.xyz/coding/JavaGuide.html"/>
-    <updated>2026-09-15T09:20:42.000Z</updated>
-    <summary type="html"><![CDATA[<blockquote>
-<p>encrypt: true</p>
-</blockquote>
-<h2>JavaGuide</h2>
-<blockquote>
-<p>JavaGuide 大佬 (启蒙老师) !!!</p>
-<p>三个大专栏</p>
-</blockquote>
-<p>【cnk4】《Java面试指北》https://www.yuque.com/snailclimb/mf2z3k</p>
-<p>【bonl】《后端面试高频系统设计&amp;场景题》https://www.yuque.com/snailclimb/tangw3</p>
-<p>【wx81】《SpringAI 智能面试平台+RAG知识库》https://www.yuque.com/snailclimb/itdq8h</p>]]></summary>
-    <content type="html"><![CDATA[<blockquote>
-<p>encrypt: true</p>
-</blockquote>
-<h2>JavaGuide</h2>
-<blockquote>
-<p>JavaGuide 大佬 (启蒙老师) !!!</p>
-<p>三个大专栏</p>
-</blockquote>
-<p>【cnk4】《Java面试指北》https://www.yuque.com/snailclimb/mf2z3k</p>
-<p>【bonl】《后端面试高频系统设计&amp;场景题》https://www.yuque.com/snailclimb/tangw3</p>
-<p>【wx81】《SpringAI 智能面试平台+RAG知识库》https://www.yuque.com/snailclimb/itdq8h</p>
-]]></content>
-    <published>2026-09-15T09:20:42.000Z</published>
-  </entry>
-  <entry>
     <title type="text">UML</title>
     <id>https://233377.xyz/coding/UML.html</id>
     <link href="https://233377.xyz/coding/UML.html"/>
@@ -621,6 +591,218 @@
 <li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E5%B7%A5%E4%BD%9C%E7%AF%87/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BB%A9%E6%95%88%E8%80%83%E6%A0%B8%E4%B8%AD%E8%84%B1%E9%A2%96%E8%80%8C%E5%87%BA%EF%BC%9F.html" target="_blank">如何在绩效考核中脱颖而出？</a></li>
 <li><a href="/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E5%B7%A5%E4%BD%9C%E7%AF%87/%E5%85%AC%E5%8F%B8%E8%83%8C%E8%B0%83%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E4%BB%80%E4%B9%88%EF%BC%9F.html" target="_blank">公司背调需要注意什么？</a></li>
 </ul>
+]]></content>
+    <published>2026-09-04T14:27:43.000Z</published>
+  </entry>
+  <entry>
+    <title type="text">⭐更新记录</title>
+    <id>https://233377.xyz/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E2%AD%90%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html</id>
+    <link href="https://233377.xyz/%E3%80%8AJava%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8C%97%E3%80%8B/%E2%AD%90%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html"/>
+    <updated>2026-09-04T14:27:43.000Z</updated>
+    <summary type="html"><![CDATA[
+<p>下面这个表格整理了《Java面试指北》近期新增/重新完善的部分较为重要的文章（每一篇都强烈推荐阅读！！）：</p>
+<table>
+<thead>
+<tr>
+<th>文章传送门</th>
+<th>新增/完善日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增一篇外企和两篇大厂面经：<br>+ <a href="https://www.yuque.com/snailclimb/mf2z3k/rdoggk8dt2o2swsi" target="_blank" rel="noopener noreferrer">虾皮校招面试，速通！</a><br>+ <a href="https://www.yuque.com/snailclimb/mf2z3k/qsalff95e6pgk502" target="_blank" rel="noopener noreferrer">⭐️小红书校招面试，有点难度！</a><br>+ <a href="https://www.yuque.com/snailclimb/mf2z3k/gnxse7rkc5buoffm" target="_blank" rel="noopener noreferrer">小红书四年经验社招面试，过了！</a></td>
+<td>2025-12-24</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/sg31f0" target="_blank" rel="noopener noreferrer">大厂招聘更看重什么能力？</a></td>
+<td>2025-12-04</td>
+</tr>
+<tr>
+<td>新增两篇外企面经（附带详解）：<br>+ <a href="https://www.yuque.com/snailclimb/mf2z3k/dq38ex3qrhs94x4n" target="_blank" rel="noopener noreferrer">ZOOM 校招面试，被拷打了！</a><br>+ <a href="https://www.yuque.com/snailclimb/mf2z3k/yp9n7kyth1dexmg8" target="_blank" rel="noopener noreferrer">微策略校招面试，项目拷打用英文</a></td>
+<td>2025-10-29</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/gokpul00ugz28nxg" target="_blank" rel="noopener noreferrer">⭐️禾赛科技校招面试，小而美的中小厂！</a>️</td>
+<td>2025-09-18</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/tiox606k90pg4xyw" target="_blank" rel="noopener noreferrer">如何准备国企和银行的面试？</a></td>
+<td>2025-06-12</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/zcynu0dn8x29okrv" target="_blank" rel="noopener noreferrer">京东两年经验社招面经</a></td>
+<td>2025-05-05</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/vqe4gz" target="_blank" rel="noopener noreferrer">SpringBoot 常见面试题总结</a></td>
+<td>2025-04-23</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/rb2461a7p18vizmu" target="_blank" rel="noopener noreferrer">⭐️快手面试，难度不大，但体验感很差！</a></td>
+<td>2025-03-18</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/izgfe3vxhimrre56" target="_blank" rel="noopener noreferrer">硕2，2024淘天、字节、快手、滴滴面经分享</a></td>
+<td>2025-03-18</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/ks9olb19hc9wse5k" target="_blank" rel="noopener noreferrer">Redis 主从复制：主从节点之间如何同步数据？</a></td>
+<td>2025-03-16</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/ybneym6cnusxo95r" target="_blank" rel="noopener noreferrer">⭐️字节抖音电商一面，被虐的很惨！</a></td>
+<td>2025-02-21</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/pfsg8vqfz7690tbw" target="_blank" rel="noopener noreferrer">⭐️小米 Java 校招面经，已OC</a></td>
+<td>2025-02-21</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/vkykhe8apka1nc4q" target="_blank" rel="noopener noreferrer">Redis 生产问题：内存满了怎么解决？</a></td>
+<td>2024-12-17</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/pthvaf31mtwu98bn" target="_blank" rel="noopener noreferrer">⭐️vivo 2024 校招面经，很简单</a></td>
+<td>2024-10-20</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/cm70wa" target="_blank" rel="noopener noreferrer">Java 并发常见面试题自测</a></td>
+<td>2024-09-25</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/zpcvgrv2m3a4tifl" target="_blank" rel="noopener noreferrer">⭐️美团面试，拷打了两个多小时</a></td>
+<td>2024-09-23</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/edrrcom1ybgnni02" target="_blank" rel="noopener noreferrer">⭐️秋招结束，我拿到了华为小奖状！</a></td>
+<td>2024-08-31</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/simu3iyhd87kgp3e" target="_blank" rel="noopener noreferrer">Elasticsearch 常见面试题总结</a></td>
+<td>2024-08-28</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/glfl8qdvpiuf3ost" target="_blank" rel="noopener noreferrer">Spring&amp;SpringBoot 常见面试题自测</a></td>
+<td>2024-08-20</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/imaxdd" target="_blank" rel="noopener noreferrer">如何更高效地自学编程？</a></td>
+<td>2024-07-12</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/uba4g8fvxmkvvodl" target="_blank" rel="noopener noreferrer">你的项目用到了Jenkins，有什么用？</a></td>
+<td>2024-06-27</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/srwasy4ubg4htbzg" target="_blank" rel="noopener noreferrer">日志记录方案有哪些？</a></td>
+<td>2024-06-06</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/xn8bbwno39g815hk" target="_blank" rel="noopener noreferrer">你的项目单测是如何做的？</a></td>
+<td>2024-06-06</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/ma1byh" target="_blank" rel="noopener noreferrer">服务治理：分布式下如何进行日志管理？</a></td>
+<td>2024-06-06</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/sq5pg4" target="_blank" rel="noopener noreferrer">⭐优质 Java 实战项目推荐</a></td>
+<td>2024-04-17</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/yf7r73e7z98gyu71" target="_blank" rel="noopener noreferrer">⭐Java面试准备常见问题解答（补充）</a></td>
+<td>2024-03-16</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/sw3btw4x1cmwxg6u" target="_blank" rel="noopener noreferrer">什么样的项目是面试官认为有价值的？</a></td>
+<td>2024-03-16</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/xs5il4mv8ge9h545" target="_blank" rel="noopener noreferrer">计算机网络常见面试题自测</a></td>
+<td>2024-01-30</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/pauv7l8rmidckudq" target="_blank" rel="noopener noreferrer">高可用：防止接口被盗刷/如何保证接口的安全？</a></td>
+<td>2024-01-24</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/pxtnw1na4h6wbkge" target="_blank" rel="noopener noreferrer">微服务基础：Spring Cloud Alibaba 组件有哪些？</a></td>
+<td>2024-01-17</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/mlnfrc6kk95kmli6" target="_blank" rel="noopener noreferrer">高可用：如何保证接口幂等性？</a></td>
+<td>2024-01-10</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/fg8lgc" target="_blank" rel="noopener noreferrer">Redis 基础：为什么要用分布式缓存？</a></td>
+<td>2023-12-20</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/redsrr" target="_blank" rel="noopener noreferrer">⭐项目经验常见问题解答（补充）</a></td>
+<td>2023-10-17</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/zr4kfk" target="_blank" rel="noopener noreferrer">MySQL 日志：常见的日志都有什么用？</a></td>
+<td>2023-08-08</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/guu8a1" target="_blank" rel="noopener noreferrer">如何高效准备算法面试？</a></td>
+<td>2023-08-02</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/oson7u6g1fxzxkt4" target="_blank" rel="noopener noreferrer">Caffeine：Caffeine 的性能为何如此优秀？</a></td>
+<td>2023-07-31</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/ndtdz4skyxntgex8" target="_blank" rel="noopener noreferrer">公司背调需要注意什么？</a></td>
+<td>2023-07-26</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/lkrrsp" target="_blank" rel="noopener noreferrer">⭐程序员简历到底该怎么写？</a></td>
+<td>2023-07-03</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/pa8hy8xc39vmqy4b" target="_blank" rel="noopener noreferrer">几种典型的系统设计案例（整理补充）</a></td>
+<td>2023-06-06</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/dawnum" target="_blank" rel="noopener noreferrer">如何统计网站UV？</a></td>
+<td>2023-06-02</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/ybncpn" target="_blank" rel="noopener noreferrer">Java 优质面试视频推荐</a></td>
+<td>2023-05-24</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/hlxtez9yy1hfc2y1" target="_blank" rel="noopener noreferrer">如何介绍项目经历更容易获得面试官的青睐？</a></td>
+<td>2023-05-19</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/ikf0l2" target="_blank" rel="noopener noreferrer">Redis Cluster：缓存的数据量太大怎么办？</a></td>
+<td>2023-05-02</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/ft4h1g" target="_blank" rel="noopener noreferrer">Redis Sentinel：如何实现自动化地故障转移？</a></td>
+<td>2023-04-02</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/vdkmzzy0a1v37xtv" target="_blank" rel="noopener noreferrer">⭐复习抓不到重点怎么办？如何更高效地准备八股文？</a></td>
+<td>2023-03-09</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/mt8dad" target="_blank" rel="noopener noreferrer">高可用：如何避免微服务中的雪崩问题？</a></td>
+<td>2022-10-24</td>
+</tr>
+<tr>
+<td><a href="https://www.yuque.com/snailclimb/mf2z3k/oevm6g" target="_blank" rel="noopener noreferrer">服务治理：为什么需要服务注册与发现？</a></td>
+<td>2022-10-20</td>
+</tr>
+</tbody>
+</table>]]></summary>
+    <content type="html"><![CDATA[
+<p>下面这个表格整理了《Java面试指北》近期新增/重新完善的部分较为重要的文章（每一篇都强烈推荐阅读！！）：</p>
+<p>| 文章传送门 | 新增/完善日期 |
+|</p>
 ]]></content>
     <published>2026-09-04T14:27:43.000Z</published>
   </entry>
