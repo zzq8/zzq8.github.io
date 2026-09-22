@@ -1,3 +1,5 @@
+> encrypt: true
+
 # 一、ALMP
 
 ## 阿里Agent开发岗暑期实习面经（挂）
