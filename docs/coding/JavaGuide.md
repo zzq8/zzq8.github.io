@@ -1,4 +1,6 @@
-> encrypt: true
+---
+encrypt: true
+---
 
 ## JavaGuide
 
