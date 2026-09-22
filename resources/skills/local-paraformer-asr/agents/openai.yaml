@@ -1,0 +1,4 @@
+interface:
+  display_name: "Local Paraformer ASR"
+  short_description: "Transcribe local audio and summarize interview Q&A"
+  default_prompt: "Use $local-paraformer-asr to transcribe this interview locally and save both the timestamped transcript and Q&A summary."
