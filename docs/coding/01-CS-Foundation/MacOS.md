@@ -118,6 +118,7 @@ npm install picgo -g
 > 以下是我选择装的
 
 * [input0](https://github.com/10xChengTu/input0) (用了一下也还好用, 用 **Paraformer 中英粤** 这样中英混着说)
+* [ego](https://lite.ego.app/) (搭配 agent 充当 playwright)
 * Office
 * the unarchiver (zip 可以系统自动解压, 但是 rar 不行要下)
 * ~~Lemon~~ (发现一个 **[Mole](https://github.com/tw93/Mole)** CLI 方式清理推的多)
