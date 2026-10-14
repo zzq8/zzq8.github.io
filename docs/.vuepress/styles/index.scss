@@ -351,6 +351,48 @@ v4 新加的两个变量 @vuepress/plugin-docsearch 的 vars.css 没给值，
   }
 }
 
+/*
+侧边栏分组归属线：仿 yudesk.dev（Fumadocs）——展开的分组，其子项列表左侧有一条
+1px 竖线，把整组子项「挂在」上面的父项名下。参考站原配方是子项容器的 ::before：
+宽 1px、inset-block 4px、inset-inline-start 10px、颜色 = 边框色 50% 透明。
+这里只借形：线落在缩进槽里（父项图标/文字左缘右约 2px、子项链接文字左约 10px），颜色直接用
+--vp-c-rail（见下：暖色体系里比常规边框显现一档，不引入参考站的冷灰）。绝对定位，
+不占布局、不改缩进。
+线从「一级目录展开后的子列表」（第二层）才开始画：第一层是根分组（代码笔记/
+整本书）自己的条目，已经有父级标题罩着，再加线只是噪音。再往下任意深度同构
+递归；分组收起时列表本身不渲染，线随之消失。
+（0.375rem 是相对子列表左缘的内缩：0.75em 槽位 + 6px 恰好对上上面那两个距离）
+*/
+:root {
+  // 归属线比常规边框（--vp-c-border）显现一档：1px 落在纸底上既不消失也不抢戏；
+  // 直接用边框色太轻，「归属标识」立不住
+  --vp-c-rail: #d2c9b9;
+}
+
+[data-theme="dark"] {
+  --vp-c-rail: #443c33;
+}
+
+.vp-sidebar-group > .vp-sidebar-links {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset-block: 4px;
+    inset-inline-start: 0.375rem;
+    width: 1px;
+    background: var(--vp-c-rail);
+  }
+}
+
+// 根分组（nav 顶层 ul 里那个 section）的子列表 = 侧边栏第一层条目，不画线
+.vp-sidebar > .vp-sidebar-links > li > .vp-sidebar-group > .vp-sidebar-links {
+  &::before {
+    content: none;
+  }
+}
+
 // 代码块纵向滚动条（加在容器上，行号一起滚动）
 div[class*="language-"] {
   overflow-y: auto !important;
