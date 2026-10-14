@@ -6,8 +6,8 @@
     <link>https://233377.xyz/</link>
     <description>自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 22 Sep 2026 10:09:34 GMT</pubDate>
-    <lastBuildDate>Tue, 22 Sep 2026 10:09:34 GMT</lastBuildDate>
+    <pubDate>Wed, 14 Oct 2026 13:46:55 GMT</pubDate>
+    <lastBuildDate>Wed, 14 Oct 2026 13:46:55 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>AI</category>
@@ -198,14 +198,52 @@
       <link>https://233377.xyz/coding/AI.html</link>
       <guid>https://233377.xyz/coding/AI.html</guid>
       <source url="https://233377.xyz/rss.xml">AI</source>
-      <description>零、前言 碎碎念 做开发，最重要的是学习能力，对于新技术很感兴趣，有一套自己的理解 值得深读的好文 一个半月高强度 Claude Code 使用后感受 怎么用 CC, 思考先行 + 小步迭代 认识 CC 的边界和长处: 整个代码库里做一次全局的变量重命名 (这类需要 100% 准确性的任务，从起源上就不是 LLM 的强项) 我是如何学习大模型应用开发的...</description>
+      <description>零、前言 碎碎念 做开发，最重要的是学习能力，对于新技术很感兴趣，有一套自己的理解 Technical git worktree 好用，vibe coding 提升自己的并发 推理等级 `❯ /effort [low|medium|high|xhigh|max|ultracode|auto] ultracode 解释 对，ultracode 是 Cla...</description>
       <category>AI</category>
       <pubDate>Sat, 13 Sep 2025 13:13:56 GMT</pubDate>
       <content:encoded><![CDATA[<h2>零、前言</h2>
 <p><strong>碎碎念</strong></p>
 <p>做开发，最重要的是学习能力，对于新技术很感兴趣，有一套自己的理解</p>
+<p><strong>Technical</strong></p>
+<ul>
+<li>
+<p>git worktree 好用，vibe coding 提升自己的并发</p>
+</li>
+<li>
+<p>推理等级 `❯ /effort [low|medium|high|xhigh|max|ultracode|auto]</p>
+<details>
+<summary>ultracode 解释</summary>
+<p>
+对，ultracode 是 Claude Code（harness 层）独有的，不是 model 层面的。这里需要拆成两层来看，因为 /effort 实际上同时调了两个不同层面的旋钮：
+两个层面的拆分
+维度: 推理强度（思考预算：low→max）
+归属: ½ model 层，½ CC 层
+说明: 「扩展思考」能力本身是底层模型/API 支持的（thinking.budget_tokens）；但
+low/medium/high/xhigh/max 这套档位命名与分级是 Claude Code 的封装。换一个 harness
+调同一个模型，也能调思考预算，但不会叫这些名字。
+────────────────────────────────────────
+维度: ultracode 工作流编排
+归属: 纯 CC harness 层
+说明: 把任务拆给多个子智能体并行跑、pipeline/parallel
+调度、对抗式验证、loop-until-dry——这些是 Workflow 工具 + CC
+调度器的能力，跟底层模型无关。文档里子智能体明确「inherits the main-loop
+</p>
+</details>
+</li>
+</ul>
 <p><strong>值得深读的好文</strong></p>
 <ul>
+<li><a href="https://www.youtube.com/watch?v=B91bZL8wcAI" target="_blank" rel="noopener noreferrer">AI Agent工作原理是什么，Harness又是什么，一个动画彻底搞懂！</a>
+<ul>
+<li>一个最简单的 ReAct 流程</li>
+<li>什么是  Harness
+<ul>
+<li>如果说Agent解决的是“AI怎么干活”的问题</li>
+<li>那Harness解决的是“AI怎么把活干靠谱”的问题</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="https://onevcat.com/2025/08/claude-code/" target="_blank" rel="noopener noreferrer">一个半月高强度 Claude Code 使用后感受</a>
 <ul>
 <li>怎么用 CC, 思考先行 + 小步迭代</li>
@@ -214,6 +252,13 @@
 </li>
 <li><a href="https://linux.do/t/topic/2896420" target="_blank" rel="noopener noreferrer">我是如何学习大模型应用开发的</a></li>
 <li><a href="https://linux.do/t/topic/1403352" target="_blank" rel="noopener noreferrer">Linux 有帖子御三家的介绍</a></li>
+<li><a href="https://www.bilibili.com/video/BV1uwf1BdEUU?t=36.4" target="_blank" rel="noopener noreferrer">AI应用开发工程师是否是救命稻草</a>
+<ul>
+<li>XD 也不要太过神话了AI应用开发</li>
+<li>我其实挺建议2～3年左右的后端转AI应用开发的，确实好找工作，有不少agent岗位，薪酬也高。即便再过2～3年后市场真内卷了，但你已经在AI这块有2～3年经验，且总共5～6年经验的高级开发了，技能经验，业务能力，稍微勤快点，都会随着时间堆上去的，技多不傍身。前期先折腾，后面再考虑深入业务，谋求稳定的事情。</li>
+<li>✨【业务】比较认可老齐讲的业务能力问题，做为一个干了10来年后端开发的我来说，干这行越久，业务驱动技术会看的更真实，技术你会发现其实不值钱，如何变现或者提供业务价值，才是技术进化的主要驱动力，假设10几年前的单体架构都还能足够支撑现在的业务，我相信同理也没有公司好端端的去升级分布式 微服务 云原生这些架构体系。虽然AI现在是趋势，需要学习和了解，但说白点，现在的风对于我们做传统软件工程10几年的人来说，就算转型，也仅仅是“API调用工程师”，真正的AI方向，需要的门槛太高了，可以说90%以上的普通开发者都<strong>进不了具有“竞争力”的层次</strong>，学习肯定要学习，做技术的，不管你会不会转型成AI方向的，<strong>起码学习和了解是一个必备的过程</strong>（虽然大部分人AI是真走不了就是了，但也不排除对新技术新风向的学习和了解过程），<strong>据说我所见所知，除了一些大厂，其实大部分小中型公司或者一般的上市公司，其实还是部门领导对上面进行应付所谓的“AI赋能，AI业绩”来汇报而已</strong>。另外就是老齐视频提到的金融，医疗这些领域的开发问题，我是在央行做开发了很多年，至今像银行这些几乎需要"零错误"的一些业务场景，尤其是和钱打交道的，那是真不能有任何“胡说八道”出现，而且大部分这些类似业务领域的发开，都还在用内网环境开发，更不要说你让AI去读你的本地代码，辅助你直接生成了，这是觉得的“大忌”。但是我还是那句话，学习技术并不代表你需要去转型这个方向，是你作为一个IT行业的技术从业人员，需要不断持续迭代自己的一个过程，需要去了解和学习，不断累计自己的技术面。</li>
+</ul>
+</li>
 </ul>
 <p><strong>Claude Code plugin</strong></p>
 <ul>
@@ -322,8 +367,10 @@
 <p>https://bestofjs.org/trends/weekly</p>
 <p>https://artificialanalysis.ai/leaderboards/models</p>
 <p>https://openrouter.ai/rankings?programming-language=Java#programming-languages</p>
+<p>https://llm2014.github.io/llm_benchmark</p>
 <p>https://www.ruanyifeng.com/blog/archives.html</p>
 <p>https://waytoagi.feishu.cn/wiki/FjiOwWp2giA7hRk6jjfcPioCnAc</p>
+<p>https://yudesk.dev/</p>
 <p>看下每天有哪些</p>
 <h3>1. 好的习惯学习</h3>
 <blockquote>

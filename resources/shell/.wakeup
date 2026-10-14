@@ -1,15 +1,13 @@
 #!/bin/bash
 
 LOG=/tmp/sleepwatcher.log
-PIDFILE=/tmp/sleepwatcher_shutdown.pid
+WATCHER="$HOME/.sleep-shutdown-watch.sh"
 
-printf "wakeup triggered at %s\n\n" "$(date)" >> "$LOG"
+echo "wakeup triggered at $(/bin/date)" >> "$LOG"
 
-if [ -f "$PIDFILE" ]; then
-    pid=$(cat "$PIDFILE" 2>/dev/null)
-    if [ -n "$pid" ]; then
-        pkill -P "$pid" 2>/dev/null
-        kill "$pid" 2>/dev/null
-    fi
-    rm -f "$PIDFILE"
+# kill the watchdog armed at sleep time (exact command-line match, no PID file)
+if /usr/bin/pkill -xf "/bin/bash $WATCHER" 2>/dev/null; then
+    echo "watcher killed" >> "$LOG"
 fi
+
+echo "" >> "$LOG"

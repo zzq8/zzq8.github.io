@@ -72,10 +72,11 @@ matches:
   - trigger: ";red"
     replace: <span style="color:red">$|$</span>
   
-  - trigger: ";detail"
+  - trigger: ";summary"
     replace: |-
             <details>
             <summary>$|$</summary>
+            <p></p>
             </details>
 
   # emoji
@@ -84,6 +85,9 @@ matches:
 
   - trigger: ";think"
     replace: "🤔" 
+
+  - trigger: ";todo"
+    replace: "🤺"
 
   - trigger: ";yes"
     replace: "✅"
