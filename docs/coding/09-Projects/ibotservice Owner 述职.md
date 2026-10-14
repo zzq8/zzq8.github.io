@@ -4,6 +4,12 @@ encrypt: true
 
 # ✨ ALMP
 
+TODO: 
+
+把 resume 的 resumeProject 融进来
+
+
+
 > 参考 coze, 但是 ALMP 是 toB 的
 >
 > 目标让每个钱包拥有自己的大模型平台, 并能快速创建智能机器人. 对外输出的智能助手可以直接复用
@@ -42,11 +48,11 @@ vs coze toC (**个人开发者**) 而言, ALMP 的定位:  toB (**把平台卖�
 
 ### 回顾整体
 
-![画板](https://i-blog.csdnimg.cn/img_convert/022430e60336f24f78150c109c1de61a.jpeg)
+![画板](https://image.233377.xyz/2026/022430e60336f24f78150c109c1de61a-20261012162728520.jpeg)
 
 
 
-![](https://i-blog.csdnimg.cn/img_convert/b92bd29b96e3661b404c18ff83992424.png)
+![](https://image.233377.xyz/2026/b92bd29b96e3661b404c18ff83992424.png)
 
 
 
@@ -103,8 +109,11 @@ ilmservice 大模型服务，Agent平台
 
 > ibotservice 20250415 
 >
-> + /chat QPS 大致 150-200
-> + memory QPS 大致 500-600 最多的一个facade
+> + /chat QPM 大致 150-200
+> + memory QPM 大致 500-600 最多的一个facade
+>
+>
+> 202608 看监控平台日常 chat 是 1000 QPM
 
 
 
@@ -121,7 +130,7 @@ ilmservice 大模型服务，Agent平台
 
 ### 系统依赖
 
-![画板](https://i-blog.csdnimg.cn/img_convert/6ff4948ffa43ed3f5131132b000f3fe1.jpeg)
+![画板](https://image.233377.xyz/2026/6ff4948ffa43ed3f5131132b000f3fe1.jpeg)
 
 
 
@@ -129,7 +138,7 @@ ilmservice 大模型服务，Agent平台
 
 > ibotsercie 所感知领域模型
 
-![画板](https://i-blog.csdnimg.cn/img_convert/3454f45f39755900e5cfda8248165749.jpeg)
+![画板](https://image.233377.xyz/2026/3454f45f39755900e5cfda8248165749.jpeg)
 
 ## <font style="color:rgb(0, 0, 0);">主要业务逻辑</font>
 
@@ -424,6 +433,12 @@ end group
 
 
 
+对 2C2B 两端的考量 ?
+
+两条查询轴正交且都是硬需求：C 端永远从「我」出发（我的会话、我的消息），运营永远从「bot」出发（某 bot 的会话、消息、统计、质检）。一个用户聊多个 bot、一个 bot 服务多个用户，没有哪个单一分片键能同时满足两边。
+
+
+
 > MechantUserId != **<font style="color:#DF2A3F;">UserId </font>**[为什么不能等于, 这两为什么不是同一个]
 
 TenantId -> MerchantId -> MerchantUserId (B) -> **<font style="color:#DF2A3F;">UserId </font>**(C)
@@ -638,7 +653,7 @@ public class VersionUtils {
 
 > cs笔记, 重点看工作流执行
 
-![画板](https://i-blog.csdnimg.cn/img_convert/dfee837486f8ec62ede46b603f9b16fb.jpeg)
+![画板](https://image.233377.xyz/2026/dfee837486f8ec62ede46b603f9b16fb.jpeg)
 
 凌祺一套, Hierarchy 如下:
 
@@ -719,6 +734,32 @@ RPC包下的Observer底层应该也是它
 3. 消费者- `@Subscribe onFlowStart(FlowExecutionEvent.FlowStartEvent event) `
 
 
+
+q:
+
+eventbus 和 mq 有什么区别吗 ?
+eventbus 的执行一般是串行执行的吗, 由什么线程执行
+
+
+
+两者都是发布/订阅模式,但作用域和可靠性完全不同:EventBus 是进程内的内存事件总线(微秒级、易失),MQ 是跨进程的消息中间件(毫秒级、可持久化、可靠投递)。
+
+
+
+我一直以为 eventbus post 是一个异步处理的过程, 没想到是阻塞同步的, 主线程要等它处理完 ?
+
+对,默认配置下在哪个线程 `post`,订阅者就在哪个线程跑
+
+为什么默认做成同步
+- 它解决的是"解耦",不是"并发"。 EventBus 本质是"观察者模式 + 注册表 + 类型路由":发布方不需要知道谁在听。至于在哪个线程执行,是一个正交的问题,交给线程模式 / executor 决定,而不是藏在 post 里。
+
+
+
+那为什么不用普通方法调用,或用 MQ
+- 直接调用:发布方编译期就知道订阅方,耦合死;加一个监听者要改发布方代码。
+- 同步 EventBus:发布方不知道订阅方,一对多、动态注册、新增消费者零改动——代价是执行仍在当前线程。
+- AsyncEventBus:多了解耦后的线程池执行——但顺序、队列、异常都要自己管。
+- MQ:跨进程、持久化、重试、削峰——但重。
 
 
 

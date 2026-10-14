@@ -21,3 +21,7 @@ _gsdata_/
 .idea/
 .claude/
 docs/.obsidian/workspace.json
+
+# AI
+/docs/agents/**
+/AGENTS.md

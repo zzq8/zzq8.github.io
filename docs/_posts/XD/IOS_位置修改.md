@@ -13,7 +13,7 @@ tag:
 
 > Wireless Location（通常认为是 Wi-Fi / 基站网络定位）
 
-教程: https://github.com/Yu9191/wloc/issues/39
+ 
 
 额外补充: 注意也可用自己的配置这里导入模块就好
 

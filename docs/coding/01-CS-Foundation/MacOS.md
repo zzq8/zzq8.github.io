@@ -7,7 +7,7 @@ description: 从0到1构建mac
 
 ## 零、inbox
 
-LinuxRef 文档移过来, 合并 !!!
+TODO ---> LinuxRef 文档移过来, 合并 !!!
 
 
 
@@ -50,7 +50,8 @@ brew install --cask \
   open-island \
   ghostty \
   mos \
-  
+
+  cc-switch \
   docker-desktop \
   input0 \
   licecap \
@@ -145,6 +146,8 @@ Chrome Plugin
 
 * ✨ TODO 隐藏用法, 跳广告!!! 直接倍速广告有效!
 
+cmd control z x 可以切分组
+
 
 
 ### 1.Sublime
@@ -152,6 +155,10 @@ Chrome Plugin
 > 注册到 subl 命令到 CLI
 >
 > `sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl`
+>
+> 
+>
+> sublime 如果触发 safe model 就从 applications 里重新右键打开一下就好
 >
 > 常用命令
 >

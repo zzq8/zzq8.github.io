@@ -23,11 +23,17 @@ https://artificialanalysis.ai/leaderboards/models
 
 https://openrouter.ai/rankings?programming-language=Java#programming-languages
 
+https://llm2014.github.io/llm_benchmark
+
 
 
 https://www.ruanyifeng.com/blog/archives.html
 
 https://waytoagi.feishu.cn/wiki/FjiOwWp2giA7hRk6jjfcPioCnAc
+
+
+
+https://yudesk.dev/
 
 看下每天有哪些
 
@@ -246,6 +252,12 @@ A一直欺负B。
 功利性 Goal: 雅思 6.5
 
 实际性 Goal: 看懂英文 youtube, 能读 java 中间件官方英文文档
+
+
+
+✨外企: `请问你英语口语怎样呢，这边需要一定的口语能力，会有英文口测环节`
+
+由此可想要不要提上日程, 等稳定了为下一份考虑一下 ? 外企的还是很吃香 !!!
 
 ### 碎碎念
 
