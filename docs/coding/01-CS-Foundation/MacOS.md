@@ -40,18 +40,18 @@ brew install --cask \
   shottr \
   google-chrome  \
   espanso \
-  iterm2 \
   sogouinput \
   eudic \
   thor \
   gas-mask \
   typora \
   caffeine \
-  open-island \
   ghostty \
   mos \
 
   cc-switch \
+  docker \
+  open-island \
   docker-desktop \
   input0 \
   licecap \
@@ -61,7 +61,6 @@ brew install --cask \
   telegram \
   iina \
   obs \
-  docker \
   qq \
   obsidian \
   

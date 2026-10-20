@@ -6,6 +6,10 @@
 
 ---
 
+==XD 现在 2026 年接触到 Matt_Pocock 的 skill 思想 !!!== 
+
+以下都过时, 太重, 作废 ~
+
 ## 一、OpenSpec vs Claude Code Plan Mode
 
 两者定位不同，不是竞争关系：

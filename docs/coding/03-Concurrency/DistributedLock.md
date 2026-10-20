@@ -121,6 +121,27 @@ throughput 吞吐量
 
    
 
+   ```mysql
+   -- 事务 A
+   BEGIN;
+   SELECT * FROM orders WHERE id = 1 FOR UPDATE; -- 持有排他锁
+   — 一直不提交
+   
+   — 事务 B（另一个连接）
+   BEGIN;
+   SELECT * FROM orders WHERE id = 1 FOR UPDATE; — 阻塞，等 A 提交/回滚
+   UPDATE orders SET status = 2 WHERE id = 1; — 同样阻塞
+   ```
+
+   ---
+
+   -q: 排它锁的等待时间有阈值吗
+    a: 有，但不是排他锁本身固定带一个阈值，而是由数据库的“锁等待超时”配置决定。达到阈值后通常会报错，不会自动拿到锁。MySQL InnoDB 默认等待时间：50 秒，由 innodb_lock_wait_timeout 控制
+
+   
+
+   
+
 4. #### 乐观锁：时间戳、version版本号、CAS 机制（变量等于旧值就允许更新，例如==修改密码==）
 
    * <img src="https://pub-83c20763effa4ac69b4d6a9e22c9936e.r2.dev/img/202209031621459.png" alt="image-20220903162138040" style="zoom: 50%;" />

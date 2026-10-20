@@ -90,6 +90,16 @@ Harness Engineering 我的理解是：**为 Agent 搭建运行空间，设计它
 
 ## 二、Prompt Engineering
 
+现在在用的
+
+* ✨https://github.com/multica-ai/andrej-karpathy-skills
+* ✨https://github.com/mattpocock/skills
+* https://github.com/dietrichgebert/ponytail
+
+
+
+
+
 有哪些提示词插槽
 
 ```
@@ -119,6 +129,8 @@ Plugin = 打包多个 Skill/Agent/Hook 的安装包
 >
 > - Excel 格式: https://docs.google.com/spreadsheets/d/1jIxjzUWG-6xBVIa2ay6yDpLyeuOh_hR_ZB75a47KX_E/edit?gid=1171654224#gid=1171654224
 > - MD 格式: https://github.com/anthropics/prompt-eng-interactive-tutorial/blob/master/Anthropic%201P/09_Complex_Prompts_from_Scratch.ipynb
+>
+> 可以看 Matt Pocock 写的那些 skill 【学习大佬的】
 
 大致我日常自己写就如下, 不过我一般都是通过 [meta_prompt.txt](/resources/meta_prompt.txt) [https://linux.do/t/topic/653977/11] 来让 ai 写提示词
 
@@ -267,11 +279,18 @@ Neo4j 里大致：
 
 ### Matt Pocock 的 Claude Code 技能集
 
+<img src="https://image.233377.xyz/2026/image-20261015145504100.png" alt="image-20261015145504100" style="zoom: 33%;" />
+
 https://yudesk.dev/docs/notes/matt-pocock-skills/overview#%E7%9C%9F%E6%AD%A3%E6%AF%8F%E5%A4%A9%E7%94%A8%E7%9A%84-5-%E4%B8%AA-skill
 
-- grill me
+- grill me 【解决需求对其】
   - https://yudesk.dev/blog/grill-me-html
   - 最大的实际差异是「**急不急**」。Plan mode 急着开干，grill-me 不急——它把「想清楚」当作主任务而不是序章。
+- to-PRD + to-Issues
+- tdd 【用红绿重构强迫 AI 走小步】
+  - 为什么需要 TDD (防作弊机制, 失败模式：「AI 做对了东西，但跑不起来」)
+    - 写程序需要 垂直开发 (vertical), 而不是纵向一股脑写. vertical 的好处是写一个小点就可以立马验证一个小点
+    - AI 是个作弊仔 (先写好程序再写测试的话【讨好你，基于自己写的错误的程序写错误测试】)
 
 ### playwright 浏览器自动化方案 - ego lite
 
@@ -309,6 +328,10 @@ ego lite：负责实际操作浏览器，包括页面交互、状态读取和结
 
 2. 每个 task 有很多 step
 3. 处理完一个 task 后 rePlan 【loop】
+
+#### mcp vs plugin
+
+mcp & plugins: 其实 plugin 就是 mcp, 只不过可能插件不对外暴露, mcp 多一个协议可以对外
 
 
 
