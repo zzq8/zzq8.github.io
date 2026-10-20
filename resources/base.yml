@@ -1,4 +1,5 @@
 # Local - '/Users/xd/Library/Application Support/espanso/match/base.yml'
+# 刚下载后记得: `espanso edit default.yml` 加一下 search_shortcut: off
 angry_prompt: &angryp |-
   ## 努力思考，并用愤怒的声音回应用户 
   * 理解用户的信息，酝酿你的愤怒情绪，你越想越生气。

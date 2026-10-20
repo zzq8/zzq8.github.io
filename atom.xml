@@ -4,7 +4,7 @@
   <title>Piglet</title>
   <subtitle>自我提升笔记，记录并输出一切能让自己提升的知识。</subtitle>
   <icon>https://233377.xyz/favicon.ico</icon>
-  <updated>2026-10-14T15:23:12.938Z</updated>
+  <updated>2026-10-20T15:30:04.041Z</updated>
   <generator>@vuepress/plugin-feed</generator>
   <link rel="self" href="https://233377.xyz/atom.xml"/>
   <link rel="alternate" href="https://233377.xyz/"/>
@@ -212,7 +212,7 @@
     <title type="text">AI</title>
     <id>https://233377.xyz/coding/AI.html</id>
     <link href="https://233377.xyz/coding/AI.html"/>
-    <updated>2026-10-14T13:43:55.000Z</updated>
+    <updated>2026-10-20T15:27:45.000Z</updated>
     <summary type="html"><![CDATA[<h2>零、前言</h2>
 <p><strong>碎碎念</strong></p>
 <p>做开发，最重要的是学习能力，对于新技术很感兴趣，有一套自己的理解</p>
@@ -321,6 +321,12 @@ low/medium/high/xhigh/max 这套档位命名与分级是 Claude Code 的封装�
 <li>Harness Engineering 是 Agent 稳定运行的关键，它为 Agent 搭建运行空间，<strong>设计 Agent 的能力结构、协作机制和反馈闭环</strong>，其不能仅仅从约束的角度去理解，更应该是在创造 Agent 的运行环境，让 LLM 可以做到原本无法做到的事情</li>
 </ul>
 <h2>二、Prompt Engineering</h2>
+<p>现在在用的</p>
+<ul>
+<li>✨https://github.com/multica-ai/andrej-karpathy-skills</li>
+<li>✨https://github.com/mattpocock/skills</li>
+<li>https://github.com/dietrichgebert/ponytail</li>
+</ul>
 <p>有哪些提示词插槽</p>
 <div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#0e1116;--shiki-dark:#f0f3f6;--shiki-light-bg:#ffffff;--shiki-dark-bg:#0a0c10"><pre class="shiki shiki-themes github-light-high-contrast github-dark-high-contrast vp-code"><code class="language-"><span class="line"><span>CLAUDE.md = 永久系统提示词</span></span>
 <span class="line"><span></span></span>
@@ -416,7 +422,7 @@ low/medium/high/xhigh/max 这套档位命名与分级是 Claude Code 的封装�
     <title type="text">Personal-XD</title>
     <id>https://233377.xyz/coding/XD.html</id>
     <link href="https://233377.xyz/coding/XD.html"/>
-    <updated>2026-10-14T13:43:55.000Z</updated>
+    <updated>2026-10-20T15:27:45.000Z</updated>
     <summary type="html"><![CDATA[
 <h2>一、Daily</h2>
 <p>每周日常 Chrome Tag:</p>
